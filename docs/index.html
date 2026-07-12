@@ -52,7 +52,7 @@
     header {
       background: var(--panel);
       border-bottom: 1px solid var(--line);
-      padding: 28px 0 22px;
+      padding: 20px 0 18px;
     }
 
     .topbar {
@@ -96,20 +96,190 @@
     h1 {
       margin: 0;
       max-width: 940px;
-      font-size: clamp(32px, 5vw, 52px);
+      font-size: clamp(30px, 4vw, 44px);
       line-height: 1.05;
       letter-spacing: 0;
     }
 
     .subtitle {
       max-width: 880px;
-      margin: 14px 0 0;
+      margin: 10px 0 0;
       color: var(--muted);
-      font-size: 18px;
+      font-size: 17px;
     }
 
     main {
-      padding: 22px 0 56px;
+      padding: 16px 0 56px;
+    }
+
+    .map-section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .map-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .map-head h2 {
+      margin: 0;
+      font-size: 23px;
+    }
+
+    .map-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .map-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      min-width: min(560px, 100%);
+    }
+
+    select,
+    input[type="search"] {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 7px 10px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    input[type="search"] {
+      width: 230px;
+    }
+
+    .checkbox {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .map-layout {
+      display: grid;
+      grid-template-columns: minmax(560px, 1fr) minmax(330px, 400px);
+      min-height: 560px;
+    }
+
+    .plot-wrap {
+      position: relative;
+      min-height: 560px;
+      border-right: 1px solid var(--line);
+      background: #fbfcfe;
+    }
+
+    #clusterPlot {
+      width: 100%;
+      height: 560px;
+      display: block;
+    }
+
+    .axis {
+      stroke: #dfe5ee;
+      stroke-width: 1;
+    }
+
+    .point {
+      cursor: pointer;
+      opacity: 0.86;
+      stroke: white;
+      stroke-width: 1.4;
+    }
+
+    .point.dim {
+      opacity: 0.12;
+    }
+
+    .point.selected {
+      opacity: 1;
+      stroke: #111827;
+      stroke-width: 3;
+    }
+
+    .plot-label {
+      fill: var(--muted);
+      font-size: 12px;
+    }
+
+    .map-status {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      max-width: calc(100% - 28px);
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .details-panel {
+      padding: 18px;
+      overflow-y: auto;
+      max-height: 560px;
+    }
+
+    .details-panel h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .details-meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      margin: 3px 5px 3px 0;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--soft-blue);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .detail-block {
+      margin-top: 15px;
+    }
+
+    .detail-block strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .detail-block p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
     }
 
     .status-grid {
@@ -445,8 +615,27 @@
       .status-grid,
       .pipeline,
       .two-col,
-      .links {
+      .links,
+      .map-layout {
         grid-template-columns: 1fr;
+      }
+
+      .plot-wrap {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .map-head {
+        display: block;
+      }
+
+      .map-toolbar {
+        justify-content: flex-start;
+        margin-top: 12px;
+      }
+
+      input[type="search"] {
+        width: 100%;
       }
 
       .step::after {
@@ -481,13 +670,39 @@
       </div>
       <h1>Keyword-conditioned paper clustering pipeline</h1>
       <p class="subtitle">
-        This page shows the actual workflow: final screening CSV in, per-keyword clustering and small-sample handling in the middle, downstream cluster assignments and representative papers out.
+        Interactive UMAP explorer first, with the workflow and documentation underneath.
       </p>
     </div>
   </header>
 
   <main>
     <div class="wrap">
+      <section class="map-section" aria-label="Interactive UMAP clustering map">
+        <div class="map-head">
+          <div>
+            <h2>UMAP Clustering Map</h2>
+            <p>Explore the per-keyword clustering output. Points are papers; colors are local clusters.</p>
+          </div>
+          <div class="map-toolbar">
+            <select id="methodFilter" aria-label="Method filter"></select>
+            <select id="keywordFilter" aria-label="Keyword filter"></select>
+            <select id="clusterFilter" aria-label="Cluster filter"></select>
+            <input id="searchFilter" type="search" placeholder="Search title or venue">
+            <label class="checkbox"><input id="repOnly" type="checkbox"> Top reps only</label>
+          </div>
+        </div>
+        <div class="map-layout">
+          <div class="plot-wrap">
+            <svg id="clusterPlot" role="img" aria-label="UMAP scatter plot of clustered papers"></svg>
+            <div class="map-status" id="mapStatus"></div>
+          </div>
+          <aside class="details-panel" id="paperDetails">
+            <h3>Select a point</h3>
+            <p class="details-meta">Click a paper in the UMAP map to inspect its keyword, method, cluster label, and representative-paper rank.</p>
+          </aside>
+        </div>
+      </section>
+
       <div class="status-grid">
         <section class="metric">
           <div class="label">Input file</div>
@@ -717,7 +932,183 @@
     </div>
   </aside>
 
+  <script src="assets/cluster_points.js"></script>
   <script>
+    const clusterPayload = window.CLUSTER_POINTS || { points: [] };
+    const points = clusterPayload.points || [];
+    const plot = document.getElementById("clusterPlot");
+    const mapStatus = document.getElementById("mapStatus");
+    const details = document.getElementById("paperDetails");
+    const methodFilter = document.getElementById("methodFilter");
+    const keywordFilter = document.getElementById("keywordFilter");
+    const clusterFilter = document.getElementById("clusterFilter");
+    const searchFilter = document.getElementById("searchFilter");
+    const repOnly = document.getElementById("repOnly");
+    const mapState = { selectedId: points[0]?.paper_id || "" };
+
+    const palette = [
+      "#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2",
+      "#be123c", "#4f46e5", "#0f766e", "#a16207", "#7c3aed", "#15803d"
+    ];
+
+    function uniqueSorted(values) {
+      return [...new Set(values.filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b)));
+    }
+
+    function colorFor(cluster) {
+      const n = Math.abs(Number.parseInt(cluster, 10));
+      return palette[Number.isFinite(n) ? n % palette.length : 0];
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, ch => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      }[ch]));
+    }
+
+    function initMapControls() {
+      const methods = uniqueSorted(points.map(point => point.method));
+      const keywords = uniqueSorted(points.map(point => point.keyword));
+      methodFilter.innerHTML = methods.map(method =>
+        `<option value="${escapeHtml(method)}">${escapeHtml(method)}</option>`
+      ).join("");
+      if (methods.includes("kmeans")) {
+        methodFilter.value = "kmeans";
+      }
+      keywordFilter.innerHTML = `<option value="all">All keywords</option>` + keywords.map(keyword =>
+        `<option value="${escapeHtml(keyword)}">${escapeHtml(keyword)}</option>`
+      ).join("");
+      updateClusterFilter();
+      [methodFilter, keywordFilter, clusterFilter, searchFilter, repOnly].forEach(control => {
+        control.addEventListener("input", renderMap);
+        control.addEventListener("change", renderMap);
+      });
+      methodFilter.addEventListener("change", updateClusterFilter);
+      keywordFilter.addEventListener("change", updateClusterFilter);
+      renderMap();
+    }
+
+    function filteredPoints(ignoreCluster = false) {
+      const method = methodFilter.value;
+      const keyword = keywordFilter.value;
+      const cluster = clusterFilter.value;
+      const q = searchFilter.value.trim().toLowerCase();
+      return points.filter(point => {
+        const searchable = `${point.title} ${point.venue} ${point.year}`.toLowerCase();
+        return (!method || point.method === method) &&
+          (keyword === "all" || point.keyword === keyword) &&
+          (ignoreCluster || cluster === "all" || point.cluster === cluster) &&
+          (!q || searchable.includes(q)) &&
+          (!repOnly.checked || point.is_rep);
+      });
+    }
+
+    function updateClusterFilter() {
+      const current = clusterFilter.value || "all";
+      const clusters = uniqueSorted(filteredPoints(true).map(point => point.cluster));
+      clusterFilter.innerHTML = `<option value="all">All clusters</option>` + clusters.map(cluster =>
+        `<option value="${escapeHtml(cluster)}">Cluster ${escapeHtml(cluster)}</option>`
+      ).join("");
+      clusterFilter.value = clusters.includes(current) ? current : "all";
+      renderMap();
+    }
+
+    function renderMap() {
+      const shown = filteredPoints();
+      const base = filteredPoints(true);
+      const visibleIds = new Set(shown.map(point => point.paper_id + "|" + point.method + "|" + point.keyword));
+      const width = plot.clientWidth || 760;
+      const height = plot.clientHeight || 560;
+      const pad = 42;
+      const source = base.length ? base : points;
+      const xs = source.map(point => point.x);
+      const ys = source.map(point => point.y);
+      let minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+      const xRange = Math.max(0.001, maxX - minX);
+      const yRange = Math.max(0.001, maxY - minY);
+      minX -= xRange * 0.08;
+      maxX += xRange * 0.08;
+      minY -= yRange * 0.08;
+      maxY += yRange * 0.08;
+      const sx = x => pad + ((x - minX) / (maxX - minX)) * (width - pad * 2);
+      const sy = y => height - pad - ((y - minY) / (maxY - minY)) * (height - pad * 2);
+
+      plot.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      plot.innerHTML = "";
+      for (let i = 0; i < 6; i += 1) {
+        const x = pad + i * (width - pad * 2) / 5;
+        const y = pad + i * (height - pad * 2) / 5;
+        plot.insertAdjacentHTML("beforeend", `<line class="axis" x1="${x}" y1="${pad}" x2="${x}" y2="${height - pad}"></line>`);
+        plot.insertAdjacentHTML("beforeend", `<line class="axis" x1="${pad}" y1="${y}" x2="${width - pad}" y2="${y}"></line>`);
+      }
+      plot.insertAdjacentHTML("beforeend", `<text class="plot-label" x="${width / 2}" y="${height - 9}" text-anchor="middle">UMAP 1</text>`);
+      plot.insertAdjacentHTML("beforeend", `<text class="plot-label" x="15" y="${height / 2}" text-anchor="middle" transform="rotate(-90 15 ${height / 2})">UMAP 2</text>`);
+
+      base.forEach(point => {
+        const key = point.paper_id + "|" + point.method + "|" + point.keyword;
+        const visible = visibleIds.has(key);
+        const selected = mapState.selectedId === key;
+        const node = document.createElementNS("http://www.w3.org/2000/svg", point.is_rep ? "path" : "circle");
+        node.setAttribute("class", `point ${visible ? "" : "dim"} ${selected ? "selected" : ""}`);
+        node.setAttribute("fill", colorFor(point.cluster));
+        const x = sx(point.x);
+        const y = sy(point.y);
+        if (point.is_rep) {
+          const s = selected ? 8.5 : 7;
+          node.setAttribute("d", `M ${x} ${y - s} L ${x + s} ${y} L ${x} ${y + s} L ${x - s} ${y} Z`);
+        } else {
+          node.setAttribute("cx", x);
+          node.setAttribute("cy", y);
+          node.setAttribute("r", selected ? 7.2 : 5.6);
+        }
+        node.addEventListener("click", () => {
+          mapState.selectedId = key;
+          renderMap();
+        });
+        const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+        title.textContent = point.title;
+        node.appendChild(title);
+        plot.appendChild(node);
+      });
+
+      mapStatus.textContent = `${shown.length} visible papers from ${base.length} ${methodFilter.value} points. Diamonds are top representative papers.`;
+      const selected = points.find(point => mapState.selectedId === point.paper_id + "|" + point.method + "|" + point.keyword) || shown[0] || base[0];
+      renderDetails(selected);
+    }
+
+    function renderDetails(point) {
+      if (!point) {
+        details.innerHTML = `<h3>No papers match the current filters</h3><p class="details-meta">Adjust method, keyword, cluster, or search filters.</p>`;
+        return;
+      }
+      details.innerHTML = `
+        <h3>${escapeHtml(point.title)}</h3>
+        <div class="details-meta">${escapeHtml(point.year)} · ${escapeHtml(point.venue || "venue n/a")}</div>
+        <span class="pill">${escapeHtml(point.keyword)}</span>
+        <span class="pill">${escapeHtml(point.method)}</span>
+        <span class="pill">Cluster ${escapeHtml(point.cluster)}</span>
+        <span class="pill">Rep rank ${escapeHtml(point.rank || "n/a")}</span>
+        <div class="detail-block">
+          <strong>Cluster label</strong>
+          <p>${escapeHtml(point.label || "No label available")}</p>
+        </div>
+        <div class="detail-block">
+          <strong>Cluster summary</strong>
+          <p>${escapeHtml(point.summary || "No summary available")}</p>
+        </div>
+        <div class="detail-block">
+          <strong>Paper id</strong>
+          <p><code>${escapeHtml(point.paper_id)}</code></p>
+        </div>
+      `;
+    }
+
+    initMapControls();
+
     const openDocs = document.getElementById("openDocs");
     const closeDocs = document.getElementById("closeDocs");
     const drawer = document.getElementById("docsDrawer");
