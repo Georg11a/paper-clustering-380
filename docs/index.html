@@ -1,506 +1,95 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paper Clustering Pipeline</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Paper Clustering Explorer</title>
   <style>
-    :root {
-      --bg: #f5f6f8;
-      --panel: #ffffff;
-      --ink: #172033;
-      --muted: #607086;
-      --line: #d8dee8;
-      --blue: #1f6fb2;
-      --green: #27735f;
-      --amber: #9a6418;
-      --red: #a63a3a;
-      --soft-blue: #eaf3fb;
-      --soft-green: #e9f5f1;
-      --soft-amber: #fbf2e6;
-      --soft-red: #faeeee;
-      --code: #111827;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
+      color: #253858;
+      background: #f7f9fc;
     }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .wrap {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
     header {
-      background: var(--panel);
-      border-bottom: 1px solid var(--line);
-      padding: 20px 0 18px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid #d8e0ea;
+      box-shadow: 0 1px 8px rgba(31, 45, 61, 0.06);
     }
-
-    .topbar {
+    .top-row {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
       gap: 16px;
-      margin-bottom: 22px;
+      margin-bottom: 10px;
     }
-
-    .repo {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    .settings-button {
-      min-height: 34px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 7px 12px;
-      background: #fbfcfe;
-      color: var(--blue);
-      font: inherit;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .settings-button:hover {
-      border-color: #b8c5d6;
-      background: var(--soft-blue);
-    }
-
     h1 {
       margin: 0;
-      max-width: 940px;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.05;
+      font-size: 20px;
       letter-spacing: 0;
-    }
-
-    .subtitle {
-      max-width: 880px;
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    main {
-      padding: 16px 0 56px;
-    }
-
-    .map-section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
-
-    .map-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .map-head h2 {
-      margin: 0;
-      font-size: 23px;
-    }
-
-    .map-head p {
-      margin: 4px 0 0;
-      color: var(--muted);
-    }
-
-    .map-toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px;
-      min-width: min(560px, 100%);
-    }
-
-    select,
-    input[type="search"] {
-      min-height: 36px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 7px 10px;
-      background: white;
-      color: var(--ink);
-      font: inherit;
-      font-size: 14px;
-    }
-
-    input[type="search"] {
-      width: 230px;
-    }
-
-    .checkbox {
-      min-height: 36px;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 0 8px;
-      color: var(--muted);
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .map-layout {
-      display: grid;
-      grid-template-columns: minmax(560px, 1fr) minmax(330px, 400px);
-      min-height: 560px;
-    }
-
-    .plot-wrap {
-      position: relative;
-      min-height: 560px;
-      border-right: 1px solid var(--line);
-      background: #fbfcfe;
-    }
-
-    #clusterPlot {
-      width: 100%;
-      height: 560px;
-      display: block;
-    }
-
-    .axis {
-      stroke: #dfe5ee;
-      stroke-width: 1;
-    }
-
-    .point {
-      cursor: pointer;
-      opacity: 0.86;
-      stroke: white;
-      stroke-width: 1.4;
-    }
-
-    .point.dim {
-      opacity: 0.12;
-    }
-
-    .point.selected {
-      opacity: 1;
-      stroke: #111827;
-      stroke-width: 3;
-    }
-
-    .plot-label {
-      fill: var(--muted);
-      font-size: 12px;
-    }
-
-    .map-status {
-      position: absolute;
-      left: 14px;
-      bottom: 12px;
-      max-width: calc(100% - 28px);
-      padding: 8px 10px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .details-panel {
-      padding: 18px;
-      overflow-y: auto;
-      max-height: 560px;
-    }
-
-    .details-panel h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
       line-height: 1.2;
     }
-
-    .details-meta {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 12px;
+    .repo-links { display: flex; gap: 12px; align-items: center; font-size: 13px; }
+    a { color: #2f7dd1; text-decoration: none; font-weight: 700; }
+    a:hover { text-decoration: underline; }
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) minmax(150px, 190px) auto minmax(260px, 1fr) auto;
+      gap: 12px;
+      align-items: end;
     }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      margin: 3px 5px 3px 0;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: var(--soft-blue);
-      color: var(--blue);
+    .field { display: grid; gap: 5px; }
+    label {
+      color: #65758b;
       font-size: 12px;
       font-weight: 800;
-    }
-
-    .detail-block {
-      margin-top: 15px;
-    }
-
-    .detail-block strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 13px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .detail-block p {
-      margin: 0;
-      color: var(--ink);
-      font-size: 14px;
-    }
-
-    .status-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .metric {
-      min-height: 110px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-    }
-
-    .metric .label {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .metric .value {
-      margin-top: 8px;
-      font-size: 30px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .metric p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      margin-top: 16px;
-      padding: 22px;
-    }
-
-    .section h2 {
-      margin: 0 0 14px;
-      font-size: 22px;
       letter-spacing: 0;
     }
-
-    .pipeline {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-      align-items: stretch;
+    select, button {
+      height: 38px;
+      border: 1px solid #c9d6e6;
+      border-radius: 7px;
+      color: #253858;
+      font-size: 14px;
     }
-
-    .step {
-      position: relative;
-      min-height: 156px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
-    }
-
-    .step::after {
-      content: "→";
-      position: absolute;
-      right: -16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--muted);
+    select { width: 100%; background: #ffffff; padding: 0 34px 0 10px; }
+    button {
+      background: #2f7dd1;
+      border-color: #2f7dd1;
+      color: white;
       font-weight: 800;
-      font-size: 20px;
-      z-index: 2;
+      padding: 0 16px;
+      cursor: pointer;
     }
-
-    .step:last-child::after {
-      content: "";
+    button.secondary {
+      background: #ffffff;
+      color: #2f7dd1;
+      border-color: #c9d6e6;
     }
-
-    .step .num {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: inline-flex;
+    button:disabled { cursor: not-allowed; opacity: 0.45; }
+    .current {
+      align-self: center;
+      min-height: 38px;
+      display: flex;
       align-items: center;
-      justify-content: center;
-      background: var(--soft-blue);
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .step h3 {
-      margin: 12px 0 8px;
-      font-size: 17px;
-    }
-
-    .step p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 16px;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-      background: #fbfcfe;
-    }
-
-    .panel h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-
-    ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    li + li {
-      margin-top: 6px;
-    }
-
-    code {
-      padding: 2px 5px;
-      border-radius: 5px;
-      background: #eef2f7;
-      color: #14243a;
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 0.92em;
-    }
-
-    pre {
-      margin: 12px 0 0;
-      overflow-x: auto;
-      padding: 16px;
-      border-radius: 8px;
-      background: var(--code);
-      color: #f9fafb;
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    pre code {
-      padding: 0;
-      background: transparent;
-      color: inherit;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    th,
-    td {
-      border-bottom: 1px solid var(--line);
-      padding: 10px 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: var(--soft-green);
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .tag.skip {
-      background: var(--soft-amber);
-      color: var(--amber);
-    }
-
-    .links {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .link-card {
-      display: block;
-      min-height: 84px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px;
-      background: #fbfcfe;
-    }
-
-    .link-card span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-weight: 400;
+      color: #253858;
       font-size: 13px;
+      line-height: 1.35;
     }
-
+    .links { display: flex; gap: 12px; font-size: 13px; align-self: center; justify-content: flex-end; }
+    .note { color: #65758b; font-size: 13px; margin-top: 8px; }
+    iframe {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 122px);
+      border: 0;
+      background: white;
+    }
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -508,11 +97,7 @@
       display: none;
       background: rgba(15, 23, 42, 0.38);
     }
-
-    .drawer-overlay.open {
-      display: block;
-    }
-
+    .drawer-overlay.open { display: block; }
     .drawer {
       position: fixed;
       top: 0;
@@ -522,358 +107,93 @@
       height: 100vh;
       transform: translateX(100%);
       transition: transform 180ms ease;
-      border-left: 1px solid var(--line);
-      background: var(--panel);
+      border-left: 1px solid #d8e0ea;
+      background: #ffffff;
       box-shadow: -20px 0 44px rgba(15, 23, 42, 0.16);
       overflow-y: auto;
     }
-
-    .drawer.open {
-      transform: translateX(0);
-    }
-
+    .drawer.open { transform: translateX(0); }
     .drawer-header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 14px;
       padding: 22px 22px 16px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid #d8e0ea;
     }
-
-    .drawer-header h2 {
-      margin: 0;
-      font-size: 22px;
-    }
-
-    .drawer-header p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
+    .drawer-header h2 { margin: 0; font-size: 22px; }
+    .drawer-header p { margin: 6px 0 0; color: #65758b; font-size: 14px; }
     .close-button {
       width: 34px;
       height: 34px;
-      border: 1px solid var(--line);
+      border: 1px solid #c9d6e6;
       border-radius: 6px;
       background: #fbfcfe;
-      color: var(--ink);
+      color: #253858;
       cursor: pointer;
       font-size: 20px;
       line-height: 1;
+      padding: 0;
     }
-
-    .drawer-body {
-      padding: 18px 22px 24px;
-    }
-
-    .drawer-section {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .drawer-section:last-child {
-      border-bottom: 0;
-    }
-
-    .drawer-section h3 {
-      margin: 0 0 10px;
-      font-size: 16px;
-    }
-
-    .doc-list {
-      display: grid;
-      gap: 9px;
-    }
-
+    .drawer-body { padding: 18px 22px 24px; }
+    .drawer-section { padding: 14px 0; border-bottom: 1px solid #d8e0ea; }
+    .drawer-section:last-child { border-bottom: 0; }
+    .drawer-section h3 { margin: 0 0 10px; font-size: 16px; }
+    .doc-list { display: grid; gap: 9px; }
     .doc-link {
       display: block;
       padding: 11px 12px;
-      border: 1px solid var(--line);
+      border: 1px solid #d8e0ea;
       border-radius: 6px;
       background: #fbfcfe;
-      color: var(--blue);
+      color: #2f7dd1;
     }
-
-    .doc-link span {
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 400;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 22px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 980px) {
-      .status-grid,
-      .pipeline,
-      .two-col,
-      .links,
-      .map-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .plot-wrap {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .map-head {
-        display: block;
-      }
-
-      .map-toolbar {
-        justify-content: flex-start;
-        margin-top: 12px;
-      }
-
-      input[type="search"] {
-        width: 100%;
-      }
-
-      .step::after {
-        content: "↓";
-        right: 18px;
-        top: auto;
-        bottom: -21px;
-        transform: none;
-      }
-
-      .topbar {
-        display: block;
-      }
-
-      .nav {
-        margin-top: 12px;
-      }
+    .doc-link span { display: block; margin-top: 2px; color: #65758b; font-size: 13px; font-weight: 400; }
+    @media (max-width: 920px) {
+      .top-row { display: block; }
+      .repo-links { margin-top: 8px; flex-wrap: wrap; }
+      .controls { grid-template-columns: 1fr; }
+      .links { justify-content: flex-start; }
+      iframe { height: calc(100vh - 310px); }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="wrap">
-      <div class="topbar">
-        <div class="repo">Georg11a / paper-clustering-380</div>
-        <nav class="nav">
-          <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
-          <a href="pipeline_overview.md">Technical notes</a>
-          <a href="meeting_action_items.md">Meeting action items</a>
-          <button class="settings-button" id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
-        </nav>
+    <div class="top-row">
+      <h1>Final Advancing-Paper Explorer: Per-Keyword Clustering</h1>
+      <div class="repo-links">
+        <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
+        <button class="secondary" id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
       </div>
-      <h1>Keyword-conditioned paper clustering pipeline</h1>
-      <p class="subtitle">
-        Interactive UMAP explorer first, with the workflow and documentation underneath.
-      </p>
     </div>
+    <div class="controls">
+      <div class="field">
+        <label for="keywordSelect">Keyword Group</label>
+        <select id="keywordSelect"></select>
+      </div>
+      <div class="field">
+        <label for="methodSelect">Clustering Method</label>
+        <select id="methodSelect"></select>
+      </div>
+      <button id="applyBtn">Apply</button>
+      <div class="current" id="currentLabel"></div>
+      <div class="links">
+        <a id="summaryLink" href="#" target="_blank">Summary</a>
+        <a id="csvLink" href="#" target="_blank">CSV</a>
+        <a id="openLink" href="#" target="_blank">Open Current</a>
+      </div>
+    </div>
+    <div class="note" id="note">Choose a keyword and method. This is the generated paper explorer output, not an instruction page.</div>
   </header>
-
-  <main>
-    <div class="wrap">
-      <section class="map-section" aria-label="Interactive UMAP clustering map">
-        <div class="map-head">
-          <div>
-            <h2>UMAP Clustering Map</h2>
-            <p>Explore the per-keyword clustering output. Points are papers; colors are local clusters.</p>
-          </div>
-          <div class="map-toolbar">
-            <select id="methodFilter" aria-label="Method filter"></select>
-            <select id="keywordFilter" aria-label="Keyword filter"></select>
-            <select id="clusterFilter" aria-label="Cluster filter"></select>
-            <input id="searchFilter" type="search" placeholder="Search title or venue">
-            <label class="checkbox"><input id="repOnly" type="checkbox"> Top reps only</label>
-          </div>
-        </div>
-        <div class="map-layout">
-          <div class="plot-wrap">
-            <svg id="clusterPlot" role="img" aria-label="UMAP scatter plot of clustered papers"></svg>
-            <div class="map-status" id="mapStatus"></div>
-          </div>
-          <aside class="details-panel" id="paperDetails">
-            <h3>Select a point</h3>
-            <p class="details-meta">Click a paper in the UMAP map to inspect its keyword, method, cluster label, and representative-paper rank.</p>
-          </aside>
-        </div>
-      </section>
-
-      <div class="status-grid">
-        <section class="metric">
-          <div class="label">Input file</div>
-          <div class="value">CSV</div>
-          <p><code>data/final_advancing_list.csv</code></p>
-        </section>
-        <section class="metric">
-          <div class="label">Paper records</div>
-          <div class="value">368</div>
-          <p>Current parsed working set in the repository.</p>
-        </section>
-        <section class="metric">
-          <div class="label">Keyword groups</div>
-          <div class="value">12</div>
-          <p>Each keyword is processed separately.</p>
-        </section>
-        <section class="metric">
-          <div class="label">Primary methods</div>
-          <div class="value">2</div>
-          <p>K-means and HDBSCAN. DBSCAN is optional.</p>
-        </section>
-      </div>
-
-      <section class="section">
-        <h2>Pipeline Flow</h2>
-        <div class="pipeline">
-          <article class="step">
-            <span class="num">1</span>
-            <h3>Load final screening CSV</h3>
-            <p>Read <code>paper_id</code>, <code>title</code>, <code>abstract</code>, <code>keyword</code>, DOI, venue, URL, and screening rationale fields.</p>
-          </article>
-          <article class="step">
-            <span class="num">2</span>
-            <h3>Group by keyword</h3>
-            <p>Split the corpus into keyword-local subsets such as Design knowledge, Design theory, and Design patterns.</p>
-          </article>
-          <article class="step">
-            <span class="num">3</span>
-            <h3>Apply small-sample rule</h3>
-            <p>Groups with fewer than 10 papers are kept in the output but marked <code>too_few_papers</code>.</p>
-          </article>
-          <article class="step">
-            <span class="num">4</span>
-            <h3>Cluster each keyword</h3>
-            <p>Run k-means and HDBSCAN on title, abstract, keyword metadata, and selected full-text context when available.</p>
-          </article>
-          <article class="step">
-            <span class="num">5</span>
-            <h3>Write review outputs</h3>
-            <p>Generate combined CSV, keyword summary, cluster summaries, representative rankings, and HTML explorers.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Run Command</h2>
-        <p>The main entry point is <code>scripts/run_clustering.py</code>.</p>
-        <pre><code>python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python scripts/run_clustering.py \
-  --input data/final_advancing_list.csv \
-  --output outputs/clustering_results.csv</code></pre>
-      </section>
-
-      <section class="section">
-        <h2>Keyword Handling</h2>
-        <div class="two-col">
-          <div class="panel">
-            <h3>Clustered by default</h3>
-            <ul>
-              <li>Design knowledge: 87 papers</li>
-              <li>Design theory: 75 papers</li>
-              <li>Design Patterns: 67 papers</li>
-              <li>Design methods: 42 papers</li>
-              <li>Design Guidelines: 25 papers</li>
-              <li>Design rationale: 20 papers</li>
-              <li>Design principles: 17 papers</li>
-              <li>Design Heuristics: 14 papers</li>
-              <li>Design Rules: 11 papers</li>
-            </ul>
-          </div>
-          <div class="panel">
-            <h3>Flagged as too small</h3>
-            <ul>
-              <li>Design frameworks: 6 papers</li>
-              <li>Design expertise: 2 papers</li>
-              <li>Design Procedures: 2 papers</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Output Interface</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Output</th>
-              <th>Purpose</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>outputs/clustering_results.csv</code></td>
-              <td>Main downstream file with per-paper cluster labels, focus keyword, method, representative rank, and summary fields.</td>
-              <td><span class="tag">Generated locally</span></td>
-            </tr>
-            <tr>
-              <td><code>outputs/keyword_summary.csv</code></td>
-              <td>Per-keyword counts and whether each group was clustered or skipped.</td>
-              <td><span class="tag">Generated locally</span></td>
-            </tr>
-            <tr>
-              <td><code>outputs/by_keyword/&lt;keyword&gt;/&lt;method&gt;/</code></td>
-              <td>Method-specific clustered CSV, UMAP visualization, explorer HTML, and cluster summary.</td>
-              <td><span class="tag">Generated locally</span></td>
-            </tr>
-            <tr>
-              <td><code>cluster_status = too_few_papers</code></td>
-              <td>Explicit marker for small keyword groups that should be reviewed rather than forced into clusters.</td>
-              <td><span class="tag skip">Human checkpoint</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="section">
-        <h2>Repository Files</h2>
-        <div class="links">
-          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/run_clustering.py">
-            Batch runner
-            <span>Loops over keywords and writes combined outputs.</span>
-          </a>
-          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/cluster_papers.py">
-            Core clustering script
-            <span>Embeddings, k-means, HDBSCAN, summaries, and explorers.</span>
-          </a>
-          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/blob/main/data/final_advancing_list.csv">
-            Final CSV
-            <span>Input paper list used by this version of the pipeline.</span>
-          </a>
-          <a class="link-card" href="pipeline_overview.md">
-            Pipeline overview
-            <span>Technical architecture and human checkpoints.</span>
-          </a>
-          <a class="link-card" href="meeting_action_items.md">
-            Meeting action items
-            <span>How this repo responds to team feedback.</span>
-          </a>
-          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/tree/main/prompts">
-            Prompt templates
-            <span>Paragraph selection, context classification, and cluster labeling prompts.</span>
-          </a>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      Pipeline page for the public repository <code>Georg11a/paper-clustering-380</code>.
-    </div>
-  </footer>
+  <iframe id="explorerFrame" src="explorer/by_keyword/design_knowledge/kmeans/paper_explorer.html?v=final380"></iframe>
 
   <div class="drawer-overlay" id="drawerOverlay" hidden></div>
   <aside class="drawer" id="docsDrawer" aria-hidden="true" aria-label="Settings and documentation">
     <div class="drawer-header">
       <div>
         <h2>Settings / Docs</h2>
-        <p>Project documentation, input assumptions, and prompt templates for this pipeline.</p>
+        <p>Documentation is kept here so the homepage stays focused on the clustering explorer.</p>
       </div>
       <button class="close-button" id="closeDocs" type="button" aria-label="Close documentation panel">×</button>
     </div>
@@ -881,259 +201,108 @@
       <section class="drawer-section">
         <h3>Main Documentation</h3>
         <div class="doc-list">
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/README.md">
-            README
-            <span>Setup, commands, outputs, and repository structure.</span>
-          </a>
-          <a class="doc-link" href="pipeline_overview.md">
-            Pipeline overview
-            <span>Input, processing steps, outputs, and human checkpoints.</span>
-          </a>
-          <a class="doc-link" href="meeting_action_items.md">
-            Meeting action items
-            <span>How the repo responds to team feedback.</span>
-          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/README.md">README<span>Setup, commands, outputs, and repository structure.</span></a>
+          <a class="doc-link" href="pipeline_overview.md">Pipeline overview<span>Input, processing steps, outputs, and human checkpoints.</span></a>
+          <a class="doc-link" href="meeting_action_items.md">Meeting action items<span>How the repo responds to team feedback.</span></a>
         </div>
       </section>
       <section class="drawer-section">
         <h3>Code Entry Points</h3>
         <div class="doc-list">
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/run_clustering.py">
-            scripts/run_clustering.py
-            <span>Batch runner for per-keyword clustering.</span>
-          </a>
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/cluster_papers.py">
-            scripts/cluster_papers.py
-            <span>Core clustering, summaries, and HTML explorer generation.</span>
-          </a>
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/prepare_input.py">
-            scripts/prepare_input.py
-            <span>Input validation and keyword count check.</span>
-          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/run_clustering.py">scripts/run_clustering.py<span>Batch runner for per-keyword clustering.</span></a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/cluster_papers.py">scripts/cluster_papers.py<span>Core clustering, summaries, and explorer generation.</span></a>
         </div>
       </section>
       <section class="drawer-section">
-        <h3>Prompt Templates</h3>
+        <h3>Full-Text / Discussion Status</h3>
         <div class="doc-list">
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/prompts/paragraph_selection.md">
-            Paragraph selection
-            <span>Prompt template for keyword-focused full-text paragraph selection.</span>
-          </a>
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/prompts/context_classification.md">
-            Context classification
-            <span>Prompt template for domain and setting labels.</span>
-          </a>
-          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/prompts/cluster_labeling.md">
-            Cluster labeling
-            <span>Prompt template for human-readable cluster labels and summaries.</span>
-          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/tree/main/prompts">Prompt templates<span>Paragraph selection, context classification, and cluster labeling prompts.</span></a>
         </div>
+        <p style="color:#65758b;font-size:13px;line-height:1.45;">Current explorer uses title, abstract, keyword metadata, and any extracted context available in the input. Rich Discussion-section evidence requires downloaded PDFs or a prepared full-text context CSV.</p>
       </section>
     </div>
   </aside>
 
-  <script src="assets/cluster_points.js"></script>
   <script>
-    const clusterPayload = window.CLUSTER_POINTS || { points: [] };
-    const points = clusterPayload.points || [];
-    const plot = document.getElementById("clusterPlot");
-    const mapStatus = document.getElementById("mapStatus");
-    const details = document.getElementById("paperDetails");
-    const methodFilter = document.getElementById("methodFilter");
-    const keywordFilter = document.getElementById("keywordFilter");
-    const clusterFilter = document.getElementById("clusterFilter");
-    const searchFilter = document.getElementById("searchFilter");
-    const repOnly = document.getElementById("repOnly");
-    const mapState = { selectedId: points[0]?.paper_id || "" };
+    const runs = [{"id": "design_knowledge_kmeans", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "kmeans", "label": "Design knowledge / KMEANS (k=8, 87 papers, tfidf-svd)", "papers": "87", "embedding": "tfidf-svd", "clusters": 8, "explorer": "explorer/by_keyword/design_knowledge/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_knowledge/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_knowledge/kmeans/clustered_papers.csv"}, {"id": "design_guidelines_hdbscan", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "hdbscan", "label": "Design guidelines / HDBSCAN (25 papers, tfidf-svd)", "papers": "25", "embedding": "tfidf-svd", "clusters": 1, "explorer": "explorer/by_keyword/design_guidelines/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_guidelines/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_guidelines/hdbscan/clustered_papers.csv"}, {"id": "design_guidelines_kmeans", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "kmeans", "label": "Design guidelines / KMEANS (k=8, 25 papers, tfidf-svd)", "papers": "25", "embedding": "tfidf-svd", "clusters": 8, "explorer": "explorer/by_keyword/design_guidelines/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_guidelines/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_guidelines/kmeans/clustered_papers.csv"}, {"id": "design_heuristics_hdbscan", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "hdbscan", "label": "Design heuristics / HDBSCAN (14 papers, tfidf-svd)", "papers": "14", "embedding": "tfidf-svd", "clusters": 1, "explorer": "explorer/by_keyword/design_heuristics/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_heuristics/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_heuristics/hdbscan/clustered_papers.csv"}, {"id": "design_heuristics_kmeans", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "kmeans", "label": "Design heuristics / KMEANS (k=2, 14 papers, tfidf-svd)", "papers": "14", "embedding": "tfidf-svd", "clusters": 2, "explorer": "explorer/by_keyword/design_heuristics/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_heuristics/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_heuristics/kmeans/clustered_papers.csv"}, {"id": "design_knowledge_hdbscan", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "hdbscan", "label": "Design knowledge / HDBSCAN (87 papers, tfidf-svd)", "papers": "87", "embedding": "tfidf-svd", "clusters": 3, "explorer": "explorer/by_keyword/design_knowledge/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_knowledge/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_knowledge/hdbscan/clustered_papers.csv"}, {"id": "design_methods_hdbscan", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "hdbscan", "label": "Design methods / HDBSCAN (42 papers, tfidf-svd)", "papers": "42", "embedding": "tfidf-svd", "clusters": 1, "explorer": "explorer/by_keyword/design_methods/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_methods/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_methods/hdbscan/clustered_papers.csv"}, {"id": "design_methods_kmeans", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "kmeans", "label": "Design methods / KMEANS (k=7, 42 papers, tfidf-svd)", "papers": "42", "embedding": "tfidf-svd", "clusters": 7, "explorer": "explorer/by_keyword/design_methods/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_methods/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_methods/kmeans/clustered_papers.csv"}, {"id": "design_patterns_hdbscan", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "hdbscan", "label": "Design patterns / HDBSCAN (67 papers, tfidf-svd)", "papers": "67", "embedding": "tfidf-svd", "clusters": 1, "explorer": "explorer/by_keyword/design_patterns/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_patterns/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_patterns/hdbscan/clustered_papers.csv"}, {"id": "design_patterns_kmeans", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "kmeans", "label": "Design patterns / KMEANS (k=8, 67 papers, tfidf-svd)", "papers": "67", "embedding": "tfidf-svd", "clusters": 8, "explorer": "explorer/by_keyword/design_patterns/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_patterns/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_patterns/kmeans/clustered_papers.csv"}, {"id": "design_principles_hdbscan", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "hdbscan", "label": "Design principles / HDBSCAN (17 papers, tfidf-svd)", "papers": "17", "embedding": "tfidf-svd", "clusters": 1, "explorer": "explorer/by_keyword/design_principles/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_principles/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_principles/hdbscan/clustered_papers.csv"}, {"id": "design_principles_kmeans", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "kmeans", "label": "Design principles / KMEANS (k=8, 17 papers, tfidf-svd)", "papers": "17", "embedding": "tfidf-svd", "clusters": 8, "explorer": "explorer/by_keyword/design_principles/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_principles/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_principles/kmeans/clustered_papers.csv"}, {"id": "design_rationale_hdbscan", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "hdbscan", "label": "Design rationale / HDBSCAN (20 papers, tfidf-svd)", "papers": "20", "embedding": "tfidf-svd", "clusters": 1, "explorer": "explorer/by_keyword/design_rationale/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_rationale/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_rationale/hdbscan/clustered_papers.csv"}, {"id": "design_rationale_kmeans", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "kmeans", "label": "Design rationale / KMEANS (k=8, 20 papers, tfidf-svd)", "papers": "20", "embedding": "tfidf-svd", "clusters": 8, "explorer": "explorer/by_keyword/design_rationale/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_rationale/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_rationale/kmeans/clustered_papers.csv"}, {"id": "design_rules_hdbscan", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "hdbscan", "label": "Design rules / HDBSCAN (11 papers, tfidf-svd)", "papers": "11", "embedding": "tfidf-svd", "clusters": 3, "explorer": "explorer/by_keyword/design_rules/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_rules/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_rules/hdbscan/clustered_papers.csv"}, {"id": "design_rules_kmeans", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "kmeans", "label": "Design rules / KMEANS (k=5, 11 papers, tfidf-svd)", "papers": "11", "embedding": "tfidf-svd", "clusters": 5, "explorer": "explorer/by_keyword/design_rules/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_rules/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_rules/kmeans/clustered_papers.csv"}, {"id": "design_theory_hdbscan", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "hdbscan", "label": "Design theory / HDBSCAN (75 papers, tfidf-svd)", "papers": "75", "embedding": "tfidf-svd", "clusters": 3, "explorer": "explorer/by_keyword/design_theory/hdbscan/paper_explorer.html", "summary": "explorer/by_keyword/design_theory/hdbscan/cluster_summary.md", "csv": "explorer/by_keyword/design_theory/hdbscan/clustered_papers.csv"}, {"id": "design_theory_kmeans", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "kmeans", "label": "Design theory / KMEANS (k=8, 75 papers, tfidf-svd)", "papers": "75", "embedding": "tfidf-svd", "clusters": 8, "explorer": "explorer/by_keyword/design_theory/kmeans/paper_explorer.html", "summary": "explorer/by_keyword/design_theory/kmeans/cluster_summary.md", "csv": "explorer/by_keyword/design_theory/kmeans/clustered_papers.csv"}];
+    const buildId = "final380";
+    const withCacheBuster = path => `${path}?v=${buildId}-${Date.now()}`;
+    const frame = document.getElementById('explorerFrame');
+    const keywordSelect = document.getElementById('keywordSelect');
+    const methodSelect = document.getElementById('methodSelect');
+    const applyBtn = document.getElementById('applyBtn');
+    const currentLabel = document.getElementById('currentLabel');
+    const summaryLink = document.getElementById('summaryLink');
+    const csvLink = document.getElementById('csvLink');
+    const openLink = document.getElementById('openLink');
+    const note = document.getElementById('note');
 
-    const palette = [
-      "#2563eb", "#dc2626", "#16a34a", "#9333ea", "#ea580c", "#0891b2",
-      "#be123c", "#4f46e5", "#0f766e", "#a16207", "#7c3aed", "#15803d"
-    ];
+    function unique(values) { return [...new Set(values)].filter(Boolean); }
+    function runsForKeyword() { return runs.filter(run => run.keyword === keywordSelect.value); }
+    function findRun() { return runs.find(run => run.keyword === keywordSelect.value && run.method === methodSelect.value); }
 
-    function uniqueSorted(values) {
-      return [...new Set(values.filter(Boolean))].sort((a, b) => String(a).localeCompare(String(b)));
+    function populateKeywords() {
+      const keywords = unique(runs.map(run => run.keyword));
+      keywordSelect.innerHTML = keywords.map(keyword => `<option value="${keyword}">${keyword}</option>`).join('');
+      if (keywords.includes('Design knowledge')) keywordSelect.value = 'Design knowledge';
     }
 
-    function colorFor(cluster) {
-      const n = Math.abs(Number.parseInt(cluster, 10));
-      return palette[Number.isFinite(n) ? n % palette.length : 0];
+    function populateMethods() {
+      const current = methodSelect.value;
+      const methods = unique(runsForKeyword().map(run => run.method));
+      methodSelect.innerHTML = methods.map(method => `<option value="${method}">${method.toUpperCase()}</option>`).join('');
+      methodSelect.value = methods.includes(current) ? current : (methods.includes('kmeans') ? 'kmeans' : methods[0]);
+      refreshAvailability();
     }
 
-    function escapeHtml(value) {
-      return String(value ?? "").replace(/[&<>"']/g, ch => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        "\"": "&quot;",
-        "'": "&#39;"
-      }[ch]));
-    }
-
-    function initMapControls() {
-      const methods = uniqueSorted(points.map(point => point.method));
-      const keywords = uniqueSorted(points.map(point => point.keyword));
-      methodFilter.innerHTML = methods.map(method =>
-        `<option value="${escapeHtml(method)}">${escapeHtml(method)}</option>`
-      ).join("");
-      if (methods.includes("kmeans")) {
-        methodFilter.value = "kmeans";
-      }
-      keywordFilter.innerHTML = `<option value="all">All keywords</option>` + keywords.map(keyword =>
-        `<option value="${escapeHtml(keyword)}">${escapeHtml(keyword)}</option>`
-      ).join("");
-      updateClusterFilter();
-      [methodFilter, keywordFilter, clusterFilter, searchFilter, repOnly].forEach(control => {
-        control.addEventListener("input", renderMap);
-        control.addEventListener("change", renderMap);
-      });
-      methodFilter.addEventListener("change", updateClusterFilter);
-      keywordFilter.addEventListener("change", updateClusterFilter);
-      renderMap();
-    }
-
-    function filteredPoints(ignoreCluster = false) {
-      const method = methodFilter.value;
-      const keyword = keywordFilter.value;
-      const cluster = clusterFilter.value;
-      const q = searchFilter.value.trim().toLowerCase();
-      return points.filter(point => {
-        const searchable = `${point.title} ${point.venue} ${point.year}`.toLowerCase();
-        return (!method || point.method === method) &&
-          (keyword === "all" || point.keyword === keyword) &&
-          (ignoreCluster || cluster === "all" || point.cluster === cluster) &&
-          (!q || searchable.includes(q)) &&
-          (!repOnly.checked || point.is_rep);
-      });
-    }
-
-    function updateClusterFilter() {
-      const current = clusterFilter.value || "all";
-      const clusters = uniqueSorted(filteredPoints(true).map(point => point.cluster));
-      clusterFilter.innerHTML = `<option value="all">All clusters</option>` + clusters.map(cluster =>
-        `<option value="${escapeHtml(cluster)}">Cluster ${escapeHtml(cluster)}</option>`
-      ).join("");
-      clusterFilter.value = clusters.includes(current) ? current : "all";
-      renderMap();
-    }
-
-    function renderMap() {
-      const shown = filteredPoints();
-      const base = filteredPoints(true);
-      const visibleIds = new Set(shown.map(point => point.paper_id + "|" + point.method + "|" + point.keyword));
-      const width = plot.clientWidth || 760;
-      const height = plot.clientHeight || 560;
-      const pad = 42;
-      const source = base.length ? base : points;
-      const xs = source.map(point => point.x);
-      const ys = source.map(point => point.y);
-      let minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
-      const xRange = Math.max(0.001, maxX - minX);
-      const yRange = Math.max(0.001, maxY - minY);
-      minX -= xRange * 0.08;
-      maxX += xRange * 0.08;
-      minY -= yRange * 0.08;
-      maxY += yRange * 0.08;
-      const sx = x => pad + ((x - minX) / (maxX - minX)) * (width - pad * 2);
-      const sy = y => height - pad - ((y - minY) / (maxY - minY)) * (height - pad * 2);
-
-      plot.setAttribute("viewBox", `0 0 ${width} ${height}`);
-      plot.innerHTML = "";
-      for (let i = 0; i < 6; i += 1) {
-        const x = pad + i * (width - pad * 2) / 5;
-        const y = pad + i * (height - pad * 2) / 5;
-        plot.insertAdjacentHTML("beforeend", `<line class="axis" x1="${x}" y1="${pad}" x2="${x}" y2="${height - pad}"></line>`);
-        plot.insertAdjacentHTML("beforeend", `<line class="axis" x1="${pad}" y1="${y}" x2="${width - pad}" y2="${y}"></line>`);
-      }
-      plot.insertAdjacentHTML("beforeend", `<text class="plot-label" x="${width / 2}" y="${height - 9}" text-anchor="middle">UMAP 1</text>`);
-      plot.insertAdjacentHTML("beforeend", `<text class="plot-label" x="15" y="${height / 2}" text-anchor="middle" transform="rotate(-90 15 ${height / 2})">UMAP 2</text>`);
-
-      base.forEach(point => {
-        const key = point.paper_id + "|" + point.method + "|" + point.keyword;
-        const visible = visibleIds.has(key);
-        const selected = mapState.selectedId === key;
-        const node = document.createElementNS("http://www.w3.org/2000/svg", point.is_rep ? "path" : "circle");
-        node.setAttribute("class", `point ${visible ? "" : "dim"} ${selected ? "selected" : ""}`);
-        node.setAttribute("fill", colorFor(point.cluster));
-        const x = sx(point.x);
-        const y = sy(point.y);
-        if (point.is_rep) {
-          const s = selected ? 8.5 : 7;
-          node.setAttribute("d", `M ${x} ${y - s} L ${x + s} ${y} L ${x} ${y + s} L ${x - s} ${y} Z`);
-        } else {
-          node.setAttribute("cx", x);
-          node.setAttribute("cy", y);
-          node.setAttribute("r", selected ? 7.2 : 5.6);
-        }
-        node.addEventListener("click", () => {
-          mapState.selectedId = key;
-          renderMap();
-        });
-        const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
-        title.textContent = point.title;
-        node.appendChild(title);
-        plot.appendChild(node);
-      });
-
-      mapStatus.textContent = `${shown.length} visible papers from ${base.length} ${methodFilter.value} points. Diamonds are top representative papers.`;
-      const selected = points.find(point => mapState.selectedId === point.paper_id + "|" + point.method + "|" + point.keyword) || shown[0] || base[0];
-      renderDetails(selected);
-    }
-
-    function renderDetails(point) {
-      if (!point) {
-        details.innerHTML = `<h3>No papers match the current filters</h3><p class="details-meta">Adjust method, keyword, cluster, or search filters.</p>`;
-        return;
-      }
-      details.innerHTML = `
-        <h3>${escapeHtml(point.title)}</h3>
-        <div class="details-meta">${escapeHtml(point.year)} · ${escapeHtml(point.venue || "venue n/a")}</div>
-        <span class="pill">${escapeHtml(point.keyword)}</span>
-        <span class="pill">${escapeHtml(point.method)}</span>
-        <span class="pill">Cluster ${escapeHtml(point.cluster)}</span>
-        <span class="pill">Rep rank ${escapeHtml(point.rank || "n/a")}</span>
-        <div class="detail-block">
-          <strong>Cluster label</strong>
-          <p>${escapeHtml(point.label || "No label available")}</p>
-        </div>
-        <div class="detail-block">
-          <strong>Cluster summary</strong>
-          <p>${escapeHtml(point.summary || "No summary available")}</p>
-        </div>
-        <div class="detail-block">
-          <strong>Paper id</strong>
-          <p><code>${escapeHtml(point.paper_id)}</code></p>
-        </div>
-      `;
-    }
-
-    initMapControls();
-
-    const openDocs = document.getElementById("openDocs");
-    const closeDocs = document.getElementById("closeDocs");
-    const drawer = document.getElementById("docsDrawer");
-    const overlay = document.getElementById("drawerOverlay");
-
-    function setDrawerOpen(isOpen) {
-      drawer.classList.toggle("open", isOpen);
-      overlay.classList.toggle("open", isOpen);
-      overlay.hidden = !isOpen;
-      drawer.setAttribute("aria-hidden", String(!isOpen));
-      openDocs.setAttribute("aria-expanded", String(isOpen));
-      if (isOpen) {
-        closeDocs.focus();
+    function refreshAvailability() {
+      const run = findRun();
+      applyBtn.disabled = !run;
+      if (run) {
+        currentLabel.textContent = run.label;
+        summaryLink.href = run.summary || '#';
+        csvLink.href = run.csv || '#';
+        openLink.href = withCacheBuster(run.explorer);
+        note.textContent = `Ready: ${run.keyword} / ${run.method.toUpperCase()}. Use the iframe below for map, cluster labels, representative papers, facets, and abstracts.`;
       } else {
-        openDocs.focus();
+        currentLabel.textContent = `${keywordSelect.value} + ${methodSelect.value} has not been generated yet`;
+        note.textContent = 'This keyword/method combination is unavailable. Choose another generated run.';
       }
     }
 
-    openDocs.addEventListener("click", () => setDrawerOpen(true));
-    closeDocs.addEventListener("click", () => setDrawerOpen(false));
-    overlay.addEventListener("click", () => setDrawerOpen(false));
-    window.addEventListener("keydown", event => {
-      if (event.key === "Escape" && drawer.classList.contains("open")) {
-        setDrawerOpen(false);
-      }
+    function loadSelected() {
+      const run = findRun();
+      if (!run) return;
+      frame.src = withCacheBuster(run.explorer);
+      refreshAvailability();
+      note.textContent = `Showing ${run.label}.`;
+    }
+
+    keywordSelect.addEventListener('change', () => { populateMethods(); loadSelected(); });
+    methodSelect.addEventListener('change', refreshAvailability);
+    applyBtn.addEventListener('click', loadSelected);
+
+    populateKeywords();
+    populateMethods();
+    loadSelected();
+
+    const openDocs = document.getElementById('openDocs');
+    const closeDocs = document.getElementById('closeDocs');
+    const drawer = document.getElementById('docsDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    function setDrawerOpen(isOpen) {
+      drawer.classList.toggle('open', isOpen);
+      overlay.classList.toggle('open', isOpen);
+      overlay.hidden = !isOpen;
+      drawer.setAttribute('aria-hidden', String(!isOpen));
+      openDocs.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) closeDocs.focus();
+    }
+    openDocs.addEventListener('click', () => setDrawerOpen(true));
+    closeDocs.addEventListener('click', () => setDrawerOpen(false));
+    overlay.addEventListener('click', () => setDrawerOpen(false));
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && drawer.classList.contains('open')) setDrawerOpen(false);
     });
   </script>
 </body>
