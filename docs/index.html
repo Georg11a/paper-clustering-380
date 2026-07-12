@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Design-Knowledge Paper Clustering</title>
+  <title>Paper Clustering Pipeline</title>
   <style>
     :root {
-      --bg: #f6f7f9;
+      --bg: #f5f6f8;
       --panel: #ffffff;
-      --ink: #1f2937;
-      --muted: #5f6b7a;
-      --line: #d9dee7;
-      --accent: #1b6fb8;
-      --accent-dark: #15598f;
-      --soft: #eef5fb;
+      --ink: #172033;
+      --muted: #607086;
+      --line: #d8dee8;
+      --blue: #1f6fb2;
+      --green: #27735f;
+      --amber: #9a6418;
+      --red: #a63a3a;
+      --soft-blue: #eaf3fb;
+      --soft-green: #e9f5f1;
+      --soft-amber: #fbf2e6;
+      --soft-red: #faeeee;
+      --code: #111827;
     }
 
     * {
@@ -25,129 +31,236 @@
       background: var(--bg);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
     }
 
     header {
       background: var(--panel);
       border-bottom: 1px solid var(--line);
+      padding: 28px 0 22px;
     }
 
-    .wrap {
-      width: min(1080px, calc(100% - 32px));
-      margin: 0 auto;
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
     }
 
-    .hero {
-      padding: 56px 0 42px;
-    }
-
-    .eyebrow {
-      margin: 0 0 10px;
-      color: var(--accent-dark);
+    .repo {
+      color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0;
-      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .settings-button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 7px 12px;
+      background: #fbfcfe;
+      color: var(--blue);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .settings-button:hover {
+      border-color: #b8c5d6;
+      background: var(--soft-blue);
     }
 
     h1 {
-      max-width: 760px;
       margin: 0;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.04;
+      max-width: 940px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
       letter-spacing: 0;
     }
 
-    .lead {
-      max-width: 760px;
-      margin: 18px 0 0;
+    .subtitle {
+      max-width: 880px;
+      margin: 14px 0 0;
       color: var(--muted);
-      font-size: 19px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    a.button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 10px 16px;
-      border-radius: 6px;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    a.button.secondary {
-      background: white;
-      color: var(--accent-dark);
-      border-color: var(--line);
+      font-size: 18px;
     }
 
     main {
-      padding: 28px 0 56px;
+      padding: 22px 0 56px;
     }
 
-    .grid {
+    .status-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .card {
+    .metric {
+      min-height: 110px;
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 20px;
+      padding: 16px;
     }
 
-    .card h2,
-    .section h2 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: 0;
-    }
-
-    .card p,
-    .section p {
-      margin: 0;
+    .metric .label {
       color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .metric .value {
+      margin-top: 8px;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .metric p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .section {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
-      padding: 24px;
       margin-top: 16px;
+      padding: 22px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .step {
+      position: relative;
+      min-height: 156px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+    }
+
+    .step::after {
+      content: "→";
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 20px;
+      z-index: 2;
+    }
+
+    .step:last-child::after {
+      content: "";
+    }
+
+    .step .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft-blue);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .step h3 {
+      margin: 12px 0 8px;
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fbfcfe;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 6px;
     }
 
     code {
       padding: 2px 5px;
       border-radius: 5px;
-      background: var(--soft);
-      color: #16324f;
+      background: #eef2f7;
+      color: #14243a;
       font-family: "SFMono-Regular", Consolas, monospace;
       font-size: 0.92em;
     }
 
     pre {
+      margin: 12px 0 0;
       overflow-x: auto;
-      margin: 14px 0 0;
       padding: 16px;
       border-radius: 8px;
-      background: #16202d;
-      color: #f7fafc;
+      background: var(--code);
+      color: #f9fafb;
       font-size: 14px;
       line-height: 1.45;
     }
@@ -158,32 +271,167 @@
       color: inherit;
     }
 
-    ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
     }
 
-    li + li {
-      margin-top: 6px;
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--soft-green);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.skip {
+      background: var(--soft-amber);
+      color: var(--amber);
     }
 
     .links {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-      margin-top: 12px;
     }
 
-    .link-row {
+    .link-card {
       display: block;
-      padding: 12px 14px;
+      min-height: 84px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+    }
+
+    .link-card span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      background: rgba(15, 23, 42, 0.38);
+    }
+
+    .drawer-overlay.open {
+      display: block;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 30;
+      width: min(420px, 100%);
+      height: 100vh;
+      transform: translateX(100%);
+      transition: transform 180ms ease;
+      border-left: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: -20px 0 44px rgba(15, 23, 42, 0.16);
+      overflow-y: auto;
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .drawer-header p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .close-button {
+      width: 34px;
+      height: 34px;
       border: 1px solid var(--line);
       border-radius: 6px;
-      color: var(--accent-dark);
       background: #fbfcfe;
-      text-decoration: none;
-      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .drawer-body {
+      padding: 18px 22px 24px;
+    }
+
+    .drawer-section {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .drawer-section:last-child {
+      border-bottom: 0;
+    }
+
+    .drawer-section h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .doc-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .doc-link {
+      display: block;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fbfcfe;
+      color: var(--blue);
+    }
+
+    .doc-link span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
     }
 
     footer {
@@ -193,53 +441,110 @@
       font-size: 14px;
     }
 
-    @media (max-width: 820px) {
-      .grid,
+    @media (max-width: 980px) {
+      .status-grid,
+      .pipeline,
+      .two-col,
       .links {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 40px;
+      .step::after {
+        content: "↓";
+        right: 18px;
+        top: auto;
+        bottom: -21px;
+        transform: none;
+      }
+
+      .topbar {
+        display: block;
+      }
+
+      .nav {
+        margin-top: 12px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="wrap hero">
-      <p class="eyebrow">Design-Knowledge Literature Review</p>
-      <h1>Paper clustering pipeline for the final advancing-paper set</h1>
-      <p class="lead">
-        A reproducible workflow that groups papers by design-knowledge keyword, runs keyword-local clustering, flags small sample groups, and produces reviewable outputs for reading prioritization and citation-graph work.
-      </p>
-      <div class="actions">
-        <a class="button" href="https://github.com/Georg11a/paper-clustering-380">View GitHub Repository</a>
-        <a class="button secondary" href="pipeline_overview.md">Pipeline Overview</a>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="repo">Georg11a / paper-clustering-380</div>
+        <nav class="nav">
+          <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
+          <a href="pipeline_overview.md">Technical notes</a>
+          <a href="meeting_action_items.md">Meeting action items</a>
+          <button class="settings-button" id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
+        </nav>
       </div>
+      <h1>Keyword-conditioned paper clustering pipeline</h1>
+      <p class="subtitle">
+        This page shows the actual workflow: final screening CSV in, per-keyword clustering and small-sample handling in the middle, downstream cluster assignments and representative papers out.
+      </p>
     </div>
   </header>
 
   <main>
     <div class="wrap">
-      <div class="grid">
-        <section class="card">
-          <h2>Input</h2>
-          <p>Uses <code>data/final_advancing_list.csv</code> with paper metadata, abstracts, and keyword labels from the screening pipeline.</p>
+      <div class="status-grid">
+        <section class="metric">
+          <div class="label">Input file</div>
+          <div class="value">CSV</div>
+          <p><code>data/final_advancing_list.csv</code></p>
         </section>
-        <section class="card">
-          <h2>Method</h2>
-          <p>Clusters papers separately within each keyword using k-means and HDBSCAN. DBSCAN remains available as an optional baseline.</p>
+        <section class="metric">
+          <div class="label">Paper records</div>
+          <div class="value">368</div>
+          <p>Current parsed working set in the repository.</p>
         </section>
-        <section class="card">
-          <h2>Output</h2>
-          <p>Writes per-paper cluster assignments, representative-paper rankings, summaries, and method-specific HTML explorers.</p>
+        <section class="metric">
+          <div class="label">Keyword groups</div>
+          <div class="value">12</div>
+          <p>Each keyword is processed separately.</p>
+        </section>
+        <section class="metric">
+          <div class="label">Primary methods</div>
+          <div class="value">2</div>
+          <p>K-means and HDBSCAN. DBSCAN is optional.</p>
         </section>
       </div>
 
       <section class="section">
-        <h2>Run The Pipeline</h2>
-        <p>Clone the repository, install dependencies, and run the keyword-conditioned clustering workflow.</p>
+        <h2>Pipeline Flow</h2>
+        <div class="pipeline">
+          <article class="step">
+            <span class="num">1</span>
+            <h3>Load final screening CSV</h3>
+            <p>Read <code>paper_id</code>, <code>title</code>, <code>abstract</code>, <code>keyword</code>, DOI, venue, URL, and screening rationale fields.</p>
+          </article>
+          <article class="step">
+            <span class="num">2</span>
+            <h3>Group by keyword</h3>
+            <p>Split the corpus into keyword-local subsets such as Design knowledge, Design theory, and Design patterns.</p>
+          </article>
+          <article class="step">
+            <span class="num">3</span>
+            <h3>Apply small-sample rule</h3>
+            <p>Groups with fewer than 10 papers are kept in the output but marked <code>too_few_papers</code>.</p>
+          </article>
+          <article class="step">
+            <span class="num">4</span>
+            <h3>Cluster each keyword</h3>
+            <p>Run k-means and HDBSCAN on title, abstract, keyword metadata, and selected full-text context when available.</p>
+          </article>
+          <article class="step">
+            <span class="num">5</span>
+            <h3>Write review outputs</h3>
+            <p>Generate combined CSV, keyword summary, cluster summaries, representative rankings, and HTML explorers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Run Command</h2>
+        <p>The main entry point is <code>scripts/run_clustering.py</code>.</p>
         <pre><code>python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python scripts/run_clustering.py \
@@ -248,37 +553,197 @@
       </section>
 
       <section class="section">
-        <h2>What The Batch Runner Produces</h2>
-        <ul>
-          <li><code>outputs/clustering_results.csv</code>: combined per-paper results across keyword groups and methods.</li>
-          <li><code>outputs/keyword_summary.csv</code>: keyword counts and cluster/skip status.</li>
-          <li><code>outputs/by_keyword/&lt;keyword&gt;/&lt;method&gt;/</code>: method-specific CSV, UMAP page, explorer page, and cluster summary.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Documentation</h2>
-        <div class="links">
-          <a class="link-row" href="pipeline_overview.md">Pipeline overview</a>
-          <a class="link-row" href="meeting_action_items.md">Meeting action items</a>
-          <a class="link-row" href="../prompts/paragraph_selection.md">Paragraph selection prompt</a>
-          <a class="link-row" href="../prompts/cluster_labeling.md">Cluster labeling prompt</a>
+        <h2>Keyword Handling</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Clustered by default</h3>
+            <ul>
+              <li>Design knowledge: 87 papers</li>
+              <li>Design theory: 75 papers</li>
+              <li>Design Patterns: 67 papers</li>
+              <li>Design methods: 42 papers</li>
+              <li>Design Guidelines: 25 papers</li>
+              <li>Design rationale: 20 papers</li>
+              <li>Design principles: 17 papers</li>
+              <li>Design Heuristics: 14 papers</li>
+              <li>Design Rules: 11 papers</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Flagged as too small</h3>
+            <ul>
+              <li>Design frameworks: 6 papers</li>
+              <li>Design expertise: 2 papers</li>
+              <li>Design Procedures: 2 papers</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="section">
-        <h2>Small Keyword Groups</h2>
-        <p>
-          Keyword groups with fewer than 10 papers are not forced into clusters. They are kept in the combined output with <code>cluster_status = too_few_papers</code>, which makes the human checkpoint explicit.
-        </p>
+        <h2>Output Interface</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Output</th>
+              <th>Purpose</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>outputs/clustering_results.csv</code></td>
+              <td>Main downstream file with per-paper cluster labels, focus keyword, method, representative rank, and summary fields.</td>
+              <td><span class="tag">Generated locally</span></td>
+            </tr>
+            <tr>
+              <td><code>outputs/keyword_summary.csv</code></td>
+              <td>Per-keyword counts and whether each group was clustered or skipped.</td>
+              <td><span class="tag">Generated locally</span></td>
+            </tr>
+            <tr>
+              <td><code>outputs/by_keyword/&lt;keyword&gt;/&lt;method&gt;/</code></td>
+              <td>Method-specific clustered CSV, UMAP visualization, explorer HTML, and cluster summary.</td>
+              <td><span class="tag">Generated locally</span></td>
+            </tr>
+            <tr>
+              <td><code>cluster_status = too_few_papers</code></td>
+              <td>Explicit marker for small keyword groups that should be reviewed rather than forced into clusters.</td>
+              <td><span class="tag skip">Human checkpoint</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Repository Files</h2>
+        <div class="links">
+          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/run_clustering.py">
+            Batch runner
+            <span>Loops over keywords and writes combined outputs.</span>
+          </a>
+          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/cluster_papers.py">
+            Core clustering script
+            <span>Embeddings, k-means, HDBSCAN, summaries, and explorers.</span>
+          </a>
+          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/blob/main/data/final_advancing_list.csv">
+            Final CSV
+            <span>Input paper list used by this version of the pipeline.</span>
+          </a>
+          <a class="link-card" href="pipeline_overview.md">
+            Pipeline overview
+            <span>Technical architecture and human checkpoints.</span>
+          </a>
+          <a class="link-card" href="meeting_action_items.md">
+            Meeting action items
+            <span>How this repo responds to team feedback.</span>
+          </a>
+          <a class="link-card" href="https://github.com/Georg11a/paper-clustering-380/tree/main/prompts">
+            Prompt templates
+            <span>Paragraph selection, context classification, and cluster labeling prompts.</span>
+          </a>
+        </div>
       </section>
     </div>
   </main>
 
   <footer>
     <div class="wrap">
-      Public project page for <code>Georg11a/paper-clustering-380</code>.
+      Pipeline page for the public repository <code>Georg11a/paper-clustering-380</code>.
     </div>
   </footer>
+
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+  <aside class="drawer" id="docsDrawer" aria-hidden="true" aria-label="Settings and documentation">
+    <div class="drawer-header">
+      <div>
+        <h2>Settings / Docs</h2>
+        <p>Project documentation, input assumptions, and prompt templates for this pipeline.</p>
+      </div>
+      <button class="close-button" id="closeDocs" type="button" aria-label="Close documentation panel">×</button>
+    </div>
+    <div class="drawer-body">
+      <section class="drawer-section">
+        <h3>Main Documentation</h3>
+        <div class="doc-list">
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/README.md">
+            README
+            <span>Setup, commands, outputs, and repository structure.</span>
+          </a>
+          <a class="doc-link" href="pipeline_overview.md">
+            Pipeline overview
+            <span>Input, processing steps, outputs, and human checkpoints.</span>
+          </a>
+          <a class="doc-link" href="meeting_action_items.md">
+            Meeting action items
+            <span>How the repo responds to team feedback.</span>
+          </a>
+        </div>
+      </section>
+      <section class="drawer-section">
+        <h3>Code Entry Points</h3>
+        <div class="doc-list">
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/run_clustering.py">
+            scripts/run_clustering.py
+            <span>Batch runner for per-keyword clustering.</span>
+          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/cluster_papers.py">
+            scripts/cluster_papers.py
+            <span>Core clustering, summaries, and HTML explorer generation.</span>
+          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/scripts/prepare_input.py">
+            scripts/prepare_input.py
+            <span>Input validation and keyword count check.</span>
+          </a>
+        </div>
+      </section>
+      <section class="drawer-section">
+        <h3>Prompt Templates</h3>
+        <div class="doc-list">
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/prompts/paragraph_selection.md">
+            Paragraph selection
+            <span>Prompt template for keyword-focused full-text paragraph selection.</span>
+          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/prompts/context_classification.md">
+            Context classification
+            <span>Prompt template for domain and setting labels.</span>
+          </a>
+          <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/prompts/cluster_labeling.md">
+            Cluster labeling
+            <span>Prompt template for human-readable cluster labels and summaries.</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <script>
+    const openDocs = document.getElementById("openDocs");
+    const closeDocs = document.getElementById("closeDocs");
+    const drawer = document.getElementById("docsDrawer");
+    const overlay = document.getElementById("drawerOverlay");
+
+    function setDrawerOpen(isOpen) {
+      drawer.classList.toggle("open", isOpen);
+      overlay.classList.toggle("open", isOpen);
+      overlay.hidden = !isOpen;
+      drawer.setAttribute("aria-hidden", String(!isOpen));
+      openDocs.setAttribute("aria-expanded", String(isOpen));
+      if (isOpen) {
+        closeDocs.focus();
+      } else {
+        openDocs.focus();
+      }
+    }
+
+    openDocs.addEventListener("click", () => setDrawerOpen(true));
+    closeDocs.addEventListener("click", () => setDrawerOpen(false));
+    overlay.addEventListener("click", () => setDrawerOpen(false));
+    window.addEventListener("keydown", event => {
+      if (event.key === "Escape" && drawer.classList.contains("open")) {
+        setDrawerOpen(false);
+      }
+    });
+  </script>
 </body>
 </html>
