@@ -1,0 +1,22 @@
+{
+  "input": "data/fulltext_context_pdf_38.csv",
+  "text_view": "method",
+  "focus_keyword": "Design knowledge",
+  "keyword_context_paragraphs": 6,
+  "embedding": "tfidf-svd",
+  "embedding_model": "tfidf-svd",
+  "method": "hdbscan",
+  "k": null,
+  "k_selection": "manual",
+  "k_min": null,
+  "k_max": null,
+  "dbscan_eps": null,
+  "min_samples": 4,
+  "min_cluster_size": 5,
+  "papers": 87,
+  "clusters": [
+    -1,
+    0,
+    1
+  ]
+}

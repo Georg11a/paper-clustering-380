@@ -1,0 +1,27 @@
+{
+  "input": "data/fulltext_context_pdf_38.csv",
+  "text_view": "overall",
+  "focus_keyword": "Design guidelines",
+  "keyword_context_paragraphs": 6,
+  "embedding": "tfidf-svd",
+  "embedding_model": "tfidf-svd",
+  "method": "kmeans",
+  "k": 8,
+  "k_selection": "silhouette",
+  "k_min": 2,
+  "k_max": 8,
+  "dbscan_eps": null,
+  "min_samples": 4,
+  "min_cluster_size": null,
+  "papers": 25,
+  "clusters": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}
