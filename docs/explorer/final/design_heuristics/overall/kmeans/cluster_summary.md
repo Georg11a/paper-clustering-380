@@ -2,29 +2,33 @@
 
 ## Cluster Themes
 
-### Cluster 0 (2 papers)
-Label candidate: Co-design / Assistive Technologies / Formats
-Summary candidate: This cluster focuses on formats, dialogue, involving Designers, using Co-design as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Artifact/System, Taxonomy/Review.
-Theme words: formats, dialogue, communication, assistive technologies, conducted, review, taxonomy, associated
+### Cluster 0 (12 papers)
+Label candidate: Heuristics / Oriented / Product
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Interview, Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Empirical, Methodological, Artifact/System.
+Theme words: heuristics, oriented, product, form, target, solutions, engineering, tools
 
 Representative papers:
-- : Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception
+- 2022: Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization
+- 2018: Formal system for the expression of target-oriented design heuristics
+- : Design Heuristics in Innovative Products
+
+### Cluster 1 (2 papers)
+Label candidate: Co-design / Assistive Technologies / Dialogue
+Summary candidate: This cluster focuses on dialogue, formats, involving Designers, using Co-design as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Artifact/System, Taxonomy/Review.
+Theme words: dialogue, formats, communication, assistive technologies, review, conducted, taxonomy, sensory
+
+Representative papers:
 - 2017: Dialogue appropriate to assistive technology product design: A taxonomy of communication formats in relation to modes of sensory perception
-
-### Cluster 1 (12 papers)
-Label candidate: Heuristics / Engineering / Meta
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Heuristic Evaluation, Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Empirical, Methodological, Theoretical.
-Theme words: heuristics, engineering, meta, products, tools, future, concept, risk
-
-Representative papers:
-- 2016: What is the content of 'design thinking'? Design Heuristics as conceptual repertoire
-- 2016: Evidence-based design heuristics for idea generation
-- 2025: Design Heuristics for Web-Based Severe Weather Risk Communication
+- : Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception
 
 ## LDA Topics
-- Topic 0: heuristics, products, innovative, designs, concepts, existing, analysis, idea generation
-- Topic 1: problems, question, journal, form, conceptual, international, single, generate
-- Topic 2: heuristics, reliability, solutions, focus, practice, evolution, multiple, early
-- Topic 3: heuristics, future, end, tools, think, provide, key, current
-- Topic 4: heuristics, engineering, product, assistive, specific, communication, concept, generation
-- Topic 5: formats, dialogue, communication, analysis, literature, assistive, heuristics, effective
+- Topic 0: end, future, tools, environment, heuristics, current, key, think
+- Topic 1: assistive, heuristics, product, formats, dialogue, communication, analysis, literature
+- Topic 2: implications, current, key, students, journal, enhance, focus heuristics, concept
+- Topic 3: implications, current, key, students, journal, enhance, focus heuristics, concept
+- Topic 4: heuristics, form, dfx, product, description, students, communication, source
+- Topic 5: products, heuristics, concepts, generation, consider, award winning, evidence, outcomes
+- Topic 6: heuristics, target, oriented, solutions, product, existing, sets, article
+- Topic 7: engineering, heuristics, given, analysis, specific, important, article, define
+- Topic 8: implications, current, key, students, journal, enhance, focus heuristics, concept
+- Topic 9: implications, current, key, students, journal, enhance, focus heuristics, concept

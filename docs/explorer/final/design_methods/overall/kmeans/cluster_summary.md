@@ -2,85 +2,92 @@
 
 ## Cluster Themes
 
-### Cluster 0 (26 papers)
-Label candidate: User-centered Design / Co-design / Innovative
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Participatory Design, User-centered Design, Ethnographic as the main methodological or conceptual lens, with recurring attention to Tool, Interface, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: innovative, ethics, autobiographical, focused, usage, analysis, value, social
+### Cluster 0 (4 papers)
+Label candidate: Participatory Design / Autobiographical / Playing
+Summary candidate: This cluster focuses on Education / Learning, Workplace, involving Designers, Developers, Families, using User-centered Design, Ethnographic, Interview as the main methodological or conceptual lens, with recurring attention to Robot, Game, with contribution types coded as Methodological, Empirical, Artifact/System.
+Theme words: autobiographical, playing, usage, self, improv, implications, leader, improvisation
 
 Representative papers:
-- 2024: Surveying a Landscape of Ethics-Focused Design Methods
-- 2023: Analysis of methods of creating new technical systems
-- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
+- 2012: Autobiographical design in HCI research: designing and learning through use-it-yourself
+- 2014: Generating implications for design through design research
+- 2010: The implications of improvisational acting and role-playing on design methodologies
 
-### Cluster 1 (3 papers)
+### Cluster 1 (2 papers)
+Label candidate: Flexibility / Floorplan / Apartment
+Summary candidate: This cluster focuses on flexibility, floorplan, involving Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Methodological, Empirical, Theoretical.
+Theme words: flexibility, floorplan, apartment, areas, vocabulary, themes, assigned, building
+
+Representative papers:
+- 2020: A case study of the extension of floorplan flexibility using sector margins
+- : Languaging design methods
+
+### Cluster 2 (3 papers)
 Label candidate: Formal Education / Architecture / Institutions
 Summary candidate: This cluster focuses on Education / Learning, Accessibility, with contribution types coded as Theoretical, Artifact/System, Methodological.
-Theme words: architecture, institutions, brain, formation, nfei, formal education, landscape, typological
+Theme words: architecture, institutions, brain, formal education, nfei, landscape, formation, typological
 
 Representative papers:
 - 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
 - 2020: Design as Research in Landscape Architecture
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
 
-### Cluster 2 (2 papers)
-Label candidate: Architectural / Hood / Mascot
-Summary candidate: This cluster focuses on architectural, hood, with contribution types coded as Artifact/System, Methodological.
-Theme words: architectural, hood, mascot, real, software, thinking, engineering, basic
-
-Representative papers:
-- 1990: Design methods for real time software
-- 2016: Architectural Design Method of Architectural Engineering
-
 ### Cluster 3 (2 papers)
-Label candidate: Description Method / Elements / Cover
-Summary candidate: This cluster focuses on description method, elements, involving Practitioners, Developers, with contribution types coded as Methodological, Artifact/System.
-Theme words: description method, elements, cover, scope, understand, need, industry, depends
-
-Representative papers:
-- : Elements of a design method - a basis for describing and evaluating design methods
-- 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
-
-### Cluster 4 (2 papers)
-Label candidate: Design Science / Service / Dsr
-Summary candidate: This cluster focuses on service, dsr, involving Practitioners, Designers, using Design Science, Workshop as the main methodological or conceptual lens, with contribution types coded as Methodological, Empirical, Artifact/System.
-Theme words: service, dsr, know, key, knowhow, methodology, practitioners, patterns
-
-Representative papers:
-- 2019: Advancing service design research with design science research
-- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
-
-### Cluster 5 (2 papers)
-Label candidate: Interactive / Architecture / Storytelling
-Summary candidate: This cluster focuses on interactive, architecture, with recurring attention to Game, with contribution types coded as Artifact/System, Taxonomy/Review.
-Theme words: interactive, architecture, storytelling, degrees, narrative, discuss, building, aspects
+Label candidate: Notion Conventions / Interactive / Narrative
+Summary candidate: This cluster focuses on interactive, narrative, with recurring attention to Game, with contribution types coded as Artifact/System, Taxonomy/Review.
+Theme words: interactive, narrative, storytelling, degrees, architecture, earlier, discuss, notion conventions
 
 Representative papers:
 - : What is a Convention in Interactive Narrative Design?
 - 2011: Degrees of Interaction: Towards a Classification
 
-### Cluster 6 (3 papers)
-Label candidate: Playing / Constraint / Improv
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Case Study as the main methodological or conceptual lens, with recurring attention to Robot, Game, with contribution types coded as Empirical, Methodological, Artifact/System.
-Theme words: playing, constraint, improv, improvisation, leader, performance, techniques, commissioning
+### Cluster 4 (6 papers)
+Label candidate: Concept Ideation / Commissioning / Manufacturing
+Summary candidate: This cluster focuses on commissioning, manufacturing, using Case Study as the main methodological or conceptual lens, with contribution types coded as Methodological, Artifact/System, Empirical.
+Theme words: commissioning, manufacturing, constraint, sensory, functional, concept ideation, novo, emotion
 
 Representative papers:
-- 2010: The implications of improvisational acting and role-playing on design methodologies
-- 2019: Constraint management for concept ideation in conceptual design
-- 2024: A Framework for Effective Virtual Commissioning: Guiding Principles for Seamless System Integration
+- 2020: State of the Art on Robust Design Methods for Additive Manufacturing
+- 2020: Functional design framework for innovative design thinking in product development
+- 2019: Towards functional de novo designed proteins.
 
-### Cluster 7 (2 papers)
-Label candidate: Architecture Engineering / Complexity / Community
-Summary candidate: This cluster focuses on complexity, community, involving Designers, with contribution types coded as Theoretical, Artifact/System, Empirical.
-Theme words: complexity, community, digital, architecture engineering, problems, computational, fragmented, dynamics
+### Cluster 5 (3 papers)
+Label candidate: Theory Provides / Applications / Weil
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Theoretical, Artifact/System, Empirical.
+Theme words: applications, theory provides, weil, contemporary, industrial, complexity, improvement, hatchuel
 
 Representative papers:
+- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
 - 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
+### Cluster 6 (3 papers)
+Label candidate: Description Method / Corroboration / Cover
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Developers, Designers, with recurring attention to Tool, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Theme words: description method, corroboration, cover, scope, intended, gerickeetal, ecosystem, described
+
+Representative papers:
+- : Elements of a design method - a basis for describing and evaluating design methods
+- 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
+- 2023: A Framework of Design Method Corroboration
+
+### Cluster 7 (19 papers)
+Label candidate: Participatory Design / Co-design / Innovative Methods
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Co-design, Participatory Design, Workshop as the main methodological or conceptual lens, with recurring attention to Tool, Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: value, ethics, innovative methods, embodied, service, children, focused, qualities
+
+Representative papers:
+- 2024: Surveying a Landscape of Ethics-Focused Design Methods
+- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
+- 2023: Analysis of methods of creating new technical systems
+
 ## LDA Topics
-- Topic 0: service, dsr, methodology, functional, key, practice, practitioners, focus methods
-- Topic 1: focus, usage, self, engineering, product, value, methods methods, interviews
-- Topic 2: innovative, students, techniques, performance, architecture, actor, constraints, ways
-- Topic 3: architecture, psychological, artifacts, formation, structures, formal, non, tasks
-- Topic 4: concepts, focus, existing, methods methods, social, practice, analysis, ethical
-- Topic 5: complexity, digital, methods methods, review, computational, engineering, construction, architecture
+- Topic 0: concepts, implications, social, empirical, findings, generating, types, designs
+- Topic 1: business, constraint, concept, virtual, manufacturing, focus, methods methods, ideation
+- Topic 2: small, literature review, ieee, earlier, form, thinking thinking, structure, definition
+- Topic 3: value, engineering, functional, requirements, defined, customer, literature, product
+- Topic 4: focused, ethical, practice, theoretical, analysis, existing, building, states
+- Topic 5: usage, self, interviews, centred, practices, interactive, focus, creating
+- Topic 6: innovative, techniques, students, performance, focus, actor, constraints, tools
+- Topic 7: complexity, digital, construction, review, computational, methods methods, architecture, engineering
+- Topic 8: embodied, service, focus, qualities, applications, key, analysis, practice
+- Topic 9: flexibility, methods methods, community, creation, focus, problems, propose, building

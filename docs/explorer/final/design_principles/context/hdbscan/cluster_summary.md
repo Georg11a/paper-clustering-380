@@ -13,9 +13,13 @@ Representative papers:
 - 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
 
 ## LDA Topics
-- Topic 0: software, adaptive, computer, field, ethical, language, interfaces, fail
-- Topic 1: games, education, industry, challenge, provide, effective, form, necessary
-- Topic 2: analysis, ai, literature, review, attempts, systematic, problem, practice
-- Topic 3: engineering, definition, practice, domain, examines, novel, body, properties
-- Topic 4: heuristics, mobile, develop, ubiquitous, practices, principles education, quality, industry
-- Topic 5: education, learners, coherent, approaches, urgent, structured, current, growing
+- Topic 0: software, coherent, form, industry, mobile, methodological, mechanisms, application
+- Topic 1: education, learners, adaptive, game, industry, impact, approaches, provide
+- Topic 2: analysis, software, problem, heuristics, develop, computer, field, ai
+- Topic 3: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 4: engineering, literature, definition, domain, aims, challenge, architectures, article
+- Topic 5: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 6: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 7: games, ethical, initial, language, practice, growing, body, approaches
+- Topic 8: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 9: long, coherent, challenge, aims, develop, following, literature, industry

@@ -13,9 +13,13 @@ Representative papers:
 - 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
 
 ## LDA Topics
-- Topic 0: games, heuristics, focus, field, principles principles, computer, adaptive, initial
-- Topic 1: develop, game, concept, education, guide, assessment, range, wide
-- Topic 2: learners, special, self, potential, education, students, skills, needs
-- Topic 3: literature, architectures, analysis, domain, reference, review, platform, science
-- Topic 4: human centered, embodied, transparency, focus, principles principles, guidelines, high, software
-- Topic 5: social, questions, conversational, engineering, continuity, ethical, goals, intended
+- Topic 0: computer, satisfaction, interface, focus, technical, versus, analysis, field
+- Topic 1: embodied, practice, instrument, music, improve, focus principles, previous, concept
+- Topic 2: social, questions, does, goals, continuity, single, embodied, behaviour
+- Topic 3: initial, application, human computer, developing, interactive, instance, principles engineering, introduces
+- Topic 4: games, transparency, conversational, centered, ethical, empirical, principles principles, focus
+- Topic 5: literature, architectures, reference, domain, platform, science, principles data, review
+- Topic 6: learners, special, education, self, alternative, educational, skills, universal
+- Topic 7: definition, engineering, problem, value, outcome, analysis, relationships, formal
+- Topic 8: software, adaptive, control, feedback, designs, idea, section, structures
+- Topic 9: rules, standards, guidelines, norman, unified, web, usability, heuristics

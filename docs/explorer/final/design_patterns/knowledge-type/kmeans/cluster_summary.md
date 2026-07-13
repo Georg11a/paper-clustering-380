@@ -14,7 +14,7 @@ Representative papers:
 
 ### Cluster 1 (14 papers)
 Label candidate: Design Patterns
-Summary candidate: This cluster focuses on patterns, analysis, involving Designers, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Summary candidate: This cluster focuses on patterns, analysis, involving Designers, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Theoretical.
 Theme words: patterns, analysis, software, privacy, like, management, general, intelligent
 
 Representative papers:
@@ -24,8 +24,8 @@ Representative papers:
 
 ### Cluster 2 (3 papers)
 Label candidate: Design Patterns
-Summary candidate: This cluster focuses on Healthcare, involving Developers, Designers, using Interview, Prototype, Ontology as the main methodological or conceptual lens, with recurring attention to Prototype, Robot, with contribution types coded as Methodological, Artifact/System, Empirical.
-Theme words: interaction patterns, human computer, pervasive, computing, prototyping, robot, environments, blocks
+Summary candidate: This cluster focuses on Healthcare, involving Developers, Designers, Caregivers, using Interview, Prototype, Ontology as the main methodological or conceptual lens, with recurring attention to Interface, Prototype, Robot, with contribution types coded as Artifact/System, Methodological, Empirical.
+Theme words: interaction patterns, human computer, computing, prototyping, pervasive, products, environments, building blocks
 
 Representative papers:
 - 2010: An overview of human-computer interaction patterns in pervasive systems
@@ -34,8 +34,8 @@ Representative papers:
 
 ### Cluster 3 (16 papers)
 Label candidate: Design Patterns
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Workshop as the main methodological or conceptual lens, with recurring attention to Game, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, object, oriented, reusable, architecture, structural, ethical encounters, unit
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Workshop as the main methodological or conceptual lens, with recurring attention to Tool, Interface, Game, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: patterns, oriented, object, reusable, architecture, structural, views, describing
 
 Representative papers:
 - : Design pattern in object-oriented technology
@@ -44,8 +44,8 @@ Representative papers:
 
 ### Cluster 4 (9 papers)
 Label candidate: Design Patterns
-Summary candidate: This cluster focuses on patterns, video, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, video, problem, modeling, computer science, solutions, collaboration, visitor
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, with recurring attention to Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: patterns, video, problem, modeling, computer science, solutions, collaboration, consumer
 
 Representative papers:
 - : AntiPatterns
@@ -55,7 +55,7 @@ Representative papers:
 ### Cluster 5 (3 papers)
 Label candidate: Design Patterns
 Summary candidate: This cluster focuses on Education / Learning, involving Domain Experts, Developers, Designers, with recurring attention to Interface, with contribution types coded as Artifact/System, Methodological.
-Theme words: application domain, common terminology, opinions values presents, interface need cooperate, exchange ideas, patterns allows, independent definition, uses
+Theme words: application domain, approach uses pattern, values presents, opinions, groups usually, create successful interactive, interface need cooperate, experts interdisciplinary team
 
 Representative papers:
 - 2000: A pattern approach to interaction design
@@ -65,7 +65,7 @@ Representative papers:
 ### Cluster 6 (2 papers)
 Label candidate: Design Patterns
 Summary candidate: This cluster focuses on business, balanced, with contribution types coded as Methodological.
-Theme words: business, balanced, control, patterns, today, priority, prioritize, ignored explains
+Theme words: business, balanced, control, patterns, autonomy today, broker barter market, place incentivize companies, priority
 
 Representative papers:
 - : E-Business Design: A Shift to Adaptability
@@ -73,8 +73,8 @@ Representative papers:
 
 ### Cluster 7 (15 papers)
 Label candidate: Design Patterns
-Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Designers, with recurring attention to Game, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
-Theme words: patterns, ai, dsl, game, micro, service, biophilic, engineering
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Designers, with recurring attention to Game, Tool, with contribution types coded as Methodological, Taxonomy/Review, Artifact/System.
+Theme words: patterns, ai, game, dsl, biophilic, micro, service, engineering
 
 Representative papers:
 - 2024: Design Patterns of Biological Cells
@@ -82,9 +82,13 @@ Representative papers:
 - 2023: Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository
 
 ## LDA Topics
-- Topic 0: patterns, software, domain, oriented, structural, application, architecture, object
-- Topic 1: patterns, semantic, strategies, structure, complex, basic, teaching, specification
-- Topic 2: patterns, engineering, software, ai, modeling, management, problem, solution
-- Topic 3: patterns, analysis, software, specific, language, domain, object, recurring
-- Topic 4: patterns, science, solutions, practice, building, computer, abstraction, ethics
-- Topic 5: patterns, business, generic, designs, functional, fundamental, social, object
+- Topic 0: patterns, generic, functional, gtms, specify, physical, called, domain
+- Topic 1: patterns, engineering, semantic, language, solutions, problem, creation, applications
+- Topic 2: patterns, domain, management, application, software, modeling, computer, definition
+- Topic 3: patterns, architecture, oriented, define, language, collection, object, computer interaction
+- Topic 4: patterns, science, computer, abstraction, problem, complex, agent, intended
+- Topic 5: patterns, business, designs, control, balanced, place, fundamental, create
+- Topic 6: patterns, ai, object, oriented, space, existing, engineering, apply
+- Topic 7: patterns, practice, building, decision, guidelines, ethics, nature, define
+- Topic 8: patterns, social, oriented, software, ai, component, mas, present
+- Topic 9: patterns, software, analysis, structural, visualization, like, oriented, architecture

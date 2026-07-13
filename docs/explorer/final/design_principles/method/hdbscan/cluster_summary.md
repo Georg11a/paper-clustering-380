@@ -13,9 +13,13 @@ Representative papers:
 - 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
 
 ## LDA Topics
-- Topic 0: method principles, engineering, learners, computer, develop, education, definition, field
-- Topic 1: heuristics, literature, method principles, concept, article, architectures, ubiquitous, practices
-- Topic 2: systematic, review, following, high, needs, evidence, mechanisms, perspective
-- Topic 3: games, challenge, method principles, define, form, discuss, initial, designs
-- Topic 4: analysis, problem, practice, given, form, principles principles, designs, provide
-- Topic 5: method principles, coherent, approaches, adaptive, software, ethical, language, elements
+- Topic 0: method principles, games, engineering, computer, field, initial, adaptive, properties
+- Topic 1: learners, education, games, method principles, heuristics, develop, challenge, impact
+- Topic 2: software, apply, adaptive, definition, method principles, architectures, provide, high
+- Topic 3: method principles, article, form, body, problem, methodological, define, designs
+- Topic 4: structured, approaches, coherent, method principles, ubiquitous, practices, urgent, growing
+- Topic 5: method principles, elements, ethical, methodological, body, form, application, introduces
+- Topic 6: analysis, systematic, review, method principles, problem, practice, literature, attempts
+- Topic 7: method principles, article, form, body, problem, methodological, define, designs
+- Topic 8: method principles, article, form, body, problem, methodological, define, designs
+- Topic 9: method principles, article, form, body, problem, methodological, define, designs

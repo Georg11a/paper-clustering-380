@@ -13,9 +13,13 @@ Representative papers:
 - 2014: Generating implications for design through design research
 
 ## LDA Topics
-- Topic 0: service, dsr, methodology, functional, key, practice, practitioners, focus methods
-- Topic 1: focus, usage, self, engineering, product, value, methods methods, interviews
-- Topic 2: innovative, students, techniques, performance, architecture, actor, constraints, ways
-- Topic 3: architecture, psychological, artifacts, formation, structures, formal, non, tasks
-- Topic 4: concepts, focus, existing, methods methods, social, practice, analysis, ethical
-- Topic 5: complexity, digital, methods methods, review, computational, engineering, construction, architecture
+- Topic 0: concepts, implications, social, empirical, findings, generating, types, designs
+- Topic 1: business, constraint, concept, virtual, manufacturing, focus, methods methods, ideation
+- Topic 2: small, literature review, ieee, earlier, form, thinking thinking, structure, definition
+- Topic 3: value, engineering, functional, requirements, defined, customer, literature, product
+- Topic 4: focused, ethical, practice, theoretical, analysis, existing, building, states
+- Topic 5: usage, self, interviews, centred, practices, interactive, focus, creating
+- Topic 6: innovative, techniques, students, performance, focus, actor, constraints, tools
+- Topic 7: complexity, digital, construction, review, computational, methods methods, architecture, engineering
+- Topic 8: embodied, service, focus, qualities, applications, key, analysis, practice
+- Topic 9: flexibility, methods methods, community, creation, focus, problems, propose, building

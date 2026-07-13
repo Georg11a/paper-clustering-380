@@ -3,88 +3,91 @@
 ## Cluster Themes
 
 ### Cluster 0 (5 papers)
-Label candidate: Participatory Design / Video / Practical
-Summary candidate: This cluster focuses on Education / Learning, with contribution types coded as Methodological, Theoretical, Empirical.
-Theme words: video, patterns, practical, fluent, collaboration, language, teachers, educational
+Label candidate: Thriving Theory / Alexander / Law
+Summary candidate: This cluster focuses on Education / Learning, using Interview as the main methodological or conceptual lens, with recurring attention to Game, Tool, with contribution types coded as Methodological, Artifact/System, Empirical.
+Theme words: patterns, alexander, law, thriving theory, achievements, integrity, christopher, game
 
 Representative papers:
-- 2019: A pattern language for designing innovative projects: project design patterns
-- 2018: Teachers‚Äô Collaborative Pattern Language Design
-- 2017: Principles, patterns, and techniques for designing and implementing practical fluent interfaces in Java
+- 2008: Design patterns for sociality in human-robot interaction
+- 2013: Thriving Systems Theory: An Emergent Information Systems Design Theory
+- 2024: In Search of Living Law: How Should We Design for (Digital) Legal Interaction?
 
-### Cluster 1 (3 papers)
-Label candidate: Application Domain / Capture Software Development / Successful Interactive
-Summary candidate: This cluster focuses on Education / Learning, involving Domain Experts, Developers, Designers, with recurring attention to Interface, with contribution types coded as Artifact/System, Methodological.
-Theme words: application domain, capture software development, successful interactive, ideas opinions, approach uses pattern, groups usually, interface need cooperate, terminology exchange
-
-Representative papers:
-- 2000: A pattern approach to interaction design
-- 2000: Pattern approach to interaction design
-- 2001: A pattern approach to interaction design
-
-### Cluster 2 (7 papers)
-Label candidate: Oriented Approach / Modeling / Dsl
-Summary candidate: This cluster focuses on modeling, patterns, involving Developers, with contribution types coded as Methodological, Artifact/System, Empirical.
-Theme words: modeling, patterns, dsl, architecture, hybrid, oriented approach, describes, specific
-
-Representative papers:
-- 1996: A Pattern-Oriented Approach to a Methodical Evaluation of Modeling Methods
-- 2023: Hybrid modeling design patterns
-- : ‚ÄúModeling-by-Patterns‚Äù of Web applications
-
-### Cluster 3 (10 papers)
-Label candidate: AI / Visualization / Generic
-Summary candidate: This cluster focuses on Sustainability, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: ai, patterns, visualization, generic, specify, gtms, called, atlases
-
-Representative papers:
-- 2023: Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository
-- : Use of design patterns in analogy-based design
-- 2021: Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems
-
-### Cluster 4 (18 papers)
-Label candidate: Software / Analysis / Privacy
-Summary candidate: This cluster focuses on patterns, software, involving Designers, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, software, analysis, privacy, creation, like, form, law
+### Cluster 1 (20 papers)
+Label candidate: Analysis / Software / Education
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, with recurring attention to Tool, Interface, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Theme words: patterns, analysis, software, visualization, strategies, space, management, privacy
 
 Representative papers:
 - 1996: Understanding and using patterns in software development
 - : Implementing patterns
-- 2024: Design Patterns of Biological Cells
+- 2000: Analysis patterns
 
-### Cluster 5 (15 papers)
-Label candidate: Object / Oriented / Service
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, with recurring attention to Game, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, object, oriented, service, micro, structural, computer, reusable
+### Cluster 2 (13 papers)
+Label candidate: Dsl / Modeling / Education
+Summary candidate: This cluster focuses on Education / Learning, Healthcare, involving Designers, Developers, with recurring attention to Interface, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Theme words: patterns, dsl, modeling, practical, language, specific, fluent, semantic
+
+Representative papers:
+- 2013: Design Patterns and Design Principles for Internal Domain-Specific Languages
+- 2023: Hybrid modeling design patterns
+- 1996: A Pattern-Oriented Approach to a Methodical Evaluation of Modeling Methods
+
+### Cluster 3 (15 papers)
+Label candidate: Object / Oriented / Micro
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, Developers, using Ontology, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Theme words: patterns, object, oriented, micro, service, reusable, classes, architecture
 
 Representative papers:
 - : Design pattern in object-oriented technology
 - : A semantic representation for domain-specific patterns
 - 1994: Meta patternsma means for capturing the essentials of reusable object-oriented design
 
-### Cluster 6 (7 papers)
-Label candidate: Dark Patterns / Game / Biophilic
-Summary candidate: This cluster focuses on game, biophilic, involving Designers, with recurring attention to Game, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: game, biophilic, patterns, achievements, consisting, mechanics, encounters, ethical
+### Cluster 4 (7 papers)
+Label candidate: Participatory Design / Computer Science / Video
+Summary candidate: This cluster focuses on Education / Learning, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: video, patterns, computer science, collaboration, problem, solutions, teachers, visitor
 
 Representative papers:
-- 2011: Framework for Designing and Evaluating Game Achievements
-- 2007: Pattern design in the context space: paco - a methodological framework for designing auditory display with patterns
-- 2025: A Theoretical Model for Game Mechanics: Bridging Design Practice and Education
+- : AntiPatterns
+- : ‚ÄúModeling-by-Patterns‚Äù of Web applications
+- 2008: Video collaboratories for research and education: An analysis of collaboration design patterns
 
-### Cluster 7 (2 papers)
-Label candidate: Distinguishes Fundamental / Business / Balanced
+### Cluster 5 (3 papers)
+Label candidate: Application Domain / Create Successful / Presents Approach Uses
+Summary candidate: This cluster focuses on Education / Learning, involving Domain Experts, Developers, Designers, with recurring attention to Interface, with contribution types coded as Artifact/System, Methodological.
+Theme words: application domain, create successful, definition patterns allows, presents approach uses, cooperate, exchange, common terminology, values
+
+Representative papers:
+- 2000: A pattern approach to interaction design
+- 2000: Pattern approach to interaction design
+- 2001: A pattern approach to interaction design
+
+### Cluster 6 (2 papers)
+Label candidate: Broker Barter Market / Business / Balanced
 Summary candidate: This cluster focuses on business, balanced, with contribution types coded as Methodological.
-Theme words: business, balanced, control, patterns, designs, incentivize, achieved, distinguishes fundamental
+Theme words: business, balanced, control, patterns, priority, balance, broker barter market, prioritize
 
 Representative papers:
 - : E-Business Design: A Shift to Adaptability
 - : E-business design
 
+### Cluster 7 (2 papers)
+Label candidate: Generic / Gtms / Specify
+Summary candidate: This cluster focuses on generic, gtms, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: generic, gtms, specify, patterns, devices, analogy, functional, relations
+
+Representative papers:
+- : A functional theory of design patterns
+- : Use of design patterns in analogy-based design
+
 ## LDA Topics
-- Topic 0: patterns, modeling, provide, complex, specific, game, decision, strategies
-- Topic 1: patterns, business, software, fundamental, designs, creation, engineering, control
-- Topic 2: patterns, software, oriented, analysis, object, language, practice, level
-- Topic 3: patterns, generic, functional, gtms, specify, called, relations, devices
-- Topic 4: patterns, software, domain, computer, ai, application, science, problem
-- Topic 5: patterns, visualization, architecture, semantic, space, emerging, problems, strategies
+- Topic 0: space, visualization, patterns, strategies, views, identify, visual, exploring
+- Topic 1: patterns, business, modeling, designs, control, balanced, classes, game
+- Topic 2: identify, mas, visual, particular, source, class, provide, problem solutions
+- Topic 3: patterns, science, computer, abstraction, social, agent, fundamental, architectures
+- Topic 4: patterns, specific, modeling, language, practical, core, meta, interfaces
+- Topic 5: architecture, patterns, problems, higher, abstraction, functional, oriented, define
+- Topic 6: patterns, software, domain, analysis, engineering, application, practice, management
+- Topic 7: patterns, generic, gtms, specify, functional, complex, devices, elements
+- Topic 8: patterns, software, object, oriented, structural, level, solutions, ai
+- Topic 9: patterns, creation, engineering, ideas, problem, concept, collaborative, connected

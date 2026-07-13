@@ -32,7 +32,7 @@ Representative papers:
 
 ### Cluster 3 (3 papers)
 Label candidate: Design Rationale
-Summary candidate: This cluster focuses on claims, language, involving Designers, with recurring attention to Interface, with contribution types coded as Theoretical, Artifact/System, Methodological.
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Families, using Case Study as the main methodological or conceptual lens, with recurring attention to Interface, with contribution types coded as Theoretical, Artifact/System, Methodological.
 Theme words: claims, language, advice, specific, artifact, symbols, patterns, processing
 
 Representative papers:
@@ -42,7 +42,7 @@ Representative papers:
 
 ### Cluster 4 (2 papers)
 Label candidate: Design Rationale
-Summary candidate: This cluster focuses on Education / Learning, involving Developers, Designers, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Developers, with recurring attention to Tool, with contribution types coded as Theoretical, Artifact/System, Methodological.
 Theme words: software, cma, mediated, reflective, demands, rationale, computer, documentation
 
 Representative papers:
@@ -60,7 +60,7 @@ Representative papers:
 
 ### Cluster 6 (4 papers)
 Label candidate: Design Rationale
-Summary candidate: This cluster focuses on Education / Learning, involving Developers, Designers, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Developers, Designers, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
 Theme words: mechanical, rationales, collaborative, shared, component, mental, better, engineering
 
 Representative papers:
@@ -78,9 +78,13 @@ Representative papers:
 - 2008: Scientific design rationale
 
 ## LDA Topics
-- Topic 0: rationale, reasoning, component, better, analysis, captured, represent, defined
-- Topic 1: rationale, claims, capture, patterns, limitations, usage, communicate, record
-- Topic 2: rationale, capture, representations, reuse, software, computer, documentation, dimensions
-- Topic 3: rationale, software, engineering, potential, need, argumentation, nature, generic
-- Topic 4: engineering, product, rationale, review, critical, content, means, communicate
-- Topic 5: rationale, implies, representations, argumentation, capture, communication, influence, perspectives
+- Topic 0: rationale, reasoning, component, better, analysis, captured, number, defined
+- Topic 1: rationale, capture, limitations, analyze, communicate, issues, nature, inability exhaustively
+- Topic 2: characterize, analyze, understand, computational, communicate, communicating, engineering, rationale
+- Topic 3: rationale, software, patterns, claims, capture, documentation, computer, expressiveness
+- Topic 4: characterize, analyze, understand, computational, communicate, communicating, engineering, rationale
+- Topic 5: rationales, questions, generated, computational, characterize, representations, aims, develop
+- Topic 6: rationale, implies, capture, representations, communication, argumentation, reuse, influence
+- Topic 7: rationale, engineering, product, potential, argumentation, review, critical, fundamental
+- Topic 8: rationale, need, engineering, specifications, history, like, establishes, software
+- Topic 9: claims, reuse, interactive, related, usage, rationale, means, task

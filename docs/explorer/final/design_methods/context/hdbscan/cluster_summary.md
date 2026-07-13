@@ -13,9 +13,13 @@ Representative papers:
 - 2014: Generating implications for design through design research
 
 ## LDA Topics
-- Topic 0: service, functional, product, complexity, virtual, software, survey, existing
-- Topic 1: value, service, creation, practices, collaboration, define, artifacts, tools
-- Topic 2: interactive, technical, building, community, related, problems, change, architecture
-- Topic 3: architectural, industry, education, architecture, understand, concept, article, field
-- Topic 4: architecture, literature, usage, metric, conceptual, practitioners, relation, artifacts
-- Topic 5: management, conceptual, concept, thinking, increasingly, constraints, objectives, presents
+- Topic 0: functional, innovative, evidence, product, hand, need, review, means
+- Topic 1: industry, complexity, architecture, understand, elements, challenges, conceptual, literature
+- Topic 2: architecture, education, interactive, article, formal, building, implementation, environment
+- Topic 3: value, define, engineering, concept, creating, conceptualization, traditional, objective
+- Topic 4: virtual, field, landscape, practice, architecture, product, form, increasingly
+- Topic 5: survey, problems, community, term, field, methodological, game, interactive
+- Topic 6: usage, practices, bring, including, considered, software, goal, evaluating
+- Topic 7: service, methodology, creation, key, artifacts, collaboration, engage, psychological
+- Topic 8: architectural, concept, thinking, software, management, conceptual, definition, change
+- Topic 9: provides, industrial, various, variety, general, techniques, practices, high

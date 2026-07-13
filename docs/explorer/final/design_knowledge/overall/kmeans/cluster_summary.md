@@ -3,88 +3,91 @@
 ## Cluster Themes
 
 ### Cluster 0 (2 papers)
-Label candidate: Digital Platform / Distinctive Features / Types
-Summary candidate: This cluster focuses on digital platform, types, using Ontology as the main methodological or conceptual lens, with contribution types coded as Artifact/System, Taxonomy/Review.
-Theme words: digital platform, types, taxonomy, ontology, distinctive features, functionalities, reference, lack
+Label candidate: Digital Platform / Distinctive Features / Sharing Economy
+Summary candidate: This cluster focuses on digital platform, ontology, involving Practitioners, using Ontology as the main methodological or conceptual lens, with contribution types coded as Artifact/System, Taxonomy/Review, Methodological.
+Theme words: digital platform, ontology, taxonomy, types, functionalities, lack, distinctive features, sharing economy
 
 Representative papers:
-- 2023: A taxonomy and ontology for digital platforms
 - : A taxonomy and ontology for digital platforms
+- 2023: A taxonomy and ontology for digital platforms
 
 ### Cluster 1 (27 papers)
 Label candidate: Participatory Design / Co-design / Hri
-Summary candidate: This cluster focuses on Industrial Design, involving Designers, Practitioners, using Participatory Design, Co-design as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: hri, designerly, critical, rtd, objects, outcomes, cdr, art
+Summary candidate: This cluster focuses on Education / Learning, Industrial Design, involving Designers, Practitioners, using Case Study, Co-design, Workshop as the main methodological or conceptual lens, with recurring attention to Tool, Game, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Theme words: hri, studio, narrative, game, interactive, designerly, schema, ai
 
 Representative papers:
 - 2021: Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge
-- 2015: Immodest Proposals: Research Through Design and Knowledge
-- 2018: Let's Get Divorced: Constructing Knowledge Outcomes for Critical Design and Constructive Design Research
+- 2017: Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges
+- 2017: Activity as the ultimate particular of interaction design
 
-### Cluster 2 (6 papers)
-Label candidate: Design Rationale / Data Quality / Edps
-Summary candidate: This cluster focuses on edps, data quality, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: edps, data quality, adk, architecture, engineering, ecosystems, tacit, acquisition
+### Cluster 2 (18 papers)
+Label candidate: Dark Patterns / Co-design / Praxis
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Ontology, Design Science, Prototype as the main methodological or conceptual lens, with recurring attention to Prototype, Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: praxis, teachers, fashion, dark, stack, volition, philosophical, level
 
 Representative papers:
-- : Managing design knowledge
-- : Engineering Design Principles for HCI as a Way Forward for HCI Design Knowledge
-- 2022: Toward Engineering Design Principles for HCI
+- 2020: ON the HIERARCHICAL LEVELS of DESIGN KNOWLEDGE
+- 2019: Design knowledge in the artistic‚Äìaesthetic development and transformation of the world
+- : A new model to express and capture the design rationale in the documents
 
-### Cluster 3 (11 papers)
-Label candidate: Design Science / Inquiry Tools / Forms Reasoning
-Summary candidate: This cluster focuses on dsr, science, involving Practitioners, Designers, using Design Science as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: dsr, science, bases, inquiry tools, forms reasoning, canvas, domain reference ontology, codification
+### Cluster 3 (8 papers)
+Label candidate: Design Science / Visual Inquiry / Solution Space
+Summary candidate: This cluster focuses on dsr, visual inquiry, involving Practitioners, Designers, using Design Science, Ontology as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Theme words: dsr, visual inquiry, team, creation, accumulation, tools, canvas, solution space
 
 Representative papers:
 - 2019: The DSR grid: six core dimensions for effectively planning and communicating design science research projects
+- 2020: Accumulating design knowledge: A mechanisms-based approach
 - : A Typology of Knowledge Creation in Design Science Research Projects
-- : Utilizing, Producing, and Contributing Design Knowledge in DSR Projects
 
 ### Cluster 4 (11 papers)
-Label candidate: Design Rationale / Near Field / Cpm Pdd
-Summary candidate: This cluster focuses on Industrial Design, involving Designers, using Design Science as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Empirical.
-Theme words: product, causal, engineering, sdk, representation, near field, cpm pdd, definition
+Label candidate: User-centered Design / Product / Near
+Summary candidate: This cluster focuses on Industrial Design, involving Designers, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: product, near, prototyping, field, industrial, engineering, sdk, sequencing
 
 Representative papers:
-- 2008: How industrial design knowledge differs from engineering design knowledge
+- 2008: Design knowledge for decision-making process in a DFX product design approach
 - 2008: What is design knowledge from the viewpoint of CPM/PDD?
-- : Causal design knowledge: Alternative representation method for product development knowledge management
+- : Identification and management of the near-field knowledge of industrial design for innovative product shapes
 
-### Cluster 5 (6 papers)
-Label candidate: Object Oriented / Heuristics Best Practices / Formulation
-Summary candidate: This cluster focuses on object oriented, formulation, involving Designers, using Design Science, Ontology as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: object oriented, formulation, transdisciplinary, heuristics best practices, science, materiality, accumulated, boundary
+### Cluster 5 (11 papers)
+Label candidate: Participatory Design / Generative Ai / Co-design
+Summary candidate: This cluster focuses on formulation, artifact, involving Practitioners, using Design Science as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: formulation, artifact, genai, science, governance, theories, decision, ai
 
 Representative papers:
-- : Object oriented design knowledge: ontology and measurement of impact
-- 2006: The object-oriented design knowledge ontology
+- : Design Principles for Boundary Spanning in Transdisciplinary Design Science Research
+- 2015: Prescriptive knowledge in IS research: Conceptualizing design principles in terms of materiality, action, and boundary conditions
+- 2018: Guidelines supporting the formulation of design principles
+
+### Cluster 6 (8 papers)
+Label candidate: Object Oriented / Usability / Heuristics
+Summary candidate: This cluster focuses on usability, heuristics, involving Designers, using Ontology as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Artifact/System, Empirical.
+Theme words: usability, heuristics, patterns, ergonomic, object oriented, edps, criteria, evaluators
+
+Representative papers:
 - 2006: Object-oriented design knowledge: Principles, heuristics and best practices
+- 2006: The object-oriented design knowledge ontology
+- : Object oriented design knowledge: ontology and measurement of impact
 
-### Cluster 6 (5 papers)
-Label candidate: Generative Ai / Boundary Crossing / Utilization
-Summary candidate: This cluster focuses on Workplace, Education / Learning, involving Designers, with recurring attention to Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: utilization, teams, intervention, configurations, ai, boundary crossing, accessibility, utilized
+### Cluster 7 (2 papers)
+Label candidate: Boundary Crossing / Hybrid Learning Configurations / Utilization
+Summary candidate: This cluster focuses on Workplace, Education / Learning, involving Designers, using Workshop as the main methodological or conceptual lens, with recurring attention to Interface, with contribution types coded as Empirical, Methodological, Theoretical.
+Theme words: utilization, boundary crossing, mha, teams, intervention, hybrid learning configurations, bnr, comfortable
 
 Representative papers:
-- 2017: Utilization of design principles for hybrid learning configurations by interprofessional design teams
 - 2016: Utilization of design principles for hybrid learning configurations by interprofessional design teams
-- 2026: Towards scaling expertise with generative AI: design principles for governing AI-Mediated knowledge capture and transfer
-
-### Cluster 7 (19 papers)
-Label candidate: Narrative / Interactive / Teachers
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Design Science, Ontology as the main methodological or conceptual lens, with recurring attention to Interface, Game, Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: narrative, interactive, teachers, dark, game, patterns, stack, pedagogical
-
-Representative papers:
-- 2013: A theoretical framework for the studio as a learning environment
-- 2026: The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design
-- 2019: Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review
+- 2017: Utilization of design principles for hybrid learning configurations by interprofessional design teams
 
 ## LDA Topics
-- Topic 0: platform, digital, types, ontology, game, taxonomy, lack, focus
-- Topic 1: patterns, edps, teachers, social, media, business, practices, interface
-- Topic 2: dsr, science, focus, patterns, tools, engineering, schema, visual
-- Topic 3: critical, focus, practice, outcomes, field, tools, pragmatic, level
-- Topic 4: objects, fashion, critical, practice, teams, utilization, ways, art
-- Topic 5: interactive, focus, game, analysis, field, oriented, science, professional
+- Topic 0: science, problem, designerly, rule, solution, outcomes, technological, critical
+- Topic 1: fashion, theories, prescriptive, artifact, objects, activities, components, theoretical
+- Topic 2: patterns, tools, inquiry, visual, management, years, problems, methodological
+- Topic 3: usability, heuristics, criteria, control, edps, problems, task, various
+- Topic 4: interactive, game, analysis, basis, science, focus, intent, objects
+- Topic 5: level, prototyping, high, focus, dimensions, product, engineering, competence
+- Topic 6: dsr, schema, creation, space, activities, centric, students, ethical
+- Topic 7: digital, platform, product, field, ontology, types, taxonomy, industrial
+- Topic 8: ai, patterns, practices, decision, generative, social, expert, focus
+- Topic 9: tacit, guidelines, extension, formulation, focus, technical, existing, content

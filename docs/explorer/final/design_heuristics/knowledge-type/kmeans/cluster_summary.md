@@ -5,7 +5,7 @@
 ### Cluster 0 (3 papers)
 Label candidate: Design Heuristics
 Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Empirical, Theoretical, Methodological.
-Theme words: products, concepts, assistive, generation, heuristics, idea, process outcomes, evidence
+Theme words: products, concepts, generation, assistive, heuristics, idea, consider, current
 
 Representative papers:
 - 2016: Evidence-based design heuristics for idea generation
@@ -15,7 +15,7 @@ Representative papers:
 ### Cluster 1 (2 papers)
 Label candidate: Design Heuristics
 Summary candidate: This cluster focuses on dialogue, communication formats, involving Designers, using Co-design as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Artifact/System, Taxonomy/Review.
-Theme words: dialogue, communication formats, associated, assistive, technology product taxonomy, technologies professional experience, reviews, critical effective
+Theme words: dialogue, communication formats, associated, assistive, development report, participatory, technologies professional experience, relation
 
 Representative papers:
 - : Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception
@@ -23,8 +23,8 @@ Representative papers:
 
 ### Cluster 2 (4 papers)
 Label candidate: Design Heuristics
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Developers, using Interview as the main methodological or conceptual lens, with contribution types coded as Empirical, Artifact/System, Methodological.
-Theme words: heuristics, form, solutions, conceptual, jet propulsion laboratory, kbes, jpl, formal
+Summary candidate: This cluster focuses on Education / Learning, Sustainability, involving Designers, Practitioners, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Empirical.
+Theme words: heuristics, form, solutions, does, formal, propulsion laboratory, possible, kbes
 
 Representative papers:
 - 2016: What is the content of 'design thinking'? Design Heuristics as conceptual repertoire
@@ -34,16 +34,16 @@ Representative papers:
 ### Cluster 3 (2 papers)
 Label candidate: Design Heuristics
 Summary candidate: This cluster focuses on Accessibility, Education / Learning, involving Designers, using Heuristic Evaluation, Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Empirical, Artifact/System, Methodological.
-Theme words: risk, digital, challenge, weather, domain, communication, specific, specifically
+Theme words: risk, challenge, weather, domain, digital, communication, creativity, web
 
 Representative papers:
-- 2025: Enhancing creativity with domain-specific design heuristics for digital product innovation
 - 2025: Design Heuristics for Web-Based Severe Weather Risk Communication
+- 2025: Enhancing creativity with domain-specific design heuristics for digital product innovation
 
 ### Cluster 4 (1 papers)
 Label candidate: Design Heuristics
-Summary candidate: This cluster focuses on future, meta, involving Practitioners, Designers, using Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Artifact/System, Empirical.
-Theme words: future, meta, environments, introduced, entirely anticipated shape, hands, theory emphasizes, end human history
+Summary candidate: This cluster focuses on future, environments, involving Practitioners, Designers, using Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Artifact/System, Empirical.
+Theme words: future, environments, meta, technology introduced, entirely anticipated shape, response emerging, hands, theory emphasizes
 
 Representative papers:
 - 2011: From human factors to human actors to human crafters
@@ -51,16 +51,20 @@ Representative papers:
 ### Cluster 5 (2 papers)
 Label candidate: Design Heuristics
 Summary candidate: This cluster focuses on heuristic, makeup, with recurring attention to Interface, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: heuristic, makeup, engineering, interface, performance, analysis, direction solution problem, poorly
+Theme words: heuristic, makeup, engineering, interface, performance, analysis, plausible aid, poorly
 
 Representative papers:
 - 1987: THEORY OF ENGINEERING DESIGN: A STRATEGY FOR CROSS-CULTURAL ANALYSIS.
 - 2026: Rethinking User Interface and Experience Design: Heuristic Insights from Makeup and Stage Performance
 
 ## LDA Topics
-- Topic 0: heuristics, products, identify, idea generation, concepts, lead, early, existing
-- Topic 1: heuristics, communication, dialogue, engineering, product, formats, associated, analysis
-- Topic 2: extract, heuristics heuristics, tools, address, stage, understand, derived, solution
-- Topic 3: extract, heuristics heuristics, tools, address, stage, understand, derived, solution
-- Topic 4: heuristics, product, draw, form, tools, understand, derived, available
-- Topic 5: heuristics, concept, product, assistive, generation, challenge, domain, solution
+- Topic 0: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
+- Topic 1: heuristics, products, concept, generation, idea, evident, create, consider
+- Topic 2: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
+- Topic 3: heuristics, engineering, derived, product, available, stage, draw, form
+- Topic 4: heuristics theory, end, existing, early, problem, identify, solution, lead
+- Topic 5: heuristics, communication, tools, possible, form, problem, lead, help
+- Topic 6: product, challenge, domain, generation, heuristics, innovation, novel, ideas
+- Topic 7: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
+- Topic 8: assistive, dialogue, product, associated, communication formats, analysis, heuristics, systematic
+- Topic 9: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb

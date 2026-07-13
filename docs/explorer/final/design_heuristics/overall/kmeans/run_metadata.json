@@ -1,8 +1,8 @@
 {
-  "input": "data/fulltext_context_pdf_38.csv",
+  "input": "data/fulltext_context_pdf_157.csv",
   "text_view": "overall",
   "focus_keyword": "Design heuristics",
-  "keyword_context_paragraphs": 6,
+  "keyword_context_paragraphs": 8,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",

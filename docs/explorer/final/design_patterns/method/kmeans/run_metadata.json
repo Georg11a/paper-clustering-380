@@ -1,8 +1,8 @@
 {
-  "input": "data/fulltext_context_pdf_38.csv",
+  "input": "data/fulltext_context_pdf_157.csv",
   "text_view": "method",
   "focus_keyword": "Design patterns",
-  "keyword_context_paragraphs": 6,
+  "keyword_context_paragraphs": 8,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",

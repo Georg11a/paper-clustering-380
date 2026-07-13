@@ -2,82 +2,86 @@
 
 ## Cluster Themes
 
-### Cluster 0 (3 papers)
-Label candidate: Education Learning / Learners / Gamification
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Developers, Children, using Case Study, Interview as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
-Theme words: learners, gamification, education learning, special, adaptive, children, educational, online
+### Cluster 0 (1 papers)
+Label candidate: Problem Approach Advancement / Technical / Socio
+Summary candidate: This cluster focuses on Education / Learning, Privacy / Security, Healthcare, with contribution types coded as Methodological, Taxonomy/Review, Empirical.
+Theme words: technical, socio, heuristics, intertwinement, phenomena, health, mobile, problem approach advancement
 
 Representative papers:
-- : Personalising learning: towards a coherent learning design framework
-- 2013: Acquiring educational access for neurodiverse learners through multisensory design principles
-- : Analysing adaptive gamification design principles for online courses
+- : A problem-based approach to the advancement of heuristics for socio-technical evaluation
 
-### Cluster 1 (2 papers)
-Label candidate: Data Analysis / Thinking / Mesh
-Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, with contribution types coded as Methodological, Taxonomy/Review, Empirical.
-Theme words: data analysis, thinking, mesh, gray, architecture, practice, literature, problem
-
-Representative papers:
-- 2021: Design principles for data analysis
-- 2024: Data Mesh: A Systematic Gray Literature Review
-
-### Cluster 2 (2 papers)
-Label candidate: Collaborative Video / Games / Collaboration
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Players, with recurring attention to Game, Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
-Theme words: games, collaboration, player, collaborative video, genre, creativity, major, currently
-
-Representative papers:
-- 2025: Form and Function: Toward a Better Understanding of Design-Based Games
-- 2015: Toward an effective approach to collaboration education: A taxonomy for game design
-
-### Cluster 3 (2 papers)
-Label candidate: Social Robots / Identity / Artificial
-Summary candidate: This cluster focuses on identity, artificial, involving Designers, with recurring attention to Robot, Tool, with contribution types coded as Methodological, Theoretical, Algorithmic.
-Theme words: identity, artificial, ethical, conversational, dialogic, growing, llm, disclaimers
-
-Representative papers:
-- 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
-- 2025: Designing Dialogic Disclaimers: Principles for Ethical Conversational Design in LLM Interfaces
-
-### Cluster 4 (4 papers)
-Label candidate: Human Centered / Engineering / Chapter
-Summary candidate: This cluster focuses on Healthcare, involving Developers, Designers, using Systematic Review as the main methodological or conceptual lens, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: engineering, chapter, human centered, computer, domestic, control, planning, transparency
+### Cluster 1 (4 papers)
+Label candidate: Energy Planning Control / Engineering / Frame
+Summary candidate: This cluster focuses on Healthcare, involving Designers, Developers, using Systematic Review, Prototype as the main methodological or conceptual lens, with recurring attention to Interface, Prototype, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: engineering, energy planning control, frame, domestic, transparency, centered, computer, edps
 
 Representative papers:
 - : Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control
 - 1983: Design principles for human-computer interfaces
 - 2021: Explainable Medical Imaging AI Needs Human-Centered Design: Guidelines and Evidence from a Systematic Review
 
+### Cluster 2 (2 papers)
+Label candidate: Social Robots / Identity / Artificial
+Summary candidate: This cluster focuses on identity, artificial, involving Designers, with recurring attention to Robot, Tool, with contribution types coded as Methodological, Theoretical, Algorithmic.
+Theme words: identity, artificial, ethical, conversational, disclaimers, dialogic, llm, agenda
+
+Representative papers:
+- 2025: Designing Dialogic Disclaimers: Principles for Ethical Conversational Design in LLM Interfaces
+- 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
+
+### Cluster 3 (3 papers)
+Label candidate: Education Learning / Learners / Gamification
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Developers, Children, using Case Study, Interview as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
+Theme words: learners, gamification, education learning, special, adaptive, neurodiverse, courses, children
+
+Representative papers:
+- : Personalising learning: towards a coherent learning design framework
+- 2013: Acquiring educational access for neurodiverse learners through multisensory design principles
+- : Analysing adaptive gamification design principles for online courses
+
+### Cluster 4 (2 papers)
+Label candidate: Games / Player / Collaboration
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Players, with recurring attention to Game, Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
+Theme words: games, player, collaboration, collaborative, major, creativity, currently, video
+
+Representative papers:
+- 2015: Toward an effective approach to collaboration education: A taxonomy for game design
+- 2025: Form and Function: Toward a Better Understanding of Design-Based Games
+
 ### Cluster 5 (2 papers)
-Label candidate: Screen Standardization / Software / Ussf
-Summary candidate: This cluster focuses on Accessibility, with recurring attention to Interface, with contribution types coded as Methodological, Artifact/System, Empirical.
-Theme words: software, ussf, expectations, involves, accessibility, screen standardization, hierarchical, level
+Label candidate: Data Analysis / Mesh / Thinking
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, with contribution types coded as Methodological, Taxonomy/Review, Empirical.
+Theme words: data analysis, mesh, thinking, gray, architecture, practice, literature, problem
+
+Representative papers:
+- 2021: Design principles for data analysis
+- 2024: Data Mesh: A Systematic Gray Literature Review
+
+### Cluster 6 (2 papers)
+Label candidate: User-centered Design / Screen Standardization / Software
+Summary candidate: This cluster focuses on Accessibility, Education / Learning, using User-centered Design, Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Dashboard, Interface, with contribution types coded as Artifact/System, Methodological, Theoretical.
+Theme words: software, expectations, ussf, unified, screen standardization, level, hierarchical, accessibility
 
 Representative papers:
 - 2025: Design Obligations for Software, with Examples from Data Abstraction and Adaptive Systems
 - 2025: USSF: A Unified Framework for Screen Standardization in Software Systems
 
-### Cluster 6 (1 papers)
-Label candidate: Meditation / Sonic / Embodied
+### Cluster 7 (1 papers)
+Label candidate: Suggest Principles / Augmented Body / Meditation
 Summary candidate: This cluster focuses on meditation, sonic, with contribution types coded as Methodological, Theoretical.
-Theme words: meditation, sonic, embodied, instrument, practice, artist, narrates, musical
+Theme words: meditation, sonic, embodied, instrument, practice, suggest principles, artist, augmented body
 
 Representative papers:
 - 2021: Designing Embodied Sonic Meditation
 
-### Cluster 7 (1 papers)
-Label candidate: Technical / Socio / Heuristics
-Summary candidate: This cluster focuses on Education / Learning, Privacy / Security, Healthcare, with contribution types coded as Methodological, Taxonomy/Review, Empirical.
-Theme words: technical, socio, heuristics, phenomena, intertwinement, health, mobile, computing
-
-Representative papers:
-- : A problem-based approach to the advancement of heuristics for socio-technical evaluation
-
 ## LDA Topics
-- Topic 0: software, adaptive, computer, field, ethical, language, interfaces, fail
-- Topic 1: games, education, industry, challenge, provide, effective, form, necessary
-- Topic 2: analysis, ai, literature, review, attempts, systematic, problem, practice
-- Topic 3: engineering, definition, practice, domain, examines, novel, body, properties
-- Topic 4: heuristics, mobile, develop, ubiquitous, practices, principles education, quality, industry
-- Topic 5: education, learners, coherent, approaches, urgent, structured, current, growing
+- Topic 0: software, coherent, form, industry, mobile, methodological, mechanisms, application
+- Topic 1: education, learners, adaptive, game, industry, impact, approaches, provide
+- Topic 2: analysis, software, problem, heuristics, develop, computer, field, ai
+- Topic 3: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 4: engineering, literature, definition, domain, aims, challenge, architectures, article
+- Topic 5: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 6: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 7: games, ethical, initial, language, practice, growing, body, approaches
+- Topic 8: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 9: long, coherent, challenge, aims, develop, following, literature, industry

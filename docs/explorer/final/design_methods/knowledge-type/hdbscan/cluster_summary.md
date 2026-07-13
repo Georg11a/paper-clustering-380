@@ -12,20 +12,20 @@ Representative papers:
 - 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
 - 2014: Generating implications for design through design research
 
-### Cluster 0 (5 papers)
+### Cluster 0 (6 papers)
 Label candidate: Design Methods
-Summary candidate: This cluster focuses on product, functional, involving Designers, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: product, functional, complexity, applications, manufacturing, robust, industrial, emotion
+Summary candidate: This cluster focuses on complexity, functional, involving Designers, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: complexity, functional, product, applications, industrial, manufacturing, community, robust
 
 Representative papers:
+- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
+- 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
 - 2024: Emotion Semantics Construction in Industrial Product Application
-- 2020: State of the Art on Robust Design Methods for Additive Manufacturing
-- 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
-### Cluster 1 (6 papers)
+### Cluster 1 (5 papers)
 Label candidate: Design Methods
 Summary candidate: This cluster focuses on Education / Learning, with contribution types coded as Theoretical, Artifact/System, Methodological.
-Theme words: architecture, field, article, problems, relation, participatory, landscape, brain
+Theme words: architecture, field, article, relation, participatory, education, brain, landscape
 
 Representative papers:
 - 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
@@ -33,9 +33,13 @@ Representative papers:
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
 
 ## LDA Topics
-- Topic 0: evidence, innovative, review, ways, need, systematic, assessment, propose
-- Topic 1: architecture, concept, conceptual, management, literature, field, landscape, technical
-- Topic 2: architectural, virtual, understand, industry, building, challenges, artifacts, interactive
-- Topic 3: functional, product, metric, hand, activities, following, needs, thinking
-- Topic 4: service, complexity, methodology, related, usage, key, term, creation
-- Topic 5: value, field, product, practitioners, problems, existing, survey, industrial
+- Topic 0: service, review, evidence, innovative, related, need, propose, address
+- Topic 1: literature, attention, practices, various, decade, methods principles, techniques, increasingly
+- Topic 2: architectural, virtual, artifacts, thinking, specifically, term, engineering, existing
+- Topic 3: functional, product, hand, thinking, activities, needs, means, useful
+- Topic 4: service, creation, methodology, innovation, key, propose, article, explore
+- Topic 5: value, aspects, challenges, understand, industry, needs, adopting, involved
+- Topic 6: architecture, field, article, main, formal, pragmatic, findings, implementation
+- Topic 7: complexity, product, problems, community, industrial, usage, application, provides
+- Topic 8: interactive, creation, survey, technical, architecture, building, methodological, performance
+- Topic 9: concept, field, conceptual, metric, management, landscape, architecture, thinking

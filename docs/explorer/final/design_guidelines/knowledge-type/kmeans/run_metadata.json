@@ -1,12 +1,12 @@
 {
-  "input": "data/fulltext_context_pdf_38.csv",
+  "input": "data/fulltext_context_pdf_157.csv",
   "text_view": "knowledge-type",
   "focus_keyword": "Design guidelines",
-  "keyword_context_paragraphs": 6,
+  "keyword_context_paragraphs": 8,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",
-  "k": 7,
+  "k": 8,
   "k_selection": "silhouette",
   "k_min": 2,
   "k_max": 8,
@@ -21,6 +21,7 @@
     3,
     4,
     5,
-    6
+    6,
+    7
   ]
 }

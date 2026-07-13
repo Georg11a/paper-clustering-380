@@ -2,7 +2,7 @@
 
 - Candidate k range: 2-8
 - Selected k: 6
-- Best average silhouette score: 0.2594
+- Best average silhouette score: 0.2527
 - Distance metric for silhouette: cosine
 
 Silhouette analysis evaluates whether each paper is closer to papers in its own cluster than to papers in neighboring clusters. It is a diagnostic signal for k selection, not a replacement for human interpretation.

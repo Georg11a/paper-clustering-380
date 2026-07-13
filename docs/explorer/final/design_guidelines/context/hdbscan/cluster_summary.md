@@ -13,9 +13,13 @@ Representative papers:
 - 2021: Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines
 
 ## LDA Topics
-- Topic 0: guidelines, usability, characteristics, visual, specific, complex, professional, guidance
-- Topic 1: guidelines, immersive, definitions, interfaces, self, control, goal, ethical
-- Topic 2: interfaces, concept, space, hybrid, guidelines collaboration, involve, recent, reflect
-- Topic 3: guidelines, architecture, task, software, types, visualization, tools, interface
-- Topic 4: visualization, aesthetics, guidelines, concept, recently, clear, definition, proposed
-- Topic 5: guidelines, high, traditional, growing, recently, decades, generalized, engineering
+- Topic 0: guidelines, characteristics, usability, concept, provide, literature, professional, guidance
+- Topic 1: guidelines, safe, trustworthy, clear, turn, theories, actionable, control
+- Topic 2: guidelines, concept, clear, assessment, effective, environment, definition, software
+- Topic 3: software, guidelines, architecture, visualization, tools, practical, concrete, paradigm
+- Topic 4: guidelines, concept, clear, assessment, effective, environment, definition, software
+- Topic 5: high, effective, decades, growing, focus, created, proposal, resources
+- Topic 6: visualization, aesthetics, guidelines, immersive, goal, understanding, focuses, need
+- Topic 7: guidelines, interfaces, definitions, visual, complex, collaboration, hybrid, architecture
+- Topic 8: guidelines, specific, concept, recently, usability, assessment, engineering, generalized
+- Topic 9: task, guidelines, interface, immersive, types, order, guidance, self

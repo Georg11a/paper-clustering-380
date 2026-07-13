@@ -13,7 +13,7 @@ Representative papers:
 
 ### Cluster 1 (2 papers)
 Label candidate: Design Rules
-Summary candidate: This cluster focuses on eudaimonic, demand, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
+Summary candidate: This cluster focuses on eudaimonic, demand, with contribution types coded as Theoretical, Taxonomy/Review, Methodological.
 Theme words: eudaimonic, demand, ewb, meaning, rules, way, question, especially human
 
 Representative papers:
@@ -49,9 +49,13 @@ Representative papers:
 - 2026: Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics
 
 ## LDA Topics
-- Topic 0: rules, tasks, presented, various, concept, guidelines, properties, meaning
-- Topic 1: rules, architecture, derived, modularity, meaning, critical, called, way
-- Topic 2: properties, meaning, rules, literature, common, architecture, way, tasks
-- Topic 3: rules, cost, possible, steps, guidelines, properties, meaning, literature
-- Topic 4: organizational, modularity, common, properties, literature, elements, conceptualization, proposed
-- Topic 5: rules, technical, recipe, chapter, functional, structure, purpose, way
+- Topic 0: rules, presented, tasks, various, concept, guidelines, cost, critical
+- Topic 1: rules, architecture, modularity, critical, called, derived, conceptualization, proposed
+- Topic 2: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 3: rules, cost, possible, steps, guidelines, properties, derived, literature
+- Topic 4: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 5: rules, technical, recipe, chapter, functional, structure, way, purpose
+- Topic 6: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 7: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 8: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 9: organizational, modularity, common, properties, literature, elements, concept, conceptualization

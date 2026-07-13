@@ -3,88 +3,92 @@
 ## Cluster Themes
 
 ### Cluster 0 (8 papers)
-Label candidate: Modeling Methods / AI / Dsl
-Summary candidate: This cluster focuses on ai, patterns, involving Practitioners, with contribution types coded as Methodological, Taxonomy/Review, Theoretical.
-Theme words: ai, patterns, dsl, modeling methods, topology, cognitive, atlases, prompting
+Label candidate: Dsl / Micro / Architecture
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Theme words: patterns, dsl, micro, architecture, semantic, language, software, code
 
 Representative papers:
-- 2021: Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems
+- 2003: Elemental design patterns: A formal semantics for composition of OO software architecture
+- 2020: Patterns, anticipation and participatory futures
+- 2004: Architecture pattern organization
+
+### Cluster 1 (26 papers)
+Label candidate: Dark Patterns / Object Oriented / Software
+Summary candidate: This cluster focuses on patterns, software, involving Designers, Practitioners, using Ontology, Prototype, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Tool, Prototype, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Theme words: patterns, software, object oriented, analysis, structural, engineering, management, biophilic
+
+Representative papers:
+- 1996: Understanding and using patterns in software development
+- : Implementing patterns
+- : Design pattern in object-oriented technology
+
+### Cluster 2 (9 papers)
+Label candidate: AI / Video / Visualization
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, with recurring attention to Tool, with contribution types coded as Methodological, Taxonomy/Review, Artifact/System.
+Theme words: ai, patterns, video, visualization, collaboration, educational, address, adapted
+
+Representative papers:
 - 2023: Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository
 - 2025: Designing AI-Enabled Engineering Courses: E-AIP Framework for Learning Outcomes, Process Evidence, and Integrity
+- 2021: Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems
 
-### Cluster 1 (3 papers)
-Label candidate: Application Domain / Create Successful Interactive / Opinions Values
+### Cluster 3 (8 papers)
+Label candidate: Modeling Methods / Game / Robot
+Summary candidate: This cluster focuses on game, patterns, involving Designers, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Game, Interface, Robot, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: game, patterns, robot, law, mechanics, modeling methods, achievements, specific
+
+Representative papers:
+- 2008: Design patterns for sociality in human-robot interaction
+- 2011: Framework for Designing and Evaluating Game Achievements
+- 2014: Design patterns for exploring and prototyping human-robot interactions
+
+### Cluster 4 (3 papers)
+Label candidate: Application Domain / Presents Approach Uses / Groups Usually
 Summary candidate: This cluster focuses on Education / Learning, involving Domain Experts, Developers, Designers, with recurring attention to Interface, with contribution types coded as Artifact/System, Methodological.
-Theme words: application domain, create successful interactive, opinions values, presents approach, patterns allows, usually, uses, exchange ideas
+Theme words: application domain, presents approach uses, groups usually, successful interactive interface, interdisciplinary, opinions values, interaction create, capture software
 
 Representative papers:
 - 2000: A pattern approach to interaction design
 - 2000: Pattern approach to interaction design
 - 2001: A pattern approach to interaction design
 
-### Cluster 2 (22 papers)
-Label candidate: Software / Analysis / Management
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, software, analysis, management, architecture, problem, engineering, provide
+### Cluster 5 (2 papers)
+Label candidate: Market Forces Taking / Business / Balanced
+Summary candidate: This cluster focuses on business, balanced, with contribution types coded as Methodological.
+Theme words: business, balanced, control, patterns, designs, distinguishes, market forces taking, balance
 
 Representative papers:
-- 1996: Understanding and using patterns in software development
-- : Implementing patterns
-- 2020: Patterns, anticipation and participatory futures
+- : E-Business Design: A Shift to Adaptability
+- : E-business design
 
-### Cluster 3 (8 papers)
-Label candidate: Dark Patterns / Ethical Encounters / Game
-Summary candidate: This cluster focuses on game, patterns, involving Designers, with recurring attention to Game, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: game, patterns, biophilic, achievement, mechanics, ethical encounters, consisting, space
-
-Representative papers:
-- 2011: Framework for Designing and Evaluating Game Achievements
-- 2025: A Theoretical Model for Game Mechanics: Bridging Design Practice and Education
-- 2007: Pattern design in the context space: paco - a methodological framework for designing auditory display with patterns
-
-### Cluster 4 (3 papers)
-Label candidate: Thriving Theory / Generic / Specify
-Summary candidate: This cluster focuses on generic, specify, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: generic, specify, gtms, patterns, thriving theory, devices, analogy, functional
+### Cluster 6 (4 papers)
+Label candidate: Thriving Theory / Generic / Fluent
+Summary candidate: This cluster focuses on Education / Learning, using Interview as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: patterns, generic, fluent, gtms, specify, devices, thriving theory, analogy
 
 Representative papers:
 - : A functional theory of design patterns
 - : Use of design patterns in analogy-based design
 - 2013: Thriving Systems Theory: An Emergent Information Systems Design Theory
 
-### Cluster 5 (2 papers)
-Label candidate: Distinguishes Fundamental / Ignored Explains / Market Forces Taking
-Summary candidate: This cluster focuses on business, balanced, with contribution types coded as Methodological.
-Theme words: business, balanced, control, patterns, distinguishes fundamental, ignored explains, balance, market forces taking
+### Cluster 7 (7 papers)
+Label candidate: Participatory Design / Computer Science / Solutions
+Summary candidate: This cluster focuses on Education / Learning, with recurring attention to Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Theme words: solutions, patterns, modeling, problem, computer science, visitor, teachers, consumer
 
 Representative papers:
-- : E-Business Design: A Shift to Adaptability
-- : E-business design
-
-### Cluster 6 (13 papers)
-Label candidate: Participatory Design / Object / Oriented
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, object, oriented, reusable, structural, software, visitor, teachers
-
-Representative papers:
-- : Design pattern in object-oriented technology
-- 1994: Meta patternsma means for capturing the essentials of reusable object-oriented design
-- : Using design patterns: elements of reusable architectures
-
-### Cluster 7 (8 papers)
-Label candidate: Video / Robot / Service
-Summary candidate: This cluster focuses on patterns, video, involving Designers, using Interview as the main methodological or conceptual lens, with recurring attention to Robot, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: patterns, video, robot, service, collaboration, fluent, law, products
-
-Representative papers:
-- 2014: Design patterns for exploring and prototyping human-robot interactions
-- 2008: Design patterns for sociality in human-robot interaction
-- 2010: An overview of human-computer interaction patterns in pervasive systems
+- : AntiPatterns
+- : ‚ÄúModeling-by-Patterns‚Äù of Web applications
+- 2018: Teachers‚Äô Collaborative Pattern Language Design
 
 ## LDA Topics
-- Topic 0: domain, patterns, application, software, visualization, independent, education, formal
-- Topic 1: patterns, software, analysis, architecture, oriented, structural, engineering, management
-- Topic 2: patterns, object, problem, software, education, solutions, oriented, modeling
-- Topic 3: patterns, business, generic, space, designs, abstraction, privacy, science
-- Topic 4: patterns, game, ai, collaboration, practice, robot, building, engineering
-- Topic 5: patterns, ai, software, engineering, interfaces, quality, practical, alexander
+- Topic 0: patterns, software, problem, solutions, engineering, language, structural, creation
+- Topic 1: patterns, software, domain, application, education, architecture, collaboration, ai
+- Topic 2: patterns, software, oriented, business, object, specific, management, robot
+- Topic 3: patterns, visualization, social, software, mas, complex, architectures, emerging
+- Topic 4: patterns, conceptual, nature, agent, solution, problem, space, industry
+- Topic 5: patterns, ai, engineering, human computer, outcomes, computing, define, collection
+- Topic 6: patterns, software, abstraction, generic, privacy, provide, functional, modeling
+- Topic 7: patterns, visualization, semantic, space, strategies, education, structure, views
+- Topic 8: game, patterns, education, presents, lack, object, theoretical, educators
+- Topic 9: patterns, analysis, software, practice, oriented, building, industry, decision
