@@ -1422,7 +1422,6 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     <div class="controls">
       <input id="search" placeholder="Search title, abstract, author, venue, keyword..." />
       <select id="clusterFilter"><option value="all">All clusters</option></select>
-      <select id="keywordFilter"><option value="all">All keywords</option></select>
       <label class="toggle"><input id="repOnly" type="checkbox" /> Top-3 reps only</label>
     </div>
   </header>
@@ -1458,14 +1457,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         opt.textContent = `${{clusterName(c.cluster)}} (${{c.count}})`;
         clusterFilter.appendChild(opt);
       }});
-      const keywordFilter = document.getElementById('keywordFilter');
-      data.keywords.forEach(k => {{
-        const opt = document.createElement('option');
-        opt.value = k;
-        opt.textContent = k;
-        keywordFilter.appendChild(opt);
-      }});
-      ['search','clusterFilter','keywordFilter','repOnly'].forEach(id => {{
+      ['search','clusterFilter','repOnly'].forEach(id => {{
         document.getElementById(id).addEventListener('input', render);
         document.getElementById(id).addEventListener('change', render);
       }});
@@ -1475,13 +1467,11 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     function filteredPapers() {{
       const q = document.getElementById('search').value.trim().toLowerCase();
       const cluster = document.getElementById('clusterFilter').value;
-      const keyword = document.getElementById('keywordFilter').value;
       const repOnly = document.getElementById('repOnly').checked;
       return papers.filter(p => {{
         const text = `${{p.title}} ${{p.abstract}} ${{p.authors}} ${{p.venue}} ${{p.keyword}}`.toLowerCase();
         return (!q || text.includes(q)) &&
           (cluster === 'all' || String(p.cluster) === cluster) &&
-          (keyword === 'all' || p.keyword === keyword) &&
           (!repOnly || p.is_representative_top3);
       }});
     }}
