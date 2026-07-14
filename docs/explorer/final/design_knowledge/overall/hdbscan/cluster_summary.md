@@ -13,8 +13,9 @@ Representative papers:
 - 2020: Toward an Inventory of Plans and Patterns, and Their Use to Foster Strategic Knowledge in Programming Novices
 
 ### Cluster 0 (6 papers)
-Label candidate: Co-design / Hri / Objects
-Summary candidate: This cluster focuses on Industrial Design, Sustainability, involving Designers, using Co-design, Prototype as the main methodological or conceptual lens, with recurring attention to Prototype, Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Theory, Design Frameworks. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Co-design, Prototype and contexts such as Industrial Design, Sustainability. Representative papers include Immodest Proposals: Research Through Design and Knowledge; Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge.
+Design-knowledge contribution: defines and conceptualizes Design Knowledge
 Theme words: hri, objects, fashion, praxis, designerly, centric, critical, rtd
 
 Representative papers:
@@ -23,19 +24,12 @@ Representative papers:
 - 2016: Mapping design knowledge: 36 years of Design Studies
 
 ### Cluster 1 (22 papers)
-Label candidate: User-centered Design / Dsr / Visual
-Summary candidate: This cluster focuses on Industrial Design, Education / Learning, involving Designers, Practitioners, using Design Science, Case Study, Ontology as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Design Science, Case Study, Ontology and contexts such as Industrial Design, Education / Learning. Representative papers include The DSR grid: six core dimensions for effectively planning and communicating design science research projects; A Typology of Knowledge Creation in Design Science Research Projects.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: dsr, visual, problems, science, product, creation, team, solution
 
 Representative papers:
 - 2019: The DSR grid: six core dimensions for effectively planning and communicating design science research projects
 - : A Typology of Knowledge Creation in Design Science Research Projects
 - 2020: Accumulating design knowledge: A mechanisms-based approach
-
-## LDA Topics
-- Topic 0: patterns, activities, schema, level, practices, centric, transformation, teachers
-- Topic 1: digital, platform, dsr, tools, ontology, specific, science, visual
-- Topic 2: usability, heuristics, field, product, practice, focus, tacit, industrial
-- Topic 3: ai, dsr, game, interactive, problem, solution, objects, prescriptive
-- Topic 4: pattern, components, theories, artifact, form, nature, tool, focus
-- Topic 5: critical, product, outcomes, need, pragmatic, precedent, rigorous, rigor

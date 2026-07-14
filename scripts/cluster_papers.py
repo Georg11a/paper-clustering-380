@@ -126,8 +126,6 @@ DOMAIN_STOPWORDS = {
 STOPWORDS = sorted(ENGLISH_STOP_WORDS.union(DOMAIN_STOPWORDS))
 
 LABEL_PREFERRED_PHRASES = {
-    "behavior change",
-    "co-design",
     "dark patterns",
     "design futures",
     "design guidelines",
@@ -135,15 +133,20 @@ LABEL_PREFERRED_PHRASES = {
     "design rationale",
     "design science",
     "ethical design",
+    "transparent rag",
+    "value-sensitive design",
+    "value-sensitive",
+}
+APPLICATION_CONTEXT_PHRASES = {
+    "behavior change",
+    "co-design",
     "generative ai",
+    "hri",
     "human-ai collaboration",
     "participatory design",
     "social networking sites",
     "social robots",
-    "transparent rag",
     "user-centered design",
-    "value-sensitive design",
-    "value-sensitive",
 }
 GENERIC_LABEL_PHRASES = {
     "framework",
@@ -159,6 +162,66 @@ GENERIC_LABEL_PHRASES = {
     "design guidelines",
     "design methods",
     "design patterns",
+}
+
+DESIGN_KNOWLEDGE_FORM_PATTERNS = {
+    "tacit design knowledge": ["tacit knowledge", "tacit design knowledge", "craft knowledge", "expertise"],
+    "design rationale": ["design rationale", "rationale", "decision rationale", "traceability"],
+    "design theory": ["design theory", "theory", "theoretical framework", "mid-range theory"],
+    "design patterns": ["design pattern", "design patterns", "pattern language", "reusable solution"],
+    "design guidelines": ["design guideline", "design guidelines", "guideline", "guidelines"],
+    "design heuristics": ["design heuristic", "design heuristics", "heuristic", "heuristics"],
+    "design principles": ["design principle", "design principles", "principle", "principles"],
+    "design frameworks": ["design framework", "design frameworks", "framework", "frameworks"],
+    "design methods": ["design method", "design methods", "methodology", "methodologies"],
+    "design rules": ["design rule", "design rules", "rule", "rules"],
+    "design expertise": ["design expertise", "expertise", "expert knowledge"],
+    "design procedures": ["design procedure", "design procedures", "procedure", "procedures"],
+    "design knowledge": ["design knowledge", "knowledge base", "knowledge system"],
+}
+
+DESIGN_KNOWLEDGE_ACTION_PATTERNS = {
+    "defines": ["define", "defines", "defined", "definition", "conceptualize", "conceptualizes", "conceptualization"],
+    "organizes": ["organize", "organizes", "organized", "taxonomy", "typology", "classification", "categorize", "catalog"],
+    "translates": ["translate", "translates", "operationalize", "operationalizes", "actionable", "apply", "application"],
+    "represents": ["represent", "represents", "representation", "document", "documentation", "trace", "traceable"],
+    "captures": ["capture", "captures", "codify", "codifies", "externalize", "transfer", "share", "communicate"],
+    "adapts": ["adapt", "adapts", "adapted", "tailor", "domain-specific", "context-specific"],
+    "evaluates": ["evaluate", "evaluates", "validated", "validation", "empirical", "evidence", "assessment"],
+    "synthesizes": ["synthesize", "synthesizes", "synthesis", "review", "literature review", "systematic review"],
+}
+
+ACTION_DISPLAY = {
+    "defines": "defines and conceptualizes",
+    "organizes": "organizes and classifies",
+    "translates": "translates into actionable guidance",
+    "represents": "represents and documents",
+    "captures": "captures and transfers",
+    "adapts": "adapts to a specific context",
+    "evaluates": "evaluates with evidence",
+    "synthesizes": "synthesizes prior work on",
+}
+
+ACTION_NOUN_PHRASES = {
+    "defines": "definition and conceptualization",
+    "organizes": "organization and classification",
+    "translates": "translation into actionable guidance",
+    "represents": "representation and documentation",
+    "captures": "capture and transfer",
+    "adapts": "context-specific adaptation",
+    "evaluates": "evidence-based evaluation",
+    "synthesizes": "synthesis of prior work",
+}
+
+ACTION_LABEL_TEMPLATES = {
+    "defines": "Defines {form} Through Conceptual Framing",
+    "organizes": "Organizes {form} into Taxonomies or Frameworks",
+    "translates": "Translates {form} into Actionable Design Guidance",
+    "represents": "Represents {form} as Traceable Decision Knowledge",
+    "captures": "Frames {form} as Expertise to Capture and Transfer",
+    "adapts": "Adapts {form} for Domain-Specific Use",
+    "evaluates": "Evaluates {form} Through Empirical Evidence",
+    "synthesizes": "Synthesizes {form} into Shared Design Constructs",
 }
 
 
@@ -995,6 +1058,106 @@ def infer_contribution_types_for_cluster(subset: pd.DataFrame, max_items: int = 
     return [contribution_type for _, _, _, contribution_type in scored[:max_items]]
 
 
+def score_pattern_group(text: str, patterns: dict[str, list[str]], max_items: int = 3) -> list[tuple[str, int]]:
+    scored = []
+    for label, phrases in patterns.items():
+        score = 0
+        for phrase in phrases:
+            pattern = re.compile(r"\b" + re.escape(phrase).replace(r"\ ", r"\s+") + r"\b")
+            hits = len(pattern.findall(text))
+            score += hits * (3 if " " in phrase else 1)
+        if score:
+            scored.append((label, score))
+    scored.sort(key=lambda item: (item[1], len(item[0])), reverse=True)
+    return scored[:max_items]
+
+
+def cluster_analysis_text(subset: pd.DataFrame) -> str:
+    return normalize_phrase(
+        " ".join(
+            f"{row.get('title', '')} {row.get('abstract', '')} "
+            f"{row.get('primary_reason', '')} {row.get('val_reason', '')} {row_analysis_context(row)}"
+            for _, row in subset.iterrows()
+        )
+    )
+
+
+def focus_form_from_keyword(subset: pd.DataFrame) -> str:
+    keywords = dominant_design_keywords(subset, limit=1)
+    if not keywords:
+        return "design knowledge"
+    keyword = keywords[0].lower()
+    return DESIGN_KNOWLEDGE_FORM_PATTERNS.get(keyword, [keyword])[0]
+
+
+def infer_design_knowledge_claim(
+    subset: pd.DataFrame,
+    facets: dict[str, list[str]],
+    contribution_types: list[str],
+) -> dict[str, str]:
+    text = cluster_analysis_text(subset)
+    forms = score_pattern_group(text, DESIGN_KNOWLEDGE_FORM_PATTERNS, max_items=3)
+    actions = score_pattern_group(text, DESIGN_KNOWLEDGE_ACTION_PATTERNS, max_items=3)
+
+    form = forms[0][0] if forms else focus_form_from_keyword(subset)
+    action = actions[0][0] if actions else "synthesizes"
+    secondary_actions = [item[0] for item in actions[1:3]]
+    secondary_forms = [item[0] for item in forms[1:3] if item[0] != form]
+
+    label = ACTION_LABEL_TEMPLATES.get(action, "Frames {form} as Design Knowledge").format(
+        form=phrase_title(form)
+    )
+    action_text = ACTION_DISPLAY.get(action, action)
+
+    representative_titles = [
+        str(title)
+        for title in subset.sort_values(["representative_rank", "medoid_rank"]).get("title", pd.Series(dtype=str)).head(3)
+        if str(title).strip()
+    ]
+    rep_sentence = ""
+    if representative_titles:
+        rep_sentence = " Representative papers include " + "; ".join(representative_titles[:2]) + "."
+
+    form_detail = ""
+    if secondary_forms:
+        form_detail = f" Related forms include {', '.join(phrase_title(item) for item in secondary_forms)}."
+
+    action_detail = ""
+    if secondary_actions:
+        action_detail = (
+            " The shared move also involves "
+            + " and ".join(ACTION_NOUN_PHRASES.get(item, item) for item in secondary_actions)
+            + "."
+        )
+
+    facet_detail = []
+    if facets.get("method_or_lens"):
+        facet_detail.append("methods or lenses such as " + format_facet_values(facets["method_or_lens"][:3]))
+    if facets.get("population_or_context"):
+        facet_detail.append("contexts such as " + format_facet_values(facets["population_or_context"][:3]))
+    facet_sentence = ""
+    if facet_detail:
+        facet_sentence = " Application and method terms are treated as supporting facets, especially " + " and ".join(facet_detail) + "."
+
+    contribution_sentence = ""
+    if contribution_types:
+        contribution_sentence = " Its contribution pattern is coded as " + ", ".join(contribution_types[:3]) + "."
+
+    summary = (
+        f"This cluster {action_text} {form}, emphasizing how a design-knowledge construct is made explicit, "
+        f"organized, or put to work rather than only where it is applied."
+        f"{form_detail}{action_detail}{contribution_sentence}{facet_sentence}{rep_sentence}"
+    )
+
+    return {
+        "cluster_label_candidate": label,
+        "cluster_summary_candidate": summary,
+        "design_knowledge_form": phrase_title(form),
+        "design_knowledge_action": ACTION_DISPLAY.get(action, action),
+        "design_knowledge_contribution": f"{ACTION_DISPLAY.get(action, action)} {phrase_title(form)}",
+    }
+
+
 def preferred_keyphrases_for_cluster(subset: pd.DataFrame, keyphrases: list[str], max_items: int = 4) -> list[str]:
     cluster_text = normalize_phrase(
         " ".join(
@@ -1008,10 +1171,10 @@ def preferred_keyphrases_for_cluster(subset: pd.DataFrame, keyphrases: list[str]
         if pattern.search(cluster_text):
             candidates.append(phrase)
     for phrase in keyphrases:
-        if " " in phrase and phrase not in candidates:
+        if " " in phrase and phrase not in candidates and phrase not in APPLICATION_CONTEXT_PHRASES:
             candidates.append(phrase)
     for phrase in keyphrases:
-        if phrase not in candidates:
+        if phrase not in candidates and phrase not in APPLICATION_CONTEXT_PHRASES:
             candidates.append(phrase)
 
     selected = []
@@ -1084,6 +1247,9 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             summaries[int(label)] = {
                 "cluster_label_candidate": "Noise / Outliers",
                 "cluster_summary_candidate": "These papers were not assigned to a dense DBSCAN cluster.",
+                "design_knowledge_form": "",
+                "design_knowledge_action": "",
+                "design_knowledge_contribution": "",
                 "facet_population_or_context": "",
                 "facet_stakeholder_or_population": "",
                 "facet_method_or_lens": "",
@@ -1093,6 +1259,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             continue
         facets = {facet: find_facet_matches_for_cluster(subset, facet) for facet in FACET_PATTERNS}
         contribution_types = infer_contribution_types_for_cluster(subset)
+        design_claim = infer_design_knowledge_claim(subset, facets, contribution_types)
         keyphrases = [
             phrase.strip()
             for phrase in str(subset.iloc[0].get("cluster_theme_terms", "")).split(",")
@@ -1126,7 +1293,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 label_parts = keyword_label_parts
         if not label_parts:
             label_parts = keyphrases[:3]
-        cluster_label = " / ".join(phrase_title(p) for p in label_parts[:3]) or f"Cluster {label}"
+        cluster_label = design_claim["cluster_label_candidate"] or " / ".join(phrase_title(p) for p in label_parts[:3]) or f"Cluster {label}"
 
         context = format_facet_values(facets["population_or_context"][:3]) or ", ".join(keyphrases[:2]) or "the selected papers"
         stakeholders = format_facet_values(facets["stakeholder_or_population"][:3])
@@ -1142,11 +1309,14 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             clauses.append(f"with recurring attention to {artifacts}")
         if contribution:
             clauses.append(f"with contribution types coded as {contribution}")
-        summary = ", ".join(clauses) + "."
+        summary = design_claim["cluster_summary_candidate"] or ", ".join(clauses) + "."
 
         summaries[int(label)] = {
             "cluster_label_candidate": cluster_label,
             "cluster_summary_candidate": summary,
+            "design_knowledge_form": design_claim["design_knowledge_form"],
+            "design_knowledge_action": design_claim["design_knowledge_action"],
+            "design_knowledge_contribution": design_claim["design_knowledge_contribution"],
             "facet_population_or_context": format_facet_values(facets["population_or_context"]),
             "facet_stakeholder_or_population": format_facet_values(facets["stakeholder_or_population"]),
             "facet_method_or_lens": format_facet_values(facets["method_or_lens"]),
@@ -1258,6 +1428,9 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "cluster_theme_terms": str(row.get("cluster_theme_terms", "")),
                 "cluster_label_candidate": str(row.get("cluster_label_candidate", "")),
                 "cluster_summary_candidate": str(row.get("cluster_summary_candidate", "")),
+                "design_knowledge_form": str(row.get("design_knowledge_form", "")),
+                "design_knowledge_action": str(row.get("design_knowledge_action", "")),
+                "design_knowledge_contribution": str(row.get("design_knowledge_contribution", "")),
                 "facet_population_or_context": str(row.get("facet_population_or_context", "")),
                 "facet_stakeholder_or_population": str(row.get("facet_stakeholder_or_population", "")),
                 "facet_method_or_lens": str(row.get("facet_method_or_lens", "")),
@@ -1420,7 +1593,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
   <header>
     <h1>{html.escape(title)}</h1>
     <div class="controls">
-      <input id="search" placeholder="Search title, abstract, author, venue, keyword..." />
+      <input id="search" placeholder="Search papers in this view..." />
       <select id="clusterFilter"><option value="all">All clusters</option></select>
       <label class="toggle"><input id="repOnly" type="checkbox" /> Top-3 reps only</label>
     </div>
@@ -1576,6 +1749,12 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         <div class="abstract">${{escapeHtml(p.cluster_label_candidate)}}</div>
         <div class="section-title">Cluster Summary Candidate</div>
         <div class="abstract">${{escapeHtml(p.cluster_summary_candidate)}}</div>
+        <div class="section-title">Design-Knowledge Contribution</div>
+        <div>
+          <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
+          <span class="pill">Action: ${{escapeHtml(p.design_knowledge_action || 'n/a')}}</span>
+        </div>
+        <div class="abstract">${{escapeHtml(p.design_knowledge_contribution || '')}}</div>
         <div class="section-title">Paper-Oriented Facets</div>
         <div>
           <span class="pill">Context/Domain: ${{escapeHtml(p.facet_population_or_context || 'n/a')}}</span>
@@ -1780,6 +1959,9 @@ def main() -> None:
     for field in [
         "cluster_label_candidate",
         "cluster_summary_candidate",
+        "design_knowledge_form",
+        "design_knowledge_action",
+        "design_knowledge_contribution",
         "facet_population_or_context",
         "facet_stakeholder_or_population",
         "facet_method_or_lens",

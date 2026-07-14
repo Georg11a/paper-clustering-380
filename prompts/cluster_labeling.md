@@ -12,12 +12,17 @@ Representative papers:
 {representative_papers}
 
 Task:
-Create a concise label and one-sentence summary for this cluster. The label should describe the substantive theme, not simply repeat the keyword group. Ground the summary in the representative paper titles and theme terms.
+Create an interpretive design-knowledge claim for this cluster, not only a topic phrase. The label should explain how the papers define, organize, translate, represent, adapt, evaluate, or use the relevant design-knowledge construct. Treat application domains and methods such as HCI, participatory design, co-design, or HRI as supporting facets unless they are central to the construct itself.
+
+The summary should answer:
+1. What kind of design knowledge is being discussed?
+2. What action does the cluster perform on that knowledge, such as defining, organizing, operationalizing, representing, or evaluating it?
+3. How do the representative papers support that interpretation?
 
 Return JSON:
 {
-  "label": "short cluster label",
-  "summary": "one sentence",
+  "label": "interpretive design-knowledge claim",
+  "summary": "2-3 sentence design-knowledge contribution summary",
   "evidence_terms": ["term 1", "term 2", "term 3"]
 }
 ```

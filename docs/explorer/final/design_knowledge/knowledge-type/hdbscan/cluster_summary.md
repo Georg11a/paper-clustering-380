@@ -13,8 +13,9 @@ Representative papers:
 - 2018: Let's Get Divorced: Constructing Knowledge Outcomes for Critical Design and Constructive Design Research
 
 ### Cluster 0 (24 papers)
-Label candidate: Design Knowledge
-Summary candidate: This cluster focuses on Sustainability, Education / Learning, involving Designers, Practitioners, Developers, using Design Science, Prototype, Ontology as the main methodological or conceptual lens, with recurring attention to Tool, Interface, Prototype, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Principles, Design Heuristics. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Design Science, Prototype, Ontology, Workshop and contexts such as Sustainability, Education / Learning. Representative papers include Guidelines supporting the formulation of design principles; Design Principles for Boundary Spanning in Transdisciplinary Design Science Research.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: dsr, science, patterns, practices, prescriptive, heuristics, nature, interactive
 
 Representative papers:
@@ -23,19 +24,12 @@ Representative papers:
 - : Toward a Method for Design Science Research Meta-Studies to Improve the Reusability of Design Principles
 
 ### Cluster 1 (8 papers)
-Label candidate: Design Knowledge
-Summary candidate: This cluster focuses on Industrial Design, involving Designers, with contribution types coded as Methodological, Theoretical, Empirical.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Tacit Design Knowledge, Design Rationale. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Empirical. Application and method terms are supporting facets, especially contexts such as Industrial Design. Representative papers include What is design knowledge from the viewpoint of CPM/PDD?; Causal design knowledge: Alternative representation method for product development knowledge management.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: product, management, industrial, cpm, pdd, architecture, tacit, prototyping
 
 Representative papers:
 - 2008: What is design knowledge from the viewpoint of CPM/PDD?
 - : Causal design knowledge: Alternative representation method for product development knowledge management
 - 2008: Design knowledge for decision-making process in a DFX product design approach
-
-## LDA Topics
-- Topic 0: product, field, industrial, transformation, analysis, practice, related, creation
-- Topic 1: nature, important, science, make, interactive, formulation, prescriptive, level
-- Topic 2: domain, dsr, patterns, teachers, important, ways, form, educational
-- Topic 3: platform, digital, literature, types, engineering, science, heuristics, lack
-- Topic 4: tools, game, dsr, tacit, inquiry, science, propose, potential
-- Topic 5: patterns, practices, oriented, object, heuristics, understand, ontology, accumulated

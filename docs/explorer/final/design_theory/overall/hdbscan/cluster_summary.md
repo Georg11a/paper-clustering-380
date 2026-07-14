@@ -13,8 +13,9 @@ Representative papers:
 - 1983: DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES.
 
 ### Cluster 0 (22 papers)
-Label candidate: Value-Sensitive Design / Theories / Management
-Summary candidate: This cluster focuses on theories, management, involving Developers, Designers, Practitioners, using Design Science as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Artifact/System, Methodological.
+Label candidate: Synthesizes Design Theory into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Principles, Design Knowledge. The shared move also involves definition and conceptualization and context-specific adaptation. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Application and method terms are supporting facets, especially methods or lenses such as Design Science. Representative papers include Incommensurability in design science: Which comes first-Theory or artefact?; Tinkering, tailoring, and bricolage: Implications for theories of Design.
+Design-knowledge contribution: synthesizes prior work on Design Theory
 Theme words: theories, management, science, value, artefact, oriented, literature, focus
 
 Representative papers:
@@ -23,19 +24,12 @@ Representative papers:
 - 2025: What is the value of design theory?
 
 ### Cluster 1 (7 papers)
-Label candidate: Theory Theory / Product / Innovation
-Summary candidate: This cluster focuses on product, innovation, involving Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Empirical.
+Label candidate: Defines Design Theory Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Principles, Design Frameworks. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Empirical. Application and method terms are supporting facets, especially methods or lenses such as Case Study. Representative papers include Design Theory and Method of Complex Products: A Review; Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry.
+Design-knowledge contribution: defines and conceptualizes Design Theory
 Theme words: product, innovation, technique, recovery, mechanical, thinking, industry, theory theory
 
 Representative papers:
 - 2022: Design Theory and Method of Complex Products: A Review
 - 2006: Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry
 - 2022: The Conceptual Design of Mechanical Products
-
-## LDA Topics
-- Topic 0: science, theories, value, focus, theory theory, practice, problems, concept
-- Topic 1: multiscale, strategies, scale, theory theory, focus, perspective, students, problem
-- Topic 2: sonification, oriented, account, constructs, sketching, visual, problem, field
-- Topic 3: service, theoretical, theories, values, management, literature, analysis, practice
-- Topic 4: impact, innovation, management, focus, engineering, international, theory theory, product
-- Topic 5: focus, theory theory, theories, engineering, existing, concepts, science, decision

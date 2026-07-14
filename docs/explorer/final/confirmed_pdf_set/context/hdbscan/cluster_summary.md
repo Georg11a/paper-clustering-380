@@ -8,48 +8,39 @@ Summary candidate: These papers were not assigned to a dense DBSCAN cluster.
 Theme words: noise / outliers
 
 Representative papers:
-- 2024.0: Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines
-- 2021.0: Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines
-- 2017.0: The Rough Mile: Testing a Framework of Immersive Practice
+- 2024: Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines
+- 2021: Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines
+- 2017: The Rough Mile: Testing a Framework of Immersive Practice
 
 ### Cluster 0 (10 papers)
-Label candidate: Value-Sensitive Design / Behavior Change / Relational Theory
-Summary candidate: This cluster focuses on Education / Learning, Industrial Design, Sustainability, involving Designers, Practitioners, Developers, using Design Science, Case Study, Interview as the main methodological or conceptual lens, with recurring attention to Prototype, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Label candidate: Synthesizes Design Theory into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Knowledge, Design Frameworks. The shared move also involves definition and conceptualization and context-specific adaptation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Design Science, Case Study, Interview, Prototype and contexts such as Education / Learning, Industrial Design, Sustainability. Representative papers include Affordance based design: a relational theory for design; Incommensurability in design science: Which comes first-Theory or artefact?.
+Design-knowledge contribution: synthesizes prior work on Design Theory
 Theme words: value, theories, self, relational theory, developed, usage, software, chronic
 
 Representative papers:
 - : Affordance based design: a relational theory for design
-- 2010.0: Incommensurability in design science: Which comes first-Theory or artefact?
-- 2013.0: Thriving Systems Theory: An Emergent Information Systems Design Theory
+- 2010: Incommensurability in design science: Which comes first-Theory or artefact?
+- 2013: Thriving Systems Theory: An Emergent Information Systems Design Theory
 
 ### Cluster 1 (22 papers)
-Label candidate: User-centered Design / Behavior Change / Dark Patterns
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, Developers, using Prototype, Design Science, Interview as the main methodological or conceptual lens, with recurring attention to Tool, Interface, Prototype, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Label candidate: Synthesizes Design Patterns into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Rationale, Design Knowledge. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are supporting facets, especially methods or lenses such as Prototype, Design Science, Interview, Case Study and contexts such as Education / Learning. Representative papers include The anatomy of HCI design patterns; An overview of human-computer interaction patterns in pervasive systems.
+Design-knowledge contribution: synthesizes prior work on Design Patterns
 Theme words: patterns, computer, ai, software, rationale, industry, robot, way
 
 Representative papers:
-- 2009.0: The anatomy of HCI design patterns
-- 2010.0: An overview of human-computer interaction patterns in pervasive systems
-- 2023.0: Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository
+- 2009: The anatomy of HCI design patterns
+- 2010: An overview of human-computer interaction patterns in pervasive systems
+- 2023: Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository
 
 ### Cluster 2 (7 papers)
-Label candidate: Methodological Framework / Visualization / Climate
-Summary candidate: This cluster focuses on Climate / Environment, involving Designers, with recurring attention to Tool, Visualization System, Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Patterns, Design Frameworks. The shared move also involves definition and conceptualization and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are supporting facets, especially contexts such as Climate / Environment. Representative papers include Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Towards a Model of Information Aesthetics in Information Visualization.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: visualization, climate, composite, audio, sonification, atlases, methodological framework, provide
 
 Representative papers:
-- 2018.0: Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco
-- 2007.0: Towards a Model of Information Aesthetics in Information Visualization
-- 2012.0: Exploring the design space of composite visualization
-
-## LDA Topics
-- Topic 0: guidelines, rationale, visualization, software, usability, engineering, hri, collaboration
-- Topic 1: practice, creation, grounded, ethical, ethics, socio, justified, building
-- Topic 2: patterns, science, games, theoretical, children, focused, practice, ethics
-- Topic 3: visualization, patterns, interfaces, field, software, practical, product, definitions
-- Topic 4: patterns, software, ai, game, value, domain, computer, tools
-- Topic 5: education, software, collaboration, industry, patterns, video, ai, field
-- Topic 6: game, entertainment, tacit, literature, characteristics, interfaces, educational, conversational
-- Topic 7: identity, game, artificial, ai, critical, approaches, proposals, goal
-- Topic 8: ai, patterns, important, strategic, formulation, oriented, demand, conceptual
-- Topic 9: software, engineering, computer, visualization, patterns, concept, industry, education
+- 2018: Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco
+- 2007: Towards a Model of Information Aesthetics in Information Visualization
+- 2012: Exploring the design space of composite visualization

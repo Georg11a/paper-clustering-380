@@ -3,8 +3,9 @@
 ## Cluster Themes
 
 ### Cluster 0 (16 papers)
-Label candidate: Co-design / Narrative / Schema
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Co-design as the main methodological or conceptual lens, with recurring attention to Game, Tool, with contribution types coded as Theoretical, Artifact/System, Methodological.
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Theory, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Application and method terms are supporting facets, especially methods or lenses such as Co-design and contexts such as Education / Learning. Representative papers include Design knowledge in the artistic‚Äìaesthetic development and transformation of the world; ON the HIERARCHICAL LEVELS of DESIGN KNOWLEDGE.
+Design-knowledge contribution: defines and conceptualizes Design Knowledge
 Theme words: narrative, schema, game, interactive, activities, focused, centric, ethical
 
 Representative papers:
@@ -13,8 +14,9 @@ Representative papers:
 - 2024: Using Schema to Inform Method Design Practices
 
 ### Cluster 1 (9 papers)
-Label candidate: Design Science / Solution Space / Dsr
-Summary candidate: This cluster focuses on dsr, creation, involving Practitioners, using Design Science as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Design Science. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: dsr, creation, solution space, enhancement, doc, science, folding, accumulation
 
 Representative papers:
@@ -23,8 +25,9 @@ Representative papers:
 - 2020: Accumulating design knowledge: A mechanisms-based approach
 
 ### Cluster 2 (10 papers)
-Label candidate: Design Science / Generative Ai / Formulation
-Summary candidate: This cluster focuses on Education / Learning, Workplace, involving Designers, using Design Science, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Label candidate: Synthesizes Design Principles into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Knowledge, Tacit Design Knowledge. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Design Science, Workshop and contexts such as Education / Learning, Workplace. Representative papers include Prescriptive knowledge in IS research: Conceptualizing design principles in terms of materiality, action, and boundary conditions; Guidelines supporting the formulation of design principles.
+Design-knowledge contribution: synthesizes prior work on Design Principles
 Theme words: formulation, edps, genai, utilization, decision, governance, configurations, expertise
 
 Representative papers:
@@ -33,8 +36,9 @@ Representative papers:
 - : Design Principles for Boundary Spanning in Transdisciplinary Design Science Research
 
 ### Cluster 3 (13 papers)
-Label candidate: Participatory Design / Co-design / Studio
-Summary candidate: This cluster focuses on Industrial Design, Education / Learning, involving Designers, using Case Study as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Rationale, Design Frameworks. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Case Study and contexts such as Industrial Design, Education / Learning. Representative papers include Identification and management of the near-field knowledge of industrial design for innovative product shapes; How industrial design knowledge differs from engineering design knowledge.
+Design-knowledge contribution: defines and conceptualizes Design Knowledge
 Theme words: studio, product, field, near, intent, decision, industrial, documents
 
 Representative papers:
@@ -43,8 +47,9 @@ Representative papers:
 - 2008: What is design knowledge from the viewpoint of CPM/PDD?
 
 ### Cluster 4 (14 papers)
-Label candidate: Participatory Design / Dark Patterns / Usability
-Summary candidate: This cluster focuses on Education / Learning, Healthcare, involving Designers, Practitioners, using Thematic Analysis, Design Science, Case Study as the main methodological or conceptual lens, with recurring attention to Interface, Tool, Prototype, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Patterns, Design Heuristics. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are supporting facets, especially methods or lenses such as Thematic Analysis, Design Science, Case Study, Prototype and contexts such as Education / Learning, Healthcare. Representative papers include The anatomy of HCI design patterns; Using a Visual Abstract as a Lens for Communicating and Promoting Design Science Research in Software Engineering.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: usability, visual, patterns, dark, contestable, heuristics, ai, prototyping
 
 Representative papers:
@@ -53,8 +58,9 @@ Representative papers:
 - 2026: The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design
 
 ### Cluster 5 (3 papers)
-Label candidate: Object Oriented / Best Practices / Principles Heuristics
-Summary candidate: This cluster focuses on object oriented, best practices, involving Designers, using Ontology as the main methodological or conceptual lens, with contribution types coded as Methodological.
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Heuristics, Design Principles. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological. Application and method terms are supporting facets, especially methods or lenses such as Ontology. Representative papers include The object-oriented design knowledge ontology; Object oriented design knowledge: ontology and measurement of impact.
+Design-knowledge contribution: defines and conceptualizes Design Knowledge
 Theme words: object oriented, best practices, principles heuristics, micro architectural, construction patterns refined, kinds classified formalized, accumulated, properly
 
 Representative papers:
@@ -63,8 +69,9 @@ Representative papers:
 - 2006: Object-oriented design knowledge: Principles, heuristics and best practices
 
 ### Cluster 6 (17 papers)
-Label candidate: Co-design / Hri / Fashion
-Summary candidate: This cluster focuses on Industrial Design, Sustainability, Education / Learning, involving Designers, Practitioners, using Ontology, Prototype as the main methodological or conceptual lens, with recurring attention to Prototype, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Theory, Tacit Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Ontology, Prototype and contexts such as Industrial Design, Sustainability, Education / Learning. Representative papers include Mapping design knowledge: 36 years of Design Studies; A principle-based philosophical framework for fashion design praxis and education in new design landscapes.
+Design-knowledge contribution: defines and conceptualizes Design Knowledge
 Theme words: hri, fashion, objects, praxis, platform, digital, designerly, volition
 
 Representative papers:
@@ -73,19 +80,12 @@ Representative papers:
 - 2007: The anatomy of a design theory
 
 ### Cluster 7 (5 papers)
-Label candidate: Design Science / Enhanced Learning / Social Drones
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Frameworks, Design Theory. The shared move also involves organization and classification and definition and conceptualization. Its contribution pattern is coded as Methodological, Theoretical, Taxonomy/Review. Application and method terms are supporting facets, especially contexts such as Education / Learning. Representative papers include Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review; Strong Technology-Enhanced Learning Concepts.
+Design-knowledge contribution: synthesizes prior work on Design Knowledge
 Theme words: teachers, enhanced learning, ict, tpack, social drones, tel, tdk, pedagogical content
 
 Representative papers:
 - 2019: Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review
 - : Strong Technology-Enhanced Learning Concepts
 - : Seven design frames that teachers use when considering technological pedagogical content knowledge (TPACK)
-
-## LDA Topics
-- Topic 0: patterns, activities, schema, level, practices, centric, transformation, teachers
-- Topic 1: digital, platform, dsr, tools, ontology, specific, science, visual
-- Topic 2: usability, heuristics, field, product, practice, focus, tacit, industrial
-- Topic 3: ai, dsr, game, interactive, problem, solution, objects, prescriptive
-- Topic 4: pattern, components, theories, artifact, form, nature, tool, focus
-- Topic 5: critical, product, outcomes, need, pragmatic, precedent, rigorous, rigor
