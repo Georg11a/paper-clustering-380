@@ -24,8 +24,12 @@
       padding: 18px 24px 12px;
       background: var(--panel);
       border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
     }
-    h1 { margin: 0 0 12px; font-size: 22px; letter-spacing: 0; }
+    h1 { margin: 0; font-size: 22px; letter-spacing: 0; min-width: 0; }
     .controls {
       display: grid;
       grid-template-columns: 180px 210px;
@@ -77,6 +81,7 @@
     .point.dim { opacity: 0.14; }
     .point.selected { stroke: #111827; stroke-width: 3; opacity: 1; }
     .legend, .cluster-list { padding: 10px 12px; border-top: 1px solid var(--line); }
+    .legend { max-height: 118px; overflow-y: auto; }
     .legend-items { display: flex; flex-wrap: wrap; gap: 8px 14px; }
     .legend-item { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
     .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
@@ -124,6 +129,8 @@
     .cluster-card { border-top: 1px solid var(--line); padding: 10px 12px; }
     .cluster-card button { height: 28px; padding: 0 8px; margin-top: 6px; font-size: 12px; }
     @media (max-width: 980px) {
+      header { display: block; }
+      h1 { margin-bottom: 12px; }
       .controls, main { grid-template-columns: 1fr; }
       .plot-panel { min-height: 560px; }
     }
@@ -202,7 +209,7 @@
 
     function render() {
       const shown = filteredPapers();
-      status.textContent = `${shown.length} of ${papers.length} papers shown. Axes are UMAP 1 and UMAP 2 coordinates, not interpretable variables. Use "Top-3 reps only" to filter representative papers.`;
+      status.textContent = `${shown.length} of ${papers.length} papers shown; ${data.clusters.length} clusters in this view. Axes are UMAP 1 and UMAP 2 coordinates, not interpretable variables. Use "Top-3 reps only" to filter representative papers.`;
       drawPlot(shown);
       renderDetails(papers.find(p => p.paper_id === state.selected) || shown[0] || papers[0]);
     }
