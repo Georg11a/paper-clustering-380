@@ -53,7 +53,7 @@ Representative papers:
 
 ### Cluster 5 (6 papers)
 Label candidate: Ethical / Game / Views
-Summary candidate: This cluster focuses on Education / Learning, with recurring attention to Game, with contribution types coded as Methodological, Theoretical, Empirical.
+Summary candidate: This cluster focuses on Education / Learning, with recurring attention to Game, with contribution types coded as Methodological, Theoretical, Artifact/System.
 Theme words: ethical, game, patterns, views, practice, encounters, visualization, visual
 
 Representative papers:
@@ -71,13 +71,9 @@ Representative papers:
 - : Use of design patterns in analogy-based design
 
 ## LDA Topics
-- Topic 0: patterns, properties, architecture, alexander, focus, center, software, quality
-- Topic 1: game, theoretical, practice, patterns, education, perspective, challenge, practical
-- Topic 2: patterns, semantic, structural, formal, structure, modeling, focus, software
-- Topic 3: patterns, software, oriented, object, social, component, ai, programming
-- Topic 4: patterns, business, management, commerce, balanced, broker, focus, adaptable
-- Topic 5: practice, ethics, perceived, value, patterns, building, practitioners, issues
-- Topic 6: patterns, visualization, views, visual, web, focus, multiple, ai
-- Topic 7: patterns, computer, solution, domain, language, alexander, example, application
-- Topic 8: robot, patterns, hri, authoring, scenarios, environment, language, offer
-- Topic 9: patterns, legal, law, collaboration, observed, digital, student, ieee
+- Topic 0: patterns, alexander, robot, computer, language, properties, focus, domain
+- Topic 1: game, patterns, theoretical, practice, achievement, education, perspective, challenge
+- Topic 2: patterns, semantic, structural, formal, structure, software, focus, oriented
+- Topic 3: patterns, software, oriented, social, component, ai, object, architecture
+- Topic 4: patterns, visualization, focus, views, visual, decision, business, guidelines
+- Topic 5: patterns, collaboration, ethics, practice, observed, student, ai, analysis

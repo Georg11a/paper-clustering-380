@@ -13,13 +13,9 @@ Representative papers:
 - 2021: Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines
 
 ## LDA Topics
-- Topic 0: platforms, immersive, guidelines, self, offer, especially, journal, aims
-- Topic 1: guidelines, modeling, engineering, control, focus, interfaces, theories, designs
-- Topic 2: guidelines, task, interfaces, definitions, types, products, concept, provide
-- Topic 3: guidelines, text, visual, types, components, app, approaches, tools
-- Topic 4: guidelines, characteristics, natural, instances, review, elements, computer, applying
-- Topic 5: visualization, aesthetics, art, guidelines, understanding, techniques, focus, better
-- Topic 6: software, guidelines, architecture, reference, tools, requirements, types, implementation
-- Topic 7: guidelines, communication, usability, automated, insights, ai, understanding, accurate
-- Topic 8: constraints, visualization, guidelines, formalizing, actionable, immersive, focus, practices
-- Topic 9: definition, aesthetic, focus guidelines, basis, components, developing, good, potentials
+- Topic 0: immersive, guidelines, platforms, focus, engagement, performance, practice, discussion
+- Topic 1: guidelines, constraints, visualization, usability, interfaces, actionable, formalizing, rules
+- Topic 2: guidelines, task, interfaces, definitions, types, products, concept, focus
+- Topic 3: guidelines, text, instances, visual, characteristics, types, components, app
+- Topic 4: guidelines, communication, natural, software, automated, ai, insights, computer
+- Topic 5: visualization, aesthetics, art, guidelines, techniques, understanding, provides, focus

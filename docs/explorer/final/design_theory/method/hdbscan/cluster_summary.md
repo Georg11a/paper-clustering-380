@@ -13,13 +13,9 @@ Representative papers:
 - 2012: Undesigning technology: considering the negation of design by design
 
 ## LDA Topics
-- Topic 0: innovation, technique, product, method theory, literature, novel, treatment, chapter
-- Topic 1: subject, situations, existing, understanding, changing, theory case, scale, impact
-- Topic 2: concept, method theory, meta, theoretical, existing, typology, conceptual, article
-- Topic 3: service, digital, online, social, method theory, efforts, initial, practice
-- Topic 4: things work, explain, theory construction, requires, theories, know, involves, analyze
-- Topic 5: method theory, games, computer, need, theoretical, address, field, directed
-- Topic 6: method theory, product, concepts, decision, management, problem, course, theories
-- Topic 7: method theory, architecture, cognitive, characteristics, theoretical, literature, scientists, fields
-- Topic 8: method theory, theories, science, methodology, engineering, management, practice, sonification
-- Topic 9: problem, method theory, inquiry, multiple, solving, situations, account, aspects
+- Topic 0: innovation, technique, literature, problem, review, method theory, management, framing
+- Topic 1: method theory, practice, problem, field, analysis, engineering, decision, epistemology
+- Topic 2: method theory, sonification, theories, digital, theoretical, explain, existing, decision
+- Topic 3: method theory, science, product, theories, need, practices, concepts, existing
+- Topic 4: concept, space, games, method theory, general, computer, topology, proposed
+- Topic 5: method theory, theories, management, science, conceptual, scientific, methodology, concept

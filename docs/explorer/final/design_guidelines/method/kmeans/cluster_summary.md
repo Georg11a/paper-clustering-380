@@ -53,7 +53,7 @@ Representative papers:
 
 ### Cluster 5 (2 papers)
 Label candidate: Interim / Tacit / Characteristics
-Summary candidate: This cluster focuses on Sustainability, Education / Learning, involving Designers, using Case Study, Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Theoretical.
+Summary candidate: This cluster focuses on Sustainability, involving Designers, using Case Study as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Theoretical.
 Theme words: interim, tacit, characteristics, graphic, innovation, instances, sharing, comprehensive
 
 Representative papers:
@@ -81,13 +81,9 @@ Representative papers:
 - 2020: From surface realism to training considerations: a proposal for changing the focus in the design of training systems
 
 ## LDA Topics
-- Topic 0: interfaces, definitions, high, method guidelines, proposal, growing, strategies, particular
-- Topic 1: visualization, guidelines, provide, guidance, tools, effective, propose, formalizing
-- Topic 2: growing, method guidelines, size, space, tools, concept, professional, practical
-- Topic 3: guidelines, architecture, task, usability, characteristics, interface, specific, types
-- Topic 4: guidelines, goal, definitions, immersive, assessment, critical, digital, practitioners
-- Topic 5: growing, method guidelines, size, space, tools, concept, professional, practical
-- Topic 6: growing, method guidelines, size, space, tools, concept, professional, practical
-- Topic 7: guidelines, concept, complex, visual, hybrid, clear, interfaces, practical
-- Topic 8: growing, method guidelines, size, space, tools, concept, professional, practical
-- Topic 9: visualization, aesthetics, focuses, recently, need, understanding, proposed, method guidelines
+- Topic 0: guidelines, interfaces, specific, high, concept, complex, reflect, space
+- Topic 1: guidelines, visualization, aesthetics, tools, self, immersive, control, lack
+- Topic 2: practical, guidelines, paradigm, environment, concrete, introduce, good, reflect
+- Topic 3: guidelines, architecture, task, provide, usability, interface, guidance, visual
+- Topic 4: guidelines, goal, definitions, immersive, critical, focus, practitioners, turn
+- Topic 5: guidelines, characteristics, review, literature, professional, concept, growing, theories

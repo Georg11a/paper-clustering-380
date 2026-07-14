@@ -42,7 +42,7 @@ Representative papers:
 - 2014: A Framework for Systemic Design
 
 ### Cluster 4 (10 papers)
-Label candidate: Ethical Design / Co-design / Method Methods
+Label candidate: Ethical Design / Method Methods / Role Playing
 Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Methodological, Artifact/System, Empirical.
 Theme words: architecture, field, ideation, landscape, constraint, virtual, method methods, role playing
 
@@ -63,7 +63,7 @@ Representative papers:
 
 ### Cluster 6 (7 papers)
 Label candidate: Co-design / Method Corroboration / Floorplan
-Summary candidate: This cluster focuses on floorplan, method corroboration, involving Designers, Practitioners, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
+Summary candidate: This cluster focuses on floorplan, method corroboration, involving Designers, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
 Theme words: floorplan, method corroboration, embodied, flexibility, change, areas, tools, children
 
 Representative papers:
@@ -81,13 +81,9 @@ Representative papers:
 - 1990: Design methods for real time software
 
 ## LDA Topics
-- Topic 0: method methods, service, value, survey, review, metric, present, evidence
-- Topic 1: method methods, architecture, participatory, article, community, problems, technical, innovative
-- Topic 2: artifacts, method methods, engage, various, define, performance, literature, psychological
-- Topic 3: practice, various, following, method methods, attention, bring, industrial, communication
-- Topic 4: product, complexity, functional, method methods, thinking, term, survey, hand
-- Topic 5: management, concept, conceptual, field, constraints, method methods, define, initial
-- Topic 6: architectural, concept, method methods, architecture, landscape, thinking, provides, industrial
-- Topic 7: service, creation, method methods, usage, methodology, practices, ethnographic, findings
-- Topic 8: understand, industry, interactive, architecture, method methods, aspects, needs, basis
-- Topic 9: virtual, various, defined, methods case, integration, technologies, field, challenges
+- Topic 0: method methods, service, survey, review, systematic, analysis, provides, existing
+- Topic 1: method methods, architectural, architecture, virtual, field, thinking, participatory, article
+- Topic 2: value, method methods, service, complexity, survey, practices, creation, usage
+- Topic 3: understand, industry, method methods, literature, practitioners, elements, aspects, needs
+- Topic 4: functional, method methods, product, field, thinking, term, hand, challenges
+- Topic 5: management, conceptual, concept, architecture, interactive, constraints, building, method methods

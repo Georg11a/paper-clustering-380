@@ -34,7 +34,7 @@ Representative papers:
 
 ### Cluster 3 (8 papers)
 Label candidate: Interactive Technology / Enhanced Learning / Recreation
-Summary candidate: This cluster focuses on recreation, nature, involving Designers, using Design Science as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Taxonomy/Review.
+Summary candidate: This cluster focuses on recreation, nature, involving Designers, with contribution types coded as Theoretical, Methodological, Taxonomy/Review.
 Theme words: recreation, nature, interactive technology, enhanced learning, cliche, hierarchical, intermediate, level
 
 Representative papers:
@@ -54,7 +54,7 @@ Representative papers:
 
 ### Cluster 5 (18 papers)
 Label candidate: Design Rationale / Co-design / Teachers
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Ontology, Thematic Analysis, Co-design as the main methodological or conceptual lens, with recurring attention to Tool, Prototype, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Ontology, Thematic Analysis, Co-design as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
 Theme words: teachers, competence, transformation, generalization, tools, drones, documents, pedagogical
 
 Representative papers:
@@ -83,13 +83,9 @@ Representative papers:
 - : Towards a Method for Design Principle Development in Information Systems
 
 ## LDA Topics
-- Topic 0: object, ontology, oriented, representation, kinds, patterns, future, involved
-- Topic 1: formulation, important, practices, article, reasoning, oriented, best, hierarchical
-- Topic 2: game, science, field, product, contributions, make, current, prescriptive
-- Topic 3: interactive, nature, heuristics, elicitation, ai, critical, important, problem
-- Topic 4: analysis, discipline, patterns, practices, concepts, evidence, strategic, level
-- Topic 5: platform, types, digital, literature, ontology, domain, lack, bases
-- Topic 6: dsr, science, tools, management, teachers, product, patterns, content
-- Topic 7: product, review, literature, systematic, related, decisions, need, environments
-- Topic 8: rationale, educational, utilization, form, engineering, field, structure, provide
-- Topic 9: problem, creation, engineering, industrial, product, building, definition, concept
+- Topic 0: tacit, oriented, object, ontology, kinds, mechanisms, patterns, representation
+- Topic 1: article, practices, field, creation, forms, formulation, digital, dsr
+- Topic 2: product, teachers, science, game, review, field, analysis, make
+- Topic 3: interactive, product, nature, management, heuristics, tools, important, elicitation
+- Topic 4: dsr, patterns, analysis, practices, discipline, future, propose, community
+- Topic 5: platform, types, digital, literature, domain, form, quality, ontology

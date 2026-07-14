@@ -59,7 +59,7 @@ Representative papers:
 
 ### Cluster 6 (2 papers)
 Label candidate: User-centered Design / Screen Standardization / Software
-Summary candidate: This cluster focuses on Accessibility, Education / Learning, using User-centered Design, Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Dashboard, Interface, with contribution types coded as Artifact/System, Methodological, Theoretical.
+Summary candidate: This cluster focuses on Accessibility, Education / Learning, using User-centered Design, Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
 Theme words: software, expectations, ussf, unified, screen standardization, level, hierarchical, accessibility
 
 Representative papers:
@@ -75,13 +75,9 @@ Representative papers:
 - 2021: Designing Embodied Sonic Meditation
 
 ## LDA Topics
-- Topic 0: software, coherent, form, industry, mobile, methodological, mechanisms, application
-- Topic 1: education, learners, adaptive, game, industry, impact, approaches, provide
-- Topic 2: analysis, software, problem, heuristics, develop, computer, field, ai
-- Topic 3: long, coherent, challenge, aims, develop, following, literature, industry
-- Topic 4: engineering, literature, definition, domain, aims, challenge, architectures, article
-- Topic 5: long, coherent, challenge, aims, develop, following, literature, industry
-- Topic 6: long, coherent, challenge, aims, develop, following, literature, industry
-- Topic 7: games, ethical, initial, language, practice, growing, body, approaches
-- Topic 8: long, coherent, challenge, aims, develop, following, literature, industry
-- Topic 9: long, coherent, challenge, aims, develop, following, literature, industry
+- Topic 0: initial, practice, software, ethical, elements, application, introduces, methodological
+- Topic 1: games, education, adaptive, learners, industry, challenge, impact, define
+- Topic 2: analysis, software, heuristics, problem, education, develop, field, computer
+- Topic 3: approaches, language, develop, following, form, industry, adaptive, challenge
+- Topic 4: engineering, definition, language, approaches, challenge, ubiquitous, practices, perspective
+- Topic 5: literature, industry, architectures, article, systematic, attempts, review, avoid

@@ -33,7 +33,7 @@ Representative papers:
 - 2014: A Framework for Systemic Design
 
 ### Cluster 3 (8 papers)
-Label candidate: Participatory Design / Co-design / Architecture
+Label candidate: Participatory Design / Architecture / Ideation
 Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Artifact/System, Methodological, Theoretical.
 Theme words: architecture, ideation, constraint, landscape, article, education, concept, relation
 
@@ -63,7 +63,7 @@ Representative papers:
 
 ### Cluster 6 (4 papers)
 Label candidate: Applications / Survey / Attributes
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Theoretical, Empirical, Methodological.
+Summary candidate: This cluster focuses on applications, survey, involving Designers, with contribution types coded as Theoretical, Empirical, Methodological.
 Theme words: applications, survey, attributes, complexity, community, problems, mis, solve
 
 Representative papers:
@@ -82,13 +82,9 @@ Representative papers:
 - 2012: Autobiographical design in HCI research: designing and learning through use-it-yourself
 
 ## LDA Topics
-- Topic 0: functional, innovative, evidence, product, hand, need, review, means
-- Topic 1: industry, complexity, architecture, understand, elements, challenges, conceptual, literature
-- Topic 2: architecture, education, interactive, article, formal, building, implementation, environment
-- Topic 3: value, define, engineering, concept, creating, conceptualization, traditional, objective
-- Topic 4: virtual, field, landscape, practice, architecture, product, form, increasingly
-- Topic 5: survey, problems, community, term, field, methodological, game, interactive
-- Topic 6: usage, practices, bring, including, considered, software, goal, evaluating
-- Topic 7: service, methodology, creation, key, artifacts, collaboration, engage, psychological
-- Topic 8: architectural, concept, thinking, software, management, conceptual, definition, change
-- Topic 9: provides, industrial, various, variety, general, techniques, practices, high
+- Topic 0: service, functional, management, concept, innovative, evidence, conceptual, means
+- Topic 1: architecture, industry, field, understand, creation, elements, product, basis
+- Topic 2: architectural, thinking, education, basic, article, architecture, engineering, concept
+- Topic 3: usage, practices, does, various methods, literature, bring, techniques, implications
+- Topic 4: value, service, virtual, methodology, practice, field, provides, software
+- Topic 5: complexity, survey, problems, community, areas, range, methodological, change

@@ -49,13 +49,9 @@ Representative papers:
 - 2026: Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics
 
 ## LDA Topics
-- Topic 0: derived, guidelines, method rules, presented, tasks, properties, structure, functional
-- Topic 1: derived, guidelines, method rules, presented, tasks, properties, structure, functional
-- Topic 2: rules, way, meaning, literature, common, derived, guidelines, presented
-- Topic 3: rules, functional, technical, structure, chapter, possible, recipes, purpose
-- Topic 4: derived, guidelines, method rules, presented, tasks, properties, structure, functional
-- Topic 5: rules, technical, recipe, steps, cost, chapter, architecture, various
-- Topic 6: derived, guidelines, method rules, presented, tasks, properties, structure, functional
-- Topic 7: rules, organizational, modularity, concept, architecture, common, conceptualization, proposed
-- Topic 8: derived, guidelines, method rules, presented, tasks, properties, structure, functional
-- Topic 9: derived, guidelines, method rules, presented, tasks, properties, structure, functional
+- Topic 0: elements, organizational, meaning, properties, guidelines, tasks, presented, method rules
+- Topic 1: elements, organizational, meaning, properties, guidelines, tasks, presented, method rules
+- Topic 2: rules, modularity, organizational, architecture, common, concept, proposed, conceptualization
+- Topic 3: rules, technical, chapter, recipe, functional, structure, way, purpose
+- Topic 4: elements, organizational, meaning, properties, guidelines, tasks, presented, method rules
+- Topic 5: rules, cost, steps, properties, organizational, technical, tasks, presented

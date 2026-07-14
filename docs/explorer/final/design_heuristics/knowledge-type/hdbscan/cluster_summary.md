@@ -13,13 +13,9 @@ Representative papers:
 - 2022: Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization
 
 ## LDA Topics
-- Topic 0: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
-- Topic 1: heuristics, products, concept, generation, idea, evident, create, consider
-- Topic 2: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
-- Topic 3: heuristics, engineering, derived, product, available, stage, draw, form
-- Topic 4: heuristics theory, end, existing, early, problem, identify, solution, lead
-- Topic 5: heuristics, communication, tools, possible, form, problem, lead, help
-- Topic 6: product, challenge, domain, generation, heuristics, innovation, novel, ideas
-- Topic 7: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
-- Topic 8: assistive, dialogue, product, associated, communication formats, analysis, heuristics, systematic
-- Topic 9: existing, heuristics heuristics, early, problem, identify, solution, lead, thumb
+- Topic 0: heuristics, products, idea, identify, generation, lead, existing, aid
+- Topic 1: heuristics, product, concept, assistive, generation, challenge, domain, aid
+- Topic 2: heuristics theory, end, stage, tools, understand, lead, existing, practice
+- Topic 3: heuristics, engineering, form, tools, available, analysis, draw, possible
+- Topic 4: heuristics, stage, extract, early, identify, tools, understand, lead
+- Topic 5: communication, dialogue, formats, associated, product, assistive, decision, heuristics

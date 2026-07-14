@@ -67,7 +67,7 @@ Representative papers:
 
 ### Cluster 7 (3 papers)
 Label candidate: User-centered Design / Iso / Heuristics
-Summary candidate: This cluster focuses on Education / Learning, Accessibility, Privacy / Security, using User-centered Design, Heuristic Evaluation, Prototype as the main methodological or conceptual lens, with recurring attention to Interface, Dashboard, Prototype, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Summary candidate: This cluster focuses on Education / Learning, Accessibility, Privacy / Security, using User-centered Design, Heuristic Evaluation, Prototype as the main methodological or conceptual lens, with recurring attention to Interface, Prototype, with contribution types coded as Methodological, Artifact/System, Theoretical.
 Theme words: iso, heuristics, satisfaction, ussf, wcag, accessibility, usability, rules
 
 Representative papers:
@@ -76,13 +76,9 @@ Representative papers:
 - 1983: Design principles for human-computer interfaces
 
 ## LDA Topics
-- Topic 0: computer, satisfaction, interface, focus, technical, versus, analysis, field
-- Topic 1: embodied, practice, instrument, music, improve, focus principles, previous, concept
-- Topic 2: social, questions, does, goals, continuity, single, embodied, behaviour
-- Topic 3: initial, application, human computer, developing, interactive, instance, principles engineering, introduces
-- Topic 4: games, transparency, conversational, centered, ethical, empirical, principles principles, focus
-- Topic 5: literature, architectures, reference, domain, platform, science, principles data, review
-- Topic 6: learners, special, education, self, alternative, educational, skills, universal
-- Topic 7: definition, engineering, problem, value, outcome, analysis, relationships, formal
-- Topic 8: software, adaptive, control, feedback, designs, idea, section, structures
-- Topic 9: rules, standards, guidelines, norman, unified, web, usability, heuristics
+- Topic 0: learners, computer, education, analysis, guidelines, heuristics, focus, special
+- Topic 1: planning, energy, establishes, central, developing, formal principles, arxiv, suggests
+- Topic 2: definition, engineering, problem, value, outcome, relationships, key, formal
+- Topic 3: planning, energy, establishes, central, developing, formal principles, arxiv, suggests
+- Topic 4: games, social, questions, transparency, conversational, continuity, ethical, human centered
+- Topic 5: literature, architectures, domain, reference, review, platform, organizations, data science

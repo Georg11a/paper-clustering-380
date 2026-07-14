@@ -13,7 +13,7 @@ Representative papers:
 
 ### Cluster 1 (2 papers)
 Label candidate: Design Guidelines
-Summary candidate: This cluster focuses on Sustainability, Education / Learning, involving Designers, using Case Study, Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Theoretical.
+Summary candidate: This cluster focuses on Sustainability, involving Designers, using Case Study as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Theoretical.
 Theme words: characteristics, tacit, interim, innovation, graphic, instances, comprehensive, sharing
 
 Representative papers:
@@ -80,13 +80,9 @@ Representative papers:
 - 2012: Design Study Methodology: Reflections from the Trenches and the Stacks
 
 ## LDA Topics
-- Topic 0: high, immersive, guidelines, growing, decades, traditional, turn, effective
-- Topic 1: guidelines, architecture, immersive, self, control, size, ethical, especially
-- Topic 2: guidelines, growing, developing, recently, clear, assessment, complex, particular
-- Topic 3: guidelines, concept, usability, characteristics, rules, interfaces, professional, developing
-- Topic 4: guidelines, interfaces, strategies, architecture, definitions, provide, developed, particular
-- Topic 5: practical, guidelines, paradigm, environment, good, introduce, concrete, growing
-- Topic 6: guidelines, types, hybrid, engineering, generalized, recently, clear, definition
-- Topic 7: guidelines, task, visualization, aesthetics, visual, interface, complex, order
-- Topic 8: guidelines, growing, developing, recently, clear, assessment, complex, particular
-- Topic 9: guidelines, visualization, guidance, provide, specific, goal, tools, propose
+- Topic 0: guidelines, provide, guidance, definitions, high, immersive, literature, reflect
+- Topic 1: guidelines, architecture, visual, immersive, self, complex, developed, environments
+- Topic 2: guidelines, specific, developing, complex, focuses, aspects, tool, especially
+- Topic 3: guidelines, visualization, concept, usability, task, characteristics, aesthetics, rules
+- Topic 4: guidelines, definitions, interfaces, goal, clear, hybrid, types, strategies
+- Topic 5: guidelines, practical, paradigm, environment, effective, introduce, brought, decades

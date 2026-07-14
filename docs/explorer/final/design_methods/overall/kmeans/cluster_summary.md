@@ -52,7 +52,7 @@ Representative papers:
 
 ### Cluster 5 (3 papers)
 Label candidate: Theory Provides / Applications / Weil
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Theoretical, Artifact/System, Empirical.
+Summary candidate: This cluster focuses on applications, theory provides, involving Designers, with contribution types coded as Theoretical, Artifact/System, Empirical.
 Theme words: applications, theory provides, weil, contemporary, industrial, complexity, improvement, hatchuel
 
 Representative papers:
@@ -62,7 +62,7 @@ Representative papers:
 
 ### Cluster 6 (3 papers)
 Label candidate: Description Method / Corroboration / Cover
-Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Developers, Designers, with recurring attention to Tool, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Developers, Designers, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Theoretical.
 Theme words: description method, corroboration, cover, scope, intended, gerickeetal, ecosystem, described
 
 Representative papers:
@@ -72,7 +72,7 @@ Representative papers:
 
 ### Cluster 7 (19 papers)
 Label candidate: Participatory Design / Co-design / Innovative Methods
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Co-design, Participatory Design, Workshop as the main methodological or conceptual lens, with recurring attention to Tool, Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Participatory Design, Co-design, Workshop as the main methodological or conceptual lens, with recurring attention to Tool, Interface, with contribution types coded as Methodological, Artifact/System, Theoretical.
 Theme words: value, ethics, innovative methods, embodied, service, children, focused, qualities
 
 Representative papers:
@@ -81,13 +81,9 @@ Representative papers:
 - 2023: Analysis of methods of creating new technical systems
 
 ## LDA Topics
-- Topic 0: concepts, implications, social, empirical, findings, generating, types, designs
-- Topic 1: business, constraint, concept, virtual, manufacturing, focus, methods methods, ideation
-- Topic 2: small, literature review, ieee, earlier, form, thinking thinking, structure, definition
-- Topic 3: value, engineering, functional, requirements, defined, customer, literature, product
-- Topic 4: focused, ethical, practice, theoretical, analysis, existing, building, states
-- Topic 5: usage, self, interviews, centred, practices, interactive, focus, creating
-- Topic 6: innovative, techniques, students, performance, focus, actor, constraints, tools
-- Topic 7: complexity, digital, construction, review, computational, methods methods, architecture, engineering
-- Topic 8: embodied, service, focus, qualities, applications, key, analysis, practice
-- Topic 9: flexibility, methods methods, community, creation, focus, problems, propose, building
+- Topic 0: value, engineering, concepts, implications, social, empirical, requirements, generating
+- Topic 1: applications, product, focus, methods methods, business, provides, conceptual, existing
+- Topic 2: proposes, aspect, descriptions, quantitative, materials, solve problems, relation, methods concept
+- Topic 3: architecture, architectural, functional, methods methods, focus, formation, field, article
+- Topic 4: practice, focused, focus, practitioners, ethical, methods methods, key, literature
+- Topic 5: embodied, innovative, techniques, practices, focus, students, self, service

@@ -33,13 +33,9 @@ Representative papers:
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
 
 ## LDA Topics
-- Topic 0: service, review, evidence, innovative, related, need, propose, address
-- Topic 1: literature, attention, practices, various, decade, methods principles, techniques, increasingly
-- Topic 2: architectural, virtual, artifacts, thinking, specifically, term, engineering, existing
-- Topic 3: functional, product, hand, thinking, activities, needs, means, useful
-- Topic 4: service, creation, methodology, innovation, key, propose, article, explore
-- Topic 5: value, aspects, challenges, understand, industry, needs, adopting, involved
-- Topic 6: architecture, field, article, main, formal, pragmatic, findings, implementation
-- Topic 7: complexity, product, problems, community, industrial, usage, application, provides
-- Topic 8: interactive, creation, survey, technical, architecture, building, methodological, performance
-- Topic 9: concept, field, conceptual, metric, management, landscape, architecture, thinking
+- Topic 0: service, complexity, review, evidence, technical, innovative, thinking, implications
+- Topic 1: management, conceptual, concept, constraints, attention, methods principles, literature, objectives
+- Topic 2: architectural, architecture, virtual, interactive, concept, building, problems, landscape
+- Topic 3: product, functional, activities, metric, needs, hand, following, explore
+- Topic 4: service, related, usage, methodology, article, creation, formal, key
+- Topic 5: value, field, aspects, challenges, understand, industry, literature, architecture

@@ -13,7 +13,7 @@ Representative papers:
 - 2010: The implications of improvisational acting and role-playing on design methodologies
 
 ### Cluster 0 (13 papers)
-Label candidate: Participatory Design / Co-design / Method Methods
+Label candidate: User-centered Design / Co-design / Method Methods
 Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Co-design, Workshop as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Theoretical, Artifact/System.
 Theme words: method methods, complexity, service, functional, product, creation, practices, thinking
 
@@ -33,13 +33,9 @@ Representative papers:
 - 2020: Design as Research in Landscape Architecture
 
 ## LDA Topics
-- Topic 0: method methods, service, value, survey, review, metric, present, evidence
-- Topic 1: method methods, architecture, participatory, article, community, problems, technical, innovative
-- Topic 2: artifacts, method methods, engage, various, define, performance, literature, psychological
-- Topic 3: practice, various, following, method methods, attention, bring, industrial, communication
-- Topic 4: product, complexity, functional, method methods, thinking, term, survey, hand
-- Topic 5: management, concept, conceptual, field, constraints, method methods, define, initial
-- Topic 6: architectural, concept, method methods, architecture, landscape, thinking, provides, industrial
-- Topic 7: service, creation, method methods, usage, methodology, practices, ethnographic, findings
-- Topic 8: understand, industry, interactive, architecture, method methods, aspects, needs, basis
-- Topic 9: virtual, various, defined, methods case, integration, technologies, field, challenges
+- Topic 0: method methods, service, survey, review, systematic, analysis, provides, existing
+- Topic 1: method methods, architectural, architecture, virtual, field, thinking, participatory, article
+- Topic 2: value, method methods, service, complexity, survey, practices, creation, usage
+- Topic 3: understand, industry, method methods, literature, practitioners, elements, aspects, needs
+- Topic 4: functional, method methods, product, field, thinking, term, hand, challenges
+- Topic 5: management, conceptual, concept, architecture, interactive, constraints, building, method methods

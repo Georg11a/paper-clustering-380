@@ -62,7 +62,7 @@ Representative papers:
 
 ### Cluster 6 (4 papers)
 Label candidate: Tacit / Component / Don
-Summary candidate: This cluster focuses on Accessibility, Education / Learning, involving Designers, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Summary candidate: This cluster focuses on Accessibility, involving Designers, Developers, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
 Theme words: tacit, component, guidelines, don, graphic, instances, smells, rural
 
 Representative papers:
@@ -79,13 +79,9 @@ Representative papers:
 - 2014: Design Guidelines for Domain Specific Languages
 
 ## LDA Topics
-- Topic 0: platforms, immersive, guidelines, self, offer, especially, journal, aims
-- Topic 1: guidelines, modeling, engineering, control, focus, interfaces, theories, designs
-- Topic 2: guidelines, task, interfaces, definitions, types, products, concept, provide
-- Topic 3: guidelines, text, visual, types, components, app, approaches, tools
-- Topic 4: guidelines, characteristics, natural, instances, review, elements, computer, applying
-- Topic 5: visualization, aesthetics, art, guidelines, understanding, techniques, focus, better
-- Topic 6: software, guidelines, architecture, reference, tools, requirements, types, implementation
-- Topic 7: guidelines, communication, usability, automated, insights, ai, understanding, accurate
-- Topic 8: constraints, visualization, guidelines, formalizing, actionable, immersive, focus, practices
-- Topic 9: definition, aesthetic, focus guidelines, basis, components, developing, good, potentials
+- Topic 0: immersive, guidelines, platforms, focus, engagement, performance, practice, discussion
+- Topic 1: guidelines, constraints, visualization, usability, interfaces, actionable, formalizing, rules
+- Topic 2: guidelines, task, interfaces, definitions, types, products, concept, focus
+- Topic 3: guidelines, text, instances, visual, characteristics, types, components, app
+- Topic 4: guidelines, communication, natural, software, automated, ai, insights, computer
+- Topic 5: visualization, aesthetics, art, guidelines, techniques, understanding, provides, focus

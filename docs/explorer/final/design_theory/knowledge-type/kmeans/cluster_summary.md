@@ -2,94 +2,90 @@
 
 ## Cluster Themes
 
-### Cluster 0 (6 papers)
+### Cluster 0 (14 papers)
 Label candidate: Design Theory
-Summary candidate: This cluster focuses on innovation, technique, involving Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Empirical.
-Theme words: innovation, technique, preservation, service, epistemology, challenges, dealing, far
+Summary candidate: This cluster focuses on Sustainability, Healthcare, involving Designers, using Case Study as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: innovation, epistemology, field, technique, computer, instructional, mechanical, services
 
 Representative papers:
-- 2016: Technique Innovation
-- 2021: Knowing the Unknowable: Understanding and Measuring Design Impact Across Disciplines and Scale
 - 2003: Design-oriented human-computer interaction
+- 2020: Design epistemology as innovation in public health research
+- 2023: Concerning the Epistemology of Design: The Role of the Eco-Cognitive Model of Abduction in Pragmatism
 
-### Cluster 1 (11 papers)
+### Cluster 1 (9 papers)
 Label candidate: Design Theory
-Summary candidate: This cluster focuses on Healthcare, involving Designers, using Design Science, Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: management, commons, ecc, pluralism, methodology, perspectives, chronic, negation
+Summary candidate: This cluster focuses on meta, theoretical, with contribution types coded as Theoretical, Methodological, Empirical.
+Theme words: meta, theoretical, game, software engineering, code, sonification, providing, structure
 
 Representative papers:
-- 2023: Toward a design theory of strategic enterprise management business intelligence (SEMBI) capability maturity model
-- 2015: ICT-Enabled Self-Management of Chronic Diseases: Literature Review and Analysis Using Value-Sensitive Design
-- 2010: Management design theories
+- 2000: Philosophy of design: A meta-theoretical structure for design theory
+- 2017: A design theory for software engineering
+- 2007: Web-based information systems: Developing a design theory
 
-### Cluster 2 (6 papers)
+### Cluster 2 (11 papers)
 Label candidate: Design Theory
-Summary candidate: This cluster focuses on services, problem, with contribution types coded as Theoretical, Taxonomy/Review, Empirical.
-Theme words: services, problem, framing, instructional, cognitive, interstitial, theory process, social
+Summary candidate: This cluster focuses on management, theories, using Design Science as the main methodological or conceptual lens, with contribution types coded as Theoretical, Artifact/System, Methodological.
+Theme words: management, theories, science, pluralism, scientific, technological, chronic, perspectives
+
+Representative papers:
+- 2010: Management design theories
+- 2020: Editorial: A Critical Look at Theories in Design Science Research
+- 2023: Toward a design theory of strategic enterprise management business intelligence (SEMBI) capability maturity model
+
+### Cluster 3 (10 papers)
+Label candidate: Design Theory
+Summary candidate: This cluster focuses on decision, dss, using Design Science as the main methodological or conceptual lens, with recurring attention to Interface, with contribution types coded as Theoretical, Artifact/System, Methodological.
+Theme words: decision, dss, strategies, calibration, heuristics, logic, experimentation, proof
+
+Representative papers:
+- 2023: Chimera heuristics: Generative rational heuristics for the unknown from design theory
+- 1996: A Theory of Decision Support System Design for User Calibration
+- 2010: Incommensurability and multi-paradigm grounding in design science research: Implications for creating knowledge
+
+### Cluster 4 (6 papers)
+Label candidate: Design Theory
+Summary candidate: This cluster focuses on things work, explain, involving Designers, with contribution types coded as Theoretical, Methodological, Algorithmic.
+Theme words: things work, explain, theory construction, surveillance, relational, remote, power, requires
+
+Representative papers:
+- 2003: Theory construction in design research Criteria: Approaches, and methods
+- 2002: Theory construction in design research. Criteria, approaches, and methods.
+- 2017: Transitional Theory
+
+### Cluster 5 (5 papers)
+Label candidate: Design Theory
+Summary candidate: This cluster focuses on problem, framing, with contribution types coded as Theoretical, Methodological.
+Theme words: problem, framing, interstitial, entrepreneurship, social, solving, presented, actors cooperative
 
 Representative papers:
 - 1983: DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES.
 - : The design process: frames, metaphors, and games
 - : Design as interactions of problem framing and problem solving
 
-### Cluster 3 (22 papers)
+### Cluster 6 (16 papers)
 Label candidate: Design Theory
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Design Science, Case Study as the main methodological or conceptual lens, with recurring attention to Interface, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: given, recovery, product, things, digital, mechanical, platforms, online communities
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Empirical.
+Theme words: commons, online, curriculum, given, definitions, blended, product recovery, service
 
 Representative papers:
-- 2001: Research methods for design theory
-- 2002: Design Theory in Information Systems
-- 2026: Digital Panopticon: How Remote Work Monitoring Shapes Employee Behavior and Motivation
-
-### Cluster 4 (6 papers)
-Label candidate: Design Theory
-Summary candidate: This cluster focuses on decision, curriculum, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: decision, curriculum, blended, heuristics, calibration, synchronous learning, dss, exemplars
-
-Representative papers:
-- 2023: Chimera heuristics: Generative rational heuristics for the unknown from design theory
-- : Design exemplars for synchronous e-learning: A design theory approach
+- 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
 - : Towards a design theory of blended learning curriculum
+- 2023: Design Principles for Platform-Enabled Knowledge Commons with an Expository Instantiation
 
-### Cluster 5 (10 papers)
+### Cluster 7 (4 papers)
 Label candidate: Design Theory
-Summary candidate: This cluster focuses on meta, theoretical, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: meta, theoretical, game, software engineering, code, sonification, providing, structure
-
-Representative papers:
-- 2000: Philosophy of design: A meta-theoretical structure for design theory
-- 2017: A design theory for software engineering
-- 2008: Work system principles: towards a justified design theory on the grounds of socio-instrumental pragmatism
-
-### Cluster 6 (6 papers)
-Label candidate: Design Theory
-Summary candidate: This cluster focuses on space, humanism, involving Designers, with contribution types coded as Theoretical, Artifact/System, Methodological.
-Theme words: space, humanism, concept, experimentation, post, proof, logics, exploration
+Summary candidate: This cluster focuses on space, humanism, involving Designers, with contribution types coded as Theoretical, Empirical, Methodological.
+Theme words: space, humanism, post, topology, general theory, concept, cluster, compactification
 
 Representative papers:
 - : Extended general design theory. I. Compactification of concept space
 - 1985: GENERAL DESIGN THEORY.
-- 2021: THE LOGICS OF DOUBLE PROOF IN PROOF OF CONCEPT: A DESIGN THEORY-BASED MODEL OF EXPERIMENTATION IN THE UNKNOWN
-
-### Cluster 7 (8 papers)
-Label candidate: Design Theory
-Summary candidate: This cluster focuses on theories, kernel, using Design Science as the main methodological or conceptual lens, with contribution types coded as Theoretical, Artifact/System, Methodological.
-Theme words: theories, kernel, science, shared body, urban, typology, criteria, creating
-
-Representative papers:
-- 2020: Editorial: A Critical Look at Theories in Design Science Research
-- 2009: Tinkering, tailoring, and bricolage: Implications for theories of Design
-- 2010: Incommensurability and multi-paradigm grounding in design science research: Implications for creating knowledge
+- : C-K design theory: an advanced formulation
 
 ## LDA Topics
-- Topic 0: product, innovation, technique, concept, definitions, given, current, theories
-- Topic 1: science, conceptual, engineering, theoretical, methodology, field, basis, software
-- Topic 2: concept, space, theory general, topology, physical, laws, according, possible
-- Topic 3: theories, service, typology, build, article, existing, understanding, field
-- Topic 4: post, things work, explain, theories, construction, requires, understanding, purpose
-- Topic 5: thinking, problem, social, framing, theory practice, concept, need, sources
-- Topic 6: scale, practice, theoretical, need, shared, disciplines, explain, potential
-- Topic 7: games, theoretical, cognitive, analysis, problem, field, aspects, practices
-- Topic 8: theories, science, theory theory, sonification, management, digital, architecture, ways
-- Topic 9: decision, practice, students, related, task, management, intelligent, life
+- Topic 0: theory theory, product, innovation, theories, sonification, technique, analysis, science
+- Topic 1: theoretical, engineering, decision, conceptual, software, science, field, methodology
+- Topic 2: theories, management, concept, review, space, science, literature, life
+- Topic 3: theories, science, article, service, shared, typology, transformation, build
+- Topic 4: digital, architecture, games, management, concept, post, practices, methodology
+- Topic 5: need, existing, problem, social, lack, framing, characteristics, develop

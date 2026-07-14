@@ -14,7 +14,7 @@ Representative papers:
 
 ### Cluster 0 (14 papers)
 Label candidate: User-centered Design / Co-design / Product
-Summary candidate: This cluster focuses on Education / Learning, Industrial Design, involving Designers, Developers, using Prototype, Ontology as the main methodological or conceptual lens, with recurring attention to Interface, Prototype, Tool, with contribution types coded as Methodological, Theoretical, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, Industrial Design, involving Designers, Developers, using Prototype, Ontology as the main methodological or conceptual lens, with recurring attention to Prototype, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
 Theme words: product, field, interactive, nature, usability, recreation, industrial, heuristics
 
 Representative papers:
@@ -33,13 +33,9 @@ Representative papers:
 - : A Typology of Knowledge Creation in Design Science Research Projects
 
 ## LDA Topics
-- Topic 0: object, ontology, oriented, representation, kinds, patterns, future, involved
-- Topic 1: formulation, important, practices, article, reasoning, oriented, best, hierarchical
-- Topic 2: game, science, field, product, contributions, make, current, prescriptive
-- Topic 3: interactive, nature, heuristics, elicitation, ai, critical, important, problem
-- Topic 4: analysis, discipline, patterns, practices, concepts, evidence, strategic, level
-- Topic 5: platform, types, digital, literature, ontology, domain, lack, bases
-- Topic 6: dsr, science, tools, management, teachers, product, patterns, content
-- Topic 7: product, review, literature, systematic, related, decisions, need, environments
-- Topic 8: rationale, educational, utilization, form, engineering, field, structure, provide
-- Topic 9: problem, creation, engineering, industrial, product, building, definition, concept
+- Topic 0: tacit, oriented, object, ontology, kinds, mechanisms, patterns, representation
+- Topic 1: article, practices, field, creation, forms, formulation, digital, dsr
+- Topic 2: product, teachers, science, game, review, field, analysis, make
+- Topic 3: interactive, product, nature, management, heuristics, tools, important, elicitation
+- Topic 4: dsr, patterns, analysis, practices, discipline, future, propose, community
+- Topic 5: platform, types, digital, literature, domain, form, quality, ontology

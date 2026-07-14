@@ -2,20 +2,20 @@
 
 ## Cluster Themes
 
-### Cluster 0 (17 papers)
-Label candidate: Work Approach / Practice Theory / Wsa
+### Cluster 0 (18 papers)
+Label candidate: Work Approach / Theory Theory / Artefact
 Summary candidate: This cluster focuses on Education / Learning, involving Designers, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: work approach, wsa, pedagogical, practice theory, theories, wpt, theoretical, focus
+Theme words: artefact, work approach, gregor, theories, decisional, wsa, theory theory, theoretical
 
 Representative papers:
-- 2002: Design Theory in Information Systems
 - 2007: Web-based information systems: Developing a design theory
-- 2002: Theory construction in design research. Criteria, approaches, and methods.
+- 2002: Design Theory in Information Systems
+- 2010: Incommensurability in design science: Which comes first-Theory or artefact?
 
-### Cluster 1 (7 papers)
+### Cluster 1 (8 papers)
 Label candidate: Value-Sensitive Design / Management / Chronic
 Summary candidate: This cluster focuses on Education / Learning, Privacy / Security, using Design Science, Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: management, chronic, vsd, values, patients, diseases, enabled, isdt
+Theme words: management, chronic, vsd, values, patients, enabled, diseases, isdt
 
 Representative papers:
 - : Pluralism in Knowledge Management: a Review
@@ -31,40 +31,40 @@ Representative papers:
 - 2019: Eight Components of a Design Theory of Sonification
 - 2023: Towards a unified terminology for sonification and visualization
 
-### Cluster 3 (6 papers)
-Label candidate: Concepts Definitions / Product / Innovation
-Summary candidate: This cluster focuses on product, innovation, with contribution types coded as Theoretical, Methodological, Empirical.
-Theme words: product, innovation, service, recovery, industry, technique, conceptual, concepts definitions
+### Cluster 3 (8 papers)
+Label candidate: Product / Service / Innovation
+Summary candidate: This cluster focuses on product, service, with contribution types coded as Theoretical, Methodological, Empirical.
+Theme words: product, service, innovation, recovery, industry, technique, conceptual, ecosystem
 
 Representative papers:
 - 2006: Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry
 - 2022: The Conceptual Design of Mechanical Products
 - 2022: Design Theory and Method of Complex Products: A Review
 
-### Cluster 4 (16 papers)
-Label candidate: Design Science / Negation / Problem
+### Cluster 4 (15 papers)
+Label candidate: Design Science / Negation / Multiscale
 Summary candidate: This cluster focuses on Healthcare, involving Designers, using Design Science, Case Study as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: negation, problem, multiscale, inhibition, sketching, architecture, methodology, artifacts
+Theme words: negation, multiscale, inhibition, sketching, oriented, methodology, epistemology, affordances
 
 Representative papers:
 - 2003: Design-oriented human-computer interaction
-- : Conceptual foundations of design problem solving
 - : Affordance based design: a relational theory for design
+- : Design science‚àíthe need for a scientific basis for engineering design methodology
 
-### Cluster 5 (10 papers)
-Label candidate: Design Science / Blended Learning / Proof
-Summary candidate: This cluster focuses on proof, decision, involving Practitioners, with recurring attention to Interface, with contribution types coded as Theoretical, Artifact/System, Methodological.
-Theme words: proof, decision, experimentation, memory, curriculum, blended learning, heuristics, dss
+### Cluster 5 (9 papers)
+Label candidate: Design Science / Proof / Experimentation
+Summary candidate: This cluster focuses on proof, experimentation, involving Practitioners, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Theme words: proof, experimentation, memory, decision, heuristics, phase, dss, calibration
 
 Representative papers:
 - 2023: Chimera heuristics: Generative rational heuristics for the unknown from design theory
 - : Towards a design theory of blended learning curriculum
 - : Design exemplars for synchronous e-learning: A design theory approach
 
-### Cluster 6 (15 papers)
-Label candidate: Design Science / Reich / Impact
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Design Science, Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: reich, impact, value, psi, theories, braha, space, engineering
+### Cluster 6 (13 papers)
+Label candidate: Design Science / Value / Reich
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Design Science, Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Artifact/System, Methodological.
+Theme words: value, reich, impact, theories, psi, services, braha, stakeholders
 
 Representative papers:
 - 2025: What is the value of design theory?
@@ -72,22 +72,18 @@ Representative papers:
 - : C-K design theory: an advanced formulation
 
 ### Cluster 7 (2 papers)
-Label candidate: Solving Models / Conversations Multiple Social / Competitive Situations Cognitive
-Summary candidate: This cluster focuses on solving models, conversations multiple social, with contribution types coded as Theoretical.
-Theme words: solving models, conversations multiple social, competitive situations cognitive, analysis problem, cooperative, theory practice focus, setting argued functional, place transactions
+Label candidate: Inquiry Taking / Situations Cognitive Activities / Presented Discussed
+Summary candidate: This cluster focuses on reconciling, inquiry taking, with contribution types coded as Theoretical.
+Theme words: reconciling, inquiry taking, frames, situations cognitive activities, presented discussed, social actors, argued functional, transactions conversations multiple
 
 Representative papers:
-- : The design process: frames, metaphors, and games
 - 1983: DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES.
+- : The design process: frames, metaphors, and games
 
 ## LDA Topics
-- Topic 0: theories, theoretical, theory theory, practice, focus, pragmatic, action, possible
-- Topic 1: function, affordances, concept, urban, artifacts, autonomy, theories, focus
-- Topic 2: impact, engineering, multiscale, strategies, management, focus, scale, software
-- Topic 3: values, management, review, isdt, focus, literature, meta, self
-- Topic 4: world, epistemology, decision, pragmatism, build, inquiry, main, art
-- Topic 5: science, theories, problem, value, oriented, solving, theory theory, focus
-- Topic 6: sonification, concept, focus theory, constructs, visual, field, analysis, components
-- Topic 7: space, structures, braha, reich, game, objects, hatchuel, dynamic
-- Topic 8: service, focus, understanding, theory theory, methodology, change, creation, practices
-- Topic 9: innovation, technique, definition, intelligent, defining, theory theory, focus, term
+- Topic 0: science, theories, value, focus, theory theory, practice, problems, concept
+- Topic 1: multiscale, strategies, scale, theory theory, focus, perspective, students, problem
+- Topic 2: sonification, oriented, account, constructs, sketching, visual, problem, field
+- Topic 3: service, theoretical, theories, values, management, literature, analysis, practice
+- Topic 4: impact, innovation, management, focus, engineering, international, theory theory, product
+- Topic 5: focus, theory theory, theories, engineering, existing, concepts, science, decision

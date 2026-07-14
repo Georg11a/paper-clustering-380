@@ -4,7 +4,7 @@
 
 ### Cluster 0 (12 papers)
 Label candidate: Heuristics / Oriented / Product
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Interview, Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Empirical, Methodological, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Interview, Heuristic Evaluation as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Empirical, Methodological, Theoretical.
 Theme words: heuristics, oriented, product, form, target, solutions, engineering, tools
 
 Representative papers:
@@ -22,13 +22,9 @@ Representative papers:
 - : Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception
 
 ## LDA Topics
-- Topic 0: end, future, tools, environment, heuristics, current, key, think
-- Topic 1: assistive, heuristics, product, formats, dialogue, communication, analysis, literature
-- Topic 2: implications, current, key, students, journal, enhance, focus heuristics, concept
-- Topic 3: implications, current, key, students, journal, enhance, focus heuristics, concept
-- Topic 4: heuristics, form, dfx, product, description, students, communication, source
-- Topic 5: products, heuristics, concepts, generation, consider, award winning, evidence, outcomes
-- Topic 6: heuristics, target, oriented, solutions, product, existing, sets, article
-- Topic 7: engineering, heuristics, given, analysis, specific, important, article, define
-- Topic 8: implications, current, key, students, journal, enhance, focus heuristics, concept
-- Topic 9: implications, current, key, students, journal, enhance, focus heuristics, concept
+- Topic 0: end, future, tools, heuristics, environment, current, key, provide
+- Topic 1: heuristics, assistive, product, analysis, formats, dialogue, communication, generation
+- Topic 2: enhance, single, content, existing, technological, relative, advance, concept
+- Topic 3: heuristics, oriented, target, solutions, article, given, product, sets
+- Topic 4: heuristics, form, product, dfx, engineering, students, description, important
+- Topic 5: heuristics, concepts, evidence, outcomes, multiple, consider, product, industrial

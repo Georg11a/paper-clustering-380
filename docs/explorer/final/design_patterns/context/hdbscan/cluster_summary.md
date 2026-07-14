@@ -13,13 +13,9 @@ Representative papers:
 - 2021: Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems
 
 ## LDA Topics
-- Topic 0: patterns, software, problem, solutions, engineering, language, structural, creation
-- Topic 1: patterns, software, domain, application, education, architecture, collaboration, ai
-- Topic 2: patterns, software, oriented, business, object, specific, management, robot
-- Topic 3: patterns, visualization, social, software, mas, complex, architectures, emerging
-- Topic 4: patterns, conceptual, nature, agent, solution, problem, space, industry
-- Topic 5: patterns, ai, engineering, human computer, outcomes, computing, define, collection
-- Topic 6: patterns, software, abstraction, generic, privacy, provide, functional, modeling
-- Topic 7: patterns, visualization, semantic, space, strategies, education, structure, views
-- Topic 8: game, patterns, education, presents, lack, object, theoretical, educators
-- Topic 9: patterns, analysis, software, practice, oriented, building, industry, decision
+- Topic 0: patterns, software, analysis, solutions, problem, practice, space, engineering
+- Topic 1: patterns, software, domain, industry, education, application, privacy, architecture
+- Topic 2: patterns, software, oriented, specific, game, object, business, engineering
+- Topic 3: patterns, visualization, generic, functional, education, object, social, gtms
+- Topic 4: patterns, modeling, solution, problem, agent, conceptual, provide, consisting
+- Topic 5: patterns, ai, engineering, define, computer, collection, outcomes, challenges

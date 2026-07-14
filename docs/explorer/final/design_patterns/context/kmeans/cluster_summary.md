@@ -14,7 +14,7 @@ Representative papers:
 
 ### Cluster 1 (26 papers)
 Label candidate: Dark Patterns / Object Oriented / Software
-Summary candidate: This cluster focuses on patterns, software, involving Designers, Practitioners, using Ontology, Prototype, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Tool, Prototype, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Summary candidate: This cluster focuses on patterns, software, involving Designers, Practitioners, using Prototype, Ontology, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Prototype, Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
 Theme words: patterns, software, object oriented, analysis, structural, engineering, management, biophilic
 
 Representative papers:
@@ -24,7 +24,7 @@ Representative papers:
 
 ### Cluster 2 (9 papers)
 Label candidate: AI / Video / Visualization
-Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, with recurring attention to Tool, with contribution types coded as Methodological, Taxonomy/Review, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, with recurring attention to Tool, with contribution types coded as Methodological, Taxonomy/Review, Theoretical.
 Theme words: ai, patterns, video, visualization, collaboration, educational, address, adapted
 
 Representative papers:
@@ -34,7 +34,7 @@ Representative papers:
 
 ### Cluster 3 (8 papers)
 Label candidate: Modeling Methods / Game / Robot
-Summary candidate: This cluster focuses on game, patterns, involving Designers, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Game, Interface, Robot, with contribution types coded as Methodological, Artifact/System, Theoretical.
+Summary candidate: This cluster focuses on game, patterns, involving Designers, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Game, Robot, Tool, with contribution types coded as Methodological, Artifact/System, Theoretical.
 Theme words: game, patterns, robot, law, mechanics, modeling methods, achievements, specific
 
 Representative papers:
@@ -82,13 +82,9 @@ Representative papers:
 - 2018: Teachers‚Äô Collaborative Pattern Language Design
 
 ## LDA Topics
-- Topic 0: patterns, software, problem, solutions, engineering, language, structural, creation
-- Topic 1: patterns, software, domain, application, education, architecture, collaboration, ai
-- Topic 2: patterns, software, oriented, business, object, specific, management, robot
-- Topic 3: patterns, visualization, social, software, mas, complex, architectures, emerging
-- Topic 4: patterns, conceptual, nature, agent, solution, problem, space, industry
-- Topic 5: patterns, ai, engineering, human computer, outcomes, computing, define, collection
-- Topic 6: patterns, software, abstraction, generic, privacy, provide, functional, modeling
-- Topic 7: patterns, visualization, semantic, space, strategies, education, structure, views
-- Topic 8: game, patterns, education, presents, lack, object, theoretical, educators
-- Topic 9: patterns, analysis, software, practice, oriented, building, industry, decision
+- Topic 0: patterns, software, analysis, solutions, problem, practice, space, engineering
+- Topic 1: patterns, software, domain, industry, education, application, privacy, architecture
+- Topic 2: patterns, software, oriented, specific, game, object, business, engineering
+- Topic 3: patterns, visualization, generic, functional, education, object, social, gtms
+- Topic 4: patterns, modeling, solution, problem, agent, conceptual, provide, consisting
+- Topic 5: patterns, ai, engineering, define, computer, collection, outcomes, challenges

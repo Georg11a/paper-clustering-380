@@ -22,7 +22,7 @@ Representative papers:
 
 ### Cluster 2 (4 papers)
 Label candidate: Heuristics / Form / Solutions
-Summary candidate: This cluster focuses on Education / Learning, Sustainability, involving Designers, Practitioners, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Empirical.
+Summary candidate: This cluster focuses on Education / Learning, Sustainability, involving Designers, Practitioners, Developers, using Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
 Theme words: heuristics, form, solutions, does, jpl, laboratory, target, kbes
 
 Representative papers:
@@ -58,13 +58,9 @@ Representative papers:
 - 2011: From human factors to human actors to human crafters
 
 ## LDA Topics
-- Topic 0: end, method heuristics, draw, extract, stage, existing, early, aid
-- Topic 1: draw, extract, stage, existing, identify heuristics, early, aid, lead
-- Topic 2: heuristics, stage, derived, draw, extract, existing, early, aid
-- Topic 3: heuristics, product, domain, challenge, generation, practice, form, possible
-- Topic 4: draw, extract, stage, existing, identify heuristics, early, aid, lead
-- Topic 5: draw, extract, stage, existing, identify heuristics, early, aid, lead
-- Topic 6: heuristics, product, engineering, assistive, solution, concept, aid, problem
-- Topic 7: dialogue, analysis, formats, associated, product, assistive, communication, heuristics content
-- Topic 8: heuristics, products, concepts, generation, idea, evident, create, consider
-- Topic 9: communication, heuristics, tools, interview, understand, help, key, decision
+- Topic 0: heuristics, engineering, products, analysis, aid, generation, identify, idea
+- Topic 1: heuristics, assistive, concept, product, communication, solution, generation, help
+- Topic 2: heuristics, stage, interview, possible, survey, draw, early, existing
+- Topic 3: heuristics, product, domain, challenge, tools, form, arising, practice
+- Topic 4: dialogue, communication, associated, formats, analysis, product, assistive, end
+- Topic 5: concept, heuristics, problem, address, sets, extract, evident, create

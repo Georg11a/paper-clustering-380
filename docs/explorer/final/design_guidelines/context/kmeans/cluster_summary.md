@@ -24,7 +24,7 @@ Representative papers:
 
 ### Cluster 2 (2 papers)
 Label candidate: Characteristics / Tacit / Interim
-Summary candidate: This cluster focuses on Sustainability, Education / Learning, involving Designers, using Case Study, Interview as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Theoretical.
+Summary candidate: This cluster focuses on Sustainability, involving Designers, using Case Study as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Theoretical.
 Theme words: characteristics, tacit, interim, innovation, graphic, instances, comprehensive, despite
 
 Representative papers:
@@ -82,13 +82,9 @@ Representative papers:
 - 2024: Embracing Non-Natural Design in Human-Computer Interaction
 
 ## LDA Topics
-- Topic 0: guidelines, characteristics, usability, concept, provide, literature, professional, guidance
-- Topic 1: guidelines, safe, trustworthy, clear, turn, theories, actionable, control
-- Topic 2: guidelines, concept, clear, assessment, effective, environment, definition, software
-- Topic 3: software, guidelines, architecture, visualization, tools, practical, concrete, paradigm
-- Topic 4: guidelines, concept, clear, assessment, effective, environment, definition, software
-- Topic 5: high, effective, decades, growing, focus, created, proposal, resources
-- Topic 6: visualization, aesthetics, guidelines, immersive, goal, understanding, focuses, need
-- Topic 7: guidelines, interfaces, definitions, visual, complex, collaboration, hybrid, architecture
-- Topic 8: guidelines, specific, concept, recently, usability, assessment, engineering, generalized
-- Topic 9: task, guidelines, interface, immersive, types, order, guidance, self
+- Topic 0: guidelines, usability, characteristics, visual, specific, complex, professional, guidance
+- Topic 1: guidelines, immersive, definitions, interfaces, self, control, goal, ethical
+- Topic 2: interfaces, concept, space, hybrid, guidelines collaboration, involve, recent, reflect
+- Topic 3: guidelines, architecture, software, task, types, visualization, tools, interface
+- Topic 4: visualization, aesthetics, guidelines, concept, recently, clear, definition, proposed
+- Topic 5: guidelines, high, traditional, growing, recently, decades, engineering, generalized

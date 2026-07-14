@@ -13,13 +13,9 @@ Representative papers:
 - 2000: A generic model for reflective design
 
 ## LDA Topics
-- Topic 0: computational, empirical, communicate, communicating, evaluating, claims, expressiveness, generated
-- Topic 1: rationales, computational, generated, justifications, characterize, dimensions, assess, develop
-- Topic 2: rationale, reasoning, analysis, component, better, represent, defined, captured
-- Topic 3: rationale, reuse, history, defined, issues, potential, number, capture
-- Topic 4: computational, empirical, communicate, communicating, evaluating, claims, expressiveness, generated
-- Topic 5: computational, empirical, communicate, communicating, evaluating, claims, expressiveness, generated
-- Topic 6: rationale, capture, limitations, communicate, analyze, nature, record, issues
-- Topic 7: rationale, software, claims, engineering, representations, related, interactive, questions
-- Topic 8: engineering, product, review, means, content, critical, rationale, computational
-- Topic 9: rationale, implies, argumentation, capture, communication, potential, perspectives, claims
+- Topic 0: rationale, implies, capture, argumentation, communication, perspectives, documentation, influence
+- Topic 1: rationale, claims, software, representations, related, computer, documentation, interactive
+- Topic 2: rationale, reasoning, capture, limitations, means, nature, communicate, record
+- Topic 3: rationale, engineering, analysis, product, reuse, potential, defined, representations
+- Topic 4: expressiveness, empirical, reasoning, generated, nature, means, rationale, capture
+- Topic 5: rationale, software, engineering, need, nature, generic, specifications, establishes

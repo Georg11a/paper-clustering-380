@@ -49,13 +49,9 @@ Representative papers:
 - 2018: Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture
 
 ## LDA Topics
-- Topic 0: key, real, tasks, focus, rules rules, considered, identifies, implement
-- Topic 1: rules, organizational, modularity, modular, architecture, proposed, concept, properties
-- Topic 2: rules, common, review, definitions, characteristics, platforms, include, mathematical
-- Topic 3: key, real, tasks, focus, rules rules, considered, identifies, implement
-- Topic 4: rules, functional, cognitive, interfaces, value, structure, focus, provide
-- Topic 5: key, real, tasks, focus, rules rules, considered, identifies, implement
-- Topic 6: key, real, tasks, focus, rules rules, considered, identifies, implement
-- Topic 7: technical, chapter, organizational, recipe, rules, network, describes, architecture
-- Topic 8: key, real, tasks, focus, rules rules, considered, identifies, implement
-- Topic 9: rules, meaning, concepts, current, computing, computer, argument, applications
+- Topic 0: key, real, identifies, describes, architecture, science, properties, focus
+- Topic 1: rules, organizational, modularity, modular, architecture, proposed, properties, concept
+- Topic 2: rules, review, common, high, focus, definitions, include, propose
+- Topic 3: rules, technical, concepts, meaning, organizational, current, recipe, chapter
+- Topic 4: rules, technical, functional, value, cognitive, interfaces, focus, structure
+- Topic 5: key, real, identifies, describes, architecture, science, properties, focus

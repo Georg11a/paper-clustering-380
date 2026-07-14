@@ -14,7 +14,7 @@ Representative papers:
 
 ### Cluster 0 (13 papers)
 Label candidate: Value-Sensitive Design / Theories / Management
-Summary candidate: This cluster focuses on Education / Learning, Privacy / Security, involving Designers, using Design Science, Case Study as the main methodological or conceptual lens, with contribution types coded as Theoretical, Methodological, Artifact/System.
+Summary candidate: This cluster focuses on Education / Learning, Privacy / Security, involving Designers, using Design Science, Case Study, Prototype as the main methodological or conceptual lens, with recurring attention to Prototype, Tool, with contribution types coded as Theoretical, Artifact/System, Methodological.
 Theme words: theories, management, software, theoretical, literature, review, online, engineering
 
 Representative papers:
@@ -30,16 +30,12 @@ Theme words: theory learning, games, decision, blended, curriculum, synchronous,
 Representative papers:
 - : Design exemplars for synchronous e-learning: A design theory approach
 - : Towards a design theory of blended learning curriculum
-- 2010: Feedforward as an essential active principle of engagement in computer games
+- 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
 
 ## LDA Topics
-- Topic 0: space, concept, architecture, software, strategies, industry, needs, industrial
-- Topic 1: conceptual, field, course, theoretical, concepts, dynamic, term, methodology
-- Topic 2: theories, innovation, science, management, technique, service, health, software
-- Topic 3: theories, problem, science, engineering, scientific, software, solving, situations
-- Topic 4: theories, management, typology, technical, digital, online, current, body
-- Topic 5: decision, properties, relevant, related, proposed, identify, achieve, needed
-- Topic 6: theoretical, game, meta, existing, providing, field, structure, analysis
-- Topic 7: education, concept, scale, article, digital, literature, given, analysis
-- Topic 8: sonification, epistemology, concept, post, thinking, practices, types, methodology
-- Topic 9: product, industry, complex, existing, concepts, cognitive, definitions, terminology
+- Topic 0: concept, epistemology, space, conceptual, scale, related, products, analysis
+- Topic 1: field, theoretical, existing, theories, decision, education, analysis, social
+- Topic 2: thinking, concept, literature, scientists, fields, management, common, theory practice
+- Topic 3: theories, management, science, article, digital, service, software, theory theory
+- Topic 4: theories, engineering, science, problem, practice, methodology, technical, software
+- Topic 5: innovation, technique, post, industry, management, need, literature, product

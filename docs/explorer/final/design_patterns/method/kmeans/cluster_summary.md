@@ -34,7 +34,7 @@ Representative papers:
 
 ### Cluster 3 (15 papers)
 Label candidate: Object / Oriented / Micro
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, Developers, using Ontology, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
+Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, Developers, using Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Artifact/System, Taxonomy/Review.
 Theme words: patterns, object, oriented, micro, service, reusable, classes, architecture
 
 Representative papers:
@@ -81,13 +81,9 @@ Representative papers:
 - : Use of design patterns in analogy-based design
 
 ## LDA Topics
-- Topic 0: space, visualization, patterns, strategies, views, identify, visual, exploring
-- Topic 1: patterns, business, modeling, designs, control, balanced, classes, game
-- Topic 2: identify, mas, visual, particular, source, class, provide, problem solutions
-- Topic 3: patterns, science, computer, abstraction, social, agent, fundamental, architectures
-- Topic 4: patterns, specific, modeling, language, practical, core, meta, interfaces
-- Topic 5: architecture, patterns, problems, higher, abstraction, functional, oriented, define
-- Topic 6: patterns, software, domain, analysis, engineering, application, practice, management
-- Topic 7: patterns, generic, gtms, specify, functional, complex, devices, elements
-- Topic 8: patterns, software, object, oriented, structural, level, solutions, ai
-- Topic 9: patterns, creation, engineering, ideas, problem, concept, collaborative, connected
+- Topic 0: patterns, domain, application, space, presents, terminology, developers, computer
+- Topic 1: patterns, software, object, business, problem, way, oriented, designs
+- Topic 2: patterns, management, structural, semantic, provide, software, component, structure
+- Topic 3: patterns, generic, practice, game, functional, solutions, abstraction, science
+- Topic 4: patterns, analysis, modeling, software, level, abstraction, recurring, oriented
+- Topic 5: patterns, architecture, ai, visualization, oriented, emerging, problems, focus
