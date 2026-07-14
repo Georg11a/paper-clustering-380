@@ -156,7 +156,7 @@
     const papers = data.papers;
     const palette = ['#f05a71','#4c78a8','#f58518','#54a24b','#b279a2','#72b7b2','#eeca3b','#ff9da6','#9d755d','#59a14f','#edc948','#76b7b2'];
     const colorFor = c => palette[Math.abs(Number(c)) % palette.length];
-    const clusterName = c => Number(c) === -1 ? 'Noise / Outliers' : `Cluster ${c}`;
+    const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${c}`;
     const state = { selected: papers[0]?.paper_id || null };
     const svg = document.getElementById('plot');
     const details = document.getElementById('details');

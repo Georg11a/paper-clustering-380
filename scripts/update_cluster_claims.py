@@ -70,6 +70,185 @@ ACTION_LABELS = {
     "synthesizes": "Synthesizes {form} into Shared Design Constructs",
 }
 
+CONTEXT_ROLE_RULES = [
+    {
+        "needles": ["usability", "guidelines", "heuristics", "visual design", "communication", "severe weather"],
+        "label": "Interface guidelines and heuristics as evaluative design knowledge",
+        "form": "Design Guidelines",
+        "action": "evaluates with evidence",
+        "contribution": "frames interface guidelines and heuristics as evaluative design knowledge",
+        "summary": (
+            "This context cluster treats design knowledge as guidelines, heuristics, or evaluative criteria for interface and communication design. "
+            "The shared role of knowledge is to diagnose design quality and support better design decisions in concrete interface settings."
+        ),
+    },
+    {
+        "needles": ["visualization", "sonification", "aesthetics", "audio visual", "hierarchical", "atlases"],
+        "label": "Visual and sensory representations as communicable design knowledge",
+        "form": "Design Knowledge",
+        "action": "represents and documents",
+        "contribution": "represents visual and sensory design knowledge in communicable forms",
+        "summary": (
+            "This context cluster frames design knowledge through visual, sensory, and hierarchical representation. "
+            "Its papers ask how knowledge can be made perceptible, communicable, and inspectable through visualization, sonification, or structured models."
+        ),
+    },
+    {
+        "needles": ["hci", "human-computer", "educational access", "neurodiverse", "task", "interface principles"],
+        "label": "HCI principles as task and access guidance",
+        "form": "Design Principles",
+        "action": "translates into actionable guidance",
+        "contribution": "translates HCI principles into task and access guidance",
+        "summary": (
+            "This context cluster treats design knowledge as principles for human-computer interaction, task support, and access. "
+            "The cluster links abstract guidance to concrete interface, software, or educational design situations."
+        ),
+    },
+    {
+        "needles": ["dark patterns", "design patterns", "pattern language", "hri", "human-robot", "formal", "software patterns"],
+        "label": "Pattern languages as reusable knowledge for software and HRI design",
+        "form": "Design Patterns",
+        "action": "organizes and classifies",
+        "contribution": "organizes software and HRI design knowledge as reusable pattern languages",
+        "summary": (
+            "This context cluster treats design knowledge as pattern language: reusable forms that name, compare, and transfer recurring design situations. "
+            "The cluster includes both constructive patterns and critical pattern work such as dark-pattern analysis."
+        ),
+    },
+    {
+        "needles": ["landscape architecture", "fashion", "relational", "pragmatism", "thriving", "human actors", "human crafters"],
+        "label": "Design theory as situated practice across domains",
+        "form": "Design Theory",
+        "action": "adapts to a specific context",
+        "contribution": "situates design theory across domains such as fashion, landscape, and work systems",
+        "summary": (
+            "This context cluster uses domain-specific settings to show design theory as situated practice rather than a universal rule set. "
+            "Its papers use fields such as fashion, landscape architecture, and work systems to test how design knowledge changes across contexts."
+        ),
+    },
+    {
+        "needles": ["ethics", "game", "immersive", "interactive narrative", "trajectories", "practice", "journeys"],
+        "label": "Practice-based evidence for interactive experience design",
+        "form": "Design Knowledge",
+        "action": "evaluates with evidence",
+        "contribution": "builds practice-based evidence for interactive experience design",
+        "summary": (
+            "This context cluster treats situated design practice as evidence for broader claims about interactive experience design. "
+            "The cluster links games, immersive practice, journeys, and ethics-focused cases to transferable design knowledge."
+        ),
+    },
+    {
+        "needles": ["ai", "artificial", "transparent", "auditable", "identity", "collaboration industry learning"],
+        "label": "AI design patterns as auditable and collaborative knowledge",
+        "form": "Design Patterns",
+        "action": "translates into actionable guidance",
+        "contribution": "translates AI-related design patterns into auditable and collaborative knowledge",
+        "summary": (
+            "This context cluster treats AI-related design knowledge as patterns, identity frameworks, and guidance for collaboration or auditability. "
+            "Its role is to turn emerging AI design situations into reusable and inspectable knowledge."
+        ),
+    },
+    {
+        "needles": ["tacit", "designerly", "graphic", "situated effects", "inexperienced designers", "digital"],
+        "label": "Tacit designerly knowledge as situated expertise",
+        "form": "Tacit Design Knowledge",
+        "action": "captures and transfers",
+        "contribution": "captures tacit designerly knowledge as situated expertise",
+        "summary": (
+            "This context cluster frames design knowledge as tacit, situated expertise embedded in designerly practice. "
+            "The shared concern is how such knowledge can be characterized, surfaced, and transferred without losing its context."
+        ),
+    },
+    {
+        "needles": ["cpm", "dfx", "product", "causal", "representation", "near-field", "industrial"],
+        "label": "Product-development knowledge as traceable design rationale",
+        "form": "Design Rationale",
+        "action": "represents and documents",
+        "contribution": "represents product-development knowledge as traceable design rationale",
+        "summary": (
+            "This context cluster treats design knowledge as product-development and decision knowledge: something that can be represented, traced, and reused across engineering or industrial design work. "
+            "Its papers emphasize rationale, causal links, product features, and decision support rather than design knowledge as a general topic."
+        ),
+    },
+    {
+        "needles": ["principle", "prescriptive", "boundary", "formulation", "dsr", "design science", "codification"],
+        "label": "Design principles as prescriptive knowledge for transfer",
+        "form": "Design Principles",
+        "action": "translates into actionable guidance",
+        "contribution": "translates design principles into prescriptive knowledge for transfer",
+        "summary": (
+            "This context cluster frames design knowledge as prescriptive principles that can travel from research into design practice. "
+            "The shared concern is how principles are formulated, bounded, justified, and made usable in design science or practice settings."
+        ),
+    },
+    {
+        "needles": ["object oriented", "ontology", "heuristics best practices", "reference", "paradigm", "reusable"],
+        "label": "Object-oriented design knowledge as ontology and reusable heuristics",
+        "form": "Design Heuristics",
+        "action": "organizes and classifies",
+        "contribution": "organizes object-oriented design knowledge as ontology and reusable heuristics",
+        "summary": (
+            "This context cluster understands design knowledge as a formal ontology or reusable set of heuristics and best practices. "
+            "Its contribution is to classify and stabilize design knowledge so it can be accumulated, measured, and reused."
+        ),
+    },
+    {
+        "needles": ["studio", "teacher", "education", "learning", "competency", "curriculum", "pedagogical"],
+        "label": "Studio and education contexts as sites for developing design knowledge",
+        "form": "Design Knowledge",
+        "action": "adapts to a specific context",
+        "contribution": "situates design knowledge in studio, teaching, and learning contexts",
+        "summary": (
+            "This context cluster treats education, studio learning, and teacher practice as sites where design knowledge is formed, adapted, and transferred. "
+            "The important point is not education as a domain label, but how learning environments make design knowledge visible and teachable."
+        ),
+    },
+    {
+        "needles": ["game", "health", "public", "dark patterns", "interactive", "narrative", "evidence", "phi"],
+        "label": "Evidence-based design knowledge for interactive and public-facing systems",
+        "form": "Design Knowledge",
+        "action": "evaluates with evidence",
+        "contribution": "builds evidence-based design knowledge for interactive and public-facing systems",
+        "summary": (
+            "This context cluster uses applied settings such as games, health, public systems, and dark-pattern analysis to build evidence-based design knowledge. "
+            "The cluster's role is to show how situated cases become transferable claims about design practice."
+        ),
+    },
+    {
+        "needles": ["platform", "digital", "multi sided", "taxonomy", "ontology"],
+        "label": "Platform knowledge as taxonomy and ontology",
+        "form": "Design Frameworks",
+        "action": "organizes and classifies",
+        "contribution": "organizes digital-platform design knowledge as taxonomy and ontology",
+        "summary": (
+            "This small context cluster frames design knowledge as a taxonomy or ontology for digital platforms. "
+            "Because the group is very small, it should be read as a specific organizing construct rather than a robust broad theme."
+        ),
+    },
+    {
+        "needles": ["hri", "designerly", "intermediate", "competence", "social drones", "creation"],
+        "label": "Designerly knowledge as intermediate-level construct",
+        "form": "Design Knowledge",
+        "action": "defines and conceptualizes",
+        "contribution": "conceptualizes designerly knowledge as an intermediate-level construct",
+        "summary": (
+            "This context cluster focuses on designerly or intermediate-level knowledge: knowledge that sits between specific artifacts and general theory. "
+            "Its papers ask how design work produces conceptual contributions that can be communicated beyond a single case."
+        ),
+    },
+    {
+        "needles": ["strategic", "ecosystems", "toulmin", "inquiry", "data quality", "value"],
+        "label": "Strategic design knowledge as reasoning for inquiry and value",
+        "form": "Design Knowledge",
+        "action": "defines and conceptualizes",
+        "contribution": "frames strategic design knowledge as reasoning for inquiry, value, and system-level design",
+        "summary": (
+            "This context cluster is a looser conceptual group around strategic reasoning, inquiry tools, value, and ecosystem-level design. "
+            "It is best read as a provisional theme about how design knowledge supports reasoning across complex design situations."
+        ),
+    },
+]
+
 
 def normalize(text: object) -> str:
     return re.sub(r"\s+", " ", str(text or "").strip().lower())
@@ -183,6 +362,32 @@ def claim_for_group(group: pd.DataFrame) -> dict[str, str]:
     }
 
 
+def context_role_claim(group: pd.DataFrame) -> dict[str, str] | None:
+    text = group_text(group)
+    best = None
+    best_score = 0
+    for rule in CONTEXT_ROLE_RULES:
+        score = sum(1 for needle in rule["needles"] if needle in text)
+        if score > best_score:
+            best = rule
+            best_score = score
+    if not best or best_score == 0:
+        return None
+
+    ranked = group.sort_values([c for c in ["representative_rank", "medoid_rank"] if c in group.columns])
+    titles = [str(value) for value in ranked.get("title", pd.Series(dtype=str)).head(2) if str(value).strip()]
+    representative = ""
+    if titles:
+        representative = " Representative papers include " + "; ".join(titles) + "."
+    return {
+        "cluster_label_candidate": best["label"],
+        "cluster_summary_candidate": best["summary"] + representative,
+        "design_knowledge_form": best["form"],
+        "design_knowledge_action": best["action"],
+        "design_knowledge_contribution": best["contribution"],
+    }
+
+
 def refresh_csv(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path).fillna("")
     if "cluster" not in df.columns:
@@ -191,10 +396,22 @@ def refresh_csv(path: Path) -> pd.DataFrame:
         if col not in df.columns:
             df[col] = ""
     for cluster, group in df.groupby("cluster"):
-        if str(cluster) == "-1":
-            continue
-        claim = claim_for_group(group)
         mask = df["cluster"].astype(str) == str(cluster)
+        if str(cluster) == "-1":
+            claim = {
+                "cluster_label_candidate": "Unclustered papers",
+                "cluster_summary_candidate": (
+                    "HDBSCAN did not assign these papers to a dense cluster. "
+                    "They are retained for inspection but should not be interpreted as a thematic cluster."
+                ),
+                "design_knowledge_form": "n/a",
+                "design_knowledge_action": "n/a",
+                "design_knowledge_contribution": "Not interpreted as a cluster theme.",
+            }
+        elif "context" in path.parts:
+            claim = context_role_claim(group) or claim_for_group(group)
+        else:
+            claim = claim_for_group(group)
         for key, value in claim.items():
             df.loc[mask, key] = value
     df.to_csv(path, index=False)
@@ -205,7 +422,8 @@ def write_summary(df: pd.DataFrame, path: Path) -> None:
     lines = ["# Clustering Summary", "", "## Cluster Themes", ""]
     for cluster in sorted(df["cluster"].unique(), key=lambda value: int(value) if str(value).lstrip("-").isdigit() else 999):
         group = df[df["cluster"].astype(str) == str(cluster)]
-        lines.append(f"### Cluster {cluster} ({len(group)} papers)")
+        heading = "Unclustered papers" if str(cluster) == "-1" else f"Cluster {cluster}"
+        lines.append(f"### {heading} ({len(group)} papers)")
         first = group.iloc[0]
         lines.append(f"Label candidate: {first.get('cluster_label_candidate', '')}")
         lines.append(f"Summary candidate: {first.get('cluster_summary_candidate', '')}")

@@ -2,9 +2,10 @@
 
 ## Cluster Themes
 
-### Cluster -1 (67 papers)
-Label candidate: Noise / Outliers
-Summary candidate: These papers were not assigned to a dense DBSCAN cluster.
+### Unclustered papers (67 papers)
+Label candidate: Unclustered papers
+Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:

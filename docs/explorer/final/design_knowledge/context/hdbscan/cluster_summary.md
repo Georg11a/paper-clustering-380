@@ -2,9 +2,10 @@
 
 ## Cluster Themes
 
-### Cluster -1 (59 papers)
-Label candidate: Noise / Outliers
-Summary candidate: These papers were not assigned to a dense DBSCAN cluster.
+### Unclustered papers (59 papers)
+Label candidate: Unclustered papers
+Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
@@ -13,9 +14,9 @@ Representative papers:
 - 2021: Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge
 
 ### Cluster 0 (15 papers)
-Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
-Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Principles, Design Frameworks. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are supporting facets, especially methods or lenses such as Design Science and contexts such as Education / Learning. Representative papers include Synthesizing a Solution Space for Prescriptive Design Knowledge Codification; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
-Design-knowledge contribution: synthesizes prior work on Design Knowledge
+Label candidate: Design principles as prescriptive knowledge for transfer
+Summary candidate: This context cluster frames design knowledge as prescriptive principles that can travel from research into design practice. The shared concern is how principles are formulated, bounded, justified, and made usable in design science or practice settings. Representative papers include Synthesizing a Solution Space for Prescriptive Design Knowledge Codification; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
+Design-knowledge contribution: translates design principles into prescriptive knowledge for transfer
 Theme words: dsr, software, science, creation, mechanisms, prescriptive, community, practices
 
 Representative papers:
@@ -24,9 +25,9 @@ Representative papers:
 - : A Typology of Knowledge Creation in Design Science Research Projects
 
 ### Cluster 1 (13 papers)
-Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
-Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related knowledge forms include Design Frameworks, Tacit Design Knowledge. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Taxonomy/Review. Application and method terms are supporting facets, especially methods or lenses such as Prototype, Ontology and contexts such as Education / Learning, Industrial Design. Representative papers include Causal design knowledge: Alternative representation method for product development knowledge management; What is design knowledge from the viewpoint of CPM/PDD?.
-Design-knowledge contribution: synthesizes prior work on Design Knowledge
+Label candidate: Product-development knowledge as traceable design rationale
+Summary candidate: This context cluster treats design knowledge as product-development and decision knowledge: something that can be represented, traced, and reused across engineering or industrial design work. Its papers emphasize rationale, causal links, product features, and decision support rather than design knowledge as a general topic. Representative papers include Causal design knowledge: Alternative representation method for product development knowledge management; What is design knowledge from the viewpoint of CPM/PDD?.
+Design-knowledge contribution: represents product-development knowledge as traceable design rationale
 Theme words: product, education, nature, industrial, recreation, management, interactive, field
 
 Representative papers:

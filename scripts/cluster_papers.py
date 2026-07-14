@@ -1245,11 +1245,14 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
         subset = df[df["cluster"] == label].sort_values(["representative_rank", "medoid_rank"])
         if label == -1:
             summaries[int(label)] = {
-                "cluster_label_candidate": "Noise / Outliers",
-                "cluster_summary_candidate": "These papers were not assigned to a dense DBSCAN cluster.",
-                "design_knowledge_form": "",
-                "design_knowledge_action": "",
-                "design_knowledge_contribution": "",
+                "cluster_label_candidate": "Unclustered papers",
+                "cluster_summary_candidate": (
+                    "HDBSCAN did not assign these papers to a dense cluster. "
+                    "They are retained for inspection but should not be interpreted as a thematic cluster."
+                ),
+                "design_knowledge_form": "n/a",
+                "design_knowledge_action": "n/a",
+                "design_knowledge_contribution": "Not interpreted as a cluster theme.",
                 "facet_population_or_context": "",
                 "facet_stakeholder_or_population": "",
                 "facet_method_or_lens": "",
@@ -1616,7 +1619,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     const papers = data.papers;
     const palette = ['#f05a71','#4c78a8','#f58518','#54a24b','#b279a2','#72b7b2','#eeca3b','#ff9da6','#9d755d','#59a14f','#edc948','#76b7b2'];
     const colorFor = c => palette[Math.abs(Number(c)) % palette.length];
-    const clusterName = c => Number(c) === -1 ? 'Noise / Outliers' : `Cluster ${{c}}`;
+    const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${{c}}`;
     const state = {{ selected: papers[0]?.paper_id || null }};
     const svg = document.getElementById('plot');
     const details = document.getElementById('details');

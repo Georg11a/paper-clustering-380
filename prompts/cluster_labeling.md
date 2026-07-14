@@ -14,6 +14,8 @@ Representative papers:
 Task:
 Create an interpretive design-knowledge claim for this cluster, not only a topic phrase. The label should explain how the papers define, organize, translate, represent, adapt, evaluate, or use the relevant design-knowledge construct. Treat application domains and methods such as HCI, participatory design, co-design, or HRI as supporting facets unless they are central to the construct itself.
 
+For context-oriented views, combine the context with the knowledge role. For example, prefer labels such as "Product-development knowledge as traceable design rationale" or "Studio and education contexts as sites for developing design knowledge" over generic labels such as "Education / Design knowledge" or "Synthesizes design knowledge".
+
 The summary should answer:
 1. What kind of design knowledge is being discussed?
 2. What action does the cluster perform on that knowledge, such as defining, organizing, operationalizing, representing, or evaluating it?
