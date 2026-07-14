@@ -1491,7 +1491,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     h1 {{ margin: 0 0 12px; font-size: 22px; letter-spacing: 0; }}
     .controls {{
       display: grid;
-      grid-template-columns: minmax(260px, 1fr) 180px 210px 150px;
+      grid-template-columns: 180px 210px;
       gap: 10px;
       align-items: center;
     }}
@@ -1596,7 +1596,6 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
   <header>
     <h1>{html.escape(title)}</h1>
     <div class="controls">
-      <input id="search" placeholder="Search papers in this view..." />
       <select id="clusterFilter"><option value="all">All clusters</option></select>
       <label class="toggle"><input id="repOnly" type="checkbox" /> Top-3 reps only</label>
     </div>
@@ -1633,7 +1632,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         opt.textContent = `${{clusterName(c.cluster)}} (${{c.count}})`;
         clusterFilter.appendChild(opt);
       }});
-      ['search','clusterFilter','repOnly'].forEach(id => {{
+      ['clusterFilter','repOnly'].forEach(id => {{
         document.getElementById(id).addEventListener('input', render);
         document.getElementById(id).addEventListener('change', render);
       }});
@@ -1641,13 +1640,10 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     }}
 
     function filteredPapers() {{
-      const q = document.getElementById('search').value.trim().toLowerCase();
       const cluster = document.getElementById('clusterFilter').value;
       const repOnly = document.getElementById('repOnly').checked;
       return papers.filter(p => {{
-        const text = `${{p.title}} ${{p.abstract}} ${{p.authors}} ${{p.venue}} ${{p.keyword}}`.toLowerCase();
-        return (!q || text.includes(q)) &&
-          (cluster === 'all' || String(p.cluster) === cluster) &&
+        return (cluster === 'all' || String(p.cluster) === cluster) &&
           (!repOnly || p.is_representative_top3);
       }});
     }}
