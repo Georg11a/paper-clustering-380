@@ -3,8 +3,9 @@
 ## Cluster Themes
 
 ### Cluster 0 (5 papers)
-Label candidate: Defines Design Guidelines Through Conceptual Framing - Media Applications / Design Guidelines
-Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Empirical. Representative papers include A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service; The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers.
+Label candidate: Design Guidelines as Conceptualized Conceptual Framework
+Distinguishing evidence: Immersive Practice, Media Applications, Likeability Framework, Healthy Eating Guidelines
+Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design guidelines as conceptual framework. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Empirical. Representative papers include A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service; The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers.
 Theme words: architecture, software, guidelines, school, theoretical, trajectories, eating, media applications
 
 Representative papers:
@@ -13,8 +14,9 @@ Representative papers:
 - 2013: Healthy Eating Design Guidelines for School Architecture
 
 ### Cluster 1 (6 papers)
-Label candidate: Synthesizes Design Guidelines into Shared Design Constructs
-Summary candidate: This cluster synthesizes prior work on design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Principles. The shared move also involves definition and conceptualization and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Design Study Methodology: Reflections from the Trenches and the Stacks; Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco.
+Label candidate: Design Guidelines as Synthesized Conceptual Framework
+Distinguishing evidence: Geo Portals, Interfaces Interactions, Experience Professional Map, Visualization Constraints Actionable
+Summary candidate: This cluster synthesizes prior work on design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design guidelines as conceptual framework. Related forms include Design Knowledge, Design Principles. The shared move also involves definition and conceptualization and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Design Study Methodology: Reflections from the Trenches and the Stacks; Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco.
 Theme words: visualization, task, geo, map, portals, provide, guidelines, guidance
 
 Representative papers:
@@ -23,8 +25,9 @@ Representative papers:
 - 2007: Towards a Model of Information Aesthetics in Information Visualization
 
 ### Cluster 2 (9 papers)
-Label candidate: Defines Design Guidelines Through Conceptual Framing - Design Guidelines / Don
-Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Accessibility. Representative papers include Design Guidelines and Examples; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
+Label candidate: Design Guidelines as Actionable Design Guidance
+Distinguishing evidence: Enterprise Engineering, Virtual Dystopia Theory, Guidelines Domain Specific, Ethical Responsible Automation
+Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design guidelines as actionable design guidance. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Accessibility. Representative papers include Design Guidelines and Examples; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
 Theme words: guidelines, rural, natural, don, language, smells, domain, platforms
 
 Representative papers:
@@ -33,8 +36,9 @@ Representative papers:
 - 2019: A Comparative Study of Chinese and American Rural Design Guidelines
 
 ### Cluster 3 (5 papers)
-Label candidate: Synthesizes Tacit Design Knowledge into Shared Design Constructs
-Summary candidate: This cluster synthesizes prior work on tacit design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Guidelines, Design Knowledge. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Representative papers include Design Guidelines and Strategies for Interim Innovation; Terminologia kohtaa k√§ytett√§vyyden. Terminologisen k√§ytett√§vyyden ydint√§ rakentamassa.
+Label candidate: Tacit Design Knowledge as Tacit or Situated Expertise
+Distinguishing evidence: Changing Focus, Concept Sidewalk, Characteristics Instances, Training Considerations Proposal
+Summary candidate: This cluster synthesizes prior work on tacit design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats tacit design knowledge as tacit or situated expertise. Related forms include Design Guidelines, Design Knowledge. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Representative papers include Design Guidelines and Strategies for Interim Innovation; Terminologia kohtaa k√§ytett√§vyyden. Terminologisen k√§ytett√§vyyden ydint√§ rakentamassa.
 Theme words: tacit, fidelity, interim, characteristics, guidelines, innovation, training, graphic
 
 Representative papers:
@@ -43,9 +47,13 @@ Representative papers:
 - 2019: The equitable use concept in sidewalk design
 
 ## LDA Topics
-- Topic 0: guidelines, interfaces, specific, high, concept, complex, reflect, space
-- Topic 1: guidelines, visualization, aesthetics, tools, self, immersive, control, lack
-- Topic 2: practical, guidelines, paradigm, environment, concrete, introduce, good, reflect
-- Topic 3: guidelines, architecture, task, provide, usability, interface, guidance, visual
-- Topic 4: guidelines, goal, definitions, immersive, critical, focus, practitioners, turn
-- Topic 5: guidelines, characteristics, review, literature, professional, concept, growing, theories
+- Topic 0: interfaces, definitions, high, method guidelines, proposal, growing, strategies, particular
+- Topic 1: visualization, guidelines, provide, guidance, tools, effective, propose, formalizing
+- Topic 2: growing, method guidelines, size, space, tools, concept, professional, practical
+- Topic 3: guidelines, architecture, task, usability, characteristics, interface, specific, types
+- Topic 4: guidelines, goal, definitions, immersive, assessment, critical, digital, practitioners
+- Topic 5: growing, method guidelines, size, space, tools, concept, professional, practical
+- Topic 6: growing, method guidelines, size, space, tools, concept, professional, practical
+- Topic 7: guidelines, concept, complex, visual, hybrid, clear, interfaces, practical
+- Topic 8: growing, method guidelines, size, space, tools, concept, professional, practical
+- Topic 9: visualization, aesthetics, focuses, recently, need, understanding, proposed, method guidelines

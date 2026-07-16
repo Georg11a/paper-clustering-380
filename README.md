@@ -132,7 +132,12 @@ cluster_method
 cluster_status
 cluster
 cluster_label_candidate
+distinguishing_evidence_terms
 cluster_summary_candidate
+design_knowledge_form
+design_knowledge_action
+design_knowledge_role
+design_knowledge_contribution
 representative_rank
 is_representative_top3
 ```
@@ -216,6 +221,28 @@ K-means uses a dynamic paper-count cap before silhouette selection. This avoids
 forcing small keyword groups into too many clusters. For example, a 14-paper
 keyword group is only allowed to choose between 2 and 3 clusters, even if the
 requested maximum is 8.
+
+## Cluster Labeling Rationale
+
+Cluster labels are separated from lexical evidence. The label is a conceptual
+interpretation of what role the design-related construct plays in the cluster,
+such as conceptual framework, evaluative criteria, reusable pattern language,
+traceable decision rationale, actionable guidance, or empirical evidence base.
+The action frame is stored separately as `design_knowledge_action`, and repeated
+conceptual labels are qualified by action only when needed, for example
+`Synthesized Conceptual Framework` versus `Conceptualized Conceptual Framework`.
+
+Distinctive terms from c-TF-IDF, topic words, facets, and representative-paper
+titles are kept as `distinguishing_evidence_terms` rather than being appended
+directly to the label. Terms such as `geo`, `recipe`, or `healthy eating` are
+therefore treated as evidence terms, not final cluster names.
+
+This follows NLP/topic-labeling guidance that top words alone are often not
+reliable labels. Labels should be interpreted with representative documents and
+distinctive evidence terms. Relevant references include Manning et al.'s cluster
+labeling discussion in *Introduction to Information Retrieval*, Chang et al.'s
+*Reading Tea Leaves*, Sievert and Shirley's LDAvis paper, Bhatia et al.'s neural
+topic-labeling work, and Grootendorst's BERTopic paper.
 
 ## Prompts
 

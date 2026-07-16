@@ -3,8 +3,9 @@
 ## Cluster Themes
 
 ### Cluster 0 (3 papers)
-Label candidate: Synthesizes Design Rules into Shared Design Constructs
-Summary candidate: This cluster synthesizes prior work on design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Taxonomy/Review. Application and method terms are treated as supporting facets, especially contexts such as Healthcare. Representative papers include The Good, the Bad, and the Ugly: A Theoretical Framework for the Assessment of Continuous Colormaps; Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted.
+Label candidate: Design Rules as Synthesized Conceptual Framework
+Distinguishing evidence: Good Bad, Assessment Continuous, Eudaimonic Experience, Ugly Theoretical Framework
+Summary candidate: This cluster synthesizes prior work on design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rules as conceptual framework. Related forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Taxonomy/Review. Application and method terms are treated as supporting facets, especially contexts such as Healthcare. Representative papers include The Good, the Bad, and the Ugly: A Theoretical Framework for the Assessment of Continuous Colormaps; Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted.
 Theme words: eudaimonic, rules, ewb, mechanical, tissue, meaning, demand, organs
 
 Representative papers:
@@ -13,8 +14,9 @@ Representative papers:
 - 2026: Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics
 
 ### Cluster 1 (2 papers)
-Label candidate: Defines Design Rules Through Conceptual Framing - Value Structure / Recipe
-Summary candidate: This cluster defines and conceptualizes design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Methodological, Theoretical. Representative papers include Design Rules, Volume 2: Chapter 6‚ÄîThe Value Structure of Technologies, Part 1: Mapping Functional Components; Design Rules, Volume 2: Chapter 4‚ÄîThe Mirroring Hypothesis: Linkages Inside and Across Transaction Free Zones.
+Label candidate: Design Rules as Representational Modeling Schema
+Distinguishing evidence: Value Structure, Recipe, Chapter, Language
+Summary candidate: This cluster defines and conceptualizes design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rules as representational modeling schema. Related forms include Design Knowledge, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Methodological, Theoretical. Representative papers include Design Rules, Volume 2: Chapter 6‚ÄîThe Value Structure of Technologies, Part 1: Mapping Functional Components; Design Rules, Volume 2: Chapter 4‚ÄîThe Mirroring Hypothesis: Linkages Inside and Across Transaction Free Zones.
 Theme words: language, recipe, chapter, technical, linkages, rules rules, capable, value structure
 
 Representative papers:
@@ -22,8 +24,9 @@ Representative papers:
 - 2020: Design Rules, Volume 2: Chapter 4‚ÄîThe Mirroring Hypothesis: Linkages Inside and Across Transaction Free Zones
 
 ### Cluster 2 (6 papers)
-Label candidate: Defines Design Rules Through Conceptual Framing - Software / Retrieval
-Summary candidate: This cluster defines and conceptualizes design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Guidelines. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Theoretical, Methodological. Representative papers include Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Hybrid Prototyping: Pure Theory or a Practical Solution to Accelerating Prototyping Tasks?.
+Label candidate: Design Rules as Conceptualized Conceptual Framework
+Distinguishing evidence: Hybrid Prototyping Pure, Theory Practical Solution, Interfaces Retrieval Friendliness, Conceptualization Organizational Modularity
+Summary candidate: This cluster defines and conceptualizes design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rules as conceptual framework. Related forms include Design Principles, Design Guidelines. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Theoretical, Methodological. Representative papers include Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Hybrid Prototyping: Pure Theory or a Practical Solution to Accelerating Prototyping Tasks?.
 Theme words: rules, modularity, prototyping, interfaces, architecture, organizational, software, retrieval
 
 Representative papers:
@@ -32,9 +35,13 @@ Representative papers:
 - Nov-90: Studying Software Architecture Through Design Spaces and Rules
 
 ## LDA Topics
-- Topic 0: rules, tasks, presented, various, concept, guidelines, properties, meaning
-- Topic 1: rules, architecture, derived, modularity, meaning, critical, called, way
-- Topic 2: properties, meaning, rules, literature, common, architecture, way, tasks
-- Topic 3: rules, cost, possible, steps, guidelines, properties, meaning, literature
-- Topic 4: organizational, modularity, common, properties, literature, elements, conceptualization, proposed
-- Topic 5: rules, technical, recipe, chapter, functional, structure, purpose, way
+- Topic 0: rules, presented, tasks, various, concept, guidelines, cost, critical
+- Topic 1: rules, architecture, modularity, critical, called, derived, conceptualization, proposed
+- Topic 2: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 3: rules, cost, possible, steps, guidelines, properties, derived, literature
+- Topic 4: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 5: rules, technical, recipe, chapter, functional, structure, way, purpose
+- Topic 6: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 7: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 8: properties, cost, derived, rules, literature, common, architecture, meaning
+- Topic 9: organizational, modularity, common, properties, literature, elements, concept, conceptualization

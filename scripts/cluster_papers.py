@@ -224,6 +224,107 @@ ACTION_LABEL_TEMPLATES = {
     "synthesizes": "Synthesizes {form} into Shared Design Constructs",
 }
 
+ACTION_ROLE_QUALIFIERS = {
+    "defines and conceptualizes": "Conceptualized",
+    "organizes and classifies": "Organized",
+    "translates into actionable guidance": "Actionable",
+    "represents and documents": "Documented",
+    "captures and transfers": "Transferable",
+    "adapts to a specific context": "Contextualized",
+    "evaluates with evidence": "Evaluated",
+    "synthesizes prior work on": "Synthesized",
+}
+
+CONCEPTUAL_ROLE_PATTERNS = {
+    "Evaluative Design Criteria": [
+        "assessment",
+        "criteria",
+        "detect",
+        "diagnose",
+        "evaluate",
+        "evaluation",
+        "evidence",
+        "heuristic",
+        "quality",
+        "smell",
+        "trustworthy",
+        "usability",
+        "validated",
+    ],
+    "Reusable Design Pattern Language": [
+        "catalog",
+        "gallery",
+        "pattern language",
+        "patterns",
+        "reusable",
+        "reuse",
+        "solution",
+    ],
+    "Traceable Decision Rationale": [
+        "argumentation",
+        "decision",
+        "document",
+        "documentation",
+        "rationale",
+        "record",
+        "trace",
+        "traceable",
+    ],
+    "Conceptual Framework": [
+        "conceptual framework",
+        "conceptualization",
+        "define",
+        "definition",
+        "framework",
+        "model",
+        "theoretical",
+        "theory",
+    ],
+    "Actionable Design Guidance": [
+        "actionable",
+        "apply",
+        "guidance",
+        "guideline",
+        "method",
+        "operationalize",
+        "practice",
+        "recommendation",
+    ],
+    "Taxonomy or Classification System": [
+        "classification",
+        "classify",
+        "ontology",
+        "taxonomy",
+        "typology",
+    ],
+    "Tacit or Situated Expertise": [
+        "craft",
+        "expertise",
+        "expert",
+        "professional",
+        "situated",
+        "tacit",
+    ],
+    "Representational Modeling Schema": [
+        "constraint",
+        "formalize",
+        "language",
+        "modeling",
+        "notation",
+        "representation",
+        "schema",
+    ],
+    "Empirical Evidence Base": [
+        "case study",
+        "empirical",
+        "experiment",
+        "literature review",
+        "study",
+        "systematic review",
+        "user study",
+    ],
+}
+
 
 DESIGN_KNOWLEDGE_KEYWORDS = [
     "Design knowledge",
@@ -1089,6 +1190,35 @@ def score_pattern_group(text: str, patterns: dict[str, list[str]], max_items: in
     return scored[:max_items]
 
 
+def infer_conceptual_roles(
+    text: str,
+    facets: dict[str, list[str]],
+    contribution_types: list[str],
+    max_items: int = 3,
+) -> list[str]:
+    scored = []
+    facet_text = normalize_phrase(
+        " ".join(
+            [
+                " ".join(facets.get("method_or_lens", [])),
+                " ".join(facets.get("artifact_or_domain", [])),
+                " ".join(contribution_types),
+            ]
+        )
+    )
+    combined_text = f"{text} {facet_text}"
+    for role, phrases in CONCEPTUAL_ROLE_PATTERNS.items():
+        score = 0
+        for phrase in phrases:
+            pattern = re.compile(r"\b" + re.escape(phrase).replace(r"\ ", r"\s+") + r"\b")
+            hits = len(pattern.findall(combined_text))
+            score += hits * (3 if " " in phrase else 1)
+        if score:
+            scored.append((role, score))
+    scored.sort(key=lambda item: (item[1], len(item[0])), reverse=True)
+    return [role for role, _ in scored[:max_items]]
+
+
 def cluster_analysis_text(subset: pd.DataFrame) -> str:
     return normalize_phrase(
         " ".join(
@@ -1115,15 +1245,20 @@ def infer_design_knowledge_claim(
     text = cluster_analysis_text(subset)
     forms = score_pattern_group(text, DESIGN_KNOWLEDGE_FORM_PATTERNS, max_items=3)
     actions = score_pattern_group(text, DESIGN_KNOWLEDGE_ACTION_PATTERNS, max_items=3)
+    conceptual_roles = infer_conceptual_roles(text, facets, contribution_types)
 
     form = forms[0][0] if forms else focus_form_from_keyword(subset)
     action = actions[0][0] if actions else "synthesizes"
+    conceptual_role = conceptual_roles[0] if conceptual_roles else ""
     secondary_actions = [item[0] for item in actions[1:3]]
     secondary_forms = [item[0] for item in forms[1:3] if item[0] != form]
 
-    label = ACTION_LABEL_TEMPLATES.get(action, "Frames {form} as Design Knowledge").format(
-        form=phrase_title(form)
-    )
+    if conceptual_role:
+        label = f"{phrase_title(form)} as {conceptual_role}"
+    else:
+        label = ACTION_LABEL_TEMPLATES.get(action, "Frames {form} as Design Knowledge").format(
+            form=phrase_title(form)
+        )
     action_text = ACTION_DISPLAY.get(action, action)
 
     representative_titles = [
@@ -1138,6 +1273,10 @@ def infer_design_knowledge_claim(
     form_detail = ""
     if secondary_forms:
         form_detail = f" Related forms include {', '.join(phrase_title(item) for item in secondary_forms)}."
+
+    role_detail = ""
+    if conceptual_role:
+        role_detail = f" Conceptually, it treats {form} as {conceptual_role.lower()}."
 
     action_detail = ""
     if secondary_actions:
@@ -1163,7 +1302,7 @@ def infer_design_knowledge_claim(
     summary = (
         f"This cluster {action_text} {form}, emphasizing how a design-knowledge construct is made explicit, "
         f"organized, or put to work rather than only where it is applied."
-        f"{form_detail}{action_detail}{contribution_sentence}{facet_sentence}{rep_sentence}"
+        f"{role_detail}{form_detail}{action_detail}{contribution_sentence}{facet_sentence}{rep_sentence}"
     )
 
     return {
@@ -1172,6 +1311,7 @@ def infer_design_knowledge_claim(
         "design_knowledge_form": phrase_title(form),
         "design_knowledge_action": ACTION_DISPLAY.get(action, action),
         "design_knowledge_contribution": f"{ACTION_DISPLAY.get(action, action)} {phrase_title(form)}",
+        "design_knowledge_role": conceptual_role,
     }
 
 
@@ -1256,46 +1396,81 @@ def dominant_design_keywords(subset: pd.DataFrame, limit: int = 3) -> list[str]:
     return counts.head(limit).index.tolist()
 
 
-def disambiguate_repeated_cluster_labels(summaries: dict[int, dict[str, str]], df: pd.DataFrame) -> None:
-    label_to_clusters: dict[str, list[int]] = {}
-    for cluster_id, summary in summaries.items():
-        label = summary.get("cluster_label_candidate", "")
-        if cluster_id == -1 or not label or label == "Unclustered papers":
-            continue
-        label_to_clusters.setdefault(label, []).append(cluster_id)
+def representative_title_terms(subset: pd.DataFrame, limit: int = 4) -> list[str]:
+    titles = [
+        normalize_phrase(str(title))
+        for title in subset.sort_values(["representative_rank", "medoid_rank"]).get("title", pd.Series(dtype=str)).head(6)
+        if str(title).strip() and not any(marker in str(title) for marker in ["√", "�", "‚", "Ä", "ê"])
+    ]
+    if not titles:
+        return []
+    vectorizer = CountVectorizer(
+        stop_words=STOPWORDS,
+        min_df=1,
+        ngram_range=(2, 3),
+        token_pattern=r"(?u)\b(?:ai|ux|xr|[a-zA-Z]{3,})\b",
+    )
+    try:
+        counts = vectorizer.fit_transform(titles).sum(axis=0).A1
+    except ValueError:
+        return []
+    terms = vectorizer.get_feature_names_out()
+    ranked = terms[np.argsort(counts)[::-1]].tolist()
+    return _clean_label_terms(ranked, limit)
 
-    for repeated_label, cluster_ids in label_to_clusters.items():
-        if len(cluster_ids) < 2:
+
+def distinguishing_evidence_terms(
+    subset: pd.DataFrame,
+    keyphrases: list[str],
+    facets: dict[str, list[str]],
+    contribution_types: list[str],
+    limit: int = 4,
+) -> str:
+    evidence_candidates = []
+    evidence_candidates.extend(representative_title_terms(subset, limit=limit))
+    for facet in ["population_or_context", "artifact_or_domain", "method_or_lens"]:
+        evidence_candidates.extend(facets.get(facet, [])[:2])
+    evidence_candidates.extend(contribution_types[:2])
+    preferred = preferred_keyphrases_for_cluster(subset, keyphrases, max_items=limit + 2)
+    label_parts = []
+    roots_seen: set[str] = set()
+    candidate_phrases = sorted(
+        evidence_candidates + preferred + [phrase for phrase in keyphrases if len(phrase.split()) > 1],
+        key=lambda item: (len(item.split()) < 2, item in GENERIC_LABEL_PHRASES, len(item)),
+    )
+    for phrase in candidate_phrases:
+        tokens = phrase.split()
+        if len(set(tokens)) < len(tokens):
+            continue
+        if normalize_phrase(phrase) in {"design rules", "rules"}:
+            continue
+        add_label_phrase(label_parts, roots_seen, phrase, allow_generic=True)
+        if len(label_parts) >= limit:
+            break
+    if not label_parts and len(subset):
+        title_words = normalize_phrase(str(subset.iloc[0].get("title", ""))).split()
+        label_parts = [word for word in title_words if not token_is_too_generic(word)][:limit]
+    return format_facet_values(label_parts)
+
+
+def deduplicate_conceptual_cluster_labels(summaries: dict[int, dict[str, str]]) -> None:
+    labels: dict[str, list[int]] = {}
+    for cluster_id, summary in summaries.items():
+        labels.setdefault(str(summary.get("cluster_label_candidate", "")), []).append(cluster_id)
+    for label, cluster_ids in labels.items():
+        if not label or len(cluster_ids) < 2:
             continue
         for cluster_id in cluster_ids:
-            subset = df[df["cluster"] == cluster_id].sort_values(["representative_rank", "medoid_rank"])
-            keyphrases = [
-                phrase.strip()
-                for phrase in str(subset.iloc[0].get("cluster_theme_terms", "")).split(",")
-                if phrase.strip()
-            ]
-            preferred = preferred_keyphrases_for_cluster(subset, keyphrases, max_items=3)
-            label_parts = []
-            roots_seen: set[str] = set()
-            candidate_phrases = sorted(
-                preferred + keyphrases,
-                key=lambda item: (len(item.split()) < 2, item in GENERIC_LABEL_PHRASES, len(item)),
-            )
-            for phrase in candidate_phrases:
-                tokens = phrase.split()
-                if len(set(tokens)) < len(tokens):
-                    continue
-                if normalize_phrase(phrase) in {"design rules", "rules"}:
-                    continue
-                add_label_phrase(label_parts, roots_seen, phrase, allow_generic=True)
-                if len(label_parts) >= 2:
-                    break
-            if not label_parts:
-                title_words = normalize_phrase(str(subset.iloc[0].get("title", ""))).split()
-                label_parts = [word for word in title_words if not token_is_too_generic(word)][:2]
-            if label_parts:
-                qualifier = " / ".join(phrase_title(part) for part in label_parts[:2])
-                summaries[cluster_id]["cluster_label_candidate"] = f"{repeated_label} - {qualifier}"
+            summary = summaries[cluster_id]
+            role = str(summary.get("design_knowledge_role", "") or "")
+            form = str(summary.get("design_knowledge_form", "") or "")
+            action = str(summary.get("design_knowledge_action", "") or "")
+            qualifier = ACTION_ROLE_QUALIFIERS.get(action, "")
+            if not role or not form or not qualifier or role == "n/a":
+                continue
+            if role.startswith(qualifier):
+                continue
+            summary["cluster_label_candidate"] = f"{form} as {qualifier} {role}"
 
 
 def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dict[int, dict[str, str]]:
@@ -1311,12 +1486,14 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 ),
                 "design_knowledge_form": "n/a",
                 "design_knowledge_action": "n/a",
+                "design_knowledge_role": "n/a",
                 "design_knowledge_contribution": "Not interpreted as a cluster theme.",
                 "facet_population_or_context": "",
                 "facet_stakeholder_or_population": "",
                 "facet_method_or_lens": "",
                 "facet_artifact_or_domain": "",
                 "facet_contribution_or_outcome": "",
+                "distinguishing_evidence_terms": "",
             }
             continue
         facets = {facet: find_facet_matches_for_cluster(subset, facet) for facet in FACET_PATTERNS}
@@ -1356,6 +1533,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
         if not label_parts:
             label_parts = keyphrases[:3]
         cluster_label = design_claim["cluster_label_candidate"] or " / ".join(phrase_title(p) for p in label_parts[:3]) or f"Cluster {label}"
+        evidence_terms = distinguishing_evidence_terms(subset, keyphrases, facets, contribution_types)
 
         context = format_facet_values(facets["population_or_context"][:3]) or ", ".join(keyphrases[:2]) or "the selected papers"
         stakeholders = format_facet_values(facets["stakeholder_or_population"][:3])
@@ -1378,14 +1556,16 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "cluster_summary_candidate": summary,
             "design_knowledge_form": design_claim["design_knowledge_form"],
             "design_knowledge_action": design_claim["design_knowledge_action"],
+            "design_knowledge_role": design_claim["design_knowledge_role"],
             "design_knowledge_contribution": design_claim["design_knowledge_contribution"],
             "facet_population_or_context": format_facet_values(facets["population_or_context"]),
             "facet_stakeholder_or_population": format_facet_values(facets["stakeholder_or_population"]),
             "facet_method_or_lens": format_facet_values(facets["method_or_lens"]),
             "facet_artifact_or_domain": format_facet_values(facets["artifact_or_domain"]),
             "facet_contribution_or_outcome": ", ".join(contribution_types),
+            "distinguishing_evidence_terms": evidence_terms,
         }
-    disambiguate_repeated_cluster_labels(summaries, df)
+    deduplicate_conceptual_cluster_labels(summaries)
     return summaries
 
 
@@ -1436,6 +1616,7 @@ def write_summary(df: pd.DataFrame, cluster_terms: dict[int, str], topic_words: 
         lines.append(f"### Cluster {label} ({len(subset)} papers)")
         if len(subset):
             lines.append(f"Label candidate: {subset.iloc[0].get('cluster_label_candidate', '')}")
+            lines.append(f"Distinguishing evidence: {subset.iloc[0].get('distinguishing_evidence_terms', '')}")
             lines.append(f"Summary candidate: {subset.iloc[0].get('cluster_summary_candidate', '')}")
         lines.append(f"Theme words: {cluster_terms[label]}")
         reps = subset.sort_values(["representative_rank", "medoid_rank"]).head(3)
@@ -1490,9 +1671,11 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "cluster": int(row.get("cluster", -1)),
                 "cluster_theme_terms": str(row.get("cluster_theme_terms", "")),
                 "cluster_label_candidate": str(row.get("cluster_label_candidate", "")),
+                "distinguishing_evidence_terms": str(row.get("distinguishing_evidence_terms", "")),
                 "cluster_summary_candidate": str(row.get("cluster_summary_candidate", "")),
                 "design_knowledge_form": str(row.get("design_knowledge_form", "")),
                 "design_knowledge_action": str(row.get("design_knowledge_action", "")),
+                "design_knowledge_role": str(row.get("design_knowledge_role", "")),
                 "design_knowledge_contribution": str(row.get("design_knowledge_contribution", "")),
                 "facet_population_or_context": str(row.get("facet_population_or_context", "")),
                 "facet_stakeholder_or_population": str(row.get("facet_stakeholder_or_population", "")),
@@ -1813,12 +1996,15 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         ${{discussionStatus}}
         <div class="section-title">Cluster Label Candidate</div>
         <div class="abstract">${{escapeHtml(p.cluster_label_candidate)}}</div>
+        <div class="section-title">Distinguishing Evidence</div>
+        <div class="abstract">${{escapeHtml(p.distinguishing_evidence_terms || p.cluster_theme_terms || 'n/a')}}</div>
         <div class="section-title">Cluster Summary Candidate</div>
         <div class="abstract">${{escapeHtml(p.cluster_summary_candidate)}}</div>
         <div class="section-title">Design-Knowledge Contribution</div>
         <div>
           <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
           <span class="pill">Action: ${{escapeHtml(p.design_knowledge_action || 'n/a')}}</span>
+          <span class="pill">Role: ${{escapeHtml(p.design_knowledge_role || 'n/a')}}</span>
         </div>
         <div class="abstract">${{escapeHtml(p.design_knowledge_contribution || '')}}</div>
         <div class="section-title">Paper-Oriented Facets</div>
@@ -2035,9 +2221,11 @@ def main() -> None:
     cluster_summaries = build_cluster_summaries(df, args.text_view)
     for field in [
         "cluster_label_candidate",
+        "distinguishing_evidence_terms",
         "cluster_summary_candidate",
         "design_knowledge_form",
         "design_knowledge_action",
+        "design_knowledge_role",
         "design_knowledge_contribution",
         "facet_population_or_context",
         "facet_stakeholder_or_population",

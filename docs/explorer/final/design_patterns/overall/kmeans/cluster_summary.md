@@ -3,8 +3,9 @@
 ## Cluster Themes
 
 ### Cluster 0 (37 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing - Dark Patterns / Design Guidelines
-Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Workshop and contexts such as Education / Learning, Sustainability. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Design pattern in object-oriented technology.
+Label candidate: Design Patterns as Conceptualized Reusable Design Pattern Language
+Distinguishing evidence: Java Code, Dark Patterns, General Purpose, Literature Review
+Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Workshop and contexts such as Education / Learning, Sustainability. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Design pattern in object-oriented technology.
 Theme words: patterns, software, component, ai, oriented, architecture, social, labels
 
 Representative papers:
@@ -13,8 +14,9 @@ Representative papers:
 - 2003: Elemental design patterns: A formal semantics for composition of OO software architecture
 
 ### Cluster 1 (3 papers)
-Label candidate: Translates Design Patterns into Actionable Design Guidance
-Summary candidate: This cluster translates into actionable guidance design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Guidelines. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Artifact/System, Methodological. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include A pattern approach to interaction design; Pattern approach to interaction design.
+Label candidate: Design Patterns as Actionable Reusable Design Pattern Language
+Distinguishing evidence: Need Cooperate, Ideas Opinions, Application Domain, Pattern Approach Interaction
+Summary candidate: This cluster translates into actionable guidance design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Knowledge, Design Guidelines. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Artifact/System, Methodological. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include A pattern approach to interaction design; Pattern approach to interaction design.
 Theme words: application domain, pattern, experts, interactive, lic, need cooperate, ideas opinions, readability
 
 Representative papers:
@@ -23,8 +25,9 @@ Representative papers:
 - 2001: A pattern approach to interaction design
 
 ### Cluster 2 (2 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing - Commerce Broker / Design Patterns
-Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological. Representative papers include E-business design; E-Business Design: A Shift to Adaptability.
+Label candidate: Design Patterns as Conceptualized Reusable Design Pattern Language
+Distinguishing evidence: Commerce Broker, Shift Adaptability, Design Patterns, Barter
+Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological. Representative papers include E-business design; E-Business Design: A Shift to Adaptability.
 Theme words: commerce broker, balanced, business, barter, patterns, adaptable, designs, shift
 
 Representative papers:
@@ -32,8 +35,9 @@ Representative papers:
 - : E-Business Design: A Shift to Adaptability
 
 ### Cluster 3 (7 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing - Lecture Notes / Verlag Berlin
-Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Tacit Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis patterns; Toward patterns for collaborative knowledge creation.
+Label candidate: Design Patterns as Conceptualized Reusable Design Pattern Language
+Distinguishing evidence: Lecture Notes, Verlag Berlin, Modeling Methods, Analysis Patterns
+Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Principles, Tacit Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis patterns; Toward patterns for collaborative knowledge creation.
 Theme words: patterns, analysis, privacy, lecture notes, modeling methods, oriented, creation, verlag berlin
 
 Representative papers:
@@ -42,8 +46,9 @@ Representative papers:
 - : Analysis patterns
 
 ### Cluster 4 (4 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing - Design Patterns / Game
-Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Framework for Designing and Evaluating Game Achievements; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education.
+Label candidate: Design Patterns as Conceptual Framework
+Distinguishing evidence: Directional Stimuli, Formalising Patterns, Theoretical Model Game, Architectures Documenting Practice
+Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as conceptual framework. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Framework for Designing and Evaluating Game Achievements; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education.
 Theme words: prompting, game, prompt, meta, mechanics, patterns, achievements, transformations
 
 Representative papers:
@@ -52,8 +57,9 @@ Representative papers:
 - 2026: From Directional Stimuli to Prompt Architectures: Documenting the Practice of Meta-Prompting
 
 ### Cluster 5 (14 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing - Design Guidelines / Video
-Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Theory. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, Prototype, Ontology and contexts such as Education / Learning. Representative papers include An overview of human-computer interaction patterns in pervasive systems; Design patterns for sociality in human-robot interaction.
+Label candidate: Design Patterns as Conceptualized Reusable Design Pattern Language
+Distinguishing evidence: Human Robot, Specific Patterns, Exploring Prototyping, Methodological Framework Auditory
+Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Knowledge, Design Theory. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, Prototype, Ontology and contexts such as Education / Learning. Representative papers include An overview of human-computer interaction patterns in pervasive systems; Design patterns for sociality in human-robot interaction.
 Theme words: patterns, video, robot, alexander, ussmdp, semantic, auditory, computer
 
 Representative papers:
@@ -62,9 +68,13 @@ Representative papers:
 - 2014: Design patterns for exploring and prototyping human-robot interactions
 
 ## LDA Topics
-- Topic 0: patterns, alexander, robot, computer, language, properties, focus, domain
-- Topic 1: game, patterns, theoretical, practice, achievement, education, perspective, challenge
-- Topic 2: patterns, semantic, structural, formal, structure, software, focus, oriented
-- Topic 3: patterns, software, oriented, social, component, ai, object, architecture
-- Topic 4: patterns, visualization, focus, views, visual, decision, business, guidelines
-- Topic 5: patterns, collaboration, ethics, practice, observed, student, ai, analysis
+- Topic 0: patterns, properties, architecture, alexander, focus, center, software, quality
+- Topic 1: game, theoretical, practice, patterns, education, perspective, challenge, practical
+- Topic 2: patterns, semantic, structural, formal, structure, modeling, focus, software
+- Topic 3: patterns, software, oriented, object, social, component, ai, programming
+- Topic 4: patterns, business, management, commerce, balanced, broker, focus, adaptable
+- Topic 5: practice, ethics, perceived, value, patterns, building, practitioners, issues
+- Topic 6: patterns, visualization, views, visual, web, focus, multiple, ai
+- Topic 7: patterns, computer, solution, domain, language, alexander, example, application
+- Topic 8: robot, patterns, hri, authoring, scenarios, environment, language, offer
+- Topic 9: patterns, legal, law, collaboration, observed, digital, student, ieee
