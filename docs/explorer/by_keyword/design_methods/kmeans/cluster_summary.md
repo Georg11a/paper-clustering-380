@@ -2,88 +2,65 @@
 
 ## Cluster Themes
 
-### Cluster 0 (7 papers)
-Label candidate: User-centered Design / Co-design / Self Usage
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Participatory Design, User-centered Design, Ethnographic as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
-Theme words: participatory, value, functional, innovative, self usage, ethnographic, robust, manufacturing
-
-Representative papers:
-- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
-- 2020: State of the Art on Robust Design Methods for Additive Manufacturing
-- 2012: Autobiographical design in HCI research: designing and learning through use-it-yourself
-
-### Cluster 1 (2 papers)
-Label candidate: Does Exist / Express Aspects / Needs Seen
-Summary candidate: This cluster focuses on Education / Learning, involving Practitioners, Developers, Designers, with recurring attention to Tool, with contribution types coded as Methodological, Artifact/System, Theoretical.
-Theme words: industry, understand, does exist, express aspects, needs seen, methods elements, formalised way, fact
-
-Representative papers:
-- : Elements of a design method - a basis for describing and evaluating design methods
-- 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
-
-### Cluster 2 (6 papers)
-Label candidate: Business Models / Collapse / Applications
-Summary candidate: This cluster focuses on collapse, applications, involving Designers, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: collapse, applications, business models, industrial, emotion, complexity, problems, community
+### Cluster 0 (5 papers)
+Label candidate: Cluster 0: Design Methods through prior-work synthesis around Fbs Model Usage
+Distinguishing evidence: Fbs Model Usage, Emotion Semantics, Engineering Construction, Years Industrial Applications
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Emotion Semantics, Engineering Construction, Years Industrial Applications. Its main design-knowledge move is synthesis of prior work of design methods; because that move is common in this view, the evidence terms above do most of the distinguishing work. The contribution coding is Theoretical, Artifact/System, Methodological. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Theme words: applications, fbs, complexity, industrial, emotion, product, community, problems
 
 Representative papers:
 - 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
 - 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
-### Cluster 3 (4 papers)
-Label candidate: Design Science / Service / Fbs
-Summary candidate: This cluster focuses on service, fbs, involving Designers, Practitioners, using Design Science, Case Study, Workshop as the main methodological or conceptual lens, with contribution types coded as Methodological, Empirical, Artifact/System.
-Theme words: service, fbs, methodology, systemic, innovation, creation, lab, rid
+### Cluster 1 (4 papers)
+Label candidate: Cluster 1: Design Methods through evidence and evaluation
+Distinguishing evidence: Self Usage, Method Basis Describing, Generating Implications, Autobiographical Learning
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Method Basis Describing, Generating Implications, Autobiographical Learning. Its main design-knowledge move is evidence-based evaluation of design methods, which differs from the majority pattern in this keyword view. The contribution coding is Methodological, Artifact/System, Empirical. Representative papers include Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
+Theme words: industry, seen, self usage, understand, does, evaluating, challenge, involved adopting method
 
 Representative papers:
-- 2019: Advancing service design research with design science research
-- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
-- 2014: A Framework for Systemic Design
+- 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
+- : Elements of a design method - a basis for describing and evaluating design methods
+- 2014: Generating implications for design through design research
 
-### Cluster 4 (10 papers)
-Label candidate: Ethical Design / Method Methods / Role Playing
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Methodological, Artifact/System, Empirical.
-Theme words: architecture, field, ideation, landscape, constraint, virtual, method methods, role playing
-
-Representative papers:
-- 2020: Design as Research in Landscape Architecture
-- 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
-- 2024: Surveying a Landscape of Ethics-Focused Design Methods
-
-### Cluster 5 (4 papers)
-Label candidate: Design Rationale / Human Centredness / Debate
-Summary candidate: This cluster focuses on Education / Learning, with recurring attention to Interface, Game, with contribution types coded as Artifact/System, Methodological, Theoretical.
-Theme words: human centredness, debate, tasks, aspects, artifacts, metric, views, discuss
-
-Representative papers:
-- 2006: On integration of interface design methods: Can debates be resolved?
-- 2023: The Human-Centredness Metric: Early Assessment of the Quality of Human-Centred Design Activities
-- : What is a Convention in Interactive Narrative Design?
-
-### Cluster 6 (7 papers)
-Label candidate: Co-design / Method Corroboration / Floorplan
-Summary candidate: This cluster focuses on floorplan, method corroboration, involving Designers, with contribution types coded as Methodological, Theoretical, Taxonomy/Review.
-Theme words: floorplan, method corroboration, embodied, flexibility, change, areas, tools, children
+### Cluster 2 (13 papers)
+Label candidate: Cluster 2: Design Methods through definition and conceptual framing around Method Methods
+Distinguishing evidence: Design Science, Method Methods, Know Promote Service, Think Emcode Framework
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Know Promote Service, Think Emcode Framework. Its main design-knowledge move is definition and conceptualization of design methods, which differs from the majority pattern in this keyword view. It is especially tied to contexts such as Education / Learning. Method or lens signals include Co-design. The contribution coding is Methodological, Artifact/System, Empirical. Representative papers include Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children; Languaging design methods.
+Theme words: service, creation, method methods, functional, floorplan, innovative, product, hood
 
 Representative papers:
 - : Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children
 - : Languaging design methods
-- 2020: Designerly Research Methods and Researcherly Design Methods
+- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
 
-### Cluster 7 (2 papers)
-Label candidate: Architectural / Mascot / Hood
-Summary candidate: This cluster focuses on architectural, mascot, with contribution types coded as Artifact/System, Methodological.
-Theme words: architectural, mascot, hood, software, real, basic, thinking, engineering
+### Cluster 3 (8 papers)
+Label candidate: Cluster 3: Design Methods through prior-work synthesis around Method Methods
+Distinguishing evidence: Method Methods, Business Models, Design Rationale, Evolution Stalking
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Business Models, Evolution Stalking. Its main design-knowledge move is synthesis of prior work of design methods; because that move is common in this view, the evidence terms above do most of the distinguishing work. The contribution coding is Methodological, Theoretical, Artifact/System. Representative papers include A Framework of Design Method Corroboration; What is a Convention in Interactive Narrative Design?.
+Theme words: collapse, interactive, artifacts, evidence, review, method methods, business models, tasks
 
 Representative papers:
-- 2016: Architectural Design Method of Architectural Engineering
-- 1990: Design methods for real time software
+- 2023: A Framework of Design Method Corroboration
+- : What is a Convention in Interactive Narrative Design?
+- 2023: Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework
+
+### Cluster 4 (12 papers)
+Label candidate: Cluster 4: Design Methods through definition and conceptual framing around Ethics Focused
+Distinguishing evidence: Case Study, Ethics Focused, Ethical Design, Method Methods
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Case Study, Ethics Focused. Its main design-knowledge move is definition and conceptualization of design methods, which differs from the majority pattern in this keyword view. It is especially tied to contexts such as Education / Learning. Method or lens signals include Case Study. The contribution coding is Methodological, Artifact/System, Theoretical. Representative papers include Design as Research in Landscape Architecture; IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS.
+Theme words: concept, field, architectural, architecture, method methods, participatory, constraint, landscape
+
+Representative papers:
+- 2020: Design as Research in Landscape Architecture
+- 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
+- 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
 
 ## LDA Topics
-- Topic 0: method methods, service, survey, review, systematic, analysis, provides, existing
-- Topic 1: method methods, architectural, architecture, virtual, field, thinking, participatory, article
-- Topic 2: value, method methods, service, complexity, survey, practices, creation, usage
-- Topic 3: understand, industry, method methods, literature, practitioners, elements, aspects, needs
-- Topic 4: functional, method methods, product, field, thinking, term, hand, challenges
-- Topic 5: management, conceptual, concept, architecture, interactive, constraints, building, method methods
+- Topic 0: service, functional, method methods, product, hand, needs, complex, challenges
+- Topic 1: service, method methods, management, survey, methodology, conceptual, concept, creation
+- Topic 2: value, method methods, product, usage, industrial, provides, implications, findings
+- Topic 3: virtual, review, evidence, systematic, need, assessment, method methods, plays
+- Topic 4: architecture, method methods, architectural, field, complexity, thinking, landscape, concept
+- Topic 5: method methods, aspects, understand, industry, basis, term, creation, literature

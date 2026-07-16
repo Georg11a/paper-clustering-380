@@ -1,15 +1,15 @@
 {
-  "input": "data/fulltext_context_confirmed_110.csv",
+  "input": "data/final_advancing_list.csv",
   "text_view": "method",
   "focus_keyword": "Design patterns",
   "keyword_context_paragraphs": 6,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",
-  "k": 8,
+  "k": 6,
   "k_selection": "silhouette",
   "k_min": 2,
-  "k_max": 8,
+  "k_max": 6,
   "dbscan_eps": null,
   "min_samples": 4,
   "min_cluster_size": null,
@@ -20,8 +20,6 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
   ]
 }

@@ -1,13 +1,13 @@
 keyword,paper_count,status,methods,output_dir
-Design knowledge,87,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_knowledge/kmeans|docs/explorer/by_keyword/design_knowledge/hdbscan
-Design theory,75,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_theory/kmeans|docs/explorer/by_keyword/design_theory/hdbscan
-Design Patterns,67,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_patterns/kmeans|docs/explorer/by_keyword/design_patterns/hdbscan
-Design methods,42,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_methods/kmeans|docs/explorer/by_keyword/design_methods/hdbscan
-Design Guidelines,25,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_guidelines/kmeans|docs/explorer/by_keyword/design_guidelines/hdbscan
-Design rationale,20,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_rationale/kmeans|docs/explorer/by_keyword/design_rationale/hdbscan
-Design principles,17,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_principles/kmeans|docs/explorer/by_keyword/design_principles/hdbscan
-Design Heuristics,14,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_heuristics/kmeans|docs/explorer/by_keyword/design_heuristics/hdbscan
-Design Rules,11,clustered,kmeans|hdbscan,docs/explorer/by_keyword/design_rules/kmeans|docs/explorer/by_keyword/design_rules/hdbscan
+Design knowledge,87,clustered,kmeans,docs/explorer/by_keyword/design_knowledge/kmeans
+Design theory,75,clustered,kmeans,docs/explorer/by_keyword/design_theory/kmeans
+Design Patterns,67,clustered,kmeans,docs/explorer/by_keyword/design_patterns/kmeans
+Design methods,42,clustered,kmeans,docs/explorer/by_keyword/design_methods/kmeans
+Design Guidelines,25,clustered,kmeans,docs/explorer/by_keyword/design_guidelines/kmeans
+Design rationale,20,clustered,kmeans,docs/explorer/by_keyword/design_rationale/kmeans
+Design principles,17,clustered,kmeans,docs/explorer/by_keyword/design_principles/kmeans
+Design Heuristics,14,clustered,kmeans,docs/explorer/by_keyword/design_heuristics/kmeans
+Design Rules,11,clustered,kmeans,docs/explorer/by_keyword/design_rules/kmeans
 Design frameworks,6,too_few_papers,,
 Design expertise,2,too_few_papers,,
 Design Procedures,2,too_few_papers,,

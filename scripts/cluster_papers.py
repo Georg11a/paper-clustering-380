@@ -7,6 +7,7 @@ import argparse
 import html
 import json
 import re
+from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -1286,27 +1287,62 @@ LOW_SIGNAL_DESCRIPTOR_STARTS = {
 }
 
 
+def _suffix_phrase_is_readable(phrase: str) -> bool:
+    """Reject opaque or mangled fragments as descriptor qualifiers.
+
+    Title n-grams have stopwords stripped by the vectorizer, so trigrams like
+    'ways knowing hri' or acronym pairs like 'cpm pdd' read as machine noise.
+    A qualifier is accepted only if every token is a known acronym or a word
+    of at least four letters, and non-facet fragments longer than two tokens
+    are rejected outright.
+    """
+    tokens = normalize_phrase(phrase).split()
+    if not tokens or len(tokens) > 2:
+        return False
+    unknown_short = [t for t in tokens if t not in DISPLAY_ACRONYMS and len(t) < 4]
+    if unknown_short:
+        return False
+    acronym_count = sum(1 for t in tokens if t in DISPLAY_ACRONYMS)
+    return acronym_count < len(tokens)
+
+
 def descriptor_evidence_suffix(summary: dict[str, str]) -> str:
     form = normalize_phrase(str(summary.get("design_knowledge_form", "")))
+
+    def usable(term: str, readability_check: bool = True) -> bool:
+        normalized = normalize_phrase(term)
+        if not normalized or normalized in GENERIC_DESCRIPTOR_EVIDENCE:
+            return False
+        if normalized.split()[0] in LOW_SIGNAL_DESCRIPTOR_STARTS:
+            return False
+        if normalized == form or len(normalized.split()) > 5:
+            return False
+        if readability_check and not _suffix_phrase_is_readable(term):
+            return False
+        return True
+
+    # Curated facet phrases come from pattern dictionaries and read naturally,
+    # so they are preferred over raw title n-grams.
+    facet_candidates = []
+    for field in ["facet_artifact_or_domain", "facet_population_or_context", "facet_method_or_lens"]:
+        facet_candidates.extend(
+            term.strip() for term in str(summary.get(field, "")).split(",") if term.strip()
+        )
+    for term in facet_candidates:
+        normalized = normalize_phrase(term)
+        if normalized and normalized not in GENERIC_DESCRIPTOR_EVIDENCE and normalized != form:
+            return term
+
     evidence_terms = [
         term.strip()
         for term in str(summary.get("distinguishing_evidence_terms", "")).split(",")
         if term.strip()
     ]
     for term in evidence_terms:
-        normalized = normalize_phrase(term)
-        if not normalized or normalized in GENERIC_DESCRIPTOR_EVIDENCE:
-            continue
-        if normalized.split()[0] in LOW_SIGNAL_DESCRIPTOR_STARTS:
-            continue
-        if normalized == form:
-            continue
-        if len(normalized.split()) > 5:
-            continue
-        return term
+        if usable(term):
+            return term
     for term in evidence_terms:
-        normalized = normalize_phrase(term)
-        if normalized and normalized not in GENERIC_DESCRIPTOR_EVIDENCE:
+        if usable(term, readability_check=False):
             return term
     return ""
 
@@ -1390,6 +1426,8 @@ def infer_design_knowledge_claim(
         "design_knowledge_action_key": action,
         "design_knowledge_contribution": f"{ACTION_DISPLAY.get(action, action)} {phrase_title(form)}",
         "design_knowledge_role": conceptual_role,
+        "_action_key": action,
+        "_rep_titles": representative_titles[:2],
     }
 
 
@@ -1446,6 +1484,26 @@ def add_label_phrase(label_parts: list[str], roots_seen: set[str], phrase: str, 
     roots_seen.update(roots)
 
 
+DISPLAY_ACRONYMS = {
+    "ai": "AI",
+    "ar": "AR",
+    "cpm": "CPM",
+    "cscw": "CSCW",
+    "dsr": "DSR",
+    "hci": "HCI",
+    "hri": "HRI",
+    "iot": "IoT",
+    "lda": "LDA",
+    "ml": "ML",
+    "nlp": "NLP",
+    "pdd": "PDD",
+    "ui": "UI",
+    "ux": "UX",
+    "vr": "VR",
+    "xr": "XR",
+}
+
+
 def phrase_title(phrase: str) -> str:
     special = {
         "ai": "AI",
@@ -1459,7 +1517,15 @@ def phrase_title(phrase: str) -> str:
     if phrase in special:
         return special[phrase]
     small = {"and", "or", "of", "for", "in", "with", "to"}
-    return " ".join(word if word in small else word[:1].upper() + word[1:] for word in phrase.split())
+
+    def render(word: str) -> str:
+        if word.lower() in DISPLAY_ACRONYMS:
+            return DISPLAY_ACRONYMS[word.lower()]
+        if word in small:
+            return word
+        return word[:1].upper() + word[1:]
+
+    return " ".join(render(word) for word in phrase.split())
 
 
 def dominant_design_keywords(subset: pd.DataFrame, limit: int = 3) -> list[str]:
@@ -1549,6 +1615,125 @@ def deduplicate_conceptual_cluster_labels(summaries: dict[int, dict[str, str]]) 
             if role.startswith(qualifier):
                 continue
             summary["cluster_label_candidate"] = f"{form} as {qualifier} {role}"
+
+
+
+def _split_terms(value) -> list[str]:
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    return [item.strip() for item in str(value or "").split(",") if item.strip()]
+
+
+def _phrase_roots(phrase: str) -> set[str]:
+    return {
+        canonical_label_token(token)
+        for token in normalize_phrase(phrase).split()
+        if token and not token_is_too_generic(token)
+    }
+
+
+def _unique_phrases(cluster_id: int, phrase_lists: dict[int, list[str]]) -> list[str]:
+    """Phrases whose lexical roots appear in this cluster's list only."""
+    other_roots: set[str] = set()
+    for other_id, phrases in phrase_lists.items():
+        if other_id == cluster_id:
+            continue
+        for phrase in phrases:
+            other_roots |= _phrase_roots(phrase)
+    unique = []
+    for phrase in phrase_lists.get(cluster_id, []):
+        roots = _phrase_roots(phrase)
+        if roots and not (roots & other_roots):
+            unique.append(phrase)
+    return unique
+
+
+CONTRASTIVE_PRIVATE_KEYS = ["_action_key", "_rep_titles", "_contexts", "_methods", "_contributions"]
+
+
+def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
+    """Rewrite cluster summaries so each is discriminative within its view.
+
+    A cluster label/summary should both describe the cluster and distinguish
+    it from sibling clusters (Manning et al., IIR ch.17 cluster labeling;
+    Sievert & Shirley 2014; Grootendorst 2022). Cluster-unique evidence leads
+    each summary; view-shared properties (e.g. an action frame shared by most
+    clusters) are stated once and briefly instead of repeated as boilerplate.
+    Descriptor deduplication is handled separately by
+    distinguish_duplicate_cluster_descriptors.
+    """
+    real_ids = [cid for cid in summaries if cid != -1]
+    if len(real_ids) < 2:
+        for cid in real_ids:
+            for key in CONTRASTIVE_PRIVATE_KEYS:
+                summaries[cid].pop(key, None)
+        return
+
+    evidence_lists = {cid: _split_terms(summaries[cid].get("distinguishing_evidence_terms")) for cid in real_ids}
+    context_lists = {cid: _split_terms(summaries[cid].get("_contexts")) for cid in real_ids}
+    method_lists = {cid: _split_terms(summaries[cid].get("_methods")) for cid in real_ids}
+
+    action_counts = Counter(str(summaries[cid].get("_action_key") or "") for cid in real_ids)
+    majority_action = action_counts.most_common(1)[0][0]
+    contribution_sets = {cid: frozenset(_split_terms(summaries[cid].get("_contributions"))) for cid in real_ids}
+    majority_contribution = Counter(contribution_sets.values()).most_common(1)[0][0]
+
+    for cid in sorted(real_ids):
+        summary = summaries[cid]
+        action_key = str(summary.get("_action_key") or "")
+        form_lower = str(summary.get("design_knowledge_form") or "design knowledge").lower()
+        evidence = evidence_lists.get(cid, [])
+        unique_evidence = _unique_phrases(cid, evidence_lists)
+        unique_contexts = _unique_phrases(cid, context_lists)
+        unique_methods = _unique_phrases(cid, method_lists)
+
+        sentences: list[str] = []
+        if unique_evidence:
+            sentences.append(
+                f"Within this keyword view, this cluster is set apart by "
+                f"{format_facet_values(unique_evidence[:3])}."
+            )
+        elif evidence:
+            sentences.append(
+                f"This cluster is anchored by {format_facet_values(evidence[:3])}, "
+                "signals it partly shares with neighboring clusters."
+            )
+
+        action_noun = ACTION_NOUN_PHRASES.get(action_key, "synthesis of prior work")
+        if action_key and action_key != majority_action:
+            sentences.append(
+                f"Unlike most clusters in this view, its dominant design-knowledge move is {action_noun}."
+            )
+        else:
+            connective = "on" if action_noun.endswith("prior work") else "of"
+            sentences.append(
+                f"Its dominant move, {action_noun} {connective} {form_lower}, is shared across most of "
+                "this view, so the distinguishing terms above carry the interpretive weight."
+            )
+
+        if unique_contexts:
+            sentences.append(
+                f"It concentrates on contexts such as {format_facet_values(unique_contexts[:2])} "
+                "that do not anchor the sibling clusters."
+            )
+        if unique_methods:
+            sentences.append(
+                f"Methodologically, it leans on {format_facet_values(unique_methods[:2])}."
+            )
+
+        contributions = _split_terms(summary.get("_contributions"))
+        if contributions and contribution_sets[cid] != majority_contribution:
+            sentences.append(
+                f"Its contribution coding ({', '.join(contributions)}) also departs from the view majority."
+            )
+
+        rep_titles = summary.get("_rep_titles") or []
+        if rep_titles:
+            sentences.append("Representative papers: " + "; ".join(rep_titles[:2]) + ".")
+
+        summary["cluster_summary_candidate"] = " ".join(sentences)
+        for key in CONTRASTIVE_PRIVATE_KEYS:
+            summary.pop(key, None)
 
 
 def distinguish_duplicate_cluster_descriptors(summaries: dict[int, dict[str, str]]) -> None:
@@ -1664,7 +1849,13 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "facet_artifact_or_domain": format_facet_values(facets["artifact_or_domain"]),
             "facet_contribution_or_outcome": ", ".join(contribution_types),
             "distinguishing_evidence_terms": evidence_terms,
+            "_action_key": design_claim.get("_action_key", ""),
+            "_rep_titles": design_claim.get("_rep_titles", []),
+            "_contexts": facets["population_or_context"][:4],
+            "_methods": facets["method_or_lens"][:4],
+            "_contributions": contribution_types[:3],
         }
+    apply_contrastive_summary_pass(summaries)
     distinguish_duplicate_cluster_descriptors(summaries)
     return summaries
 

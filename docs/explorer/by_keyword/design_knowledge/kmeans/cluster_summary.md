@@ -2,90 +2,76 @@
 
 ## Cluster Themes
 
-### Cluster 0 (12 papers)
-Label candidate: Participatory Design / Dark Patterns / Co-design
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Design Science as the main methodological or conceptual lens, with recurring attention to Game, Interface, Tool, with contribution types coded as Methodological, Empirical, Artifact/System.
-Theme words: game, patterns, practices, stack, language, situation, anatomy, evidence
-
-Representative papers:
-- 2026: The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design
-- 2009: The anatomy of HCI design patterns
-- 2021: SOLUTION REPERTOIRE
-
-### Cluster 1 (12 papers)
-Label candidate: User-centered Design / Product / Field
-Summary candidate: This cluster focuses on Industrial Design, Education / Learning, Healthcare, involving Designers, using Case Study as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: product, field, cpm, prototyping, health, public, pdd, industrial
-
-Representative papers:
-- : Identification and management of the near-field knowledge of industrial design for innovative product shapes
-- : Causal design knowledge: Alternative representation method for product development knowledge management
-- 2008: What is design knowledge from the viewpoint of CPM/PDD?
-
-### Cluster 2 (9 papers)
-Label candidate: Design Science / Reference Ontology / Dsr
-Summary candidate: This cluster focuses on dsr, science, involving Practitioners, using Design Science as the main methodological or conceptual lens, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: dsr, science, reference ontology, codification, bases, creation, prescriptive, mechanisms
+### Cluster 0 (11 papers)
+Label candidate: Cluster 0: Design Knowledge through definition and conceptual framing around Dsr Grid Core
+Distinguishing evidence: Dsr Grid Core, Design Science, Forms Reasoning, Reference Ontology
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Dsr Grid Core, Forms Reasoning. Its main design-knowledge move is definition and conceptualization of design knowledge; because that move is common in this view, the evidence terms above do most of the distinguishing work. The contribution coding is Methodological, Theoretical, Artifact/System. Representative papers include The DSR grid: six core dimensions for effectively planning and communicating design science research projects; A Typology of Knowledge Creation in Design Science Research Projects.
+Theme words: dsr, question, reference ontology, bases, codification, science, creation, generate
 
 Representative papers:
 - 2019: The DSR grid: six core dimensions for effectively planning and communicating design science research projects
+- : A Typology of Knowledge Creation in Design Science Research Projects
 - : Utilizing, Producing, and Contributing Design Knowledge in DSR Projects
-- : Synthesizing a Solution Space for Prescriptive Design Knowledge Codification
 
-### Cluster 3 (8 papers)
-Label candidate: Interactive Technology / Enhanced Learning / Recreation
-Summary candidate: This cluster focuses on recreation, nature, involving Designers, with contribution types coded as Theoretical, Methodological, Taxonomy/Review.
-Theme words: recreation, nature, interactive technology, enhanced learning, cliche, hierarchical, intermediate, level
+### Cluster 1 (13 papers)
+Label candidate: Cluster 1: Design Knowledge through definition and conceptual framing around Data Quality
+Distinguishing evidence: Data Quality, Industry Cases, Driven Foundational, Elicitation Special
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Data Quality, Industry Cases, Driven Foundational. Its main design-knowledge move is definition and conceptualization of design knowledge; because that move is common in this view, the evidence terms above do most of the distinguishing work. The contribution coding is Theoretical, Artifact/System, Methodological. Representative papers include Design knowledge: theory is support of practice; Learning design knowledge as generalization.
+Theme words: generalization, ecosystems, sdk, form, foundational, anatomy, requirement, data quality
 
 Representative papers:
-- : Strong Technology-Enhanced Learning Concepts
-- 2025: Toward a Framework for the Design of Interactive Technology for Nature Recreation
-- 2019: Tracing the tensions surrounding understandings of agency and knowledge in technology design
+- : Design knowledge: theory is support of practice
+- 1998: Learning design knowledge as generalization
+- 2007: The anatomy of a design theory
 
-### Cluster 4 (13 papers)
-Label candidate: Generative Ai / Heuristics / Usability
-Summary candidate: This cluster focuses on Education / Learning, Workplace, involving Designers, using Design Science, Workshop as the main methodological or conceptual lens, with recurring attention to Interface, Tool, with contribution types coded as Methodological, Theoretical, Artifact/System.
-Theme words: heuristics, usability, oriented, guidelines, formulation, object, sdk, utilization
+### Cluster 2 (7 papers)
+Label candidate: Cluster 2: Design Knowledge through prior-work synthesis around Cpm Pdd
+Distinguishing evidence: Cpm Pdd, Industrial Design, Dimensions Prototyping Review, Identification Management Near
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Cpm Pdd, Dimensions Prototyping Review, Identification Management Near. Its main design-knowledge move is synthesis of prior work of design knowledge, which differs from the majority pattern in this keyword view. It is especially tied to contexts such as Industrial Design. The contribution coding is Methodological, Theoretical, Empirical. Representative papers include Causal design knowledge: Alternative representation method for product development knowledge management; Design knowledge for decision-making process in a DFX product design approach.
+Theme words: product, cpm pdd, prototyping, industrial, causal, near, management, stages
+
+Representative papers:
+- : Causal design knowledge: Alternative representation method for product development knowledge management
+- 2008: Design knowledge for decision-making process in a DFX product design approach
+- 2008: What is design knowledge from the viewpoint of CPM/PDD?
+
+### Cluster 3 (13 papers)
+Label candidate: Cluster 3: Design Knowledge through prior-work synthesis around Best Practices
+Distinguishing evidence: Design Science, Best Practices, Future Directions, Guidelines Formulation
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Best Practices, Future Directions, Guidelines Formulation. Its main design-knowledge move is synthesis of prior work of design knowledge, which differs from the majority pattern in this keyword view. It is especially tied to contexts such as Workplace, Education / Learning. The contribution coding is Methodological, Artifact/System, Theoretical. Representative papers include Guidelines supporting the formulation of design principles; Design Principles for Boundary Spanning in Transdisciplinary Design Science Research.
+Theme words: heuristics, usability, formulation, guidelines, utilization, edps, dps, best practices
 
 Representative papers:
 - 2018: Guidelines supporting the formulation of design principles
 - : Design Principles for Boundary Spanning in Transdisciplinary Design Science Research
 - 2022: Toward Engineering Design Principles for HCI
 
-### Cluster 5 (18 papers)
-Label candidate: Design Rationale / Co-design / Teachers
-Summary candidate: This cluster focuses on Education / Learning, involving Designers, Practitioners, using Ontology, Thematic Analysis, Co-design as the main methodological or conceptual lens, with recurring attention to Tool, with contribution types coded as Theoretical, Methodological, Artifact/System.
-Theme words: teachers, competence, transformation, generalization, tools, drones, documents, pedagogical
+### Cluster 4 (10 papers)
+Label candidate: Cluster 4: Design Knowledge through prior-work synthesis around Focused Methods
+Distinguishing evidence: Focused Methods, Design Rationale, Digital Platforms, Taxonomy Ontology
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Focused Methods, Digital Platforms. Its main design-knowledge move is synthesis of prior work of design knowledge, which differs from the majority pattern in this keyword view. It is especially tied to contexts such as Education / Learning. The contribution coding is Artifact/System, Theoretical, Taxonomy/Review. Representative papers include ANALYSIS OF DESIGN COMPETENCE OF FUTURE ENGINEER-TEACHERS; Seven design frames that teachers use when considering technological pedagogical content knowledge (TPACK).
+Theme words: teachers, platform, competence, game, digital, documents, tpack, literature
 
 Representative papers:
-- 2013: A theoretical framework for the studio as a learning environment
 - 2024: ANALYSIS OF DESIGN COMPETENCE OF FUTURE ENGINEER-TEACHERS
-- : A principle-based philosophical framework for fashion design praxis and education in new design landscapes
-
-### Cluster 6 (4 papers)
-Label candidate: Requirements Method / Platform / Digital
-Summary candidate: This cluster focuses on platform, digital, involving Practitioners, Designers, using Ontology as the main methodological or conceptual lens, with contribution types coded as Artifact/System, Theoretical, Taxonomy/Review.
-Theme words: platform, digital, types, lack, literature, requirements method, marketplace, professional
-
-Representative papers:
+- : Seven design frames that teachers use when considering technological pedagogical content knowledge (TPACK)
 - : A taxonomy and ontology for digital platforms
-- 2023: A taxonomy and ontology for digital platforms
-- 2018: What designers know
 
-### Cluster 7 (11 papers)
-Label candidate: Co-design / Data Quality / Hri
-Summary candidate: This cluster focuses on hri, designerly, involving Designers, Practitioners, with recurring attention to Tool, with contribution types coded as Theoretical, Artifact/System, Methodological.
-Theme words: hri, designerly, ecosystems, make, data quality, arguments, toulmin, objects
+### Cluster 5 (33 papers)
+Label candidate: Cluster 5: Design Knowledge through definition and conceptual framing around Dark Patterns
+Distinguishing evidence: Dark Patterns, Design Science, Ways Knowing Hri, Intermediate Level
+Summary candidate: Compared with the sibling clusters in this view, this cluster is most clearly marked by Dark Patterns, Ways Knowing Hri, Intermediate Level. Its main design-knowledge move is definition and conceptualization of design knowledge; because that move is common in this view, the evidence terms above do most of the distinguishing work. The contribution coding is Theoretical, Methodological, Artifact/System. Representative papers include A principle-based philosophical framework for fashion design praxis and education in new design landscapes; Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge.
+Theme words: make, tools, hri, recreation, nature, propose, intermediate, interactive technology
 
 Representative papers:
-- 2015: Immodest Proposals: Research Through Design and Knowledge
-- : Managing design knowledge
-- : Towards a Method for Design Principle Development in Information Systems
+- : A principle-based philosophical framework for fashion design praxis and education in new design landscapes
+- 2021: Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge
+- 2013: A theoretical framework for the studio as a learning environment
 
 ## LDA Topics
-- Topic 0: tacit, oriented, object, ontology, kinds, mechanisms, patterns, representation
-- Topic 1: article, practices, field, creation, forms, formulation, digital, dsr
-- Topic 2: product, teachers, science, game, review, field, analysis, make
-- Topic 3: interactive, product, nature, management, heuristics, tools, important, elicitation
-- Topic 4: dsr, patterns, analysis, practices, discipline, future, propose, community
-- Topic 5: platform, types, digital, literature, domain, form, quality, ontology
+- Topic 0: field, science, product, game, oriented, analysis, dsr, ontology
+- Topic 1: product, dsr, science, community, specific, form, meta, false
+- Topic 2: strategic, problems, tools, heuristics, science, prescriptive, conceptual, various
+- Topic 3: digital, platform, types, literature, teachers, tools, lack, business
+- Topic 4: patterns, educational, creation, rationale, utilization principles, representation, evidence, problem
+- Topic 5: theoretical, architecture, important, types, intermediate, software, capture, critical

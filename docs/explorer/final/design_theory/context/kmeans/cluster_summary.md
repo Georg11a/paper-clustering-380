@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (19 papers)
-Label candidate: Cluster 0: Design Theory through definition and conceptual framing around Define Industrial
+Label candidate: Cluster 0: Design Theory through definition and conceptual framing around Control Automation
 Distinguishing evidence: Case Study, Design Science, Define Industrial, Control Automation
 Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Principles, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study. Representative papers include How to Define Design in Industrial Control and Automation Software; A design theory for software engineering.
 Theme words: engineering, methodology, software, meta, recovery, transformation, decision, theoretical
@@ -36,7 +36,7 @@ Representative papers:
 - 2009: Tinkering, tailoring, and bricolage: Implications for theories of Design
 
 ### Cluster 3 (8 papers)
-Label candidate: Cluster 3: Design Theory through prior-work synthesis around Explainable Intelligent
+Label candidate: Cluster 3: Design Theory through prior-work synthesis around Heuristics Generative Rational
 Distinguishing evidence: Unknown Theory, Explainable Intelligent, Heuristics Generative Rational, Exemplars Synchronous Learning
 Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Principles, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
 Theme words: theory learning, curriculum, blended, experimentation, pedagogical, synchronous, heuristics, decision
@@ -47,7 +47,7 @@ Representative papers:
 - 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
 
 ### Cluster 4 (20 papers)
-Label candidate: Cluster 4: Design Theory through prior-work synthesis around Cognitive Point
+Label candidate: Cluster 4: Design Theory through prior-work synthesis around Construction Criteria
 Distinguishing evidence: Case Study, Cognitive Point, Construction Criteria, Theory Practice Prescription
 Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Frameworks, Design Knowledge. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Theoretical, Methodological, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study and contexts such as Education / Learning. Representative papers include Cognitive Point of View in Recursive Design; Design Theory in Information Systems.
 Theme words: game, humanism, scale, shared, concept, service, body, instructional
