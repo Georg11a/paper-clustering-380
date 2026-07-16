@@ -702,8 +702,6 @@ def cluster_labels(
 
 def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tuple[int, pd.DataFrame]:
     rows = []
-    best_k = None
-    best_score = -np.inf
     n = len(vectors)
     for k in k_values:
         if k < 2 or k >= n:
@@ -718,16 +716,45 @@ def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tup
                 "average_silhouette": avg_score,
                 "min_cluster_size": int(sizes.min()),
                 "max_cluster_size": int(sizes.max()),
+                "max_cluster_ratio": float(sizes.max() / n),
                 "cluster_sizes": "; ".join(f"{idx}:{count}" for idx, count in sizes.items()),
                 "negative_silhouette_count": int((sample_scores < 0).sum()),
+                "negative_silhouette_ratio": float((sample_scores < 0).mean()),
             }
         )
-        if avg_score > best_score:
-            best_k = k
-            best_score = avg_score
-    if best_k is None:
+    if not rows:
         raise ValueError("No valid k values for silhouette selection. Need at least 3 papers and k between 2 and n-1.")
-    return best_k, pd.DataFrame(rows).sort_values("k")
+    table = pd.DataFrame(rows).sort_values("k")
+    best_score = float(table["average_silhouette"].max())
+
+    # Text clusters often have very close silhouette scores. In this pipeline,
+    # interpretability matters more than a tiny numerical gain, so choose the
+    # smallest k whose score is close to the best score and whose clusters are
+    # not too fragmented. This avoids turning a single conceptual theme into
+    # several nearly identical labels.
+    close_margin = max(0.01, abs(best_score) * 0.20)
+    min_cluster_floor = max(3, int(np.ceil(n * 0.06)))
+    table["close_to_best"] = table["average_silhouette"] >= best_score - close_margin
+    table["passes_size_floor"] = table["min_cluster_size"] >= min_cluster_floor
+    table["passes_balance_floor"] = True
+    if n >= 30:
+        table["passes_balance_floor"] = table["max_cluster_ratio"] <= 0.58
+    table["passes_negative_floor"] = table["negative_silhouette_ratio"] <= 0.40
+    table["selection_candidate"] = (
+        table["close_to_best"]
+        & table["passes_size_floor"]
+        & table["passes_balance_floor"]
+        & table["passes_negative_floor"]
+    )
+    candidates = table[table["selection_candidate"]]
+    if candidates.empty:
+        candidates = table[table["close_to_best"] & table["passes_size_floor"] & table["passes_balance_floor"]]
+    if candidates.empty:
+        candidates = table[table["close_to_best"] & table["passes_size_floor"]]
+    if candidates.empty:
+        candidates = table[table["close_to_best"]]
+    selected_k = int(candidates.sort_values("k").iloc[0]["k"])
+    return selected_k, table
 
 
 def dynamic_k_cap(n_papers: int) -> int:

@@ -2,69 +2,54 @@
 
 ## Cluster Themes
 
-### Cluster 0 (19 papers)
+### Cluster 0 (12 papers)
 Label candidate: Cluster 0: Design Theory through definition and conceptual framing around Control Automation
 Distinguishing evidence: Case Study, Design Science, Define Industrial, Control Automation
-Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Principles, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study. Representative papers include How to Define Design in Industrial Control and Automation Software; A design theory for software engineering.
-Theme words: engineering, methodology, software, meta, recovery, transformation, decision, theoretical
+Summary candidate: Within this keyword view, this cluster is set apart by Define Industrial, Control Automation. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: A design theory for software engineering; Collaboration Engineering Methodology: Horizontal Extension to Accommodate Project and Program Concerns.
+Theme words: software, post, humanism, engineering, methodology, ecc, code, communities
 
 Representative papers:
-- 2025: How to Define Design in Industrial Control and Automation Software
 - 2017: A design theory for software engineering
-- 2020: TO THE PROBLEM OF FORMING THE CATEGORIAL AND CONCEPTUAL APPARATUS OF THE COURSE ‚ÄúHISTORY AND METHODOLOGY OF DESIGN DESIGN‚Äù
+- 2017: Collaboration Engineering Methodology: Horizontal Extension to Accommodate Project and Program Concerns
+- 2020: Digisprudence: the design of legitimate code
 
-### Cluster 1 (11 papers)
-Label candidate: Cluster 1: Design Theory through definition and conceptual framing around Process Frames
-Distinguishing evidence: Process Frames, Design Science, Metaphors Games, Innovation Public
-Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and context-specific adaptation. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science and contexts such as Healthcare. Representative papers include Design epistemology as innovation in public health research; Eight Components of a Design Theory of Sonification.
-Theme words: sonification, epistemology, innovation, technique, task, idea, visualization, negation
+### Cluster 1 (39 papers)
+Label candidate: Cluster 1: Design Theory through definition and conceptual framing around Tool
+Distinguishing evidence: Case Study, Design Science, Web Developing Theory, Construction Criteria
+Summary candidate: Within this keyword view, this cluster is set apart by Web Developing Theory, Construction Criteria. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Its contribution coding (Theoretical, Methodological, Artifact/System) also departs from the view majority. Representative papers: Design Theory in Information Systems; Research methods for design theory.
+Theme words: theories, sonification, creating, things, theory theory, thinking, theoretical, field
 
 Representative papers:
-- 2020: Design epistemology as innovation in public health research
-- 2019: Eight Components of a Design Theory of Sonification
-- 1983: DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES.
+- 2002: Design Theory in Information Systems
+- 2001: Research methods for design theory
+- 2007: Web-based information systems: Developing a design theory
 
-### Cluster 2 (17 papers)
-Label candidate: Cluster 2: Design Theory through prior-work synthesis around Web Developing Theory
-Distinguishing evidence: Case Study, Design Science, Web Developing Theory, Implications Theories
-Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Principles, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
-Theme words: management, theories, commons, science, pluralism, kernel, theory theory, chronic
+### Cluster 2 (11 papers)
+Label candidate: Cluster 2: Design Theory through definition and conceptual framing around Education / Learning
+Distinguishing evidence: Unknown Theory, Concept Principles Models, Feedforward Essential Active, Exemplars Synchronous Learning
+Summary candidate: Within this keyword view, this cluster is set apart by Unknown Theory, Concept Principles Models, Feedforward Essential Active. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Its contribution coding (Theoretical, Methodological, Artifact/System) also departs from the view majority. Representative papers: Towards a design theory of blended learning curriculum; Design exemplars for synchronous e-learning: A design theory approach.
+Theme words: theory learning, games, curriculum, blended, education, preservation, synchronous, pedagogical
+
+Representative papers:
+- : Towards a design theory of blended learning curriculum
+- : Design exemplars for synchronous e-learning: A design theory approach
+- 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
+
+### Cluster 3 (13 papers)
+Label candidate: Cluster 3: Design Theory through prior-work synthesis
+Distinguishing evidence: Case Study, Value Theory, Design Science, Ict Enabled Self
+Summary candidate: Within this keyword view, this cluster is set apart by Value Theory, Ict Enabled Self. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. It concentrates on contexts such as Healthcare that do not anchor the sibling clusters. Representative papers: Management design theories; ICT-Enabled Self-Management of Chronic Diseases: Literature Review and Analysis Using Value-Sensitive Design.
+Theme words: management, theories, product, commons, epistemology, innovation, recovery, technique
 
 Representative papers:
 - 2010: Management design theories
-- 2020: Editorial: A Critical Look at Theories in Design Science Research
-- 2009: Tinkering, tailoring, and bricolage: Implications for theories of Design
-
-### Cluster 3 (8 papers)
-Label candidate: Cluster 3: Design Theory through prior-work synthesis around Heuristics Generative Rational
-Distinguishing evidence: Unknown Theory, Explainable Intelligent, Heuristics Generative Rational, Exemplars Synchronous Learning
-Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Principles, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
-Theme words: theory learning, curriculum, blended, experimentation, pedagogical, synchronous, heuristics, decision
-
-Representative papers:
-- : Design exemplars for synchronous e-learning: A design theory approach
-- : Towards a design theory of blended learning curriculum
-- 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
-
-### Cluster 4 (20 papers)
-Label candidate: Cluster 4: Design Theory through prior-work synthesis around Construction Criteria
-Distinguishing evidence: Case Study, Cognitive Point, Construction Criteria, Theory Practice Prescription
-Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Frameworks, Design Knowledge. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Theoretical, Methodological, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study and contexts such as Education / Learning. Representative papers include Cognitive Point of View in Recursive Design; Design Theory in Information Systems.
-Theme words: game, humanism, scale, shared, concept, service, body, instructional
-
-Representative papers:
-- 2019: Cognitive Point of View in Recursive Design
-- 2002: Design Theory in Information Systems
-- 2001: Research methods for design theory
+- 2015: ICT-Enabled Self-Management of Chronic Diseases: Literature Review and Analysis Using Value-Sensitive Design
+- 2023: Toward a design theory of strategic enterprise management business intelligence (SEMBI) capability maturity model
 
 ## LDA Topics
-- Topic 0: space, concept, architecture, software, strategies, industry, needs, industrial
-- Topic 1: conceptual, field, course, theoretical, concepts, dynamic, term, methodology
-- Topic 2: theories, innovation, science, management, technique, service, health, software
-- Topic 3: theories, problem, science, engineering, scientific, software, solving, situations
-- Topic 4: theories, management, typology, technical, digital, online, current, body
-- Topic 5: decision, properties, relevant, related, proposed, identify, achieve, needed
-- Topic 6: theoretical, game, meta, existing, providing, field, structure, analysis
-- Topic 7: education, concept, scale, article, digital, literature, given, analysis
-- Topic 8: sonification, epistemology, concept, post, thinking, practices, types, methodology
-- Topic 9: product, industry, complex, existing, concepts, cognitive, definitions, terminology
+- Topic 0: theories, criteria, concept, things, explain, epistemology, management, construction
+- Topic 1: field, decision, existing, science, theoretical, technical, complex, concepts
+- Topic 2: service, post, games, management, article, build, computer, purpose
+- Topic 3: science, problem, sonification, concept, engineering, analysis, practice, theoretical
+- Topic 4: theories, innovation, product, concept, management, science, digital, technique
+- Topic 5: approaches theory, societal, established, definition, associated, nature, concept, long
