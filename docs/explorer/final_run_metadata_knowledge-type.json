@@ -1,0 +1,28 @@
+{
+  "input": "data/fulltext_context_confirmed_110.csv",
+  "output": "docs/explorer/final_clustering_results_knowledge-type.csv",
+  "summary_output": "docs/explorer/final_keyword_summary_knowledge-type.csv",
+  "paper_count": 368,
+  "keyword_count": 12,
+  "methods": [
+    "kmeans",
+    "hdbscan"
+  ],
+  "embedding": "tfidf-svd",
+  "text_view": "knowledge-type",
+  "min_papers_to_cluster": 10,
+  "keyword_counts": {
+    "Design knowledge": 87,
+    "Design theory": 75,
+    "Design Patterns": 67,
+    "Design methods": 42,
+    "Design Guidelines": 25,
+    "Design rationale": 20,
+    "Design principles": 17,
+    "Design Heuristics": 14,
+    "Design Rules": 11,
+    "Design frameworks": 6,
+    "Design expertise": 2,
+    "Design Procedures": 2
+  }
+}

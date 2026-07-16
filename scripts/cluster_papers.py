@@ -1258,6 +1258,59 @@ def conservative_cluster_descriptor(cluster_id: int, claim: dict[str, str]) -> s
     return f"Cluster {cluster_id}: {template.format(form=form)}"
 
 
+GENERIC_DESCRIPTOR_EVIDENCE = {
+    "case study",
+    "design science",
+    "design knowledge",
+    "design theory",
+    "design theories",
+    "design method",
+    "design methods",
+    "design pattern",
+    "design patterns",
+    "design principle",
+    "design principles",
+    "design guideline",
+    "design guidelines",
+    "design rationale",
+    "design rules",
+    "design heuristics",
+    "unknown theory",
+}
+
+LOW_SIGNAL_DESCRIPTOR_STARTS = {
+    "define",
+    "unknown",
+    "explainable",
+    "cognitive",
+}
+
+
+def descriptor_evidence_suffix(summary: dict[str, str]) -> str:
+    form = normalize_phrase(str(summary.get("design_knowledge_form", "")))
+    evidence_terms = [
+        term.strip()
+        for term in str(summary.get("distinguishing_evidence_terms", "")).split(",")
+        if term.strip()
+    ]
+    for term in evidence_terms:
+        normalized = normalize_phrase(term)
+        if not normalized or normalized in GENERIC_DESCRIPTOR_EVIDENCE:
+            continue
+        if normalized.split()[0] in LOW_SIGNAL_DESCRIPTOR_STARTS:
+            continue
+        if normalized == form:
+            continue
+        if len(normalized.split()) > 5:
+            continue
+        return term
+    for term in evidence_terms:
+        normalized = normalize_phrase(term)
+        if normalized and normalized not in GENERIC_DESCRIPTOR_EVIDENCE:
+            return term
+    return ""
+
+
 def infer_design_knowledge_claim(
     subset: pd.DataFrame,
     facets: dict[str, list[str]],
@@ -1498,6 +1551,28 @@ def deduplicate_conceptual_cluster_labels(summaries: dict[int, dict[str, str]]) 
             summary["cluster_label_candidate"] = f"{form} as {qualifier} {role}"
 
 
+def distinguish_duplicate_cluster_descriptors(summaries: dict[int, dict[str, str]]) -> None:
+    labels: dict[str, list[int]] = {}
+    for cluster_id, summary in summaries.items():
+        label = str(summary.get("cluster_label_candidate", "")).strip()
+        if not label or label == "Unclustered papers":
+            continue
+        label_without_cluster = re.sub(r"^Cluster\s+-?\d+:\s*", "", label, flags=re.I)
+        labels.setdefault(label_without_cluster, []).append(cluster_id)
+    for cluster_ids in labels.values():
+        if len(cluster_ids) < 2:
+            continue
+        used_suffixes: set[str] = set()
+        for cluster_id in cluster_ids:
+            summary = summaries[cluster_id]
+            suffix = descriptor_evidence_suffix(summary)
+            normalized_suffix = normalize_phrase(suffix)
+            if not suffix or normalized_suffix in used_suffixes:
+                continue
+            used_suffixes.add(normalized_suffix)
+            summary["cluster_label_candidate"] = f"{summary['cluster_label_candidate']} around {suffix}"
+
+
 def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dict[int, dict[str, str]]:
     summaries = {}
     for label in sorted(set(df["cluster"])):
@@ -1590,6 +1665,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "facet_contribution_or_outcome": ", ".join(contribution_types),
             "distinguishing_evidence_terms": evidence_terms,
         }
+    distinguish_duplicate_cluster_descriptors(summaries)
     return summaries
 
 

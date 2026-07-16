@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (26 papers)
-Label candidate: Cluster 0: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 0: Design Knowledge through prior-work synthesis around Data Mesh
 Distinguishing evidence: Data Mesh, Design Science, Visual Inquiry Tools, Generic Model Reflective
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Prototype, Ontology and contexts such as Education / Learning, Industrial Design. Representative papers include Design-oriented human-computer interaction; A generic model for reflective design.
 Theme words: data mesh, dsr, problem, ontology, rationale, praxis, product, guidelines
@@ -69,7 +69,7 @@ Representative papers:
 - : Game Design as an Autonomous Research Subject
 
 ### Cluster 6 (21 papers)
-Label candidate: Cluster 6: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 6: Design Knowledge through prior-work synthesis around Human Actors
 Distinguishing evidence: Case Study, Human Actors, Role Playing, Dark Patterns
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Principles, Tacit Design Knowledge. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study, Prototype, Participatory Design and contexts such as Education / Learning, Workplace. Representative papers include From interaction to trajectories: designing coherent journeys through user experiences; Generating implications for design through design research.
 Theme words: autobiographical, hlc, tacit, role playing, immersive, embodied, video, trajectories

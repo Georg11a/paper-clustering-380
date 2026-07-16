@@ -1,0 +1,20 @@
+{
+  "input": "data/fulltext_context_confirmed_110.csv",
+  "text_view": "method",
+  "focus_keyword": "Design rationale",
+  "keyword_context_paragraphs": 6,
+  "embedding": "tfidf-svd",
+  "embedding_model": "tfidf-svd",
+  "method": "hdbscan",
+  "k": null,
+  "k_selection": "manual",
+  "k_min": null,
+  "k_max": null,
+  "dbscan_eps": null,
+  "min_samples": 4,
+  "min_cluster_size": 5,
+  "papers": 20,
+  "clusters": [
+    -1
+  ]
+}

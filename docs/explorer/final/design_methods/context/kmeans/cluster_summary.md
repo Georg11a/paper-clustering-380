@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (11 papers)
-Label candidate: Cluster 0: Design Methods through definition and conceptual framing
+Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Ethical Design
 Distinguishing evidence: Ethical Design, Implementation Basic, Forming Architecture Non, Formal Education Institutions
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
 Theme words: architecture, collapse, concept, constraint, landscape, ideation, education, article
@@ -25,7 +25,7 @@ Representative papers:
 - 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
 
 ### Cluster 2 (9 papers)
-Label candidate: Cluster 2: Design Methods through definition and conceptual framing
+Label candidate: Cluster 2: Design Methods through definition and conceptual framing around Human Centred
 Distinguishing evidence: Human Centred, Design Rationale, Think Emcode Framework, Highlighting Key Qualities
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as conceptual framework. Related forms include Design Frameworks, Design Rationale. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis of methods of creating new technical systems; Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children.
 Theme words: children, floorplan, definition, mascot, flexibility, tools, hood, debate
@@ -36,7 +36,7 @@ Representative papers:
 - : Languaging design methods
 
 ### Cluster 3 (9 papers)
-Label candidate: Cluster 3: Design Methods through definition and conceptual framing
+Label candidate: Cluster 3: Design Methods through definition and conceptual framing around Self Usage
 Distinguishing evidence: Self Usage, Framework Method, Basis Describing, Participatory Design
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Frameworks, Design Guidelines. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Participatory Design, User-centered Design, Ethnographic and contexts such as Education / Learning. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
 Theme words: industry, value, architectural, evaluating, self usage, systematic, corroboration, attributes

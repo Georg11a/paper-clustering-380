@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (13 papers)
-Label candidate: Cluster 0: Design Principles through definition and conceptual framing
+Label candidate: Cluster 0: Design Principles through definition and conceptual framing around Ussf Unified Framework
 Distinguishing evidence: Ussf Unified Framework, Energy Planning Control, Human Computer Interfaces, Gamification Principles Online
 Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as conceptual framework. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Design principles for human-computer interfaces.
 Theme words: technical, sonic, identity, meditation, adaptive, engineering, software, embodied
@@ -14,7 +14,7 @@ Representative papers:
 - 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
 
 ### Cluster 1 (2 papers)
-Label candidate: Cluster 1: Design Principles through definition and conceptual framing
+Label candidate: Cluster 1: Design Principles through definition and conceptual framing around Function Better
 Distinguishing evidence: Function Better, Education Taxonomy, Understanding Games, Effective Approach Collaboration
 Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as evaluation criteria or evidence base. Related forms include Tacit Design Knowledge, Design Expertise. The shared move also involves organization and classification and evidence-based evaluation. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
 Theme words: games, player, major, currently, collaboration, video, collaborative, creativity

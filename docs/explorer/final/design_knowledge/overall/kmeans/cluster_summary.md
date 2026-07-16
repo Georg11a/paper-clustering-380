@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (17 papers)
-Label candidate: Cluster 0: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 0: Design Knowledge through prior-work synthesis around Focused Methods
 Distinguishing evidence: Focused Methods, Evidence Interactive, Game Autonomous Subject, Taxonomy Ontology Digital
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as actionable design guidance. Related forms include Design Methods, Design Theory. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Ontology. Representative papers include Dimensions of knowledge in prototyping: A review and characterisation of prototyping methods and their contributions to design knowledge; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
 Theme words: narrative, platform, game, digital, interactive, schema, ethical, prototyping methods
@@ -14,7 +14,7 @@ Representative papers:
 - 2024: Using Schema to Inform Method Design Practices
 
 ### Cluster 1 (12 papers)
-Label candidate: Cluster 1: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 1: Design Knowledge through prior-work synthesis around Object Oriented
 Distinguishing evidence: Design Science, Object Oriented, Guidelines Formulation, Heuristics Best Practices
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and translation into actionable guidance. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Ontology, Workshop and contexts such as Workplace, Education / Learning. Representative papers include Prescriptive knowledge in IS research: Conceptualizing design principles in terms of materiality, action, and boundary conditions; Design Principles for Boundary Spanning in Transdisciplinary Design Science Research.
 Theme words: edps, formulation, utilization, boundary, object oriented, materiality, heuristics, mha
@@ -47,7 +47,7 @@ Representative papers:
 - 2017: Activity as the ultimate particular of interaction design
 
 ### Cluster 4 (19 papers)
-Label candidate: Cluster 4: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 4: Design Knowledge through prior-work synthesis around Enhanced Learning
 Distinguishing evidence: Design Science, Enhanced Learning, Fashion Praxis Education, Theoretical Framework Studio
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Theory, Design Frameworks. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Co-design, Ontology and contexts such as Education / Learning. Representative papers include A theoretical framework for the studio as a learning environment; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review.
 Theme words: studio, praxis, teachers, fashion, pedagogical, objects, volition, philosophical
@@ -58,7 +58,7 @@ Representative papers:
 - : A principle-based philosophical framework for fashion design praxis and education in new design landscapes
 
 ### Cluster 5 (9 papers)
-Label candidate: Cluster 5: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 5: Design Knowledge through prior-work synthesis around Solution Space
 Distinguishing evidence: Design Science, Solution Space, Forms Reasoning, Dimensions Effectively
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Principles, Design Theory. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
 Theme words: dsr, creation, science, solution space, enhancement, doc, team, folding

@@ -14,7 +14,7 @@ Representative papers:
 - 2023: A taxonomy and ontology for digital platforms
 
 ### Cluster 1 (14 papers)
-Label candidate: Cluster 1: Design Knowledge through definition and conceptual framing
+Label candidate: Cluster 1: Design Knowledge through definition and conceptual framing around Dsr Grid Core
 Distinguishing evidence: Case Study, Dsr Grid Core, Design Science, Forms Reasoning
 Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Theory, Design Rules. The shared move also involves synthesis of prior work and capture and transfer. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study. Representative papers include The DSR grid: six core dimensions for effectively planning and communicating design science research projects; Utilizing, Producing, and Contributing Design Knowledge in DSR Projects.
 Theme words: dsr, science, mechanisms, creation, domain reference, codification, sdk, data ecosystems
@@ -25,7 +25,7 @@ Representative papers:
 - : A Typology of Knowledge Creation in Design Science Research Projects
 
 ### Cluster 2 (14 papers)
-Label candidate: Cluster 2: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 2: Design Knowledge through prior-work synthesis around Materiality Action
 Distinguishing evidence: Design Science, Materiality Action, Utilization Principles, Literature Review Analysis
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as evaluation criteria or evidence base. Related forms include Design Principles, Design Heuristics. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Workshop and contexts such as Education / Learning, Workplace. Representative papers include Guidelines supporting the formulation of design principles; Design Principles for Boundary Spanning in Transdisciplinary Design Science Research.
 Theme words: usability, expertise, formulation, heuristics, utilization principles, science, dps, boundary
@@ -36,7 +36,7 @@ Representative papers:
 - 2022: Toward Engineering Design Principles for HCI
 
 ### Cluster 3 (11 papers)
-Label candidate: Cluster 3: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 3: Design Knowledge through prior-work synthesis around Viewpoint Cpm Pdd
 Distinguishing evidence: Viewpoint Cpm Pdd, Industrial Design, Dimensions Prototyping Review, Identification Management Near
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Tacit Design Knowledge, Design Frameworks. The shared move also involves definition and conceptualization and representation and documentation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Prototype, Ontology and contexts such as Industrial Design, Education / Learning. Representative papers include What is design knowledge from the viewpoint of CPM/PDD?; Design knowledge for decision-making process in a DFX product design approach.
 Theme words: product, representation, generalization, pdd, prototyping, cpm, industrial, involved
@@ -47,7 +47,7 @@ Representative papers:
 - : Causal design knowledge: Alternative representation method for product development knowledge management
 
 ### Cluster 4 (19 papers)
-Label candidate: Cluster 4: Design Knowledge through definition and conceptual framing
+Label candidate: Cluster 4: Design Knowledge through definition and conceptual framing around Dark Patterns
 Distinguishing evidence: Case Study, Dark Patterns, Design Science, Object Oriented
 Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as reusable design pattern language. Related forms include Design Patterns, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study, Co-design and contexts such as Education / Learning. Representative papers include The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design; The anatomy of HCI design patterns.
 Theme words: game, patterns, field, competence, practices, object oriented, engineer teachers, heuristics best
@@ -58,7 +58,7 @@ Representative papers:
 - 2006: Object-oriented design knowledge: Principles, heuristics and best practices
 
 ### Cluster 5 (18 papers)
-Label candidate: Cluster 5: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 5: Design Knowledge through prior-work synthesis around Ways Knowing Hri
 Distinguishing evidence: Design Science, Ways Knowing Hri, Intermediate Level, Interactive Technology
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Theory, Design Frameworks. The shared move also involves definition and conceptualization and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Ontology, Thematic Analysis and contexts such as Education / Learning, Industrial Design, Sustainability. Representative papers include A principle-based philosophical framework for fashion design praxis and education in new design landscapes; A theoretical framework for the studio as a learning environment.
 Theme words: hri, recreation, nature, interactive technology, discipline, drones, fashion, social

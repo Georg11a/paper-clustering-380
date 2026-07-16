@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (8 papers)
-Label candidate: Cluster 0: Design Methods through definition and conceptual framing
+Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Method Methods
 Distinguishing evidence: Method Methods, Basis Describing, User-centered Design, Tracing Situated Effects
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Knowledge, Design Principles. The shared move also involves evidence-based evaluation and synthesis of prior work. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as User-centered Design, Ethnographic, Participatory Design and contexts such as Education / Learning. Representative papers include Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
 Theme words: understand, value, does, industry, fbs, usage, method methods, playing

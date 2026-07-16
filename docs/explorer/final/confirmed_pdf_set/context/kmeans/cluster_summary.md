@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (12 papers)
-Label candidate: Cluster 0: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 0: Design Knowledge through prior-work synthesis around Dark Patterns
 Distinguishing evidence: Dark Patterns, Management Near, Industrial Design, Web Severe Weather
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as evaluation criteria or evidence base. Related forms include Design Heuristics, Design Guidelines. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, User-centered Design, Heuristic Evaluation and contexts such as Industrial Design, Education / Learning, Accessibility. Representative papers include Identification and management of the near-field knowledge of industrial design for innovative product shapes; Design Heuristics for Web-Based Severe Weather Risk Communication.
 Theme words: usability, product, communication, games, heuristics, field, derived, prototyping methods
@@ -69,7 +69,7 @@ Representative papers:
 - : Game Design as an Autonomous Research Subject
 
 ### Cluster 6 (11 papers)
-Label candidate: Cluster 6: Design Knowledge through prior-work synthesis
+Label candidate: Cluster 6: Design Knowledge through prior-work synthesis around Governing Ai Mediated
 Distinguishing evidence: Case Study, Design Science, Governing Ai Mediated, Utilization Principles
 Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Principles, Design Patterns, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study, Prototype and contexts such as Education / Learning, Sustainability. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Contestable AI by Design: Towards a Framework.
 Theme words: ai, patterns, artificial, video, utilization principles, identity, solve, collaboration industry learning

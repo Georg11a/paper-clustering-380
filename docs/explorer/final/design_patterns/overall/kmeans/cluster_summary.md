@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (37 papers)
-Label candidate: Cluster 0: Design Patterns through definition and conceptual framing
+Label candidate: Cluster 0: Design Patterns through definition and conceptual framing around Java Code
 Distinguishing evidence: Java Code, Dark Patterns, General Purpose, Literature Review
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Workshop and contexts such as Education / Learning, Sustainability. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Design pattern in object-oriented technology.
 Theme words: patterns, software, component, ai, oriented, architecture, social, labels
@@ -25,7 +25,7 @@ Representative papers:
 - 2001: A pattern approach to interaction design
 
 ### Cluster 2 (2 papers)
-Label candidate: Cluster 2: Design Patterns through definition and conceptual framing
+Label candidate: Cluster 2: Design Patterns through definition and conceptual framing around Commerce Broker
 Distinguishing evidence: Commerce Broker, Shift Adaptability, Design Patterns, Barter
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological. Representative papers include E-business design; E-Business Design: A Shift to Adaptability.
 Theme words: commerce broker, balanced, business, barter, patterns, adaptable, designs, shift
@@ -35,7 +35,7 @@ Representative papers:
 - : E-Business Design: A Shift to Adaptability
 
 ### Cluster 3 (7 papers)
-Label candidate: Cluster 3: Design Patterns through definition and conceptual framing
+Label candidate: Cluster 3: Design Patterns through definition and conceptual framing around Lecture Notes
 Distinguishing evidence: Lecture Notes, Verlag Berlin, Modeling Methods, Analysis Patterns
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Principles, Tacit Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis patterns; Toward patterns for collaborative knowledge creation.
 Theme words: patterns, analysis, privacy, lecture notes, modeling methods, oriented, creation, verlag berlin
@@ -46,7 +46,7 @@ Representative papers:
 - : Analysis patterns
 
 ### Cluster 4 (4 papers)
-Label candidate: Cluster 4: Design Patterns through definition and conceptual framing
+Label candidate: Cluster 4: Design Patterns through definition and conceptual framing around Directional Stimuli
 Distinguishing evidence: Directional Stimuli, Formalising Patterns, Theoretical Model Game, Architectures Documenting Practice
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as conceptual framework. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Framework for Designing and Evaluating Game Achievements; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education.
 Theme words: prompting, game, prompt, meta, mechanics, patterns, achievements, transformations
@@ -57,7 +57,7 @@ Representative papers:
 - 2026: From Directional Stimuli to Prompt Architectures: Documenting the Practice of Meta-Prompting
 
 ### Cluster 5 (14 papers)
-Label candidate: Cluster 5: Design Patterns through definition and conceptual framing
+Label candidate: Cluster 5: Design Patterns through definition and conceptual framing around Human Robot
 Distinguishing evidence: Human Robot, Specific Patterns, Exploring Prototyping, Methodological Framework Auditory
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design patterns as reusable design pattern language. Related forms include Design Knowledge, Design Theory. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, Prototype, Ontology and contexts such as Education / Learning. Representative papers include An overview of human-computer interaction patterns in pervasive systems; Design patterns for sociality in human-robot interaction.
 Theme words: patterns, video, robot, alexander, ussmdp, semantic, auditory, computer
