@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (2 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Autonomy Today / Place Incentivize
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological. Representative papers include E-Business Design: A Shift to Adaptability; E-business design.
 Theme words: business, balanced, patterns, control, designs, ignored, autonomy today, place incentivize
 
@@ -12,7 +12,7 @@ Representative papers:
 - : E-business design
 
 ### Cluster 1 (10 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Design Patterns / Dsl
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include A pattern language for designing innovative projects: project design patterns; Design Patterns and Design Principles for Internal Domain-Specific Languages.
 Theme words: patterns, language, dsl, game, practical, fluent, integrity, mechanics
 
@@ -22,7 +22,7 @@ Representative papers:
 - 2011: Framework for Designing and Evaluating Game Achievements
 
 ### Cluster 2 (21 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Dark Patterns / Design Guidelines
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Guidelines. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview and contexts such as Sustainability, Education / Learning, Healthcare. Representative papers include A semantic representation for domain-specific patterns; Design pattern in object-oriented technology.
 Theme words: patterns, object, software, oriented, solution, problem, complex, specification
 
@@ -32,7 +32,7 @@ Representative papers:
 - 2008: Design patterns for sociality in human-robot interaction
 
 ### Cluster 3 (31 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Design Guidelines / Video
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Frameworks. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Ontology, Prototype and contexts such as Education / Learning. Representative papers include Design Patterns of Biological Cells; Implementing patterns.
 Theme words: patterns, abstraction, software, analysis, functional, generic, higher, video
 

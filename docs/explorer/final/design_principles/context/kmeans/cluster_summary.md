@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (11 papers)
-Label candidate: Defines Design Principles Through Conceptual Framing
+Label candidate: Defines Design Principles Through Conceptual Framing - Design Guidelines / Sonic
 Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Personalising learning: towards a coherent learning design framework; USSF: A Unified Framework for Screen Standardization in Software Systems.
 Theme words: sonic, meditation, identity, embodied, artificial, engineering, coherent, learners
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2025: Design Obligations for Software, with Examples from Data Abstraction and Adaptive Systems
 
 ### Cluster 2 (3 papers)
-Label candidate: Defines Design Principles Through Conceptual Framing
+Label candidate: Defines Design Principles Through Conceptual Framing - Games / Socio
 Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Heuristics, Tacit Design Knowledge. The shared move also involves evidence-based evaluation and synthesis of prior work. Its contribution pattern is coded as Methodological, Taxonomy/Review, Empirical. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
 Theme words: games, technical, collaboration, player, socio, education, currently, video
 

@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (5 papers)
-Label candidate: Frames Design Rationale as Expertise to Capture and Transfer
+Label candidate: Frames Design Rationale as Expertise to Capture and Transfer - Design Rationale / Reuse
 Summary candidate: This cluster captures and transfers design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks. The shared move also involves definition and conceptualization and synthesis of prior work. Its contribution pattern is coded as Theoretical, Artifact/System. Representative papers include Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication; Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication.
 Theme words: rationale, implies, potential, argumentation, communication, reuse, capture, tools
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2000: A generic model for reflective design
 
 ### Cluster 2 (2 papers)
-Label candidate: Frames Design Rationale as Expertise to Capture and Transfer
+Label candidate: Frames Design Rationale as Expertise to Capture and Transfer - Capture Utilize / Design Rationale
 Summary candidate: This cluster captures and transfers design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. The shared move also involves definition and conceptualization and synthesis of prior work. Its contribution pattern is coded as Theoretical. Representative papers include Redesigning the rationale for design rationale; Redesigning the rationale for design rationale.
 Theme words: rationale, limitations, capture utilize, process inherent, providing means record, goal, possible issues results, communicate argumentation reasoning
 
@@ -32,7 +32,7 @@ Representative papers:
 - : Redesigning the rationale for design rationale
 
 ### Cluster 3 (3 papers)
-Label candidate: Frames Design Rationale as Expertise to Capture and Transfer
+Label candidate: Frames Design Rationale as Expertise to Capture and Transfer - Design Guidelines / Help
 Summary candidate: This cluster captures and transfers design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Guidelines. The shared move also involves representation and documentation and definition and conceptualization. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study and contexts such as Education / Learning. Representative papers include Patterns or claims: do they help in communicating design advice?; Designing claims for reuse in interactive systems design.
 Theme words: claims, language, advice, patterns, symbols, artifact, specific, help
 

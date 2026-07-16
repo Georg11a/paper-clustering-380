@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (37 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Dark Patterns / Design Guidelines
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Workshop and contexts such as Education / Learning, Sustainability. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Design pattern in object-oriented technology.
 Theme words: patterns, software, component, ai, oriented, architecture, social, labels
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2001: A pattern approach to interaction design
 
 ### Cluster 2 (2 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Commerce Broker / Design Patterns
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological. Representative papers include E-business design; E-Business Design: A Shift to Adaptability.
 Theme words: commerce broker, balanced, business, barter, patterns, adaptable, designs, shift
 
@@ -32,7 +32,7 @@ Representative papers:
 - : E-Business Design: A Shift to Adaptability
 
 ### Cluster 3 (7 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Lecture Notes / Verlag Berlin
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Tacit Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis patterns; Toward patterns for collaborative knowledge creation.
 Theme words: patterns, analysis, privacy, lecture notes, modeling methods, oriented, creation, verlag berlin
 
@@ -42,7 +42,7 @@ Representative papers:
 - : Analysis patterns
 
 ### Cluster 4 (4 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Design Patterns / Game
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Framework for Designing and Evaluating Game Achievements; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education.
 Theme words: prompting, game, prompt, meta, mechanics, patterns, achievements, transformations
 
@@ -52,7 +52,7 @@ Representative papers:
 - 2026: From Directional Stimuli to Prompt Architectures: Documenting the Practice of Meta-Prompting
 
 ### Cluster 5 (14 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Design Guidelines / Video
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Theory. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, Prototype, Ontology and contexts such as Education / Learning. Representative papers include An overview of human-computer interaction patterns in pervasive systems; Design patterns for sociality in human-robot interaction.
 Theme words: patterns, video, robot, alexander, ussmdp, semantic, auditory, computer
 

@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (5 papers)
-Label candidate: Defines Design Guidelines Through Conceptual Framing
+Label candidate: Defines Design Guidelines Through Conceptual Framing - Media Applications / Design Guidelines
 Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Empirical. Representative papers include A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service; The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers.
 Theme words: architecture, software, guidelines, school, theoretical, trajectories, eating, media applications
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2007: Towards a Model of Information Aesthetics in Information Visualization
 
 ### Cluster 2 (9 papers)
-Label candidate: Defines Design Guidelines Through Conceptual Framing
+Label candidate: Defines Design Guidelines Through Conceptual Framing - Design Guidelines / Don
 Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Accessibility. Representative papers include Design Guidelines and Examples; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
 Theme words: guidelines, rural, natural, don, language, smells, domain, platforms
 

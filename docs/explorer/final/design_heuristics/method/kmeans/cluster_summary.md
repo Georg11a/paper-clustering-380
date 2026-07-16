@@ -12,7 +12,7 @@ Representative papers:
 - 2017: Dialogue appropriate to assistive technology product design: A taxonomy of communication formats in relation to modes of sensory perception
 
 ### Cluster 1 (5 papers)
-Label candidate: Defines Design Heuristics Through Conceptual Framing
+Label candidate: Defines Design Heuristics Through Conceptual Framing - Aid / Idea
 Summary candidate: This cluster defines and conceptualizes design heuristics, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Theory, Design Rules. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Empirical, Methodological, Theoretical. Representative papers include Evidence-based design heuristics for idea generation; Design heuristics set for X: A design aid for assistive product concept generation.
 Theme words: generation, heuristics, products, concept, aid, assistive, engineering, idea
 
@@ -22,7 +22,7 @@ Representative papers:
 - : Design Heuristics in Innovative Products
 
 ### Cluster 2 (7 papers)
-Label candidate: Defines Design Heuristics Through Conceptual Framing
+Label candidate: Defines Design Heuristics Through Conceptual Framing - Design Guidelines / Risk
 Summary candidate: This cluster defines and conceptualizes design heuristics, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Theory. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Empirical, Methodological. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, Heuristic Evaluation and contexts such as Education / Learning. Representative papers include Design Heuristics: Extraction and Classification Methods With Jet Propulsion Laboratory's Architecture Team; What is the content of 'design thinking'? Design Heuristics as conceptual repertoire.
 Theme words: heuristics, risk, weather, form, tools, interview, solutions, makeup
 

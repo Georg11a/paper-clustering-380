@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (9 papers)
-Label candidate: Defines Design Theory Through Conceptual Framing
+Label candidate: Defines Design Theory Through Conceptual Framing - Shared Body / Public Health
 Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Theoretical, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
 Theme words: theories, epistemology, management, public health, technique innovation, urban, shared body, pluralistic
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2022: Design Theory and Method of Complex Products: A Review
 
 ### Cluster 2 (25 papers)
-Label candidate: Defines Design Theory Through Conceptual Framing
+Label candidate: Defines Design Theory Through Conceptual Framing - Design Science / Psi
 Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Frameworks. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study and contexts such as Education / Learning. Representative papers include Design Theory in Information Systems; C-K design theory: an advanced formulation.
 Theme words: reich, psi, value, theory theory, theories, service, braha, focus
 
@@ -33,7 +33,7 @@ Representative papers:
 - 2017: Transitional Theory
 
 ### Cluster 3 (23 papers)
-Label candidate: Defines Design Theory Through Conceptual Framing
+Label candidate: Defines Design Theory Through Conceptual Framing - Design Guidelines / Focus
 Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study and contexts such as Sustainability, Education / Learning. Representative papers include Design-oriented human-computer interaction; Work system principles: towards a justified design theory on the grounds of socio-instrumental pragmatism.
 Theme words: sonification, impact, methodology, negation, constructs, visualization, visual, focus
 
@@ -43,7 +43,7 @@ Representative papers:
 - : Affordance based design: a relational theory for design
 
 ### Cluster 4 (2 papers)
-Label candidate: Defines Design Theory Through Conceptual Framing
+Label candidate: Defines Design Theory Through Conceptual Framing - Solving Models / Shown Relevant
 Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Principles. The shared move also involves synthesis of prior work and context-specific adaptation. Its contribution pattern is coded as Theoretical. Representative papers include The design process: frames, metaphors, and games; DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES..
 Theme words: solving models, conversations multiple social, process presented, analysis problem, competitive situations cognitive, cooperative, setting argued functional, shown relevant
 

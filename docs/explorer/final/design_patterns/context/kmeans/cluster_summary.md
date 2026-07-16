@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (25 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Computer Science / Design Guidelines
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Frameworks. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Ontology and contexts such as Education / Learning. Representative papers include Implementing patterns; Understanding and using patterns in software development.
 Theme words: patterns, software, analysis, architecture, abstraction, engineering, solutions, computer science
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2001: A pattern approach to interaction design
 
 ### Cluster 2 (10 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Modeling Methods / Ethical Encounters
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Taxonomy/Review. Application and method terms are treated as supporting facets, especially methods or lenses such as Ontology, Workshop and contexts such as Education / Learning. Representative papers include Meta patternsma means for capturing the essentials of reusable object-oriented design; Design pattern in object-oriented technology.
 Theme words: patterns, object, oriented, software, ethical encounters, unit, modeling methods, social
 
@@ -33,7 +33,7 @@ Representative papers:
 - : Giving ‚Äúthe quality‚Äù a name: precise specification of design patterns‚àía second look at the manuscripts
 
 ### Cluster 3 (17 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Design Patterns / Dsl
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Principles. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview and contexts such as Education / Learning. Representative papers include Design patterns for sociality in human-robot interaction; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education.
 Theme words: patterns, game, business, video, dsl, robot, basic, collaboration
 
@@ -43,7 +43,7 @@ Representative papers:
 - 2016: ConsideracÃßoÃÉes sobre o pattern
 
 ### Cluster 4 (3 papers)
-Label candidate: Defines Design Patterns Through Conceptual Framing
+Label candidate: Defines Design Patterns Through Conceptual Framing - Thriving Theory / Design Patterns
 Summary candidate: This cluster defines and conceptualizes design patterns, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Theory, Design Frameworks. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview and contexts such as Education / Learning. Representative papers include A functional theory of design patterns; Use of design patterns in analogy-based design.
 Theme words: generic, patterns, specify, gtms, thriving theory, analogy, devices, relations
 

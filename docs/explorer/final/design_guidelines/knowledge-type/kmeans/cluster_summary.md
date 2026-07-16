@@ -23,7 +23,7 @@ Representative papers:
 - 2019: The equitable use concept in sidewalk design
 
 ### Cluster 2 (7 papers)
-Label candidate: Synthesizes Design Guidelines into Shared Design Constructs
+Label candidate: Synthesizes Design Guidelines into Shared Design Constructs - Healthy Eating / Design Guidelines
 Summary candidate: This cluster synthesizes prior work on design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Principles. The shared move also involves definition and conceptualization and translation into actionable guidance. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Representative papers include Healthy Eating Design Guidelines for School Architecture; The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers.
 Theme words: architecture, guidelines, software, immersive, practical, theoretical, school, healthy eating
 
@@ -33,7 +33,7 @@ Representative papers:
 - 2016: A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service
 
 ### Cluster 3 (6 papers)
-Label candidate: Synthesizes Design Guidelines into Shared Design Constructs
+Label candidate: Synthesizes Design Guidelines into Shared Design Constructs - Design Guidelines / Natural
 Summary candidate: This cluster synthesizes prior work on design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Heuristics. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Embracing Non-Natural Design in Human-Computer Interaction; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
 Theme words: fidelity, training, natural, guidelines, components, computer, definitions, interact
 

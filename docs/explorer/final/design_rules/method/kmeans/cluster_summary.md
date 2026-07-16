@@ -13,7 +13,7 @@ Representative papers:
 - 2026: Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics
 
 ### Cluster 1 (2 papers)
-Label candidate: Defines Design Rules Through Conceptual Framing
+Label candidate: Defines Design Rules Through Conceptual Framing - Value Structure / Task
 Summary candidate: This cluster defines and conceptualizes design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Methods. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Methodological, Theoretical. Representative papers include Design Rules, Volume 2: Chapter 4‚ÄîThe Mirroring Hypothesis: Linkages Inside and Across Transaction Free Zones; Design Rules, Volume 2: Chapter 6‚ÄîThe Value Structure of Technologies, Part 1: Mapping Functional Components.
 Theme words: language, recipe, chapter, technical, linkages, method rules rules, task, value structure
 
@@ -22,7 +22,7 @@ Representative papers:
 - 2020: Design Rules, Volume 2: Chapter 6‚ÄîThe Value Structure of Technologies, Part 1: Mapping Functional Components
 
 ### Cluster 2 (6 papers)
-Label candidate: Defines Design Rules Through Conceptual Framing
+Label candidate: Defines Design Rules Through Conceptual Framing - Software / Retrieval
 Summary candidate: This cluster defines and conceptualizes design rules, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Guidelines. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Artifact/System, Theoretical, Methodological. Representative papers include Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Hybrid Prototyping: Pure Theory or a Practical Solution to Accelerating Prototyping Tasks?.
 Theme words: rules, modularity, prototyping, architecture, interfaces, organizational, retrieval, software
 

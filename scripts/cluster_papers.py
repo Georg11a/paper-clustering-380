@@ -1256,6 +1256,48 @@ def dominant_design_keywords(subset: pd.DataFrame, limit: int = 3) -> list[str]:
     return counts.head(limit).index.tolist()
 
 
+def disambiguate_repeated_cluster_labels(summaries: dict[int, dict[str, str]], df: pd.DataFrame) -> None:
+    label_to_clusters: dict[str, list[int]] = {}
+    for cluster_id, summary in summaries.items():
+        label = summary.get("cluster_label_candidate", "")
+        if cluster_id == -1 or not label or label == "Unclustered papers":
+            continue
+        label_to_clusters.setdefault(label, []).append(cluster_id)
+
+    for repeated_label, cluster_ids in label_to_clusters.items():
+        if len(cluster_ids) < 2:
+            continue
+        for cluster_id in cluster_ids:
+            subset = df[df["cluster"] == cluster_id].sort_values(["representative_rank", "medoid_rank"])
+            keyphrases = [
+                phrase.strip()
+                for phrase in str(subset.iloc[0].get("cluster_theme_terms", "")).split(",")
+                if phrase.strip()
+            ]
+            preferred = preferred_keyphrases_for_cluster(subset, keyphrases, max_items=3)
+            label_parts = []
+            roots_seen: set[str] = set()
+            candidate_phrases = sorted(
+                preferred + keyphrases,
+                key=lambda item: (len(item.split()) < 2, item in GENERIC_LABEL_PHRASES, len(item)),
+            )
+            for phrase in candidate_phrases:
+                tokens = phrase.split()
+                if len(set(tokens)) < len(tokens):
+                    continue
+                if normalize_phrase(phrase) in {"design rules", "rules"}:
+                    continue
+                add_label_phrase(label_parts, roots_seen, phrase, allow_generic=True)
+                if len(label_parts) >= 2:
+                    break
+            if not label_parts:
+                title_words = normalize_phrase(str(subset.iloc[0].get("title", ""))).split()
+                label_parts = [word for word in title_words if not token_is_too_generic(word)][:2]
+            if label_parts:
+                qualifier = " / ".join(phrase_title(part) for part in label_parts[:2])
+                summaries[cluster_id]["cluster_label_candidate"] = f"{repeated_label} - {qualifier}"
+
+
 def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dict[int, dict[str, str]]:
     summaries = {}
     for label in sorted(set(df["cluster"])):
@@ -1343,6 +1385,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "facet_artifact_or_domain": format_facet_values(facets["artifact_or_domain"]),
             "facet_contribution_or_outcome": ", ".join(contribution_types),
         }
+    disambiguate_repeated_cluster_labels(summaries, df)
     return summaries
 
 

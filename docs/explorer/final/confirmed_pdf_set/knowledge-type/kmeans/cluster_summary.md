@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (9 papers)
-Label candidate: Synthesizes Design Principles into Shared Design Constructs
+Label candidate: Synthesizes Design Principles into Shared Design Constructs - Dark Patterns / Work Approach
 Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Rules, Design Theory. The shared move also involves evidence-based evaluation and definition and conceptualization. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Representative papers include The Good, the Bad, and the Ugly: A Theoretical Framework for the Assessment of Continuous Colormaps; Terminologia kohtaa k√§ytett√§vyyden. Terminologisen k√§ytett√§vyyden ydint√§ rakentamassa.
 Theme words: usability, rules, eudaimonic, transformation, error, assess, guidelines, work approach
 
@@ -13,7 +13,7 @@ Representative papers:
 - 2024.0: Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted
 
 ### Cluster 1 (17 papers)
-Label candidate: Synthesizes Design Principles into Shared Design Constructs
+Label candidate: Synthesizes Design Principles into Shared Design Constructs - Design Guidelines / AI
 Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Heuristics, Tacit Design Knowledge. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Artifact/System, Methodological, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Prototype, Design Science, Case Study and contexts such as Education / Learning, Sustainability. Representative papers include Towards scaling expertise with generative AI: design principles for governing AI-Mediated knowledge capture and transfer; Design principles for human-computer interfaces.
 Theme words: tacit, task, risk, heuristics, educational, ai, conversational, utilization
 

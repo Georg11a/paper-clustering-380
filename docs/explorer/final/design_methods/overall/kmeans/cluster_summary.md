@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (25 papers)
-Label candidate: Defines Design Methods Through Conceptual Framing
+Label candidate: Defines Design Methods Through Conceptual Framing - Ethical Design / Innovative Methods
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Participatory Design, User-centered Design, Ethnographic and contexts such as Education / Learning. Representative papers include Surveying a Landscape of Ethics-Focused Design Methods; Tracing situated effects of innovative design methods: inexperienced designers' practices.
 Theme words: value, ethics, innovative methods, autobiographical, embodied, children, focused, practices
 
@@ -33,7 +33,7 @@ Representative papers:
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
 ### Cluster 3 (2 papers)
-Label candidate: Defines Design Methods Through Conceptual Framing
+Label candidate: Defines Design Methods Through Conceptual Framing - Real Software / Hood
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Artifact/System, Methodological. Representative papers include Architectural Design Method of Architectural Engineering; Design methods for real time software.
 Theme words: architectural, hood, mascot, real software, stages, thinking, engineering, focus
 

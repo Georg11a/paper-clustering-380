@@ -13,7 +13,7 @@ Representative papers:
 - 2019: The equitable use concept in sidewalk design
 
 ### Cluster 1 (5 papers)
-Label candidate: Defines Design Guidelines Through Conceptual Framing
+Label candidate: Defines Design Guidelines Through Conceptual Framing - Healthy Eating / Design Guidelines
 Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Representative papers include The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers; The Rough Mile: Testing a Framework of Immersive Practice.
 Theme words: architecture, guidelines, software, theoretical, school, media, healthy eating, reference
 
@@ -23,7 +23,7 @@ Representative papers:
 - 2016: A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service
 
 ### Cluster 2 (9 papers)
-Label candidate: Defines Design Guidelines Through Conceptual Framing
+Label candidate: Defines Design Guidelines Through Conceptual Framing - Design Guidelines / Geo
 Summary candidate: This cluster defines and conceptualizes design guidelines, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Principles. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Accessibility. Representative papers include Design Guidelines for Domain Specific Languages; Design Guidelines and Examples.
 Theme words: guidelines, task, fidelity, natural, portals, geo, training, map
 

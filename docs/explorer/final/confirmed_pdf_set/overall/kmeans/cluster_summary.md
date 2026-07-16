@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (26 papers)
-Label candidate: Synthesizes Design Principles into Shared Design Constructs
+Label candidate: Synthesizes Design Principles into Shared Design Constructs - Data Mesh / Value-Sensitive Design
 Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Theory. The shared move also involves definition and conceptualization and representation and documentation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Prototype, Ontology and contexts such as Education / Learning, Industrial Design. Representative papers include Design-oriented human-computer interaction; A generic model for reflective design.
 Theme words: data mesh, dsr, problem, ontology, rationale, praxis, product, guidelines
 
@@ -63,7 +63,7 @@ Representative papers:
 - : Game Design as an Autonomous Research Subject
 
 ### Cluster 6 (21 papers)
-Label candidate: Synthesizes Design Principles into Shared Design Constructs
+Label candidate: Synthesizes Design Principles into Shared Design Constructs - Role Playing / Dark Patterns
 Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Tacit Design Knowledge, Design Knowledge. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study, Prototype, Participatory Design and contexts such as Education / Learning, Workplace. Representative papers include From interaction to trajectories: designing coherent journeys through user experiences; Generating implications for design through design research.
 Theme words: autobiographical, hlc, tacit, role playing, immersive, embodied, video, trajectories
 

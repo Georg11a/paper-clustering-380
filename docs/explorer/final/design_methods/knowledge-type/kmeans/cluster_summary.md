@@ -13,7 +13,7 @@ Representative papers:
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
 ### Cluster 1 (11 papers)
-Label candidate: Defines Design Methods Through Conceptual Framing
+Label candidate: Defines Design Methods Through Conceptual Framing - Design Science / Key
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Frameworks. The shared move also involves evidence-based evaluation and synthesis of prior work. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study. Representative papers include Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children; Patterns for living lab practice: describing key know-how to promote service co-creation with users.
 Theme words: service, creation, key, floorplan, virtual, change, tools, embodied
 
@@ -23,7 +23,7 @@ Representative papers:
 - : Languaging design methods
 
 ### Cluster 2 (11 papers)
-Label candidate: Defines Design Methods Through Conceptual Framing
+Label candidate: Defines Design Methods Through Conceptual Framing - Ethical Design / Field
 Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning, Accessibility. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
 Theme words: architecture, field, concept, constraint, ideation, landscape, article, brain
 
@@ -33,7 +33,7 @@ Representative papers:
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
 
 ### Cluster 3 (6 papers)
-Label candidate: Synthesizes Design Methods into Shared Design Constructs
+Label candidate: Synthesizes Design Methods into Shared Design Constructs - Self / Hood
 Summary candidate: This cluster synthesizes prior work on design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Guidelines, Design Frameworks. The shared move also involves evidence-based evaluation and definition and conceptualization. Its contribution pattern is coded as Methodological, Artifact/System, Taxonomy/Review. Representative papers include Design methods for real time software; Architectural Design Method of Architectural Engineering.
 Theme words: collapse, architectural, evidence, software, self, hood, mascot, systematic
 
@@ -43,7 +43,7 @@ Representative papers:
 - : What is a Convention in Interactive Narrative Design?
 
 ### Cluster 4 (5 papers)
-Label candidate: Synthesizes Design Methods into Shared Design Constructs
+Label candidate: Synthesizes Design Methods into Shared Design Constructs - Method Corroboration / Needs
 Summary candidate: This cluster synthesizes prior work on design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Knowledge. The shared move also involves evidence-based evaluation and definition and conceptualization. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
 Theme words: industry, aspects, method corroboration, debate, understand, needs, innovative, interface
 
