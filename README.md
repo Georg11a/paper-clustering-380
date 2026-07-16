@@ -224,13 +224,17 @@ requested maximum is 8.
 
 ## Cluster Labeling Rationale
 
-Cluster labels are separated from lexical evidence. The label is a conceptual
-interpretation of what role the design-related construct plays in the cluster,
-such as conceptual framework, evaluative criteria, reusable pattern language,
-traceable decision rationale, actionable guidance, or empirical evidence base.
-The action frame is stored separately as `design_knowledge_action`, and repeated
-conceptual labels are qualified by action only when needed, for example
-`Synthesized Conceptual Framework` versus `Conceptualized Conceptual Framework`.
+Cluster labels are deliberately conservative. The displayed
+`cluster_label_candidate` is a descriptor, not a final human-validated theme. It
+combines the cluster number, the keyword/form being analyzed, and the inferred
+design-knowledge action frame, for example `Cluster 1: Design methods as
+actionable design guidance`.
+
+More interpretive signals are stored separately. `design_knowledge_role` is an
+automatic role interpretation, and `distinguishing_evidence_terms` contains the
+terms and representative-paper cues that help explain how one cluster differs
+from another. These fields are supporting evidence, not direct quotes from the
+papers and not final labels.
 
 Distinctive terms from c-TF-IDF, topic words, facets, and representative-paper
 titles are kept as `distinguishing_evidence_terms` rather than being appended
@@ -238,11 +242,12 @@ directly to the label. Terms such as `geo`, `recipe`, or `healthy eating` are
 therefore treated as evidence terms, not final cluster names.
 
 This follows NLP/topic-labeling guidance that top words alone are often not
-reliable labels. Labels should be interpreted with representative documents and
-distinctive evidence terms. Relevant references include Manning et al.'s cluster
-labeling discussion in *Introduction to Information Retrieval*, Chang et al.'s
-*Reading Tea Leaves*, Sievert and Shirley's LDAvis paper, Bhatia et al.'s neural
-topic-labeling work, and Grootendorst's BERTopic paper.
+reliable labels. Cluster names should be short and useful, but interpreted with
+representative documents and distinctive evidence terms. Relevant references
+include Manning et al.'s cluster-labeling discussion in *Introduction to
+Information Retrieval*, Chang et al.'s *Reading Tea Leaves*, Sievert and
+Shirley's LDAvis paper, Bhatia et al.'s neural topic-labeling work, and
+Grootendorst's BERTopic paper.
 
 ## Prompts
 

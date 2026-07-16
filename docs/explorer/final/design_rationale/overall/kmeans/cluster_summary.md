@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (3 papers)
-Label candidate: Design Rationale as Transferable Traceable Decision Rationale
+Label candidate: Cluster 0: Design Rationale as captured and transferable knowledge
 Distinguishing evidence: Design Rationale, Argumentation Serve, Integrating Perspectives, Implies
 Summary candidate: This cluster captures and transfers design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rationale as traceable decision rationale. Related forms include Design Frameworks. The shared move also involves synthesis of prior work and representation and documentation. Its contribution pattern is coded as Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Prototype. Representative papers include Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication; Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication.
 Theme words: rationale, implies, argumentation, integrated, communication, perspectives, potential, capture
@@ -14,7 +14,7 @@ Representative papers:
 - 1996: Making Argumentation Serve Design
 
 ### Cluster 1 (13 papers)
-Label candidate: Design Rationale as Documented Traceable Decision Rationale
+Label candidate: Cluster 1: Design Rationale as documented representations
 Distinguishing evidence: Generic Model, Art Rationale, Capture Acquisition, Tradeoffs Interactive Tools
 Summary candidate: This cluster represents and documents design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rationale as traceable decision rationale. Related forms include Design Frameworks, Design Theory. The shared move also involves definition and conceptualization and synthesis of prior work. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Feature, specification and evidence framework for communicating design rationale; A generic model for reflective design.
 Theme words: rationale, language, software, approaches, documentation, representations, engineering, mechanical
@@ -25,7 +25,7 @@ Representative papers:
 - 1991: What's in design rationale?
 
 ### Cluster 2 (2 papers)
-Label candidate: Design Rationale as Transferable Traceable Decision Rationale
+Label candidate: Cluster 2: Design Rationale as captured and transferable knowledge
 Distinguishing evidence: Lecture Notes, Design Rationale, Argumentation Reasoning Process, Goal
 Summary candidate: This cluster captures and transfers design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rationale as traceable decision rationale. The shared move also involves definition and conceptualization and synthesis of prior work. Its contribution pattern is coded as Theoretical. Representative papers include Redesigning the rationale for design rationale; Redesigning the rationale for design rationale.
 Theme words: rationale, limitations, lecture notes, analyze, goal, addition, inherent, argumentation reasoning process
@@ -35,7 +35,7 @@ Representative papers:
 - : Redesigning the rationale for design rationale
 
 ### Cluster 3 (2 papers)
-Label candidate: Design Rationale as Reusable Design Pattern Language
+Label candidate: Cluster 3: Design Rationale as captured and transferable knowledge
 Distinguishing evidence: Reuse Interactive, Patterns Claims Help, Communicating Advice, Design Guidelines
 Summary candidate: This cluster captures and transfers design rationale, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design rationale as reusable design pattern language. Related forms include Design Guidelines, Design Knowledge. The shared move also involves evidence-based evaluation and synthesis of prior work. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Representative papers include Patterns or claims: do they help in communicating design advice?; Designing claims for reuse in interactive systems design.
 Theme words: claims, advice, patterns, solution, rationale, problem, communicating, structure

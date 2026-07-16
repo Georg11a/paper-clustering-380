@@ -224,6 +224,17 @@ ACTION_LABEL_TEMPLATES = {
     "synthesizes": "Synthesizes {form} into Shared Design Constructs",
 }
 
+CLUSTER_DESCRIPTOR_TEMPLATES = {
+    "defines": "{form} through definition and conceptual framing",
+    "organizes": "{form} as organized categories or frameworks",
+    "translates": "{form} as actionable design guidance",
+    "represents": "{form} as documented representations",
+    "captures": "{form} as captured and transferable knowledge",
+    "adapts": "{form} in context-specific use",
+    "evaluates": "{form} through evidence and evaluation",
+    "synthesizes": "{form} through prior-work synthesis",
+}
+
 ACTION_ROLE_QUALIFIERS = {
     "defines and conceptualizes": "Conceptualized",
     "organizes and classifies": "Organized",
@@ -236,7 +247,7 @@ ACTION_ROLE_QUALIFIERS = {
 }
 
 CONCEPTUAL_ROLE_PATTERNS = {
-    "Evaluative Design Criteria": [
+    "Evaluation Criteria or Evidence Base": [
         "assessment",
         "criteria",
         "detect",
@@ -1234,7 +1245,17 @@ def focus_form_from_keyword(subset: pd.DataFrame) -> str:
     if not keywords:
         return "design knowledge"
     keyword = keywords[0].lower()
+    unique_keywords = {str(value).strip().lower() for value in subset.get("keyword", []) if str(value).strip()}
+    if len(unique_keywords) == 1 and keyword.startswith("design "):
+        return keyword
     return DESIGN_KNOWLEDGE_FORM_PATTERNS.get(keyword, [keyword])[0]
+
+
+def conservative_cluster_descriptor(cluster_id: int, claim: dict[str, str]) -> str:
+    form = claim.get("design_knowledge_form") or "Design Knowledge"
+    action_key = claim.get("design_knowledge_action_key") or ""
+    template = CLUSTER_DESCRIPTOR_TEMPLATES.get(action_key, "{form}")
+    return f"Cluster {cluster_id}: {template.format(form=form)}"
 
 
 def infer_design_knowledge_claim(
@@ -1243,15 +1264,18 @@ def infer_design_knowledge_claim(
     contribution_types: list[str],
 ) -> dict[str, str]:
     text = cluster_analysis_text(subset)
+    focus_form = focus_form_from_keyword(subset)
     forms = score_pattern_group(text, DESIGN_KNOWLEDGE_FORM_PATTERNS, max_items=3)
     actions = score_pattern_group(text, DESIGN_KNOWLEDGE_ACTION_PATTERNS, max_items=3)
     conceptual_roles = infer_conceptual_roles(text, facets, contribution_types)
 
-    form = forms[0][0] if forms else focus_form_from_keyword(subset)
+    # In per-keyword views, the form should remain anchored to the selected keyword.
+    # Other detected forms are kept as supporting context, not allowed to rename the cluster.
+    form = focus_form
     action = actions[0][0] if actions else "synthesizes"
     conceptual_role = conceptual_roles[0] if conceptual_roles else ""
     secondary_actions = [item[0] for item in actions[1:3]]
-    secondary_forms = [item[0] for item in forms[1:3] if item[0] != form]
+    secondary_forms = [item[0] for item in forms[:3] if item[0] != form]
 
     if conceptual_role:
         label = f"{phrase_title(form)} as {conceptual_role}"
@@ -1310,6 +1334,7 @@ def infer_design_knowledge_claim(
         "cluster_summary_candidate": summary,
         "design_knowledge_form": phrase_title(form),
         "design_knowledge_action": ACTION_DISPLAY.get(action, action),
+        "design_knowledge_action_key": action,
         "design_knowledge_contribution": f"{ACTION_DISPLAY.get(action, action)} {phrase_title(form)}",
         "design_knowledge_role": conceptual_role,
     }
@@ -1532,7 +1557,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 label_parts = keyword_label_parts
         if not label_parts:
             label_parts = keyphrases[:3]
-        cluster_label = design_claim["cluster_label_candidate"] or " / ".join(phrase_title(p) for p in label_parts[:3]) or f"Cluster {label}"
+        cluster_label = conservative_cluster_descriptor(int(label), design_claim)
         evidence_terms = distinguishing_evidence_terms(subset, keyphrases, facets, contribution_types)
 
         context = format_facet_values(facets["population_or_context"][:3]) or ", ".join(keyphrases[:2]) or "the selected papers"
@@ -1565,7 +1590,6 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "facet_contribution_or_outcome": ", ".join(contribution_types),
             "distinguishing_evidence_terms": evidence_terms,
         }
-    deduplicate_conceptual_cluster_labels(summaries)
     return summaries
 
 
@@ -1994,7 +2018,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         <span class="pill">Medoid rank ${{p.medoid_rank}}</span>
         <span class="pill">LDA topic ${{p.lda_topic}} (${{Math.round(p.lda_topic_probability * 100)}}%)</span>
         ${{discussionStatus}}
-        <div class="section-title">Cluster Label Candidate</div>
+        <div class="section-title">Cluster Descriptor</div>
         <div class="abstract">${{escapeHtml(p.cluster_label_candidate)}}</div>
         <div class="section-title">Distinguishing Evidence</div>
         <div class="abstract">${{escapeHtml(p.distinguishing_evidence_terms || p.cluster_theme_terms || 'n/a')}}</div>
@@ -2004,7 +2028,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         <div>
           <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
           <span class="pill">Action: ${{escapeHtml(p.design_knowledge_action || 'n/a')}}</span>
-          <span class="pill">Role: ${{escapeHtml(p.design_knowledge_role || 'n/a')}}</span>
+          <span class="pill">Auto role: ${{escapeHtml(p.design_knowledge_role || 'n/a')}}</span>
         </div>
         <div class="abstract">${{escapeHtml(p.design_knowledge_contribution || '')}}</div>
         <div class="section-title">Paper-Oriented Facets</div>

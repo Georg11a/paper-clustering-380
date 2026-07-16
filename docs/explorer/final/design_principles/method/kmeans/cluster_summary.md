@@ -3,7 +3,7 @@
 ## Cluster Themes
 
 ### Cluster 0 (12 papers)
-Label candidate: Design Principles as Conceptual Framework
+Label candidate: Cluster 0: Design Principles through definition and conceptual framing
 Distinguishing evidence: Method Principles, Ussf Unified Framework, Energy Planning Control, Human Computer Interfaces
 Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as conceptual framework. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Designing Artificial Identity: The Identity Design Framework and Research Agenda.
 Theme words: method principles, technical, meditation, sonic, identity, approaches, heuristics, software
@@ -14,9 +14,9 @@ Representative papers:
 - : Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control
 
 ### Cluster 1 (2 papers)
-Label candidate: Design Principles as Evaluative Design Criteria
+Label candidate: Cluster 1: Design Principles through definition and conceptual framing
 Distinguishing evidence: Function Better, Education Taxonomy, Understanding Games, Effective Approach Collaboration
-Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as evaluative design criteria. Related forms include Tacit Design Knowledge, Design Expertise. The shared move also involves organization and classification and evidence-based evaluation. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Form and Function: Toward a Better Understanding of Design-Based Games; Toward an effective approach to collaboration education: A taxonomy for game design.
+Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as evaluation criteria or evidence base. Related forms include Tacit Design Knowledge, Design Expertise. The shared move also involves organization and classification and evidence-based evaluation. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Form and Function: Toward a Better Understanding of Design-Based Games; Toward an effective approach to collaboration education: A taxonomy for game design.
 Theme words: games, player, collaborative, major, currently, collaboration, creativity, video
 
 Representative papers:
@@ -24,7 +24,7 @@ Representative papers:
 - 2015: Toward an effective approach to collaboration education: A taxonomy for game design
 
 ### Cluster 2 (3 papers)
-Label candidate: Design Principles as Empirical Evidence Base
+Label candidate: Cluster 2: Design Principles through prior-work synthesis
 Distinguishing evidence: Data Analysis, Ai Needs Human, Systematic Review, Centered Guidelines
 Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as empirical evidence base. Related forms include Design Guidelines, Design Knowledge. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Taxonomy/Review, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Systematic Review and contexts such as Healthcare, Education / Learning. Representative papers include Data Mesh: A Systematic Gray Literature Review; Design principles for data analysis.
 Theme words: data analysis, transparency, review, human centered, systematic, mesh, thinking, architecture
