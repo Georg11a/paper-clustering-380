@@ -1893,6 +1893,11 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     const palette = ['#f05a71','#4c78a8','#f58518','#54a24b','#b279a2','#72b7b2','#eeca3b','#ff9da6','#9d755d','#59a14f','#edc948','#76b7b2'];
     const colorFor = c => palette[Math.abs(Number(c)) % palette.length];
     const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${{c}}`;
+    const clusterLegendLabel = c => {{
+      const label = String(c.label || c.theme || '').trim();
+      if (!label) return clusterName(c.cluster);
+      return /^Cluster\\s+-?\\d+:/i.test(label) ? label : `${{clusterName(c.cluster)}}: ${{label}}`;
+    }};
     const state = {{ selected: papers[0]?.paper_id || null }};
     const svg = document.getElementById('plot');
     const details = document.getElementById('details');
@@ -1928,7 +1933,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       data.clusters.forEach(c => {{
         const item = document.createElement('span');
         item.className = 'legend-item';
-        item.innerHTML = `<span class="swatch" style="background:${{colorFor(c.cluster)}}"></span> ${{clusterName(c.cluster)}}: ${{escapeHtml(c.label || c.theme)}}`;
+        item.innerHTML = `<span class="swatch" style="background:${{colorFor(c.cluster)}}"></span> ${{escapeHtml(clusterLegendLabel(c))}}`;
         legend.appendChild(item);
       }});
       const shapeNote = document.createElement('span');
