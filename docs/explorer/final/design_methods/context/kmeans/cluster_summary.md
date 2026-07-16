@@ -2,89 +2,60 @@
 
 ## Cluster Themes
 
-### Cluster 0 (8 papers)
-Label candidate: HCI principles as task and access guidance
-Summary candidate: This context cluster treats design knowledge as principles for human-computer interaction, task support, and access. The cluster links abstract guidance to concrete interface, software, or educational design situations. Representative papers include A Framework of Design Method Corroboration; Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework.
-Design-knowledge contribution: translates HCI principles into task and access guidance
-Theme words: collapse, artifacts, floorplan, corroboration, business, ways, findings, tasks
-
-Representative papers:
-- 2023: A Framework of Design Method Corroboration
-- 2023: Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework
-- 1996: Deliberated Evolution: Stalking the View Matcher in Design Space
-
-### Cluster 1 (7 papers)
-Label candidate: Product-development knowledge as traceable design rationale
-Summary candidate: This context cluster treats design knowledge as product-development and decision knowledge: something that can be represented, traced, and reused across engineering or industrial design work. Its papers emphasize rationale, causal links, product features, and decision support rather than design knowledge as a general topic. Representative papers include State of the Art on Robust Design Methods for Additive Manufacturing; Emotion Semantics Construction in Industrial Product Application.
-Design-knowledge contribution: represents product-development knowledge as traceable design rationale
-Theme words: functional, virtual, value, product, emotion, manufacturing, robust, commissioning
-
-Representative papers:
-- 2020: State of the Art on Robust Design Methods for Additive Manufacturing
-- 2024: Emotion Semantics Construction in Industrial Product Application
-- 2020: Functional design framework for innovative design thinking in product development
-
-### Cluster 2 (4 papers)
-Label candidate: Design principles as prescriptive knowledge for transfer
-Summary candidate: This context cluster frames design knowledge as prescriptive principles that can travel from research into design practice. The shared concern is how principles are formulated, bounded, justified, and made usable in design science or practice settings. Representative papers include Patterns for living lab practice: describing key know-how to promote service co-creation with users; Advancing service design research with design science research.
-Design-knowledge contribution: translates design principles into prescriptive knowledge for transfer
-Theme words: service, fbs, methodology, systemic, innovation, collaboration, rid, living lab
-
-Representative papers:
-- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
-- 2019: Advancing service design research with design science research
-- 2014: A Framework for Systemic Design
-
-### Cluster 3 (8 papers)
-Label candidate: Design principles as prescriptive knowledge for transfer
-Summary candidate: This context cluster frames design knowledge as prescriptive principles that can travel from research into design practice. The shared concern is how principles are formulated, bounded, justified, and made usable in design science or practice settings. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
-Design-knowledge contribution: translates design principles into prescriptive knowledge for transfer
-Theme words: architecture, ideation, constraint, landscape, article, education, concept, relation
+### Cluster 0 (11 papers)
+Label candidate: Defines Design Methods Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
+Theme words: architecture, collapse, concept, constraint, landscape, ideation, education, article
 
 Representative papers:
 - 2020: Design as Research in Landscape Architecture
 - 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
 
-### Cluster 4 (5 papers)
-Label candidate: HCI principles as task and access guidance
-Summary candidate: This context cluster treats design knowledge as principles for human-computer interaction, task support, and access. The cluster links abstract guidance to concrete interface, software, or educational design situations. Representative papers include The Human-Centredness Metric: Early Assessment of the Quality of Human-Centred Design Activities; Analysis of methods of creating new technical systems.
-Design-knowledge contribution: translates HCI principles into task and access guidance
-Theme words: children, embodied, human centredness, debate, novo, metric, technical, analysis
+### Cluster 1 (7 papers)
+Label candidate: Synthesizes Design Theory into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Methods, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Representative papers include Emotion Semantics Construction in Industrial Product Application; Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory.
+Theme words: complexity, functional, applications, product, robust, emotion, industrial, manufacturing
 
 Representative papers:
-- 2023: The Human-Centredness Metric: Early Assessment of the Quality of Human-Centred Design Activities
-- 2023: Analysis of methods of creating new technical systems
-- 2006: On integration of interface design methods: Can debates be resolved?
+- 2024: Emotion Semantics Construction in Industrial Product Application
+- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
+- 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
 
-### Cluster 5 (2 papers)
-Label candidate: Product-development knowledge as traceable design rationale
-Summary candidate: This context cluster treats design knowledge as product-development and decision knowledge: something that can be represented, traced, and reused across engineering or industrial design work. Its papers emphasize rationale, causal links, product features, and decision support rather than design knowledge as a general topic. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
-Design-knowledge contribution: represents product-development knowledge as traceable design rationale
-Theme words: industry, understand, exist isolation, seen does, formalised way express, benefit reliably, adopting method method, aspects assuring
+### Cluster 2 (9 papers)
+Label candidate: Defines Design Methods Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Rationale. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis of methods of creating new technical systems; Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children.
+Theme words: children, floorplan, definition, mascot, flexibility, tools, hood, debate
+
+Representative papers:
+- 2023: Analysis of methods of creating new technical systems
+- : Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children
+- : Languaging design methods
+
+### Cluster 3 (9 papers)
+Label candidate: Defines Design Methods Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Frameworks, Design Guidelines. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Participatory Design, User-centered Design, Ethnographic and contexts such as Education / Learning. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
+Theme words: industry, value, architectural, evaluating, self usage, systematic, corroboration, attributes
 
 Representative papers:
 - : Elements of a design method - a basis for describing and evaluating design methods
 - 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
+- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
 
-### Cluster 6 (4 papers)
-Label candidate: Design principles as prescriptive knowledge for transfer
-Summary candidate: This context cluster frames design knowledge as prescriptive principles that can travel from research into design practice. The shared concern is how principles are formulated, bounded, justified, and made usable in design science or practice settings. Representative papers include Using System Dynamics to Construct Design Theory for Community Information Systems; Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory.
-Design-knowledge contribution: translates design principles into prescriptive knowledge for transfer
-Theme words: applications, survey, attributes, complexity, community, problems, mis, solve
-
-Representative papers:
-- 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
-- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
-- 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
-
-### Cluster 7 (4 papers)
-Label candidate: Evidence-based design knowledge for interactive and public-facing systems
-Summary candidate: This context cluster uses applied settings such as games, health, public systems, and dark-pattern analysis to build evidence-based design knowledge. The cluster's role is to show how situated cases become transferable claims about design practice. Representative papers include Design methods for real time software; Architectural Design Method of Architectural Engineering.
-Design-knowledge contribution: builds evidence-based design knowledge for interactive and public-facing systems
-Theme words: architectural, software, self, mascot, hood, usage, term, including
+### Cluster 4 (6 papers)
+Label candidate: Evaluates Design Methods Through Empirical Evidence
+Summary candidate: This cluster evaluates with evidence design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Principles. The shared move also involves synthesis of prior work and definition and conceptualization. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study. Representative papers include Advancing service design research with design science research; Patterns for living lab practice: describing key know-how to promote service co-creation with users.
+Theme words: service, fbs, virtual, methodology, innovation, commissioning, systemic, key
 
 Representative papers:
-- 1990: Design methods for real time software
-- 2016: Architectural Design Method of Architectural Engineering
-- 2012: Autobiographical design in HCI research: designing and learning through use-it-yourself
+- 2019: Advancing service design research with design science research
+- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
+- 2014: A Framework for Systemic Design
+
+## LDA Topics
+- Topic 0: service, functional, management, concept, innovative, evidence, conceptual, means
+- Topic 1: architecture, industry, field, understand, creation, elements, product, basis
+- Topic 2: architectural, thinking, education, basic, article, architecture, engineering, concept
+- Topic 3: usage, practices, does, various methods, literature, bring, techniques, implications
+- Topic 4: value, service, virtual, methodology, practice, field, provides, software
+- Topic 5: complexity, survey, problems, community, areas, range, methodological, change

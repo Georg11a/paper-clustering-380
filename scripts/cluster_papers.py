@@ -617,6 +617,23 @@ def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tup
     return best_k, pd.DataFrame(rows).sort_values("k")
 
 
+def dynamic_k_cap(n_papers: int) -> int:
+    """Conservative K-means cap for small keyword-conditioned corpora."""
+    if n_papers < 4:
+        return max(0, n_papers - 1)
+    if n_papers < 10:
+        return 2
+    if n_papers < 20:
+        return 3
+    if n_papers < 35:
+        return 4
+    if n_papers < 60:
+        return 5
+    if n_papers < 90:
+        return 6
+    return 8
+
+
 def representative_stats(vectors: np.ndarray, labels: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     distances = np.full(len(labels), np.nan)
     ranks = np.full(len(labels), -1)
@@ -1910,7 +1927,10 @@ def main() -> None:
     if args.select_k:
         if args.method != "kmeans":
             raise ValueError("--select-k is currently supported only with --method kmeans")
-        k_values = list(range(args.k_min, args.k_max + 1))
+        dynamic_k_max = min(args.k_max, dynamic_k_cap(len(df)), len(df) - 1)
+        dynamic_k_min = min(args.k_min, dynamic_k_max)
+        dynamic_k_min = max(2, dynamic_k_min)
+        k_values = list(range(dynamic_k_min, dynamic_k_max + 1))
         selected_k, silhouette_table = kmeans_silhouette_selection(vectors, k_values)
         silhouette_table.to_csv(outdir / "silhouette_scores.csv", index=False)
         best_row = silhouette_table[silhouette_table["k"] == selected_k].iloc[0]
@@ -1919,7 +1939,8 @@ def main() -> None:
                 [
                     "# K-Means Silhouette Selection",
                     "",
-                    f"- Candidate k range: {args.k_min}-{args.k_max}",
+                    f"- Requested k range: {args.k_min}-{args.k_max}",
+                    f"- Dynamic k range after paper-count cap: {dynamic_k_min}-{dynamic_k_max}",
                     f"- Selected k: {selected_k}",
                     f"- Best average silhouette score: {best_row['average_silhouette']:.4f}",
                     f"- Distance metric for silhouette: cosine",
@@ -1938,7 +1959,14 @@ def main() -> None:
         )
         fig_sil.update_layout(template="plotly_white", xaxis_dtick=1)
         fig_sil.write_html(outdir / "silhouette_scores.html", include_plotlyjs="cdn")
-        print(f"selected k={selected_k} using silhouette analysis")
+        print(
+            f"selected k={selected_k} using silhouette analysis "
+            f"(dynamic candidate range {dynamic_k_min}-{dynamic_k_max} for {len(df)} papers)"
+        )
+    elif args.method == "kmeans":
+        selected_k = min(args.k, dynamic_k_cap(len(df)), len(df) - 1)
+        selected_k = max(2, selected_k)
+        print(f"using k={selected_k} for K-means after dynamic paper-count cap")
 
     labels = cluster_labels(vectors, args.method, selected_k, args.min_samples, args.dbscan_eps, args.min_cluster_size)
     reducer = umap.UMAP(n_components=2, metric="cosine", random_state=42, n_neighbors=12, min_dist=0.08)

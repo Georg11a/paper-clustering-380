@@ -6,7 +6,7 @@
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",
-  "k": 8,
+  "k": 5,
   "k_selection": "silhouette",
   "k_min": 2,
   "k_max": 8,
@@ -19,9 +19,6 @@
     1,
     2,
     3,
-    4,
-    5,
-    6,
-    7
+    4
   ]
 }

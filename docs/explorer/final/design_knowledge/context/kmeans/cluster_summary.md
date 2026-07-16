@@ -2,89 +2,70 @@
 
 ## Cluster Themes
 
-### Cluster 0 (18 papers)
-Label candidate: Designerly knowledge as intermediate-level construct
-Summary candidate: This context cluster focuses on designerly or intermediate-level knowledge: knowledge that sits between specific artifacts and general theory. Its papers ask how design work produces conceptual contributions that can be communicated beyond a single case. Representative papers include Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge; Software creation: cliche as intermediate knowledge in software design.
-Design-knowledge contribution: conceptualizes designerly knowledge as an intermediate-level construct
-Theme words: creation, hri, usability, competence, intermediate, distinct, dsr, social drones
+### Cluster 0 (7 papers)
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Tacit Design Knowledge, Design Frameworks. The shared move also involves definition and conceptualization and representation and documentation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Industrial Design. Representative papers include Causal design knowledge: Alternative representation method for product development knowledge management; Design knowledge for decision-making process in a DFX product design approach.
+Theme words: product, prototyping, cpm pdd, industrial, causal, near, tacit, introduced
 
 Representative papers:
-- 2021: Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge
-- : Software creation: cliche as intermediate knowledge in software design
-- : A Typology of Knowledge Creation in Design Science Research Projects
-
-### Cluster 1 (10 papers)
-Label candidate: Product-development knowledge as traceable design rationale
-Summary candidate: This context cluster treats design knowledge as product-development and decision knowledge: something that can be represented, traced, and reused across engineering or industrial design work. Its papers emphasize rationale, causal links, product features, and decision support rather than design knowledge as a general topic. Representative papers include What is design knowledge from the viewpoint of CPM/PDD?; Causal design knowledge: Alternative representation method for product development knowledge management.
-Design-knowledge contribution: represents product-development knowledge as traceable design rationale
-Theme words: product, representation, cpm pdd, prototyping, industrial, engineering, causal, near
-
-Representative papers:
-- 2008: What is design knowledge from the viewpoint of CPM/PDD?
 - : Causal design knowledge: Alternative representation method for product development knowledge management
 - 2008: Design knowledge for decision-making process in a DFX product design approach
+- 2008: What is design knowledge from the viewpoint of CPM/PDD?
 
-### Cluster 2 (15 papers)
-Label candidate: Design principles as prescriptive knowledge for transfer
-Summary candidate: This context cluster frames design knowledge as prescriptive principles that can travel from research into design practice. The shared concern is how principles are formulated, bounded, justified, and made usable in design science or practice settings. Representative papers include Design Principles for Boundary Spanning in Transdisciplinary Design Science Research; Guidelines supporting the formulation of design principles.
-Design-knowledge contribution: translates design principles into prescriptive knowledge for transfer
-Theme words: science, dsr, formulation, prescriptive, engineering, sdk, artifacts, codification
-
-Representative papers:
-- : Design Principles for Boundary Spanning in Transdisciplinary Design Science Research
-- 2018: Guidelines supporting the formulation of design principles
-- 2019: The DSR grid: six core dimensions for effectively planning and communicating design science research projects
-
-### Cluster 3 (8 papers)
-Label candidate: Strategic design knowledge as reasoning for inquiry and value
-Summary candidate: This context cluster is a looser conceptual group around strategic reasoning, inquiry tools, value, and ecosystem-level design. It is best read as a provisional theme about how design knowledge supports reasoning across complex design situations. Representative papers include Managing design knowledge; Is there a specific type of knowledge associated with design?.
-Design-knowledge contribution: frames strategic design knowledge as reasoning for inquiry, value, and system-level design
-Theme words: strategic, ecosystems, toulmin, inquiry tools, data quality, value, types, make
+### Cluster 1 (10 papers)
+Label candidate: Organizes Design Knowledge into Taxonomies or Frameworks
+Summary candidate: This cluster organizes and classifies design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Theory, Design Heuristics. The shared move also involves synthesis of prior work and definition and conceptualization. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning, Sustainability. Representative papers include Toward a Framework for the Design of Interactive Technology for Nature Recreation; A principle-based philosophical framework for fashion design praxis and education in new design landscapes.
+Theme words: interactive, game, usability, recreation, nature, technology enhanced, fashion, education
 
 Representative papers:
-- : Managing design knowledge
-- 2002: Is there a specific type of knowledge associated with design?
-- 2020: A design theory for visual inquiry tools
-
-### Cluster 4 (4 papers)
-Label candidate: Object-oriented design knowledge as ontology and reusable heuristics
-Summary candidate: This context cluster understands design knowledge as a formal ontology or reusable set of heuristics and best practices. Its contribution is to classify and stabilize design knowledge so it can be accumulated, measured, and reused. Representative papers include Object oriented design knowledge: ontology and measurement of impact; The object-oriented design knowledge ontology.
-Design-knowledge contribution: organizes object-oriented design knowledge as ontology and reusable heuristics
-Theme words: object oriented, ontology, reference, accumulated, heuristics best practices, paradigm, bases, refined
-
-Representative papers:
-- : Object oriented design knowledge: ontology and measurement of impact
-- 2006: The object-oriented design knowledge ontology
-- 2006: Object-oriented design knowledge: Principles, heuristics and best practices
-
-### Cluster 5 (19 papers)
-Label candidate: Studio and education contexts as sites for developing design knowledge
-Summary candidate: This context cluster treats education, studio learning, and teacher practice as sites where design knowledge is formed, adapted, and transferred. The important point is not education as a domain label, but how learning environments make design knowledge visible and teachable. Representative papers include A theoretical framework for the studio as a learning environment; A principle-based philosophical framework for fashion design praxis and education in new design landscapes.
-Design-knowledge contribution: situates design knowledge in studio, teaching, and learning contexts
-Theme words: recreation, teachers, transformation, interactive technology, generalization, education, nature, false
-
-Representative papers:
-- 2013: A theoretical framework for the studio as a learning environment
+- 2025: Toward a Framework for the Design of Interactive Technology for Nature Recreation
 - : A principle-based philosophical framework for fashion design praxis and education in new design landscapes
-- 2019: Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review
+- 2019: Tracing the tensions surrounding understandings of agency and knowledge in technology design
 
-### Cluster 6 (2 papers)
-Label candidate: Platform knowledge as taxonomy and ontology
-Summary candidate: This small context cluster frames design knowledge as a taxonomy or ontology for digital platforms. Because the group is very small, it should be read as a specific organizing construct rather than a robust broad theme. Representative papers include A taxonomy and ontology for digital platforms; A taxonomy and ontology for digital platforms.
-Design-knowledge contribution: organizes digital-platform design knowledge as taxonomy and ontology
-Theme words: platform, digital, types, lack, literature, multi sided, substantial, including limited
-
-Representative papers:
-- : A taxonomy and ontology for digital platforms
-- 2023: A taxonomy and ontology for digital platforms
-
-### Cluster 7 (11 papers)
-Label candidate: Evidence-based design knowledge for interactive and public-facing systems
-Summary candidate: This context cluster uses applied settings such as games, health, public systems, and dark-pattern analysis to build evidence-based design knowledge. The cluster's role is to show how situated cases become transferable claims about design practice. Representative papers include The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design; Game Design as an Autonomous Research Subject.
-Design-knowledge contribution: builds evidence-based design knowledge for interactive and public-facing systems
-Theme words: game, health, patterns, public, practices, phi, stack, technical
+### Cluster 2 (22 papers)
+Label candidate: Synthesizes Design Knowledge into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Theory, Design Principles. The shared move also involves definition and conceptualization and representation and documentation. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Ontology, Thematic Analysis and contexts such as Education / Learning. Representative papers include Towards a Theory Driven Foundational Model for Design: Rethinking Requirement Elicitation for Special Needs; ANALYSIS OF DESIGN COMPETENCE OF FUTURE ENGINEER-TEACHERS.
+Theme words: teachers, hri, ai, competence, article, theoretical, health, public
 
 Representative papers:
-- 2026: The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design
-- : Game Design as an Autonomous Research Subject
-- 2017: Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges
+- 2025: Towards a Theory Driven Foundational Model for Design: Rethinking Requirement Elicitation for Special Needs
+- 2024: ANALYSIS OF DESIGN COMPETENCE OF FUTURE ENGINEER-TEACHERS
+- 2020: Cutting Cubes Out of Fog: The Whole View of Design
+
+### Cluster 3 (21 papers)
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Theory, Design Principles. The shared move also involves synthesis of prior work and capture and transfer. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study, Workshop and contexts such as Education / Learning, Industrial Design. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
+Theme words: dsr, generalization, domain, science, community, mechanisms, reference, ecosystems
+
+Representative papers:
+- : A Typology of Knowledge Creation in Design Science Research Projects
+- 2019: The DSR grid: six core dimensions for effectively planning and communicating design science research projects
+- : Utilizing, Producing, and Contributing Design Knowledge in DSR Projects
+
+### Cluster 4 (12 papers)
+Label candidate: Synthesizes Design Principles into Shared Design Constructs
+Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Knowledge, Design Theory. The shared move also involves definition and conceptualization and capture and transfer. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Workshop and contexts such as Workplace, Education / Learning. Representative papers include Guidelines supporting the formulation of design principles; Toward Engineering Design Principles for HCI.
+Theme words: formulation, social, drones, utilization, engineering principles, edps, boundary, guidelines
+
+Representative papers:
+- 2018: Guidelines supporting the formulation of design principles
+- 2022: Toward Engineering Design Principles for HCI
+- : Design Principles for Boundary Spanning in Transdisciplinary Design Science Research
+
+### Cluster 5 (15 papers)
+Label candidate: Defines Design Knowledge Through Conceptual Framing
+Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Related forms include Design Patterns, Design Rules. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Ontology, Case Study and contexts such as Education / Learning. Representative papers include The object-oriented design knowledge ontology; Object oriented design knowledge: ontology and measurement of impact.
+Theme words: platform, patterns, software, object oriented, good, accumulated, cliche, digital
+
+Representative papers:
+- 2006: The object-oriented design knowledge ontology
+- : Object oriented design knowledge: ontology and measurement of impact
+- 2009: The anatomy of HCI design patterns
+
+## LDA Topics
+- Topic 0: game, analysis, education, autonomous, product, theoretical, discipline, problem
+- Topic 1: science, education, developed, practice, field, article, dsr, particular
+- Topic 2: digital, platform, types, tools, literature, quality, business, rationale
+- Topic 3: ontology, domain, object oriented, health, software, bases, public, paradigm
+- Topic 4: product, field, ai, teachers, make, tacit, practice, creation
+- Topic 5: software, science, dsr, prescriptive, nature, patterns, practices, important

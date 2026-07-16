@@ -1,6 +1,7 @@
 # K-Means Silhouette Selection
 
-- Candidate k range: 2-8
+- Requested k range: 2-8
+- Dynamic k range after paper-count cap: 2-3
 - Selected k: 2
 - Best average silhouette score: 0.2363
 - Distance metric for silhouette: cosine

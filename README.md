@@ -212,6 +212,11 @@ For inspecting one keyword in detail:
   --k-max 8
 ```
 
+K-means uses a dynamic paper-count cap before silhouette selection. This avoids
+forcing small keyword groups into too many clusters. For example, a 14-paper
+keyword group is only allowed to choose between 2 and 3 clusters, even if the
+requested maximum is 8.
+
 ## Prompts
 
 Prompt templates used around the pipeline are in `prompts/`:

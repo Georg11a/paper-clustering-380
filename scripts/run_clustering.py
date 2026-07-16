@@ -24,8 +24,30 @@ def safe_slug(value: str) -> str:
     return "_".join(part for part in slug.split("_") if part)
 
 
+def dynamic_k_cap(n_papers: int) -> int:
+    """Keep K-means from over-splitting small keyword groups.
+
+    K-means always returns the requested number of clusters. For small or
+    homogeneous keyword groups, a large k creates repeated interpretation
+    labels rather than meaningful themes.
+    """
+    if n_papers < 4:
+        return max(0, n_papers - 1)
+    if n_papers < 10:
+        return 2
+    if n_papers < 20:
+        return 3
+    if n_papers < 35:
+        return 4
+    if n_papers < 60:
+        return 5
+    if n_papers < 90:
+        return 6
+    return 8
+
+
 def choose_k_bounds(n_papers: int, k_min: int, k_max: int) -> tuple[int, int]:
-    upper = min(k_max, n_papers - 1)
+    upper = min(k_max, dynamic_k_cap(n_papers), n_papers - 1)
     lower = min(k_min, upper)
     lower = max(2, lower)
     return lower, upper
