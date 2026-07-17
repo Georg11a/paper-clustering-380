@@ -733,10 +733,17 @@ def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tup
     # not too fragmented. This avoids turning a single conceptual theme into
     # several nearly identical labels.
     close_margin = max(0.01, abs(best_score) * 0.20)
-    min_cluster_floor = max(3, int(np.ceil(n * 0.06)))
+    if n < 20:
+        min_cluster_floor = 3
+    elif n < 35:
+        min_cluster_floor = 4
+    else:
+        min_cluster_floor = max(5, int(np.ceil(n * 0.08)))
     table["close_to_best"] = table["average_silhouette"] >= best_score - close_margin
     table["passes_size_floor"] = table["min_cluster_size"] >= min_cluster_floor
     table["passes_balance_floor"] = True
+    if n >= 20:
+        table["passes_balance_floor"] = table["max_cluster_ratio"] <= 0.68
     if n >= 30:
         table["passes_balance_floor"] = table["max_cluster_ratio"] <= 0.58
     table["passes_negative_floor"] = table["negative_silhouette_ratio"] <= 0.40
@@ -751,6 +758,12 @@ def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tup
         candidates = table[table["close_to_best"] & table["passes_size_floor"] & table["passes_balance_floor"]]
     if candidates.empty:
         candidates = table[table["close_to_best"] & table["passes_size_floor"]]
+    if candidates.empty:
+        candidates = table[table["passes_size_floor"] & table["passes_balance_floor"] & table["passes_negative_floor"]]
+    if candidates.empty:
+        candidates = table[table["passes_size_floor"] & table["passes_balance_floor"]]
+    if candidates.empty:
+        candidates = table[table["passes_size_floor"]]
     if candidates.empty:
         candidates = table[table["close_to_best"]]
     selected_k = int(candidates.sort_values("k").iloc[0]["k"])
@@ -2105,7 +2118,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     .point.dim {{ opacity: 0.14; }}
     .point.selected {{ stroke: #111827; stroke-width: 3; opacity: 1; }}
     .legend, .cluster-list {{ padding: 10px 12px; border-top: 1px solid var(--line); }}
-    .legend {{ max-height: 118px; overflow-y: auto; }}
+    .legend {{ max-height: 180px; overflow-y: auto; }}
     .legend-items {{ display: flex; flex-wrap: wrap; gap: 8px 14px; }}
     .legend-item {{ display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }}
     .swatch {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }}
