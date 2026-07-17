@@ -9,10 +9,12 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
 import json
 import re
 import time
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import quote, urlparse
@@ -21,6 +23,8 @@ import requests
 
 
 PDF_MAGIC = b"%PDF"
+SEMANTIC_SCHOLAR_SEARCH_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
+UNPAYWALL_URL = "https://api.unpaywall.org/v2/{doi}"
 
 
 @dataclass
@@ -34,12 +38,38 @@ def clean_filename(name: str) -> str:
     return name or "paper.pdf"
 
 
+def normalize_doi(doi: str) -> str:
+    doi = (doi or "").strip()
+    for prefix in ("DOI:", "doi:", "https://doi.org/", "http://doi.org/"):
+        if doi.startswith(prefix):
+            doi = doi[len(prefix):]
+    return doi.strip()
+
+
+def normalize_title(title: str) -> str:
+    title = (title or "").lower()
+    title = re.sub(r"[^a-z0-9]+", " ", title)
+    return re.sub(r"\s+", " ", title).strip()
+
+
 def arxiv_pdf_from_doi(doi: str) -> str | None:
     m = re.search(r"10\.48550/arXiv\.([^/]+)$", doi, flags=re.I)
     if not m:
         return None
     arxiv_id = m.group(1)
     return f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+
+
+def arxiv_pdf_from_url(url: str) -> str | None:
+    if not url:
+        return None
+    parsed = urlparse(url)
+    if parsed.netloc.lower() not in {"arxiv.org", "www.arxiv.org"}:
+        return None
+    match = re.search(r"/(?:abs|pdf)/([^/?#]+)", parsed.path)
+    if not match:
+        return None
+    return f"https://arxiv.org/pdf/{match.group(1).removesuffix('.pdf')}.pdf"
 
 
 def openalex_candidates(session: requests.Session, doi: str) -> list[Candidate]:
@@ -102,26 +132,109 @@ def semantic_scholar_candidates(session: requests.Session, doi: str, url: str) -
     return [Candidate(pdf_url, "Semantic Scholar openAccessPdf")] if pdf_url else []
 
 
+def semantic_scholar_title_candidates(session: requests.Session, title: str) -> list[Candidate]:
+    title = (title or "").strip()
+    if not title:
+        return []
+    try:
+        response = session.get(
+            SEMANTIC_SCHOLAR_SEARCH_URL,
+            params={
+                "query": title,
+                "limit": 5,
+                "fields": "title,openAccessPdf,externalIds,url",
+            },
+            timeout=20,
+        )
+    except requests.RequestException:
+        return []
+    if response.status_code != 200:
+        return []
+    try:
+        data = response.json()
+    except json.JSONDecodeError:
+        return []
+
+    wanted = normalize_title(title)
+    candidates: list[Candidate] = []
+    for paper in data.get("data") or []:
+        found_title = normalize_title(paper.get("title") or "")
+        if not found_title:
+            continue
+        score = SequenceMatcher(None, wanted, found_title).ratio()
+        if score < 0.88 and wanted not in found_title and found_title not in wanted:
+            continue
+        pdf = paper.get("openAccessPdf") or {}
+        pdf_url = pdf.get("url") if isinstance(pdf, dict) else None
+        if pdf_url:
+            candidates.append(Candidate(pdf_url, "Semantic Scholar title openAccessPdf"))
+    return candidates
+
+
+def unpaywall_candidates(session: requests.Session, doi: str, email: str) -> list[Candidate]:
+    doi = normalize_doi(doi)
+    if not doi or not email:
+        return []
+    try:
+        response = session.get(
+            UNPAYWALL_URL.format(doi=quote(doi, safe="")),
+            params={"email": email},
+            timeout=20,
+        )
+    except requests.RequestException:
+        return []
+    if response.status_code != 200:
+        return []
+    try:
+        data = response.json()
+    except json.JSONDecodeError:
+        return []
+
+    candidates: list[Candidate] = []
+    seen: set[str] = set()
+
+    def add(value: str | None, source: str) -> None:
+        if value and value.startswith("http") and value not in seen:
+            seen.add(value)
+            candidates.append(Candidate(value, source))
+
+    best = data.get("best_oa_location") or {}
+    add(best.get("url_for_pdf"), "Unpaywall best url_for_pdf")
+    add(best.get("url"), "Unpaywall best url")
+
+    for location in data.get("oa_locations") or []:
+        add((location or {}).get("url_for_pdf"), "Unpaywall location url_for_pdf")
+        add((location or {}).get("url"), "Unpaywall location url")
+    return candidates
+
+
 def direct_candidates(doi: str, url: str) -> list[Candidate]:
     candidates: list[Candidate] = []
     arxiv = arxiv_pdf_from_doi(doi)
     if arxiv:
         candidates.append(Candidate(arxiv, "arXiv DOI"))
+    arxiv = arxiv_pdf_from_url(url)
+    if arxiv:
+        candidates.append(Candidate(arxiv, "arXiv URL"))
     if url and url.lower().split("?")[0].endswith(".pdf"):
         candidates.append(Candidate(url, "direct PDF URL"))
     return candidates
 
 
-def candidate_urls(session: requests.Session, row: dict[str, str], source: str) -> list[Candidate]:
-    doi = (row.get("doi") or "").strip()
+def candidate_urls(session: requests.Session, row: dict[str, str], source: str, unpaywall_email: str) -> list[Candidate]:
+    doi = normalize_doi(row.get("doi") or "")
     url = (row.get("download_url") or "").strip()
+    title = row.get("title") or ""
     candidates: list[Candidate] = []
     if source in {"all", "direct"}:
         candidates.extend(direct_candidates(doi, url))
+    if source in {"all", "unpaywall"}:
+        candidates.extend(unpaywall_candidates(session, doi, unpaywall_email))
     if source in {"all", "openalex"}:
         candidates.extend(openalex_candidates(session, doi))
     if source in {"all", "semantic-scholar"}:
         candidates.extend(semantic_scholar_candidates(session, doi, url))
+        candidates.extend(semantic_scholar_title_candidates(session, title))
 
     deduped: list[Candidate] = []
     seen: set[str] = set()
@@ -186,9 +299,14 @@ def main() -> None:
     parser.add_argument("--sleep", type=float, default=0.4)
     parser.add_argument(
         "--source",
-        choices=["all", "semantic-scholar", "openalex", "direct"],
+        choices=["all", "semantic-scholar", "openalex", "unpaywall", "direct"],
         default="all",
         help="Restrict candidate discovery to one source.",
+    )
+    parser.add_argument(
+        "--unpaywall-email",
+        default=os.getenv("UNPAYWALL_EMAIL", "research@example.com"),
+        help="Email parameter required by the Unpaywall API. Can also be set with UNPAYWALL_EMAIL.",
     )
     args = parser.parse_args()
 
@@ -229,7 +347,7 @@ def main() -> None:
             report_rows.append(result)
             continue
 
-        candidates = candidate_urls(session, row, args.source)
+        candidates = candidate_urls(session, row, args.source, args.unpaywall_email)
         if not candidates:
             no_candidate += 1
             result.update(status="no_open_pdf_candidate")

@@ -1383,6 +1383,9 @@ def descriptor_evidence_suffix(summary: dict[str, str]) -> str:
     for term in evidence_terms:
         if usable(term):
             return term
+    for term in evidence_terms:
+        if usable(term, readability_check=False):
+            return term
     return ""
 
 
@@ -1579,27 +1582,75 @@ def dominant_design_keywords(subset: pd.DataFrame, limit: int = 3) -> list[str]:
     return counts.head(limit).index.tolist()
 
 
+def rake_title_phrases(titles: list[str], max_phrases: int = 12) -> list[str]:
+    """RAKE keyphrases over representative titles (Rose et al. 2010).
+
+    Titles are split at punctuation and function-word stopwords; contiguous
+    content-word runs keep their natural surface form ("generative rational
+    heuristics", "synchronous e-learning") instead of the mangled fragments
+    produced by stopword-stripped n-grams ("unknown theory", "ways knowing
+    hri"). Phrases are scored by summed word degree/frequency. Phrase length
+    is capped at three words and bare single words must be substantive:
+    1-3-grams cover ~95% of human-assigned keywords across 17 KE benchmark
+    datasets and gold keywords are overwhelmingly noun phrases (Altuncu et
+    al. 2025, arXiv:2211.05031).
+    """
+    runs: list[list[str]] = []
+    for title in titles:
+        for fragment in re.split(r"[^A-Za-z0-9\-'\s]+", str(title).lower()):
+            current: list[str] = []
+            for word in fragment.split():
+                word = word.strip("-'")
+                is_stop = (
+                    not word
+                    or word in ENGLISH_STOP_WORDS
+                    or (len(word) < 3 and word not in DISPLAY_ACRONYMS)
+                )
+                if is_stop:
+                    if current:
+                        runs.append(current)
+                    current = []
+                else:
+                    current.append(word)
+            if current:
+                runs.append(current)
+
+    freq: dict[str, int] = {}
+    degree: dict[str, int] = {}
+    for run in runs:
+        for word in run:
+            freq[word] = freq.get(word, 0) + 1
+            degree[word] = degree.get(word, 0) + len(run) - 1
+
+    scored: list[tuple[str, float]] = []
+    for run in runs:
+        if not 1 <= len(run) <= 3:
+            continue
+        if len(run) == 1 and len(run[0]) < 4 and run[0] not in DISPLAY_ACRONYMS:
+            continue
+        phrase = " ".join(run)
+        score = sum((degree[word] + freq[word]) / freq[word] for word in run)
+        scored.append((phrase, score))
+    scored.sort(key=lambda item: -item[1])
+
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for phrase, _ in scored:
+        if phrase not in seen:
+            seen.add(phrase)
+            ordered.append(phrase)
+    return ordered[:max_phrases]
+
+
 def representative_title_terms(subset: pd.DataFrame, limit: int = 4) -> list[str]:
     titles = [
-        normalize_phrase(str(title))
+        str(title)
         for title in subset.sort_values(["representative_rank", "medoid_rank"]).get("title", pd.Series(dtype=str)).head(6)
         if str(title).strip() and not any(marker in str(title) for marker in ["√", "�", "‚", "Ä", "ê"])
     ]
     if not titles:
         return []
-    vectorizer = CountVectorizer(
-        stop_words=STOPWORDS,
-        min_df=1,
-        ngram_range=(2, 3),
-        token_pattern=r"(?u)\b(?:ai|ux|xr|[a-zA-Z]{3,})\b",
-    )
-    try:
-        counts = vectorizer.fit_transform(titles).sum(axis=0).A1
-    except ValueError:
-        return []
-    terms = vectorizer.get_feature_names_out()
-    ranked = terms[np.argsort(counts)[::-1]].tolist()
-    return _clean_label_terms(ranked, limit)
+    return _clean_label_terms(rake_title_phrases(titles), limit)
 
 
 def distinguishing_evidence_terms(
@@ -1609,24 +1660,16 @@ def distinguishing_evidence_terms(
     contribution_types: list[str],
     limit: int = 4,
 ) -> str:
-    title_terms = [
-        term
-        for term in representative_title_terms(subset, limit=limit)
-        if _suffix_phrase_is_readable(term)
-    ]
     evidence_candidates = []
+    evidence_candidates.extend(representative_title_terms(subset, limit=limit))
     for facet in ["population_or_context", "artifact_or_domain", "method_or_lens"]:
         evidence_candidates.extend(facets.get(facet, [])[:2])
     evidence_candidates.extend(contribution_types[:2])
     preferred = preferred_keyphrases_for_cluster(subset, keyphrases, max_items=limit + 2)
-    preferred = [
-        phrase for phrase in preferred
-        if phrase in APPLICATION_CONTEXT_PHRASES or _suffix_phrase_is_readable(phrase)
-    ]
     label_parts = []
     roots_seen: set[str] = set()
     candidate_phrases = sorted(
-        evidence_candidates + preferred + title_terms,
+        evidence_candidates + preferred + [phrase for phrase in keyphrases if len(phrase.split()) > 1],
         key=lambda item: (len(item.split()) < 2, item in GENERIC_LABEL_PHRASES, len(item)),
     )
     for phrase in candidate_phrases:
