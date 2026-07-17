@@ -2,13 +2,21 @@
 
 ## Cluster Themes
 
-### Unclustered papers (75 papers)
+### Cluster -1 (75 papers)
 Label candidate: Unclustered papers
+Distinguishing evidence: 
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
-Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
 - 2008: Work system principles: towards a justified design theory on the grounds of socio-instrumental pragmatism
 - 2018: Multiscale Design Strategies in a Landscape Architecture Classroom
 - 2012: Undesigning technology: considering the negation of design by design
+
+## LDA Topics
+- Topic 0: innovation, technique, literature, problem, review, method theory, management, framing
+- Topic 1: method theory, practice, problem, field, analysis, engineering, decision, epistemology
+- Topic 2: method theory, sonification, theories, digital, theoretical, explain, existing, decision
+- Topic 3: method theory, science, product, theories, need, practices, concepts, existing
+- Topic 4: concept, space, games, method theory, general, computer, topology, proposed
+- Topic 5: method theory, theories, management, science, conceptual, scientific, methodology, concept

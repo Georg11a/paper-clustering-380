@@ -2,68 +2,43 @@
 
 ## Cluster Themes
 
-### Cluster 0 (25 papers)
-Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Ethics Focused
-Distinguishing evidence: Ethics Focused, Ethical Design, Innovative Methods, Acting Role Playing
-Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Frameworks, Design Knowledge. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Participatory Design, User-centered Design, Ethnographic and contexts such as Education / Learning. Representative papers include Surveying a Landscape of Ethics-Focused Design Methods; Tracing situated effects of innovative design methods: inexperienced designers' practices.
-Theme words: value, ethics, innovative methods, autobiographical, embodied, children, focused, practices
+### Cluster 0 (11 papers)
+Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Education / Learning
+Distinguishing evidence: Case Study, Basic Principles, Architectural Engineering, Brain-learning Physiology
+Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Basic Principles, Architectural Engineering. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS; Degrees of Interaction: Towards a Classification.
+Theme words: architecture, functional, architectural, flexibility, systemic, brain, commissioning, institutions
 
 Representative papers:
-- 2024: Surveying a Landscape of Ethics-Focused Design Methods
-- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
-- : Languaging design methods
-
-### Cluster 1 (4 papers)
-Label candidate: Cluster 1: Design Methods through definition and conceptual framing around Basic Principles
-Distinguishing evidence: Basic Principles, Formal Education, Relation Brain Learning, Conceptualization Methods
-Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as conceptual framework. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Theoretical, Artifact/System, Methodological. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning, Accessibility. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Degrees of Interaction: Towards a Classification.
-Theme words: architecture, institutions, brain, formal education, nfei, formation, landscape, rtd
-
-Representative papers:
-- 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
-- 2011: Degrees of Interaction: Towards a Classification
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
+- 2011: Degrees of Interaction: Towards a Classification
+- 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
 
-### Cluster 2 (4 papers)
-Label candidate: Cluster 2: Design Methods through prior-work synthesis
-Distinguishing evidence: Case Study, Theory Provides, Framework Effective, Engineering Construction
-Summary candidate: This cluster synthesizes prior work on design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as conceptual framework. Related forms include Design Theory, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study and contexts such as Education / Learning. Representative papers include Using System Dynamics to Construct Design Theory for Community Information Systems; Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory.
-Theme words: applications, commissioning, weil, theory provides, complexity, contemporary, virtual, industrial
-
-Representative papers:
-- 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
-- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
-- 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
-
-### Cluster 3 (2 papers)
-Label candidate: Cluster 3: Design Methods through definition and conceptual framing around Real Software
-Distinguishing evidence: Real Software, Method Architectural Engineering, Hood, Mascot
-Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Principles. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Artifact/System, Methodological. Representative papers include Architectural Design Method of Architectural Engineering; Design methods for real time software.
-Theme words: architectural, hood, mascot, real software, stages, thinking, engineering, focus
-
-Representative papers:
-- 2016: Architectural Design Method of Architectural Engineering
-- 1990: Design methods for real time software
-
-### Cluster 4 (7 papers)
-Label candidate: Cluster 4: Design Methods through evidence and evaluation
-Distinguishing evidence: Key Know Promote, Design Rationale, Description Method, Systematic Review Assessment
-Summary candidate: This cluster evaluates with evidence design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Rationale, Design Knowledge. The shared move also involves synthesis of prior work and definition and conceptualization. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
-Theme words: service, dsr, bacon, artifacts, practitioners, description method, need, practice
+### Cluster 1 (8 papers)
+Label candidate: Cluster 1: Design Methods through prior-work synthesis
+Distinguishing evidence: Self Usage, Ethical Design, Focused Methods, Systematic Review
+Summary candidate: Within this keyword view, this cluster is set apart by Self Usage, Focused Methods, Systematic Review. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. Its contribution coding (Methodological, Taxonomy/Review, Artifact/System) also departs from the view majority. Representative papers: Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
+Theme words: ethics, autobiographical, focused methods, self usage, ethical, practice, focus, universal
 
 Representative papers:
 - : Elements of a design method - a basis for describing and evaluating design methods
 - 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
-- 2023: A Framework of Design Method Corroboration
+- 2024: Surveying a Landscape of Ethics-Focused Design Methods
+
+### Cluster 2 (23 papers)
+Label candidate: Cluster 2: Design Methods through definition and conceptual framing around Tool
+Distinguishing evidence: Multiple Forms, Design Rationale, Tracing Situated Effects, Highlighting Key Qualities
+Summary candidate: Within this keyword view, this cluster is set apart by Multiple Forms, Tracing Situated Effects, Highlighting Key Qualities. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on Ethnographic, Co-design. Representative papers: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Languaging design methods.
+Theme words: value, embodied, children, applications, innovative, playing, qualities, focus
+
+Representative papers:
+- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
+- : Languaging design methods
+- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
 
 ## LDA Topics
-- Topic 0: concepts, implications, social, empirical, findings, generating, types, designs
-- Topic 1: business, constraint, concept, virtual, manufacturing, focus, methods methods, ideation
-- Topic 2: small, literature review, ieee, earlier, form, thinking thinking, structure, definition
-- Topic 3: value, engineering, functional, requirements, defined, customer, literature, product
-- Topic 4: focused, ethical, practice, theoretical, analysis, existing, building, states
-- Topic 5: usage, self, interviews, centred, practices, interactive, focus, creating
-- Topic 6: innovative, techniques, students, performance, focus, actor, constraints, tools
-- Topic 7: complexity, digital, construction, review, computational, methods methods, architecture, engineering
-- Topic 8: embodied, service, focus, qualities, applications, key, analysis, practice
-- Topic 9: flexibility, methods methods, community, creation, focus, problems, propose, building
+- Topic 0: value, engineering, concepts, implications, social, empirical, requirements, generating
+- Topic 1: applications, product, focus, methods methods, business, provides, conceptual, existing
+- Topic 2: proposes, aspect, descriptions, quantitative, materials, solve problems, relation, methods concept
+- Topic 3: architecture, architectural, functional, methods methods, focus, formation, field, article
+- Topic 4: practice, focus, practitioners, ethical, methods methods, key, literature, described
+- Topic 5: embodied, innovative, techniques, practices, focus, students, self, service

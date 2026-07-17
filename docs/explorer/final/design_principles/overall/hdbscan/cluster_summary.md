@@ -2,13 +2,21 @@
 
 ## Cluster Themes
 
-### Unclustered papers (17 papers)
+### Cluster -1 (17 papers)
 Label candidate: Unclustered papers
+Distinguishing evidence: 
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
-Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
 - 2013: Acquiring educational access for neurodiverse learners through multisensory design principles
 - 1983: Design principles for human-computer interfaces
 - 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
+
+## LDA Topics
+- Topic 0: learners, computer, education, analysis, guidelines, heuristics, focus, special
+- Topic 1: planning, energy, establishes, central, developing, formal principles, arxiv, suggests
+- Topic 2: definition, engineering, problem, value, outcome, relationships, key, formal
+- Topic 3: planning, energy, establishes, central, developing, formal principles, arxiv, suggests
+- Topic 4: games, social, questions, transparency, conversational, continuity, ethical, goals
+- Topic 5: literature, architectures, domain, reference, review, platform, organizations, data science

@@ -1,8 +1,8 @@
 {
-  "input": "data/fulltext_context_pdf_157.csv",
+  "input": "data/fulltext_context_confirmed_110.csv",
   "text_view": "method",
   "focus_keyword": "Design knowledge",
-  "keyword_context_paragraphs": 8,
+  "keyword_context_paragraphs": 6,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "hdbscan",

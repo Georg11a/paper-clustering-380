@@ -2,45 +2,32 @@
 
 ## Cluster Themes
 
-### Cluster 0 (13 papers)
-Label candidate: Cluster 0: Design Principles through definition and conceptual framing around Ussf Unified Framework
-Distinguishing evidence: Ussf Unified Framework, Energy Planning Control, Human Computer Interfaces, Gamification Principles Online
-Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as conceptual framework. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Design principles for human-computer interfaces.
-Theme words: technical, sonic, identity, meditation, adaptive, engineering, software, embodied
+### Cluster 0 (11 papers)
+Label candidate: Cluster 0: Design Principles through definition and conceptual framing
+Distinguishing evidence: Unified Framework, Personalising Learning, Screen Standardization, Domestic Energy Planning
+Summary candidate: Within this keyword view, this cluster is set apart by Unified Framework, Personalising Learning, Screen Standardization. Its dominant move, definition and conceptualization of design principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: USSF: A Unified Framework for Screen Standardization in Software Systems; Design principles for human-computer interfaces.
+Theme words: technical, identity, heuristics, learners, coherent, artificial, approaches, engineering
 
 Representative papers:
 - 2025: USSF: A Unified Framework for Screen Standardization in Software Systems
 - 1983: Design principles for human-computer interfaces
-- 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
+- : Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control
 
-### Cluster 1 (2 papers)
-Label candidate: Cluster 1: Design Principles through definition and conceptual framing around Function Better
-Distinguishing evidence: Function Better, Education Taxonomy, Understanding Games, Effective Approach Collaboration
-Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as evaluation criteria or evidence base. Related forms include Tacit Design Knowledge, Design Expertise. The shared move also involves organization and classification and evidence-based evaluation. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
-Theme words: games, player, major, currently, collaboration, video, collaborative, creativity
+### Cluster 1 (6 papers)
+Label candidate: Cluster 1: Design Principles through prior-work synthesis
+Distinguishing evidence: Data Analysis, Effective Approach, Better Understanding, Collaboration Education
+Summary candidate: Within this keyword view, this cluster is set apart by Data Analysis, Effective Approach, Better Understanding. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Its contribution coding (Methodological, Artifact/System, Taxonomy/Review) also departs from the view majority. Representative papers: Toward an effective approach to collaboration education: A taxonomy for game design; Design principles for data analysis.
+Theme words: games, sonic, meditation, data analysis, practice, embodied, expectations, mesh
 
 Representative papers:
 - 2015: Toward an effective approach to collaboration education: A taxonomy for game design
-- 2025: Form and Function: Toward a Better Understanding of Design-Based Games
-
-### Cluster 2 (2 papers)
-Label candidate: Cluster 2: Design Principles through prior-work synthesis
-Distinguishing evidence: Data Analysis, Systematic Gray Literature, Mesh, Education / Learning
-Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as empirical evidence base. Related forms include Design Knowledge, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Taxonomy/Review, Empirical. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Data Mesh: A Systematic Gray Literature Review; Design principles for data analysis.
-Theme words: data analysis, mesh, thinking, gray, architecture, literature, practice, problem
-
-Representative papers:
-- 2024: Data Mesh: A Systematic Gray Literature Review
 - 2021: Design principles for data analysis
+- 2024: Data Mesh: A Systematic Gray Literature Review
 
 ## LDA Topics
-- Topic 0: games, software, challenge, form, provide, define, architectures, high
-- Topic 1: develop, following, methodological, structured, challenge, article, domain, practices
-- Topic 2: learners, computer, field, initial, fail, interfaces, effective, impact
-- Topic 3: develop, following, methodological, structured, challenge, article, domain, practices
-- Topic 4: approaches, coherent, education, ethical, games, develop, growing, necessary
-- Topic 5: develop, following, methodological, structured, challenge, article, domain, practices
-- Topic 6: analysis, practice, literature, problem, principles data, review, systematic, attempts
-- Topic 7: heuristics, engineering, adaptive, challenge, definition, novel, problem, methodological
-- Topic 8: develop, following, methodological, structured, challenge, article, domain, practices
-- Topic 9: develop, following, methodological, structured, challenge, article, domain, practices
+- Topic 0: games, software, challenge, provide, form, architectures, language, designs
+- Topic 1: heuristics, ubiquitous, practices, develop, structured, language, coherent, growing
+- Topic 2: learners, engineering, field, definition, principles methods, properties, novel, computer
+- Topic 3: initial, effective, domain, following, introduces, application, engineering principles, human computer
+- Topic 4: practice, analysis, literature, adaptive, approaches, education, principles data, aims
+- Topic 5: following, evidence, systematic, review, attempts, needs, mechanisms, perspective

@@ -77,7 +77,7 @@ def openalex_candidates(session: requests.Session, doi: str) -> list[Candidate]:
         return []
     url = "https://api.openalex.org/works/" + quote(f"https://doi.org/{doi}", safe="")
     try:
-        response = session.get(url, timeout=20)
+        response = session.get(url, timeout=12)
     except requests.RequestException:
         return []
     if response.status_code != 200:
@@ -118,7 +118,7 @@ def semantic_scholar_candidates(session: requests.Session, doi: str, url: str) -
         return []
     api_url = "https://api.semanticscholar.org/graph/v1/paper/" + quote(paper_id, safe=":")
     try:
-        response = session.get(api_url, params={"fields": "openAccessPdf,url"}, timeout=20)
+        response = session.get(api_url, params={"fields": "openAccessPdf,url"}, timeout=12)
     except requests.RequestException:
         return []
     if response.status_code != 200:
@@ -144,7 +144,7 @@ def semantic_scholar_title_candidates(session: requests.Session, title: str) -> 
                 "limit": 5,
                 "fields": "title,openAccessPdf,externalIds,url",
             },
-            timeout=20,
+            timeout=12,
         )
     except requests.RequestException:
         return []
@@ -179,7 +179,7 @@ def unpaywall_candidates(session: requests.Session, doi: str, email: str) -> lis
         response = session.get(
             UNPAYWALL_URL.format(doi=quote(doi, safe="")),
             params={"email": email},
-            timeout=20,
+            timeout=12,
         )
     except requests.RequestException:
         return []
@@ -252,7 +252,7 @@ def response_is_pdf(response: requests.Response, first_bytes: bytes) -> bool:
 
 def download_pdf(session: requests.Session, url: str, output_path: Path) -> tuple[bool, str]:
     try:
-        with session.get(url, stream=True, timeout=40, allow_redirects=True) as response:
+        with session.get(url, stream=True, timeout=18, allow_redirects=True) as response:
             if response.status_code >= 400:
                 return False, f"HTTP {response.status_code}"
             iterator = response.iter_content(chunk_size=8192)
@@ -296,6 +296,7 @@ def main() -> None:
     parser.add_argument("--pdf-dir", required=True, type=Path)
     parser.add_argument("--report", required=True, type=Path)
     parser.add_argument("--limit", type=int, default=0, help="Maximum rows to attempt; 0 means all.")
+    parser.add_argument("--start", type=int, default=1, help="1-based row index to start from.")
     parser.add_argument("--sleep", type=float, default=0.4)
     parser.add_argument(
         "--source",
@@ -311,12 +312,15 @@ def main() -> None:
     args = parser.parse_args()
 
     rows = read_rows(args.checklist)
+    if args.start > 1:
+        rows = rows[args.start - 1 :]
     if args.limit:
         rows = rows[: args.limit]
     args.pdf_dir.mkdir(parents=True, exist_ok=True)
     args.report.parent.mkdir(parents=True, exist_ok=True)
 
     session = requests.Session()
+    session.trust_env = False
     session.headers.update(
         {
             "User-Agent": "paper-clustering-380 PDF downloader (mailto:research@example.com)",
@@ -328,7 +332,7 @@ def main() -> None:
     downloaded = skipped_existing = failed = no_candidate = 0
 
     for index, row in enumerate(rows, start=1):
-        filename = clean_filename(row.get("suggested_filename") or f"{row.get('paper_id')}.pdf")
+        filename = clean_filename(f"{row.get('paper_id')}.pdf" if row.get("paper_id") else row.get("suggested_filename") or "paper.pdf")
         output_path = args.pdf_dir / filename
         result = {
             "paper_id": row.get("paper_id", ""),
@@ -352,7 +356,7 @@ def main() -> None:
             no_candidate += 1
             result.update(status="no_open_pdf_candidate")
             report_rows.append(result)
-            print(f"[{index}/{len(rows)}] no candidate: {row.get('title', '')[:70]}")
+            print(f"[{index}/{len(rows)}] no candidate: {row.get('title', '')[:70]}", flush=True)
             time.sleep(args.sleep)
             continue
 
@@ -369,7 +373,7 @@ def main() -> None:
                     url=candidate.url,
                     message=str(output_path),
                 )
-                print(f"[{index}/{len(rows)}] downloaded: {filename}")
+                print(f"[{index}/{len(rows)}] downloaded: {filename}", flush=True)
                 success = True
                 break
             time.sleep(args.sleep)
@@ -382,18 +386,18 @@ def main() -> None:
                 url="; ".join(c.url for c in candidates),
                 message=" | ".join(messages),
             )
-            print(f"[{index}/{len(rows)}] failed: {row.get('title', '')[:70]}")
+            print(f"[{index}/{len(rows)}] failed: {row.get('title', '')[:70]}", flush=True)
         report_rows.append(result)
         if index % 10 == 0:
             write_report(args.report, report_rows)
         time.sleep(args.sleep)
 
     write_report(args.report, report_rows)
-    print(f"downloaded={downloaded}")
-    print(f"existing={skipped_existing}")
-    print(f"failed={failed}")
-    print(f"no_open_pdf_candidate={no_candidate}")
-    print(f"report={args.report}")
+    print(f"downloaded={downloaded}", flush=True)
+    print(f"existing={skipped_existing}", flush=True)
+    print(f"failed={failed}", flush=True)
+    print(f"no_open_pdf_candidate={no_candidate}", flush=True)
+    print(f"report={args.report}", flush=True)
 
 
 if __name__ == "__main__":

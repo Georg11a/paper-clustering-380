@@ -2,69 +2,54 @@
 
 ## Cluster Themes
 
-### Cluster 0 (11 papers)
-Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Ethical Design
-Distinguishing evidence: Ethical Design, Implementation Basic, Forming Architecture Non, Formal Education Institutions
-Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Principles, Design Knowledge. The shared move also involves synthesis of prior work and organization and classification. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
-Theme words: architecture, collapse, concept, constraint, landscape, ideation, education, article
+### Cluster 0 (9 papers)
+Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Multiple Forms
+Distinguishing evidence: C-k Theory, Multiple Forms, Design Rationale, Industrial Product Application
+Summary candidate: Within this keyword view, this cluster is set apart by C-k Theory, Multiple Forms, Industrial Product Application. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Emotion Semantics Construction in Industrial Product Application; Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory.
+Theme words: complexity, product, functional, fbs, applications, explore, tasks, engage
+
+Representative papers:
+- 2024: Emotion Semantics Construction in Industrial Product Application
+- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
+- 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
+
+### Cluster 1 (12 papers)
+Label candidate: Cluster 1: Design Methods through definition and conceptual framing around Tool
+Distinguishing evidence: Design Science, Human Centredness, Living Lab Practice, Describing Key Know-how
+Summary candidate: Within this keyword view, this cluster is set apart by Human Centredness, Living Lab Practice, Describing Key Know-how. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on User-centered Design, Ethnographic. Its contribution coding (Methodological, Artifact/System, Empirical) also departs from the view majority. Representative papers: Languaging design methods; Patterns for living lab practice: describing key know-how to promote service co-creation with users.
+Theme words: service, collapse, creation, children, floorplan, flexibility, areas, human centredness
+
+Representative papers:
+- : Languaging design methods
+- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
+- : Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children
+
+### Cluster 2 (15 papers)
+Label candidate: Cluster 2: Design Methods through definition and conceptual framing
+Distinguishing evidence: Case Study, Ethical Design, Basic Principles, Conceptualization Methods
+Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Basic Principles, Conceptualization Methods. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on Case Study. Representative papers: Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
+Theme words: architecture, literature, field, management, concept, education, ideation, practitioners
 
 Representative papers:
 - 2020: Design as Research in Landscape Architecture
 - 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
 
-### Cluster 1 (7 papers)
-Label candidate: Cluster 1: Design Methods through prior-work synthesis
-Distinguishing evidence: Geometric Complexity, Engineering Construction, Years Industrial Applications, Functional Framework Innovative
-Summary candidate: This cluster synthesizes prior work on design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as conceptual framework. Related forms include Design Theory, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Representative papers include Emotion Semantics Construction in Industrial Product Application; Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory.
-Theme words: complexity, functional, applications, product, robust, emotion, industrial, manufacturing
-
-Representative papers:
-- 2024: Emotion Semantics Construction in Industrial Product Application
-- 2016: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory
-- 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
-
-### Cluster 2 (9 papers)
-Label candidate: Cluster 2: Design Methods through definition and conceptual framing around Human Centred
-Distinguishing evidence: Human Centred, Design Rationale, Think Emcode Framework, Highlighting Key Qualities
-Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as conceptual framework. Related forms include Design Frameworks, Design Rationale. The shared move also involves synthesis of prior work and translation into actionable guidance. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Representative papers include Analysis of methods of creating new technical systems; Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children.
-Theme words: children, floorplan, definition, mascot, flexibility, tools, hood, debate
-
-Representative papers:
-- 2023: Analysis of methods of creating new technical systems
-- : Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children
-- : Languaging design methods
-
-### Cluster 3 (9 papers)
-Label candidate: Cluster 3: Design Methods through definition and conceptual framing around Self Usage
-Distinguishing evidence: Self Usage, Framework Method, Basis Describing, Participatory Design
-Summary candidate: This cluster defines and conceptualizes design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as actionable design guidance. Related forms include Design Frameworks, Design Guidelines. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Empirical. Application and method terms are treated as supporting facets, especially methods or lenses such as Participatory Design, User-centered Design, Ethnographic and contexts such as Education / Learning. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
-Theme words: industry, value, architectural, evaluating, self usage, systematic, corroboration, attributes
+### Cluster 3 (6 papers)
+Label candidate: Cluster 3: Design Methods through evidence and evaluation
+Distinguishing evidence: Architectural Engineering, Self, Hood, Mascot
+Summary candidate: Within this keyword view, this cluster is set apart by Architectural Engineering, Self, Hood. Unlike most clusters in this view, its dominant design-knowledge move is evidence-based evaluation. Its contribution coding (Artifact/System, Methodological, Empirical) also departs from the view majority. Representative papers: Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method ‚Äì a basis for describing and evaluating design methods.
+Theme words: architectural, software, industry, self, mascot, hood, understand, usage
 
 Representative papers:
 - : Elements of a design method - a basis for describing and evaluating design methods
 - 2022: Elements of a design method ‚Äì a basis for describing and evaluating design methods
-- 2011: Tracing situated effects of innovative design methods: inexperienced designers' practices
-
-### Cluster 4 (6 papers)
-Label candidate: Cluster 4: Design Methods through evidence and evaluation
-Distinguishing evidence: Key Know, Case Study, Design Science, Framework Systemic
-Summary candidate: This cluster evaluates with evidence design methods, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design methods as empirical evidence base. Related forms include Design Knowledge, Design Principles. The shared move also involves synthesis of prior work and definition and conceptualization. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Case Study. Representative papers include Advancing service design research with design science research; Patterns for living lab practice: describing key know-how to promote service co-creation with users.
-Theme words: service, fbs, virtual, methodology, innovation, commissioning, systemic, key
-
-Representative papers:
-- 2019: Advancing service design research with design science research
-- 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
-- 2014: A Framework for Systemic Design
+- 1990: Design methods for real time software
 
 ## LDA Topics
-- Topic 0: functional, innovative, evidence, product, hand, need, review, means
-- Topic 1: industry, complexity, architecture, understand, elements, challenges, conceptual, literature
-- Topic 2: architecture, education, interactive, article, formal, building, implementation, environment
-- Topic 3: value, define, engineering, concept, creating, conceptualization, traditional, objective
-- Topic 4: virtual, field, landscape, practice, architecture, product, form, increasingly
-- Topic 5: survey, problems, community, term, field, methodological, game, interactive
-- Topic 6: usage, practices, bring, including, considered, software, goal, evaluating
-- Topic 7: service, methodology, creation, key, artifacts, collaboration, engage, psychological
-- Topic 8: architectural, concept, thinking, software, management, conceptual, definition, change
-- Topic 9: provides, industrial, various, variety, general, techniques, practices, high
+- Topic 0: service, functional, management, concept, innovative, evidence, conceptual, product development
+- Topic 1: architecture, industry, field, understand, creation, elements, product, metric
+- Topic 2: architectural, thinking, education, basic, article, architecture, engineering, concept
+- Topic 3: usage, practices, does, various methods, literature, bring, techniques, implications
+- Topic 4: value, service, virtual, methodology, practice, field, provides, software
+- Topic 5: complexity, survey, problems, community, areas, range, methodological, change

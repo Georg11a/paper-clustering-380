@@ -1,8 +1,8 @@
 {
-  "input": "data/fulltext_context_pdf_157.csv",
+  "input": "data/fulltext_context_confirmed_110.csv",
   "text_view": "knowledge-type",
   "focus_keyword": "Design rules",
-  "keyword_context_paragraphs": 8,
+  "keyword_context_paragraphs": 6,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "hdbscan",
@@ -11,8 +11,8 @@
   "k_min": null,
   "k_max": null,
   "dbscan_eps": null,
-  "min_samples": 4,
-  "min_cluster_size": 5,
+  "min_samples": 2,
+  "min_cluster_size": 3,
   "papers": 11,
   "clusters": [
     -1

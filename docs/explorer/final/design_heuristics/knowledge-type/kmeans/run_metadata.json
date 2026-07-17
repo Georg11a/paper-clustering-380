@@ -1,21 +1,20 @@
 {
-  "input": "data/fulltext_context_pdf_157.csv",
+  "input": "data/fulltext_context_confirmed_110.csv",
   "text_view": "knowledge-type",
   "focus_keyword": "Design heuristics",
-  "keyword_context_paragraphs": 8,
+  "keyword_context_paragraphs": 6,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",
-  "k": 2,
+  "k": 1,
   "k_selection": "silhouette",
   "k_min": 2,
-  "k_max": 8,
+  "k_max": 3,
   "dbscan_eps": null,
   "min_samples": 4,
   "min_cluster_size": null,
   "papers": 14,
   "clusters": [
-    0,
-    1
+    0
   ]
 }

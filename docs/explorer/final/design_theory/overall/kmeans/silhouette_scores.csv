@@ -1,6 +1,6 @@
-k,average_silhouette,min_cluster_size,max_cluster_size,cluster_sizes,negative_silhouette_count
-2,0.02324344506755851,35,40,0:40; 1:35,21
-3,0.029460770242573465,7,42,0:7; 1:42; 2:26,22
-4,0.031490556784921415,8,29,0:29; 1:17; 2:21; 3:8,22
-5,0.04431818488629923,2,25,0:9; 1:16; 2:25; 3:23; 4:2,26
-6,0.03557559670047804,3,24,0:3; 1:15; 2:24; 3:18; 4:8; 5:7,37
+k,average_silhouette,min_cluster_size,max_cluster_size,max_cluster_ratio,cluster_sizes,negative_silhouette_count,negative_silhouette_ratio,close_to_best,passes_size_floor,passes_balance_floor,passes_negative_floor,selection_candidate
+2,0.03268091595644786,22,53,0.7066666666666667,0:53; 1:22,7,0.09333333333333334,True,True,False,True,False
+3,0.021904820597944855,14,32,0.4266666666666667,0:29; 1:32; 2:14,27,0.36,False,True,True,True,False
+4,0.024093619843577527,5,37,0.49333333333333335,0:27; 1:37; 2:5; 3:6,35,0.4666666666666667,False,False,True,False,False
+5,0.03569432874902452,5,26,0.3466666666666667,0:9; 1:22; 2:5; 3:13; 4:26,26,0.3466666666666667,True,False,True,True,False
+6,0.03432200830466171,3,25,0.3333333333333333,0:6; 1:25; 2:9; 3:3; 4:15; 5:17,40,0.5333333333333333,True,False,True,False,False

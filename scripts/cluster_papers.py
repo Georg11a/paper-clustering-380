@@ -189,10 +189,21 @@ DESIGN_KNOWLEDGE_ACTION_PATTERNS = {
     "captures": ["capture", "captures", "codify", "codifies", "externalize", "transfer", "share", "communicate"],
     "adapts": ["adapt", "adapts", "adapted", "tailor", "domain-specific", "context-specific"],
     "evaluates": ["evaluate", "evaluates", "validated", "validation", "empirical", "evidence", "assessment"],
-    "synthesizes": ["synthesize", "synthesizes", "synthesis", "review", "literature review", "systematic review"],
+    # Multiword-only triggers: bare "synthesis" is ambiguous in design corpora
+    # (design synthesis = generating designs, not aggregating literature) and
+    # bare "review"/"survey" fire on related-work sections and questionnaire
+    # surveys. Precision over recall; unmatched clusters fall to other actions
+    # or the honest "unclassified" fallback.
+    "synthesizes": [
+        "literature review", "systematic review", "scoping review",
+        "meta-analysis", "state of the art", "survey of", "surveying",
+        "literature synthesis", "research synthesis", "knowledge synthesis",
+        "synthesis of prior", "landscape of", "review of existing",
+    ],
 }
 
 ACTION_DISPLAY = {
+    "unclassified": "contributes",
     "defines": "defines and conceptualizes",
     "organizes": "organizes and classifies",
     "translates": "translates into actionable guidance",
@@ -204,6 +215,7 @@ ACTION_DISPLAY = {
 }
 
 ACTION_NOUN_PHRASES = {
+    "unclassified": "a mix of contribution moves",
     "defines": "definition and conceptualization",
     "organizes": "organization and classification",
     "translates": "translation into actionable guidance",
@@ -226,6 +238,7 @@ ACTION_LABEL_TEMPLATES = {
 }
 
 CLUSTER_DESCRIPTOR_TEMPLATES = {
+    "unclassified": "{form} with mixed contribution signals",
     "defines": "{form} through definition and conceptual framing",
     "organizes": "{form} as organized categories or frameworks",
     "translates": "{form} as actionable design guidance",
@@ -860,11 +873,15 @@ def _clean_label_terms(terms: list[str], limit: int) -> list[str]:
         tokens = term.split()
         if any(token in DOMAIN_STOPWORDS for token in tokens):
             continue
+        if _phrase_has_dangling_tail(term):
+            continue
         roots = {canonical_label_token(token) for token in tokens}
         if roots & selected_roots:
             continue
         if len(tokens) == 1 and (
-            token_is_too_generic(tokens[0]) or token_is_too_generic(canonical_label_token(tokens[0]))
+            token_is_too_generic(tokens[0])
+            or token_is_too_generic(canonical_label_token(tokens[0]))
+            or tokens[0] in GENERIC_RAKE_SINGLETONS
         ):
             continue
         if len(tokens) == 1 and any(tokens[0] in phrase.split() for phrase in selected if " " in phrase):
@@ -1326,7 +1343,28 @@ LOW_SIGNAL_DESCRIPTOR_STARTS = {
     "unknown",
     "explainable",
     "cognitive",
+    # verb-initial title fragments read poorly after "around"
+    "promote", "promoting", "describe", "describing", "generate", "generating",
+    "trace", "tracing", "use", "using", "make", "making", "improve", "improving",
+    "explore", "exploring", "understand", "understanding", "support", "supporting",
+    "enable", "enabling", "develop", "developing", "propose", "proposing",
+    "toward", "towards",
 }
+
+
+DANGLING_MODIFIER_TAILS = {
+    "centred", "centered", "centric", "based", "driven", "oriented",
+    "aware", "focused", "led", "informed", "related", "specific",
+    "enabled", "assisted", "supported", "grounded",
+}
+
+
+def _phrase_has_dangling_tail(phrase: str) -> bool:
+    """A phrase ending in a bare modifier ("human centred", "evidence based")
+    is a decapitated noun phrase missing its head noun; it should not be shown
+    as a standalone evidence term or descriptor qualifier."""
+    tokens = normalize_phrase(phrase).split()
+    return bool(tokens) and tokens[-1] in DANGLING_MODIFIER_TAILS
 
 
 def _suffix_phrase_is_readable(phrase: str) -> bool:
@@ -1339,10 +1377,12 @@ def _suffix_phrase_is_readable(phrase: str) -> bool:
     are rejected outright.
     """
     tokens = normalize_phrase(phrase).split()
-    if not tokens or len(tokens) > 2:
+    if not tokens or len(tokens) > 3:
         return False
     unknown_short = [t for t in tokens if t not in DISPLAY_ACRONYMS and len(t) < 4]
     if unknown_short:
+        return False
+    if _phrase_has_dangling_tail(phrase):
         return False
     acronym_count = sum(1 for t in tokens if t in DISPLAY_ACRONYMS)
     return acronym_count < len(tokens)
@@ -1403,7 +1443,7 @@ def infer_design_knowledge_claim(
     # In per-keyword views, the form should remain anchored to the selected keyword.
     # Other detected forms are kept as supporting context, not allowed to rename the cluster.
     form = focus_form
-    action = actions[0][0] if actions else "synthesizes"
+    action = actions[0][0] if actions else "unclassified"
     conceptual_role = conceptual_roles[0] if conceptual_roles else ""
     secondary_actions = [item[0] for item in actions[1:3]]
     secondary_forms = [item[0] for item in forms[:3] if item[0] != form]
@@ -1582,6 +1622,12 @@ def dominant_design_keywords(subset: pd.DataFrame, limit: int = 3) -> list[str]:
     return counts.head(limit).index.tolist()
 
 
+GENERIC_RAKE_SINGLETONS = {
+    "seen", "term", "terms", "ways", "means", "forms", "kind", "kinds", "basis",
+    "makes", "made", "given", "taken", "shown", "found", "presented",
+}
+
+
 def rake_title_phrases(titles: list[str], max_phrases: int = 12) -> list[str]:
     """RAKE keyphrases over representative titles (Rose et al. 2010).
 
@@ -1626,7 +1672,10 @@ def rake_title_phrases(titles: list[str], max_phrases: int = 12) -> list[str]:
     for run in runs:
         if not 1 <= len(run) <= 3:
             continue
-        if len(run) == 1 and len(run[0]) < 4 and run[0] not in DISPLAY_ACRONYMS:
+        if len(run) == 1 and (
+            (len(run[0]) < 4 and run[0] not in DISPLAY_ACRONYMS)
+            or run[0] in GENERIC_RAKE_SINGLETONS
+        ):
             continue
         phrase = " ".join(run)
         score = sum((degree[word] + freq[word]) / freq[word] for word in run)

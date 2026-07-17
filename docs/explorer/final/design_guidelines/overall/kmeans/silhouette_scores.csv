@@ -1,4 +1,4 @@
-k,average_silhouette,min_cluster_size,max_cluster_size,cluster_sizes,negative_silhouette_count
-2,0.04888332219938679,4,21,0:4; 1:21,2
-3,0.048032360239023096,3,14,0:3; 1:14; 2:8,6
-4,0.046889642305881545,3,9,0:8; 1:5; 2:3; 3:9,9
+k,average_silhouette,min_cluster_size,max_cluster_size,max_cluster_ratio,cluster_sizes,negative_silhouette_count,negative_silhouette_ratio,close_to_best,passes_size_floor,passes_balance_floor,passes_negative_floor,selection_candidate
+2,0.04888332219938662,4,21,0.84,0:4; 1:21,2,0.08,True,True,False,True,False
+3,0.04803236023902263,3,14,0.56,0:3; 1:14; 2:8,6,0.24,True,False,True,True,False
+4,0.04688964230588151,3,9,0.36,0:8; 1:5; 2:3; 3:9,9,0.36,True,False,True,True,False

@@ -2,46 +2,32 @@
 
 ## Cluster Themes
 
-### Cluster 0 (12 papers)
-Label candidate: Cluster 0: Design Principles through definition and conceptual framing around Ussf Unified Framework
-Distinguishing evidence: Ussf Unified Framework, Human Computer Interfaces, Heuristics Socio Technical, Engineering Principles Domestic
-Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as conceptual framework. Related forms include Design Frameworks, Design Theory. The shared move also involves synthesis of prior work and evidence-based evaluation. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Designing Artificial Identity: The Identity Design Framework and Research Agenda; USSF: A Unified Framework for Screen Standardization in Software Systems.
-Theme words: identity, frame, engineering, learners, valuable, value, artificial, edtm
+### Cluster 0 (13 papers)
+Label candidate: Cluster 0: Design Principles through definition and conceptual framing
+Distinguishing evidence: Unified Framework, Personalising Learning, Screen Standardization, Human-computer Interfaces
+Summary candidate: Within this keyword view, this cluster is set apart by Unified Framework, Personalising Learning, Screen Standardization. Its dominant move, definition and conceptualization of design principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: Designing Artificial Identity: The Identity Design Framework and Research Agenda; USSF: A Unified Framework for Screen Standardization in Software Systems.
+Theme words: identity, frame, engineering, learners, computer, valuable, artificial, value
 
 Representative papers:
 - 2026: Designing Artificial Identity: The Identity Design Framework and Research Agenda
 - 2025: USSF: A Unified Framework for Screen Standardization in Software Systems
 - 1983: Design principles for human-computer interfaces
 
-### Cluster 1 (3 papers)
+### Cluster 1 (4 papers)
 Label candidate: Cluster 1: Design Principles through prior-work synthesis
-Distinguishing evidence: Data Mesh, Obligations Software, Systematic Gray Literature, Tilburg
-Summary candidate: This cluster synthesizes prior work on design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as empirical evidence base. Related forms include Design Knowledge, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Taxonomy/Review. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Data Mesh: A Systematic Gray Literature Review; Design principles for data analysis.
-Theme words: data mesh, gray, architectures, obligations, tilburg, expectations, governance, literature
+Distinguishing evidence: Case Study, Data Analysis, Online Courses, Mesh
+Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Data Analysis, Online Courses. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. Methodologically, it leans on Case Study, Interview. Its contribution coding (Methodological, Empirical, Artifact/System) also departs from the view majority. Representative papers: Design principles for data analysis; Data Mesh: A Systematic Gray Literature Review.
+Theme words: mesh, gray, architectures, obligations, data analysis, tilburg, literature, governance
 
 Representative papers:
-- 2024: Data Mesh: A Systematic Gray Literature Review
 - 2021: Design principles for data analysis
+- 2024: Data Mesh: A Systematic Gray Literature Review
 - 2025: Design Obligations for Software, with Examples from Data Abstraction and Adaptive Systems
 
-### Cluster 2 (2 papers)
-Label candidate: Cluster 2: Design Principles through definition and conceptual framing around Function Better
-Distinguishing evidence: Function Better, Education Taxonomy, Understanding Games, Effective Approach Collaboration
-Summary candidate: This cluster defines and conceptualizes design principles, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principles as evaluation criteria or evidence base. Related forms include Tacit Design Knowledge, Design Expertise. The shared move also involves organization and classification and evidence-based evaluation. Its contribution pattern is coded as Methodological, Empirical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Education / Learning. Representative papers include Form and Function: Toward a Better Understanding of Design-Based Games; Toward an effective approach to collaboration education: A taxonomy for game design.
-Theme words: games, basedgames, collaboration, seefig, player, collaborative, taxonomy, genre
-
-Representative papers:
-- 2025: Form and Function: Toward a Better Understanding of Design-Based Games
-- 2015: Toward an effective approach to collaboration education: A taxonomy for game design
-
 ## LDA Topics
-- Topic 0: computer, satisfaction, interface, focus, technical, versus, analysis, field
-- Topic 1: embodied, practice, instrument, music, improve, focus principles, previous, concept
-- Topic 2: social, questions, does, goals, continuity, single, embodied, behaviour
-- Topic 3: initial, application, human computer, developing, interactive, instance, principles engineering, introduces
-- Topic 4: games, transparency, conversational, centered, ethical, empirical, principles principles, focus
-- Topic 5: literature, architectures, reference, domain, platform, science, principles data, review
-- Topic 6: learners, special, education, self, alternative, educational, skills, universal
-- Topic 7: definition, engineering, problem, value, outcome, analysis, relationships, formal
-- Topic 8: software, adaptive, control, feedback, designs, idea, section, structures
-- Topic 9: rules, standards, guidelines, norman, unified, web, usability, heuristics
+- Topic 0: learners, computer, education, analysis, guidelines, heuristics, focus, special
+- Topic 1: planning, energy, establishes, central, developing, formal principles, arxiv, suggests
+- Topic 2: definition, engineering, problem, value, outcome, relationships, key, formal
+- Topic 3: planning, energy, establishes, central, developing, formal principles, arxiv, suggests
+- Topic 4: games, social, questions, transparency, conversational, continuity, ethical, goals
+- Topic 5: literature, architectures, domain, reference, review, platform, organizations, data science

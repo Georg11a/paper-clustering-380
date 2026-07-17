@@ -1,3 +1,0 @@
-k,average_silhouette,min_cluster_size,max_cluster_size,cluster_sizes,negative_silhouette_count
-2,0.20328696946293914,2,9,0:2; 1:9,1
-3,0.2179394777039608,2,6,0:3; 1:2; 2:6,2

@@ -1,11 +1,12 @@
 {
-  "input": "data/final_advancing_list.csv",
+  "input": "data/fulltext_context_confirmed_110.csv",
   "output": "docs/explorer/final_clustering_results_overall.csv",
   "summary_output": "docs/explorer/final_keyword_summary_overall.csv",
   "paper_count": 368,
   "keyword_count": 12,
   "methods": [
-    "kmeans"
+    "kmeans",
+    "hdbscan"
   ],
   "embedding": "tfidf-svd",
   "text_view": "overall",
