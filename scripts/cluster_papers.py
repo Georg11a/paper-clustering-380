@@ -1383,9 +1383,6 @@ def descriptor_evidence_suffix(summary: dict[str, str]) -> str:
     for term in evidence_terms:
         if usable(term):
             return term
-    for term in evidence_terms:
-        if usable(term, readability_check=False):
-            return term
     return ""
 
 
@@ -1612,16 +1609,24 @@ def distinguishing_evidence_terms(
     contribution_types: list[str],
     limit: int = 4,
 ) -> str:
+    title_terms = [
+        term
+        for term in representative_title_terms(subset, limit=limit)
+        if _suffix_phrase_is_readable(term)
+    ]
     evidence_candidates = []
-    evidence_candidates.extend(representative_title_terms(subset, limit=limit))
     for facet in ["population_or_context", "artifact_or_domain", "method_or_lens"]:
         evidence_candidates.extend(facets.get(facet, [])[:2])
     evidence_candidates.extend(contribution_types[:2])
     preferred = preferred_keyphrases_for_cluster(subset, keyphrases, max_items=limit + 2)
+    preferred = [
+        phrase for phrase in preferred
+        if phrase in APPLICATION_CONTEXT_PHRASES or _suffix_phrase_is_readable(phrase)
+    ]
     label_parts = []
     roots_seen: set[str] = set()
     candidate_phrases = sorted(
-        evidence_candidates + preferred + [phrase for phrase in keyphrases if len(phrase.split()) > 1],
+        evidence_candidates + preferred + title_terms,
         key=lambda item: (len(item.split()) < 2, item in GENERIC_LABEL_PHRASES, len(item)),
     )
     for phrase in candidate_phrases:
