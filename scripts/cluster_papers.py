@@ -682,6 +682,8 @@ def cluster_labels(
     min_cluster_size: int,
 ) -> np.ndarray:
     if method == "kmeans":
+        if k < 2:
+            return np.zeros(len(vectors), dtype=int)
         return KMeans(n_clusters=k, n_init=50, random_state=42).fit_predict(vectors)
     if method == "dbscan":
         if dbscan_eps is not None:
@@ -765,7 +767,7 @@ def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tup
     if candidates.empty:
         candidates = table[table["passes_size_floor"]]
     if candidates.empty:
-        candidates = table[table["close_to_best"]]
+        return 1, table
     selected_k = int(candidates.sort_values("k").iloc[0]["k"])
     return selected_k, table
 
@@ -2498,7 +2500,16 @@ def main() -> None:
         k_values = list(range(dynamic_k_min, dynamic_k_max + 1))
         selected_k, silhouette_table = kmeans_silhouette_selection(vectors, k_values)
         silhouette_table.to_csv(outdir / "silhouette_scores.csv", index=False)
-        best_row = silhouette_table[silhouette_table["k"] == selected_k].iloc[0]
+        if selected_k >= 2:
+            selected_row = silhouette_table[silhouette_table["k"] == selected_k].iloc[0]
+            selected_score = f"{selected_row['average_silhouette']:.4f}"
+            selection_note = "Selected k is the smallest stable candidate after silhouette, size, and balance checks."
+        else:
+            selected_score = "n/a"
+            selection_note = (
+                "No candidate k met the minimum cluster-size and balance checks, "
+                "so this keyword view is kept as one interpretive group."
+            )
         (outdir / "silhouette_summary.md").write_text(
             "\n".join(
                 [
@@ -2507,8 +2518,9 @@ def main() -> None:
                     f"- Requested k range: {args.k_min}-{args.k_max}",
                     f"- Dynamic k range after paper-count cap: {dynamic_k_min}-{dynamic_k_max}",
                     f"- Selected k: {selected_k}",
-                    f"- Best average silhouette score: {best_row['average_silhouette']:.4f}",
+                    f"- Selected average silhouette score: {selected_score}",
                     f"- Distance metric for silhouette: cosine",
+                    f"- Selection note: {selection_note}",
                     "",
                     "Silhouette analysis evaluates whether each paper is closer to papers in its own cluster than to papers in neighboring clusters. It is a diagnostic signal for k selection, not a replacement for human interpretation.",
                 ]
