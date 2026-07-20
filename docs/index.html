@@ -220,7 +220,6 @@
       <div class="current" id="currentLabel">250 confirmed PDFs · 8 clusters</div>
       <div class="cluster-tools">
         <select id="outerClusterFilter" aria-label="Cluster filter"><option value="all">All clusters</option></select>
-        <label class="compact-toggle"><input id="outerRepOnly" type="checkbox" /> Top-3 reps only</label>
       </div>
       <div class="links">
         <a id="summaryLink" href="explorer/final/confirmed_pdf_set/context/kmeans/cluster_summary.md" target="_blank">Summary</a>
@@ -274,7 +273,6 @@
     const openLink = document.getElementById('openLink');
     const note = document.getElementById('note');
     const outerClusterFilter = document.getElementById('outerClusterFilter');
-    const outerRepOnly = document.getElementById('outerRepOnly');
     const clusterCountOverrides = {
       confirmed_pdf_set_overall_kmeans: '7 clusters',
       confirmed_pdf_set_context_kmeans: '8 clusters',
@@ -311,7 +309,6 @@
       if (!run) return;
       outerClusterFilter.innerHTML = '<option value="all">All clusters</option>';
       outerClusterFilter.value = 'all';
-      outerRepOnly.checked = false;
       frame.src = withCacheBuster(run.explorer);
       summaryLink.href = run.summary;
       openLink.href = withCacheBuster(run.explorer);
@@ -332,29 +329,25 @@
         doc.head.appendChild(compactStyle);
       }
       return {
-        clusterFilter: doc.getElementById('clusterFilter'),
-        repOnly: doc.getElementById('repOnly')
+        clusterFilter: doc.getElementById('clusterFilter')
       };
     }
 
     function syncOuterExplorerControls() {
-      const { clusterFilter, repOnly } = innerExplorerControls();
-      if (!clusterFilter || !repOnly) return;
+      const { clusterFilter } = innerExplorerControls();
+      if (!clusterFilter) return;
       outerClusterFilter.innerHTML = '';
       Array.from(clusterFilter.options).forEach(option => {
         outerClusterFilter.appendChild(option.cloneNode(true));
       });
       outerClusterFilter.value = clusterFilter.value;
-      outerRepOnly.checked = repOnly.checked;
     }
 
     function applyOuterExplorerControls() {
-      const { clusterFilter, repOnly } = innerExplorerControls();
-      if (!clusterFilter || !repOnly) return;
+      const { clusterFilter } = innerExplorerControls();
+      if (!clusterFilter) return;
       clusterFilter.value = outerClusterFilter.value;
-      repOnly.checked = outerRepOnly.checked;
       clusterFilter.dispatchEvent(new Event('input', { bubbles: true }));
-      repOnly.dispatchEvent(new Event('input', { bubbles: true }));
     }
 
     keywordSelect.addEventListener('change', refreshAvailability);
@@ -362,7 +355,6 @@
     viewSelect.addEventListener('change', refreshAvailability);
     applyBtn.addEventListener('click', loadSelected);
     outerClusterFilter.addEventListener('change', applyOuterExplorerControls);
-    outerRepOnly.addEventListener('change', applyOuterExplorerControls);
     frame.addEventListener('load', syncOuterExplorerControls);
     if (frame.contentDocument && frame.contentDocument.readyState !== 'loading') {
       syncOuterExplorerControls();

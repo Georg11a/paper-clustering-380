@@ -183,7 +183,6 @@
     <h1>Paper Corpus Explorer (tfidf-svd, kmeans, context view)</h1>
     <div class="controls">
       <select id="clusterFilter"><option value="all">All clusters</option></select>
-      <label class="toggle"><input id="repOnly" type="checkbox" /> Top-3 reps only</label>
     </div>
   </header>
   <main>
@@ -225,7 +224,7 @@
         opt.textContent = `${clusterName(c.cluster)} (${c.count})`;
         clusterFilter.appendChild(opt);
       });
-      ['clusterFilter','repOnly'].forEach(id => {
+      ['clusterFilter'].forEach(id => {
         document.getElementById(id).addEventListener('input', render);
         document.getElementById(id).addEventListener('change', render);
       });
@@ -234,10 +233,8 @@
 
     function filteredPapers() {
       const cluster = document.getElementById('clusterFilter').value;
-      const repOnly = document.getElementById('repOnly').checked;
       return papers.filter(p => {
-        return (cluster === 'all' || String(p.cluster) === cluster) &&
-          (!repOnly || p.is_representative_top3);
+        return (cluster === 'all' || String(p.cluster) === cluster);
       });
     }
 
@@ -258,7 +255,7 @@
 
     function render() {
       const shown = filteredPapers();
-      status.textContent = `${shown.length} of ${papers.length} papers shown; ${data.clusters.length} clusters in this view. Axes are UMAP 1 and UMAP 2 coordinates, not interpretable variables. Use "Top-3 reps only" to filter representative papers.`;
+      status.textContent = `${shown.length} of ${papers.length} papers shown; ${data.clusters.length} clusters in this view. Axes are UMAP 1 and UMAP 2 coordinates, not interpretable variables.`;
       drawPlot(shown);
       renderDetails(papers.find(p => p.paper_id === state.selected) || shown[0] || papers[0]);
     }
