@@ -2142,12 +2142,16 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
   <title>{html.escape(title)}</title>
   <style>
     :root {{
-      --ink: #253858;
-      --muted: #65758b;
-      --line: #d8e0ea;
-      --bg: #f7f9fc;
+      --ink: #1f2a44;
+      --muted: #6b7a90;
+      --soft: #8b9bb0;
+      --line: #dde6f0;
+      --bg: #f4f7fb;
       --panel: #ffffff;
-      --accent: #2f7dd1;
+      --panel-soft: #f8fafd;
+      --accent: #256fbd;
+      --accent-soft: #eaf3ff;
+      --shadow: 0 18px 45px rgba(31, 42, 68, 0.08);
     }}
     * {{ box-sizing: border-box; }}
     body {{
@@ -2157,7 +2161,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       background: var(--bg);
     }}
     header {{
-      padding: 18px 24px 12px;
+      padding: 16px 20px 12px;
       background: var(--panel);
       border-bottom: 1px solid var(--line);
       display: flex;
@@ -2165,7 +2169,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       justify-content: space-between;
       gap: 18px;
     }}
-    h1 {{ margin: 0; font-size: 22px; letter-spacing: 0; min-width: 0; }}
+    h1 {{ margin: 0; font-size: 18px; letter-spacing: 0; min-width: 0; font-weight: 750; }}
     .controls {{
       display: grid;
       grid-template-columns: 180px 210px;
@@ -2175,7 +2179,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     input, select, button {{
       height: 38px;
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 0 10px;
       background: white;
       color: var(--ink);
@@ -2192,55 +2196,94 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     label.toggle input {{ width: 16px; height: 16px; }}
     main {{
       display: grid;
-      grid-template-columns: minmax(560px, 1fr) minmax(420px, 460px);
-      gap: 14px;
-      padding: 14px;
+      grid-template-columns: minmax(600px, 1fr) minmax(420px, 470px);
+      gap: 12px;
+      padding: 12px;
       min-height: calc(100vh - 92px);
       align-items: stretch;
     }}
     .panel {{
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }}
-    .plot-panel {{ display: grid; grid-template-rows: auto 1fr auto; height: calc(100vh - 120px); min-height: 690px; }}
+    .plot-panel {{ display: grid; grid-template-rows: auto 1fr auto; height: calc(100vh - 116px); min-height: 690px; }}
     .status {{
-      padding: 10px 12px;
+      padding: 11px 16px;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+      line-height: 1.35;
+      background: var(--panel-soft);
     }}
-    svg {{ width: 100%; height: 100%; min-height: 560px; background: #fbfcfe; }}
-    .axis {{ stroke: #dfe6ef; stroke-width: 1; }}
-    .point {{ stroke: white; stroke-width: 1.5; cursor: pointer; opacity: 0.88; }}
+    svg {{ width: 100%; height: 100%; min-height: 560px; background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%); }}
+    .axis {{ stroke: #e7edf5; stroke-width: 1; }}
+    .point {{ stroke: white; stroke-width: 1.8; cursor: pointer; opacity: 0.86; transition: opacity 120ms ease; }}
+    .point:hover {{ opacity: 1; stroke: #1f2a44; stroke-width: 2.6; }}
     .point.dim {{ opacity: 0.14; }}
     .point.selected {{ stroke: #111827; stroke-width: 3; opacity: 1; }}
     .legend, .cluster-list {{ padding: 10px 12px; border-top: 1px solid var(--line); }}
-    .legend {{ max-height: 180px; overflow-y: auto; }}
-    .legend-items {{ display: flex; flex-wrap: wrap; gap: 8px 14px; }}
-    .legend-item {{ display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }}
+    .legend {{ max-height: 150px; overflow-y: auto; background: #ffffff; }}
+    .legend-items {{ display: flex; flex-wrap: wrap; gap: 7px 10px; }}
+    .legend-item {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border: 1px solid #e7edf5;
+      border-radius: 999px;
+      background: var(--panel-soft);
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 100%;
+    }}
     .swatch {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }}
-    .details {{ padding: 16px; overflow: auto; height: calc(100vh - 120px); min-height: 690px; align-self: stretch; }}
+    .details {{ padding: 0; overflow: auto; height: calc(100vh - 116px); min-height: 690px; align-self: stretch; }}
+    .details-inner {{ padding: 18px 18px 22px; }}
+    .paper-heading {{
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      padding: 18px 18px 14px;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }}
+    .paper-heading h2 {{ font-size: 19px; margin: 0 0 8px; line-height: 1.22; font-weight: 760; }}
     .details h2 {{ font-size: 18px; margin: 0 0 8px; line-height: 1.25; }}
-    .meta {{ color: var(--muted); font-size: 13px; line-height: 1.45; margin-bottom: 12px; }}
+    .meta {{ color: var(--muted); font-size: 13px; line-height: 1.45; margin-bottom: 10px; }}
+    .pill-row {{ display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }}
     .pill {{
       display: inline-flex;
       align-items: center;
-      margin: 3px 5px 3px 0;
-      padding: 4px 8px;
+      margin: 0;
+      padding: 4px 9px;
       border-radius: 999px;
-      background: #eef4fb;
+      background: var(--accent-soft);
       color: #31577f;
       font-size: 12px;
+      line-height: 1.25;
     }}
-    .abstract {{ line-height: 1.5; font-size: 14px; color: #2f3b52; }}
+    .abstract {{ line-height: 1.55; font-size: 14px; color: #2f3b52; }}
+    .insight-card {{
+      margin-top: 12px;
+      padding: 13px 14px;
+      border: 1px solid #e4ebf4;
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }}
+    .insight-card.primary {{
+      background: #ffffff;
+      border-left: 4px solid var(--accent);
+    }}
     details.discussion-full,
     details.lexical-evidence {{
-      margin-top: 8px;
+      margin-top: 12px;
       border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 8px 10px;
+      border-radius: 8px;
+      padding: 9px 11px;
       background: #fbfcfe;
     }}
     details.discussion-full summary,
@@ -2250,7 +2293,6 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       font-weight: 700;
       font-size: 13px;
     }}
-    details.lexical-evidence {{ margin-top: 16px; }}
     .evidence-block {{ margin-top: 8px; }}
     .discussion-list {{
       margin: 6px 0 0;
@@ -2260,7 +2302,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       color: #2f3b52;
     }}
     .discussion-list li {{ margin: 0 0 7px; }}
-    .section-title {{ margin: 16px 0 6px; font-weight: 700; font-size: 13px; text-transform: uppercase; color: var(--muted); }}
+    .section-title {{ margin: 0 0 7px; font-weight: 760; font-size: 12px; text-transform: uppercase; color: var(--soft); letter-spacing: 0.02em; }}
     .paper-link {{ display: block; color: var(--accent); text-decoration: none; margin: 7px 0; font-size: 13px; line-height: 1.35; }}
     .cluster-card {{ border-top: 1px solid var(--line); padding: 10px 12px; }}
     .cluster-card button {{ height: 28px; padding: 0 8px; margin-top: 6px; font-size: 12px; }}
@@ -2287,9 +2329,11 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       <div class="legend"><div class="legend-items" id="legend"></div></div>
     </section>
     <aside class="panel details" id="details">
-      <h2>Select a paper</h2>
-      <p class="meta">Click a point to inspect metadata, cluster theme, LDA topic words, representative rank, and nearest papers.</p>
-      <div id="clusterCards"></div>
+      <div class="details-inner">
+        <h2>Select a paper</h2>
+        <p class="meta">Click a point to inspect metadata, cluster interpretation, evidence terms, representative rank, and nearest papers.</p>
+        <div id="clusterCards"></div>
+      </div>
     </aside>
   </main>
   <script id="payload" type="application/json">{payload_json}</script>
@@ -2415,40 +2459,55 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         `<a class="paper-link" href="#" data-paper="${{escapeAttr(n.paper_id)}}">${{clusterName(n.cluster)}}, distance ${{Number(n.distance).toFixed(3)}}: ${{escapeHtml(n.title)}}</a>`
       ).join('');
       const discussionSummary = p.discussion_summary ?
-        `<div class="section-title">Discussion Summary</div>${{renderDiscussionSummary(p.discussion_summary)}}` : '';
+        `<div class="insight-card"><div class="section-title">Discussion Summary</div>${{renderDiscussionSummary(p.discussion_summary)}}</div>` : '';
       const discussionExcerpt = '';
       const discussionStatus = p.discussion_found ?
         `<span class="pill">Discussion detected: ${{p.discussion_paragraph_count}} paragraphs</span>` :
         `<span class="pill">No explicit Discussion section detected</span>`;
       details.innerHTML = `
-        <h2>${{escapeHtml(p.title)}}</h2>
-        <div class="meta">${{escapeHtml(p.authors)}}<br>${{escapeHtml(p.year)}} · ${{escapeHtml(p.venue)}}</div>
-        <span class="pill">${{clusterName(p.cluster)}}</span>
-        <span class="pill">${{escapeHtml(p.keyword)}}</span>
-        <span class="pill">Rep rank ${{p.representative_rank}}</span>
-        <span class="pill">Medoid rank ${{p.medoid_rank}}</span>
-        <span class="pill">LDA topic ${{p.lda_topic}} (${{Math.round(p.lda_topic_probability * 100)}}%)</span>
-        ${{discussionStatus}}
-        <div class="section-title">Cluster Descriptor</div>
-        <div class="abstract">${{escapeHtml(p.cluster_label_candidate)}}</div>
-        <div class="section-title">Distinguishing Evidence</div>
-        <div class="abstract">${{escapeHtml(p.distinguishing_evidence_terms || p.cluster_theme_terms || 'n/a')}}</div>
-        <div class="section-title">Cluster Summary Candidate</div>
-        <div class="abstract">${{escapeHtml(p.cluster_summary_candidate)}}</div>
-        <div class="section-title">Design-Knowledge Contribution</div>
-        <div>
-          <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
-          <span class="pill">Action: ${{escapeHtml(p.design_knowledge_action || 'n/a')}}</span>
-          <span class="pill">Auto role: ${{escapeHtml(p.design_knowledge_role || 'n/a')}}</span>
+        <div class="paper-heading">
+          <h2>${{escapeHtml(p.title)}}</h2>
+          <div class="meta">${{escapeHtml(p.authors)}}<br>${{escapeHtml(p.year)}} · ${{escapeHtml(p.venue)}}</div>
+          <div class="pill-row">
+            <span class="pill">${{clusterName(p.cluster)}}</span>
+            <span class="pill">${{escapeHtml(p.keyword)}}</span>
+            <span class="pill">Rep rank ${{p.representative_rank}}</span>
+            <span class="pill">Medoid rank ${{p.medoid_rank}}</span>
+            <span class="pill">LDA topic ${{p.lda_topic}} (${{Math.round(p.lda_topic_probability * 100)}}%)</span>
+            ${{discussionStatus}}
+          </div>
         </div>
-        <div class="abstract">${{escapeHtml(p.design_knowledge_contribution || '')}}</div>
-        <div class="section-title">Paper-Oriented Facets</div>
-        <div>
-          <span class="pill">Context/Domain: ${{escapeHtml(p.facet_population_or_context || 'n/a')}}</span>
-          <span class="pill">Population/Stakeholder: ${{escapeHtml(p.facet_stakeholder_or_population || 'n/a')}}</span>
-          <span class="pill">Method/Lens: ${{escapeHtml(p.facet_method_or_lens || 'n/a')}}</span>
-          <span class="pill">Artifact/System: ${{escapeHtml(p.facet_artifact_or_domain || 'n/a')}}</span>
-          <span class="pill">Contribution Type: ${{escapeHtml(p.facet_contribution_or_outcome || 'n/a')}}</span>
+        <div class="details-inner">
+        <div class="insight-card primary">
+          <div class="section-title">Cluster Descriptor</div>
+          <div class="abstract">${{escapeHtml(p.cluster_label_candidate)}}</div>
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Distinguishing Evidence</div>
+          <div class="abstract">${{escapeHtml(p.distinguishing_evidence_terms || p.cluster_theme_terms || 'n/a')}}</div>
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Cluster Summary Candidate</div>
+          <div class="abstract">${{escapeHtml(p.cluster_summary_candidate)}}</div>
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Design-Knowledge Contribution</div>
+          <div class="pill-row">
+            <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
+            <span class="pill">Action: ${{escapeHtml(p.design_knowledge_action || 'n/a')}}</span>
+            <span class="pill">Auto role: ${{escapeHtml(p.design_knowledge_role || 'n/a')}}</span>
+          </div>
+          <div class="abstract" style="margin-top:8px">${{escapeHtml(p.design_knowledge_contribution || '')}}</div>
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Paper-Oriented Facets</div>
+          <div class="pill-row">
+            <span class="pill">Context/Domain: ${{escapeHtml(p.facet_population_or_context || 'n/a')}}</span>
+            <span class="pill">Population/Stakeholder: ${{escapeHtml(p.facet_stakeholder_or_population || 'n/a')}}</span>
+            <span class="pill">Method/Lens: ${{escapeHtml(p.facet_method_or_lens || 'n/a')}}</span>
+            <span class="pill">Artifact/System: ${{escapeHtml(p.facet_artifact_or_domain || 'n/a')}}</span>
+            <span class="pill">Contribution Type: ${{escapeHtml(p.facet_contribution_or_outcome || 'n/a')}}</span>
+          </div>
         </div>
         <details class="lexical-evidence">
           <summary>Show lexical evidence</summary>
@@ -2459,14 +2518,21 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
             <div class="abstract">${{escapeHtml(p.lda_topic_words)}}</div>
           </div>
         </details>
-        <div class="section-title">Abstract</div>
-        <div class="abstract">${{escapeHtml(p.abstract)}}</div>
+        <div class="insight-card">
+          <div class="section-title">Abstract</div>
+          <div class="abstract">${{escapeHtml(p.abstract)}}</div>
+        </div>
         ${{discussionSummary}}
         ${{discussionExcerpt}}
-        <div class="section-title">Links</div>
-        ${{doi}}${{url}}
-        <div class="section-title">Nearest Papers by Cosine Distance</div>
-        ${{nearest || '<div class="meta">No nearest-paper data available.</div>'}}
+        <div class="insight-card">
+          <div class="section-title">Links</div>
+          ${{doi}}${{url}}
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Nearest Papers by Cosine Distance</div>
+          ${{nearest || '<div class="meta">No nearest-paper data available.</div>'}}
+        </div>
+        </div>
       `;
       details.querySelectorAll('[data-paper]').forEach(a => {{
         a.addEventListener('click', evt => {{
