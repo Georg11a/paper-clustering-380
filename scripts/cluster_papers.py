@@ -8,6 +8,7 @@ import html
 import json
 import re
 from collections import Counter
+from dataclasses import asdict
 from pathlib import Path
 
 import numpy as np
@@ -21,6 +22,8 @@ from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS,
 from sklearn.metrics import pairwise_distances, silhouette_samples, silhouette_score
 from sklearn.metrics.pairwise import cosine_distances
 from sklearn.preprocessing import normalize
+
+from evidence_scorer import PaperParagraphs, faithfulness_score, select_cluster_evidence
 
 
 DOMAIN_STOPWORDS = {
@@ -2034,11 +2037,85 @@ def truthy(value: object) -> bool:
     return str(value).strip().lower() in {"1", "true", "yes", "y"}
 
 
+def split_comma_terms(value: object) -> list[str]:
+    terms = []
+    for term in str(value or "").split(","):
+        term = term.strip()
+        if term and term.lower() != "nan":
+            terms.append(term)
+    return terms
+
+
+def build_cluster_source_evidence(subset: pd.DataFrame, label: int) -> dict[str, object]:
+    if label == -1 or subset.empty:
+        return {"items": [], "faithfulness_score": None}
+
+    first = subset.iloc[0]
+    cluster_terms = []
+    cluster_terms.extend(split_comma_terms(first.get("distinguishing_evidence_terms", "")))
+    cluster_terms.extend(split_comma_terms(first.get("cluster_theme_terms", "")))
+    cluster_terms.extend(split_comma_terms(first.get("facet_contribution_or_outcome", "")))
+    dominant_keywords = dominant_design_keywords(subset, limit=2)
+    cluster_terms.extend(dominant_keywords)
+
+    unique_terms = []
+    seen_terms = set()
+    for term in cluster_terms:
+        key = normalize_phrase(term)
+        if not key or key in seen_terms:
+            continue
+        unique_terms.append(term)
+        seen_terms.add(key)
+    cluster_terms = unique_terms
+
+    keyword = dominant_keywords[0] if dominant_keywords else str(first.get("keyword", "") or "")
+    papers = []
+    for _, row in subset.iterrows():
+        paragraphs = split_context_paragraphs(row_analysis_context(row))
+        if not paragraphs:
+            continue
+        papers.append(
+            PaperParagraphs(
+                paper_id=str(row.get("paper_id", "")),
+                title=str(row.get("title", "")),
+                paragraphs=paragraphs,
+                is_representative=bool(row.get("is_representative_top3", False)),
+            )
+        )
+
+    evidence = select_cluster_evidence(
+        papers,
+        cluster_terms=cluster_terms,
+        keyword=keyword,
+        top_k=6,
+        max_per_paper=2,
+        min_score=3.0,
+    )
+    summary = str(first.get("cluster_summary_candidate", "") or "")
+    return {
+        "items": [
+            {
+                "id": f"E{index}",
+                "paper_id": item.paper_id,
+                "paper_title": item.paper_title,
+                "sentences": item.sentences,
+                "paragraph_index": item.paragraph_index,
+                "sentence_hash": item.sentence_hash,
+                "score": item.score,
+                "score_breakdown": asdict(item.score_breakdown),
+            }
+            for index, item in enumerate(evidence, start=1)
+        ],
+        "faithfulness_score": round(faithfulness_score(summary, evidence), 2) if summary else None,
+    }
+
+
 def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
     cluster_counts = df["cluster"].value_counts().sort_index().to_dict()
     cluster_summaries = []
     for cluster, count in cluster_counts.items():
         subset = df[df["cluster"] == cluster].sort_values(["representative_rank", "medoid_rank"])
+        source_evidence = build_cluster_source_evidence(subset, int(cluster))
         cluster_summaries.append(
             {
                 "cluster": int(cluster),
@@ -2046,6 +2123,8 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "theme": str(subset.iloc[0]["cluster_theme_terms"]) if len(subset) else "",
                 "label": str(subset.iloc[0]["cluster_label_candidate"]) if len(subset) else "",
                 "summary": str(subset.iloc[0]["cluster_summary_candidate"]) if len(subset) else "",
+                "source_evidence": source_evidence["items"],
+                "source_faithfulness_score": source_evidence["faithfulness_score"],
                 "representatives": subset.head(3)[["title", "year", "paper_id"]].to_dict("records"),
             }
         )
@@ -2263,6 +2342,24 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       font-size: 13px;
     }}
     .evidence-block {{ margin-top: 8px; }}
+    .source-evidence-item {{
+      border-top: 1px solid var(--line);
+      padding: 10px 0;
+    }}
+    .source-evidence-item:first-child {{ border-top: 0; padding-top: 0; }}
+    .source-evidence-quote {{
+      line-height: 1.45;
+      font-size: 13px;
+      color: #2f3b52;
+      margin: 6px 0;
+    }}
+    .source-evidence-reasons {{
+      margin: 6px 0 0;
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }}
     .discussion-list {{
       margin: 6px 0 0;
       padding-left: 18px;
@@ -2284,7 +2381,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
   </style>
 </head>
 <body>
-  <header>
+  <header hidden>
     <h1>{html.escape(title)}</h1>
     <div class="controls">
       <select id="clusterFilter"><option value="all">All clusters</option></select>
@@ -2417,6 +2514,49 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       }});
     }}
 
+    function clusterRecord(clusterId) {{
+      return data.clusters.find(c => String(c.cluster) === String(clusterId));
+    }}
+
+    function renderSourceEvidence(clusterId) {{
+      const cluster = clusterRecord(clusterId);
+      const evidence = cluster?.source_evidence || [];
+      const score = cluster?.source_faithfulness_score;
+      const scorePill = Number.isFinite(Number(score)) ?
+        `<span class="pill">${{Math.round(Number(score) * 100)}}% summary support</span>` : '';
+      if (!evidence.length) {{
+        return `
+          <div class="insight-card">
+            <div class="section-title">Source Evidence ${{scorePill}}</div>
+            <div class="meta">No direct source evidence selected from extracted full text for this cluster.</div>
+          </div>
+        `;
+      }}
+      const items = evidence.map(item => {{
+        const reasons = item.score_breakdown?.reasons || [];
+        const reasonList = reasons.slice(0, 4).map(reason => `<li>${{escapeHtml(reason)}}</li>`).join('');
+        return `
+          <div class="source-evidence-item">
+            <div class="pill-row">
+              <span class="pill">${{escapeHtml(item.id)}}</span>
+              <span class="pill">score ${{Number(item.score).toFixed(1)}}</span>
+              <span class="pill">para ${{Number(item.paragraph_index) + 1}}</span>
+              <span class="pill">hash ${{escapeHtml(item.sentence_hash)}}</span>
+            </div>
+            <div class="source-evidence-quote">${{escapeHtml(item.sentences)}}</div>
+            <a class="paper-link" href="#" data-paper="${{escapeAttr(item.paper_id)}}">${{escapeHtml(item.paper_title)}}</a>
+            ${{reasonList ? `<ul class="source-evidence-reasons">${{reasonList}}</ul>` : ''}}
+          </div>
+        `;
+      }}).join('');
+      return `
+        <div class="insight-card">
+          <div class="section-title">Source Evidence ${{scorePill}}</div>
+          <div class="evidence-block">${{items}}</div>
+        </div>
+      `;
+    }}
+
     function renderDetails(p) {{
       if (!p) return;
       const doi = p.doi ? `<a class="paper-link" href="https://doi.org/${{escapeHtml(p.doi)}}" target="_blank">DOI: ${{escapeHtml(p.doi)}}</a>` : '';
@@ -2430,6 +2570,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       const discussionStatus = p.discussion_found ?
         `<span class="pill">Discussion detected: ${{p.discussion_paragraph_count}} paragraphs</span>` :
         `<span class="pill">No explicit Discussion section detected</span>`;
+      const sourceEvidence = renderSourceEvidence(p.cluster);
       details.innerHTML = `
         <div class="paper-heading">
           <h2>${{escapeHtml(p.title)}}</h2>
@@ -2456,6 +2597,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
           <div class="section-title">Cluster Summary Candidate</div>
           <div class="abstract">${{escapeHtml(p.cluster_summary_candidate)}}</div>
         </div>
+        ${{sourceEvidence}}
         <div class="insight-card">
           <div class="section-title">Design-Knowledge Contribution</div>
           <div class="pill-row">
