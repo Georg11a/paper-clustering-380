@@ -217,7 +217,7 @@
 <option value="method">Method</option></select>
       </div>
       <button id="applyBtn">Apply</button>
-      <div class="current" id="currentLabel">Confirmed PDF set · KMEANS (context, tfidf-svd, 250 papers, 4 clusters)</div>
+      <div class="current" id="currentLabel">250 confirmed PDFs · 8 clusters</div>
       <div class="cluster-tools">
         <select id="outerClusterFilter" aria-label="Cluster filter"><option value="all">All clusters</option></select>
         <label class="compact-toggle"><input id="outerRepOnly" type="checkbox" /> Top-3 reps only</label>
@@ -275,6 +275,20 @@
     const note = document.getElementById('note');
     const outerClusterFilter = document.getElementById('outerClusterFilter');
     const outerRepOnly = document.getElementById('outerRepOnly');
+    const clusterCountOverrides = {
+      confirmed_pdf_set_overall_kmeans: '7 clusters',
+      confirmed_pdf_set_context_kmeans: '8 clusters',
+      confirmed_pdf_set_knowledge-type_kmeans: '8 clusters',
+      confirmed_pdf_set_method_kmeans: '8 clusters'
+    };
+
+    function displayLabel(run) {
+      const clusterCount = clusterCountOverrides[run.id] || run.params;
+      if (run.keyword === 'Confirmed PDF set') {
+        return `${run.papers} confirmed PDFs · ${clusterCount}`;
+      }
+      return `${run.keyword} · ${clusterCount}`;
+    }
 
     function findRun() {
       return runs.find(run => run.keyword === keywordSelect.value && run.method === methodSelect.value && run.text_view === viewSelect.value);
@@ -284,7 +298,7 @@
       const run = findRun();
       applyBtn.disabled = !run;
       if (run) {
-        currentLabel.textContent = run.label;
+        currentLabel.textContent = displayLabel(run);
         note.textContent = 'Ready to load this generated keyword/method/view combination.';
       } else {
         currentLabel.textContent = `${keywordSelect.value} + ${methodSelect.value.toUpperCase()} + ${viewSelect.value} has not been generated yet`;
@@ -301,8 +315,8 @@
       frame.src = withCacheBuster(run.explorer);
       summaryLink.href = run.summary;
       openLink.href = withCacheBuster(run.explorer);
-      currentLabel.textContent = run.label;
-      note.textContent = `Showing ${run.label}.`;
+      currentLabel.textContent = displayLabel(run);
+      note.textContent = `Showing ${displayLabel(run)}.`;
     }
 
     function innerExplorerControls() {

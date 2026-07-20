@@ -742,46 +742,15 @@ def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tup
     table = pd.DataFrame(rows).sort_values("k")
     best_score = float(table["average_silhouette"].max())
 
-    # Text clusters often have very close silhouette scores. In this pipeline,
-    # interpretability matters more than a tiny numerical gain, so choose the
-    # smallest k whose score is close to the best score and whose clusters are
-    # not too fragmented. This avoids turning a single conceptual theme into
-    # several nearly identical labels.
-    close_margin = max(0.01, abs(best_score) * 0.20)
-    if n < 20:
-        min_cluster_floor = 3
-    elif n < 35:
-        min_cluster_floor = 4
-    else:
-        min_cluster_floor = max(5, int(np.ceil(n * 0.08)))
-    table["close_to_best"] = table["average_silhouette"] >= best_score - close_margin
-    table["passes_size_floor"] = table["min_cluster_size"] >= min_cluster_floor
-    table["passes_balance_floor"] = True
-    if n >= 20:
-        table["passes_balance_floor"] = table["max_cluster_ratio"] <= 0.68
-    if n >= 30:
-        table["passes_balance_floor"] = table["max_cluster_ratio"] <= 0.58
-    table["passes_negative_floor"] = table["negative_silhouette_ratio"] <= 0.40
-    table["selection_candidate"] = (
-        table["close_to_best"]
-        & table["passes_size_floor"]
-        & table["passes_balance_floor"]
-        & table["passes_negative_floor"]
-    )
+    # Select k directly from the silhouette diagnostic. If several candidates
+    # are nearly tied, prefer the smaller k for readability, but do not impose
+    # a minimum cluster-size or balance floor; those floors made large overall
+    # views collapse into an artificially coarse two-cluster solution.
+    tie_margin = max(0.002, abs(best_score) * 0.02)
+    table["close_to_best"] = table["average_silhouette"] >= best_score - tie_margin
+    table["selection_candidate"] = table["close_to_best"]
     candidates = table[table["selection_candidate"]]
-    if candidates.empty:
-        candidates = table[table["close_to_best"] & table["passes_size_floor"] & table["passes_balance_floor"]]
-    if candidates.empty:
-        candidates = table[table["close_to_best"] & table["passes_size_floor"]]
-    if candidates.empty:
-        candidates = table[table["passes_size_floor"] & table["passes_balance_floor"] & table["passes_negative_floor"]]
-    if candidates.empty:
-        candidates = table[table["passes_size_floor"] & table["passes_balance_floor"]]
-    if candidates.empty:
-        candidates = table[table["passes_size_floor"]]
-    if candidates.empty:
-        return 1, table
-    selected_k = int(candidates.sort_values("k").iloc[0]["k"])
+    selected_k = int(candidates.sort_values(["k"]).iloc[0]["k"])
     return selected_k, table
 
 
@@ -2666,13 +2635,13 @@ def main() -> None:
         if selected_k >= 2:
             selected_row = silhouette_table[silhouette_table["k"] == selected_k].iloc[0]
             selected_score = f"{selected_row['average_silhouette']:.4f}"
-            selection_note = "Selected k is the smallest stable candidate after silhouette, size, and balance checks."
+            selection_note = (
+                "Selected k is the highest-silhouette candidate; when scores are nearly tied, "
+                "the smaller k is used for readability."
+            )
         else:
             selected_score = "n/a"
-            selection_note = (
-                "No candidate k met the minimum cluster-size and balance checks, "
-                "so this keyword view is kept as one interpretive group."
-            )
+            selection_note = "No valid multi-cluster candidate was available, so this view is kept as one interpretive group."
         (outdir / "silhouette_summary.md").write_text(
             "\n".join(
                 [
