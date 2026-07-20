@@ -2,102 +2,58 @@
 
 ## Cluster Themes
 
-### Cluster 0 (12 papers)
-Label candidate: Cluster 0: Design Knowledge through prior-work synthesis around Dark Patterns
-Distinguishing evidence: Dark Patterns, Management Near, Industrial Design, Web Severe Weather
-Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as evaluation criteria or evidence base. Related forms include Design Heuristics, Design Guidelines. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Interview, User-centered Design, Heuristic Evaluation and contexts such as Industrial Design, Education / Learning, Accessibility. Representative papers include Identification and management of the near-field knowledge of industrial design for innovative product shapes; Design Heuristics for Web-Based Severe Weather Risk Communication.
-Theme words: usability, product, communication, games, heuristics, field, derived, prototyping methods
+### Cluster 0 (30 papers)
+Label candidate: Cluster 0: Design Pattern through definition and conceptual framing
+Distinguishing evidence: Dark Patterns, Biological Cells, Common Practices, Component-oriented Software Development
+Summary candidate: Within this keyword view, this cluster is set apart by Dark Patterns, Biological Cells, Common Practices. Its dominant move, definition and conceptualization of design pattern, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Understanding and using patterns in software development; Design Patterns of Biological Cells.
+Theme words: patterns, software, ai, structural, object, functional, advice, agent
 
 Representative papers:
-- : Identification and management of the near-field knowledge of industrial design for innovative product shapes
-- 2025.0: Design Heuristics for Web-Based Severe Weather Risk Communication
-- 2022.0: Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization
+- 1996: Understanding and using patterns in software development
+- 2024: Design Patterns of Biological Cells
+- 1996: Formalising design patterns
 
-### Cluster 1 (7 papers)
-Label candidate: Cluster 1: Design Guideline through prior-work synthesis
-Distinguishing evidence: Visualization System, Audio Visual Analysis, Constraints Actionable, Extensible Models Draco
-Summary candidate: This cluster synthesizes prior work on design guideline, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design guideline as conceptual framework. Related forms include Design Knowledge, Design Guidelines, Design Patterns. The shared move also involves definition and conceptualization and translation into actionable guidance. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially contexts such as Climate / Environment. Representative papers include Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Towards a Model of Information Aesthetics in Information Visualization.
-Theme words: visualization, sonification, atlases, composite, hierarchical, audio visual analysis, aesthetics, popular
-
-Representative papers:
-- 2018.0: Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco
-- 2007.0: Towards a Model of Information Aesthetics in Information Visualization
-- 2025.0: Visualization Atlases: Explaining and Exploring Complex Topics Through Data, Visualization, and Narration
-
-### Cluster 2 (18 papers)
-Label candidate: Cluster 2: Design Principle as documented representations
-Distinguishing evidence: Learning Coherent, Systematic Review, User-centered Design, Generic Model Reflective
-Summary candidate: This cluster represents and documents design principle, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design principle as conceptual framework. Related forms include Design Principles, Design Rationale, Design Frameworks. The shared move also involves definition and conceptualization and synthesis of prior work. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as User-centered Design, Systematic Review, Design Science and contexts such as Education / Learning. Representative papers include Towards a framework for documentation design: an abstract model of computer-mediated activity; USSF: A Unified Framework for Screen Standardization in Software Systems.
-Theme words: task, software, rationale, computer, entertainment, educational, science, natural
+### Cluster 1 (47 papers)
+Label candidate: Cluster 1: Design Theory through definition and conceptual framing
+Distinguishing evidence: Case Study, Design Science, Relational Theory, Comes First-theory
+Summary candidate: Within this keyword view, this cluster is set apart by Relational Theory, Comes First-theory. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning, Sustainability that do not anchor the sibling clusters. Representative papers: Incommensurability in design science: Which comes first-Theory or artefact?; Web-based information systems: Developing a design theory.
+Theme words: theories, theoretical, concept, management, theory theory, humanism, thinking, science
 
 Representative papers:
-- 2013.0: Towards a framework for documentation design: an abstract model of computer-mediated activity
-- 2025.0: USSF: A Unified Framework for Screen Standardization in Software Systems
-- 2000.0: A generic model for reflective design
-
-### Cluster 3 (18 papers)
-Label candidate: Cluster 3: Design Pattern through definition and conceptual framing
-Distinguishing evidence: Case Study, Dark Patterns, Application Domain, Software Development
-Summary candidate: This cluster defines and conceptualizes design pattern, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design pattern as reusable design pattern language. Related forms include Design Patterns, Design Knowledge, Design Principles. The shared move also involves translation into actionable guidance and capture and transfer. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Prototype, Case Study, Ontology and contexts such as Education / Learning, Privacy / Security, Healthcare. Representative papers include The anatomy of HCI design patterns; Patterns or claims: do they help in communicating design advice?.
-Theme words: patterns, software, creation, fluent, structural, advice, application domain, formal
-
-Representative papers:
-- 2009.0: The anatomy of HCI design patterns
-- 2009.0: Patterns or claims: do they help in communicating design advice?
-- 2008.0: Design patterns for sociality in human-robot interaction
-
-### Cluster 4 (14 papers)
-Label candidate: Cluster 4: Design Theory through definition and conceptual framing
-Distinguishing evidence: Design Science, Comes Theory Artefact, Affordance Relational, Landscape Architecture
-Summary candidate: This cluster defines and conceptualizes design theory, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design theory as conceptual framework. Related forms include Design Knowledge, Design Principles. The shared move also involves organization and classification and synthesis of prior work. Its contribution pattern is coded as Theoretical, Methodological, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Prototype, Case Study and contexts such as Sustainability, Education / Learning. Representative papers include Affordance based design: a relational theory for design; Incommensurability in design science: Which comes first-Theory or artefact?.
-Theme words: relational, landscape architecture, multiscale, fashion, theories, thriving, negation, justified
-
-Representative papers:
+- 2010: Incommensurability in design science: Which comes first-Theory or artefact?
+- 2007: Web-based information systems: Developing a design theory
 - : Affordance based design: a relational theory for design
-- 2010.0: Incommensurability in design science: Which comes first-Theory or artefact?
-- : C-K design theory: an advanced formulation
 
-### Cluster 5 (17 papers)
-Label candidate: Cluster 5: Design Knowledge through definition and conceptual framing
-Distinguishing evidence: Dark Patterns, Game Autonomous, Evidence Interactive Digital, Encounters Practice Framework
-Summary candidate: This cluster defines and conceptualizes design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Heuristics, Design Methods. The shared move also involves evidence-based evaluation and synthesis of prior work. Its contribution pattern is coded as Methodological, Theoretical, Artifact/System. Application and method terms are treated as supporting facets, especially methods or lenses such as Ethnographic, Co-design and contexts such as Education / Learning. Representative papers include The Rough Mile: Testing a Framework of Immersive Practice; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
-Theme words: ethics, game, practice, focused, proposals, interfaces, education, theoretical
+### Cluster 2 (34 papers)
+Label candidate: Cluster 2: Design Knowledge through definition and conceptual framing around Game
+Distinguishing evidence: E-design Assessment Tool, Evidence-informed Approach, Acquiring Educational Access, Technology-enhanced Learning Environments
+Summary candidate: Within this keyword view, this cluster is set apart by E-design Assessment Tool, Evidence-informed Approach, Acquiring Educational Access. Its dominant move, definition and conceptualization of design knowledge, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: Personalising learning: towards a coherent learning design framework; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review.
+Theme words: game, education, educational, video, teaching, collaboration, curriculum, teachers
 
 Representative papers:
-- 2017.0: The Rough Mile: Testing a Framework of Immersive Practice
-- 2017.0: Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges
-- : Game Design as an Autonomous Research Subject
+- : Personalising learning: towards a coherent learning design framework
+- 2019: Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review
+- : Design exemplars for synchronous e-learning: A design theory approach
 
-### Cluster 6 (11 papers)
-Label candidate: Cluster 6: Design Knowledge through prior-work synthesis around Governing Ai Mediated
-Distinguishing evidence: Case Study, Design Science, Governing Ai Mediated, Utilization Principles
-Summary candidate: This cluster synthesizes prior work on design knowledge, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design knowledge as conceptual framework. Related forms include Design Principles, Design Patterns, Design Frameworks. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Design Science, Case Study, Prototype and contexts such as Education / Learning, Sustainability. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Contestable AI by Design: Towards a Framework.
-Theme words: ai, patterns, artificial, video, utilization principles, identity, solve, collaboration industry learning
-
-Representative papers:
-- 2023.0: Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository
-- 2023.0: Contestable AI by Design: Towards a Framework
-- 2021.0: Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems
-
-### Cluster 7 (13 papers)
-Label candidate: Cluster 7: Design Method through prior-work synthesis
-Distinguishing evidence: Inform Method, Participatory Design, Inexperienced Practices, Tracing Situated Effects
-Summary candidate: This cluster synthesizes prior work on design method, emphasizing how a design-knowledge construct is made explicit, organized, or put to work rather than only where it is applied. Conceptually, it treats design method as actionable design guidance. Related forms include Design Methods, Tacit Design Knowledge, Design Knowledge. The shared move also involves definition and conceptualization and evidence-based evaluation. Its contribution pattern is coded as Methodological, Artifact/System, Theoretical. Application and method terms are treated as supporting facets, especially methods or lenses such as Prototype, Participatory Design, User-centered Design and contexts such as Education / Learning. Representative papers include Process design theory for digital information services; Elements of a design method - a basis for describing and evaluating design methods.
-Theme words: self, value, hri, services, graphic, designerly, tacit, digital
+### Cluster 3 (139 papers)
+Label candidate: Cluster 3: Design Knowledge through definition and conceptual framing around Tool
+Distinguishing evidence: Fbs Model, Case Study, Design Science, Guiding Principles
+Summary candidate: Within this keyword view, this cluster is set apart by Fbs Model, Guiding Principles. Its dominant move, definition and conceptualization of design knowledge, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Accessibility, Healthcare that do not anchor the sibling clusters. Representative papers: Adapting the FBS Model of Designing for Usage-Driven Innovation Processes; Towards a framework for documentation design: an abstract model of computer-mediated activity.
+Theme words: software, rationale, heuristics, product, rules, prototyping, guidelines, service
 
 Representative papers:
-- 2008.0: Process design theory for digital information services
-- : Elements of a design method - a basis for describing and evaluating design methods
-- 2024.0: Using Schema to Inform Method Design Practices
+- 2018: Adapting the FBS Model of Designing for Usage-Driven Innovation Processes
+- 2013: Towards a framework for documentation design: an abstract model of computer-mediated activity
+- 2024: A Framework for Effective Virtual Commissioning: Guiding Principles for Seamless System Integration
 
 ## LDA Topics
-- Topic 0: guidelines, rationale, visualization, software, usability, engineering, hri, collaboration
-- Topic 1: practice, creation, grounded, ethical, ethics, socio, justified, building
-- Topic 2: patterns, science, games, theoretical, children, focused, practice, ethics
-- Topic 3: visualization, patterns, interfaces, field, software, practical, product, definitions
-- Topic 4: patterns, software, ai, game, value, domain, computer, tools
-- Topic 5: education, software, collaboration, industry, patterns, video, ai, field
-- Topic 6: game, entertainment, tacit, literature, characteristics, interfaces, educational, conversational
-- Topic 7: identity, game, artificial, ai, critical, approaches, proposals, goal
-- Topic 8: ai, patterns, important, strategic, formulation, oriented, demand, conceptual
-- Topic 9: software, engineering, computer, visualization, patterns, concept, industry, education
+- Topic 0: patterns, architecture, education, thinking, concept, product, collaboration, practice
+- Topic 1: patterns, computer, visualization, practice, software, domain, analysis, heuristics
+- Topic 2: software, architecture, science, technical, industry, applications, service, components
+- Topic 3: guidelines, hybrid, heuristics, ai, patterns, modeling, service, prototyping
+- Topic 4: game, theoretical, patterns, language, space, guidelines, domain, characteristics
+- Topic 5: digital, guidelines, platforms, strategies, space, privacy, field, social
+- Topic 6: patterns, tools, management, identity, structural, usability, artificial, relational
+- Topic 7: rationale, patterns, language, capture, ai, argumentation, functional, problems
+- Topic 8: software, patterns, theories, concept, engineering, education, collaboration, interfaces
+- Topic 9: product, value, field, practice, definitions, industry, task, digital

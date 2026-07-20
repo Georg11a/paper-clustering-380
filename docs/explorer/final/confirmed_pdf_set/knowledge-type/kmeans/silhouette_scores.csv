@@ -1,8 +1,8 @@
-k,average_silhouette,min_cluster_size,max_cluster_size,cluster_sizes,negative_silhouette_count
-2,0.04906850256757149,28,82,0:28; 1:82,13
-3,0.05775188026616071,29,45,0:36; 1:29; 2:45,11
-4,0.06220164035844091,16,55,0:55; 1:21; 2:16; 3:18,25
-5,0.07458874565796243,9,32,0:32; 1:29; 2:24; 3:9; 4:16,20
-6,0.07183516642155893,6,40,0:11; 1:17; 2:6; 3:17; 4:40; 5:19,35
-7,0.0880374447379402,7,35,0:7; 1:19; 2:12; 3:35; 4:9; 5:20; 6:8,29
-8,0.09332765410210134,6,21,0:9; 1:17; 2:21; 3:14; 4:14; 5:12; 6:17; 7:6,22
+k,average_silhouette,min_cluster_size,max_cluster_size,max_cluster_ratio,cluster_sizes,negative_silhouette_count,negative_silhouette_ratio,close_to_best,passes_size_floor,passes_balance_floor,passes_negative_floor,selection_candidate
+2,0.06454688262757748,42,208,0.832,0:42; 1:208,41,0.164,False,True,False,True,False
+3,0.07078967787771476,42,148,0.592,0:60; 1:148; 2:42,71,0.284,False,True,False,True,False
+4,0.08937651686333767,13,135,0.54,0:55; 1:47; 2:13; 3:135,65,0.26,True,False,True,True,False
+5,0.0909295987563487,11,102,0.408,0:40; 1:102; 2:54; 3:43; 4:11,65,0.26,True,False,True,True,False
+6,0.09922568406865859,11,59,0.236,0:51; 1:11; 2:28; 3:43; 4:58; 5:59,34,0.136,True,False,True,True,False
+7,0.10194940344201725,13,59,0.236,0:26; 1:15; 2:45; 3:44; 4:59; 5:13; 6:48,46,0.184,True,False,True,True,False
+8,0.1094540466701706,10,52,0.208,0:10; 1:43; 2:11; 3:52; 4:40; 5:33; 6:25; 7:36,43,0.172,True,False,True,True,False

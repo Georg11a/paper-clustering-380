@@ -2,8 +2,9 @@
 
 - Requested k range: 2-8
 - Dynamic k range after paper-count cap: 2-8
-- Selected k: 7
-- Best average silhouette score: 0.0899
+- Selected k: 2
+- Selected average silhouette score: 0.0657
 - Distance metric for silhouette: cosine
+- Selection note: Selected k is the smallest stable candidate after silhouette, size, and balance checks.
 
 Silhouette analysis evaluates whether each paper is closer to papers in its own cluster than to papers in neighboring clusters. It is a diagnostic signal for k selection, not a replacement for human interpretation.
