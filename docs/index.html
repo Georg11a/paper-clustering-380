@@ -226,7 +226,7 @@
         <a id="openLink" href="explorer/final/confirmed_pdf_set/context/kmeans/paper_explorer.html" target="_blank">Open View in New Tab</a>
       </div>
     </div>
-    <div class="note" id="note">Choose a keyword, clustering method, and analysis view. The default view shows the 250 confirmed PDFs with full-text paragraph evidence; keyword views remain available for the broader final corpus. Keyword groups with fewer than 10 papers open as paper lists and are not forced into clusters.</div>
+    <div class="note" id="note">Choose a keyword, clustering method, and analysis view. The default view shows the 250 confirmed PDFs with full-text paragraph evidence; keyword views remain available for the broader final corpus. Keyword groups with fewer than 10 papers open as paper maps with one singleton display cluster per paper.</div>
   </header>
   <iframe id="explorerFrame" src="explorer/final/confirmed_pdf_set/context/kmeans/paper_explorer.html?v=unified-cluster-controls"></iframe>
 
@@ -313,8 +313,8 @@
         currentLabel.textContent = displayLabel(run);
         note.textContent = 'Ready to load this generated keyword/method/view combination.';
       } else if (smallGroup) {
-        currentLabel.textContent = `${keywordSelect.value} · ${smallGroup.papers} papers · list view`;
-        note.textContent = 'This group is available as a paper list. Its sample is too small for a meaningful clustering run.';
+        currentLabel.textContent = `${keywordSelect.value} · ${smallGroup.papers} papers · paper map`;
+        note.textContent = 'This small group is available as a paper map with one singleton display cluster per paper.';
       } else {
         currentLabel.textContent = `${keywordSelect.value} + ${methodSelect.value.toUpperCase()} + ${viewSelect.value} has not been generated yet`;
         note.textContent = 'This combination is unavailable. Choose another generated keyword/method/view pair.';
@@ -337,7 +337,7 @@
         summaryLink.removeAttribute('href');
         openLink.href = withCacheBuster(smallGroup.explorer);
         currentLabel.textContent = `Loading ${keywordSelect.value} · ${smallGroup.papers} papers...`;
-        note.textContent = 'Loading the complete paper list for this small keyword group.';
+        note.textContent = 'Loading the complete singleton-cluster paper map for this small keyword group.';
         return;
       }
       pendingSmallGroup = null;
@@ -409,8 +409,8 @@
         note.textContent = `Showing ${displayLabel(pendingRun)}.`;
         pendingRun = null;
       } else if (pendingSmallGroup) {
-        currentLabel.textContent = `${pendingSmallGroup.keyword} · ${pendingSmallGroup.papers} papers · list view`;
-        note.textContent = `Showing all ${pendingSmallGroup.papers} papers. This sample is not clustered.`;
+        currentLabel.textContent = `${pendingSmallGroup.keyword} · ${pendingSmallGroup.papers} papers · paper map`;
+        note.textContent = `Showing all ${pendingSmallGroup.papers} papers as singleton display clusters; no small-sample clustering is claimed.`;
         pendingSmallGroup = null;
       }
       applyBtn.disabled = !(findRun() || findSmallGroup());
