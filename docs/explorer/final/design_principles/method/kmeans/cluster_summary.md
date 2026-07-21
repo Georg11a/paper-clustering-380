@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (3 papers)
-Label candidate: Design Principles: Unclear Theory Move — Requires Human Review | Domain: Game
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (3 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Game. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Game
+Label candidate: Design Principles: Methodological Contribution | Domain: Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 2/3 papers; weighted score 9
+Contribution patterns: explicit methodological output (3)
+Application domains: Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery
+Domain support: Education, Teaching, Research: 2/3 papers; Media, Communication, Entertainment: 2/3 papers; Healthcare, Medicine, Surgery: 1/3 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 2/3 papers; weighted score 9; matched indicators include explicit methodological output (3). Its application domain coding is Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
+Design-knowledge contribution: Methodological Contribution
 Theme words: games, technical, socio, player, creativity, genre, phenomena, video
 
 Representative papers:
@@ -17,12 +23,18 @@ Representative papers:
 - : A problem-based approach to the advancement of heuristics for socio-technical evaluation
 
 ### Cluster 1 (14 papers)
-Label candidate: Design Principles: Unclear Theory Move — Requires Human Review | Domain: Interface
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 1/14 papers, weighted score 4
-Matched patterns: Best candidate: Borrowing Theory from Other Fields; applies/adopts an external theory (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
+Label candidate: Design Principles: Methodological Contribution | Domain: Education, Teaching, Research
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 11/14 papers; weighted score 51
+Contribution patterns: explicit methodological output (17)
+Application domains: Education, Teaching, Research
+Domain support: Education, Teaching, Research: 3/14 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 11/14 papers; weighted score 51; matched indicators include explicit methodological output (17). Its application domain coding is Education, Teaching, Research. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control.
+Design-knowledge contribution: Methodological Contribution
 Theme words: method principles, analysis, identity, sonic, meditation, artificial, learners, practice
 
 Representative papers:

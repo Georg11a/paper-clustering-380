@@ -4,6 +4,12 @@
 
 ### Unclustered papers (67 papers)
 Label candidate: Unclustered papers
+Primary contribution: n/a
+Secondary contribution: n/a
+Contribution support: n/a
+Contribution patterns: n/a
+Application domains: n/a
+Domain support: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a

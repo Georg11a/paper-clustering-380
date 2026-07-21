@@ -9,6 +9,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from research_typology import classify_contribution, classify_domains
 from theory_typology import classify_theory_move
 
 
@@ -401,42 +402,63 @@ def first_facet_value(group: pd.DataFrame, columns: list[str]) -> str:
 
 
 def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
-    result = classify_theory_move(group.to_dict("records"))
+    records = group.to_dict("records")
+    contribution = classify_contribution(records)
+    domains = classify_domains(records)
     form = title_case(fallback_form(group))
-    domain = first_facet_value(group, ["facet_artifact_or_domain", "facet_population_or_context"])
-    label = f"{form}: {result.label}"
-    if domain:
-        label += f" | Domain: {domain}"
+    label = f"{form}: {contribution.primary_label}"
+    if contribution.secondary_label:
+        label += f" + {contribution.secondary_label}"
+    theory_applicable = "theoretical" in {contribution.primary_key, contribution.secondary_key}
+    theory = classify_theory_move(records) if theory_applicable else None
+    if theory is not None:
+        label += f" — {theory.label}"
+    label += f" | Domain: {domains.labels_text}"
 
     ranked = group.sort_values([c for c in ["representative_rank", "medoid_rank"] if c in group.columns])
     titles = [str(value) for value in ranked.get("title", pd.Series(dtype=str)).head(2) if str(value).strip()]
-    if result.key == "unclear":
+    if contribution.primary_key == "unclear":
         summary = (
-            "The deterministic first-pass typology did not find enough unambiguous textual evidence "
-            "to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. "
-            "It remains flagged for human review rather than being forced into a substantive category."
+            "The deterministic first-pass typology did not find enough evidence to assign a primary "
+            "research contribution type. It remains flagged for human review."
         )
     else:
         summary = (
-            f"The deterministic first-pass typology codes this cluster as {result.label.lower()}. "
-            f"The decision is supported by {result.support_text}; matched indicators include {result.patterns_text}."
+            f"The deterministic first-pass typology codes the primary research contribution as "
+            f"{contribution.primary_label.lower()}. The decision is supported by "
+            f"{contribution.support_text}; matched indicators include {contribution.patterns_text}."
         )
-    if domain:
-        summary += f" Its primary application domain is {domain}."
+    if contribution.secondary_label:
+        summary += f" A genuinely equivalent secondary type is {contribution.secondary_label.lower()}."
+    summary += f" Its application domain coding is {domains.labels_text}."
+    if theory is not None:
+        if theory.key == "unclear":
+            summary += " Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move."
+        else:
+            summary += f" Within that theoretical contribution, Path 1 codes the move as {theory.label.lower()}."
     if titles:
         summary += " Representative papers include " + "; ".join(titles) + "."
-    contribution = result.label + (f" | Domain: {domain}" if domain else "")
+    theory_key = theory.key if theory is not None else "not_applicable"
+    theory_label = theory.label if theory is not None else "Not Applicable — Contribution Is Not Theoretical"
     return {
         "cluster_label_candidate": label,
         "cluster_summary_candidate": summary,
         "design_knowledge_form": form,
-        "design_knowledge_action": result.label,
+        "design_knowledge_action": contribution.primary_label,
         "design_knowledge_role": "Automatic first-pass coding",
-        "design_knowledge_contribution": contribution,
-        "theory_move_key": result.key,
-        "theory_move": result.label,
-        "theory_move_patterns": result.patterns_text,
-        "theory_move_support": result.support_text,
+        "design_knowledge_contribution": contribution.primary_label,
+        "contribution_type_key": contribution.primary_key,
+        "contribution_type": contribution.primary_label,
+        "contribution_type_secondary": contribution.secondary_label,
+        "contribution_type_patterns": contribution.patterns_text,
+        "contribution_type_support": contribution.support_text,
+        "application_domains": domains.labels_text,
+        "application_domain_patterns": domains.patterns_text,
+        "application_domain_support": domains.support_text,
+        "theory_move_key": theory_key,
+        "theory_move": theory_label,
+        "theory_move_patterns": theory.patterns_text if theory is not None else "Not applicable",
+        "theory_move_support": theory.support_text if theory is not None else "Not applicable",
     }
 
 
@@ -449,6 +471,14 @@ def refresh_csv(path: Path) -> pd.DataFrame:
         "design_knowledge_action",
         "design_knowledge_role",
         "design_knowledge_contribution",
+        "contribution_type_key",
+        "contribution_type",
+        "contribution_type_secondary",
+        "contribution_type_patterns",
+        "contribution_type_support",
+        "application_domains",
+        "application_domain_patterns",
+        "application_domain_support",
         "theory_move_key",
         "theory_move",
         "theory_move_patterns",
@@ -468,6 +498,14 @@ def refresh_csv(path: Path) -> pd.DataFrame:
                 "design_knowledge_form": "n/a",
                 "design_knowledge_action": "n/a",
                 "design_knowledge_contribution": "Not interpreted as a cluster theme.",
+                "contribution_type_key": "n/a",
+                "contribution_type": "n/a",
+                "contribution_type_secondary": "",
+                "contribution_type_patterns": "n/a",
+                "contribution_type_support": "n/a",
+                "application_domains": "n/a",
+                "application_domain_patterns": "n/a",
+                "application_domain_support": "n/a",
                 "theory_move_key": "n/a",
                 "theory_move": "n/a",
                 "theory_move_patterns": "n/a",
@@ -489,6 +527,12 @@ def write_summary(df: pd.DataFrame, path: Path) -> None:
         lines.append(f"### {heading} ({len(group)} papers)")
         first = group.iloc[0]
         lines.append(f"Label candidate: {first.get('cluster_label_candidate', '')}")
+        lines.append(f"Primary contribution: {first.get('contribution_type', '')}")
+        lines.append(f"Secondary contribution: {first.get('contribution_type_secondary', '') or 'n/a'}")
+        lines.append(f"Contribution support: {first.get('contribution_type_support', '')}")
+        lines.append(f"Contribution patterns: {first.get('contribution_type_patterns', '')}")
+        lines.append(f"Application domains: {first.get('application_domains', '')}")
+        lines.append(f"Domain support: {first.get('application_domain_support', '')}")
         lines.append(f"Theory move: {first.get('theory_move', '')}")
         lines.append(f"Theory-move support: {first.get('theory_move_support', '')}")
         lines.append(f"Matched patterns: {first.get('theory_move_patterns', '')}")
@@ -528,6 +572,14 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             "design_knowledge_action",
             "design_knowledge_role",
             "design_knowledge_contribution",
+            "contribution_type_key",
+            "contribution_type",
+            "contribution_type_secondary",
+            "contribution_type_patterns",
+            "contribution_type_support",
+            "application_domains",
+            "application_domain_patterns",
+            "application_domain_support",
             "theory_move_key",
             "theory_move",
             "theory_move_patterns",
@@ -545,6 +597,13 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             continue
         cluster["label"] = str(first.get("cluster_label_candidate", ""))
         cluster["summary"] = str(first.get("cluster_summary_candidate", ""))
+        cluster["contribution_type"] = str(first.get("contribution_type", ""))
+        cluster["contribution_type_secondary"] = str(first.get("contribution_type_secondary", ""))
+        cluster["contribution_type_patterns"] = str(first.get("contribution_type_patterns", ""))
+        cluster["contribution_type_support"] = str(first.get("contribution_type_support", ""))
+        cluster["application_domains"] = str(first.get("application_domains", ""))
+        cluster["application_domain_patterns"] = str(first.get("application_domain_patterns", ""))
+        cluster["application_domain_support"] = str(first.get("application_domain_support", ""))
         cluster["theory_move"] = str(first.get("theory_move", ""))
         cluster["theory_move_patterns"] = str(first.get("theory_move_patterns", ""))
         cluster["theory_move_support"] = str(first.get("theory_move_support", ""))
@@ -602,6 +661,44 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
           <div class="meta" style="margin-top:8px">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>
         </div>"""
     text = text.replace(old_typology_card, new_typology_card)
+    research_typology = """        <div class="section-title">Research Contribution &amp; Domain</div>
+        <div>
+          <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+          <span class="pill">Primary: ${escapeHtml(p.contribution_type || 'n/a')}</span>
+          ${p.contribution_type_secondary ? `<span class="pill">Secondary: ${escapeHtml(p.contribution_type_secondary)}</span>` : ''}
+          <span class="pill">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>
+        </div>
+        <div class="meta">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+        <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
+        <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>
+        ${p.theory_move_key !== 'not_applicable' && p.theory_move_key !== 'n/a' ? `
+        <div class="section-title">Path 1 Theory Move</div>
+        <div>
+          <span class="pill">Theory move: ${escapeHtml(p.theory_move || 'n/a')}</span>
+          <span class="pill">Support: ${escapeHtml(p.theory_move_support || 'n/a')}</span>
+        </div>
+        <div class="meta">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>` : ''}"""
+    research_typology_card = """        <div class="insight-card">
+          <div class="section-title">Research Contribution &amp; Domain</div>
+          <div class="pill-row">
+            <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+            <span class="pill">Primary: ${escapeHtml(p.contribution_type || 'n/a')}</span>
+            ${p.contribution_type_secondary ? `<span class="pill">Secondary: ${escapeHtml(p.contribution_type_secondary)}</span>` : ''}
+            <span class="pill">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>
+          </div>
+          <div class="meta" style="margin-top:8px">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+          <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
+          <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>
+          ${p.theory_move_key !== 'not_applicable' && p.theory_move_key !== 'n/a' ? `
+          <div class="section-title" style="margin-top:14px">Path 1 Theory Move</div>
+          <div class="pill-row">
+            <span class="pill">Theory move: ${escapeHtml(p.theory_move || 'n/a')}</span>
+            <span class="pill">Support: ${escapeHtml(p.theory_move_support || 'n/a')}</span>
+          </div>
+          <div class="meta" style="margin-top:8px">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>` : ''}
+        </div>"""
+    text = text.replace(new_typology, research_typology)
+    text = text.replace(new_typology_card, research_typology_card)
     path.write_text(text, encoding="utf-8")
 
 

@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (5 papers)
-Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review | Domain: Tool
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (5 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Guidelines: Methodological Contribution | Domain: Software, System, Cybersecurity
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 5/5 papers; weighted score 21
+Contribution patterns: explicit methodological output (7)
+Application domains: Software, System, Cybersecurity
+Domain support: Software, System, Cybersecurity: 2/5 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 5/5 papers; weighted score 21; matched indicators include explicit methodological output (7). Its application domain coding is Software, System, Cybersecurity. Representative papers include Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines.
+Design-knowledge contribution: Methodological Contribution
 Theme words: rural, guidelines, visualization, aesthetics, visual, smells, language, domain
 
 Representative papers:
@@ -17,12 +23,18 @@ Representative papers:
 - 2007: Towards a Model of Information Aesthetics in Information Visualization
 
 ### Cluster 1 (7 papers)
-Label candidate: Design Guidelines: Building New Theory | Domain: Interface
-Theory move: Building New Theory
-Theory-move support: 1/7 papers; weighted score 4
-Matched patterns: proposes a new theory/framework (1)
-Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 1/7 papers; weighted score 4; matched indicators include proposes a new theory/framework (1). Its primary application domain is Interface. Representative papers include Terminologia kohtaa k√§ytett√§vyyden. Terminologisen k√§ytett√§vyyden ydint√§ rakentamassa; Design Guidelines and Strategies for Interim Innovation.
-Design-knowledge contribution: Building New Theory | Domain: Interface
+Label candidate: Design Guidelines: Survey/Synthesis Contribution | Domain: Design, Creativity, Architecture
+Primary contribution: Survey/Synthesis Contribution
+Secondary contribution: n/a
+Contribution support: 2/7 papers; weighted score 19
+Contribution patterns: literature review or research synthesis (3); systematic or scoping review (1)
+Application domains: Design, Creativity, Architecture
+Domain support: Design, Creativity, Architecture: 2/7 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as survey/synthesis contribution. The decision is supported by 2/7 papers; weighted score 19; matched indicators include literature review or research synthesis (3); systematic or scoping review (1). Its application domain coding is Design, Creativity, Architecture. Representative papers include Terminologia kohtaa k√§ytett√§vyyden. Terminologisen k√§ytett√§vyyden ydint√§ rakentamassa; Design Guidelines and Strategies for Interim Innovation.
+Design-knowledge contribution: Survey/Synthesis Contribution
 Theme words: concept, usability, guidelines, interim, tacit, characteristics, task, map
 
 Representative papers:
@@ -31,12 +43,18 @@ Representative papers:
 - 2019: The equitable use concept in sidewalk design
 
 ### Cluster 2 (7 papers)
-Label candidate: Design Guidelines: Testing Theory Empirically | Domain: Tool
-Theory move: Testing Theory Empirically
-Theory-move support: 1/7 papers; weighted score 5
-Matched patterns: testing a theory/framework/model (1)
-Summary candidate: The deterministic first-pass typology codes this cluster as testing theory empirically. The decision is supported by 1/7 papers; weighted score 5; matched indicators include testing a theory/framework/model (1). Its primary application domain is Tool. Representative papers include Healthy Eating Design Guidelines for School Architecture; The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers.
-Design-knowledge contribution: Testing Theory Empirically | Domain: Tool
+Label candidate: Design Guidelines: Methodological Contribution | Domain: Design, Creativity, Architecture; Environment, Resource, Energy
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 5/7 papers; weighted score 27
+Contribution patterns: explicit methodological output (9)
+Application domains: Design, Creativity, Architecture; Environment, Resource, Energy
+Domain support: Design, Creativity, Architecture: 2/7 papers; Environment, Resource, Energy: 2/7 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 5/7 papers; weighted score 27; matched indicators include explicit methodological output (9). Its application domain coding is Design, Creativity, Architecture; Environment, Resource, Energy. Representative papers include Healthy Eating Design Guidelines for School Architecture; The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers.
+Design-knowledge contribution: Methodological Contribution
 Theme words: architecture, guidelines, software, immersive, practical, theoretical, school, healthy eating
 
 Representative papers:
@@ -45,12 +63,18 @@ Representative papers:
 - 2016: A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service
 
 ### Cluster 3 (6 papers)
-Label candidate: Design Guidelines: Borrowing Theory from Other Fields
-Theory move: Borrowing Theory from Other Fields
-Theory-move support: 1/6 papers; weighted score 4
-Matched patterns: applies/adopts an external theory (1)
-Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 1/6 papers; weighted score 4; matched indicators include applies/adopts an external theory (1). Representative papers include Embracing Non-Natural Design in Human-Computer Interaction; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
-Design-knowledge contribution: Borrowing Theory from Other Fields
+Label candidate: Design Guidelines: Methodological Contribution | Domain: Generic, Abstract, Domain-Agnostic
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 6/6 papers; weighted score 24
+Contribution patterns: explicit methodological output (8)
+Application domains: Generic, Abstract, Domain-Agnostic
+Domain support: Generic, Abstract, Domain-Agnostic: 6/6 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 6/6 papers; weighted score 24; matched indicators include explicit methodological output (8). Its application domain coding is Generic, Abstract, Domain-Agnostic. Representative papers include Embracing Non-Natural Design in Human-Computer Interaction; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
+Design-knowledge contribution: Methodological Contribution
 Theme words: fidelity, training, natural, guidelines, components, computer, definitions, interact
 
 Representative papers:

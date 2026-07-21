@@ -4,6 +4,12 @@
 
 ### Unclustered papers (51 papers)
 Label candidate: Unclustered papers
+Primary contribution: n/a
+Secondary contribution: n/a
+Contribution support: n/a
+Contribution patterns: n/a
+Application domains: n/a
+Domain support: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -17,12 +23,18 @@ Representative papers:
 - 2000: A pattern approach to interaction design
 
 ### Cluster 0 (5 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review | Domain: Interface
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (5 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
+Label candidate: Design Patterns: Methodological Contribution | Domain: Transportation, Mobility, Planning; Software, System, Cybersecurity
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 4/5 papers; weighted score 21
+Contribution patterns: explicit methodological output (7)
+Application domains: Transportation, Mobility, Planning; Software, System, Cybersecurity
+Domain support: Transportation, Mobility, Planning: 2/5 papers; Software, System, Cybersecurity: 2/5 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 4/5 papers; weighted score 21; matched indicators include explicit methodological output (7). Its application domain coding is Transportation, Mobility, Planning; Software, System, Cybersecurity. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems.
+Design-knowledge contribution: Methodological Contribution
 Theme words: patterns, ai, labels, alexander, collection, pervasive, sociality, consumer
 
 Representative papers:
@@ -31,12 +43,18 @@ Representative papers:
 - 2008: Design patterns for sociality in human-robot interaction
 
 ### Cluster 1 (11 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (11 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Representative papers include Meta patternsma means for capturing the essentials of reusable object-oriented design; Design pattern in object-oriented technology.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review
+Label candidate: Design Patterns: Methodological Contribution | Domain: Software, System, Cybersecurity; Design, Creativity, Architecture
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 10/11 papers; weighted score 48
+Contribution patterns: explicit methodological output (16)
+Application domains: Software, System, Cybersecurity; Design, Creativity, Architecture
+Domain support: Software, System, Cybersecurity: 5/11 papers; Design, Creativity, Architecture: 2/11 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 10/11 papers; weighted score 48; matched indicators include explicit methodological output (16). Its application domain coding is Software, System, Cybersecurity; Design, Creativity, Architecture. Representative papers include Meta patternsma means for capturing the essentials of reusable object-oriented design; Design pattern in object-oriented technology.
+Design-knowledge contribution: Methodological Contribution
 Theme words: patterns, component, software, definition, object, notes, lecture, analysis
 
 Representative papers:

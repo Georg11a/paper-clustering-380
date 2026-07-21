@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (39 papers)
-Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review | Domain: Interface
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 2/39 papers, weighted score 7
-Matched patterns: Best candidate: Building New Theory; proposes a new theory/framework (1); new theoretical constructs/propositions (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Separation of Modeling Principles and Design Principles in Enterprise Engineering; Guidelines supporting the formulation of design principles.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
+Label candidate: Design Guidelines: Methodological Contribution | Domain: Finance, Business, Economy
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 26/39 papers; weighted score 123
+Contribution patterns: explicit methodological output (41)
+Application domains: Finance, Business, Economy
+Domain support: Finance, Business, Economy: 7/39 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 26/39 papers; weighted score 123; matched indicators include explicit methodological output (41). Its application domain coding is Finance, Business, Economy. Representative papers include Separation of Modeling Principles and Design Principles in Enterprise Engineering; Guidelines supporting the formulation of design principles.
+Design-knowledge contribution: Methodological Contribution
 Theme words: visualization, rural, visual, post, humanism, guidelines, engineering, rules
 
 Representative papers:
@@ -17,12 +23,18 @@ Representative papers:
 - : Engineering Design Principles for HCI as a Way Forward for HCI Design Knowledge
 
 ### Cluster 1 (26 papers)
-Label candidate: Design Knowledge: Building New Theory | Domain: Interface
-Theory move: Building New Theory
-Theory-move support: 3/26 papers; weighted score 11
-Matched patterns: proposes a new theory/framework (2); new theoretical constructs/propositions (1)
-Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 3/26 papers; weighted score 11; matched indicators include proposes a new theory/framework (2); new theoretical constructs/propositions (1). Its primary application domain is Interface. Representative papers include Pedagogical patterns: picking up the design patterns approach; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review.
-Design-knowledge contribution: Building New Theory | Domain: Interface
+Label candidate: Design Knowledge: Methodological Contribution | Domain: Education, Teaching, Research; Software, System, Cybersecurity
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 12/26 papers; weighted score 48
+Contribution patterns: explicit methodological output (16)
+Application domains: Education, Teaching, Research; Software, System, Cybersecurity
+Domain support: Education, Teaching, Research: 16/26 papers; Software, System, Cybersecurity: 6/26 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 12/26 papers; weighted score 48; matched indicators include explicit methodological output (16). Its application domain coding is Education, Teaching, Research; Software, System, Cybersecurity. Representative papers include Pedagogical patterns: picking up the design patterns approach; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review.
+Design-knowledge contribution: Methodological Contribution
 Theme words: education, object, curriculum, teachers, application domain, pattern, software, learners
 
 Representative papers:
@@ -31,12 +43,18 @@ Representative papers:
 - : Personalising learning: towards a coherent learning design framework
 
 ### Cluster 2 (17 papers)
-Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review | Domain: Tool
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (17 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Redesigning the rationale for design rationale; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Rationale: Methodological Contribution | Domain: Design, Creativity, Architecture; Media, Communication, Entertainment; Education, Teaching, Research
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 6/17 papers; weighted score 24
+Contribution patterns: explicit methodological output (8)
+Application domains: Design, Creativity, Architecture; Media, Communication, Entertainment; Education, Teaching, Research
+Domain support: Design, Creativity, Architecture: 8/17 papers; Media, Communication, Entertainment: 3/17 papers; Education, Teaching, Research: 3/17 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 6/17 papers; weighted score 24; matched indicators include explicit methodological output (8). Its application domain coding is Design, Creativity, Architecture; Media, Communication, Entertainment; Education, Teaching, Research. Representative papers include Redesigning the rationale for design rationale; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication.
+Design-knowledge contribution: Methodological Contribution
 Theme words: rationale, architecture, software, landscape, multiscale, argumentation, capture, rules
 
 Representative papers:
@@ -45,12 +63,18 @@ Representative papers:
 - 1991: What's in design rationale?
 
 ### Cluster 3 (11 papers)
-Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review | Domain: Game
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (11 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Game. Representative papers include Beyond the old game design: a new design paradigm in Game Studies through C-K Theory; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Game
+Label candidate: Design Knowledge: Methodological Contribution | Domain: Media, Communication, Entertainment; Education, Teaching, Research
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 4/11 papers; weighted score 18
+Contribution patterns: explicit methodological output (6)
+Application domains: Media, Communication, Entertainment; Education, Teaching, Research
+Domain support: Media, Communication, Entertainment: 10/11 papers; Education, Teaching, Research: 5/11 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 4/11 papers; weighted score 18; matched indicators include explicit methodological output (6). Its application domain coding is Media, Communication, Entertainment; Education, Teaching, Research. Representative papers include Beyond the old game design: a new design paradigm in Game Studies through C-K Theory; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
+Design-knowledge contribution: Methodological Contribution
 Theme words: game, entertainment, player, mechanics, achievement, narrative, education, educational
 
 Representative papers:
@@ -59,12 +83,18 @@ Representative papers:
 - : Game Design as an Autonomous Research Subject
 
 ### Cluster 4 (35 papers)
-Label candidate: Design Theory: Borrowing Theory from Other Fields | Domain: Education / Learning
+Label candidate: Design Theory: Theoretical Contribution — Borrowing Theory from Other Fields | Domain: Generic, Abstract, Domain-Agnostic
+Primary contribution: Theoretical Contribution
+Secondary contribution: n/a
+Contribution support: 33/35 papers; weighted score 189
+Contribution patterns: explicit theoretical output (49); articulates conceptual or philosophical foundations (9); contributes theory or a conceptual framework (1)
+Application domains: Generic, Abstract, Domain-Agnostic
+Domain support: Generic, Abstract, Domain-Agnostic: 35/35 papers
 Theory move: Borrowing Theory from Other Fields
 Theory-move support: 9/35 papers; weighted score 48
 Matched patterns: reference discipline/kernel theory (5); applies/adopts an external theory (5); draws on a theory or theoretical lens (2)
-Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 9/35 papers; weighted score 48; matched indicators include reference discipline/kernel theory (5); applies/adopts an external theory (5); draws on a theory or theoretical lens (2). Its primary application domain is Education / Learning. Representative papers include Incommensurability in design science: Which comes first-Theory or artefact?; Web-based information systems: Developing a design theory.
-Design-knowledge contribution: Borrowing Theory from Other Fields | Domain: Education / Learning
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 33/35 papers; weighted score 189; matched indicators include explicit theoretical output (49); articulates conceptual or philosophical foundations (9); contributes theory or a conceptual framework (1). Its application domain coding is Generic, Abstract, Domain-Agnostic. Within that theoretical contribution, Path 1 codes the move as borrowing theory from other fields. Representative papers include Incommensurability in design science: Which comes first-Theory or artefact?; Web-based information systems: Developing a design theory.
+Design-knowledge contribution: Theoretical Contribution
 Theme words: theories, science, problem, theory theory, concept, ecc, proof, experimentation
 
 Representative papers:
@@ -73,12 +103,18 @@ Representative papers:
 - : Affordance based design: a relational theory for design
 
 ### Cluster 5 (59 papers)
-Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review | Domain: Tool
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 1/59 papers, weighted score 4
-Matched patterns: Best candidate: Borrowing Theory from Other Fields; draws on a theory or theoretical lens (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Design Theory and Method of Complex Products: A Review; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Guidelines: Methodological Contribution | Domain: Media, Communication, Entertainment; Design, Creativity, Architecture
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 25/59 papers; weighted score 114
+Contribution patterns: explicit methodological output (38)
+Application domains: Media, Communication, Entertainment; Design, Creativity, Architecture
+Domain support: Media, Communication, Entertainment: 10/59 papers; Design, Creativity, Architecture: 10/59 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 25/59 papers; weighted score 114; matched indicators include explicit methodological output (38). Its application domain coding is Media, Communication, Entertainment; Design, Creativity, Architecture. Representative papers include Design Theory and Method of Complex Products: A Review; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization.
+Design-knowledge contribution: Methodological Contribution
 Theme words: product, heuristics, usability, assistive, service, dialogue, prototyping, field
 
 Representative papers:
@@ -87,12 +123,18 @@ Representative papers:
 - : Identification and management of the near-field knowledge of industrial design for innovative product shapes
 
 ### Cluster 6 (36 papers)
-Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Guidelines: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Environment, Resource, Energy; Media, Communication, Entertainment; Design, Creativity, Architecture
+Primary contribution: Theoretical Contribution
+Secondary contribution: n/a
+Contribution support: 13/36 papers; weighted score 112
+Contribution patterns: explicit theoretical output (18); articulates conceptual or philosophical foundations (13); contributes theory or a conceptual framework (1)
+Application domains: Environment, Resource, Energy; Media, Communication, Entertainment; Design, Creativity, Architecture
+Domain support: Environment, Resource, Energy: 7/36 papers; Media, Communication, Entertainment: 6/36 papers; Design, Creativity, Architecture: 6/36 papers
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 3/36 papers, weighted score 11
 Matched patterns: Best candidate: Borrowing Theory from Other Fields; grounded/informed by theory (1); applies/adopts an external theory (1); draws on a theory or theoretical lens (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include The Rough Mile: Testing a Framework of Immersive Practice; Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 13/36 papers; weighted score 112; matched indicators include explicit theoretical output (18); articulates conceptual or philosophical foundations (13); contributes theory or a conceptual framework (1). Its application domain coding is Environment, Resource, Energy; Media, Communication, Entertainment; Design, Creativity, Architecture. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include The Rough Mile: Testing a Framework of Immersive Practice; Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics.
+Design-knowledge contribution: Theoretical Contribution
 Theme words: platforms, ai, interfaces, digital, theoretical framework, ethical, self, mechanical
 
 Representative papers:
@@ -101,12 +143,18 @@ Representative papers:
 - 2013: A theoretical framework for the studio as a learning environment
 
 ### Cluster 7 (27 papers)
-Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review | Domain: Interface
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 1/27 papers, weighted score 3
-Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Understanding and using patterns in software development; Design Patterns of Biological Cells.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
+Label candidate: Design Knowledge: Methodological Contribution | Domain: Design, Creativity, Architecture; Software, System, Cybersecurity
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 25/27 papers; weighted score 132
+Contribution patterns: explicit methodological output (44)
+Application domains: Design, Creativity, Architecture; Software, System, Cybersecurity
+Domain support: Design, Creativity, Architecture: 8/27 papers; Software, System, Cybersecurity: 7/27 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 25/27 papers; weighted score 132; matched indicators include explicit methodological output (44). Its application domain coding is Design, Creativity, Architecture; Software, System, Cybersecurity. Representative papers include Understanding and using patterns in software development; Design Patterns of Biological Cells.
+Design-knowledge contribution: Methodological Contribution
 Theme words: patterns, software, structural, ai, advice, law, semantic, functional
 
 Representative papers:

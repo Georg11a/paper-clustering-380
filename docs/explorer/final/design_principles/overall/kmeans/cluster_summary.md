@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (13 papers)
-Label candidate: Design Principles: Unclear Theory Move — Requires Human Review | Domain: Interface
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 1/13 papers, weighted score 4
-Matched patterns: Best candidate: Borrowing Theory from Other Fields; applies/adopts an external theory (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Designing Artificial Identity: The Identity Design Framework and Research Agenda; USSF: A Unified Framework for Screen Standardization in Software Systems.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
+Label candidate: Design Principles: Methodological Contribution | Domain: Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 10/13 papers; weighted score 45
+Contribution patterns: explicit methodological output (15)
+Application domains: Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery
+Domain support: Education, Teaching, Research: 4/13 papers; Media, Communication, Entertainment: 4/13 papers; Healthcare, Medicine, Surgery: 2/13 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 10/13 papers; weighted score 45; matched indicators include explicit methodological output (15). Its application domain coding is Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery. Representative papers include Designing Artificial Identity: The Identity Design Framework and Research Agenda; USSF: A Unified Framework for Screen Standardization in Software Systems.
+Design-knowledge contribution: Methodological Contribution
 Theme words: identity, frame, engineering, learners, computer, valuable, artificial, value
 
 Representative papers:
@@ -17,12 +23,18 @@ Representative papers:
 - 1983: Design principles for human-computer interfaces
 
 ### Cluster 1 (4 papers)
-Label candidate: Design Principles: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (4 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Education / Learning. Representative papers include Design principles for data analysis; Data Mesh: A Systematic Gray Literature Review.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
+Label candidate: Design Principles: Methodological Contribution | Domain: Design, Creativity, Architecture; Law, Democracy, Governance; Education, Teaching, Research
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 3/4 papers; weighted score 15
+Contribution patterns: explicit methodological output (5)
+Application domains: Design, Creativity, Architecture; Law, Democracy, Governance; Education, Teaching, Research
+Domain support: Design, Creativity, Architecture: 1/4 papers; Law, Democracy, Governance: 1/4 papers; Education, Teaching, Research: 1/4 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 3/4 papers; weighted score 15; matched indicators include explicit methodological output (5). Its application domain coding is Design, Creativity, Architecture; Law, Democracy, Governance; Education, Teaching, Research. Representative papers include Design principles for data analysis; Data Mesh: A Systematic Gray Literature Review.
+Design-knowledge contribution: Methodological Contribution
 Theme words: mesh, gray, architectures, obligations, data analysis, tilburg, literature, governance
 
 Representative papers:

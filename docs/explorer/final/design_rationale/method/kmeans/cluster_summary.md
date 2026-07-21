@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (20 papers)
-Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review | Domain: Tool
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (20 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Method rationale in method engineering; Design rationale capture as knowledge acquisition: tradeoffs in the design of interactive tools.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Rationale: Methodological Contribution | Domain: Media, Communication, Entertainment; Design, Creativity, Architecture
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 6/20 papers; weighted score 21
+Contribution patterns: explicit methodological output (7)
+Application domains: Media, Communication, Entertainment; Design, Creativity, Architecture
+Domain support: Media, Communication, Entertainment: 4/20 papers; Design, Creativity, Architecture: 3/20 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 6/20 papers; weighted score 21; matched indicators include explicit methodological output (7). Its application domain coding is Media, Communication, Entertainment; Design, Creativity, Architecture. Representative papers include Method rationale in method engineering; Design rationale capture as knowledge acquisition: tradeoffs in the design of interactive tools.
+Design-knowledge contribution: Methodological Contribution
 Theme words: rationale, capture, mechanical, claims, engineering, representations, argumentation, software
 
 Representative papers:

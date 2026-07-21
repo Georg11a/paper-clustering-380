@@ -4,6 +4,12 @@
 
 ### Unclustered papers (31 papers)
 Label candidate: Unclustered papers
+Primary contribution: n/a
+Secondary contribution: n/a
+Contribution support: n/a
+Contribution patterns: n/a
+Application domains: n/a
+Domain support: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -17,12 +23,18 @@ Representative papers:
 - 2014: Generating implications for design through design research
 
 ### Cluster 0 (6 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review
+Label candidate: Design Methods: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Design, Creativity, Architecture
+Primary contribution: Theoretical Contribution
+Secondary contribution: n/a
+Contribution support: 2/6 papers; weighted score 16
+Contribution patterns: explicit theoretical output (4); articulates conceptual or philosophical foundations (1)
+Application domains: Design, Creativity, Architecture
+Domain support: Design, Creativity, Architecture: 2/6 papers
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/6 papers, weighted score 5
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; reflects on the nature/role/value of theory (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 2/6 papers; weighted score 16; matched indicators include explicit theoretical output (4); articulates conceptual or philosophical foundations (1). Its application domain coding is Design, Creativity, Architecture. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Design-knowledge contribution: Theoretical Contribution
 Theme words: complexity, functional, product, applications, industrial, manufacturing, community, robust
 
 Representative papers:
@@ -31,12 +43,18 @@ Representative papers:
 - 2024: Emotion Semantics Construction in Industrial Product Application
 
 ### Cluster 1 (5 papers)
-Label candidate: Design Methods: Meta-Theoretical Reflection on Design | Domain: Education / Learning
-Theory move: Meta-Theoretical Reflection on Design
-Theory-move support: 1/5 papers; weighted score 5
-Matched patterns: philosophy/epistemology/ontology of design (1)
-Summary candidate: The deterministic first-pass typology codes this cluster as meta-theoretical reflection on design. The decision is supported by 1/5 papers; weighted score 5; matched indicators include philosophy/epistemology/ontology of design (1). Its primary application domain is Education / Learning. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
-Design-knowledge contribution: Meta-Theoretical Reflection on Design | Domain: Education / Learning
+Label candidate: Design Methods: Methodological Contribution | Domain: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 3/5 papers; weighted score 15
+Contribution patterns: explicit methodological output (5)
+Application domains: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
+Domain support: Design, Creativity, Architecture: 4/5 papers; Education, Teaching, Research: 2/5 papers; Environment, Resource, Energy: 2/5 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 3/5 papers; weighted score 15; matched indicators include explicit methodological output (5). Its application domain coding is Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
+Design-knowledge contribution: Methodological Contribution
 Theme words: architecture, field, article, relation, participatory, education, brain, landscape
 
 Representative papers:

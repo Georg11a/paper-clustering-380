@@ -4,6 +4,12 @@
 
 ### Unclustered papers (24 papers)
 Label candidate: Unclustered papers
+Primary contribution: n/a
+Secondary contribution: n/a
+Contribution support: n/a
+Contribution patterns: n/a
+Application domains: n/a
+Domain support: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -17,12 +23,18 @@ Representative papers:
 - 2010: The implications of improvisational acting and role-playing on design methodologies
 
 ### Cluster 0 (13 papers)
-Label candidate: Design Methods: Borrowing Theory from Other Fields | Domain: Tool
-Theory move: Borrowing Theory from Other Fields
-Theory-move support: 2/13 papers; weighted score 8
-Matched patterns: draws on a theory or theoretical lens (1); applies/adopts an external theory (1)
-Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 2/13 papers; weighted score 8; matched indicators include draws on a theory or theoretical lens (1); applies/adopts an external theory (1). Its primary application domain is Tool. Representative papers include State of the Art on Robust Design Methods for Additive Manufacturing; A Framework for Systemic Design.
-Design-knowledge contribution: Borrowing Theory from Other Fields | Domain: Tool
+Label candidate: Design Methods: Methodological Contribution | Domain: Design, Creativity, Architecture; Media, Communication, Entertainment
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 3/13 papers; weighted score 15
+Contribution patterns: explicit methodological output (5)
+Application domains: Design, Creativity, Architecture; Media, Communication, Entertainment
+Domain support: Design, Creativity, Architecture: 4/13 papers; Media, Communication, Entertainment: 2/13 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 3/13 papers; weighted score 15; matched indicators include explicit methodological output (5). Its application domain coding is Design, Creativity, Architecture; Media, Communication, Entertainment. Representative papers include State of the Art on Robust Design Methods for Additive Manufacturing; A Framework for Systemic Design.
+Design-knowledge contribution: Methodological Contribution
 Theme words: method methods, complexity, service, functional, product, creation, practices, thinking
 
 Representative papers:
@@ -31,12 +43,18 @@ Representative papers:
 - 2024: Emotion Semantics Construction in Industrial Product Application
 
 ### Cluster 1 (5 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (5 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Education / Learning. Representative papers include Degrees of Interaction: Towards a Classification; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
+Label candidate: Design Methods: Methodological Contribution | Domain: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 2/5 papers; weighted score 9
+Contribution patterns: explicit methodological output (3)
+Application domains: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
+Domain support: Design, Creativity, Architecture: 4/5 papers; Education, Teaching, Research: 2/5 papers; Environment, Resource, Energy: 2/5 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 2/5 papers; weighted score 9; matched indicators include explicit methodological output (3). Its application domain coding is Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy. Representative papers include Degrees of Interaction: Towards a Classification; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
+Design-knowledge contribution: Methodological Contribution
 Theme words: architecture, interactive, method methods, relation, formal, brain, education, field
 
 Representative papers:

@@ -14,7 +14,17 @@ Path 1 是加在聚类结果之后的**规则式解释层**。它不改变论文
 
 这些动词能概括文本动作，但很难回答更重要的方法学问题：一个 cluster 在理论上究竟是在建构新理论、借用外部理论、检验理论，还是反思设计理论本身？
 
-改动后，每个非 noise cluster 都先接受一次自动 theory-move coding：
+改动后，每个非 noise cluster 先接受 research-contribution coding。全站上层使用 HAID 的六类，加上本 corpus 需要的 Survey/Synthesis：
+
+1. `Empirical Contribution`
+2. `Algorithmic Contribution`
+3. `Artifact Contribution`
+4. `Methodological Contribution`
+5. `Theoretical Contribution`
+6. `Dataset Contribution`
+7. `Survey/Synthesis Contribution`
+
+只有 primary 或真正并列的 secondary contribution 为 Theoretical 时，系统才继续执行 Path 1：
 
 1. `Building New Theory`
 2. `Borrowing Theory from Other Fields`
@@ -45,7 +55,7 @@ Path 1 是加在聚类结果之后的**规则式解释层**。它不改变论文
 
 ### 3.1 新增独立分类器
 
-[`scripts/theory_typology.py`](../scripts/theory_typology.py) 包含四组确定性 regex patterns、权重、cluster-level aggregation 和 `Unclear` fallback。输入相同，输出必然相同。
+[`scripts/research_typology.py`](../scripts/research_typology.py) 负责七种 contribution types 和 HAID 13 application domains；[`scripts/theory_typology.py`](../scripts/theory_typology.py) 只负责 Theoretical contribution 下的四种 Path 1 moves。两个模块都包含确定性 patterns、权重、cluster-level aggregation 和保守 fallback；输入相同，输出必然相同。
 
 分类器只读取：
 
@@ -69,28 +79,39 @@ Path 1 是加在聚类结果之后的**规则式解释层**。它不改变论文
 
 ### 3.3 新标签由三个独立部分构成
 
-标签现在使用：
+一般标签现在使用：
 
-`Design-knowledge form: Theory move | Domain: Application domain`
+`Design-knowledge form: Primary contribution | Domain: HAID application domain(s)`
 
 例如：
 
-`Design Knowledge: Borrowing Theory from Other Fields | Domain: Tool`
+`Design Guidelines: Methodological Contribution | Domain: Healthcare, Medicine, Surgery`
+
+这里的 Domain 使用 HAID 的 13 类 application-domain codebook。`Interface`、`Tool` 和 `Dashboard` 是 artifact/system types，不是 domain；`Designers`、`Patients` 是 stakeholder/population；`Interview`、`Case Study` 是 method。不同 facet 不应互相填补。
+
+如果 cluster 的 artifact 是 Tool 但没有可靠的 application context/domain，则应分别呈现：
+
+`Design Knowledge: Artifact Contribution | Domain: Generic, Abstract, Domain-Agnostic`
+
+`Artifact/System: Tool`
+
+没有具体 application-domain evidence 时使用 HAID 的 `Generic, Abstract, Domain-Agnostic`，不能用 artifact 代替。
 
 如果是：
 
-`Design Knowledge: Unclear Theory Move — Requires Human Review | Domain: Industrial Design`
+`Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Design, Creativity, Architecture`
 
-它表示**theory move 需要人工判断**，而 `Industrial Design` 只是系统推断的应用领域。它不表示“必须由工业设计师审核”。使用 `| Domain:` 是为了避免旧写法 `Requires Human Review in Industrial Design` 造成这种歧义。
+它表示 primary contribution 已被编码为 Theoretical，但细分 theory move 仍需人工判断；Domain 是独立的 application setting。非理论贡献不会显示 Path 1，也不会被标成 theory unclear。
 
 ### 3.4 网站增加审计信息
 
 每个 paper detail panel 现在显示：
 
 - Form
-- Theory move
-- Support
-- Matched patterns
+- Primary/secondary contribution
+- Application domain(s)
+- Contribution/domain support and matched patterns
+- Path 1 theory move（仅在 Theoretical contribution 下）
 
 CSV 和网页 payload 新增：
 
@@ -99,17 +120,19 @@ CSV 和网页 payload 新增：
 - `theory_move_patterns`
 - `theory_move_support`
 
+并新增 `contribution_type*` 与 `application_domain*` 审计字段。
+
 [`scripts/cluster_papers.py`](../scripts/cluster_papers.py) 负责未来完整重跑时生成这些字段；[`scripts/update_cluster_claims.py`](../scripts/update_cluster_claims.py) 可在不改变 cluster assignments 和 UMAP coordinates 的情况下刷新现有结果。
 
 ## 4. 哪些地方得到改善
 
-### 4.1 标签从表面动作变成理论贡献判断
+### 4.1 标签从表面动作变成研究贡献判断
 
-旧标签中的 defines、organizes 或 synthesizes 描述的是写作或知识处理动作。Path 1 试图描述理论贡献类型，因此不同 cluster 之间更容易进行方法学比较。
+旧标签中的 defines、organizes 或 synthesizes 描述的是写作或知识处理动作。新上层先判断 Empirical、Artifact、Methodological、Theoretical 等主要研究贡献；只有理论贡献再判断 Path 1 move。
 
 ### 4.2 标签具有统一比较框架
 
-所有关键词、text views 和 clustering methods 使用同一组 codes。研究者可以横向比较某个 keyword 下 building、borrowing、testing 和 meta-reflection 的分布，而不必先统一大量开放式标签。
+所有关键词、text views 和 clustering methods 使用同一组 contribution/domain codes；Theoretical 子集再横向比较 building、borrowing、testing 和 meta-reflection。
 
 ### 4.3 输出可重复、可追踪
 
@@ -135,19 +158,9 @@ CSV 和网页 payload 新增：
 
 ## 6. 局限与风险
 
-### 6.1 当前 `Unclear` 比例很高
+### 6.1 路由后仍有 `Unclear`，但含义更准确
 
-当前网站共有 182 个实际 clusters：
-
-| Theory move | Cluster 数 |
-|---|---:|
-| Building New Theory | 13 |
-| Borrowing Theory from Other Fields | 24 |
-| Testing Theory Empirically | 1 |
-| Meta-Theoretical Reflection on Design | 13 |
-| Unclear Theory Move — Requires Human Review | 131 |
-
-约 72% 的 clusters 为 `Unclear`。这说明规则目前很保守，也说明全站许多 keyword clusters 并不以明确的 theory move 为中心。它不应被描述为已经完成了高覆盖率自动编码。
+当前 182 个 cluster-view results 的 primary contributions 为 Methodological 114、Theoretical 52、Survey/Synthesis 8、Artifact 4、Unclear 4。52 个 Theoretical results 中，22 个 theory moves 仍为 Unclear。当前没有 cluster 以 Empirical、Algorithmic 或 Dataset 为 primary，尽管 paper-level coding 中存在 Empirical 和 Algorithmic papers；这表示它们没有在任何 cluster 内形成占主导地位且达到支持阈值的贡献类型。这里的 182 包含同一 corpus 在不同 keyword、view 和 algorithm 下的重复分析，不能解释为 182 个独立主题。
 
 ### 6.2 四类并非天然互斥
 
@@ -159,7 +172,7 @@ CSV 和网页 payload 新增：
 
 ### 6.4 domain 也是启发式推断
 
-`Industrial Design`、`Tool` 或 `Game` 来自已有 facet patterns，不是人工确认的研究领域。theory move 为 `Unclear` 并不意味着 domain 也不确定，反之亦然；两项都应允许人工修改。
+13 类 domains 来自自动 patterns，不是人工确认的研究领域。Tool 和 Interface 已被排除，但跨领域词仍可能产生过宽或错误的多标签结果；contribution、domain 和 theory move 都应允许人工修改。
 
 ### 6.5 固定 taxonomy 限制表达能力
 
@@ -182,14 +195,60 @@ Path 1 适合全 corpus 的一致编码，但标签不如 Path 2 的开放式 LL
 
 可以说：
 
-> The website now applies a deterministic, literature-informed theory-move typology as an auditable first-pass coding layer. Unsupported or ambiguous clusters are explicitly flagged for human review.
+> The website first applies a deterministic contribution-type and application-domain coding layer. Path 1 theory-move coding is then applied only to clusters with a theoretical primary or equivalent secondary contribution. All outputs are auditable first-pass codes subject to human validation.
 
 不能说：
 
 - 这四类就是 Gregor (2006) 原文提出的 taxonomy；
-- Path 1 已经证明所有 clusters 的理论类型；
+- 所有 clusters 都具有可解释的 theory move；
 - `Unclear` 表示论文没有理论贡献；
 - 新标签改善了 clustering quality；
 - 自动规则可以取代人工阅读和验证。
 
 Path 1 的真正价值是建立一个一致、透明、可复核的起点，而不是把规则输出包装成最终解释。
+
+## 9. 全站上层分类：Contribution Type × Application Domain
+
+Path 1 不再作为所有 clusters 的唯一主分类。系统先编码 contribution type 和 application domain，再只对 theoretical contributions 使用 Path 1。
+
+Contribution type 采用 HAID 对 [Wobbrock and Kientz (2016)](https://doi.org/10.1145/2907069) 的扩展：Empirical、Algorithmic、Artifact、Methodological、Theoretical 和 Dataset。[HAID systematic review](https://d197for5662m48.cloudfront.net/documents/publicationstatus/303779/preprint_pdf/2a093aa78d9078cd6a33d3dee8f8632b.pdf) 在报告这六类时排除了 survey 和 opinion papers；本 corpus 包含 systematic reviews，因此增加 `Survey/Synthesis`。默认选择一个 primary contribution type，只有两个贡献真正等价时才增加 secondary type。
+
+Application domain 可沿用 HAID 的 13 类：
+
+1. Healthcare, medicine, surgery
+2. Finance, business, economy
+3. Transportation, mobility, planning
+4. Law, democracy, governance
+5. Everyday, employment, public service
+6. Education, teaching, research
+7. Manufacturing, industry, automation
+8. Media, communication, entertainment
+9. Environment, resource, energy
+10. Software, system, cybersecurity
+11. Defense, military, emergency
+12. Design, creativity, architecture
+13. Generic, abstract, domain-agnostic
+
+Domain 可以多标签，因为同一论文可能横跨多个 application settings。Domain 应优先由 abstract 明示内容判断；未明示时才参考任务和数据集。Interface、Tool、Dashboard 和 Game 仍是 artifact/system types，不能作为 domain。
+
+推荐的层级输出是：
+
+`Form | Primary contribution | Application domain(s)`
+
+并按 contribution type 增加专属字段：
+
+- Theoretical contribution → Path 1 theory move
+- Artifact contribution → Artifact/system type
+- Empirical contribution → Empirical purpose and method
+- Methodological contribution → Method/guideline/framework type
+- Algorithmic contribution → Algorithm/model contribution
+- Dataset contribution → Dataset/benchmark type
+- Survey/Synthesis → Review/synthesis type
+
+例如：
+
+`Design Guidelines | Methodological contribution | Domain: Software, system, cybersecurity`
+
+`Artifact/System: Interface`
+
+这里 Interface 描述产出或研究对象的形态，不描述 application domain。

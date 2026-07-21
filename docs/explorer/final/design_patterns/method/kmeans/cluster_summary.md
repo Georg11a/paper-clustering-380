@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (50 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review | Domain: Tool
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 1/50 papers, weighted score 6
-Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; explicit meta-theory/metatheory (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Understanding and using patterns in software development; Design pattern in object-oriented technology.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Patterns: Methodological Contribution | Domain: Software, System, Cybersecurity; Design, Creativity, Architecture; Media, Communication, Entertainment
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 47/50 papers; weighted score 237
+Contribution patterns: explicit methodological output (79)
+Application domains: Software, System, Cybersecurity; Design, Creativity, Architecture; Media, Communication, Entertainment
+Domain support: Software, System, Cybersecurity: 14/50 papers; Design, Creativity, Architecture: 8/50 papers; Media, Communication, Entertainment: 8/50 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 47/50 papers; weighted score 237; matched indicators include explicit methodological output (79). Its application domain coding is Software, System, Cybersecurity; Design, Creativity, Architecture; Media, Communication, Entertainment. Representative papers include Understanding and using patterns in software development; Design pattern in object-oriented technology.
+Design-knowledge contribution: Methodological Contribution
 Theme words: patterns, software, analysis, solutions, language, structural, modeling, level
 
 Representative papers:
@@ -17,12 +23,18 @@ Representative papers:
 - 2020: Patterns, anticipation and participatory futures
 
 ### Cluster 1 (17 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review | Domain: Interface
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No unambiguous move; best candidate has support from 1/17 papers, weighted score 3
-Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include A pattern approach to interaction design; A pattern approach to interaction design.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
+Label candidate: Design Patterns: Methodological Contribution | Domain: Education, Teaching, Research; Software, System, Cybersecurity; Design, Creativity, Architecture
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 14/17 papers; weighted score 60
+Contribution patterns: explicit methodological output (20)
+Application domains: Education, Teaching, Research; Software, System, Cybersecurity; Design, Creativity, Architecture
+Domain support: Education, Teaching, Research: 5/17 papers; Software, System, Cybersecurity: 4/17 papers; Design, Creativity, Architecture: 4/17 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 14/17 papers; weighted score 60; matched indicators include explicit methodological output (20). Its application domain coding is Education, Teaching, Research; Software, System, Cybersecurity; Design, Creativity, Architecture. Representative papers include A pattern approach to interaction design; A pattern approach to interaction design.
+Design-knowledge contribution: Methodological Contribution
 Theme words: patterns, domain, business, computer, application, practice, team, alexander
 
 Representative papers:

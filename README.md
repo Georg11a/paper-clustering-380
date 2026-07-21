@@ -138,6 +138,14 @@ design_knowledge_form
 design_knowledge_action
 design_knowledge_role
 design_knowledge_contribution
+contribution_type_key
+contribution_type
+contribution_type_secondary
+contribution_type_patterns
+contribution_type_support
+application_domains
+application_domain_patterns
+application_domain_support
 theory_move_key
 theory_move
 theory_move_patterns
@@ -228,19 +236,31 @@ requested maximum is 8.
 
 ## Cluster Labeling Rationale
 
-Cluster labels use a deterministic, literature-informed theory-move typology.
-Each non-noise cluster is coded as `Building New Theory`, `Borrowing Theory from
-Other Fields`, `Testing Theory Empirically`, `Meta-Theoretical Reflection on
-Design`, or `Unclear Theory Move — Requires Human Review`. The displayed label
-combines this move with the keyword/form and an application domain when one is
-available.
+Cluster labels use a hierarchical deterministic typology. The first layer codes
+the primary research contribution using the six HAID categories adapted from
+Wobbrock and Kientz (2016): empirical, algorithmic, artifact, methodological,
+theoretical, and dataset contributions. Because this corpus retains review
+papers, it adds `Survey/Synthesis Contribution` as a seventh type. One primary
+type is selected unless two types have genuinely equivalent evidence.
+
+The second layer codes one or more of HAID's 13 application domains. Tool,
+Interface, Dashboard, and Game remain artifact/system types and are never used
+as domains. A cluster without specific domain evidence is labeled `Generic,
+Abstract, Domain-Agnostic`.
+
+Path 1 is now a conditional third layer. Only clusters whose primary or
+equivalent secondary contribution is theoretical are coded as `Building New
+Theory`, `Borrowing Theory from Other Fields`, `Testing Theory Empirically`,
+`Meta-Theoretical Reflection on Design`, or `Unclear Theory Move — Requires
+Human Review`. Other contribution types record the theory move as not
+applicable rather than unclear.
 
 The four substantive codes synthesize theory building/testing, theory borrowing,
 and design meta-theory literature; they are not a verbatim taxonomy from Gregor
 (2006) or Gregor and Jones (2007). Coding is performed per paper from titles,
 abstracts, and Discussion summaries, then aggregated at cluster level. Weak or
-ambiguous evidence is never defaulted to theory building. `theory_move_patterns`
-and `theory_move_support` expose the matched rules and supporting-paper count for
+ambiguous evidence is never defaulted to theory building. Contribution, domain,
+and theory-move fields expose matched rules and supporting-paper counts for
 audit. These outputs are automatic first-pass codes to be spot-checked by humans,
 not ground truth.
 

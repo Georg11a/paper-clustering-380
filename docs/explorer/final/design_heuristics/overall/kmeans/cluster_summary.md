@@ -3,12 +3,18 @@
 ## Cluster Themes
 
 ### Cluster 0 (14 papers)
-Label candidate: Design Heuristics: Unclear Theory Move — Requires Human Review | Domain: Tool
-Theory move: Unclear Theory Move — Requires Human Review
-Theory-move support: No theory-move signal (14 papers reviewed)
-Matched patterns: No decisive pattern match
-Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization; Formal system for the expression of target-oriented design heuristics.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
+Label candidate: Design Heuristics: Methodological Contribution | Domain: Design, Creativity, Architecture; Media, Communication, Entertainment
+Primary contribution: Methodological Contribution
+Secondary contribution: n/a
+Contribution support: 11/14 papers; weighted score 54
+Contribution patterns: explicit methodological output (18)
+Application domains: Design, Creativity, Architecture; Media, Communication, Entertainment
+Domain support: Design, Creativity, Architecture: 7/14 papers; Media, Communication, Entertainment: 3/14 papers
+Theory move: Not Applicable — Contribution Is Not Theoretical
+Theory-move support: Not applicable
+Matched patterns: Not applicable
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 11/14 papers; weighted score 54; matched indicators include explicit methodological output (18). Its application domain coding is Design, Creativity, Architecture; Media, Communication, Entertainment. Representative papers include Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization; Formal system for the expression of target-oriented design heuristics.
+Design-knowledge contribution: Methodological Contribution
 Theme words: heuristics, product, form, target, solutions, engineering, focus, communication
 
 Representative papers:
