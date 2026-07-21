@@ -7,12 +7,16 @@ Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 33/40 papers; weighted score 159
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (45); articulates conceptual or philosophical foundations (6)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research; Design, Creativity, Architecture
 Domain support: Education, Teaching, Research: 6/40 papers; Design, Creativity, Architecture: 6/40 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 3/40 papers, weighted score 12
-Matched patterns: Best candidate: Borrowing Theory from Other Fields; applies/adopts an external theory (3)
+Matched patterns: Best candidate: Borrowing and Adapting Existing Theory; applies/adopts an external theory (3)
 Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 33/40 papers; weighted score 159; matched indicators include explicit theoretical output (45); articulates conceptual or philosophical foundations (6). Its application domain coding is Education, Teaching, Research; Design, Creativity, Architecture. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS; Digital Panopticon: How Remote Work Monitoring Shapes Employee Behavior and Motivation.
 Design-knowledge contribution: Theoretical Contribution
 Theme words: concept, digital, problem, innovation, service, technique, methodology, commons
@@ -27,9 +31,13 @@ Label candidate: Design Theory: Theoretical Contribution — Meta-Theoretical Re
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 33/35 papers; weighted score 194
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (56); articulates conceptual or philosophical foundations (5); contributes theory or a conceptual framework (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 35/35 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 9/35 papers; weighted score 63
 Matched patterns: reflects on the nature/role/value of theory (7); explicit meta-theory/metatheory (3); philosophy/epistemology/ontology of design (3)

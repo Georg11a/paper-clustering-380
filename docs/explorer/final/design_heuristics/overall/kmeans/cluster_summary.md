@@ -7,9 +7,13 @@ Label candidate: Design Heuristics: Methodological Contribution | Domain: Design
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 11/14 papers; weighted score 54
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (18)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture; Media, Communication, Entertainment
 Domain support: Design, Creativity, Architecture: 7/14 papers; Media, Communication, Entertainment: 3/14 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

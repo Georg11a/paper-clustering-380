@@ -7,9 +7,13 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution definition: n/a
 Contribution patterns: n/a
+Contribution summary fields: n/a
+Contribution summary template: n/a
 Application domains: n/a
 Domain support: n/a
+Domain definitions: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -27,9 +31,13 @@ Label candidate: Design Patterns: Methodological Contribution | Domain: Transpor
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 4/5 papers; weighted score 21
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (7)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Transportation, Mobility, Planning; Software, System, Cybersecurity
 Domain support: Transportation, Mobility, Planning: 2/5 papers; Software, System, Cybersecurity: 2/5 papers
+Domain definitions: Transportation, Mobility, Planning: Covers vehicles, traffic, mobility, routing, logistics, and urban or infrastructure planning. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -47,9 +55,13 @@ Label candidate: Design Patterns: Methodological Contribution | Domain: Software
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 10/11 papers; weighted score 48
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (16)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Software, System, Cybersecurity; Design, Creativity, Architecture
 Domain support: Software, System, Cybersecurity: 5/11 papers; Design, Creativity, Architecture: 2/11 papers
+Domain definitions: Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

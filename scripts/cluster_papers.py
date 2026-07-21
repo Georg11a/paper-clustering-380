@@ -24,7 +24,13 @@ from sklearn.metrics.pairwise import cosine_distances
 from sklearn.preprocessing import normalize
 
 from evidence_scorer import PaperParagraphs, faithfulness_score, select_cluster_evidence
-from research_typology import classify_contribution, classify_domains
+from research_typology import (
+    classify_contribution,
+    classify_domains,
+    contribution_definition,
+    contribution_summary_fields,
+    contribution_summary_template,
+)
 from theory_typology import THEORY_MOVE_LABELS, classify_theory_move
 
 
@@ -1950,9 +1956,13 @@ def infer_research_typology_claim(
         "contribution_type_secondary": contribution.secondary_label,
         "contribution_type_patterns": contribution.patterns_text,
         "contribution_type_support": contribution.support_text,
+        "contribution_type_definition": contribution_definition(contribution.primary_key),
+        "contribution_summary_fields": contribution_summary_fields(contribution.primary_key),
+        "contribution_summary_template": contribution_summary_template(contribution.primary_key),
         "application_domains": domains.labels_text,
         "application_domain_patterns": domains.patterns_text,
         "application_domain_support": domains.support_text,
+        "application_domain_definitions": domains.definitions_text,
         "theory_move_key": theory_key,
         "theory_move": theory_label,
         "theory_move_patterns": theory_patterns,
@@ -1983,9 +1993,13 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 "contribution_type_secondary": "",
                 "contribution_type_patterns": "n/a",
                 "contribution_type_support": "n/a",
+                "contribution_type_definition": "n/a",
+                "contribution_summary_fields": "n/a",
+                "contribution_summary_template": "n/a",
                 "application_domains": "n/a",
                 "application_domain_patterns": "n/a",
                 "application_domain_support": "n/a",
+                "application_domain_definitions": "n/a",
                 "theory_move_key": "n/a",
                 "theory_move": "n/a",
                 "theory_move_patterns": "n/a",
@@ -2065,9 +2079,13 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "contribution_type_secondary": design_claim["contribution_type_secondary"],
             "contribution_type_patterns": design_claim["contribution_type_patterns"],
             "contribution_type_support": design_claim["contribution_type_support"],
+            "contribution_type_definition": design_claim["contribution_type_definition"],
+            "contribution_summary_fields": design_claim["contribution_summary_fields"],
+            "contribution_summary_template": design_claim["contribution_summary_template"],
             "application_domains": design_claim["application_domains"],
             "application_domain_patterns": design_claim["application_domain_patterns"],
             "application_domain_support": design_claim["application_domain_support"],
+            "application_domain_definitions": design_claim["application_domain_definitions"],
             "theory_move_key": design_claim["theory_move_key"],
             "theory_move": design_claim["theory_move"],
             "theory_move_patterns": design_claim["theory_move_patterns"],
@@ -2140,9 +2158,13 @@ def write_summary(df: pd.DataFrame, cluster_terms: dict[int, str], topic_words: 
             lines.append(f"Primary contribution: {subset.iloc[0].get('contribution_type', '')}")
             lines.append(f"Secondary contribution: {subset.iloc[0].get('contribution_type_secondary', '') or 'n/a'}")
             lines.append(f"Contribution support: {subset.iloc[0].get('contribution_type_support', '')}")
+            lines.append(f"Contribution definition: {subset.iloc[0].get('contribution_type_definition', '')}")
             lines.append(f"Contribution patterns: {subset.iloc[0].get('contribution_type_patterns', '')}")
+            lines.append(f"Contribution summary fields: {subset.iloc[0].get('contribution_summary_fields', '')}")
+            lines.append(f"Contribution summary template: {subset.iloc[0].get('contribution_summary_template', '')}")
             lines.append(f"Application domains: {subset.iloc[0].get('application_domains', '')}")
             lines.append(f"Domain support: {subset.iloc[0].get('application_domain_support', '')}")
+            lines.append(f"Domain definitions: {subset.iloc[0].get('application_domain_definitions', '')}")
             lines.append(f"Theory move: {subset.iloc[0].get('theory_move', '')}")
             lines.append(f"Theory-move support: {subset.iloc[0].get('theory_move_support', '')}")
             lines.append(f"Matched patterns: {subset.iloc[0].get('theory_move_patterns', '')}")
@@ -2255,9 +2277,13 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "contribution_type_secondary": str(subset.iloc[0].get("contribution_type_secondary", "")) if len(subset) else "",
                 "contribution_type_patterns": str(subset.iloc[0].get("contribution_type_patterns", "")) if len(subset) else "",
                 "contribution_type_support": str(subset.iloc[0].get("contribution_type_support", "")) if len(subset) else "",
+                "contribution_type_definition": str(subset.iloc[0].get("contribution_type_definition", "")) if len(subset) else "",
+                "contribution_summary_fields": str(subset.iloc[0].get("contribution_summary_fields", "")) if len(subset) else "",
+                "contribution_summary_template": str(subset.iloc[0].get("contribution_summary_template", "")) if len(subset) else "",
                 "application_domains": str(subset.iloc[0].get("application_domains", "")) if len(subset) else "",
                 "application_domain_patterns": str(subset.iloc[0].get("application_domain_patterns", "")) if len(subset) else "",
                 "application_domain_support": str(subset.iloc[0].get("application_domain_support", "")) if len(subset) else "",
+                "application_domain_definitions": str(subset.iloc[0].get("application_domain_definitions", "")) if len(subset) else "",
                 "theory_move": str(subset.iloc[0].get("theory_move", "")) if len(subset) else "",
                 "theory_move_patterns": str(subset.iloc[0].get("theory_move_patterns", "")) if len(subset) else "",
                 "theory_move_support": str(subset.iloc[0].get("theory_move_support", "")) if len(subset) else "",
@@ -2298,9 +2324,13 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "contribution_type_secondary": str(row.get("contribution_type_secondary", "")),
                 "contribution_type_patterns": str(row.get("contribution_type_patterns", "")),
                 "contribution_type_support": str(row.get("contribution_type_support", "")),
+                "contribution_type_definition": str(row.get("contribution_type_definition", "")),
+                "contribution_summary_fields": str(row.get("contribution_summary_fields", "")),
+                "contribution_summary_template": str(row.get("contribution_summary_template", "")),
                 "application_domains": str(row.get("application_domains", "")),
                 "application_domain_patterns": str(row.get("application_domain_patterns", "")),
                 "application_domain_support": str(row.get("application_domain_support", "")),
+                "application_domain_definitions": str(row.get("application_domain_definitions", "")),
                 "theory_move_key": str(row.get("theory_move_key", "")),
                 "theory_move": str(row.get("theory_move", "")),
                 "theory_move_patterns": str(row.get("theory_move_patterns", "")),
@@ -2754,8 +2784,10 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
             <span class="pill">Domain: ${{escapeHtml(p.application_domains || 'n/a')}}</span>
           </div>
           <div class="meta" style="margin-top:8px">Contribution support: ${{escapeHtml(p.contribution_type_support || 'n/a')}}</div>
+          <div class="meta">Contribution definition: ${{escapeHtml(p.contribution_type_definition || 'n/a')}}</div>
           <div class="meta">Contribution patterns: ${{escapeHtml(p.contribution_type_patterns || 'n/a')}}</div>
           <div class="meta">Domain support: ${{escapeHtml(p.application_domain_support || 'n/a')}}</div>
+          <div class="meta">Domain definition: ${{escapeHtml(p.application_domain_definitions || 'n/a')}}</div>
           ${{p.theory_move_key !== 'not_applicable' && p.theory_move_key !== 'n/a' ? `
           <div class="section-title" style="margin-top:14px">Path 1 Theory Move</div>
           <div class="pill-row">
@@ -3008,9 +3040,13 @@ def main() -> None:
         "contribution_type_secondary",
         "contribution_type_patterns",
         "contribution_type_support",
+        "contribution_type_definition",
+        "contribution_summary_fields",
+        "contribution_summary_template",
         "application_domains",
         "application_domain_patterns",
         "application_domain_support",
+        "application_domain_definitions",
         "theory_move_key",
         "theory_move",
         "theory_move_patterns",

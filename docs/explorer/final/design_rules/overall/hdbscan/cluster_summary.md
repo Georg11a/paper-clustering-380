@@ -7,9 +7,13 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution definition: n/a
 Contribution patterns: n/a
+Contribution summary fields: n/a
+Contribution summary template: n/a
 Application domains: n/a
 Domain support: n/a
+Domain definitions: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -27,9 +31,13 @@ Label candidate: Design Rules: Theoretical Contribution — Unclear Theory Move 
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 1/3 papers; weighted score 7
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: articulates conceptual or philosophical foundations (1); explicit theoretical output (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 3/3 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (3 papers reviewed)
 Matched patterns: No decisive pattern match
@@ -47,9 +55,13 @@ Label candidate: Design Rules: Artifact Contribution | Domain: Design, Creativit
 Primary contribution: Artifact Contribution
 Secondary contribution: n/a
 Contribution support: 1/3 papers; weighted score 3
+Contribution definition: Creates and implements a system, tool, interface, prototype, platform, or other designed artifact.
 Contribution patterns: explicit artifact output (1)
+Contribution summary fields: artifact type; intended users; supported activity; evaluation or deployment
+Contribution summary template: Introduces [tool/interface/system] for [users] to support [activity] in [domain], evaluated through [method].
 Application domains: Design, Creativity, Architecture; Software, System, Cybersecurity; Environment, Resource, Energy
 Domain support: Design, Creativity, Architecture: 2/3 papers; Software, System, Cybersecurity: 1/3 papers; Environment, Resource, Energy: 1/3 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

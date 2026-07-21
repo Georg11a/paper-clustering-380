@@ -7,9 +7,13 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution definition: n/a
 Contribution patterns: n/a
+Contribution summary fields: n/a
+Contribution summary template: n/a
 Application domains: n/a
 Domain support: n/a
+Domain definitions: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -27,9 +31,13 @@ Label candidate: Design Guidelines: Theoretical Contribution — Meta-Theoretica
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 2/6 papers; weighted score 19
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (3); contributes theory or a conceptual framework (1); articulates conceptual or philosophical foundations (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 6/6 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 1/6 papers; weighted score 6
 Matched patterns: explicit meta-theory/metatheory (1)
@@ -47,9 +55,13 @@ Label candidate: Design Heuristics: Methodological Contribution | Domain: Design
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 5/8 papers; weighted score 27
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (9)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 5/8 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -67,9 +79,13 @@ Label candidate: Design Guidelines: Theoretical Contribution — Unclear Theory 
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 5/10 papers; weighted score 40
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (8); articulates conceptual or philosophical foundations (4)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Media, Communication, Entertainment
 Domain support: Media, Communication, Entertainment: 3/10 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/10 papers, weighted score 5
 Matched patterns: Best candidate: Testing Theory Empirically; testing a theory/framework/model (1)
@@ -87,9 +103,13 @@ Label candidate: Design Principles: Theoretical Contribution — Building New Th
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 4/8 papers; weighted score 29
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (7); articulates conceptual or philosophical foundations (2)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research
 Domain support: Education, Teaching, Research: 7/8 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Building New Theory
 Theory-move support: 3/8 papers; weighted score 11
 Matched patterns: proposes a new theory/framework (2); new theoretical constructs/propositions (1)
@@ -107,9 +127,13 @@ Label candidate: Design Knowledge: Methodological Contribution | Domain: Media, 
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 5/9 papers; weighted score 24
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (8)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Media, Communication, Entertainment; Education, Teaching, Research
 Domain support: Media, Communication, Entertainment: 8/9 papers; Education, Teaching, Research: 4/9 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -127,9 +151,13 @@ Label candidate: Design Rationale: Methodological Contribution | Domain: Finance
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 3/6 papers; weighted score 15
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (5)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Finance, Business, Economy; Software, System, Cybersecurity; Media, Communication, Entertainment
 Domain support: Finance, Business, Economy: 2/6 papers; Software, System, Cybersecurity: 2/6 papers; Media, Communication, Entertainment: 2/6 papers
+Domain definitions: Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -147,9 +175,13 @@ Label candidate: Design Methods: Methodological Contribution | Domain: Generic, 
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 8/14 papers; weighted score 27
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (9)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 14/14 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -167,9 +199,13 @@ Label candidate: Design Knowledge: Methodological Contribution | Domain: Generic
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 5/8 papers; weighted score 21
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (7)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 8/8 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -187,9 +223,13 @@ Label candidate: Design Heuristics: Methodological Contribution | Domain: Enviro
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 4/6 papers; weighted score 18
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (6)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Environment, Resource, Energy
 Domain support: Environment, Resource, Energy: 2/6 papers
+Domain definitions: Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -207,9 +247,13 @@ Label candidate: Design Guidelines: Methodological Contribution | Domain: Design
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 27/44 papers; weighted score 138
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (46)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 10/44 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -227,9 +271,13 @@ Label candidate: Design Patterns: Methodological Contribution | Domain: Law, Dem
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 4/7 papers; weighted score 18
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (6)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Law, Democracy, Governance; Finance, Business, Economy; Healthcare, Medicine, Surgery
 Domain support: Law, Democracy, Governance: 2/7 papers; Finance, Business, Economy: 2/7 papers; Healthcare, Medicine, Surgery: 2/7 papers
+Domain definitions: Law, Democracy, Governance: Covers legal and judicial decisions, democracy, elections, public policy, regulation, and governance. Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making. Healthcare, Medicine, Surgery: Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

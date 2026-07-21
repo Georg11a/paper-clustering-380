@@ -7,9 +7,13 @@ Label candidate: Design Rationale: Methodological Contribution | Domain: Media, 
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 6/20 papers; weighted score 21
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (7)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Media, Communication, Entertainment; Design, Creativity, Architecture
 Domain support: Media, Communication, Entertainment: 4/20 papers; Design, Creativity, Architecture: 3/20 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

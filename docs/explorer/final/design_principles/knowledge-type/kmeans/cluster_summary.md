@@ -7,9 +7,13 @@ Label candidate: Design Principles: Methodological Contribution | Domain: Educat
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 8/11 papers; weighted score 36
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (12)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Education, Teaching, Research; Healthcare, Medicine, Surgery
 Domain support: Education, Teaching, Research: 4/11 papers; Healthcare, Medicine, Surgery: 2/11 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Healthcare, Medicine, Surgery: Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -27,9 +31,13 @@ Label candidate: Design Principles: Methodological Contribution | Domain: Media,
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 5/6 papers; weighted score 24
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (8)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Media, Communication, Entertainment; Design, Creativity, Architecture
 Domain support: Media, Communication, Entertainment: 3/6 papers; Design, Creativity, Architecture: 2/6 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

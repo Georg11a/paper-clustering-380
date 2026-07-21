@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 """Deterministic first-pass coding of research contributions and domains.
 
-Contribution types adapt the six types used by Bai et al.'s HAID review from
-Wobbrock and Kientz (2016), with Survey/Synthesis retained because this corpus
-includes review papers. Application domains adapt HAID's 13-domain codebook.
-Codes are assigned per paper and aggregated at cluster level; they remain
-first-pass labels that require human validation.
+The seven contribution types and 13 application domains are defined here as a
+project codebook. Codes are assigned per paper and aggregated at cluster level;
+they remain first-pass labels that require human validation.
 """
 
 from __future__ import annotations
@@ -70,6 +68,10 @@ class DomainResult:
     def patterns_text(self) -> str:
         return "; ".join(self.matched_patterns) if self.matched_patterns else "No specific domain signal"
 
+    @property
+    def definitions_text(self) -> str:
+        return " ".join(f"{label}: {DOMAIN_DEFINITIONS[key]}" for key, label in zip(self.keys, self.labels))
+
 
 CONTRIBUTION_LABELS = {
     "empirical": "Empirical Contribution",
@@ -80,6 +82,54 @@ CONTRIBUTION_LABELS = {
     "dataset": "Dataset Contribution",
     "survey": "Survey/Synthesis Contribution",
     "unclear": "Unclear Contribution Type — Requires Human Review",
+}
+
+
+CONTRIBUTION_DEFINITIONS = {
+    "empirical": "Produces new findings through the systematic collection and analysis of observational, experimental, qualitative, quantitative, or mixed-method data.",
+    "algorithmic": "Introduces or materially improves an algorithm, computational model, optimization procedure, or machine-learning approach.",
+    "artifact": "Creates and implements a system, tool, interface, prototype, platform, or other designed artifact.",
+    "methodological": "Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.",
+    "theoretical": "Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.",
+    "dataset": "Creates and documents a dataset, corpus, benchmark, annotation set, or reusable data resource.",
+    "survey": "Reviews and synthesizes prior literature to produce an evidence map, taxonomy, trends, gaps, or an integrated account of a field.",
+    "unclear": "Available textual evidence is insufficient to assign a reliable primary contribution type.",
+}
+
+
+CONTRIBUTION_SUMMARY_SCHEMAS = {
+    "empirical": {
+        "fields": ("study purpose", "population or data", "phenomenon", "method", "supported finding"),
+        "template": "Empirically examines [phenomenon] among [population] in [domain], using [method]. The studies consistently find [supported finding].",
+    },
+    "algorithmic": {
+        "fields": ("computational task", "algorithm or model", "objective", "evaluation metric or benchmark"),
+        "template": "Develops [algorithm/model] for [task] in [domain], evaluated against [metric/benchmark].",
+    },
+    "artifact": {
+        "fields": ("artifact type", "intended users", "supported activity", "evaluation or deployment"),
+        "template": "Introduces [tool/interface/system] for [users] to support [activity] in [domain], evaluated through [method].",
+    },
+    "methodological": {
+        "fields": ("method subtype", "target activity", "intended user", "desired outcome", "validation"),
+        "template": "Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].",
+    },
+    "theoretical": {
+        "fields": ("theory move", "focal concept", "named theory", "source discipline", "scope"),
+        "template": "Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].",
+    },
+    "dataset": {
+        "fields": ("dataset content", "unit", "population", "scale", "intended use", "availability"),
+        "template": "Contributes a dataset of [content/unit] covering [scope], intended for [task] in [domain].",
+    },
+    "survey": {
+        "fields": ("review scope", "corpus boundary", "synthesis method", "output", "research gap"),
+        "template": "Reviews [scope] across [corpus], synthesizing [taxonomy/trends/gaps] and identifying [key gap].",
+    },
+    "unclear": {
+        "fields": ("human review" ,),
+        "template": "Available evidence does not support a contribution-specific cluster summary.",
+    },
 }
 
 
@@ -261,6 +311,37 @@ DOMAIN_LABELS = {
 }
 
 
+DOMAIN_DEFINITIONS = {
+    "healthcare": "Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy.",
+    "finance": "Covers finance, investment, credit, markets, business management, and economic decision-making.",
+    "transportation": "Covers vehicles, traffic, mobility, routing, logistics, and urban or infrastructure planning.",
+    "law": "Covers legal and judicial decisions, democracy, elections, public policy, regulation, and governance.",
+    "everyday": "Covers everyday personal decisions, employment and workforce issues, welfare, and public services.",
+    "education": "Covers learning, teaching, assessment, academic research, and educational administration.",
+    "manufacturing": "Covers manufacturing, production, industrial processes, automation, robotics, and supply chains.",
+    "media": "Covers news, social media, communication, content production, entertainment, games, and sports.",
+    "environment": "Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.",
+    "software": "Covers software development, systems engineering, IT operations, privacy, and cybersecurity.",
+    "defense": "Covers defense, military operations, public safety, emergency response, and disaster management.",
+    "design": "Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.",
+    "generic": "Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.",
+}
+
+
+def contribution_definition(key: str) -> str:
+    return CONTRIBUTION_DEFINITIONS.get(key, CONTRIBUTION_DEFINITIONS["unclear"])
+
+
+def contribution_summary_fields(key: str) -> str:
+    schema = CONTRIBUTION_SUMMARY_SCHEMAS.get(key, CONTRIBUTION_SUMMARY_SCHEMAS["unclear"])
+    return "; ".join(schema["fields"])
+
+
+def contribution_summary_template(key: str) -> str:
+    schema = CONTRIBUTION_SUMMARY_SCHEMAS.get(key, CONTRIBUTION_SUMMARY_SCHEMAS["unclear"])
+    return str(schema["template"])
+
+
 DOMAIN_RULES = {
     "healthcare": (Rule("healthcare setting", r"\b(?:healthcare|health care|clinical|clinic|medical|medicine|patient|hospital|surgery|surgical|diagnosis|treatment)\b", 3),),
     "finance": (Rule("finance/business setting", r"\b(?:finance|financial|banking|business|economy|economic|loan|credit|investment|retail|market|entrepreneurship)\b", 3),),
@@ -419,6 +500,10 @@ def _self_test() -> None:
     assert domains.keys == ("healthcare",), domains
     generic = classify_domains([{"abstract": "We present an interface for a general abstract problem."}])
     assert generic.keys == ("generic",), generic
+    assert len(CONTRIBUTION_SUMMARY_SCHEMAS) == 8
+    assert len(DOMAIN_DEFINITIONS) == 13
+    assert all(definition.endswith(".") for definition in DOMAIN_DEFINITIONS.values())
+    assert "interface" not in DOMAIN_LABELS
     print("research_typology self-test: ok")
 
 

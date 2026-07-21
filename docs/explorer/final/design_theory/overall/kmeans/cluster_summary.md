@@ -7,9 +7,13 @@ Label candidate: Design Theory: Theoretical Contribution — Meta-Theoretical Re
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 49/53 papers; weighted score 269
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (77); articulates conceptual or philosophical foundations (8); contributes theory or a conceptual framework (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 9/53 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 8/53 papers; weighted score 53
 Matched patterns: reflects on the nature/role/value of theory (7); explicit meta-theory/metatheory (3); philosophy/epistemology/ontology of design (1)
@@ -27,9 +31,13 @@ Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 17/22 papers; weighted score 84
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (24); articulates conceptual or philosophical foundations (3)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research
 Domain support: Education, Teaching, Research: 4/22 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 2/22 papers, weighted score 20
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; philosophy/epistemology/ontology of design (4)

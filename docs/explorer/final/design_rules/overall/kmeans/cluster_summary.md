@@ -7,9 +7,13 @@ Label candidate: Design Rules: Unclear Contribution Type — Requires Human Revi
 Primary contribution: Unclear Contribution Type — Requires Human Review
 Secondary contribution: n/a
 Contribution support: No reliable contribution signal (11 papers reviewed)
+Contribution definition: Available textual evidence is insufficient to assign a reliable primary contribution type.
 Contribution patterns: No decisive pattern match
+Contribution summary fields: human review
+Contribution summary template: Available evidence does not support a contribution-specific cluster summary.
 Application domains: Design, Creativity, Architecture; Finance, Business, Economy
 Domain support: Design, Creativity, Architecture: 3/11 papers; Finance, Business, Economy: 2/11 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

@@ -7,9 +7,13 @@ Label candidate: Design Guidelines: Methodological Contribution + Artifact Contr
 Primary contribution: Methodological Contribution
 Secondary contribution: Artifact Contribution
 Contribution support: 2/4 papers; weighted score 6
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (2)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Software, System, Cybersecurity
 Domain support: Software, System, Cybersecurity: 1/4 papers
+Domain definitions: Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -27,9 +31,13 @@ Label candidate: Design Guidelines: Methodological Contribution | Domain: Enviro
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 17/21 papers; weighted score 81
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (27)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Environment, Resource, Energy; Design, Creativity, Architecture; Media, Communication, Entertainment
 Domain support: Environment, Resource, Energy: 5/21 papers; Design, Creativity, Architecture: 4/21 papers; Media, Communication, Entertainment: 4/21 papers
+Domain definitions: Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

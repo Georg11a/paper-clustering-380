@@ -7,9 +7,13 @@ Label candidate: Design Guidelines: Theoretical Contribution — Unclear Theory 
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 17/46 papers; weighted score 131
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (25); articulates conceptual or philosophical foundations (14)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research; Media, Communication, Entertainment; Design, Creativity, Architecture
 Domain support: Education, Teaching, Research: 18/46 papers; Media, Communication, Entertainment: 15/46 papers; Design, Creativity, Architecture: 7/46 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 4/46 papers, weighted score 14
 Matched patterns: Best candidate: Building New Theory; proposes a new theory/framework (2); new theoretical constructs/propositions (2)
@@ -27,9 +31,13 @@ Label candidate: Design Knowledge: Methodological Contribution | Domain: Softwar
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 29/34 papers; weighted score 147
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (49)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Software, System, Cybersecurity; Design, Creativity, Architecture
 Domain support: Software, System, Cybersecurity: 9/34 papers; Design, Creativity, Architecture: 8/34 papers
+Domain definitions: Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -47,9 +55,13 @@ Label candidate: Design Guidelines: Methodological Contribution | Domain: Media,
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 17/44 papers; weighted score 81
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (27)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Media, Communication, Entertainment
 Domain support: Media, Communication, Entertainment: 7/44 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -67,9 +79,13 @@ Label candidate: Design Rationale: Methodological Contribution | Domain: Media, 
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 4/11 papers; weighted score 15
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (5)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Media, Communication, Entertainment; Design, Creativity, Architecture
 Domain support: Media, Communication, Entertainment: 3/11 papers; Design, Creativity, Architecture: 2/11 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -83,17 +99,21 @@ Representative papers:
 - : Method rationale in method engineering
 
 ### Cluster 4 (33 papers)
-Label candidate: Design Theory: Theoretical Contribution — Borrowing Theory from Other Fields | Domain: Design, Creativity, Architecture
+Label candidate: Design Theory: Theoretical Contribution — Borrowing and Adapting Existing Theory | Domain: Design, Creativity, Architecture
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 32/33 papers; weighted score 181
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (49); articulates conceptual or philosophical foundations (7); contributes theory or a conceptual framework (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 5/33 papers
-Theory move: Borrowing Theory from Other Fields
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
+Theory move: Borrowing and Adapting Existing Theory
 Theory-move support: 7/33 papers; weighted score 40
 Matched patterns: reference discipline/kernel theory (5); applies/adopts an external theory (4); draws on a theory or theoretical lens (1)
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 32/33 papers; weighted score 181; matched indicators include explicit theoretical output (49); articulates conceptual or philosophical foundations (7); contributes theory or a conceptual framework (1). Its application domain coding is Design, Creativity, Architecture. Within that theoretical contribution, Path 1 codes the move as borrowing theory from other fields. Representative papers include Web-based information systems: Developing a design theory; Affordance based design: a relational theory for design.
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 32/33 papers; weighted score 181; matched indicators include explicit theoretical output (49); articulates conceptual or philosophical foundations (7); contributes theory or a conceptual framework (1). Its application domain coding is Design, Creativity, Architecture. Within that theoretical contribution, Path 1 codes the move as borrowing and adapting existing theory. Representative papers include Web-based information systems: Developing a design theory; Affordance based design: a relational theory for design.
 Design-knowledge contribution: Theoretical Contribution
 Theme words: theories, method theory, science, concept space, instructional, language, shared, sonification
 
@@ -107,9 +127,13 @@ Label candidate: Design Guidelines: Methodological Contribution | Domain: Enviro
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 12/20 papers; weighted score 48
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (16)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Environment, Resource, Energy; Design, Creativity, Architecture; Software, System, Cybersecurity
 Domain support: Environment, Resource, Energy: 5/20 papers; Design, Creativity, Architecture: 5/20 papers; Software, System, Cybersecurity: 4/20 papers
+Domain definitions: Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -127,9 +151,13 @@ Label candidate: Design Heuristics: Methodological Contribution | Domain: Design
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 12/25 papers; weighted score 57
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (19)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture; Media, Communication, Entertainment
 Domain support: Design, Creativity, Architecture: 9/25 papers; Media, Communication, Entertainment: 4/25 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -147,9 +175,13 @@ Label candidate: Design Guidelines: Methodological Contribution | Domain: Financ
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 18/37 papers; weighted score 81
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (27)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Finance, Business, Economy
 Domain support: Finance, Business, Economy: 7/37 papers
+Domain definitions: Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

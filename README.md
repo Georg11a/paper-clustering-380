@@ -237,20 +237,18 @@ requested maximum is 8.
 ## Cluster Labeling Rationale
 
 Cluster labels use a hierarchical deterministic typology. The first layer codes
-the primary research contribution using the six HAID categories adapted from
-Wobbrock and Kientz (2016): empirical, algorithmic, artifact, methodological,
-theoretical, and dataset contributions. Because this corpus retains review
-papers, it adds `Survey/Synthesis Contribution` as a seventh type. One primary
-type is selected unless two types have genuinely equivalent evidence.
+the primary research contribution as empirical, algorithmic, artifact,
+methodological, theoretical, dataset, or survey/synthesis. One primary type is
+selected unless two types have genuinely equivalent evidence.
 
-The second layer codes one or more of HAID's 13 application domains. Tool,
+The second layer codes one or more of 13 application domains. Tool,
 Interface, Dashboard, and Game remain artifact/system types and are never used
 as domains. A cluster without specific domain evidence is labeled `Generic,
 Abstract, Domain-Agnostic`.
 
 Path 1 is now a conditional third layer. Only clusters whose primary or
 equivalent secondary contribution is theoretical are coded as `Building New
-Theory`, `Borrowing Theory from Other Fields`, `Testing Theory Empirically`,
+Theory`, `Borrowing and Adapting Existing Theory`, `Testing Theory Empirically`,
 `Meta-Theoretical Reflection on Design`, or `Unclear Theory Move — Requires
 Human Review`. Other contribution types record the theory move as not
 applicable rather than unclear.
@@ -274,6 +272,10 @@ theory structure.
 See [`docs/path1_theory_typology.md`](docs/path1_theory_typology.md) for the
 implementation changes, methodological benefits, limitations, current label
 distribution, and recommended human-validation protocol.
+
+See [`docs/research_contribution_domain_codebook.md`](docs/research_contribution_domain_codebook.md)
+for the seven contribution-specific summary schemas and one-sentence English
+definitions of all 13 application domains.
 
 Distinctive terms from c-TF-IDF, topic words, facets, and representative-paper
 titles are kept as `distinguishing_evidence_terms` rather than being appended

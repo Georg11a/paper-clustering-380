@@ -7,9 +7,13 @@ Label candidate: Design Methods: Methodological Contribution | Domain: Design, C
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 5/11 papers; weighted score 18
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (6)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture; Environment, Resource, Energy; Education, Teaching, Research
 Domain support: Design, Creativity, Architecture: 5/11 papers; Environment, Resource, Energy: 4/11 papers; Education, Teaching, Research: 3/11 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -27,9 +31,13 @@ Label candidate: Design Methods: Methodological Contribution | Domain: Generic, 
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 5/8 papers; weighted score 24
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (8)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 8/8 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -47,9 +55,13 @@ Label candidate: Design Methods: Methodological Contribution | Domain: Design, C
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 7/23 papers; weighted score 30
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (10)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 4/23 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

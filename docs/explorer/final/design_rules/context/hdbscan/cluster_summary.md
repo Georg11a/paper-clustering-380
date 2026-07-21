@@ -7,9 +7,13 @@ Label candidate: Design Rules: Theoretical Contribution — Unclear Theory Move 
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 1/3 papers; weighted score 7
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: articulates conceptual or philosophical foundations (1); explicit theoretical output (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Healthcare, Medicine, Surgery; Media, Communication, Entertainment
 Domain support: Healthcare, Medicine, Surgery: 1/3 papers; Media, Communication, Entertainment: 1/3 papers
+Domain definitions: Healthcare, Medicine, Surgery: Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (3 papers reviewed)
 Matched patterns: No decisive pattern match
@@ -27,9 +31,13 @@ Label candidate: Design Rules: Artifact Contribution | Domain: Design, Creativit
 Primary contribution: Artifact Contribution
 Secondary contribution: n/a
 Contribution support: 2/8 papers; weighted score 6
+Contribution definition: Creates and implements a system, tool, interface, prototype, platform, or other designed artifact.
 Contribution patterns: explicit artifact output (1); artifact implementation or deployment (1)
+Contribution summary fields: artifact type; intended users; supported activity; evaluation or deployment
+Contribution summary template: Introduces [tool/interface/system] for [users] to support [activity] in [domain], evaluated through [method].
 Application domains: Design, Creativity, Architecture; Finance, Business, Economy
 Domain support: Design, Creativity, Architecture: 3/8 papers; Finance, Business, Economy: 2/8 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

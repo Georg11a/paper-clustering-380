@@ -53,7 +53,7 @@ class TheoryMoveResult:
 
 THEORY_MOVE_LABELS = {
     "building": "Building New Theory",
-    "borrowing": "Borrowing Theory from Other Fields",
+    "borrowing": "Borrowing and Adapting Existing Theory",
     "testing": "Testing Theory Empirically",
     "meta_reflection": "Meta-Theoretical Reflection on Design",
     "unclear": "Unclear Theory Move — Requires Human Review",

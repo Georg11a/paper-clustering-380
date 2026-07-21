@@ -7,9 +7,13 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution definition: n/a
 Contribution patterns: n/a
+Contribution summary fields: n/a
+Contribution summary template: n/a
 Application domains: n/a
 Domain support: n/a
+Domain definitions: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -27,9 +31,13 @@ Label candidate: Design Knowledge: Theoretical Contribution — Meta-Theoretical
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 2/6 papers; weighted score 17
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (3); articulates conceptual or philosophical foundations (2)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Environment, Resource, Energy
 Domain support: Environment, Resource, Energy: 2/6 papers
+Domain definitions: Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 2/6 papers; weighted score 11
 Matched patterns: explicit meta-theory/metatheory (1); philosophy/epistemology/ontology of design (1)
@@ -47,9 +55,13 @@ Label candidate: Design Knowledge: Methodological Contribution | Domain: Design,
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 12/22 papers; weighted score 63
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (21)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 6/22 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

@@ -7,9 +7,13 @@ Label candidate: Design Patterns: Methodological Contribution | Domain: Educatio
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 8/8 papers; weighted score 36
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (12)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Education, Teaching, Research; Software, System, Cybersecurity; Design, Creativity, Architecture
 Domain support: Education, Teaching, Research: 3/8 papers; Software, System, Cybersecurity: 3/8 papers; Design, Creativity, Architecture: 2/8 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -27,9 +31,13 @@ Label candidate: Design Patterns: Methodological Contribution | Domain: Software
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 33/35 papers; weighted score 162
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (54)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Software, System, Cybersecurity; Design, Creativity, Architecture
 Domain support: Software, System, Cybersecurity: 10/35 papers; Design, Creativity, Architecture: 6/35 papers
+Domain definitions: Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
@@ -47,9 +55,13 @@ Label candidate: Design Patterns: Methodological Contribution | Domain: Finance,
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 20/24 papers; weighted score 99
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (33)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Finance, Business, Economy; Software, System, Cybersecurity; Education, Teaching, Research
 Domain support: Finance, Business, Economy: 5/24 papers; Software, System, Cybersecurity: 5/24 papers; Education, Teaching, Research: 4/24 papers
+Domain definitions: Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

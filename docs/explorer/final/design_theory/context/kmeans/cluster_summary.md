@@ -7,9 +7,13 @@ Label candidate: Design Theory: Theoretical Contribution — Meta-Theoretical Re
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 17/18 papers; weighted score 110
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (28); articulates conceptual or philosophical foundations (5); contributes theory or a conceptual framework (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Design, Creativity, Architecture; Finance, Business, Economy
 Domain support: Design, Creativity, Architecture: 5/18 papers; Finance, Business, Economy: 3/18 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Finance, Business, Economy: Covers finance, investment, credit, markets, business management, and economic decision-making.
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 2/18 papers; weighted score 18
 Matched patterns: explicit meta-theory/metatheory (3); philosophy/epistemology/ontology of design (1)
@@ -27,9 +31,13 @@ Label candidate: Design Theory: Theoretical Contribution — Meta-Theoretical Re
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 6/10 papers; weighted score 32
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (8); articulates conceptual or philosophical foundations (2)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Healthcare, Medicine, Surgery
 Domain support: Healthcare, Medicine, Surgery: 2/10 papers
+Domain definitions: Healthcare, Medicine, Surgery: Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy.
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 3/10 papers; weighted score 25
 Matched patterns: philosophy/epistemology/ontology of design (4); reflects on the nature/role/value of theory (1)
@@ -43,17 +51,21 @@ Representative papers:
 - 2020: Design epistemology as innovation in public health research
 
 ### Cluster 2 (15 papers)
-Label candidate: Design Theory: Theoretical Contribution — Borrowing Theory from Other Fields | Domain: Generic, Abstract, Domain-Agnostic
+Label candidate: Design Theory: Theoretical Contribution — Borrowing and Adapting Existing Theory | Domain: Generic, Abstract, Domain-Agnostic
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 12/15 papers; weighted score 69
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (19); articulates conceptual or philosophical foundations (3)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Generic, Abstract, Domain-Agnostic
 Domain support: Generic, Abstract, Domain-Agnostic: 15/15 papers
-Theory move: Borrowing Theory from Other Fields
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
+Theory move: Borrowing and Adapting Existing Theory
 Theory-move support: 4/15 papers; weighted score 28
 Matched patterns: reference discipline/kernel theory (6); applies/adopts an external theory (1)
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 12/15 papers; weighted score 69; matched indicators include explicit theoretical output (19); articulates conceptual or philosophical foundations (3). Its application domain coding is Generic, Abstract, Domain-Agnostic. Within that theoretical contribution, Path 1 codes the move as borrowing theory from other fields. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
+Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 12/15 papers; weighted score 69; matched indicators include explicit theoretical output (19); articulates conceptual or philosophical foundations (3). Its application domain coding is Generic, Abstract, Domain-Agnostic. Within that theoretical contribution, Path 1 codes the move as borrowing and adapting existing theory. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
 Design-knowledge contribution: Theoretical Contribution
 Theme words: management, theories, commons, science, pluralism, kernel, technological, relational
 
@@ -67,9 +79,13 @@ Label candidate: Design Theory: Theoretical Contribution — Building New Theory
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 9/9 papers; weighted score 45
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (15)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research
 Domain support: Education, Teaching, Research: 2/9 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Building New Theory
 Theory-move support: 2/9 papers; weighted score 7
 Matched patterns: proposes a new theory/framework (1); new theoretical constructs/propositions (1)
@@ -87,9 +103,13 @@ Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 22/23 papers; weighted score 97
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (31); articulates conceptual or philosophical foundations (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research; Media, Communication, Entertainment
 Domain support: Education, Teaching, Research: 5/23 papers; Media, Communication, Entertainment: 4/23 papers
+Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 2/23 papers, weighted score 13
 Matched patterns: Best candidate: Building New Theory; explicit theory building/development (2); new theoretical constructs/propositions (1)

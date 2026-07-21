@@ -7,9 +7,13 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution definition: n/a
 Contribution patterns: n/a
+Contribution summary fields: n/a
+Contribution summary template: n/a
 Application domains: n/a
 Domain support: n/a
+Domain definitions: n/a
 Theory move: n/a
 Theory-move support: n/a
 Matched patterns: n/a
@@ -27,9 +31,13 @@ Label candidate: Design Methods: Theoretical Contribution — Unclear Theory Mov
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 2/6 papers; weighted score 16
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (4); articulates conceptual or philosophical foundations (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Design, Creativity, Architecture
 Domain support: Design, Creativity, Architecture: 2/6 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/6 papers, weighted score 5
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; reflects on the nature/role/value of theory (1)
@@ -47,9 +55,13 @@ Label candidate: Design Methods: Methodological Contribution | Domain: Design, C
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 3/5 papers; weighted score 15
+Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (5)
+Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
+Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
 Domain support: Design, Creativity, Architecture: 4/5 papers; Education, Teaching, Research: 2/5 papers; Environment, Resource, Energy: 2/5 papers
+Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable

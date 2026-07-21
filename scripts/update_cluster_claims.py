@@ -9,7 +9,13 @@ from pathlib import Path
 
 import pandas as pd
 
-from research_typology import classify_contribution, classify_domains
+from research_typology import (
+    classify_contribution,
+    classify_domains,
+    contribution_definition,
+    contribution_summary_fields,
+    contribution_summary_template,
+)
 from theory_typology import classify_theory_move
 
 
@@ -452,9 +458,13 @@ def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
         "contribution_type_secondary": contribution.secondary_label,
         "contribution_type_patterns": contribution.patterns_text,
         "contribution_type_support": contribution.support_text,
+        "contribution_type_definition": contribution_definition(contribution.primary_key),
+        "contribution_summary_fields": contribution_summary_fields(contribution.primary_key),
+        "contribution_summary_template": contribution_summary_template(contribution.primary_key),
         "application_domains": domains.labels_text,
         "application_domain_patterns": domains.patterns_text,
         "application_domain_support": domains.support_text,
+        "application_domain_definitions": domains.definitions_text,
         "theory_move_key": theory_key,
         "theory_move": theory_label,
         "theory_move_patterns": theory.patterns_text if theory is not None else "Not applicable",
@@ -476,9 +486,13 @@ def refresh_csv(path: Path) -> pd.DataFrame:
         "contribution_type_secondary",
         "contribution_type_patterns",
         "contribution_type_support",
+        "contribution_type_definition",
+        "contribution_summary_fields",
+        "contribution_summary_template",
         "application_domains",
         "application_domain_patterns",
         "application_domain_support",
+        "application_domain_definitions",
         "theory_move_key",
         "theory_move",
         "theory_move_patterns",
@@ -503,9 +517,13 @@ def refresh_csv(path: Path) -> pd.DataFrame:
                 "contribution_type_secondary": "",
                 "contribution_type_patterns": "n/a",
                 "contribution_type_support": "n/a",
+                "contribution_type_definition": "n/a",
+                "contribution_summary_fields": "n/a",
+                "contribution_summary_template": "n/a",
                 "application_domains": "n/a",
                 "application_domain_patterns": "n/a",
                 "application_domain_support": "n/a",
+                "application_domain_definitions": "n/a",
                 "theory_move_key": "n/a",
                 "theory_move": "n/a",
                 "theory_move_patterns": "n/a",
@@ -530,9 +548,13 @@ def write_summary(df: pd.DataFrame, path: Path) -> None:
         lines.append(f"Primary contribution: {first.get('contribution_type', '')}")
         lines.append(f"Secondary contribution: {first.get('contribution_type_secondary', '') or 'n/a'}")
         lines.append(f"Contribution support: {first.get('contribution_type_support', '')}")
+        lines.append(f"Contribution definition: {first.get('contribution_type_definition', '')}")
         lines.append(f"Contribution patterns: {first.get('contribution_type_patterns', '')}")
+        lines.append(f"Contribution summary fields: {first.get('contribution_summary_fields', '')}")
+        lines.append(f"Contribution summary template: {first.get('contribution_summary_template', '')}")
         lines.append(f"Application domains: {first.get('application_domains', '')}")
         lines.append(f"Domain support: {first.get('application_domain_support', '')}")
+        lines.append(f"Domain definitions: {first.get('application_domain_definitions', '')}")
         lines.append(f"Theory move: {first.get('theory_move', '')}")
         lines.append(f"Theory-move support: {first.get('theory_move_support', '')}")
         lines.append(f"Matched patterns: {first.get('theory_move_patterns', '')}")
@@ -577,9 +599,13 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             "contribution_type_secondary",
             "contribution_type_patterns",
             "contribution_type_support",
+            "contribution_type_definition",
+            "contribution_summary_fields",
+            "contribution_summary_template",
             "application_domains",
             "application_domain_patterns",
             "application_domain_support",
+            "application_domain_definitions",
             "theory_move_key",
             "theory_move",
             "theory_move_patterns",
@@ -601,9 +627,13 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
         cluster["contribution_type_secondary"] = str(first.get("contribution_type_secondary", ""))
         cluster["contribution_type_patterns"] = str(first.get("contribution_type_patterns", ""))
         cluster["contribution_type_support"] = str(first.get("contribution_type_support", ""))
+        cluster["contribution_type_definition"] = str(first.get("contribution_type_definition", ""))
+        cluster["contribution_summary_fields"] = str(first.get("contribution_summary_fields", ""))
+        cluster["contribution_summary_template"] = str(first.get("contribution_summary_template", ""))
         cluster["application_domains"] = str(first.get("application_domains", ""))
         cluster["application_domain_patterns"] = str(first.get("application_domain_patterns", ""))
         cluster["application_domain_support"] = str(first.get("application_domain_support", ""))
+        cluster["application_domain_definitions"] = str(first.get("application_domain_definitions", ""))
         cluster["theory_move"] = str(first.get("theory_move", ""))
         cluster["theory_move_patterns"] = str(first.get("theory_move_patterns", ""))
         cluster["theory_move_support"] = str(first.get("theory_move_support", ""))
@@ -669,8 +699,10 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
           <span class="pill">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>
         </div>
         <div class="meta">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+        <div class="meta">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>
         <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
         <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>
+        <div class="meta">Domain definition: ${escapeHtml(p.application_domain_definitions || 'n/a')}</div>
         ${p.theory_move_key !== 'not_applicable' && p.theory_move_key !== 'n/a' ? `
         <div class="section-title">Path 1 Theory Move</div>
         <div>
@@ -687,8 +719,10 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             <span class="pill">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>
           </div>
           <div class="meta" style="margin-top:8px">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+          <div class="meta">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>
           <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
           <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>
+          <div class="meta">Domain definition: ${escapeHtml(p.application_domain_definitions || 'n/a')}</div>
           ${p.theory_move_key !== 'not_applicable' && p.theory_move_key !== 'n/a' ? `
           <div class="section-title" style="margin-top:14px">Path 1 Theory Move</div>
           <div class="pill-row">
@@ -699,6 +733,30 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
         </div>"""
     text = text.replace(new_typology, research_typology)
     text = text.replace(new_typology_card, research_typology_card)
+    old_research_metrics = """          <div class="meta" style="margin-top:8px">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+          <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
+          <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>"""
+    new_research_metrics = """          <div class="meta" style="margin-top:8px">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+          <div class="meta">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>
+          <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
+          <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>
+          <div class="meta">Domain definition: ${escapeHtml(p.application_domain_definitions || 'n/a')}</div>"""
+    text = text.replace(old_research_metrics, new_research_metrics)
+    old_flat_metrics = old_research_metrics.replace(' class="meta" style="margin-top:8px"', ' class="meta"', 1)
+    new_flat_metrics = new_research_metrics.replace(' class="meta" style="margin-top:8px"', ' class="meta"', 1)
+    text = text.replace(old_flat_metrics, new_flat_metrics)
+    if "Contribution definition:" not in text:
+        support_line = "<div class=\"meta\">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>"
+        text = text.replace(
+            support_line,
+            support_line + "\n        <div class=\"meta\">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>",
+        )
+    if "Domain definition:" not in text:
+        domain_line = "<div class=\"meta\">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>"
+        text = text.replace(
+            domain_line,
+            domain_line + "\n        <div class=\"meta\">Domain definition: ${escapeHtml(p.application_domain_definitions || 'n/a')}</div>",
+        )
     path.write_text(text, encoding="utf-8")
 
 
