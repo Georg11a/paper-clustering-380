@@ -179,12 +179,9 @@
   </style>
 </head>
 <body>
-  <header hidden>
-    <h1>Paper Corpus Explorer (tfidf-svd, hdbscan, overall view)</h1>
-    <div class="controls">
-      <select id="clusterFilter"><option value="all">All clusters</option></select>
-    </div>
-  </header>
+  <div style="display:none" aria-hidden="true">
+    <select id="clusterFilter"><option value="all">All clusters</option></select>
+  </div>
   <main>
     <section class="panel plot-panel">
       <div class="status" id="status"></div>

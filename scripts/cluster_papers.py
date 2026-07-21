@@ -2381,12 +2381,9 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
   </style>
 </head>
 <body>
-  <header hidden>
-    <h1>{html.escape(title)}</h1>
-    <div class="controls">
+  <div style="display:none" aria-hidden="true">
       <select id="clusterFilter"><option value="all">All clusters</option></select>
-    </div>
-  </header>
+  </div>
   <main>
     <section class="panel plot-panel">
       <div class="status" id="status"></div>
