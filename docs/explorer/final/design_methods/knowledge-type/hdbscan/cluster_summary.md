@@ -2,10 +2,13 @@
 
 ## Cluster Themes
 
-### Cluster -1 (31 papers)
+### Unclustered papers (31 papers)
 Label candidate: Unclustered papers
-Distinguishing evidence: 
+Theory move: n/a
+Theory-move support: n/a
+Matched patterns: n/a
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 2014: Generating implications for design through design research
 
 ### Cluster 0 (6 papers)
-Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Multiple Forms
-Distinguishing evidence: C-k Theory, Multiple Forms, Emotion Semantics Construction, Industrial Product Application
-Summary candidate: Within this keyword view, this cluster is set apart by C-k Theory, Multiple Forms, Emotion Semantics Construction. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/6 papers, weighted score 5
+Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; reflects on the nature/role/value of theory (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review
 Theme words: complexity, functional, product, applications, industrial, manufacturing, community, robust
 
 Representative papers:
@@ -25,20 +31,15 @@ Representative papers:
 - 2024: Emotion Semantics Construction in Industrial Product Application
 
 ### Cluster 1 (5 papers)
-Label candidate: Cluster 1: Design Methods through definition and conceptual framing around Education / Learning
-Distinguishing evidence: Basic Principles, Brain-learning Physiology, Conceptualization Methods, Non-formal Education Institutions
-Summary candidate: Within this keyword view, this cluster is set apart by Basic Principles, Brain-learning Physiology, Conceptualization Methods. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
+Label candidate: Design Methods: Meta-Theoretical Reflection on Design in Education / Learning
+Theory move: Meta-Theoretical Reflection on Design
+Theory-move support: 1/5 papers; weighted score 5
+Matched patterns: philosophy/epistemology/ontology of design (1)
+Summary candidate: The deterministic first-pass typology codes this cluster as meta-theoretical reflection on design. The decision is supported by 1/5 papers; weighted score 5; matched indicators include philosophy/epistemology/ontology of design (1). Its primary application domain is Education / Learning. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
+Design-knowledge contribution: Meta-Theoretical Reflection on Design in Education / Learning
 Theme words: architecture, field, article, relation, participatory, education, brain, landscape
 
 Representative papers:
 - 2023: The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1
 - 2020: Design as Research in Landscape Architecture
 - 2023: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS
-
-## LDA Topics
-- Topic 0: service, complexity, review, evidence, technical, innovative, thinking, implications
-- Topic 1: management, conceptual, concept, constraints, attention, methods principles, literature, objectives
-- Topic 2: architectural, architecture, virtual, interactive, concept, building, problems, landscape
-- Topic 3: product, functional, activities, metric, needs, hand, following, explore
-- Topic 4: service, usage, methodology, article, creation, formal, key, practices
-- Topic 5: value, field, aspects, challenges, understand, industry, literature, architecture

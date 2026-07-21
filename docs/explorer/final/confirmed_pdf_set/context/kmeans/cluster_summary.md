@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (39 papers)
-Label candidate: Cluster 0: Design Knowledge through definition and conceptual framing around Interface
-Distinguishing evidence: Case Study, Way Forward, Design Science, Unified Framework
-Summary candidate: Within this keyword view, this cluster is set apart by Way Forward, Unified Framework. Its dominant move, definition and conceptualization of design knowledge, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Workplace, Aging that do not anchor the sibling clusters. Methodologically, it leans on Prototype. Representative papers: Separation of Modeling Principles and Design Principles in Enterprise Engineering; Guidelines supporting the formulation of design principles.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 2/39 papers, weighted score 7
+Matched patterns: Best candidate: Building New Theory; proposes a new theory/framework (1); new theoretical constructs/propositions (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Separation of Modeling Principles and Design Principles in Enterprise Engineering; Guidelines supporting the formulation of design principles.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: visualization, rural, visual, post, humanism, guidelines, engineering, rules
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - : Engineering Design Principles for HCI as a Way Forward for HCI Design Knowledge
 
 ### Cluster 1 (26 papers)
-Label candidate: Cluster 1: Design Knowledge through definition and conceptual framing
-Distinguishing evidence: Literature Review, Application Domain, Competency Taxonomy, Pedagogical Patterns
-Summary candidate: Within this keyword view, this cluster is set apart by Application Domain, Competency Taxonomy. Its dominant move, definition and conceptualization of design knowledge, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: Pedagogical patterns: picking up the design patterns approach; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review.
+Label candidate: Design Knowledge: Building New Theory in Interface
+Theory move: Building New Theory
+Theory-move support: 3/26 papers; weighted score 11
+Matched patterns: proposes a new theory/framework (2); new theoretical constructs/propositions (1)
+Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 3/26 papers; weighted score 11; matched indicators include proposes a new theory/framework (2); new theoretical constructs/propositions (1). Its primary application domain is Interface. Representative papers include Pedagogical patterns: picking up the design patterns approach; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review.
+Design-knowledge contribution: Building New Theory in Interface
 Theme words: education, object, curriculum, teachers, application domain, pattern, software, learners
 
 Representative papers:
@@ -25,9 +31,12 @@ Representative papers:
 - : Personalising learning: towards a coherent learning design framework
 
 ### Cluster 2 (17 papers)
-Label candidate: Cluster 2: Design Rationale through definition and conceptual framing
-Distinguishing evidence: Issues Critical, Evidence Framework, Design Guidelines, Education / Learning
-Summary candidate: Within this keyword view, this cluster is set apart by Issues Critical, Evidence Framework, Education / Learning. Its dominant move, definition and conceptualization of design rationale, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Redesigning the rationale for design rationale; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication.
+Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (17 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Redesigning the rationale for design rationale; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: rationale, architecture, software, landscape, multiscale, argumentation, capture, rules
 
 Representative papers:
@@ -36,9 +45,12 @@ Representative papers:
 - 1991: What's in design rationale?
 
 ### Cluster 3 (11 papers)
-Label candidate: Cluster 3: Design Knowledge through evidence and evaluation
-Distinguishing evidence: C-k Theory, Theoretical Model, Better Understanding, Evaluating Game Achievements
-Summary candidate: Within this keyword view, this cluster is set apart by C-k Theory, Theoretical Model, Better Understanding. Unlike most clusters in this view, its dominant design-knowledge move is evidence-based evaluation. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Its contribution coding (Methodological, Artifact/System, Empirical) also departs from the view majority. Representative papers: Beyond the old game design: a new design paradigm in Game Studies through C-K Theory; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
+Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review in Game
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (11 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Game. Representative papers include Beyond the old game design: a new design paradigm in Game Studies through C-K Theory; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Game
 Theme words: game, entertainment, player, mechanics, achievement, narrative, education, educational
 
 Representative papers:
@@ -47,9 +59,12 @@ Representative papers:
 - : Game Design as an Autonomous Research Subject
 
 ### Cluster 4 (35 papers)
-Label candidate: Cluster 4: Design Theory through definition and conceptual framing
-Distinguishing evidence: Case Study, Design Science, Relational Theory, Comes First-theory
-Summary candidate: Within this keyword view, this cluster is set apart by Relational Theory, Comes First-theory. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Incommensurability in design science: Which comes first-Theory or artefact?; Web-based information systems: Developing a design theory.
+Label candidate: Design Theory: Borrowing Theory from Other Fields in Education / Learning
+Theory move: Borrowing Theory from Other Fields
+Theory-move support: 9/35 papers; weighted score 48
+Matched patterns: reference discipline/kernel theory (5); applies/adopts an external theory (5); draws on a theory or theoretical lens (2)
+Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 9/35 papers; weighted score 48; matched indicators include reference discipline/kernel theory (5); applies/adopts an external theory (5); draws on a theory or theoretical lens (2). Its primary application domain is Education / Learning. Representative papers include Incommensurability in design science: Which comes first-Theory or artefact?; Web-based information systems: Developing a design theory.
+Design-knowledge contribution: Borrowing Theory from Other Fields in Education / Learning
 Theme words: theories, science, problem, theory theory, concept, ecc, proof, experimentation
 
 Representative papers:
@@ -58,9 +73,12 @@ Representative papers:
 - : Affordance based design: a relational theory for design
 
 ### Cluster 5 (59 papers)
-Label candidate: Cluster 5: Design Knowledge through prior-work synthesis
-Distinguishing evidence: Participatory Design, Standardized Notation, Additive Manufacturing, Innovative Product Shapes
-Summary candidate: Within this keyword view, this cluster is set apart by Standardized Notation, Additive Manufacturing, Innovative Product Shapes. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. It concentrates on contexts such as Healthcare that do not anchor the sibling clusters. Methodologically, it leans on Co-design. Representative papers: Design Theory and Method of Complex Products: A Review; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/59 papers, weighted score 4
+Matched patterns: Best candidate: Borrowing Theory from Other Fields; draws on a theory or theoretical lens (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Design Theory and Method of Complex Products: A Review; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: product, heuristics, usability, assistive, service, dialogue, prototyping, field
 
 Representative papers:
@@ -69,9 +87,12 @@ Representative papers:
 - : Identification and management of the near-field knowledge of industrial design for innovative product shapes
 
 ### Cluster 6 (36 papers)
-Label candidate: Cluster 6: Design Guideline through prior-work synthesis
-Distinguishing evidence: Rough Mile, Case Study, Systematic Review, Immersive Practice
-Summary candidate: Within this keyword view, this cluster is set apart by Rough Mile, Immersive Practice. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. It concentrates on contexts such as Healthcare, Privacy / Security that do not anchor the sibling clusters. Methodologically, it leans on Systematic Review. Representative papers: The Rough Mile: Testing a Framework of Immersive Practice; Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 3/36 papers, weighted score 11
+Matched patterns: Best candidate: Borrowing Theory from Other Fields; grounded/informed by theory (1); applies/adopts an external theory (1); draws on a theory or theoretical lens (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include The Rough Mile: Testing a Framework of Immersive Practice; Soft, Flexible, and Stretchable Platforms for Tissue‚ÄêInterfaced Bioelectronics.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: platforms, ai, interfaces, digital, theoretical framework, ethical, self, mechanical
 
 Representative papers:
@@ -80,20 +101,15 @@ Representative papers:
 - 2013: A theoretical framework for the studio as a learning environment
 
 ### Cluster 7 (27 papers)
-Label candidate: Cluster 7: Design Pattern through definition and conceptual framing
-Distinguishing evidence: Dark Patterns, Biological Cells, Software Development, Participatory Futures
-Summary candidate: Within this keyword view, this cluster is set apart by Biological Cells, Software Development. Its dominant move, definition and conceptualization of design pattern, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Understanding and using patterns in software development; Design Patterns of Biological Cells.
+Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/27 papers, weighted score 3
+Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Understanding and using patterns in software development; Design Patterns of Biological Cells.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: patterns, software, structural, ai, advice, law, semantic, functional
 
 Representative papers:
 - 1996: Understanding and using patterns in software development
 - 2024: Design Patterns of Biological Cells
 - 1996: Formalising design patterns
-
-## LDA Topics
-- Topic 0: patterns, software, architecture, concept, education, problem, product, collaboration
-- Topic 1: patterns, practice, product, visualization, computer, software, engineering, domain
-- Topic 2: software, engineering, architecture, literature, cognitive, science, existing, patterns
-- Topic 3: patterns, guidelines, ai, modeling, heuristics, hybrid, software, prototyping
-- Topic 4: game, patterns, rationale, language, software, value, education, guidelines
-- Topic 5: guidelines, concept, social, field, space, theories, digital, landscape

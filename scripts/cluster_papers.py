@@ -24,6 +24,7 @@ from sklearn.metrics.pairwise import cosine_distances
 from sklearn.preprocessing import normalize
 
 from evidence_scorer import PaperParagraphs, faithfulness_score, select_cluster_evidence
+from theory_typology import THEORY_MOVE_LABELS, classify_theory_move
 
 
 DOMAIN_STOPWORDS = {
@@ -1759,7 +1760,14 @@ def _unique_phrases(cluster_id: int, phrase_lists: dict[int, list[str]]) -> list
     return unique
 
 
-CONTRASTIVE_PRIVATE_KEYS = ["_action_key", "_rep_titles", "_contexts", "_methods", "_contributions"]
+CONTRASTIVE_PRIVATE_KEYS = [
+    "_action_key",
+    "_theory_move_key",
+    "_rep_titles",
+    "_contexts",
+    "_methods",
+    "_contributions",
+]
 
 
 def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
@@ -1768,7 +1776,7 @@ def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
     A cluster label/summary should both describe the cluster and distinguish
     it from sibling clusters (Manning et al., IIR ch.17 cluster labeling;
     Sievert & Shirley 2014; Grootendorst 2022). Cluster-unique evidence leads
-    each summary; view-shared properties (e.g. an action frame shared by most
+    each summary; view-shared properties (e.g. a theory move shared by most
     clusters) are stated once and briefly instead of repeated as boilerplate.
     Descriptor deduplication is handled separately by
     distinguish_duplicate_cluster_descriptors.
@@ -1784,15 +1792,15 @@ def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
     context_lists = {cid: _split_terms(summaries[cid].get("_contexts")) for cid in real_ids}
     method_lists = {cid: _split_terms(summaries[cid].get("_methods")) for cid in real_ids}
 
-    action_counts = Counter(str(summaries[cid].get("_action_key") or "") for cid in real_ids)
-    majority_action = action_counts.most_common(1)[0][0]
+    move_counts = Counter(str(summaries[cid].get("_theory_move_key") or "unclear") for cid in real_ids)
+    majority_move = move_counts.most_common(1)[0][0]
     contribution_sets = {cid: frozenset(_split_terms(summaries[cid].get("_contributions"))) for cid in real_ids}
     majority_contribution = Counter(contribution_sets.values()).most_common(1)[0][0]
 
     for cid in sorted(real_ids):
         summary = summaries[cid]
-        action_key = str(summary.get("_action_key") or "")
-        form_lower = str(summary.get("design_knowledge_form") or "design knowledge").lower()
+        move_key = str(summary.get("_theory_move_key") or "unclear")
+        move_label = THEORY_MOVE_LABELS.get(move_key, THEORY_MOVE_LABELS["unclear"])
         evidence = evidence_lists.get(cid, [])
         unique_evidence = _unique_phrases(cid, evidence_lists)
         unique_contexts = _unique_phrases(cid, context_lists)
@@ -1810,16 +1818,18 @@ def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
                 "signals it partly shares with neighboring clusters."
             )
 
-        action_noun = ACTION_NOUN_PHRASES.get(action_key, "synthesis of prior work")
-        if action_key and action_key != majority_action:
+        if move_key == "unclear":
             sentences.append(
-                f"Unlike most clusters in this view, its dominant design-knowledge move is {action_noun}."
+                "The automatic first-pass typology found insufficient or ambiguous evidence, so this cluster requires human review."
+            )
+        elif move_key != majority_move:
+            sentences.append(
+                f"Unlike most clusters in this view, its coded theory move is {move_label.lower()}."
             )
         else:
-            connective = "on" if action_noun.endswith("prior work") else "of"
             sentences.append(
-                f"Its dominant move, {action_noun} {connective} {form_lower}, is shared across most of "
-                "this view, so the distinguishing terms above carry the interpretive weight."
+                f"Its coded theory move, {move_label.lower()}, is shared across most of this view, "
+                "so the distinguishing terms above carry the interpretive weight."
             )
 
         if unique_contexts:
@@ -1869,6 +1879,68 @@ def distinguish_duplicate_cluster_descriptors(summaries: dict[int, dict[str, str
             summary["cluster_label_candidate"] = f"{summary['cluster_label_candidate']} around {suffix}"
 
 
+def primary_application_domain(facets: dict[str, list[str]]) -> str:
+    for facet_name in ["artifact_or_domain", "population_or_context"]:
+        for value in facets.get(facet_name, []):
+            if normalize_phrase(value) not in GENERIC_DESCRIPTOR_EVIDENCE:
+                return value
+    return ""
+
+
+def infer_theory_typology_claim(
+    subset: pd.DataFrame,
+    facets: dict[str, list[str]],
+) -> dict[str, object]:
+    result = classify_theory_move(subset.to_dict("records"))
+    form = phrase_title(focus_form_from_keyword(subset))
+    domain = primary_application_domain(facets)
+    label = f"{form}: {result.label}"
+    if domain:
+        label += f" in {domain}"
+
+    representative_titles = [
+        str(title)
+        for title in subset.sort_values(["representative_rank", "medoid_rank"])
+        .get("title", pd.Series(dtype=str))
+        .head(3)
+        if str(title).strip()
+    ]
+    if result.key == "unclear":
+        summary = (
+            "The deterministic first-pass typology did not find enough unambiguous textual evidence "
+            "to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. "
+            "It remains flagged for human review rather than being forced into a substantive category."
+        )
+    else:
+        summary = (
+            f"The deterministic first-pass typology codes this cluster as {result.label.lower()}. "
+            f"The decision is supported by {result.support_text}; matched indicators include "
+            f"{result.patterns_text}."
+        )
+    if domain:
+        summary += f" Its primary application domain is {domain}."
+    if representative_titles:
+        summary += " Representative papers include " + "; ".join(representative_titles[:2]) + "."
+
+    contribution = result.label
+    if domain:
+        contribution += f" in {domain}"
+    return {
+        "cluster_label_candidate": label,
+        "cluster_summary_candidate": summary,
+        "design_knowledge_form": form,
+        "design_knowledge_action": result.label,
+        "design_knowledge_role": "Automatic first-pass coding",
+        "design_knowledge_contribution": contribution,
+        "theory_move_key": result.key,
+        "theory_move": result.label,
+        "theory_move_patterns": result.patterns_text,
+        "theory_move_support": result.support_text,
+        "_theory_move_key": result.key,
+        "_rep_titles": representative_titles[:2],
+    }
+
+
 def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dict[int, dict[str, str]]:
     summaries = {}
     for label in sorted(set(df["cluster"])):
@@ -1884,6 +1956,10 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 "design_knowledge_action": "n/a",
                 "design_knowledge_role": "n/a",
                 "design_knowledge_contribution": "Not interpreted as a cluster theme.",
+                "theory_move_key": "n/a",
+                "theory_move": "n/a",
+                "theory_move_patterns": "n/a",
+                "theory_move_support": "n/a",
                 "facet_population_or_context": "",
                 "facet_stakeholder_or_population": "",
                 "facet_method_or_lens": "",
@@ -1894,7 +1970,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             continue
         facets = {facet: find_facet_matches_for_cluster(subset, facet) for facet in FACET_PATTERNS}
         contribution_types = infer_contribution_types_for_cluster(subset)
-        design_claim = infer_design_knowledge_claim(subset, facets, contribution_types)
+        design_claim = infer_theory_typology_claim(subset, facets)
         keyphrases = [
             phrase.strip()
             for phrase in str(subset.iloc[0].get("cluster_theme_terms", "")).split(",")
@@ -1928,7 +2004,7 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 label_parts = keyword_label_parts
         if not label_parts:
             label_parts = keyphrases[:3]
-        cluster_label = conservative_cluster_descriptor(int(label), design_claim)
+        cluster_label = str(design_claim["cluster_label_candidate"])
         evidence_terms = distinguishing_evidence_terms(subset, keyphrases, facets, contribution_types)
 
         context = format_facet_values(facets["population_or_context"][:3]) or ", ".join(keyphrases[:2]) or "the selected papers"
@@ -1954,13 +2030,17 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "design_knowledge_action": design_claim["design_knowledge_action"],
             "design_knowledge_role": design_claim["design_knowledge_role"],
             "design_knowledge_contribution": design_claim["design_knowledge_contribution"],
+            "theory_move_key": design_claim["theory_move_key"],
+            "theory_move": design_claim["theory_move"],
+            "theory_move_patterns": design_claim["theory_move_patterns"],
+            "theory_move_support": design_claim["theory_move_support"],
             "facet_population_or_context": format_facet_values(facets["population_or_context"]),
             "facet_stakeholder_or_population": format_facet_values(facets["stakeholder_or_population"]),
             "facet_method_or_lens": format_facet_values(facets["method_or_lens"]),
             "facet_artifact_or_domain": format_facet_values(facets["artifact_or_domain"]),
             "facet_contribution_or_outcome": ", ".join(contribution_types),
             "distinguishing_evidence_terms": evidence_terms,
-            "_action_key": design_claim.get("_action_key", ""),
+            "_theory_move_key": design_claim.get("_theory_move_key", "unclear"),
             "_rep_titles": design_claim.get("_rep_titles", []),
             "_contexts": facets["population_or_context"][:4],
             "_methods": facets["method_or_lens"][:4],
@@ -2018,6 +2098,9 @@ def write_summary(df: pd.DataFrame, cluster_terms: dict[int, str], topic_words: 
         lines.append(f"### Cluster {label} ({len(subset)} papers)")
         if len(subset):
             lines.append(f"Label candidate: {subset.iloc[0].get('cluster_label_candidate', '')}")
+            lines.append(f"Theory move: {subset.iloc[0].get('theory_move', '')}")
+            lines.append(f"Theory-move support: {subset.iloc[0].get('theory_move_support', '')}")
+            lines.append(f"Matched patterns: {subset.iloc[0].get('theory_move_patterns', '')}")
             lines.append(f"Distinguishing evidence: {subset.iloc[0].get('distinguishing_evidence_terms', '')}")
             lines.append(f"Summary candidate: {subset.iloc[0].get('cluster_summary_candidate', '')}")
         lines.append(f"Theme words: {cluster_terms[label]}")
@@ -2123,6 +2206,9 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "theme": str(subset.iloc[0]["cluster_theme_terms"]) if len(subset) else "",
                 "label": str(subset.iloc[0]["cluster_label_candidate"]) if len(subset) else "",
                 "summary": str(subset.iloc[0]["cluster_summary_candidate"]) if len(subset) else "",
+                "theory_move": str(subset.iloc[0].get("theory_move", "")) if len(subset) else "",
+                "theory_move_patterns": str(subset.iloc[0].get("theory_move_patterns", "")) if len(subset) else "",
+                "theory_move_support": str(subset.iloc[0].get("theory_move_support", "")) if len(subset) else "",
                 "source_evidence": source_evidence["items"],
                 "source_faithfulness_score": source_evidence["faithfulness_score"],
                 "representatives": subset.head(3)[["title", "year", "paper_id"]].to_dict("records"),
@@ -2155,6 +2241,10 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "design_knowledge_action": str(row.get("design_knowledge_action", "")),
                 "design_knowledge_role": str(row.get("design_knowledge_role", "")),
                 "design_knowledge_contribution": str(row.get("design_knowledge_contribution", "")),
+                "theory_move_key": str(row.get("theory_move_key", "")),
+                "theory_move": str(row.get("theory_move", "")),
+                "theory_move_patterns": str(row.get("theory_move_patterns", "")),
+                "theory_move_support": str(row.get("theory_move_support", "")),
                 "facet_population_or_context": str(row.get("facet_population_or_context", "")),
                 "facet_stakeholder_or_population": str(row.get("facet_stakeholder_or_population", "")),
                 "facet_method_or_lens": str(row.get("facet_method_or_lens", "")),
@@ -2596,13 +2686,14 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
         </div>
         ${{sourceEvidence}}
         <div class="insight-card">
-          <div class="section-title">Design-Knowledge Contribution</div>
+          <div class="section-title">Rule-Based Theory Typology</div>
           <div class="pill-row">
             <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
-            <span class="pill">Action: ${{escapeHtml(p.design_knowledge_action || 'n/a')}}</span>
-            <span class="pill">Auto role: ${{escapeHtml(p.design_knowledge_role || 'n/a')}}</span>
+            <span class="pill">Theory move: ${{escapeHtml(p.theory_move || 'n/a')}}</span>
+            <span class="pill">Support: ${{escapeHtml(p.theory_move_support || 'n/a')}}</span>
           </div>
           <div class="abstract" style="margin-top:8px">${{escapeHtml(p.design_knowledge_contribution || '')}}</div>
+          <div class="meta" style="margin-top:8px">Matched patterns: ${{escapeHtml(p.theory_move_patterns || 'n/a')}}</div>
         </div>
         <div class="insight-card">
           <div class="section-title">Paper-Oriented Facets</div>
@@ -2843,6 +2934,10 @@ def main() -> None:
         "design_knowledge_action",
         "design_knowledge_role",
         "design_knowledge_contribution",
+        "theory_move_key",
+        "theory_move",
+        "theory_move_patterns",
+        "theory_move_support",
         "facet_population_or_context",
         "facet_stakeholder_or_population",
         "facet_method_or_lens",

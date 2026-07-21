@@ -118,6 +118,10 @@ def too_few_rows(group: pd.DataFrame, keyword: str, args: argparse.Namespace) ->
     rows["cluster_status"] = "too_few_papers"
     rows["cluster"] = ""
     rows["cluster_label_candidate"] = ""
+    rows["theory_move_key"] = ""
+    rows["theory_move"] = ""
+    rows["theory_move_patterns"] = ""
+    rows["theory_move_support"] = ""
     rows["cluster_summary_candidate"] = (
         f"Skipped clustering because this keyword group has fewer than "
         f"{args.min_papers_to_cluster} papers."

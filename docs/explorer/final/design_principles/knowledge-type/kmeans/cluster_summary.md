@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (11 papers)
-Label candidate: Cluster 0: Design Principles through definition and conceptual framing
-Distinguishing evidence: Unified Framework, Personalising Learning, Screen Standardization, Domestic Energy Planning
-Summary candidate: Within this keyword view, this cluster is set apart by Unified Framework, Personalising Learning, Screen Standardization. Its dominant move, definition and conceptualization of design principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: USSF: A Unified Framework for Screen Standardization in Software Systems; Design principles for human-computer interfaces.
+Label candidate: Design Principles: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/11 papers, weighted score 4
+Matched patterns: Best candidate: Borrowing Theory from Other Fields; applies/adopts an external theory (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Design principles for human-computer interfaces.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: technical, identity, heuristics, learners, coherent, artificial, approaches, engineering
 
 Representative papers:
@@ -14,20 +17,15 @@ Representative papers:
 - : Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control
 
 ### Cluster 1 (6 papers)
-Label candidate: Cluster 1: Design Principles through prior-work synthesis
-Distinguishing evidence: Data Analysis, Effective Approach, Better Understanding, Collaboration Education
-Summary candidate: Within this keyword view, this cluster is set apart by Data Analysis, Effective Approach, Better Understanding. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Its contribution coding (Methodological, Artifact/System, Taxonomy/Review) also departs from the view majority. Representative papers: Toward an effective approach to collaboration education: A taxonomy for game design; Design principles for data analysis.
+Label candidate: Design Principles: Unclear Theory Move — Requires Human Review in Game
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (6 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Game. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Design principles for data analysis.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Game
 Theme words: games, sonic, meditation, data analysis, practice, embodied, expectations, mesh
 
 Representative papers:
 - 2015: Toward an effective approach to collaboration education: A taxonomy for game design
 - 2021: Design principles for data analysis
 - 2024: Data Mesh: A Systematic Gray Literature Review
-
-## LDA Topics
-- Topic 0: games, software, challenge, provide, form, architectures, language, designs
-- Topic 1: heuristics, ubiquitous, practices, develop, structured, language, coherent, growing
-- Topic 2: learners, engineering, field, definition, principles methods, properties, novel, computer
-- Topic 3: initial, effective, domain, following, introduces, application, engineering principles, human computer
-- Topic 4: practice, analysis, literature, adaptive, approaches, education, principles data, aims
-- Topic 5: following, evidence, systematic, review, attempts, needs, mechanisms, perspective

@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (50 papers)
-Label candidate: Cluster 0: Design Patterns through definition and conceptual framing around Tool
-Distinguishing evidence: Software Development, Participatory Futures, Implementing Patterns, Object-oriented Technology
-Summary candidate: Within this keyword view, this cluster is set apart by Software Development, Participatory Futures, Object-oriented Technology. Its dominant move, definition and conceptualization of design patterns, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning, Sustainability that do not anchor the sibling clusters. Methodologically, it leans on Prototype, Workshop. Representative papers: Understanding and using patterns in software development; Design pattern in object-oriented technology.
+Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/50 papers, weighted score 6
+Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; explicit meta-theory/metatheory (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Understanding and using patterns in software development; Design pattern in object-oriented technology.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: patterns, software, analysis, solutions, language, structural, modeling, level
 
 Representative papers:
@@ -14,20 +17,15 @@ Representative papers:
 - 2020: Patterns, anticipation and participatory futures
 
 ### Cluster 1 (17 papers)
-Label candidate: Cluster 1: Design Patterns through definition and conceptual framing around Interface
-Distinguishing evidence: Semantic Representation, Human-computer Interaction Patterns, Domain, Overview
-Summary candidate: Within this keyword view, this cluster is set apart by Semantic Representation, Domain, Overview. Its dominant move, definition and conceptualization of design patterns, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on Interview, Ontology. Representative papers: A pattern approach to interaction design; A pattern approach to interaction design.
+Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/17 papers, weighted score 3
+Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include A pattern approach to interaction design; A pattern approach to interaction design.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: patterns, domain, business, computer, application, practice, team, alexander
 
 Representative papers:
 - 2001: A pattern approach to interaction design
 - 2000: A pattern approach to interaction design
 - 2000: Pattern approach to interaction design
-
-## LDA Topics
-- Topic 0: patterns, domain, application, space, presents, terminology, developers, computer
-- Topic 1: patterns, software, object, business, problem, way, designs, solution
-- Topic 2: patterns, management, structural, semantic, provide, software, component, structure
-- Topic 3: patterns, generic, practice, game, functional, solutions, abstraction, science
-- Topic 4: patterns, analysis, modeling, software, level, abstraction, recurring, structural
-- Topic 5: patterns, architecture, ai, visualization, emerging, problems, focus, agent

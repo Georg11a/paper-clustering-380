@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (7 papers)
-Label candidate: Cluster 0: Design Guidelines through prior-work synthesis
-Distinguishing evidence: Complex Uis, Extensible Models, Professional Map-based Geo-portals, Design Guidelines
-Summary candidate: Within this keyword view, this cluster is set apart by Complex Uis, Extensible Models, Professional Map-based Geo-portals. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. Representative papers: Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Design Study Methodology: Reflections from the Trenches and the Stacks.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (7 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Design Study Methodology: Reflections from the Trenches and the Stacks.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: visualization, guidelines, aesthetics, tacit, graphic, map, portals, geo
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 2007: Towards a Model of Information Aesthetics in Information Visualization
 
 ### Cluster 1 (8 papers)
-Label candidate: Cluster 1: Design Guidelines through definition and conceptual framing around Tool
-Distinguishing evidence: Providing Tools, Process Framework, School Architecture, Domain Specific Languages
-Summary candidate: Within this keyword view, this cluster is set apart by Providing Tools, School Architecture, Domain Specific Languages. Its dominant move, definition and conceptualization of design guidelines, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Healthy Eating Design Guidelines for School Architecture; A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (8 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Healthy Eating Design Guidelines for School Architecture; A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: guidelines, architecture, rural, software, fidelity, school, training, usability
 
 Representative papers:
@@ -25,20 +31,15 @@ Representative papers:
 - 2016: Terminologia kohtaa k√§ytett√§vyyden. Terminologisen k√§ytett√§vyyden ydint√§ rakentamassa
 
 ### Cluster 2 (10 papers)
-Label candidate: Cluster 2: Design Guidelines through definition and conceptual framing around Rough Mile
-Distinguishing evidence: Rough Mile, Case Study, Immersive Practice, Preliminary Proposal
-Summary candidate: Within this keyword view, this cluster is set apart by Rough Mile, Case Study, Immersive Practice. Its dominant move, definition and conceptualization of design guidelines, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Methodologically, it leans on Case Study. Its contribution coding (Methodological, Theoretical, Empirical) also departs from the view majority. Representative papers: The Rough Mile: Testing a Framework of Immersive Practice; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/10 papers, weighted score 5
+Matched patterns: Best candidate: Testing Theory Empirically; testing a theory/framework/model (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Representative papers include The Rough Mile: Testing a Framework of Immersive Practice; Six Guidelines for Trustworthy, Ethical and Responsible Automation Design.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review
 Theme words: guidelines, interim, immersive, interfaces, natural, innovation, theoretical, definitions
 
 Representative papers:
 - 2017: The Rough Mile: Testing a Framework of Immersive Practice
 - 2025: Six Guidelines for Trustworthy, Ethical and Responsible Automation Design
 - 2009: From interaction to trajectories: designing coherent journeys through user experiences
-
-## LDA Topics
-- Topic 0: guidelines, interfaces, high, concept, complex, reflect, space, decades
-- Topic 1: guidelines, visualization, aesthetics, tools, self, immersive, control, lack
-- Topic 2: practical, guidelines, paradigm, environment, concrete, introduce, good, reflect
-- Topic 3: guidelines, architecture, task, provide, usability, interface, guidance, visual
-- Topic 4: guidelines, goal, definitions, immersive, critical, focus, practitioners, turn
-- Topic 5: guidelines, characteristics, review, literature, professional, concept, growing, theories

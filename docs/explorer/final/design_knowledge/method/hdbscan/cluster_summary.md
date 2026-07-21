@@ -2,10 +2,13 @@
 
 ## Cluster Themes
 
-### Cluster -1 (63 papers)
+### Unclustered papers (63 papers)
 Label candidate: Unclustered papers
-Distinguishing evidence: 
+Theory move: n/a
+Theory-move support: n/a
+Matched patterns: n/a
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 2020: Toward an Inventory of Plans and Patterns, and Their Use to Foster Strategic Knowledge in Programming Novices
 
 ### Cluster 0 (14 papers)
-Label candidate: Cluster 0: Design Knowledge through definition and conceptual framing around Prototype
-Distinguishing evidence: Industrial Design, Decision-making Process, Innovative Product Shapes, Alternative Representation Method
-Summary candidate: Within this keyword view, this cluster is set apart by Decision-making Process, Innovative Product Shapes, Alternative Representation Method. Its dominant move, definition and conceptualization of design knowledge, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning, Industrial Design that do not anchor the sibling clusters. Methodologically, it leans on Prototype, Ontology. Representative papers: Identification and management of the near-field knowledge of industrial design for innovative product shapes; Design knowledge for decision-making process in a DFX product design approach.
+Label candidate: Design Knowledge: Building New Theory in Prototype
+Theory move: Building New Theory
+Theory-move support: 3/14 papers; weighted score 10
+Matched patterns: new theoretical constructs/propositions (2); proposes a new theory/framework (1)
+Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 3/14 papers; weighted score 10; matched indicators include new theoretical constructs/propositions (2); proposes a new theory/framework (1). Its primary application domain is Prototype. Representative papers include Identification and management of the near-field knowledge of industrial design for innovative product shapes; Design knowledge for decision-making process in a DFX product design approach.
+Design-knowledge contribution: Building New Theory in Prototype
 Theme words: product, field, interactive, nature, usability, recreation, industrial, heuristics
 
 Representative papers:
@@ -25,20 +31,15 @@ Representative papers:
 - : Causal design knowledge: Alternative representation method for product development knowledge management
 
 ### Cluster 1 (10 papers)
-Label candidate: Cluster 1: Design Knowledge through definition and conceptual framing around DSR Projects
-Distinguishing evidence: DSR Projects, Solution Space, Design Science, Core Dimensions
-Summary candidate: Within this keyword view, this cluster is set apart by DSR Projects, Solution Space, Core Dimensions. Its dominant move, definition and conceptualization of design knowledge, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Methodologically, it leans on Design Science. Its contribution coding (Methodological, Theoretical, Artifact/System) also departs from the view majority. Representative papers: Synthesizing a Solution Space for Prescriptive Design Knowledge Codification; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
+Label candidate: Design Knowledge: Borrowing Theory from Other Fields
+Theory move: Borrowing Theory from Other Fields
+Theory-move support: 3/10 papers; weighted score 12
+Matched patterns: draws on a theory or theoretical lens (2); reference discipline/kernel theory (1)
+Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 3/10 papers; weighted score 12; matched indicators include draws on a theory or theoretical lens (2); reference discipline/kernel theory (1). Representative papers include Synthesizing a Solution Space for Prescriptive Design Knowledge Codification; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
+Design-knowledge contribution: Borrowing Theory from Other Fields
 Theme words: dsr, science, prescriptive, creation, mechanisms, codification, future, question
 
 Representative papers:
 - : Synthesizing a Solution Space for Prescriptive Design Knowledge Codification
 - 2019: The DSR grid: six core dimensions for effectively planning and communicating design science research projects
 - : A Typology of Knowledge Creation in Design Science Research Projects
-
-## LDA Topics
-- Topic 0: tacit, object, ontology, mechanisms, patterns, representation, structure, explicit
-- Topic 1: article, practices, field, creation, formulation, digital, dsr, strategic
-- Topic 2: product, teachers, science, game, review, field, analysis, make
-- Topic 3: interactive, product, nature, management, heuristics, tools, important, elicitation
-- Topic 4: dsr, patterns, analysis, practices, discipline, future, propose, community
-- Topic 5: platform, types, digital, literature, domain, form, quality, ontology

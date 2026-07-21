@@ -2,10 +2,13 @@
 
 ## Cluster Themes
 
-### Cluster -1 (5 papers)
+### Unclustered papers (5 papers)
 Label candidate: Unclustered papers
-Distinguishing evidence: 
+Theory move: n/a
+Theory-move support: n/a
+Matched patterns: n/a
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 2020: Design Rules, Volume 2: Chapter 6‚ÄîThe Value Structure of Technologies, Part 1: Mapping Functional Components
 
 ### Cluster 0 (3 papers)
-Label candidate: Cluster 0: Design Rules through definition and conceptual framing around Interface
-Distinguishing evidence: Human Error, Continuous Colormaps, Cognitive Engineering, Theoretical Framework
-Summary candidate: Within this keyword view, this cluster is set apart by Human Error, Continuous Colormaps, Cognitive Engineering. Its dominant move, definition and conceptualization of design rules, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted; Steps toward a cognitive engineering: Design rules based on analyses of human error.
+Label candidate: Design Rules: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (3 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted; Steps toward a cognitive engineering: Design rules based on analyses of human error.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: rules, eudaimonic, error, meaning, colormap, cognitive, pleasure, eux
 
 Representative papers:
@@ -25,20 +31,15 @@ Representative papers:
 - 2018: The Good, the Bad, and the Ugly: A Theoretical Framework for the Assessment of Continuous Colormaps
 
 ### Cluster 1 (3 papers)
-Label candidate: Cluster 1: Design Rules through definition and conceptual framing
-Distinguishing evidence: Case Study, Organizational Modularity, Studying Software Architecture, Modular
-Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Organizational Modularity, Studying Software Architecture. Its dominant move, definition and conceptualization of design rules, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Methodologically, it leans on Case Study. Its contribution coding (Theoretical, Empirical, Artifact/System) also departs from the view majority. Representative papers: Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Toward a Conceptualization of Organizational Modularity.
+Label candidate: Design Rules: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (3 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Toward a Conceptualization of Organizational Modularity.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: rules, modularity, organizational, modular, architecture, software, proposed, space
 
 Representative papers:
 - 2018: Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture
 - 2019: Toward a Conceptualization of Organizational Modularity
 - Nov-90: Studying Software Architecture Through Design Spaces and Rules
-
-## LDA Topics
-- Topic 0: key, real, identifies, describes, architecture, science, properties, focus
-- Topic 1: rules, organizational, modularity, modular, architecture, proposed, properties, concept
-- Topic 2: rules, review, common, high, focus, definitions, include, propose
-- Topic 3: rules, technical, concepts, meaning, organizational, current, recipe, chapter
-- Topic 4: rules, technical, functional, value, cognitive, interfaces, focus, structure
-- Topic 5: key, real, identifies, describes, architecture, science, properties, focus

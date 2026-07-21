@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (8 papers)
-Label candidate: Cluster 0: Design Methods through definition and conceptual framing around Tool
-Distinguishing evidence: Method Methods, User-centered Design, Improvisational Acting, Generating Implications
-Summary candidate: Within this keyword view, this cluster is set apart by Improvisational Acting, Generating Implications. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on User-centered Design, Ethnographic. Representative papers: Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/8 papers, weighted score 3
+Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: understand, value, does, industry, fbs, usage, method methods, playing
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 2012: Autobiographical design in HCI research: designing and learning through use-it-yourself
 
 ### Cluster 1 (5 papers)
-Label candidate: Cluster 1: Design Methods through definition and conceptual framing around Multiple Forms
-Distinguishing evidence: C-k Theory, Multiple Forms, Industrial Product Application, Emotion Semantics Construction
-Summary candidate: Within this keyword view, this cluster is set apart by C-k Theory, Multiple Forms, Emotion Semantics Construction. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Its contribution coding (Theoretical, Methodological, Artifact/System) also departs from the view majority. Representative papers: Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/5 papers, weighted score 5
+Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; reflects on the nature/role/value of theory (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review
 Theme words: applications, emotion, industrial, business, complexity, community, problems, sensory
 
 Representative papers:
@@ -25,9 +31,12 @@ Representative papers:
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
 ### Cluster 2 (10 papers)
-Label candidate: Cluster 2: Design Methods through definition and conceptual framing around Education / Learning
-Distinguishing evidence: Method Methods, Basic Principles, Architectural Engineering, Brain-learning Physiology
-Summary candidate: Within this keyword view, this cluster is set apart by Basic Principles, Architectural Engineering, Brain-learning Physiology. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Its contribution coding (Artifact/System, Methodological, Theoretical) also departs from the view majority. Representative papers: IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Education / Learning
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/10 papers, weighted score 5
+Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; philosophy/epistemology/ontology of design (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Education / Learning. Representative papers include IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Education / Learning
 Theme words: architectural, architecture, collapse, interactive, method methods, virtual, brain, relation
 
 Representative papers:
@@ -36,9 +45,12 @@ Representative papers:
 - 2020: Design as Research in Landscape Architecture
 
 ### Cluster 3 (11 papers)
-Label candidate: Cluster 3: Design Methods through prior-work synthesis
-Distinguishing evidence: Method Methods, Early Assessment, Design Rationale, Product Development
-Summary candidate: Within this keyword view, this cluster is set apart by Early Assessment. Unlike most clusters in this view, its dominant design-knowledge move is synthesis of prior work. Its contribution coding (Methodological, Artifact/System, Taxonomy/Review) also departs from the view majority. Representative papers: A Framework of Design Method Corroboration; Towards functional de novo designed proteins..
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (11 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include A Framework of Design Method Corroboration; Towards functional de novo designed proteins..
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: functional, artifacts, method methods, constraint, ideation, need, field, tasks
 
 Representative papers:
@@ -47,20 +59,15 @@ Representative papers:
 - 2020: State of the Art on Robust Design Methods for Additive Manufacturing
 
 ### Cluster 4 (8 papers)
-Label candidate: Cluster 4: Design Methods through definition and conceptual framing around Method Methods
-Distinguishing evidence: Design Science, Method Methods, Living Lab Practice, Describing Key Know-how
-Summary candidate: Within this keyword view, this cluster is set apart by Living Lab Practice, Describing Key Know-how. Its dominant move, definition and conceptualization of design methods, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Patterns for living lab practice: describing key know-how to promote service co-creation with users; Advancing service design research with design science research.
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/8 papers, weighted score 4
+Matched patterns: Best candidate: Borrowing Theory from Other Fields; draws on a theory or theoretical lens (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Representative papers include Patterns for living lab practice: describing key know-how to promote service co-creation with users; Advancing service design research with design science research.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review
 Theme words: service, creation, floorplan, method methods, flexibility, children, tools, systemic
 
 Representative papers:
 - 2020: Patterns for living lab practice: describing key know-how to promote service co-creation with users
 - 2019: Advancing service design research with design science research
 - : Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children
-
-## LDA Topics
-- Topic 0: method methods, service, survey, review, systematic, analysis, provides, existing
-- Topic 1: method methods, architectural, architecture, virtual, field, thinking, participatory, article
-- Topic 2: value, method methods, service, complexity, survey, practices, creation, usage
-- Topic 3: understand, industry, method methods, literature, practitioners, elements, aspects, needs
-- Topic 4: functional, method methods, product, field, thinking, hand, challenges, characterised
-- Topic 5: management, conceptual, concept, architecture, interactive, constraints, building, method methods

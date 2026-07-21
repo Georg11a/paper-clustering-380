@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (34 papers)
-Label candidate: Cluster 0: Design Theory through definition and conceptual framing around Tool
-Distinguishing evidence: Case Study, Critical Look, Method Theory, Design Science
-Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Critical Look. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Privacy / Security, Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on Case Study, Prototype. Representative papers: Management design theories; Web-based information systems: Developing a design theory.
+Label candidate: Design Theory: Borrowing Theory from Other Fields in Tool
+Theory move: Borrowing Theory from Other Fields
+Theory-move support: 6/34 papers; weighted score 36
+Matched patterns: reference discipline/kernel theory (6); applies/adopts an external theory (3)
+Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 6/34 papers; weighted score 36; matched indicators include reference discipline/kernel theory (6); applies/adopts an external theory (3). Its primary application domain is Tool. Representative papers include Management design theories; Web-based information systems: Developing a design theory.
+Design-knowledge contribution: Borrowing Theory from Other Fields in Tool
 Theme words: method theory, theories, management, methodology, science, literature, innovation, practices
 
 Representative papers:
@@ -14,20 +17,15 @@ Representative papers:
 - 2002: Design Theory in Information Systems
 
 ### Cluster 1 (41 papers)
-Label candidate: Cluster 1: Design Theory through definition and conceptual framing around Interface
-Distinguishing evidence: Method Theory, Design Science, Complex Products, Advanced Formulation
-Summary candidate: Within this keyword view, this cluster is set apart by Complex Products, Advanced Formulation. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: Research methods for design theory; PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS.
+Label candidate: Design Theory: Meta-Theoretical Reflection on Design in Interface
+Theory move: Meta-Theoretical Reflection on Design
+Theory-move support: 5/41 papers; weighted score 47
+Matched patterns: philosophy/epistemology/ontology of design (5); reflects on the nature/role/value of theory (3); explicit meta-theory/metatheory (2)
+Summary candidate: The deterministic first-pass typology codes this cluster as meta-theoretical reflection on design. The decision is supported by 5/41 papers; weighted score 47; matched indicators include philosophy/epistemology/ontology of design (5); reflects on the nature/role/value of theory (3); explicit meta-theory/metatheory (2). Its primary application domain is Interface. Representative papers include Research methods for design theory; PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS.
+Design-knowledge contribution: Meta-Theoretical Reflection on Design in Interface
 Theme words: method theory, decision, concept, games, sonification, space, problem, existing
 
 Representative papers:
 - 2001: Research methods for design theory
 - 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
 - : Towards a design theory of blended learning curriculum
-
-## LDA Topics
-- Topic 0: innovation, technique, literature, problem, review, method theory, management, framing
-- Topic 1: method theory, practice, problem, field, analysis, engineering, decision, epistemology
-- Topic 2: method theory, sonification, theories, digital, theoretical, explain, existing, decision
-- Topic 3: method theory, science, product, theories, need, practices, concepts, existing
-- Topic 4: concept, space, games, method theory, general, computer, topology, proposed
-- Topic 5: method theory, theories, management, science, conceptual, scientific, methodology, concept

@@ -9,6 +9,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from theory_typology import classify_theory_move
+
 
 FORM_PATTERNS = {
     "tacit design knowledge": ["tacit knowledge", "tacit design knowledge", "craft knowledge", "expertise"],
@@ -388,11 +390,70 @@ def context_role_claim(group: pd.DataFrame) -> dict[str, str] | None:
     }
 
 
+def first_facet_value(group: pd.DataFrame, columns: list[str]) -> str:
+    for column in columns:
+        if column not in group.columns:
+            continue
+        value = str(group.iloc[0].get(column, "") or "").strip()
+        if value:
+            return value.split(",")[0].strip()
+    return ""
+
+
+def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
+    result = classify_theory_move(group.to_dict("records"))
+    form = title_case(fallback_form(group))
+    domain = first_facet_value(group, ["facet_artifact_or_domain", "facet_population_or_context"])
+    label = f"{form}: {result.label}"
+    if domain:
+        label += f" in {domain}"
+
+    ranked = group.sort_values([c for c in ["representative_rank", "medoid_rank"] if c in group.columns])
+    titles = [str(value) for value in ranked.get("title", pd.Series(dtype=str)).head(2) if str(value).strip()]
+    if result.key == "unclear":
+        summary = (
+            "The deterministic first-pass typology did not find enough unambiguous textual evidence "
+            "to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. "
+            "It remains flagged for human review rather than being forced into a substantive category."
+        )
+    else:
+        summary = (
+            f"The deterministic first-pass typology codes this cluster as {result.label.lower()}. "
+            f"The decision is supported by {result.support_text}; matched indicators include {result.patterns_text}."
+        )
+    if domain:
+        summary += f" Its primary application domain is {domain}."
+    if titles:
+        summary += " Representative papers include " + "; ".join(titles) + "."
+    contribution = result.label + (f" in {domain}" if domain else "")
+    return {
+        "cluster_label_candidate": label,
+        "cluster_summary_candidate": summary,
+        "design_knowledge_form": form,
+        "design_knowledge_action": result.label,
+        "design_knowledge_role": "Automatic first-pass coding",
+        "design_knowledge_contribution": contribution,
+        "theory_move_key": result.key,
+        "theory_move": result.label,
+        "theory_move_patterns": result.patterns_text,
+        "theory_move_support": result.support_text,
+    }
+
+
 def refresh_csv(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path).fillna("")
     if "cluster" not in df.columns:
         return df
-    for col in ["design_knowledge_form", "design_knowledge_action", "design_knowledge_contribution"]:
+    for col in [
+        "design_knowledge_form",
+        "design_knowledge_action",
+        "design_knowledge_role",
+        "design_knowledge_contribution",
+        "theory_move_key",
+        "theory_move",
+        "theory_move_patterns",
+        "theory_move_support",
+    ]:
         if col not in df.columns:
             df[col] = ""
     for cluster, group in df.groupby("cluster"):
@@ -407,11 +468,13 @@ def refresh_csv(path: Path) -> pd.DataFrame:
                 "design_knowledge_form": "n/a",
                 "design_knowledge_action": "n/a",
                 "design_knowledge_contribution": "Not interpreted as a cluster theme.",
+                "theory_move_key": "n/a",
+                "theory_move": "n/a",
+                "theory_move_patterns": "n/a",
+                "theory_move_support": "n/a",
             }
-        elif "context" in path.parts:
-            claim = context_role_claim(group) or claim_for_group(group)
         else:
-            claim = claim_for_group(group)
+            claim = typology_claim_for_group(group)
         for key, value in claim.items():
             df.loc[mask, key] = value
     df.to_csv(path, index=False)
@@ -426,6 +489,9 @@ def write_summary(df: pd.DataFrame, path: Path) -> None:
         lines.append(f"### {heading} ({len(group)} papers)")
         first = group.iloc[0]
         lines.append(f"Label candidate: {first.get('cluster_label_candidate', '')}")
+        lines.append(f"Theory move: {first.get('theory_move', '')}")
+        lines.append(f"Theory-move support: {first.get('theory_move_support', '')}")
+        lines.append(f"Matched patterns: {first.get('theory_move_patterns', '')}")
         lines.append(f"Summary candidate: {first.get('cluster_summary_candidate', '')}")
         if first.get("design_knowledge_contribution", ""):
             lines.append(f"Design-knowledge contribution: {first.get('design_knowledge_contribution', '')}")
@@ -460,7 +526,12 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             "cluster_summary_candidate",
             "design_knowledge_form",
             "design_knowledge_action",
+            "design_knowledge_role",
             "design_knowledge_contribution",
+            "theory_move_key",
+            "theory_move",
+            "theory_move_patterns",
+            "theory_move_support",
         ]:
             paper[key] = str(row.get(key, ""))
 
@@ -474,6 +545,9 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             continue
         cluster["label"] = str(first.get("cluster_label_candidate", ""))
         cluster["summary"] = str(first.get("cluster_summary_candidate", ""))
+        cluster["theory_move"] = str(first.get("theory_move", ""))
+        cluster["theory_move_patterns"] = str(first.get("theory_move_patterns", ""))
+        cluster["theory_move_support"] = str(first.get("theory_move_support", ""))
 
     new_payload = json.dumps(payload, ensure_ascii=False)
     text = text[: match.start(2)] + new_payload + text[match.end(2) :]
@@ -492,6 +566,42 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
         <div class="section-title">Paper-Oriented Facets</div>"""
     if "Design-Knowledge Contribution" not in text:
         text = text.replace(old, new)
+    old_typology = """        <div class="section-title">Design-Knowledge Contribution</div>
+        <div>
+          <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+          <span class="pill">Action: ${escapeHtml(p.design_knowledge_action || 'n/a')}</span>
+          <span class="pill">Auto role: ${escapeHtml(p.design_knowledge_role || 'n/a')}</span>
+        </div>
+        <div class="abstract">${escapeHtml(p.design_knowledge_contribution || '')}</div>"""
+    new_typology = """        <div class="section-title">Rule-Based Theory Typology</div>
+        <div>
+          <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+          <span class="pill">Theory move: ${escapeHtml(p.theory_move || 'n/a')}</span>
+          <span class="pill">Support: ${escapeHtml(p.theory_move_support || 'n/a')}</span>
+        </div>
+        <div class="abstract">${escapeHtml(p.design_knowledge_contribution || '')}</div>
+        <div class="meta">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>"""
+    text = text.replace(old_typology, new_typology)
+    old_typology_card = """        <div class="insight-card">
+          <div class="section-title">Design-Knowledge Contribution</div>
+          <div class="pill-row">
+            <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+            <span class="pill">Action: ${escapeHtml(p.design_knowledge_action || 'n/a')}</span>
+            <span class="pill">Auto role: ${escapeHtml(p.design_knowledge_role || 'n/a')}</span>
+          </div>
+          <div class="abstract" style="margin-top:8px">${escapeHtml(p.design_knowledge_contribution || '')}</div>
+        </div>"""
+    new_typology_card = """        <div class="insight-card">
+          <div class="section-title">Rule-Based Theory Typology</div>
+          <div class="pill-row">
+            <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+            <span class="pill">Theory move: ${escapeHtml(p.theory_move || 'n/a')}</span>
+            <span class="pill">Support: ${escapeHtml(p.theory_move_support || 'n/a')}</span>
+          </div>
+          <div class="abstract" style="margin-top:8px">${escapeHtml(p.design_knowledge_contribution || '')}</div>
+          <div class="meta" style="margin-top:8px">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>
+        </div>"""
+    text = text.replace(old_typology_card, new_typology_card)
     path.write_text(text, encoding="utf-8")
 
 

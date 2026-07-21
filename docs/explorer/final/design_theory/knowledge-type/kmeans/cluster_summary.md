@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (40 papers)
-Label candidate: Cluster 0: Design Theory through definition and conceptual framing around Interface
-Distinguishing evidence: Case Study, Tpc Pedagogy, Design Science, Digital Panopticon
-Summary candidate: Within this keyword view, this cluster is set apart by Tpc Pedagogy, Digital Panopticon. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Education / Learning that do not anchor the sibling clusters. Representative papers: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS; Digital Panopticon: How Remote Work Monitoring Shapes Employee Behavior and Motivation.
+Label candidate: Design Theory: Unclear Theory Move — Requires Human Review in Interface
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 3/40 papers, weighted score 12
+Matched patterns: Best candidate: Borrowing Theory from Other Fields; applies/adopts an external theory (3)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS; Digital Panopticon: How Remote Work Monitoring Shapes Employee Behavior and Motivation.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
 Theme words: concept, digital, problem, innovation, service, technique, methodology, commons
 
 Representative papers:
@@ -14,20 +17,15 @@ Representative papers:
 - : Towards a design theory of blended learning curriculum
 
 ### Cluster 1 (35 papers)
-Label candidate: Cluster 1: Design Theory through definition and conceptual framing around Tool
-Distinguishing evidence: Case Study, Design Science, Healthcare, Theories
-Summary candidate: Within this keyword view, this cluster is set apart by Healthcare, Theories. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Healthcare that do not anchor the sibling clusters. Representative papers: Tinkering, tailoring, and bricolage: Implications for theories of Design; Web-based information systems: Developing a design theory.
+Label candidate: Design Theory: Meta-Theoretical Reflection on Design in Tool
+Theory move: Meta-Theoretical Reflection on Design
+Theory-move support: 9/35 papers; weighted score 63
+Matched patterns: reflects on the nature/role/value of theory (7); explicit meta-theory/metatheory (3); philosophy/epistemology/ontology of design (3)
+Summary candidate: The deterministic first-pass typology codes this cluster as meta-theoretical reflection on design. The decision is supported by 9/35 papers; weighted score 63; matched indicators include reflects on the nature/role/value of theory (7); explicit meta-theory/metatheory (3); philosophy/epistemology/ontology of design (3). Its primary application domain is Tool. Representative papers include Tinkering, tailoring, and bricolage: Implications for theories of Design; Web-based information systems: Developing a design theory.
+Design-knowledge contribution: Meta-Theoretical Reflection on Design in Tool
 Theme words: theories, science, management, theory theory, theoretical, sonification, software, things
 
 Representative papers:
 - 2009: Tinkering, tailoring, and bricolage: Implications for theories of Design
 - 2007: Web-based information systems: Developing a design theory
 - 2010: Management design theories
-
-## LDA Topics
-- Topic 0: theory theory, product, innovation, theories, sonification, technique, analysis, science
-- Topic 1: theoretical, engineering, decision, conceptual, software, science, field, methodology
-- Topic 2: theories, management, concept, review, space, science, literature, life
-- Topic 3: theories, science, article, service, shared, typology, transformation, build
-- Topic 4: digital, architecture, games, management, concept, post, practices, methodology
-- Topic 5: need, existing, problem, social, lack, framing, characteristics, develop

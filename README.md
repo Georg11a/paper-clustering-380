@@ -138,6 +138,10 @@ design_knowledge_form
 design_knowledge_action
 design_knowledge_role
 design_knowledge_contribution
+theory_move_key
+theory_move
+theory_move_patterns
+theory_move_support
 representative_rank
 is_representative_top3
 ```
@@ -224,17 +228,28 @@ requested maximum is 8.
 
 ## Cluster Labeling Rationale
 
-Cluster labels are deliberately conservative. The displayed
-`cluster_label_candidate` is a descriptor, not a final human-validated theme. It
-combines the cluster number, the keyword/form being analyzed, and the inferred
-design-knowledge action frame, for example `Cluster 1: Design methods as
-actionable design guidance`.
+Cluster labels use a deterministic, literature-informed theory-move typology.
+Each non-noise cluster is coded as `Building New Theory`, `Borrowing Theory from
+Other Fields`, `Testing Theory Empirically`, `Meta-Theoretical Reflection on
+Design`, or `Unclear Theory Move — Requires Human Review`. The displayed label
+combines this move with the keyword/form and an application domain when one is
+available.
 
-More interpretive signals are stored separately. `design_knowledge_role` is an
-automatic role interpretation, and `distinguishing_evidence_terms` contains the
-terms and representative-paper cues that help explain how one cluster differs
-from another. These fields are supporting evidence, not direct quotes from the
-papers and not final labels.
+The four substantive codes synthesize theory building/testing, theory borrowing,
+and design meta-theory literature; they are not a verbatim taxonomy from Gregor
+(2006) or Gregor and Jones (2007). Coding is performed per paper from titles,
+abstracts, and Discussion summaries, then aggregated at cluster level. Weak or
+ambiguous evidence is never defaulted to theory building. `theory_move_patterns`
+and `theory_move_support` expose the matched rules and supporting-paper count for
+audit. These outputs are automatic first-pass codes to be spot-checked by humans,
+not ground truth.
+
+The method follows directed content analysis (Hsieh and Shannon, 2005) and the
+validation discipline recommended for automatic content analysis by Grimmer and
+Stewart (2013). The substantive categories draw on Colquitt and Zapata-Phelan
+(2007), Truex et al. (2006), Moeini et al. (2020), and Love (2000), with Gregor
+(2006) and Gregor and Jones (2007) providing broader theory-function and design
+theory structure.
 
 Distinctive terms from c-TF-IDF, topic words, facets, and representative-paper
 titles are kept as `distinguishing_evidence_terms` rather than being appended

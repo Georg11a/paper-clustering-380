@@ -3,9 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (4 papers)
-Label candidate: Cluster 0: Design Guidelines through definition and conceptual framing around Tool
-Distinguishing evidence: Extensible Models, Canonical Task Types, Visualization System, Design Guidelines
-Summary candidate: Within this keyword view, this cluster is set apart by Extensible Models, Canonical Task Types, Visualization System. Its dominant move, definition and conceptualization of design guidelines, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Towards a Model of Information Aesthetics in Information Visualization; Design Study Methodology: Reflections from the Trenches and the Stacks.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No theory-move signal (4 papers reviewed)
+Matched patterns: No decisive pattern match
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Towards a Model of Information Aesthetics in Information Visualization; Design Study Methodology: Reflections from the Trenches and the Stacks.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: visualization, guidelines, draco, task, aesthetics, constraints, extensible, encoding
 
 Representative papers:
@@ -14,20 +17,15 @@ Representative papers:
 - 2018: Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco
 
 ### Cluster 1 (21 papers)
-Label candidate: Cluster 1: Design Guidelines through definition and conceptual framing
-Distinguishing evidence: Rough Mile, Case Study, Immersive Practice, Preliminary Proposal
-Summary candidate: Within this keyword view, this cluster is set apart by Rough Mile, Case Study, Immersive Practice. Its dominant move, definition and conceptualization of design guidelines, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Accessibility that do not anchor the sibling clusters. Methodologically, it leans on Case Study. Representative papers: Six Guidelines for Trustworthy, Ethical and Responsible Automation Design; From interaction to trajectories: designing coherent journeys through user experiences.
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/21 papers, weighted score 5
+Matched patterns: Best candidate: Testing Theory Empirically; testing a theory/framework/model (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Six Guidelines for Trustworthy, Ethical and Responsible Automation Design; From interaction to trajectories: designing coherent journeys through user experiences.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
 Theme words: guidelines, tacit, component, text, automation, trustworthiness, interim, focus
 
 Representative papers:
 - 2025: Six Guidelines for Trustworthy, Ethical and Responsible Automation Design
 - 2009: From interaction to trajectories: designing coherent journeys through user experiences
 - 2017: The Rough Mile: Testing a Framework of Immersive Practice
-
-## LDA Topics
-- Topic 0: immersive, guidelines, platforms, focus, engagement, performance, practice, discussion
-- Topic 1: guidelines, constraints, visualization, usability, interfaces, actionable, formalizing, rules
-- Topic 2: guidelines, task, interfaces, definitions, types, products, concept, focus
-- Topic 3: guidelines, text, instances, visual, characteristics, types, components, app
-- Topic 4: guidelines, communication, natural, software, automated, ai, insights, computer
-- Topic 5: visualization, aesthetics, art, guidelines, techniques, understanding, provides, focus

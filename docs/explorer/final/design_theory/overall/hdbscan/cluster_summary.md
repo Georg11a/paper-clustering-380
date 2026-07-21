@@ -2,10 +2,13 @@
 
 ## Cluster Themes
 
-### Cluster -1 (46 papers)
+### Unclustered papers (46 papers)
 Label candidate: Unclustered papers
-Distinguishing evidence: 
+Theory move: n/a
+Theory-move support: n/a
+Matched patterns: n/a
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 1983: DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES.
 
 ### Cluster 0 (22 papers)
-Label candidate: Cluster 0: Design Theory through definition and conceptual framing around Tool
-Distinguishing evidence: Design Science, Comes First-theory, Conceptual Foundations, Socio-instrumental Pragmatism
-Summary candidate: Within this keyword view, this cluster is set apart by Design Science, Comes First-theory, Conceptual Foundations. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Methodologically, it leans on Design Science. Representative papers: Incommensurability in design science: Which comes first-Theory or artefact?; Tinkering, tailoring, and bricolage: Implications for theories of Design.
+Label candidate: Design Theory: Borrowing Theory from Other Fields in Tool
+Theory move: Borrowing Theory from Other Fields
+Theory-move support: 4/22 papers; weighted score 28
+Matched patterns: reference discipline/kernel theory (6); applies/adopts an external theory (1)
+Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 4/22 papers; weighted score 28; matched indicators include reference discipline/kernel theory (6); applies/adopts an external theory (1). Its primary application domain is Tool. Representative papers include Incommensurability in design science: Which comes first-Theory or artefact?; Tinkering, tailoring, and bricolage: Implications for theories of Design.
+Design-knowledge contribution: Borrowing Theory from Other Fields in Tool
 Theme words: theories, management, science, value, artefact, literature, focus, theory theory
 
 Representative papers:
@@ -25,20 +31,15 @@ Representative papers:
 - 2025: What is the value of design theory?
 
 ### Cluster 1 (7 papers)
-Label candidate: Cluster 1: Design Theory through definition and conceptual framing around Complex Products
-Distinguishing evidence: Case Study, Cognitive Point, Complex Products, Technique Innovation
-Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Cognitive Point, Complex Products. Its dominant move, definition and conceptualization of design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Methodologically, it leans on Case Study. Its contribution coding (Theoretical, Methodological, Empirical) also departs from the view majority. Representative papers: Design Theory and Method of Complex Products: A Review; Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry.
+Label candidate: Design Theory: Borrowing Theory from Other Fields
+Theory move: Borrowing Theory from Other Fields
+Theory-move support: 1/7 papers; weighted score 4
+Matched patterns: applies/adopts an external theory (1)
+Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 1/7 papers; weighted score 4; matched indicators include applies/adopts an external theory (1). Representative papers include Design Theory and Method of Complex Products: A Review; Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry.
+Design-knowledge contribution: Borrowing Theory from Other Fields
 Theme words: product, innovation, technique, recovery, mechanical, thinking, industry, theory theory
 
 Representative papers:
 - 2022: Design Theory and Method of Complex Products: A Review
 - 2006: Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry
 - 2022: The Conceptual Design of Mechanical Products
-
-## LDA Topics
-- Topic 0: science, theories, value, focus, theory theory, practice, problems, concept
-- Topic 1: multiscale, strategies, scale, theory theory, focus, perspective, students, problem
-- Topic 2: sonification, account, constructs, sketching, visual, problem, field, understanding
-- Topic 3: service, theoretical, theories, values, management, literature, analysis, practice
-- Topic 4: impact, innovation, management, focus, engineering, international, theory theory, product
-- Topic 5: focus, theory theory, theories, engineering, existing, concepts, science, decision

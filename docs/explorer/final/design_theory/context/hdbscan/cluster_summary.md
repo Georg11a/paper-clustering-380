@@ -2,10 +2,13 @@
 
 ## Cluster Themes
 
-### Cluster -1 (55 papers)
+### Unclustered papers (55 papers)
 Label candidate: Unclustered papers
-Distinguishing evidence: 
+Theory move: n/a
+Theory-move support: n/a
+Matched patterns: n/a
 Summary candidate: HDBSCAN did not assign these papers to a dense cluster. They are retained for inspection but should not be interpreted as a thematic cluster.
+Design-knowledge contribution: Not interpreted as a cluster theme.
 Theme words: noise / outliers
 
 Representative papers:
@@ -14,9 +17,12 @@ Representative papers:
 - 2012: Undesigning technology: considering the negation of design by design
 
 ### Cluster 0 (13 papers)
-Label candidate: Cluster 0: Design Theory through prior-work synthesis
-Distinguishing evidence: Case Study, Critical Look, Design Science, Conceptual Foundations
-Summary candidate: Within this keyword view, this cluster is set apart by Case Study, Critical Look, Design Science. Its dominant move, synthesis of prior work on design theory, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Privacy / Security, Education / Learning that do not anchor the sibling clusters. Methodologically, it leans on Design Science, Case Study. Representative papers: Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
+Label candidate: Design Theory: Unclear Theory Move — Requires Human Review in Prototype
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 3/13 papers, weighted score 24
+Matched patterns: Best candidate: Borrowing Theory from Other Fields; reference discipline/kernel theory (6)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Prototype. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Prototype
 Theme words: theories, management, software, theoretical, literature, review, online, engineering
 
 Representative papers:
@@ -25,20 +31,15 @@ Representative papers:
 - : Conceptual foundations of design problem solving
 
 ### Cluster 1 (7 papers)
-Label candidate: Cluster 1: Design Theory through definition and conceptual framing
-Distinguishing evidence: Theory Learning, Synchronous E-learning, Essential Active Principle, Generative Rational Heuristics
-Summary candidate: Within this keyword view, this cluster is set apart by Synchronous E-learning, Essential Active Principle, Generative Rational Heuristics. Unlike most clusters in this view, its dominant design-knowledge move is definition and conceptualization. Representative papers: Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
+Label candidate: Design Theory: Unclear Theory Move — Requires Human Review in Education / Learning
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 1/7 papers, weighted score 4
+Matched patterns: Best candidate: Testing Theory Empirically; tests hypotheses/propositions (1)
+Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Education / Learning. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Education / Learning
 Theme words: theory learning, games, decision, blended, curriculum, synchronous, pedagogical, heuristics
 
 Representative papers:
 - : Design exemplars for synchronous e-learning: A design theory approach
 - : Towards a design theory of blended learning curriculum
 - 2023: PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS
-
-## LDA Topics
-- Topic 0: concept, epistemology, space, conceptual, scale, products, analysis, field
-- Topic 1: field, theoretical, existing, theories, decision, education, analysis, social
-- Topic 2: thinking, concept, literature, scientists, fields, management, common, theory practice
-- Topic 3: theories, management, science, article, digital, service, software, theory theory
-- Topic 4: theories, engineering, science, problem, practice, methodology, technical, software
-- Topic 5: innovation, technique, post, industry, management, need, literature, product
