@@ -190,7 +190,7 @@
     <div class="controls">
       <div class="field">
         <label for="keywordSelect">Keyword Group</label>
-        <select id="keywordSelect"><option value="Confirmed PDF set" selected>Confirmed PDF set</option>
+        <select id="keywordSelect"><option value="Confirmed PDF set" selected>All PDFs</option>
 <option value="Design knowledge">Design knowledge</option>
 <option value="Design theory">Design theory</option>
 <option value="Design patterns">Design patterns</option>
@@ -217,7 +217,7 @@
 <option value="method">Method</option></select>
       </div>
       <button id="applyBtn" type="button">Apply</button>
-      <div class="current" id="currentLabel">250 confirmed PDFs · 8 clusters</div>
+      <div class="current" id="currentLabel">250 PDFs · 8 clusters</div>
       <div class="cluster-tools">
         <select id="outerClusterFilter" aria-label="Cluster filter"><option value="all">All clusters</option></select>
       </div>
@@ -284,7 +284,7 @@
     function displayLabel(run) {
       const clusterCount = clusterCountOverrides[run.id] || run.params;
       if (run.keyword === 'Confirmed PDF set') {
-        return `${run.papers} confirmed PDFs · ${clusterCount}`;
+        return `${run.papers} PDFs · ${clusterCount}`;
       }
       return `${run.keyword} · ${clusterCount}`;
     }
