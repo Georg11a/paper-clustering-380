@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Small Keyword Group – Paper List</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f7f9fc; color: #17233b; }
+    main { width: min(1180px, calc(100% - 32px)); margin: 24px auto; }
+    .summary { padding: 20px 22px; border: 1px solid #dbe4f0; border-radius: 12px; background: #fff; box-shadow: 0 8px 24px rgba(38, 57, 89, .06); }
+    h1 { margin: 0 0 7px; font-size: clamp(22px, 3vw, 30px); }
+    .count { display: inline-flex; margin-top: 8px; padding: 5px 10px; border-radius: 999px; background: #e8f1ff; color: #175da8; font-weight: 700; }
+    .note { margin: 10px 0 0; color: #63718a; line-height: 1.5; }
+    .papers { display: grid; gap: 12px; margin-top: 16px; }
+    article { padding: 17px 19px; border: 1px solid #dbe4f0; border-radius: 10px; background: #fff; }
+    h2 { margin: 0; font-size: 17px; line-height: 1.35; }
+    .meta { margin-top: 7px; color: #63718a; font-size: 14px; line-height: 1.45; }
+    .id { margin-top: 9px; color: #8490a3; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    a { color: #1769b0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="summary">
+      <h1 id="heading">Keyword paper list</h1>
+      <span class="count" id="count"></span>
+      <p class="note">All papers in this keyword group are shown below. Because the sample has fewer than 10 papers, it is presented as a list rather than forced into KMEANS or HDBSCAN clusters.</p>
+    </section>
+    <section class="papers" id="papers" aria-live="polite"></section>
+  </main>
+  <script>
+    const groups = {
+      'Design frameworks': [
+        { id: '7afa6519f6fc', title: 'The experience, dynamics and artifacts framework: towards a holistic model for designing serious and entertainment games', authors: 'Natucci, G.C.; Borges, M.A.F.', year: '', venue: '2021 IEEE Conference on Games (CoG)', doi: '10.1109/CoG52621.2021.9619144' },
+        { id: '268903a30da5', title: 'Systematic Review of Systemic Design Frameworks for Complex Challenges', authors: 'Skye Smith; Eleni Kalantidou', year: '2025', venue: 'Strategic Design Research Journal', url: 'https://www.semanticscholar.org/paper/0ad5afc83d67ef0110cda1d9f605336b53447b1a' },
+        { id: '560be0c20de7', title: 'Designing for Trust, Progress, and Dignity: A Conceptual Framework for Reliability, Responsiveness, and Relational Quality in AI-Enabled Service Systems', authors: 'M. Colgate; Orla Colgate', year: '2026', venue: 'Information', url: 'https://www.semanticscholar.org/paper/51493efcd757168bfe90566436e0982efe07bfd9' },
+        { id: '1e7ab64c6cf9', title: 'Commentary: Strength-based co-design that EMPOWERs – Lessons from codesigning with older adults', authors: 'Bernardo Figueiredo; T. Aleti; Diane M. Martin; Mike Reid; Jacob Sheahan; Larissa Hjorth', year: '2023', venue: 'Journal of Services Marketing', url: 'https://www.semanticscholar.org/paper/66872f88e4301696a2c140413d0072fc0e04dd88' },
+        { id: '660ca24145b2', title: 'The E-Design Assessment Tool: an evidence-informed approach towards a consistent terminology for quantifying online distance learning activities', authors: 'Helen Walmsley-Smith; Lynn Machin; G. Walton', year: '2019', venue: 'Research in Learning Technology', url: 'https://www.semanticscholar.org/paper/b16b678f10cc89599644f2c85895dbff730b3569' },
+        { id: 'e09769771b82', title: 'The Experience, Dynamics and Artifacts Framework: Towards a Holistic Model for Designing Serious and Entertainment Games', authors: 'Gabriel C. Natucci; M. A. Borges', year: '2021', venue: '2021 IEEE Conference on Games (CoG)', url: 'https://www.semanticscholar.org/paper/c99ce43ca2809df3634eb95801e9f47fa335d56f' }
+      ],
+      'Design expertise': [
+        { id: '64085b9b57e4', title: 'Towards an integrative approach to researching design expertise', authors: 'Tan, Stella', year: '2021', venue: 'Design Studies', doi: '10.1016/j.destud.2021.101017' },
+        { id: 'f51b21c51194', title: 'Understanding database design expertise', authors: 'Storey, V.C.; Thompson, C.B.; Ram, S.', year: '', venue: 'Data & Knowledge Engineering', doi: '10.1016/0169-023X(95)00012-H' }
+      ],
+      'Design Procedures': [
+        { id: '1217bfc6316e', title: 'Design research', authors: 'Gosling, W.', year: '', venue: 'Conference on electronics design' },
+        { id: '6ea89aad84f6', title: 'Development of Sustainable Integrated Design Framework for Stream Restoration', authors: 'Kidoo Park; Kil-Seong Lee', year: '2019', venue: 'Sustainability', url: 'https://www.semanticscholar.org/paper/2d6d2d98a2743302a62da00967844cdc92ff28c4' }
+      ]
+    };
+    const keyword = new URLSearchParams(location.search).get('keyword') || 'Design frameworks';
+    const papers = groups[keyword] || [];
+    document.getElementById('heading').textContent = keyword;
+    document.getElementById('count').textContent = `${papers.length} papers`;
+    document.title = `${keyword} – ${papers.length} papers`;
+    const paperContainer = document.getElementById('papers');
+    papers.forEach(paper => {
+      const article = document.createElement('article');
+      const heading = document.createElement('h2');
+      const link = paper.doi ? `https://doi.org/${paper.doi}` : paper.url;
+      if (link) {
+        const anchor = document.createElement('a');
+        anchor.href = link;
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+        anchor.textContent = paper.title;
+        heading.appendChild(anchor);
+      } else {
+        heading.textContent = paper.title;
+      }
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.textContent = [paper.authors, paper.year, paper.venue].filter(Boolean).join(' · ');
+      const id = document.createElement('div');
+      id.className = 'id';
+      id.textContent = `paper_id: ${paper.id}`;
+      article.append(heading, meta, id);
+      paperContainer.appendChild(article);
+    });
+  </script>
+</body>
+</html>
