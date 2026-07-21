@@ -37,11 +37,32 @@ class ContributionResult:
     def support_text(self) -> str:
         if self.primary_key == "unclear":
             return f"No reliable contribution signal ({self.paper_count} papers reviewed)"
+        if self.primary_key == "mixed":
+            return f"No dominant type across {self.paper_count} papers"
         return f"{self.support_count}/{self.paper_count} papers; weighted score {self.score}"
 
     @property
     def patterns_text(self) -> str:
         return "; ".join(self.matched_patterns) if self.matched_patterns else "No decisive pattern match"
+
+
+@dataclass(frozen=True)
+class ContributionSubtypeResult:
+    key: str
+    label: str
+    support_count: int
+    paper_count: int
+    matched_patterns: tuple[str, ...]
+
+    @property
+    def support_text(self) -> str:
+        if not self.key:
+            return "No reliable subtype signal"
+        return f"{self.support_count}/{self.paper_count} papers"
+
+    @property
+    def patterns_text(self) -> str:
+        return "; ".join(self.matched_patterns) if self.matched_patterns else "No decisive subtype pattern"
 
 
 @dataclass(frozen=True)
@@ -55,6 +76,18 @@ class DomainResult:
     @property
     def labels_text(self) -> str:
         return "; ".join(self.labels)
+
+    @property
+    def primary_key(self) -> str:
+        return self.keys[0]
+
+    @property
+    def primary_label(self) -> str:
+        return self.labels[0]
+
+    @property
+    def additional_labels_text(self) -> str:
+        return "; ".join(self.labels[1:])
 
     @property
     def support_text(self) -> str:
@@ -81,6 +114,7 @@ CONTRIBUTION_LABELS = {
     "theoretical": "Theoretical Contribution",
     "dataset": "Dataset Contribution",
     "survey": "Survey/Synthesis Contribution",
+    "mixed": "Mixed Contribution Types — No Dominant Type",
     "unclear": "Unclear Contribution Type — Requires Human Review",
 }
 
@@ -93,6 +127,7 @@ CONTRIBUTION_DEFINITIONS = {
     "theoretical": "Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.",
     "dataset": "Creates and documents a dataset, corpus, benchmark, annotation set, or reusable data resource.",
     "survey": "Reviews and synthesizes prior literature to produce an evidence map, taxonomy, trends, gaps, or an integrated account of a field.",
+    "mixed": "Contains multiple contribution types without enough shared evidence to identify one dominant cluster-level contribution.",
     "unclear": "Available textual evidence is insufficient to assign a reliable primary contribution type.",
 }
 
@@ -129,6 +164,45 @@ CONTRIBUTION_SUMMARY_SCHEMAS = {
     "unclear": {
         "fields": ("human review" ,),
         "template": "Available evidence does not support a contribution-specific cluster summary.",
+    },
+    "mixed": {
+        "fields": ("candidate contribution types", "supporting papers", "human review"),
+        "template": "Contains multiple contribution types without a sufficiently supported dominant type.",
+    },
+}
+
+
+CONTRIBUTION_SUBTYPE_RULES = {
+    "empirical": {
+        "Experimental and Evaluation Studies": r"\b(?:controlled experiment|experiment|user study|evaluation study|comparative study)\b",
+        "Qualitative and Field Studies": r"\b(?:interview study|interviews?|ethnograph(?:y|ic)|field study|observational study)\b",
+        "Case and Mixed-Methods Studies": r"\b(?:case study|multiple case|mixed[- ]methods?)\b",
+    },
+    "algorithmic": {
+        "Prediction and Classification Models": r"\b(?:prediction|predictive|classification|classifier)\b",
+        "Optimization and Recommendation Methods": r"\b(?:optimization|optimisation|recommendation|recommender|scheduling)\b",
+        "Generative and Representation Models": r"\b(?:generative|generation|representation learning|embedding|neural architecture)\b",
+    },
+    "artifact": {
+        "Interactive Systems and Tools": r"\b(?:interactive system|system|tool|toolkit|platform|application)\b",
+        "Interfaces and Dashboards": r"\b(?:interface|dashboard|visualization|visualisation)\b",
+        "Prototypes and Design Artifacts": r"\b(?:prototype|design artifact|design artefact|robot|device)\b",
+    },
+    "methodological": {
+        "Design Guidelines and Principles": r"\b(?:design guidelines?|design principles?|guidelines?|principles?|heuristics?|best practices?|patterns?)\b",
+        "Research and Design Frameworks": r"\b(?:research framework|design framework|analytical framework|evaluation framework|taxonomy|typology|ontology|conceptual schema|grid)\b",
+        "Design Methods and Processes": r"\b(?:design methods?|research methods?|methodology|methodologies|design process|decision-making process|process model|approach)\b",
+        "Evaluation and Analysis Methods": r"\b(?:evaluation methods?|evaluation approach|analysis methods?|analytical approach|assessment method|measurement framework)\b",
+    },
+    "dataset": {
+        "Benchmarks and Evaluation Sets": r"\b(?:benchmark|evaluation set|test collection)\b",
+        "Corpora and Annotated Datasets": r"\b(?:corpus|corpora|annotated dataset|annotation set)\b",
+        "Repositories and Reusable Data Resources": r"\b(?:repository|data resource|database)\b",
+    },
+    "survey": {
+        "Systematic and Scoping Reviews": r"\b(?:systematic literature review|systematic review|scoping review|mapping review)\b",
+        "Taxonomies and Evidence Maps": r"\b(?:taxonomy|typology|evidence map|research map|classification)\b",
+        "Narrative and Integrative Syntheses": r"\b(?:narrative review|integrative review|literature review|research synthesis)\b",
     },
 }
 
@@ -342,6 +416,50 @@ def contribution_summary_template(key: str) -> str:
     return str(schema["template"])
 
 
+def classify_contribution_subtype(
+    papers: Iterable[Mapping[str, object]], contribution_key: str
+) -> ContributionSubtypeResult:
+    paper_list = list(papers)
+    rules = CONTRIBUTION_SUBTYPE_RULES.get(contribution_key, {})
+    if not rules:
+        return ContributionSubtypeResult("", "", 0, len(paper_list), ())
+
+    support = Counter()
+    weighted_support = Counter()
+    matches = Counter()
+    for paper in paper_list:
+        text = _paper_text(paper)
+        try:
+            representative_rank = int(float(str(paper.get("representative_rank", "") or 999)))
+        except ValueError:
+            representative_rank = 999
+        representative_weight = 3 if representative_rank <= 3 else 1
+        for label, expression in rules.items():
+            count = min(2, len(re.findall(expression, text, flags=re.I | re.S)))
+            if count:
+                support[label] += 1
+                weighted_support[label] += representative_weight
+                matches[label] += count
+
+    if not support:
+        return ContributionSubtypeResult("", "", 0, len(paper_list), ())
+    label = max(
+        rules,
+        key=lambda candidate: (weighted_support[candidate], support[candidate], matches[candidate]),
+    )
+    minimum = 1 if len(paper_list) < 8 else max(2, math.ceil(len(paper_list) * 0.10))
+    if support[label] < minimum:
+        return ContributionSubtypeResult("", "", support[label], len(paper_list), ())
+    key = re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")
+    return ContributionSubtypeResult(
+        key,
+        label,
+        support[label],
+        len(paper_list),
+        (f"{label.lower()} indicators ({matches[label]})",),
+    )
+
+
 DOMAIN_RULES = {
     "healthcare": (Rule("healthcare setting", r"\b(?:healthcare|health care|clinical|clinic|medical|medicine|patient|hospital|surgery|surgical|diagnosis|treatment)\b", 3),),
     "finance": (Rule("finance/business setting", r"\b(?:finance|financial|banking|business|economy|economic|loan|credit|investment|retail|market|entrepreneurship)\b", 3),),
@@ -415,6 +533,19 @@ def classify_contribution(papers: Iterable[Mapping[str, object]]) -> Contributio
     paper_count = len(paper_list)
     min_support = _minimum_support(paper_count)
     if scores[best] < 3 or support[best] < min_support:
+        signaled = [
+            key for key in CONTRIBUTION_RULES
+            if scores[key] >= 3 and support[key] >= 1
+        ]
+        if len(signaled) >= 2 and sum(support[key] for key in signaled) >= 3:
+            evidence = tuple(
+                f"{CONTRIBUTION_LABELS[key]} ({support[key]}/{paper_count} papers)"
+                for key in sorted(signaled, key=lambda key: (support[key], scores[key]), reverse=True)
+            )
+            return ContributionResult(
+                "mixed", CONTRIBUTION_LABELS["mixed"], "", "", scores[best], support[best],
+                paper_count, evidence,
+            )
         return ContributionResult(
             "unclear", CONTRIBUTION_LABELS["unclear"], "", "", scores[best], support[best],
             len(paper_list), (),
@@ -459,7 +590,7 @@ def classify_domains(papers: Iterable[Mapping[str, object]], max_domains: int = 
                 scores[key] += min(paper_score, 8)
 
     paper_count = len(paper_list)
-    min_support = 1 if paper_count <= 4 else max(2, math.ceil(paper_count * 0.15))
+    min_support = 1 if paper_count <= 4 else max(2, math.ceil(paper_count * 0.20))
     ranked = sorted(DOMAIN_RULES, key=lambda key: (support[key], scores[key]), reverse=True)
     selected = [key for key in ranked if support[key] >= min_support and scores[key] >= 3][:max_domains]
     if not selected:
@@ -500,7 +631,7 @@ def _self_test() -> None:
     assert domains.keys == ("healthcare",), domains
     generic = classify_domains([{"abstract": "We present an interface for a general abstract problem."}])
     assert generic.keys == ("generic",), generic
-    assert len(CONTRIBUTION_SUMMARY_SCHEMAS) == 8
+    assert len(CONTRIBUTION_SUMMARY_SCHEMAS) == 9
     assert len(DOMAIN_DEFINITIONS) == 13
     assert all(definition.endswith(".") for definition in DOMAIN_DEFINITIONS.values())
     assert "interface" not in DOMAIN_LABELS

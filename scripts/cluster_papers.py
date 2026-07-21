@@ -26,6 +26,7 @@ from sklearn.preprocessing import normalize
 from evidence_scorer import PaperParagraphs, faithfulness_score, select_cluster_evidence
 from research_typology import (
     classify_contribution,
+    classify_contribution_subtype,
     classify_domains,
     contribution_definition,
     contribution_summary_fields,
@@ -714,16 +715,48 @@ def cluster_labels(
             return DBSCAN(eps=dbscan_eps, min_samples=min_samples, metric="cosine").fit_predict(vectors)
         return choose_dbscan(vectors, min_samples).fit_predict(vectors)
     if method == "hdbscan":
-        # Vectors are L2-normalized when created/loaded; Euclidean distance on
-        # normalized vectors preserves cosine-neighborhood ordering well enough
-        # for HDBSCAN while avoiding all-noise results from sklearn's cosine mode.
-        return HDBSCAN(
+        # Density estimates degrade in high-dimensional spaces as pairwise
+        # distances concentrate. Reduce to a compact clustering space before
+        # HDBSCAN; min_dist=0.0 favors tightly packed neighborhoods.
+        reduced = vectors
+        if vectors.shape[0] > 10 and vectors.shape[1] > 5:
+            reducer = umap.UMAP(
+                n_components=5,
+                metric="cosine",
+                random_state=42,
+                n_neighbors=15,
+                min_dist=0.0,
+            )
+            reduced = reducer.fit_transform(vectors)
+        labels = HDBSCAN(
             min_cluster_size=min_cluster_size,
             min_samples=min_samples,
             metric="euclidean",
             copy=True,
-        ).fit_predict(vectors)
+        ).fit_predict(reduced)
+        return soft_assign_hdbscan_noise(labels, reduced)
     raise ValueError(f"Unsupported clustering method: {method}")
+
+
+_LAST_HDBSCAN_PERIPHERAL: np.ndarray | None = None
+
+
+def soft_assign_hdbscan_noise(labels: np.ndarray, reduced: np.ndarray) -> np.ndarray:
+    """Assign HDBSCAN noise to its nearest cluster while retaining an audit flag."""
+    global _LAST_HDBSCAN_PERIPHERAL
+    labels = np.asarray(labels).copy()
+    noise_mask = labels == -1
+    cluster_ids = sorted(set(labels[~noise_mask].tolist()))
+    if not cluster_ids or not noise_mask.any():
+        _LAST_HDBSCAN_PERIPHERAL = np.zeros(len(labels), dtype=bool)
+        return labels
+
+    centroids = np.vstack([reduced[labels == cluster_id].mean(axis=0) for cluster_id in cluster_ids])
+    for index in np.where(noise_mask)[0]:
+        distances = np.linalg.norm(centroids - reduced[index], axis=1)
+        labels[index] = cluster_ids[int(np.argmin(distances))]
+    _LAST_HDBSCAN_PERIPHERAL = noise_mask
+    return labels
 
 
 def kmeans_silhouette_selection(vectors: np.ndarray, k_values: list[int]) -> tuple[int, pd.DataFrame]:
@@ -1809,6 +1842,10 @@ def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
         summary = summaries[cid]
         contribution_key = str(summary.get("_contribution_key") or "unclear")
         contribution_label = str(summary.get("contribution_type") or "unclear contribution type")
+        contribution_subtype = str(summary.get("contribution_subtype") or "").strip()
+        contribution_description = contribution_label
+        if contribution_subtype:
+            contribution_description += f" — {contribution_subtype}"
         move_key = str(summary.get("_theory_move_key") or "not_applicable")
         move_label = str(summary.get("theory_move") or "")
         evidence = evidence_lists.get(cid, [])
@@ -1832,13 +1869,17 @@ def apply_contrastive_summary_pass(summaries: dict[int, dict]) -> None:
             sentences.append(
                 "The automatic first-pass typology found insufficient evidence for a primary contribution type, so this cluster requires human review."
             )
+        elif contribution_key == "mixed":
+            sentences.append(
+                "The papers show multiple contribution types, but no type has enough shared support to serve as the cluster-level primary contribution."
+            )
         elif contribution_key != majority_type:
             sentences.append(
                 f"Unlike most clusters in this view, its primary contribution is {contribution_label.lower()}."
             )
         else:
             sentences.append(
-                f"Its primary contribution, {contribution_label.lower()}, is shared across most of this view, "
+                f"Its primary contribution, {contribution_description.lower()}, is shared across most of this view, "
                 "so the distinguishing terms above carry the interpretive weight."
             )
 
@@ -1899,17 +1940,20 @@ def infer_research_typology_claim(
 ) -> dict[str, object]:
     records = subset.to_dict("records")
     contribution = classify_contribution(records)
+    subtype = classify_contribution_subtype(records, contribution.primary_key)
     domains = classify_domains(records)
     form = phrase_title(focus_form_from_keyword(subset))
     label = f"{form}: {contribution.primary_label}"
     if contribution.secondary_label:
         label += f" + {contribution.secondary_label}"
+    if subtype.label and contribution.primary_key != "theoretical":
+        label += f" — {subtype.label}"
 
     theory_applicable = "theoretical" in {contribution.primary_key, contribution.secondary_key}
     theory = classify_theory_move(records) if theory_applicable else None
     if theory is not None:
         label += f" — {theory.label}"
-    label += f" | Domain: {domains.labels_text}"
+    label += f" | Primary Domain: {domains.primary_label}"
 
     representative_titles = [
         str(title)
@@ -1923,15 +1967,21 @@ def infer_research_typology_claim(
             "The deterministic first-pass typology did not find enough evidence to assign a primary "
             "research contribution type. It remains flagged for human review."
         )
-    else:
+    elif contribution.primary_key == "mixed":
         summary = (
-            f"The deterministic first-pass typology codes the primary research contribution as "
-            f"{contribution.primary_label.lower()}. The decision is supported by "
-            f"{contribution.support_text}; matched indicators include {contribution.patterns_text}."
+            "This cluster contains multiple contribution types without enough shared evidence to identify "
+            f"one dominant type. Candidate signals are {contribution.patterns_text}."
         )
+    else:
+        contribution_phrase = contribution.primary_label.lower()
+        if subtype.label:
+            contribution_phrase += f", specifically {subtype.label.lower()}"
+        summary = f"This cluster primarily makes a {contribution_phrase}."
     if contribution.secondary_label:
         summary += f" A genuinely equivalent secondary type is {contribution.secondary_label.lower()}."
-    summary += f" Its application domain coding is {domains.labels_text}."
+    summary += f" Its strongest supported application domain is {domains.primary_label}."
+    if domains.additional_labels_text:
+        summary += f" Additional supported settings are {domains.additional_labels_text}."
     if theory is not None:
         if theory.key == "unclear":
             summary += " Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move."
@@ -1956,10 +2006,16 @@ def infer_research_typology_claim(
         "contribution_type_secondary": contribution.secondary_label,
         "contribution_type_patterns": contribution.patterns_text,
         "contribution_type_support": contribution.support_text,
+        "contribution_subtype_key": subtype.key,
+        "contribution_subtype": subtype.label,
+        "contribution_subtype_patterns": subtype.patterns_text,
+        "contribution_subtype_support": subtype.support_text,
         "contribution_type_definition": contribution_definition(contribution.primary_key),
         "contribution_summary_fields": contribution_summary_fields(contribution.primary_key),
         "contribution_summary_template": contribution_summary_template(contribution.primary_key),
         "application_domains": domains.labels_text,
+        "primary_application_domain": domains.primary_label,
+        "additional_application_domains": domains.additional_labels_text,
         "application_domain_patterns": domains.patterns_text,
         "application_domain_support": domains.support_text,
         "application_domain_definitions": domains.definitions_text,
@@ -1993,10 +2049,16 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
                 "contribution_type_secondary": "",
                 "contribution_type_patterns": "n/a",
                 "contribution_type_support": "n/a",
+                "contribution_subtype_key": "n/a",
+                "contribution_subtype": "n/a",
+                "contribution_subtype_patterns": "n/a",
+                "contribution_subtype_support": "n/a",
                 "contribution_type_definition": "n/a",
                 "contribution_summary_fields": "n/a",
                 "contribution_summary_template": "n/a",
                 "application_domains": "n/a",
+                "primary_application_domain": "n/a",
+                "additional_application_domains": "",
                 "application_domain_patterns": "n/a",
                 "application_domain_support": "n/a",
                 "application_domain_definitions": "n/a",
@@ -2079,10 +2141,16 @@ def build_cluster_summaries(df: pd.DataFrame, text_view: str = "overall") -> dic
             "contribution_type_secondary": design_claim["contribution_type_secondary"],
             "contribution_type_patterns": design_claim["contribution_type_patterns"],
             "contribution_type_support": design_claim["contribution_type_support"],
+            "contribution_subtype_key": design_claim["contribution_subtype_key"],
+            "contribution_subtype": design_claim["contribution_subtype"],
+            "contribution_subtype_patterns": design_claim["contribution_subtype_patterns"],
+            "contribution_subtype_support": design_claim["contribution_subtype_support"],
             "contribution_type_definition": design_claim["contribution_type_definition"],
             "contribution_summary_fields": design_claim["contribution_summary_fields"],
             "contribution_summary_template": design_claim["contribution_summary_template"],
             "application_domains": design_claim["application_domains"],
+            "primary_application_domain": design_claim["primary_application_domain"],
+            "additional_application_domains": design_claim["additional_application_domains"],
             "application_domain_patterns": design_claim["application_domain_patterns"],
             "application_domain_support": design_claim["application_domain_support"],
             "application_domain_definitions": design_claim["application_domain_definitions"],
@@ -2158,11 +2226,15 @@ def write_summary(df: pd.DataFrame, cluster_terms: dict[int, str], topic_words: 
             lines.append(f"Primary contribution: {subset.iloc[0].get('contribution_type', '')}")
             lines.append(f"Secondary contribution: {subset.iloc[0].get('contribution_type_secondary', '') or 'n/a'}")
             lines.append(f"Contribution support: {subset.iloc[0].get('contribution_type_support', '')}")
+            lines.append(f"Contribution subtype: {subset.iloc[0].get('contribution_subtype', '') or 'n/a'}")
+            lines.append(f"Contribution-subtype support: {subset.iloc[0].get('contribution_subtype_support', '')}")
             lines.append(f"Contribution definition: {subset.iloc[0].get('contribution_type_definition', '')}")
             lines.append(f"Contribution patterns: {subset.iloc[0].get('contribution_type_patterns', '')}")
             lines.append(f"Contribution summary fields: {subset.iloc[0].get('contribution_summary_fields', '')}")
             lines.append(f"Contribution summary template: {subset.iloc[0].get('contribution_summary_template', '')}")
             lines.append(f"Application domains: {subset.iloc[0].get('application_domains', '')}")
+            lines.append(f"Primary application domain: {subset.iloc[0].get('primary_application_domain', '')}")
+            lines.append(f"Additional application domains: {subset.iloc[0].get('additional_application_domains', '') or 'n/a'}")
             lines.append(f"Domain support: {subset.iloc[0].get('application_domain_support', '')}")
             lines.append(f"Domain definitions: {subset.iloc[0].get('application_domain_definitions', '')}")
             lines.append(f"Theory move: {subset.iloc[0].get('theory_move', '')}")
@@ -2277,10 +2349,15 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "contribution_type_secondary": str(subset.iloc[0].get("contribution_type_secondary", "")) if len(subset) else "",
                 "contribution_type_patterns": str(subset.iloc[0].get("contribution_type_patterns", "")) if len(subset) else "",
                 "contribution_type_support": str(subset.iloc[0].get("contribution_type_support", "")) if len(subset) else "",
+                "contribution_subtype": str(subset.iloc[0].get("contribution_subtype", "")) if len(subset) else "",
+                "contribution_subtype_patterns": str(subset.iloc[0].get("contribution_subtype_patterns", "")) if len(subset) else "",
+                "contribution_subtype_support": str(subset.iloc[0].get("contribution_subtype_support", "")) if len(subset) else "",
                 "contribution_type_definition": str(subset.iloc[0].get("contribution_type_definition", "")) if len(subset) else "",
                 "contribution_summary_fields": str(subset.iloc[0].get("contribution_summary_fields", "")) if len(subset) else "",
                 "contribution_summary_template": str(subset.iloc[0].get("contribution_summary_template", "")) if len(subset) else "",
                 "application_domains": str(subset.iloc[0].get("application_domains", "")) if len(subset) else "",
+                "primary_application_domain": str(subset.iloc[0].get("primary_application_domain", "")) if len(subset) else "",
+                "additional_application_domains": str(subset.iloc[0].get("additional_application_domains", "")) if len(subset) else "",
                 "application_domain_patterns": str(subset.iloc[0].get("application_domain_patterns", "")) if len(subset) else "",
                 "application_domain_support": str(subset.iloc[0].get("application_domain_support", "")) if len(subset) else "",
                 "application_domain_definitions": str(subset.iloc[0].get("application_domain_definitions", "")) if len(subset) else "",
@@ -2324,10 +2401,16 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "contribution_type_secondary": str(row.get("contribution_type_secondary", "")),
                 "contribution_type_patterns": str(row.get("contribution_type_patterns", "")),
                 "contribution_type_support": str(row.get("contribution_type_support", "")),
+                "contribution_subtype_key": str(row.get("contribution_subtype_key", "")),
+                "contribution_subtype": str(row.get("contribution_subtype", "")),
+                "contribution_subtype_patterns": str(row.get("contribution_subtype_patterns", "")),
+                "contribution_subtype_support": str(row.get("contribution_subtype_support", "")),
                 "contribution_type_definition": str(row.get("contribution_type_definition", "")),
                 "contribution_summary_fields": str(row.get("contribution_summary_fields", "")),
                 "contribution_summary_template": str(row.get("contribution_summary_template", "")),
                 "application_domains": str(row.get("application_domains", "")),
+                "primary_application_domain": str(row.get("primary_application_domain", "")),
+                "additional_application_domains": str(row.get("additional_application_domains", "")),
                 "application_domain_patterns": str(row.get("application_domain_patterns", "")),
                 "application_domain_support": str(row.get("application_domain_support", "")),
                 "application_domain_definitions": str(row.get("application_domain_definitions", "")),
@@ -2352,6 +2435,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
                 "lda_topic_probability": float(row.get("lda_topic_probability", 0)),
                 "lda_topic_words": str(row.get("lda_topic_words", "")),
                 "nearest_papers": row.get("nearest_papers", []),
+                "hdbscan_peripheral": bool(row.get("hdbscan_peripheral", False)),
             }
         )
 
@@ -2747,6 +2831,8 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
       const discussionStatus = p.discussion_found ?
         `<span class="pill">Discussion detected: ${{p.discussion_paragraph_count}} paragraphs</span>` :
         `<span class="pill">No explicit Discussion section detected</span>`;
+      const peripheralStatus = p.hdbscan_peripheral ?
+        `<span class="pill">Peripheral: soft-assigned to nearest cluster (HDBSCAN noise)</span>` : '';
       const sourceEvidence = renderSourceEvidence(p.cluster);
       details.innerHTML = `
         <div class="paper-heading">
@@ -2758,7 +2844,7 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
             <span class="pill">Rep rank ${{p.representative_rank}}</span>
             <span class="pill">Medoid rank ${{p.medoid_rank}}</span>
             <span class="pill">LDA topic ${{p.lda_topic}} (${{Math.round(p.lda_topic_probability * 100)}}%)</span>
-            ${{discussionStatus}}
+            ${{discussionStatus}}${{peripheralStatus}}
           </div>
         </div>
         <div class="details-inner">
@@ -2780,11 +2866,14 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
           <div class="pill-row">
             <span class="pill">Form: ${{escapeHtml(p.design_knowledge_form || 'n/a')}}</span>
             <span class="pill">Primary: ${{escapeHtml(p.contribution_type || 'n/a')}}</span>
+            ${{p.contribution_subtype ? `<span class="pill">Subtype: ${{escapeHtml(p.contribution_subtype)}}</span>` : ''}}
             ${{p.contribution_type_secondary ? `<span class="pill">Secondary: ${{escapeHtml(p.contribution_type_secondary)}}</span>` : ''}}
-            <span class="pill">Domain: ${{escapeHtml(p.application_domains || 'n/a')}}</span>
+            <span class="pill">Primary domain: ${{escapeHtml(p.primary_application_domain || p.application_domains || 'n/a')}}</span>
+            ${{p.additional_application_domains ? `<span class="pill">Additional domains: ${{escapeHtml(p.additional_application_domains)}}</span>` : ''}}
           </div>
           <div class="meta" style="margin-top:8px">Contribution support: ${{escapeHtml(p.contribution_type_support || 'n/a')}}</div>
           <div class="meta">Contribution definition: ${{escapeHtml(p.contribution_type_definition || 'n/a')}}</div>
+          <div class="meta">Subtype support: ${{escapeHtml(p.contribution_subtype_support || 'n/a')}}</div>
           <div class="meta">Contribution patterns: ${{escapeHtml(p.contribution_type_patterns || 'n/a')}}</div>
           <div class="meta">Domain support: ${{escapeHtml(p.application_domain_support || 'n/a')}}</div>
           <div class="meta">Domain definition: ${{escapeHtml(p.application_domain_definitions || 'n/a')}}</div>
@@ -3016,6 +3105,11 @@ def main() -> None:
     df["text_view"] = args.text_view
     df["cluster_method"] = args.method
     df["cluster"] = labels
+    peripheral = _LAST_HDBSCAN_PERIPHERAL
+    if args.method == "hdbscan" and peripheral is not None and len(peripheral) == len(df):
+        df["hdbscan_peripheral"] = peripheral
+    else:
+        df["hdbscan_peripheral"] = False
     df["cluster_theme_terms"] = df["cluster"].map(cluster_terms)
     df["umap_x"] = coords[:, 0]
     df["umap_y"] = coords[:, 1]
@@ -3040,10 +3134,16 @@ def main() -> None:
         "contribution_type_secondary",
         "contribution_type_patterns",
         "contribution_type_support",
+        "contribution_subtype_key",
+        "contribution_subtype",
+        "contribution_subtype_patterns",
+        "contribution_subtype_support",
         "contribution_type_definition",
         "contribution_summary_fields",
         "contribution_summary_template",
         "application_domains",
+        "primary_application_domain",
+        "additional_application_domains",
         "application_domain_patterns",
         "application_domain_support",
         "application_domain_definitions",

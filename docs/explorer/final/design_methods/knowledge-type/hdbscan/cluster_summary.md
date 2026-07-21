@@ -7,11 +7,15 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution subtype: n/a
+Contribution-subtype support: n/a
 Contribution definition: n/a
 Contribution patterns: n/a
 Contribution summary fields: n/a
 Contribution summary template: n/a
 Application domains: n/a
+Primary application domain: n/a
+Additional application domains: n/a
 Domain support: n/a
 Domain definitions: n/a
 Theory move: n/a
@@ -27,21 +31,25 @@ Representative papers:
 - 2014: Generating implications for design through design research
 
 ### Cluster 0 (6 papers)
-Label candidate: Design Methods: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Design, Creativity, Architecture
+Label candidate: Design Methods: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Primary Domain: Design, Creativity, Architecture
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 2/6 papers; weighted score 16
+Contribution subtype: n/a
+Contribution-subtype support: No reliable subtype signal
 Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (4); articulates conceptual or philosophical foundations (1)
 Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
 Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Design, Creativity, Architecture
+Primary application domain: Design, Creativity, Architecture
+Additional application domains: n/a
 Domain support: Design, Creativity, Architecture: 2/6 papers
 Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/6 papers, weighted score 5
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; reflects on the nature/role/value of theory (1)
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 2/6 papers; weighted score 16; matched indicators include explicit theoretical output (4); articulates conceptual or philosophical foundations (1). Its application domain coding is Design, Creativity, Architecture. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
+Summary candidate: This cluster primarily makes a theoretical contribution. Its strongest supported application domain is Design, Creativity, Architecture. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory; Using System Dynamics to Construct Design Theory for Community Information Systems.
 Design-knowledge contribution: Theoretical Contribution
 Theme words: complexity, functional, product, applications, industrial, manufacturing, community, robust
 
@@ -51,21 +59,25 @@ Representative papers:
 - 2024: Emotion Semantics Construction in Industrial Product Application
 
 ### Cluster 1 (5 papers)
-Label candidate: Design Methods: Methodological Contribution | Domain: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
+Label candidate: Design Methods: Methodological Contribution — Design Methods and Processes | Primary Domain: Design, Creativity, Architecture
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 3/5 papers; weighted score 15
+Contribution subtype: Design Methods and Processes
+Contribution-subtype support: 5/5 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (5)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy
+Primary application domain: Design, Creativity, Architecture
+Additional application domains: Education, Teaching, Research; Environment, Resource, Energy
 Domain support: Design, Creativity, Architecture: 4/5 papers; Education, Teaching, Research: 2/5 papers; Environment, Resource, Energy: 2/5 papers
 Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 3/5 papers; weighted score 15; matched indicators include explicit methodological output (5). Its application domain coding is Design, Creativity, Architecture; Education, Teaching, Research; Environment, Resource, Energy. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
+Summary candidate: This cluster primarily makes a methodological contribution, specifically design methods and processes. Its strongest supported application domain is Design, Creativity, Architecture. Additional supported settings are Education, Teaching, Research; Environment, Resource, Energy. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
 Design-knowledge contribution: Methodological Contribution
 Theme words: architecture, field, article, relation, participatory, education, brain, landscape
 

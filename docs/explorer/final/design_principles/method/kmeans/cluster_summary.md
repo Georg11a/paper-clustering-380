@@ -3,21 +3,25 @@
 ## Cluster Themes
 
 ### Cluster 0 (3 papers)
-Label candidate: Design Principles: Methodological Contribution | Domain: Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery
+Label candidate: Design Principles: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Education, Teaching, Research
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 2/3 papers; weighted score 9
+Contribution subtype: Design Guidelines and Principles
+Contribution-subtype support: 3/3 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (3)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery
+Primary application domain: Education, Teaching, Research
+Additional application domains: Media, Communication, Entertainment; Healthcare, Medicine, Surgery
 Domain support: Education, Teaching, Research: 2/3 papers; Media, Communication, Entertainment: 2/3 papers; Healthcare, Medicine, Surgery: 1/3 papers
 Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Healthcare, Medicine, Surgery: Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 2/3 papers; weighted score 9; matched indicators include explicit methodological output (3). Its application domain coding is Education, Teaching, Research; Media, Communication, Entertainment; Healthcare, Medicine, Surgery. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
+Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Education, Teaching, Research. Additional supported settings are Media, Communication, Entertainment; Healthcare, Medicine, Surgery. Representative papers include Toward an effective approach to collaboration education: A taxonomy for game design; Form and Function: Toward a Better Understanding of Design-Based Games.
 Design-knowledge contribution: Methodological Contribution
 Theme words: games, technical, socio, player, creativity, genre, phenomena, video
 
@@ -27,21 +31,25 @@ Representative papers:
 - : A problem-based approach to the advancement of heuristics for socio-technical evaluation
 
 ### Cluster 1 (14 papers)
-Label candidate: Design Principles: Methodological Contribution | Domain: Education, Teaching, Research
+Label candidate: Design Principles: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Education, Teaching, Research
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
 Contribution support: 11/14 papers; weighted score 51
+Contribution subtype: Design Guidelines and Principles
+Contribution-subtype support: 14/14 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
 Contribution patterns: explicit methodological output (17)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Education, Teaching, Research
+Primary application domain: Education, Teaching, Research
+Additional application domains: n/a
 Domain support: Education, Teaching, Research: 3/14 papers
 Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as methodological contribution. The decision is supported by 11/14 papers; weighted score 51; matched indicators include explicit methodological output (17). Its application domain coding is Education, Teaching, Research. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control.
+Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Education, Teaching, Research. Representative papers include USSF: A Unified Framework for Screen Standardization in Software Systems; Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control.
 Design-knowledge contribution: Methodological Contribution
 Theme words: method principles, analysis, identity, sonic, meditation, artificial, learners, practice
 

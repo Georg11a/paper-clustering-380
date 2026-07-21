@@ -81,17 +81,17 @@ Path 1 是加在聚类结果之后的**规则式解释层**。它不改变论文
 
 一般标签现在使用：
 
-`Design-knowledge form: Primary contribution | Domain: application domain(s)`
+`Design-knowledge form: Primary contribution — Contribution subtype | Primary Domain: application domain`
 
 例如：
 
-`Design Guidelines: Methodological Contribution | Domain: Healthcare, Medicine, Surgery`
+`Design Guidelines: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Healthcare, Medicine, Surgery`
 
 这里的 Domain 使用 13 类 application-domain codebook。`Interface`、`Tool` 和 `Dashboard` 是 artifact/system types，不是 domain；`Designers`、`Patients` 是 stakeholder/population；`Interview`、`Case Study` 是 method。不同 facet 不应互相填补。
 
 如果 cluster 的 artifact 是 Tool 但没有可靠的 application context/domain，则应分别呈现：
 
-`Design Knowledge: Artifact Contribution | Domain: Generic, Abstract, Domain-Agnostic`
+`Design Knowledge: Artifact Contribution — Interactive Systems and Tools | Primary Domain: Generic, Abstract, Domain-Agnostic`
 
 `Artifact/System: Tool`
 
@@ -99,7 +99,7 @@ Path 1 是加在聚类结果之后的**规则式解释层**。它不改变论文
 
 如果是：
 
-`Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Design, Creativity, Architecture`
+`Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Primary Domain: Design, Creativity, Architecture`
 
 它表示 primary contribution 已被编码为 Theoretical，但细分 theory move 仍需人工判断；Domain 是独立的 application setting。非理论贡献不会显示 Path 1，也不会被标成 theory unclear。
 

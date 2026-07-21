@@ -11,6 +11,7 @@ import pandas as pd
 
 from research_typology import (
     classify_contribution,
+    classify_contribution_subtype,
     classify_domains,
     contribution_definition,
     contribution_summary_fields,
@@ -410,16 +411,19 @@ def first_facet_value(group: pd.DataFrame, columns: list[str]) -> str:
 def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
     records = group.to_dict("records")
     contribution = classify_contribution(records)
+    subtype = classify_contribution_subtype(records, contribution.primary_key)
     domains = classify_domains(records)
     form = title_case(fallback_form(group))
     label = f"{form}: {contribution.primary_label}"
     if contribution.secondary_label:
         label += f" + {contribution.secondary_label}"
+    if subtype.label and contribution.primary_key != "theoretical":
+        label += f" — {subtype.label}"
     theory_applicable = "theoretical" in {contribution.primary_key, contribution.secondary_key}
     theory = classify_theory_move(records) if theory_applicable else None
     if theory is not None:
         label += f" — {theory.label}"
-    label += f" | Domain: {domains.labels_text}"
+    label += f" | Primary Domain: {domains.primary_label}"
 
     ranked = group.sort_values([c for c in ["representative_rank", "medoid_rank"] if c in group.columns])
     titles = [str(value) for value in ranked.get("title", pd.Series(dtype=str)).head(2) if str(value).strip()]
@@ -428,15 +432,21 @@ def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
             "The deterministic first-pass typology did not find enough evidence to assign a primary "
             "research contribution type. It remains flagged for human review."
         )
-    else:
+    elif contribution.primary_key == "mixed":
         summary = (
-            f"The deterministic first-pass typology codes the primary research contribution as "
-            f"{contribution.primary_label.lower()}. The decision is supported by "
-            f"{contribution.support_text}; matched indicators include {contribution.patterns_text}."
+            "This cluster contains multiple contribution types without enough shared evidence to identify "
+            f"one dominant type. Candidate signals are {contribution.patterns_text}."
         )
+    else:
+        contribution_phrase = contribution.primary_label.lower()
+        if subtype.label:
+            contribution_phrase += f", specifically {subtype.label.lower()}"
+        summary = f"This cluster primarily makes a {contribution_phrase}."
     if contribution.secondary_label:
         summary += f" A genuinely equivalent secondary type is {contribution.secondary_label.lower()}."
-    summary += f" Its application domain coding is {domains.labels_text}."
+    summary += f" Its strongest supported application domain is {domains.primary_label}."
+    if domains.additional_labels_text:
+        summary += f" Additional supported settings are {domains.additional_labels_text}."
     if theory is not None:
         if theory.key == "unclear":
             summary += " Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move."
@@ -458,10 +468,16 @@ def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
         "contribution_type_secondary": contribution.secondary_label,
         "contribution_type_patterns": contribution.patterns_text,
         "contribution_type_support": contribution.support_text,
+        "contribution_subtype_key": subtype.key,
+        "contribution_subtype": subtype.label,
+        "contribution_subtype_patterns": subtype.patterns_text,
+        "contribution_subtype_support": subtype.support_text,
         "contribution_type_definition": contribution_definition(contribution.primary_key),
         "contribution_summary_fields": contribution_summary_fields(contribution.primary_key),
         "contribution_summary_template": contribution_summary_template(contribution.primary_key),
         "application_domains": domains.labels_text,
+        "primary_application_domain": domains.primary_label,
+        "additional_application_domains": domains.additional_labels_text,
         "application_domain_patterns": domains.patterns_text,
         "application_domain_support": domains.support_text,
         "application_domain_definitions": domains.definitions_text,
@@ -486,10 +502,16 @@ def refresh_csv(path: Path) -> pd.DataFrame:
         "contribution_type_secondary",
         "contribution_type_patterns",
         "contribution_type_support",
+        "contribution_subtype_key",
+        "contribution_subtype",
+        "contribution_subtype_patterns",
+        "contribution_subtype_support",
         "contribution_type_definition",
         "contribution_summary_fields",
         "contribution_summary_template",
         "application_domains",
+        "primary_application_domain",
+        "additional_application_domains",
         "application_domain_patterns",
         "application_domain_support",
         "application_domain_definitions",
@@ -517,10 +539,16 @@ def refresh_csv(path: Path) -> pd.DataFrame:
                 "contribution_type_secondary": "",
                 "contribution_type_patterns": "n/a",
                 "contribution_type_support": "n/a",
+                "contribution_subtype_key": "n/a",
+                "contribution_subtype": "n/a",
+                "contribution_subtype_patterns": "n/a",
+                "contribution_subtype_support": "n/a",
                 "contribution_type_definition": "n/a",
                 "contribution_summary_fields": "n/a",
                 "contribution_summary_template": "n/a",
                 "application_domains": "n/a",
+                "primary_application_domain": "n/a",
+                "additional_application_domains": "",
                 "application_domain_patterns": "n/a",
                 "application_domain_support": "n/a",
                 "application_domain_definitions": "n/a",
@@ -548,11 +576,15 @@ def write_summary(df: pd.DataFrame, path: Path) -> None:
         lines.append(f"Primary contribution: {first.get('contribution_type', '')}")
         lines.append(f"Secondary contribution: {first.get('contribution_type_secondary', '') or 'n/a'}")
         lines.append(f"Contribution support: {first.get('contribution_type_support', '')}")
+        lines.append(f"Contribution subtype: {first.get('contribution_subtype', '') or 'n/a'}")
+        lines.append(f"Contribution-subtype support: {first.get('contribution_subtype_support', '')}")
         lines.append(f"Contribution definition: {first.get('contribution_type_definition', '')}")
         lines.append(f"Contribution patterns: {first.get('contribution_type_patterns', '')}")
         lines.append(f"Contribution summary fields: {first.get('contribution_summary_fields', '')}")
         lines.append(f"Contribution summary template: {first.get('contribution_summary_template', '')}")
         lines.append(f"Application domains: {first.get('application_domains', '')}")
+        lines.append(f"Primary application domain: {first.get('primary_application_domain', '')}")
+        lines.append(f"Additional application domains: {first.get('additional_application_domains', '') or 'n/a'}")
         lines.append(f"Domain support: {first.get('application_domain_support', '')}")
         lines.append(f"Domain definitions: {first.get('application_domain_definitions', '')}")
         lines.append(f"Theory move: {first.get('theory_move', '')}")
@@ -599,10 +631,16 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
             "contribution_type_secondary",
             "contribution_type_patterns",
             "contribution_type_support",
+            "contribution_subtype_key",
+            "contribution_subtype",
+            "contribution_subtype_patterns",
+            "contribution_subtype_support",
             "contribution_type_definition",
             "contribution_summary_fields",
             "contribution_summary_template",
             "application_domains",
+            "primary_application_domain",
+            "additional_application_domains",
             "application_domain_patterns",
             "application_domain_support",
             "application_domain_definitions",
@@ -627,10 +665,15 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
         cluster["contribution_type_secondary"] = str(first.get("contribution_type_secondary", ""))
         cluster["contribution_type_patterns"] = str(first.get("contribution_type_patterns", ""))
         cluster["contribution_type_support"] = str(first.get("contribution_type_support", ""))
+        cluster["contribution_subtype"] = str(first.get("contribution_subtype", ""))
+        cluster["contribution_subtype_patterns"] = str(first.get("contribution_subtype_patterns", ""))
+        cluster["contribution_subtype_support"] = str(first.get("contribution_subtype_support", ""))
         cluster["contribution_type_definition"] = str(first.get("contribution_type_definition", ""))
         cluster["contribution_summary_fields"] = str(first.get("contribution_summary_fields", ""))
         cluster["contribution_summary_template"] = str(first.get("contribution_summary_template", ""))
         cluster["application_domains"] = str(first.get("application_domains", ""))
+        cluster["primary_application_domain"] = str(first.get("primary_application_domain", ""))
+        cluster["additional_application_domains"] = str(first.get("additional_application_domains", ""))
         cluster["application_domain_patterns"] = str(first.get("application_domain_patterns", ""))
         cluster["application_domain_support"] = str(first.get("application_domain_support", ""))
         cluster["application_domain_definitions"] = str(first.get("application_domain_definitions", ""))
@@ -695,8 +738,10 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
         <div>
           <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
           <span class="pill">Primary: ${escapeHtml(p.contribution_type || 'n/a')}</span>
+          ${p.contribution_subtype ? `<span class="pill">Subtype: ${escapeHtml(p.contribution_subtype)}</span>` : ''}
           ${p.contribution_type_secondary ? `<span class="pill">Secondary: ${escapeHtml(p.contribution_type_secondary)}</span>` : ''}
-          <span class="pill">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>
+          <span class="pill">Primary domain: ${escapeHtml(p.primary_application_domain || p.application_domains || 'n/a')}</span>
+          ${p.additional_application_domains ? `<span class="pill">Additional domains: ${escapeHtml(p.additional_application_domains)}</span>` : ''}
         </div>
         <div class="meta">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
         <div class="meta">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>
@@ -715,11 +760,14 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
           <div class="pill-row">
             <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
             <span class="pill">Primary: ${escapeHtml(p.contribution_type || 'n/a')}</span>
+            ${p.contribution_subtype ? `<span class="pill">Subtype: ${escapeHtml(p.contribution_subtype)}</span>` : ''}
             ${p.contribution_type_secondary ? `<span class="pill">Secondary: ${escapeHtml(p.contribution_type_secondary)}</span>` : ''}
-            <span class="pill">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>
+            <span class="pill">Primary domain: ${escapeHtml(p.primary_application_domain || p.application_domains || 'n/a')}</span>
+            ${p.additional_application_domains ? `<span class="pill">Additional domains: ${escapeHtml(p.additional_application_domains)}</span>` : ''}
           </div>
           <div class="meta" style="margin-top:8px">Contribution support: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
           <div class="meta">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>
+          <div class="meta">Subtype support: ${escapeHtml(p.contribution_subtype_support || 'n/a')}</div>
           <div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || 'n/a')}</div>
           <div class="meta">Domain support: ${escapeHtml(p.application_domain_support || 'n/a')}</div>
           <div class="meta">Domain definition: ${escapeHtml(p.application_domain_definitions || 'n/a')}</div>
@@ -756,6 +804,23 @@ def refresh_html(path: Path, df: pd.DataFrame) -> None:
         text = text.replace(
             domain_line,
             domain_line + "\n        <div class=\"meta\">Domain definition: ${escapeHtml(p.application_domain_definitions || 'n/a')}</div>",
+        )
+    if "Subtype:" not in text:
+        primary_line = "<span class=\"pill\">Primary: ${escapeHtml(p.contribution_type || 'n/a')}</span>"
+        text = text.replace(
+            primary_line,
+            primary_line + "\n          ${p.contribution_subtype ? `<span class=\"pill\">Subtype: ${escapeHtml(p.contribution_subtype)}</span>` : ''}",
+        )
+    text = text.replace(
+        "<span class=\"pill\">Domain: ${escapeHtml(p.application_domains || 'n/a')}</span>",
+        "<span class=\"pill\">Primary domain: ${escapeHtml(p.primary_application_domain || p.application_domains || 'n/a')}</span>\n"
+        "          ${p.additional_application_domains ? `<span class=\"pill\">Additional domains: ${escapeHtml(p.additional_application_domains)}</span>` : ''}",
+    )
+    if "Subtype support:" not in text:
+        definition_line = "<div class=\"meta\">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>"
+        text = text.replace(
+            definition_line,
+            definition_line + "\n        <div class=\"meta\">Subtype support: ${escapeHtml(p.contribution_subtype_support || 'n/a')}</div>",
         )
     path.write_text(text, encoding="utf-8")
 

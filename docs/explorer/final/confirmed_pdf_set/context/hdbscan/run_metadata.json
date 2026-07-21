@@ -1,5 +1,5 @@
 {
-  "input": "data/fulltext_context_confirmed_250_only.csv",
+  "input": "data/fulltext_context_confirmed_281_only.csv",
   "text_view": "context",
   "focus_keyword": null,
   "keyword_context_paragraphs": null,
@@ -13,9 +13,8 @@
   "dbscan_eps": null,
   "min_samples": 4,
   "min_cluster_size": 5,
-  "papers": 250,
+  "papers": 281,
   "clusters": [
-    -1,
     0,
     1,
     2,
@@ -26,6 +25,21 @@
     7,
     8,
     9,
-    10
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
   ]
 }

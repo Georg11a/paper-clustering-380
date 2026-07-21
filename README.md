@@ -11,6 +11,7 @@ This repository is the public-facing version of the clustering work: it reads th
 - Runs clustering per keyword instead of mixing all papers into one global run.
 - Skips keyword groups with too few papers for meaningful clustering, default `n < 10`.
 - Uses k-means and HDBSCAN as the main clustering methods.
+- Runs HDBSCAN in a five-dimensional UMAP clustering space and visibly flags post-hoc nearest-cluster assignments as peripheral members.
 - Keeps DBSCAN available as an optional baseline because earlier experiments showed it can produce overly broad clusters.
 - Generates per-paper cluster assignments, representative-paper rankings, cluster labels, summaries, and HTML explorers.
 

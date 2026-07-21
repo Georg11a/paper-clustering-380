@@ -7,11 +7,15 @@ Label candidate: Unclustered papers
 Primary contribution: n/a
 Secondary contribution: n/a
 Contribution support: n/a
+Contribution subtype: n/a
+Contribution-subtype support: n/a
 Contribution definition: n/a
 Contribution patterns: n/a
 Contribution summary fields: n/a
 Contribution summary template: n/a
 Application domains: n/a
+Primary application domain: n/a
+Additional application domains: n/a
 Domain support: n/a
 Domain definitions: n/a
 Theory move: n/a
@@ -27,21 +31,25 @@ Representative papers:
 - 2012: Undesigning technology: considering the negation of design by design
 
 ### Cluster 0 (13 papers)
-Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Healthcare, Medicine, Surgery; Software, System, Cybersecurity; Design, Creativity, Architecture
+Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Primary Domain: Generic, Abstract, Domain-Agnostic
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 11/13 papers; weighted score 71
+Contribution subtype: n/a
+Contribution-subtype support: No reliable subtype signal
 Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (19); articulates conceptual or philosophical foundations (2); contributes theory or a conceptual framework (1)
 Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
 Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
-Application domains: Healthcare, Medicine, Surgery; Software, System, Cybersecurity; Design, Creativity, Architecture
-Domain support: Healthcare, Medicine, Surgery: 2/13 papers; Software, System, Cybersecurity: 2/13 papers; Design, Creativity, Architecture: 2/13 papers
-Domain definitions: Healthcare, Medicine, Surgery: Covers clinical diagnosis, treatment, surgery, patient care, healthcare delivery, and health policy. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
+Application domains: Generic, Abstract, Domain-Agnostic
+Primary application domain: Generic, Abstract, Domain-Agnostic
+Additional application domains: n/a
+Domain support: Generic, Abstract, Domain-Agnostic: 13/13 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 3/13 papers, weighted score 24
 Matched patterns: Best candidate: Borrowing and Adapting Existing Theory; reference discipline/kernel theory (6)
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 11/13 papers; weighted score 71; matched indicators include explicit theoretical output (19); articulates conceptual or philosophical foundations (2); contributes theory or a conceptual framework (1). Its application domain coding is Healthcare, Medicine, Surgery; Software, System, Cybersecurity; Design, Creativity, Architecture. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
+Summary candidate: This cluster primarily makes a theoretical contribution. Its strongest supported application domain is Generic, Abstract, Domain-Agnostic. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
 Design-knowledge contribution: Theoretical Contribution
 Theme words: theories, management, software, theoretical, literature, review, online, engineering
 
@@ -51,21 +59,25 @@ Representative papers:
 - : Conceptual foundations of design problem solving
 
 ### Cluster 1 (7 papers)
-Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Domain: Education, Teaching, Research
+Label candidate: Design Theory: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Primary Domain: Education, Teaching, Research
 Primary contribution: Theoretical Contribution
 Secondary contribution: n/a
 Contribution support: 7/7 papers; weighted score 30
+Contribution subtype: n/a
+Contribution-subtype support: No reliable subtype signal
 Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
 Contribution patterns: explicit theoretical output (10)
 Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
 Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
 Application domains: Education, Teaching, Research
+Primary application domain: Education, Teaching, Research
+Additional application domains: n/a
 Domain support: Education, Teaching, Research: 2/7 papers
 Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/7 papers, weighted score 4
 Matched patterns: Best candidate: Testing Theory Empirically; tests hypotheses/propositions (1)
-Summary candidate: The deterministic first-pass typology codes the primary research contribution as theoretical contribution. The decision is supported by 7/7 papers; weighted score 30; matched indicators include explicit theoretical output (10). Its application domain coding is Education, Teaching, Research. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
+Summary candidate: This cluster primarily makes a theoretical contribution. Its strongest supported application domain is Education, Teaching, Research. Path 1 found the theoretical contribution relevant but could not assign an unambiguous theory move. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
 Design-knowledge contribution: Theoretical Contribution
 Theme words: theory learning, games, decision, blended, curriculum, synchronous, pedagogical, heuristics
 

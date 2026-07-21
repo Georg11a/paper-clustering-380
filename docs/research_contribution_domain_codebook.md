@@ -4,6 +4,8 @@
 
 The explorer codes each cluster along two independent dimensions: its primary research contribution and its application domain or domains. These labels are deterministic first-pass codes supported by matched textual evidence and must be spot-checked by human reviewers.
 
+The descriptor reports one primary application domain. Other domains that pass the support threshold remain visible as additional domains in the detail panel rather than appearing as equally dominant settings. When several contribution types are present but none is dominant, the cluster is labeled `Mixed Contribution Types — No Dominant Type` instead of the less informative `Unclear`.
+
 Artifact forms such as Interface, Tool, Dashboard, Prototype, and System are artifact subtypes rather than application domains. A method such as Interview or Case Study is also not a contribution type by itself: the primary contribution is determined by the main knowledge output claimed by the papers.
 
 ## Contribution-Specific Cluster Summaries
@@ -39,6 +41,8 @@ Templates define the required evidence slots; the system must not fill a slot by
 | **Generic, Abstract, Domain-Agnostic** | Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain. |
 
 Application domains may be multi-label when multiple settings are explicitly supported. `Generic, Abstract, Domain-Agnostic` is mutually exclusive with specific domains and is used only when no specific application setting has reliable evidence.
+
+Contribution types also use evidence-backed subtypes in cluster descriptors, such as `Design Methods and Processes`, `Research and Design Frameworks`, and `Design Guidelines and Principles` under Methodological Contribution. Representative papers receive additional weight when selecting a subtype so the descriptor reflects the cluster center rather than incidental vocabulary in peripheral papers.
 
 ## Theoretical Contribution Subtypes
 

@@ -1,19 +1,19 @@
 {
-  "input": "data/fulltext_context_confirmed_250_only.csv",
+  "input": "data/fulltext_context_confirmed_281_only.csv",
   "text_view": "overall",
   "focus_keyword": null,
   "keyword_context_paragraphs": null,
   "embedding": "tfidf-svd",
   "embedding_model": "tfidf-svd",
   "method": "kmeans",
-  "k": 7,
+  "k": 8,
   "k_selection": "silhouette",
   "k_min": 2,
   "k_max": 8,
   "dbscan_eps": null,
   "min_samples": 4,
   "min_cluster_size": null,
-  "papers": 250,
+  "papers": 281,
   "clusters": [
     0,
     1,
@@ -21,6 +21,7 @@
     3,
     4,
     5,
-    6
+    6,
+    7
   ]
 }

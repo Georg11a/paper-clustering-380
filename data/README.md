@@ -31,3 +31,5 @@ data/final_advancing_list.csv
 ```
 
 The pipeline treats this CSV as the current final working set, regardless of whether meeting notes describe it as approximately 380, 386, or 400 papers.
+
+The local confirmed-PDF explorer is currently generated from 281 files named by `paper_id` in `pdf_386_by_paper_id`. The extracted working CSV is intentionally local/ignored because it contains full-text-derived passages; the public site commits only the generated explorer outputs and aggregate extraction report.
