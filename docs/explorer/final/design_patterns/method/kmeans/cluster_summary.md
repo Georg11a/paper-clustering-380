@@ -3,12 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (50 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/50 papers, weighted score 6
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; explicit meta-theory/metatheory (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Understanding and using patterns in software development; Design pattern in object-oriented technology.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: patterns, software, analysis, solutions, language, structural, modeling, level
 
 Representative papers:
@@ -17,12 +17,12 @@ Representative papers:
 - 2020: Patterns, anticipation and participatory futures
 
 ### Cluster 1 (17 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review in Interface
+Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/17 papers, weighted score 3
 Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include A pattern approach to interaction design; A pattern approach to interaction design.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theme words: patterns, domain, business, computer, application, practice, team, alexander
 
 Representative papers:

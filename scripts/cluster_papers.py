@@ -1896,7 +1896,7 @@ def infer_theory_typology_claim(
     domain = primary_application_domain(facets)
     label = f"{form}: {result.label}"
     if domain:
-        label += f" in {domain}"
+        label += f" | Domain: {domain}"
 
     representative_titles = [
         str(title)
@@ -1924,7 +1924,7 @@ def infer_theory_typology_claim(
 
     contribution = result.label
     if domain:
-        contribution += f" in {domain}"
+        contribution += f" | Domain: {domain}"
     return {
         "cluster_label_candidate": label,
         "cluster_summary_candidate": summary,

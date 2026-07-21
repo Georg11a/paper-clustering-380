@@ -17,12 +17,12 @@ Representative papers:
 - 2020: Toward an Inventory of Plans and Patterns, and Their Use to Foster Strategic Knowledge in Programming Novices
 
 ### Cluster 0 (14 papers)
-Label candidate: Design Knowledge: Building New Theory in Prototype
+Label candidate: Design Knowledge: Building New Theory | Domain: Prototype
 Theory move: Building New Theory
 Theory-move support: 3/14 papers; weighted score 10
 Matched patterns: new theoretical constructs/propositions (2); proposes a new theory/framework (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 3/14 papers; weighted score 10; matched indicators include new theoretical constructs/propositions (2); proposes a new theory/framework (1). Its primary application domain is Prototype. Representative papers include Identification and management of the near-field knowledge of industrial design for innovative product shapes; Design knowledge for decision-making process in a DFX product design approach.
-Design-knowledge contribution: Building New Theory in Prototype
+Design-knowledge contribution: Building New Theory | Domain: Prototype
 Theme words: product, field, interactive, nature, usability, recreation, industrial, heuristics
 
 Representative papers:

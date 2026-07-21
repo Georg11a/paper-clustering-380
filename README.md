@@ -251,6 +251,10 @@ Stewart (2013). The substantive categories draw on Colquitt and Zapata-Phelan
 (2006) and Gregor and Jones (2007) providing broader theory-function and design
 theory structure.
 
+See [`docs/path1_theory_typology.md`](docs/path1_theory_typology.md) for the
+implementation changes, methodological benefits, limitations, current label
+distribution, and recommended human-validation protocol.
+
 Distinctive terms from c-TF-IDF, topic words, facets, and representative-paper
 titles are kept as `distinguishing_evidence_terms` rather than being appended
 directly to the label. Terms such as `geo`, `recipe`, or `healthy eating` are

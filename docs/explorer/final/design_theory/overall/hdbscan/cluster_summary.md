@@ -17,12 +17,12 @@ Representative papers:
 - 1983: DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES.
 
 ### Cluster 0 (22 papers)
-Label candidate: Design Theory: Borrowing Theory from Other Fields in Tool
+Label candidate: Design Theory: Borrowing Theory from Other Fields | Domain: Tool
 Theory move: Borrowing Theory from Other Fields
 Theory-move support: 4/22 papers; weighted score 28
 Matched patterns: reference discipline/kernel theory (6); applies/adopts an external theory (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 4/22 papers; weighted score 28; matched indicators include reference discipline/kernel theory (6); applies/adopts an external theory (1). Its primary application domain is Tool. Representative papers include Incommensurability in design science: Which comes first-Theory or artefact?; Tinkering, tailoring, and bricolage: Implications for theories of Design.
-Design-knowledge contribution: Borrowing Theory from Other Fields in Tool
+Design-knowledge contribution: Borrowing Theory from Other Fields | Domain: Tool
 Theme words: theories, management, science, value, artefact, literature, focus, theory theory
 
 Representative papers:

@@ -17,12 +17,12 @@ Representative papers:
 - 2020: Design Rules, Volume 2: Chapter 6‚ÄîThe Value Structure of Technologies, Part 1: Mapping Functional Components
 
 ### Cluster 0 (3 papers)
-Label candidate: Design Rules: Unclear Theory Move — Requires Human Review in Interface
+Label candidate: Design Rules: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (3 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted; Steps toward a cognitive engineering: Design rules based on analyses of human error.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theme words: rules, eudaimonic, error, meaning, colormap, cognitive, pleasure, eux
 
 Representative papers:
@@ -31,12 +31,12 @@ Representative papers:
 - 2018: The Good, the Bad, and the Ugly: A Theoretical Framework for the Assessment of Continuous Colormaps
 
 ### Cluster 1 (3 papers)
-Label candidate: Design Rules: Unclear Theory Move — Requires Human Review in Interface
+Label candidate: Design Rules: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (3 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Toward a Conceptualization of Organizational Modularity.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theme words: rules, modularity, organizational, modular, architecture, software, proposed, space
 
 Representative papers:

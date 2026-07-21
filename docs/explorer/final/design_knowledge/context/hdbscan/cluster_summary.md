@@ -17,12 +17,12 @@ Representative papers:
 - 2021: Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge
 
 ### Cluster 0 (15 papers)
-Label candidate: Design Knowledge: Borrowing Theory from Other Fields in Education / Learning
+Label candidate: Design Knowledge: Borrowing Theory from Other Fields | Domain: Education / Learning
 Theory move: Borrowing Theory from Other Fields
 Theory-move support: 3/15 papers; weighted score 12
 Matched patterns: draws on a theory or theoretical lens (2); reference discipline/kernel theory (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 3/15 papers; weighted score 12; matched indicators include draws on a theory or theoretical lens (2); reference discipline/kernel theory (1). Its primary application domain is Education / Learning. Representative papers include Synthesizing a Solution Space for Prescriptive Design Knowledge Codification; The DSR grid: six core dimensions for effectively planning and communicating design science research projects.
-Design-knowledge contribution: Borrowing Theory from Other Fields in Education / Learning
+Design-knowledge contribution: Borrowing Theory from Other Fields | Domain: Education / Learning
 Theme words: dsr, software, science, creation, mechanisms, prescriptive, community, practices
 
 Representative papers:
@@ -31,12 +31,12 @@ Representative papers:
 - : A Typology of Knowledge Creation in Design Science Research Projects
 
 ### Cluster 1 (13 papers)
-Label candidate: Design Knowledge: Building New Theory in Prototype
+Label candidate: Design Knowledge: Building New Theory | Domain: Prototype
 Theory move: Building New Theory
 Theory-move support: 3/13 papers; weighted score 10
 Matched patterns: new theoretical constructs/propositions (2); proposes a new theory/framework (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 3/13 papers; weighted score 10; matched indicators include new theoretical constructs/propositions (2); proposes a new theory/framework (1). Its primary application domain is Prototype. Representative papers include Causal design knowledge: Alternative representation method for product development knowledge management; What is design knowledge from the viewpoint of CPM/PDD?.
-Design-knowledge contribution: Building New Theory in Prototype
+Design-knowledge contribution: Building New Theory | Domain: Prototype
 Theme words: product, education, nature, industrial, recreation, management, interactive, field
 
 Representative papers:

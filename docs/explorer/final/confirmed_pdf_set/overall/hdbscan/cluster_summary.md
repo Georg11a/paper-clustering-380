@@ -31,12 +31,12 @@ Representative papers:
 - 2018: Adapting the FBS Model of Designing for Usage-Driven Innovation Processes
 
 ### Cluster 1 (6 papers)
-Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (6 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Identification and management of the near-field knowledge of industrial design for innovative product shapes; Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: product, cpm, pdd, recovery, field, industrial, causal, near
 
 Representative papers:
@@ -45,12 +45,12 @@ Representative papers:
 - 2022: The Conceptual Design of Mechanical Products
 
 ### Cluster 2 (17 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/17 papers, weighted score 4
 Matched patterns: Best candidate: Borrowing Theory from Other Fields; draws on a theory or theoretical lens (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include A Framework of Design Method Corroboration; Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: dsr, ethics, ethical, innovative methods, rdf, artifact, canvas, designtheory
 
 Representative papers:
@@ -59,12 +59,12 @@ Representative papers:
 - 2024: Using Schema to Inform Method Design Practices
 
 ### Cluster 3 (5 papers)
-Label candidate: Design Principles: Building New Theory in Tool
+Label candidate: Design Principles: Building New Theory | Domain: Tool
 Theory move: Building New Theory
 Theory-move support: 2/5 papers; weighted score 7
 Matched patterns: proposes a new theory/framework (1); new theoretical constructs/propositions (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 2/5 papers; weighted score 7; matched indicators include proposes a new theory/framework (1); new theoretical constructs/propositions (1). Its primary application domain is Tool. Representative papers include The E-Design Assessment Tool: an evidence-informed approach towards a consistent terminology for quantifying online distance learning activities; Towards a design theory of blended learning curriculum.
-Design-knowledge contribution: Building New Theory in Tool
+Design-knowledge contribution: Building New Theory | Domain: Tool
 Theme words: blended, tdk, teacher, cpelds, learning curriculum, technology enhanced, hybrid, online
 
 Representative papers:
@@ -73,12 +73,12 @@ Representative papers:
 - : Personalising learning: towards a coherent learning design framework
 
 ### Cluster 4 (9 papers)
-Label candidate: Design Heuristics: Unclear Theory Move — Requires Human Review in Interface
+Label candidate: Design Heuristics: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (9 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization; A problem-based approach to the advancement of heuristics for socio-technical evaluation.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theme words: heuristics, weather, assistive, dhsfx, product, usability, risk communication, toronto
 
 Representative papers:
@@ -87,12 +87,12 @@ Representative papers:
 - 2016: Evidence-based design heuristics for idea generation
 
 ### Cluster 5 (39 papers)
-Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Knowledge: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/39 papers, weighted score 3
 Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Industrial experience with design patterns; Understanding and using patterns in software development.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: patterns, software, ai, architecture, object, solution, structural, legal
 
 Representative papers:
@@ -101,12 +101,12 @@ Representative papers:
 - : A semantic representation for domain-specific patterns
 
 ### Cluster 6 (9 papers)
-Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (9 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Making Argumentation Serve Design; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: rationale, argumentation, documentation, intent, integrating perspectives, communication, ibis, lee
 
 Representative papers:
@@ -115,12 +115,12 @@ Representative papers:
 - 1994: Issues critical to the development of design history, design rationale and design intent systems
 
 ### Cluster 7 (6 papers)
-Label candidate: Design Principles: Unclear Theory Move — Requires Human Review in Game
+Label candidate: Design Principles: Unclear Theory Move — Requires Human Review | Domain: Game
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (6 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Game. Representative papers include A Theoretical Model for Game Mechanics: Bridging Design Practice and Education; The experience, dynamics and artifacts framework: towards a holistic model for designing serious and entertainment games.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Game
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Game
 Theme words: game, player, mechanics, entertainment, dynamics, mda, formal principles, patterns
 
 Representative papers:
@@ -129,12 +129,12 @@ Representative papers:
 - 2021: The Experience, Dynamics and Artifacts Framework: Towards a Holistic Model for Designing Serious and Entertainment Games
 
 ### Cluster 8 (9 papers)
-Label candidate: Design Knowledge: Borrowing Theory from Other Fields in Education / Learning
+Label candidate: Design Knowledge: Borrowing Theory from Other Fields | Domain: Education / Learning
 Theory move: Borrowing Theory from Other Fields
 Theory-move support: 2/9 papers; weighted score 16
 Matched patterns: reference discipline/kernel theory (3); draws on a theory or theoretical lens (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 2/9 papers; weighted score 16; matched indicators include reference discipline/kernel theory (3); draws on a theory or theoretical lens (1). Its primary application domain is Education / Learning. Representative papers include Web-based information systems: Developing a design theory; Incommensurability in design science: Which comes first-Theory or artefact?.
-Design-knowledge contribution: Borrowing Theory from Other Fields in Education / Learning
+Design-knowledge contribution: Borrowing Theory from Other Fields | Domain: Education / Learning
 Theme words: theories, kernel, weil, gregor, thriving theory, hatchuel, masson, armand
 
 Representative papers:

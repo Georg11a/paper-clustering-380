@@ -3,12 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (20 papers)
-Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Rationale: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (20 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Method rationale in method engineering; Design rationale capture as knowledge acquisition: tradeoffs in the design of interactive tools.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: rationale, capture, mechanical, claims, engineering, representations, argumentation, software
 
 Representative papers:

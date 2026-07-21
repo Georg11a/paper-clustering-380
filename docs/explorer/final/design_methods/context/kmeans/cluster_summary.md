@@ -17,12 +17,12 @@ Representative papers:
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
 ### Cluster 1 (12 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/12 papers, weighted score 4
 Matched patterns: Best candidate: Borrowing Theory from Other Fields; draws on a theory or theoretical lens (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Languaging design methods; Patterns for living lab practice: describing key know-how to promote service co-creation with users.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: service, collapse, creation, children, floorplan, flexibility, areas, human centredness
 
 Representative papers:
@@ -31,12 +31,12 @@ Representative papers:
 - : Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children
 
 ### Cluster 2 (15 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/15 papers, weighted score 5
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; philosophy/epistemology/ontology of design (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: architecture, literature, field, management, concept, education, ideation, practitioners
 
 Representative papers:

@@ -17,12 +17,12 @@ Representative papers:
 - 2012: Undesigning technology: considering the negation of design by design
 
 ### Cluster 0 (13 papers)
-Label candidate: Design Theory: Unclear Theory Move — Requires Human Review in Prototype
+Label candidate: Design Theory: Unclear Theory Move — Requires Human Review | Domain: Prototype
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 3/13 papers, weighted score 24
 Matched patterns: Best candidate: Borrowing Theory from Other Fields; reference discipline/kernel theory (6)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Prototype. Representative papers include Management design theories; Editorial: A Critical Look at Theories in Design Science Research.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Prototype
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Prototype
 Theme words: theories, management, software, theoretical, literature, review, online, engineering
 
 Representative papers:
@@ -31,12 +31,12 @@ Representative papers:
 - : Conceptual foundations of design problem solving
 
 ### Cluster 1 (7 papers)
-Label candidate: Design Theory: Unclear Theory Move — Requires Human Review in Education / Learning
+Label candidate: Design Theory: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/7 papers, weighted score 4
 Matched patterns: Best candidate: Testing Theory Empirically; tests hypotheses/propositions (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Education / Learning. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Education / Learning
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
 Theme words: theory learning, games, decision, blended, curriculum, synchronous, pedagogical, heuristics
 
 Representative papers:

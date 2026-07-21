@@ -3,12 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (8 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/8 papers, weighted score 3
 Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: understand, value, does, industry, fbs, usage, method methods, playing
 
 Representative papers:
@@ -31,12 +31,12 @@ Representative papers:
 - 2019: Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction
 
 ### Cluster 2 (10 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Education / Learning
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/10 papers, weighted score 5
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; philosophy/epistemology/ontology of design (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Education / Learning. Representative papers include IMPLEMENTATION OF THE BASIC PRINCIPLES OF FORMING THE ARCHITECTURE OF NON-FORMAL EDUCATION INSTITUTIONS; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Education / Learning
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Education / Learning
 Theme words: architectural, architecture, collapse, interactive, method methods, virtual, brain, relation
 
 Representative papers:
@@ -45,12 +45,12 @@ Representative papers:
 - 2020: Design as Research in Landscape Architecture
 
 ### Cluster 3 (11 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Interface
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (11 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include A Framework of Design Method Corroboration; Towards functional de novo designed proteins..
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theme words: functional, artifacts, method methods, constraint, ideation, need, field, tasks
 
 Representative papers:

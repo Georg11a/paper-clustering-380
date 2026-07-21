@@ -31,12 +31,12 @@ Representative papers:
 - : Languaging design methods
 
 ### Cluster 2 (11 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 1/11 papers, weighted score 5
 Matched patterns: Best candidate: Meta-Theoretical Reflection on Design; philosophy/epistemology/ontology of design (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Design as Research in Landscape Architecture; The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: architecture, field, concept, constraint, ideation, landscape, article, brain
 
 Representative papers:
@@ -59,12 +59,12 @@ Representative papers:
 - : What is a Convention in Interactive Narrative Design?
 
 ### Cluster 4 (5 papers)
-Label candidate: Design Methods: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Methods: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (5 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Elements of a design method ‚Äì a basis for describing and evaluating design methods; Elements of a design method - a basis for describing and evaluating design methods.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: industry, aspects, method corroboration, debate, understand, needs, innovative, interface
 
 Representative papers:

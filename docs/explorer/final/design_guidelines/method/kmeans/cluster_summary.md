@@ -3,12 +3,12 @@
 ## Cluster Themes
 
 ### Cluster 0 (7 papers)
-Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (7 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco; Design Study Methodology: Reflections from the Trenches and the Stacks.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: visualization, guidelines, aesthetics, tacit, graphic, map, portals, geo
 
 Representative papers:
@@ -17,12 +17,12 @@ Representative papers:
 - 2007: Towards a Model of Information Aesthetics in Information Visualization
 
 ### Cluster 1 (8 papers)
-Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review in Tool
+Label candidate: Design Guidelines: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (8 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Tool. Representative papers include Healthy Eating Design Guidelines for School Architecture; A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Tool
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Tool
 Theme words: guidelines, architecture, rural, software, fidelity, school, training, usability
 
 Representative papers:

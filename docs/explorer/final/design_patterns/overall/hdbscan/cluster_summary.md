@@ -17,12 +17,12 @@ Representative papers:
 - 2000: A pattern approach to interaction design
 
 ### Cluster 0 (5 papers)
-Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review in Interface
+Label candidate: Design Patterns: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No theory-move signal (5 papers reviewed)
 Matched patterns: No decisive pattern match
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Interface. Representative papers include Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository; Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Interface
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Interface
 Theme words: patterns, ai, labels, alexander, collection, pervasive, sociality, consumer
 
 Representative papers:

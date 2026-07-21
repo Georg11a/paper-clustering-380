@@ -406,7 +406,7 @@ def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
     domain = first_facet_value(group, ["facet_artifact_or_domain", "facet_population_or_context"])
     label = f"{form}: {result.label}"
     if domain:
-        label += f" in {domain}"
+        label += f" | Domain: {domain}"
 
     ranked = group.sort_values([c for c in ["representative_rank", "medoid_rank"] if c in group.columns])
     titles = [str(value) for value in ranked.get("title", pd.Series(dtype=str)).head(2) if str(value).strip()]
@@ -425,7 +425,7 @@ def typology_claim_for_group(group: pd.DataFrame) -> dict[str, str]:
         summary += f" Its primary application domain is {domain}."
     if titles:
         summary += " Representative papers include " + "; ".join(titles) + "."
-    contribution = result.label + (f" in {domain}" if domain else "")
+    contribution = result.label + (f" | Domain: {domain}" if domain else "")
     return {
         "cluster_label_candidate": label,
         "cluster_summary_candidate": summary,

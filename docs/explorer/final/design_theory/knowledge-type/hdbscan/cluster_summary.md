@@ -31,12 +31,12 @@ Representative papers:
 - 2017: A design theory for software engineering
 
 ### Cluster 1 (13 papers)
-Label candidate: Design Theory: Borrowing Theory from Other Fields in Prototype
+Label candidate: Design Theory: Borrowing Theory from Other Fields | Domain: Prototype
 Theory move: Borrowing Theory from Other Fields
 Theory-move support: 3/13 papers; weighted score 24
 Matched patterns: reference discipline/kernel theory (6)
 Summary candidate: The deterministic first-pass typology codes this cluster as borrowing theory from other fields. The decision is supported by 3/13 papers; weighted score 24; matched indicators include reference discipline/kernel theory (6). Its primary application domain is Prototype. Representative papers include Management design theories; ICT-Enabled Self-Management of Chronic Diseases: Literature Review and Analysis Using Value-Sensitive Design.
-Design-knowledge contribution: Borrowing Theory from Other Fields in Prototype
+Design-knowledge contribution: Borrowing Theory from Other Fields | Domain: Prototype
 Theme words: management, theories, science, literature, value, review, digital, communities
 
 Representative papers:

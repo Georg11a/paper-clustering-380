@@ -31,12 +31,12 @@ Representative papers:
 - 2024: Emotion Semantics Construction in Industrial Product Application
 
 ### Cluster 1 (5 papers)
-Label candidate: Design Methods: Meta-Theoretical Reflection on Design in Education / Learning
+Label candidate: Design Methods: Meta-Theoretical Reflection on Design | Domain: Education / Learning
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 1/5 papers; weighted score 5
 Matched patterns: philosophy/epistemology/ontology of design (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as meta-theoretical reflection on design. The decision is supported by 1/5 papers; weighted score 5; matched indicators include philosophy/epistemology/ontology of design (1). Its primary application domain is Education / Learning. Representative papers include The relation between brain-learning physiology and conceptualization methods in the design process of architecture students1; Design as Research in Landscape Architecture.
-Design-knowledge contribution: Meta-Theoretical Reflection on Design in Education / Learning
+Design-knowledge contribution: Meta-Theoretical Reflection on Design | Domain: Education / Learning
 Theme words: architecture, field, article, relation, participatory, education, brain, landscape
 
 Representative papers:

@@ -17,12 +17,12 @@ Representative papers:
 - 2020: TO THE PROBLEM OF FORMING THE CATEGORIAL AND CONCEPTUAL APPARATUS OF THE COURSE ‚ÄúHISTORY AND METHODOLOGY OF DESIGN DESIGN‚Äù
 
 ### Cluster 1 (10 papers)
-Label candidate: Design Theory: Meta-Theoretical Reflection on Design in Healthcare
+Label candidate: Design Theory: Meta-Theoretical Reflection on Design | Domain: Healthcare
 Theory move: Meta-Theoretical Reflection on Design
 Theory-move support: 3/10 papers; weighted score 25
 Matched patterns: philosophy/epistemology/ontology of design (4); reflects on the nature/role/value of theory (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as meta-theoretical reflection on design. The decision is supported by 3/10 papers; weighted score 25; matched indicators include philosophy/epistemology/ontology of design (4); reflects on the nature/role/value of theory (1). Its primary application domain is Healthcare. Representative papers include The design process: frames, metaphors, and games; DESIGN PROCESS: FRAMES, METAPHORS, AND GAMES..
-Design-knowledge contribution: Meta-Theoretical Reflection on Design in Healthcare
+Design-knowledge contribution: Meta-Theoretical Reflection on Design | Domain: Healthcare
 Theme words: sonification, epistemology, innovation, technique, task, negation, visualization, taking
 
 Representative papers:
@@ -45,12 +45,12 @@ Representative papers:
 - 2009: Tinkering, tailoring, and bricolage: Implications for theories of Design
 
 ### Cluster 3 (9 papers)
-Label candidate: Design Theory: Building New Theory in Education / Learning
+Label candidate: Design Theory: Building New Theory | Domain: Education / Learning
 Theory move: Building New Theory
 Theory-move support: 2/9 papers; weighted score 7
 Matched patterns: proposes a new theory/framework (1); new theoretical constructs/propositions (1)
 Summary candidate: The deterministic first-pass typology codes this cluster as building new theory. The decision is supported by 2/9 papers; weighted score 7; matched indicators include proposes a new theory/framework (1); new theoretical constructs/propositions (1). Its primary application domain is Education / Learning. Representative papers include Design exemplars for synchronous e-learning: A design theory approach; Towards a design theory of blended learning curriculum.
-Design-knowledge contribution: Building New Theory in Education / Learning
+Design-knowledge contribution: Building New Theory | Domain: Education / Learning
 Theme words: theory learning, blended, curriculum, experimentation, heuristics, pedagogical, synchronous, decision
 
 Representative papers:
@@ -59,12 +59,12 @@ Representative papers:
 - 2023: Chimera heuristics: Generative rational heuristics for the unknown from design theory
 
 ### Cluster 4 (23 papers)
-Label candidate: Design Theory: Unclear Theory Move — Requires Human Review in Game
+Label candidate: Design Theory: Unclear Theory Move — Requires Human Review | Domain: Game
 Theory move: Unclear Theory Move — Requires Human Review
 Theory-move support: No unambiguous move; best candidate has support from 2/23 papers, weighted score 13
 Matched patterns: Best candidate: Building New Theory; explicit theory building/development (2); new theoretical constructs/propositions (1)
 Summary candidate: The deterministic first-pass typology did not find enough unambiguous textual evidence to assign this cluster to building, borrowing, testing, or meta-theoretical reflection. It remains flagged for human review rather than being forced into a substantive category. Its primary application domain is Game. Representative papers include Design Theory in Information Systems; Cognitive Point of View in Recursive Design.
-Design-knowledge contribution: Unclear Theory Move — Requires Human Review in Game
+Design-knowledge contribution: Unclear Theory Move — Requires Human Review | Domain: Game
 Theme words: space, game, humanism, shared, scale, concept, service, general
 
 Representative papers:
