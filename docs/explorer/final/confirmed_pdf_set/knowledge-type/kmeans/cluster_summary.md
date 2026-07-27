@@ -2,63 +2,91 @@
 
 ## Cluster Themes
 
-### Cluster 0 (11 papers)
-Label candidate: Design Knowledge: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Media, Communication, Entertainment
+### Cluster 0 (67 papers)
+Label candidate: Design Guideline: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Media, Communication, Entertainment
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
-Contribution support: 5/11 papers; weighted score 24
+Contribution support: 30/67 papers; weighted score 129
 Contribution subtype: Design Guidelines and Principles
-Contribution-subtype support: 9/11 papers
+Contribution-subtype support: 47/67 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
-Contribution patterns: explicit methodological output (8)
+Contribution patterns: explicit methodological output (43)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
-Application domains: Media, Communication, Entertainment; Education, Teaching, Research
+Application domains: Media, Communication, Entertainment
 Primary application domain: Media, Communication, Entertainment
-Additional application domains: Education, Teaching, Research
-Domain support: Media, Communication, Entertainment: 10/11 papers; Education, Teaching, Research: 6/11 papers
-Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration.
+Additional application domains: n/a
+Domain support: Media, Communication, Entertainment: 16/67 papers
+Domain definitions: Media, Communication, Entertainment: Covers news, social media, communication, content production, entertainment, games, and sports.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Media, Communication, Entertainment. Additional supported settings are Education, Teaching, Research. Representative papers include Game Design as an Autonomous Research Subject; Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges.
-Design-knowledge contribution: Methodological Contribution
-Theme words: game, video, entertainment, player, mechanics, patterns, achievement, narrative
+Distinguishing evidence: Rough Mile, Case Study, Human Error, Design Science
+Summary candidate: Within this keyword view, this cluster is set apart by Rough Mile, Human Error. Its primary contribution, methodological contribution — design guidelines and principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Methodologically, it leans on Systematic Review. Representative papers: Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted; The Rough Mile: Testing a Framework of Immersive Practice.
+Theme words: guidelines, rules, usability, games, ai, interfaces, rural, modularity
 
 Representative papers:
-- : Game Design as an Autonomous Research Subject
-- 2017: Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges
-- 2023: Beyond the old game design: a new design paradigm in Game Studies through C-K Theory
+- 2024: Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted
+- 2017: The Rough Mile: Testing a Framework of Immersive Practice
+- 1982: Steps toward a cognitive engineering: Design rules based on analyses of human error
 
-### Cluster 1 (41 papers)
-Label candidate: Design Knowledge: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Design, Creativity, Architecture
+### Cluster 1 (48 papers)
+Label candidate: Design Pattern: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Software, System, Cybersecurity
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
-Contribution support: 38/41 papers; weighted score 189
+Contribution support: 43/48 papers; weighted score 216
 Contribution subtype: Design Guidelines and Principles
-Contribution-subtype support: 41/41 papers
+Contribution-subtype support: 48/48 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
-Contribution patterns: explicit methodological output (63)
+Contribution patterns: explicit methodological output (72)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
-Application domains: Design, Creativity, Architecture; Software, System, Cybersecurity
-Primary application domain: Design, Creativity, Architecture
-Additional application domains: Software, System, Cybersecurity
-Domain support: Design, Creativity, Architecture: 10/41 papers; Software, System, Cybersecurity: 9/41 papers
-Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity.
+Application domains: Software, System, Cybersecurity; Education, Teaching, Research; Design, Creativity, Architecture
+Primary application domain: Software, System, Cybersecurity
+Additional application domains: Education, Teaching, Research; Design, Creativity, Architecture
+Domain support: Software, System, Cybersecurity: 13/48 papers; Education, Teaching, Research: 11/48 papers; Design, Creativity, Architecture: 10/48 papers
+Domain definitions: Software, System, Cybersecurity: Covers software development, systems engineering, IT operations, privacy, and cybersecurity. Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Design, Creativity, Architecture. Additional supported settings are Software, System, Cybersecurity. Representative papers include Design Patterns of Biological Cells; Design patterns for sociality in human-robot interaction.
-Design-knowledge contribution: Methodological Contribution
-Theme words: patterns, software, object, abstraction, biophilic, structural, modeling, engineering
+Distinguishing evidence: Dark Patterns, Biological Cells, Software Development, Participatory Futures
+Summary candidate: Within this keyword view, this cluster is set apart by Dark Patterns, Biological Cells, Software Development. Its primary contribution, methodological contribution — design guidelines and principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Design Patterns of Biological Cells; Design patterns for sociality in human-robot interaction.
+Theme words: patterns, software, object, dsl, language, domain, biophilic, recurring
 
 Representative papers:
 - 2024: Design Patterns of Biological Cells
 - 2008: Design patterns for sociality in human-robot interaction
 - 2020: Patterns, anticipation and participatory futures
 
-### Cluster 2 (16 papers)
+### Cluster 2 (28 papers)
+Label candidate: Design Knowledge: Theoretical Contribution — Borrowing and Adapting Existing Theory | Primary Domain: Generic, Abstract, Domain-Agnostic
+Primary contribution: Theoretical Contribution
+Secondary contribution: n/a
+Contribution support: 11/28 papers; weighted score 90
+Contribution subtype: n/a
+Contribution-subtype support: No reliable subtype signal
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
+Contribution patterns: explicit theoretical output (18); articulates conceptual or philosophical foundations (9); contributes theory or a conceptual framework (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
+Application domains: Generic, Abstract, Domain-Agnostic
+Primary application domain: Generic, Abstract, Domain-Agnostic
+Additional application domains: n/a
+Domain support: Generic, Abstract, Domain-Agnostic: 28/28 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
+Theory move: Borrowing and Adapting Existing Theory
+Theory-move support: 5/28 papers; weighted score 32
+Matched patterns: reference discipline/kernel theory (7); draws on a theory or theoretical lens (1)
+Distinguishing evidence: DSR Grid, Case Study, Design Science, Core Dimensions
+Summary candidate: Within this keyword view, this cluster is set apart by DSR Grid, Core Dimensions. Unlike most clusters in this view, its primary contribution is theoretical contribution. Within the theoretical contribution, its Path 1 move is borrowing and adapting existing theory. Representative papers: Design theory in practice ‚Äì Making design science research more transparent; Toward a Method for Design Science Research Meta-Studies to Improve the Reusability of Design Principles.
+Theme words: science, dsr, theories, recreation, commons, interactive technology, prescriptive, generate
+
+Representative papers:
+- 2011: Design theory in practice ‚Äì Making design science research more transparent
+- : Toward a Method for Design Science Research Meta-Studies to Improve the Reusability of Design Principles
+- : A Typology of Knowledge Creation in Design Science Research Projects
+
+### Cluster 3 (16 papers)
 Label candidate: Design Rationale: Methodological Contribution — Design Methods and Processes | Primary Domain: Media, Communication, Entertainment
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
@@ -77,151 +105,135 @@ Domain definitions: Media, Communication, Entertainment: Covers news, social med
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design methods and processes. Its strongest supported application domain is Media, Communication, Entertainment. Representative papers include Redesigning the rationale for design rationale; Feature, specification and evidence framework for communicating design rationale.
-Design-knowledge contribution: Methodological Contribution
-Theme words: rationale, capture, implies, argumentation, utilization principles, documentation, reasoning, adk
+Distinguishing evidence: Issues Critical, Design Rationale, Evidence Framework, Education / Learning
+Summary candidate: Within this keyword view, this cluster is set apart by Issues Critical, Evidence Framework, Education / Learning. Its primary contribution, methodological contribution — design methods and processes, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Workplace that do not anchor the sibling clusters. Representative papers: Redesigning the rationale for design rationale; What's in design rationale?.
+Theme words: rationale, capture, implies, argumentation, utilization, documentation, reasoning, cma
 
 Representative papers:
 - 2007: Redesigning the rationale for design rationale
-- : Feature, specification and evidence framework for communicating design rationale
 - 1991: What's in design rationale?
+- : Feature, specification and evidence framework for communicating design rationale
 
-### Cluster 3 (38 papers)
-Label candidate: Design Heuristics: Methodological Contribution — Design Methods and Processes | Primary Domain: Design, Creativity, Architecture
+### Cluster 4 (25 papers)
+Label candidate: Design Heuristic: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Design, Creativity, Architecture
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
-Contribution support: 17/38 papers; weighted score 81
-Contribution subtype: Design Methods and Processes
-Contribution-subtype support: 24/38 papers
-Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
-Contribution patterns: explicit methodological output (27)
-Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
-Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
-Application domains: Design, Creativity, Architecture; Environment, Resource, Energy
-Primary application domain: Design, Creativity, Architecture
-Additional application domains: Environment, Resource, Energy
-Domain support: Design, Creativity, Architecture: 9/38 papers; Environment, Resource, Energy: 8/38 papers
-Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture. Environment, Resource, Energy: Covers the environment, climate, agriculture, water, energy, natural resources, and sustainability.
-Theory move: Not Applicable — Contribution Is Not Theoretical
-Theory-move support: Not applicable
-Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design methods and processes. Its strongest supported application domain is Design, Creativity, Architecture. Additional supported settings are Environment, Resource, Energy. Representative papers include A Framework for Effective Virtual Commissioning: Guiding Principles for Seamless System Integration; Universal Participatory Design: Achievements and Challenges.
-Design-knowledge contribution: Methodological Contribution
-Theme words: recreation, methods principles, thinking, systemic, interactive technology, architecture, field, floorplan
-
-Representative papers:
-- 2024: A Framework for Effective Virtual Commissioning: Guiding Principles for Seamless System Integration
-- 2019: Universal Participatory Design: Achievements and Challenges
-- 2020: State of the Art on Robust Design Methods for Additive Manufacturing
-
-### Cluster 4 (73 papers)
-Label candidate: Design Guidelines: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Generic, Abstract, Domain-Agnostic
-Primary contribution: Methodological Contribution
-Secondary contribution: n/a
-Contribution support: 32/73 papers; weighted score 135
+Contribution support: 14/25 papers; weighted score 66
 Contribution subtype: Design Guidelines and Principles
-Contribution-subtype support: 45/73 papers
+Contribution-subtype support: 13/25 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
-Contribution patterns: explicit methodological output (45)
-Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
-Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
-Application domains: Generic, Abstract, Domain-Agnostic
-Primary application domain: Generic, Abstract, Domain-Agnostic
-Additional application domains: n/a
-Domain support: Generic, Abstract, Domain-Agnostic: 73/73 papers
-Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
-Theory move: Not Applicable — Contribution Is Not Theoretical
-Theory-move support: Not applicable
-Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Generic, Abstract, Domain-Agnostic. Representative papers include Design Study Methodology: Reflections from the Trenches and the Stacks; Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge.
-Design-knowledge contribution: Methodological Contribution
-Theme words: visualization, guidelines, heuristics, domain, control, rural, patterns, ai
-
-Representative papers:
-- 2012: Design Study Methodology: Reflections from the Trenches and the Stacks
-- 2021: Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge
-- 2023: Commentary: Strength-based co-design that EMPOWERs ‚Äì Lessons from codesigning with older adults
-
-### Cluster 5 (58 papers)
-Label candidate: Design Guidelines: Theoretical Contribution — Meta-Theoretical Reflection on Design | Primary Domain: Generic, Abstract, Domain-Agnostic
-Primary contribution: Theoretical Contribution
-Secondary contribution: n/a
-Contribution support: 43/58 papers; weighted score 290
-Contribution subtype: n/a
-Contribution-subtype support: No reliable subtype signal
-Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
-Contribution patterns: explicit theoretical output (68); articulates conceptual or philosophical foundations (20); contributes theory or a conceptual framework (2)
-Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
-Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
-Application domains: Generic, Abstract, Domain-Agnostic
-Primary application domain: Generic, Abstract, Domain-Agnostic
-Additional application domains: n/a
-Domain support: Generic, Abstract, Domain-Agnostic: 58/58 papers
-Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
-Theory move: Meta-Theoretical Reflection on Design
-Theory-move support: 11/58 papers; weighted score 75
-Matched patterns: reflects on the nature/role/value of theory (7); explicit meta-theory/metatheory (5); philosophy/epistemology/ontology of design (3)
-Summary candidate: This cluster primarily makes a theoretical contribution. Its strongest supported application domain is Generic, Abstract, Domain-Agnostic. Within that theoretical contribution, Path 1 codes the move as meta-theoretical reflection on design. Representative papers include Web-based information systems: Developing a design theory; Incommensurability in design science: Which comes first-Theory or artefact?.
-Design-knowledge contribution: Theoretical Contribution
-Theme words: theories, science, platform, digital, principles theory, theoretical, dsr, commons
-
-Representative papers:
-- 2007: Web-based information systems: Developing a design theory
-- 2010: Incommensurability in design science: Which comes first-Theory or artefact?
-- 2019: Eight Components of a Design Theory of Sonification
-
-### Cluster 6 (29 papers)
-Label candidate: Design Rules: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Design, Creativity, Architecture
-Primary contribution: Methodological Contribution
-Secondary contribution: n/a
-Contribution support: 14/29 papers; weighted score 63
-Contribution subtype: Design Guidelines and Principles
-Contribution-subtype support: 16/29 papers
-Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
-Contribution patterns: explicit methodological output (21)
+Contribution patterns: explicit methodological output (22)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
 Application domains: Design, Creativity, Architecture
 Primary application domain: Design, Creativity, Architecture
 Additional application domains: n/a
-Domain support: Design, Creativity, Architecture: 9/29 papers
+Domain support: Design, Creativity, Architecture: 10/25 papers
 Domain definitions: Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Design, Creativity, Architecture. Representative papers include Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization.
-Design-knowledge contribution: Methodological Contribution
-Theme words: rules, product, modularity, heuristics, prototyping, recovery, concept, cpm pdd
+Distinguishing evidence: Design Science, Idea Generation, Product Recovery, Standardized Notation
+Summary candidate: Within this keyword view, this cluster is set apart by Idea Generation, Product Recovery, Standardized Notation. Its primary contribution, methodological contribution — design guidelines and principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. It concentrates on contexts such as Industrial Design that do not anchor the sibling clusters. Methodologically, it leans on Co-design. Representative papers: Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization; Design heuristics set for X: A design aid for assistive product concept generation.
+Theme words: heuristics, product, assistive, generation, prototyping, recovery, dialogue, formats
 
 Representative papers:
-- 2018: Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault‚ÄìNissan Alliance ‚ÄúCommon Module Family‚Äù Architecture
 - 2022: Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization
-- 2019: A Preliminary Proposal Towards Unambiguous Definitions for Modular Interfaces and Interactions
+- 2018: Design heuristics set for X: A design aid for assistive product concept generation
+- 2016: Evidence-based design heuristics for idea generation
 
-### Cluster 7 (15 papers)
-Label candidate: Design Knowledge: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Education, Teaching, Research
+### Cluster 5 (42 papers)
+Label candidate: Design Theory: Theoretical Contribution — Meta-Theoretical Reflection on Design | Primary Domain: Generic, Abstract, Domain-Agnostic
+Primary contribution: Theoretical Contribution
+Secondary contribution: n/a
+Contribution support: 37/42 papers; weighted score 208
+Contribution subtype: n/a
+Contribution-subtype support: No reliable subtype signal
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
+Contribution patterns: explicit theoretical output (58); articulates conceptual or philosophical foundations (7); contributes theory or a conceptual framework (1)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
+Application domains: Generic, Abstract, Domain-Agnostic
+Primary application domain: Generic, Abstract, Domain-Agnostic
+Additional application domains: n/a
+Domain support: Generic, Abstract, Domain-Agnostic: 42/42 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
+Theory move: Meta-Theoretical Reflection on Design
+Theory-move support: 11/42 papers; weighted score 74
+Matched patterns: reflects on the nature/role/value of theory (7); explicit meta-theory/metatheory (4); philosophy/epistemology/ontology of design (4)
+Distinguishing evidence: Case Study, Things Work, Design Science, Relational Theory
+Summary candidate: Within this keyword view, this cluster is set apart by Things Work, Relational Theory. Unlike most clusters in this view, its primary contribution is theoretical contribution. Within the theoretical contribution, its Path 1 move is meta-theoretical reflection on design. It concentrates on contexts such as Healthcare that do not anchor the sibling clusters. Representative papers: Design Theory in Information Systems; GENERAL DESIGN THEORY..
+Theme words: theories, language, theoretical, meta, theory theory, things work, ecc, online communities
+
+Representative papers:
+- 2002: Design Theory in Information Systems
+- 1985: GENERAL DESIGN THEORY.
+- 2007: Using System Dynamics to Construct Design Theory for Community Information Systems
+
+### Cluster 6 (47 papers)
+Label candidate: Design Method: Theoretical Contribution — Unclear Theory Move — Requires Human Review | Primary Domain: Generic, Abstract, Domain-Agnostic
+Primary contribution: Theoretical Contribution
+Secondary contribution: n/a
+Contribution support: 13/47 papers; weighted score 74
+Contribution subtype: n/a
+Contribution-subtype support: No reliable subtype signal
+Contribution definition: Develops, adapts, tests, or critically examines concepts, propositions, models, frameworks, or theoretical foundations.
+Contribution patterns: explicit theoretical output (18); articulates conceptual or philosophical foundations (5)
+Contribution summary fields: theory move; focal concept; named theory; source discipline; scope
+Contribution summary template: Adapts [named theory] from [discipline] to explain [design phenomenon] in [domain].
+Application domains: Generic, Abstract, Domain-Agnostic
+Primary application domain: Generic, Abstract, Domain-Agnostic
+Additional application domains: n/a
+Domain support: Generic, Abstract, Domain-Agnostic: 47/47 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
+Theory move: Unclear Theory Move — Requires Human Review
+Theory-move support: No unambiguous move; best candidate has support from 4/47 papers, weighted score 12
+Matched patterns: Best candidate: Building New Theory; new theoretical constructs/propositions (4)
+Distinguishing evidence: Case Study, Design Science, Additive Manufacturing, Tracing Situated Effects
+Summary candidate: Within this keyword view, this cluster is set apart by Additive Manufacturing, Tracing Situated Effects. Unlike most clusters in this view, its primary contribution is theoretical contribution. Its theoretical contribution is relevant, but the Path 1 theory move requires human review. Methodologically, it leans on Ethnographic. Representative papers: Process design theory for digital information services; State of the Art on Robust Design Methods for Additive Manufacturing.
+Theme words: value, framing, service, literature, humanism, digital, systemic, designerly
+
+Representative papers:
+- 2008: Process design theory for digital information services
+- 2020: State of the Art on Robust Design Methods for Additive Manufacturing
+- 2024: Using Schema to Inform Method Design Practices
+
+### Cluster 7 (11 papers)
+Label candidate: Design Pattern: Methodological Contribution — Design Guidelines and Principles | Primary Domain: Generic, Abstract, Domain-Agnostic
 Primary contribution: Methodological Contribution
 Secondary contribution: n/a
-Contribution support: 6/15 papers; weighted score 27
+Contribution support: 6/11 papers; weighted score 24
 Contribution subtype: Design Guidelines and Principles
-Contribution-subtype support: 8/15 papers
+Contribution-subtype support: 9/11 papers
 Contribution definition: Develops a research or design method, evaluation approach, analytical framework, process, guideline, or principle.
-Contribution patterns: explicit methodological output (9)
+Contribution patterns: explicit methodological output (8)
 Contribution summary fields: method subtype; target activity; intended user; desired outcome; validation
 Contribution summary template: Proposes [guidelines/framework/method] for [design or research activity], intended to improve [outcome] in [domain].
-Application domains: Education, Teaching, Research; Design, Creativity, Architecture
-Primary application domain: Education, Teaching, Research
-Additional application domains: Design, Creativity, Architecture
-Domain support: Education, Teaching, Research: 11/15 papers; Design, Creativity, Architecture: 3/15 papers
-Domain definitions: Education, Teaching, Research: Covers learning, teaching, assessment, academic research, and educational administration. Design, Creativity, Architecture: Covers UI/UX, product, graphic, and industrial design, creative practice, craft, and architecture.
+Application domains: Generic, Abstract, Domain-Agnostic
+Primary application domain: Generic, Abstract, Domain-Agnostic
+Additional application domains: n/a
+Domain support: Generic, Abstract, Domain-Agnostic: 11/11 papers
+Domain definitions: Generic, Abstract, Domain-Agnostic: Covers general theories, methods, algorithms, or frameworks that do not target a specific application domain.
 Theory move: Not Applicable — Contribution Is Not Theoretical
 Theory-move support: Not applicable
 Matched patterns: Not applicable
-Summary candidate: This cluster primarily makes a methodological contribution, specifically design guidelines and principles. Its strongest supported application domain is Education, Teaching, Research. Additional supported settings are Design, Creativity, Architecture. Representative papers include Personalising learning: towards a coherent learning design framework; Design exemplars for synchronous e-learning: A design theory approach.
-Design-knowledge contribution: Methodological Contribution
-Theme words: blended, learners, generalization, synchronous, artificial, identity, curriculum, patterns
+Distinguishing evidence: Data Analysis, Industry Cases, Unified Terminology, Exploring Complex Topics
+Summary candidate: Within this keyword view, this cluster is set apart by Data Analysis, Industry Cases, Unified Terminology. Its primary contribution, methodological contribution — design guidelines and principles, is shared across most of this view, so the distinguishing terms above carry the interpretive weight. Representative papers: Visualization Atlases: Explaining and Exploring Complex Topics Through Data, Visualization, and Narration; Towards a unified terminology for sonification and visualization.
+Theme words: visualization, generalization, data analysis, ecosystems, privacy, mesh, composite, atlases
 
 Representative papers:
-- : Personalising learning: towards a coherent learning design framework
-- : Design exemplars for synchronous e-learning: A design theory approach
-- 2019: The E-Design Assessment Tool: an evidence-informed approach towards a consistent terminology for quantifying online distance learning activities
+- 2025: Visualization Atlases: Explaining and Exploring Complex Topics Through Data, Visualization, and Narration
+- 2023: Towards a unified terminology for sonification and visualization
+- 2024: Data Mesh: A Systematic Gray Literature Review
+
+## LDA Topics
+- Topic 0: patterns, guidelines, architecture, concept, prototyping, heuristics, product, component
+- Topic 1: theories, patterns, language, creation, management, task, technical, service
+- Topic 2: game, rationale, field, rules, problems, existing, analysis, architecture
+- Topic 3: guidelines, architecture, rules, rationale, product, usability, heuristics, concept
+- Topic 4: patterns, language, field, guidelines, theoretical, game, engineering, article
+- Topic 5: patterns, theories, science, value, analysis, digital, concept, problems
+- Topic 6: rationale, patterns, domain, capture, software, nature, games, interactive
+- Topic 7: virtual, generic, organizational, curriculum, blended, functional, domain, complex
+- Topic 8: guidelines, heuristics, engineering, science, develop, existing, ai, theoretical
+- Topic 9: patterns, software, platform, practice, problem, digital, literature, video
