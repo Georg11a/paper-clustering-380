@@ -215,7 +215,7 @@
     </div>
     <div class="note" id="note">Batch 1–3 are reflected here: 282 retained publications, keyword-conditioned Title + Abstract + K12 inputs, BGE-M3 embeddings, and within-keyword Spectral assignments. Assignments are frozen for analysis; non-Design-Theory groups still require confirmation by at least two reviewers.</div>
   </header>
-  <iframe id="explorerFrame" src="explorer/statistical_bottom_up/all/paper_explorer.html"></iframe>
+  <iframe id="explorerFrame" src="explorer/statistical_bottom_up/all/paper_explorer.html?v=source-grounded-summary-v2"></iframe>
 
   <div class="drawer-overlay" id="drawerOverlay" hidden></div>
   <aside class="drawer" id="docsDrawer" aria-hidden="true" aria-label="Settings and documentation">
@@ -263,7 +263,7 @@
       { id: "design_frameworks_statistical_bottom_up", keyword: "Design frameworks", method: "statistical_bottom_up", text_view: "context", papers: "6", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_frameworks/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_frameworks/cluster_summary.md" },
       { id: "design_procedures_statistical_bottom_up", keyword: "Design Procedures", method: "statistical_bottom_up", text_view: "context", papers: "1", params: "1 unsplit group", explorer: "explorer/statistical_bottom_up/design_procedures/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_procedures/cluster_summary.md" }
     ];
-    const buildId = "282-bge-m3-spectral-statistical-bottom-up";
+    const buildId = "282-bge-m3-spectral-source-grounded-summary-v2";
     const withCacheBuster = path => `${path}${path.includes('?') ? '&' : '?'}v=${buildId}-${Date.now()}`;
     const frame = document.getElementById('explorerFrame');
     const keywordSelect = document.getElementById('keywordSelect');
