@@ -220,8 +220,9 @@
     const papers = data.papers;
     const palette = ['#f05a71','#4c78a8','#f58518','#54a24b','#b279a2','#72b7b2','#eeca3b','#ff9da6','#9d755d','#59a14f','#edc948','#76b7b2'];
     const colorFor = c => palette[Math.abs(Number(c)) % palette.length];
-    const clusterName = c => { if (Number(c) === -1) return 'Unclustered papers'; const meta = data.clusters.find(item => Number(item.cluster) === Number(c)); const match = String(meta?.label || '').match(/\[([^\]]+)\]$/); return match ? match[1] : `Cluster ${c}`; };
-    const readableClusterLabel = c => { const label = String(c.label || c.theme || '').trim(); const withoutId = label.replace(/\s*\[[^\]]+\]\s*$/, '').trim(); return `${withoutId || clusterName(c.cluster)} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'} [${clusterName(c.cluster)}]`; };
+    const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${Number(c) + 1}`;
+    const clusterTopicLabel = value => String(value || '').replace(/\s*\[[^\]]+\]\s*$/, '').trim();
+    const readableClusterLabel = c => { const label = clusterTopicLabel(c.label || c.theme); return `${label || clusterName(c.cluster)} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`; };
     const clusterLegendLabel = c => readableClusterLabel(c);
     const state = { selected: papers[0]?.paper_id || null };
     const svg = document.getElementById('plot');
@@ -399,7 +400,7 @@
         <div class="details-inner">
         <div class="insight-card primary">
           <div class="section-title">Topic Phrase</div>
-          <div class="abstract">${escapeHtml(p.cluster_label_candidate)}</div>
+          <div class="abstract">${escapeHtml(clusterTopicLabel(p.cluster_label_candidate))}</div>
         </div>
         <div class="insight-card">
           <div class="section-title">Key Phrases</div>
@@ -433,16 +434,6 @@
             <span class="pill">Support: ${escapeHtml(p.theory_move_support || 'n/a')}</span>
           </div>
           <div class="meta" style="margin-top:8px">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>` : ''}
-        </div>
-        <div class="insight-card">
-          <div class="section-title">Pipeline Context</div>
-          <div class="pill-row">
-            <span class="pill">Context/Domain: ${escapeHtml(p.facet_population_or_context || 'n/a')}</span>
-            <span class="pill">Population/Stakeholder: ${escapeHtml(p.facet_stakeholder_or_population || 'n/a')}</span>
-            <span class="pill">Method/Lens: ${escapeHtml(p.facet_method_or_lens || 'n/a')}</span>
-            <span class="pill">Artifact/System: ${escapeHtml(p.facet_artifact_or_domain || 'n/a')}</span>
-            <span class="pill">Contribution Type: ${escapeHtml(p.facet_contribution_or_outcome || 'n/a')}</span>
-          </div>
         </div>
         <details class="lexical-evidence">
           <summary>Show lexical evidence</summary>

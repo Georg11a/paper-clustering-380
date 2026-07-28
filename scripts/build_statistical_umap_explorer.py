@@ -343,9 +343,9 @@ def prepare_scope(
         )
     )
     frame["cluster_label_candidate"] = frame["cluster_id"].map(
-        lambda cluster_id: (
-            f"{phrase_label(str(interpretation_by_id.loc[cluster_id, 'keyword']), keyphrases_by_cluster[cluster_id])} "
-            f"[{cluster_id}]"
+        lambda cluster_id: phrase_label(
+            str(interpretation_by_id.loc[cluster_id, "keyword"]),
+            keyphrases_by_cluster[cluster_id],
         )
     )
     frame["distinguishing_evidence_terms"] = frame["cluster_id"].map(
@@ -371,11 +371,6 @@ def prepare_scope(
     frame["primary_application_domain"] = "Not assigned by Path 1"
     frame["application_domain_support"] = "Not evaluated in this statistical interpretation"
     frame["application_domain_definitions"] = "Not applicable"
-    frame["facet_population_or_context"] = "Predefined keyword group"
-    frame["facet_stakeholder_or_population"] = "Not assigned"
-    frame["facet_method_or_lens"] = "BGE-M3 embedding + Spectral clustering"
-    frame["facet_artifact_or_domain"] = "Not assigned"
-    frame["facet_contribution_or_outcome"] = "Source-grounded cluster interpretation"
     frame["theory_move_key"] = "not_applicable"
     frame["theory_move"] = ""
     frame["theory_move_support"] = ""
@@ -455,11 +450,17 @@ def adapt_dashboard_copy(path: Path) -> None:
     )
     page = page.replace(
         "const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${c}`;",
+        "const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${Number(c) + 1}`;\n"
+        "    const clusterTopicLabel = value => String(value || '').replace(/\\s*\\[[^\\]]+\\]\\s*$/, '').trim();",
+    )
+    page = page.replace(
         "const clusterName = c => { "
         "if (Number(c) === -1) return 'Unclustered papers'; "
         "const meta = data.clusters.find(item => Number(item.cluster) === Number(c)); "
         "const match = String(meta?.label || '').match(/\\[([^\\]]+)\\]$/); "
         "return match ? match[1] : `Cluster ${c}`; };",
+        "const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${Number(c) + 1}`;\n"
+        "    const clusterTopicLabel = value => String(value || '').replace(/\\s*\\[[^\\]]+\\]\\s*$/, '').trim();",
     )
     page = page.replace(
         "const clusterLegendLabel = c => {\n"
@@ -468,11 +469,21 @@ def adapt_dashboard_copy(path: Path) -> None:
         "      return /^Cluster\\s+-?\\d+:/i.test(label) ? label : `${clusterName(c.cluster)}: ${label}`;\n"
         "    };",
         "const readableClusterLabel = c => { "
+        "const label = clusterTopicLabel(c.label || c.theme); "
+        "return `${label || clusterName(c.cluster)} · ${c.count} "
+        "${c.count === 1 ? 'paper' : 'papers'}`; };\n"
+        "    const clusterLegendLabel = c => readableClusterLabel(c);",
+    )
+    page = page.replace(
+        "const readableClusterLabel = c => { "
         "const label = String(c.label || c.theme || '').trim(); "
         "const withoutId = label.replace(/\\s*\\[[^\\]]+\\]\\s*$/, '').trim(); "
         "return `${withoutId || clusterName(c.cluster)} · ${c.count} "
-        "${c.count === 1 ? 'paper' : 'papers'} [${clusterName(c.cluster)}]`; };\n"
-        "    const clusterLegendLabel = c => readableClusterLabel(c);",
+        "${c.count === 1 ? 'paper' : 'papers'} [${clusterName(c.cluster)}]`; };",
+        "const readableClusterLabel = c => { "
+        "const label = clusterTopicLabel(c.label || c.theme); "
+        "return `${label || clusterName(c.cluster)} · ${c.count} "
+        "${c.count === 1 ? 'paper' : 'papers'}`; };",
     )
     page = page.replace(
         "const readableLabel = String(c.label || clusterName(c.cluster)).trim(); "
@@ -527,6 +538,22 @@ def adapt_dashboard_copy(path: Path) -> None:
         '<div class="section-title">Paper-Oriented Facets</div>',
         '<div class="section-title">Pipeline Context</div>',
     )
+    page = page.replace(
+        '<div class="abstract">${escapeHtml(p.cluster_label_candidate)}</div>',
+        '<div class="abstract">${escapeHtml(clusterTopicLabel(p.cluster_label_candidate))}</div>',
+    )
+    pipeline_context = """        <div class="insight-card">
+          <div class="section-title">Pipeline Context</div>
+          <div class="pill-row">
+            <span class="pill">Context/Domain: ${escapeHtml(p.facet_population_or_context || 'n/a')}</span>
+            <span class="pill">Population/Stakeholder: ${escapeHtml(p.facet_stakeholder_or_population || 'n/a')}</span>
+            <span class="pill">Method/Lens: ${escapeHtml(p.facet_method_or_lens || 'n/a')}</span>
+            <span class="pill">Artifact/System: ${escapeHtml(p.facet_artifact_or_domain || 'n/a')}</span>
+            <span class="pill">Contribution Type: ${escapeHtml(p.facet_contribution_or_outcome || 'n/a')}</span>
+          </div>
+        </div>
+"""
+    page = page.replace(pipeline_context, "")
     page = page.replace(
         '<div class="section-title">Secondary Topic-Model Evidence</div>',
         '<div class="section-title">Class-Based TF-IDF Evidence</div>',
