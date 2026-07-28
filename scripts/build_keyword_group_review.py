@@ -199,11 +199,19 @@ def main() -> None:
         ["keyword", "cluster_id", "review_role", "assignment_margin"],
         na_position="last",
     )
+    cluster_review = profiles.loc[profiles["requires_human_review"]].copy()
+    cluster_review["reviewer_cluster_coherent_yes_no"] = ""
+    cluster_review["reviewer_granularity_too_coarse_ok_too_fine"] = ""
+    cluster_review["reviewer_accept_current_membership_yes_no"] = ""
+    cluster_review["reviewer_accept_numeric_exception_yes_no"] = ""
+    cluster_review["reviewer_notes"] = ""
     profiles.to_csv(out / "keyword_cluster_profiles_for_review.csv", index=False)
+    cluster_review.to_csv(out / "human_review_clusters.csv", index=False)
     review.to_csv(out / "human_review_shortlist.csv", index=False)
     print(
         f"Wrote {len(profiles)} cluster profiles and "
-        f"{len(review)} review rows to {out}"
+        f"{len(cluster_review)} cluster-level plus {len(review)} paper-level "
+        f"review rows to {out}"
     )
 
 

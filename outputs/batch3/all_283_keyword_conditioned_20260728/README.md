@@ -51,6 +51,7 @@ Review materials:
 
 - `keyword_cluster_profiles_for_review.csv`: all 26 candidate cluster profiles,
   including representative titles and diagnostic terms;
+- `human_review_clusters.csv`: the required compact 22-cluster decision sheet;
 - `human_review_shortlist.csv`: 95 representative or boundary papers from
   groups that still need a decision.
 

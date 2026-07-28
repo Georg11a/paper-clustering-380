@@ -69,8 +69,11 @@ Two files make the remaining decision auditable:
   representative titles, preliminary descriptive TF-IDF terms, centroid
   cohesion, and the smallest assignment margin. The terms are diagnostic and
   are **not** final topics.
+- `human_review_clusters.csv` is the required compact review sheet: one row for
+  each of the 22 clusters whose keyword group is not yet frozen.
 - `human_review_shortlist.csv` contains 95 representative or boundary papers
-  from all groups that still need a decision.
+  from all groups that still need a decision. It is the targeted membership
+  check supporting the compact cluster-level decision.
 
 For each displayed paper, the reviewer records whether the membership is
 acceptable and, if not, a suggested cluster. For each cluster, the reviewer
