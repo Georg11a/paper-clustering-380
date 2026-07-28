@@ -72,6 +72,10 @@ CUSTOM_STOP_WORDS = {
     "dr",
     "dsr",
     "ui",
+    # Corpus-specific shorthand/encoding artefacts. These are not meaningful
+    # topic labels and should never be surfaced without an expansion.
+    "dhsfx",
+    "cpelds",
 }
 STOP_WORDS = sorted(set(ENGLISH_STOP_WORDS) | CUSTOM_STOP_WORDS)
 YEAR_RE = re.compile(r"\b(?:18|19|20)\d{2}\b")

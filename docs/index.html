@@ -43,7 +43,7 @@
       text-overflow: ellipsis;
       font-weight: 760;
     }
-    .top-links { display: none; }
+    .top-links { display: flex; align-items: center; gap: 10px; }
     .controls {
       display: grid;
       grid-template-columns: minmax(170px, 0.85fr) minmax(135px, 0.65fr) minmax(150px, 0.75fr) auto minmax(230px, 0.95fr) minmax(230px, 0.9fr);
@@ -183,6 +183,7 @@
     <div class="title-row">
       <h1>Final Advancing-Paper Explorer: Per-Keyword Views</h1>
       <div class="top-links">
+        <a href="path1.html">Path 1 Results</a>
         <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
         <button class="secondary" id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
       </div>
@@ -246,6 +247,7 @@
           <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/README.md">README<span>Setup, commands, outputs, and repository structure.</span></a>
           <a class="doc-link" href="pipeline_overview.md">Pipeline overview<span>Input, processing steps, outputs, and human checkpoints.</span></a>
           <a class="doc-link" href="meeting_action_items.md">Meeting action items<span>How this version responds to team feedback.</span></a>
+          <a class="doc-link" href="path1.html">Path 1 statistical results<span>Cleaned 282-paper c-TF-IDF interpretation with frozen and provisional status labels.</span></a>
         </div>
       </section>
       <section class="drawer-section">

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Path 1 · Statistical Cluster Interpretation</title>
+  <style>
+    :root {
+      --ink: #18313a;
+      --muted: #63777d;
+      --line: #dce7e4;
+      --surface: #ffffff;
+      --wash: #f3f7f5;
+      --teal: #147b77;
+      --teal-soft: #dff2ef;
+      --coral: #d96f55;
+      --coral-soft: #fbe9e4;
+      --blue: #426c9c;
+      --shadow: 0 12px 34px rgba(24, 49, 58, .08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--wash); }
+    a { color: var(--teal); font-weight: 700; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hero {
+      padding: 36px clamp(20px, 5vw, 72px) 28px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(255,255,255,.18), transparent 28%),
+        linear-gradient(125deg, #183f48 0%, #176d6a 62%, #318c83 100%);
+    }
+    .eyebrow {
+      margin-bottom: 10px; color: #bce8e1; font-size: 12px;
+      font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    h1 { max-width: 940px; margin: 0; font-size: clamp(30px, 4.2vw, 54px); line-height: 1.05; }
+    .hero p { max-width: 820px; margin: 17px 0 0; color: #e2f2ef; font-size: 16px; line-height: 1.6; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .hero-links a {
+      padding: 9px 13px; border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px; color: #fff; background: rgba(255,255,255,.08);
+    }
+    .layout { width: min(1500px, 100%); margin: 0 auto; padding: 22px clamp(16px, 4vw, 52px) 60px; }
+    .notice {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px;
+      align-items: start; padding: 15px 17px; border: 1px solid #f0cfc7;
+      border-radius: 13px; background: var(--coral-soft); color: #713a2d;
+    }
+    .notice strong { display: block; margin-bottom: 3px; }
+    .notice-icon {
+      display: grid; width: 28px; height: 28px; place-items: center;
+      border-radius: 50%; color: #fff; background: var(--coral); font-weight: 900;
+    }
+    .metrics {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .metric {
+      min-height: 104px; padding: 17px; border: 1px solid var(--line);
+      border-radius: 14px; background: var(--surface); box-shadow: var(--shadow);
+    }
+    .metric-value { font-size: 29px; font-weight: 820; }
+    .metric-label { margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+    .controls {
+      position: sticky; top: 0; z-index: 5; display: grid;
+      grid-template-columns: 1fr 1fr minmax(230px, 2fr); gap: 10px;
+      margin: 18px 0; padding: 12px; border: 1px solid var(--line);
+      border-radius: 14px; background: rgba(255,255,255,.94);
+      box-shadow: 0 8px 22px rgba(24, 49, 58, .07); backdrop-filter: blur(10px);
+    }
+    select, input {
+      width: 100%; min-height: 42px; padding: 0 12px; border: 1px solid #cbdad6;
+      border-radius: 9px; color: var(--ink); background: #fff; font: inherit;
+    }
+    .result-line { margin: 5px 1px 13px; color: var(--muted); font-size: 13px; }
+    .groups { display: grid; gap: 24px; }
+    .group-title {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 12px; margin-bottom: 10px;
+    }
+    .group-title h2 { margin: 0; font-size: 22px; }
+    .group-meta { color: var(--muted); font-size: 13px; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .card {
+      display: flex; min-width: 0; flex-direction: column; padding: 17px;
+      border: 1px solid var(--line); border-radius: 15px; background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .card-top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+    .cluster-id { color: var(--blue); font-size: 13px; font-weight: 850; letter-spacing: .03em; }
+    .count { margin-top: 3px; color: var(--muted); font-size: 12px; }
+    .badge {
+      flex: 0 0 auto; padding: 5px 8px; border-radius: 999px;
+      font-size: 11px; font-weight: 850; text-transform: uppercase;
+    }
+    .badge.frozen { color: #0d615d; background: var(--teal-soft); }
+    .badge.provisional { color: #8a4634; background: var(--coral-soft); }
+    .descriptor { margin: 16px 0 11px; font-size: 19px; font-weight: 790; line-height: 1.3; }
+    .descriptor-note { color: var(--muted); font-size: 11px; font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+    .chip { padding: 5px 8px; border-radius: 7px; color: #315c5a; background: #edf6f4; font-size: 12px; }
+    .section { margin-top: 17px; }
+    .section-label {
+      margin-bottom: 7px; color: var(--muted); font-size: 10px;
+      font-weight: 850; letter-spacing: .09em; text-transform: uppercase;
+    }
+    .papers { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+    .papers li { padding-top: 7px; border-top: 1px solid #edf2f1; font-size: 13px; line-height: 1.4; }
+    .paper-id { color: #8a999d; font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .overlap { margin-top: auto; padding-top: 17px; }
+    .overlap-line { display: flex; justify-content: space-between; color: var(--muted); font-size: 11px; }
+    .bar { height: 5px; margin-top: 6px; overflow: hidden; border-radius: 99px; background: #edf1f0; }
+    .bar span { display: block; height: 100%; background: var(--coral); }
+    .empty { padding: 44px 20px; text-align: center; color: var(--muted); }
+    @media (max-width: 1100px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      .metrics, .cards { grid-template-columns: 1fr; }
+      .controls { position: static; grid-template-columns: 1fr; }
+      .hero { padding-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="eyebrow">Design-knowledge survey · Path 1</div>
+    <h1>Statistical cluster interpretation</h1>
+    <p>Cluster membership comes from keyword-conditioned BGE-M3 embeddings and Spectral clustering. Path 1 applies adapted class-based TF-IDF to explain those assignments; it does not regroup papers.</p>
+    <div class="hero-links">
+      <a href="index.html">← Main explorer</a>
+      <a href="https://github.com/Georg11a/paper-clustering-380/tree/main/outputs/path1/statistical_topics_282_20260728">Source outputs</a>
+      <a href="https://github.com/Georg11a/paper-clustering-380/blob/main/docs/human_cluster_confirmation_guide.md">Review guide</a>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="notice">
+      <div class="notice-icon">!</div>
+      <div><strong>Interpretation status matters.</strong>Design Theory is frozen. Every other keyword group is provisional until a human reviewer confirms coherence, granularity, and boundary-paper membership. Statistical descriptors are evidence for review, not final editorial labels.</div>
+    </section>
+    <section class="metrics" aria-label="Run summary">
+      <div class="metric"><div class="metric-value">282</div><div class="metric-label">Retained publications after publication-family review</div></div>
+      <div class="metric"><div class="metric-value">27</div><div class="metric-label">Keyword-conditioned clusters and one unsplit group</div></div>
+      <div class="metric"><div class="metric-value">3</div><div class="metric-label">Frozen Design Theory interpretations</div></div>
+      <div class="metric"><div class="metric-value">24</div><div class="metric-label">Provisional interpretations requiring human confirmation</div></div>
+    </section>
+    <section class="controls" aria-label="Result filters">
+      <select id="keywordFilter" aria-label="Filter by keyword"></select>
+      <select id="statusFilter" aria-label="Filter by status">
+        <option value="all">All statuses</option>
+        <option value="frozen">Frozen</option>
+        <option value="provisional">Provisional</option>
+      </select>
+      <input id="searchInput" type="search" placeholder="Search descriptors, terms, or representative papers" aria-label="Search results">
+    </section>
+    <div class="result-line" id="resultLine"></div>
+    <div class="groups" id="groups"></div>
+  </main>
+  <script>
+    const clusters = [{"keyword": "Design Guidelines", "clusterId": "DG-C01", "paperCount": 3, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "user interface; tacit; visualization", "terms": ["user interface", "tacit", "visualization", "component", "instances", "constraints", "characteristics", "support", "violation", "tools", "designers", "uis-hunter", "actions", "material", "smell"], "paperIds": ["00d7fbafe65f", "ee0a5b26f6dc", "f0b2517a04a4"], "titles": ["Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines", "Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco", "Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines"], "passageIds": ["00d7fbafe65f_p0072", "f0b2517a04a4_p0072", "ee0a5b26f6dc_p0149"], "siblingOverlap": 0.1111111111111111}, {"keyword": "Design Guidelines", "clusterId": "DG-C02", "paperCount": 4, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "rural; user; geo-portals", "terms": ["rural", "user", "geo-portals", "development", "sidewalks", "user experience", "planning", "rural development", "map-based", "requirements", "people", "experience", "map-based geo-portals", "village", "factors"], "paperIds": ["0ef759265f23", "0176348439b8", "cb7daae2b94f", "866322a64dc5"], "titles": ["The equitable use concept in sidewalk design", "A Comparative Study of Chinese and American Rural Design Guidelines", "User Experience Design in Professional Map-Based Geo-Portals", "Healthy Eating Design Guidelines for School Architecture"], "passageIds": ["0176348439b8_p0004", "cb7daae2b94f_p0005", "0ef759265f23_p0013"], "siblingOverlap": 0.0}, {"keyword": "Design Guidelines", "clusterId": "DG-C03", "paperCount": 6, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "experience; visualization; HCI", "terms": ["experience", "visualization", "HCI", "interaction", "users", "gratifications", "immersive", "media", "data", "aesthetics", "participants", "techniques", "digital", "context", "theory"], "paperIds": ["615169de6f0e", "75f43821c56f", "0842498049c7", "65c31c577170", "d0a17557440f"], "titles": ["From interaction to trajectories: designing coherent journeys through user experiences", "Towards a Model of Information Aesthetics in Information Visualization", "The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers", "The Rough Mile: Testing a Framework of Immersive Practice", "Avoiding virtual dystopia: A design theory for emancipatory participatory immersive platforms"], "passageIds": ["0842498049c7_p0005", "65c31c577170_p0011", "ca185d91b684_p0004"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design Guidelines", "clusterId": "DG-C04", "paperCount": 9, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "task; language; software", "terms": ["task", "language", "software", "architecture", "domain", "specific", "tools", "user interface", "types", "modeling", "proposed", "elements", "definitions", "principles", "provide"], "paperIds": ["139a1e71d8dc", "c216cc01fe23", "b14f85b19a87", "b357bc5a3d3b", "48af90d5dfe7"], "titles": ["Separation of Modeling Principles and Design Principles in Enterprise Engineering", "A Preliminary Proposal Towards Unambiguous Definitions for Modular Interfaces and Interactions", "Design Study Methodology: Reflections from the Trenches and the Stacks", "Towards Canonical Task Types for User Interface Design", "Design Guidelines for Domain Specific Languages"], "passageIds": ["9020aa145571_p0039", "48af90d5dfe7_p0006", "b357bc5a3d3b_p0020"], "siblingOverlap": 0.1111111111111111}, {"keyword": "Design Heuristics", "clusterId": "DH-C01", "paperCount": 7, "assignmentStatus": "numerically_selected_pending_human_veto", "status": "provisional", "descriptor": "product; designers; concepts", "terms": ["product", "designers", "concepts", "example", "generation", "idea", "observed", "solutions", "form", "specific", "development", "possible", "risk", "help", "existing"], "paperIds": ["9f4dbd790fe7", "cdd6de21b74b", "022ee7cf2e4e", "7cb073ebacac", "0512599e76df"], "titles": ["Design Heuristics in Innovative Products", "Evidence-based design heuristics for idea generation", "Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization", "Formal system for the expression of target-oriented design heuristics", "What is the content of 'design thinking'? Design Heuristics as conceptual repertoire"], "passageIds": ["cdd6de21b74b_p0009", "9f4dbd790fe7_p0057", "7cb073ebacac_p0033"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design Heuristics", "clusterId": "DH-C02", "paperCount": 3, "assignmentStatus": "numerically_selected_pending_human_veto", "status": "provisional", "descriptor": "formats; communication; communication formats", "terms": ["formats", "communication", "communication formats", "time", "people", "dialogue", "industrial", "product", "users", "technology", "designers", "human", "taxonomy", "development", "assistive"], "paperIds": ["0cbc36913472", "c6955d14d66c", "994d28d55eb8"], "titles": ["Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception", "Dialogue appropriate to assistive technology product design: A taxonomy of communication formats in relation to modes of sensory perception", "From human factors to human actors to human crafters"], "passageIds": ["0cbc36913472_p0019", "c6955d14d66c_p0019", "994d28d55eb8_p0007"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design Patterns", "clusterId": "DPAT-C01", "paperCount": 14, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "game; AI; alexander", "terms": ["game", "AI", "alexander", "interaction", "achievements", "engineering", "quality", "software", "human", "nature", "experience", "example", "ai-based", "practice", "collection"], "paperIds": ["8393d36cff90", "79abc1449981", "7d99b05f405e", "2efb92894924", "1151f6830f77"], "titles": ["An overview of human-computer interaction patterns in pervasive systems", "Thriving Systems Theory: An Emergent Information Systems Design Theory", "Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository", "Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems", "Design patterns in intelligent systems"], "passageIds": ["09055cc69e8c_p0005", "3a87795ac48c_p0016", "7d99b05f405e_p0003"], "siblingOverlap": 0.1111111111111111}, {"keyword": "Design Patterns", "clusterId": "DPAT-C02", "paperCount": 15, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "language; context; solutions", "terms": ["language", "context", "solutions", "domain", "software", "interaction", "management", "creation", "teachers", "fluent", "learning", "specific", "designers", "development", "example"], "paperIds": ["242644458c6e", "b967c3a334ff", "77ba97562fe7", "098c9db1090d", "35874d939f8d"], "titles": ["A pattern approach to interaction design", "Industrial experience with design patterns", "Teachers’ Collaborative Pattern Language Design", "A semantic representation for domain-specific patterns", "Patterns, anticipation and participatory futures"], "passageIds": ["4000c6073b5d_p0003", "77ba97562fe7_p0059", "cd42a6611470_p0008"], "siblingOverlap": 0.1111111111111111}, {"keyword": "Design Patterns", "clusterId": "DPAT-C03", "paperCount": 21, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "software; visualization; architecture", "terms": ["software", "visualization", "architecture", "modeling", "structural", "specific", "example", "structure", "class", "abstraction", "formal", "application", "composition", "development", "device"], "paperIds": ["774e05395765", "f1a4dde3d156", "677c4dc89d1d", "bc6d0afdec8f", "b9f64070ed9a"], "titles": ["Understanding and using patterns in software development", "Catalogue of general-purpose software design patterns", "Elemental design patterns: A formal semantics for composition of OO software architecture", "Design patterns for component-oriented software development", "“Modeling-by-Patterns” of Web applications"], "passageIds": ["287b2d823523_p0010", "774e05395765_p0056", "1fda49b32463_p0005"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design Procedures", "clusterId": "DPROC-C01", "paperCount": 1, "assignmentStatus": "single_group_below_clustering_threshold", "status": "provisional", "descriptor": "restoration; stream; stream restoration", "terms": ["restoration", "stream", "stream restoration", "plan", "water", "phase", "proposed", "integrated", "river", "ecological", "detailed", "river restoration", "presented", "restoration phase", "developed"], "paperIds": ["6ea89aad84f6"], "titles": ["Development of Sustainable Integrated Design Framework for Stream Restoration"], "passageIds": ["6ea89aad84f6_p0076"], "siblingOverlap": 0.0}, {"keyword": "Design Rules", "clusterId": "DRUL-C01", "paperCount": 2, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "user; eudaimonic; mechanical", "terms": ["user", "eudaimonic", "mechanical", "tissue", "stretchable", "experience", "materials", "HCI", "technology", "electronic", "transient", "stable", "soft", "interaction", "well-being"], "paperIds": ["dbc171dde63a", "1d033f71eb02"], "titles": ["Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted", "Soft, Flexible, and Stretchable Platforms for Tissue-Interfaced Bioelectronics"], "passageIds": ["dbc171dde63a_p0002", "1d033f71eb02_p0068"], "siblingOverlap": 0.0}, {"keyword": "Design Rules", "clusterId": "DRUL-C02", "paperCount": 9, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "technical; modular; organizational", "terms": ["technical", "modular", "organizational", "development", "architecture", "baldwin", "components", "structure", "space", "prototyping", "clark", "functional", "hybrid", "considerations", "common"], "paperIds": ["f941f0424e1a", "2a22a314dcfb", "8aeb26c1e21d", "cf2ee8097a06", "6f114a6d29d1"], "titles": ["Design Rules, Volume 2: Chapter 6—The Value Structure of Technologies, Part 1: Mapping Functional Components", "Studying Software Architecture Through Design Spaces and Rules", "Steps toward a cognitive engineering: Design rules based on analyses of human error", "Design Rules, Volume 2: Chapter 4—The Mirroring Hypothesis: Linkages Inside and Across Transaction Free Zones", "Toward a Conceptualization of Organizational Modularity"], "passageIds": ["892ad7622adf_p0104", "6f114a6d29d1_p0036", "cf2ee8097a06_p0050"], "siblingOverlap": 0.0}, {"keyword": "Design frameworks", "clusterId": "DF-C01", "paperCount": 2, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "learning; activities; co-design", "terms": ["learning", "activities", "co-design", "learning activities", "feedback", "online", "participants", "vulnerability", "experiencing", "interaction", "experiencing vulnerability", "online learning", "learning designs", "terminology", "social"], "paperIds": ["1e7ab64c6cf9", "660ca24145b2"], "titles": ["Commentary: Strength-based co-design that EMPOWERs – Lessons from codesigning with older adults", "The E-Design Assessment Tool: an evidence-informed approach towards a consistent terminology for quantifying online distance learning activities"], "passageIds": ["660ca24145b2_p0007", "1e7ab64c6cf9_p0011"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design frameworks", "clusterId": "DF-C02", "paperCount": 4, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "game; experience; player", "terms": ["game", "experience", "player", "learning", "service", "dynamics", "systemic", "elements", "AI", "view", "components", "aspects", "mechanics", "entertainment", "literature"], "paperIds": ["e09769771b82", "7afa6519f6fc", "268903a30da5", "560be0c20de7"], "titles": ["The Experience, Dynamics and Artifacts Framework: Towards a Holistic Model for Designing Serious and Entertainment Games", "The experience, dynamics and artifacts framework: towards a holistic model for designing serious and entertainment games", "Systematic Review of Systemic Design Frameworks for Complex Challenges", "Designing for Trust, Progress, and Dignity: A Conceptual Framework for Reliability, Responsiveness, and Relational Quality in AI-Enabled Service Systems"], "passageIds": ["7afa6519f6fc_p0028", "e09769771b82_p0028", "268903a30da5_p0004"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design knowledge", "clusterId": "DK-C01", "paperCount": 23, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "HCI; practice; patterns", "terms": ["HCI", "practice", "patterns", "designers", "principles", "students", "social", "context", "guidelines", "heuristics", "user", "health", "form", "human", "AI"], "paperIds": ["03adadfa0ad4", "00e42ae113b8", "af4a4237d98a", "9d158233f041", "e8a17b6120e4"], "titles": ["Design Principles: Literature Review, Analysis, and Future Directions", "Utilization of design principles for hybrid learning configurations by interprofessional design teams", "Utilization of design principles for hybrid learning configurations by interprofessional design teams", "Guidelines supporting the formulation of design principles", "Designing as reflective conversation with the materials of a design situation"], "passageIds": ["4effa8e553a8_p0019", "9eda131748eb_p0064", "6e7959c82d5f_p0031"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design knowledge", "clusterId": "DK-C02", "paperCount": 37, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "data; ontology; development", "terms": ["data", "ontology", "development", "digital", "types", "prescriptive", "theory", "game", "designers", "artifacts", "researchers", "case", "abstract", "platform", "practice"], "paperIds": ["5a716d80ac6b", "07eb3166d706", "7b15d81000db", "b256aafa902e", "95eee570b8f1"], "titles": ["Towards a Method for Design Principle Development in Information Systems", "A Typology of Knowledge Creation in Design Science Research Projects", "The anatomy of a design theory", "A Multi-Grounded Design Research Process", "Accumulating design knowledge: A mechanisms-based approach"], "passageIds": ["02381ea80183_p0055", "77b350f029e7_p0073", "73537bfbe719_p0007"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design knowledge", "clusterId": "DK-C03", "paperCount": 8, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "product; management; development", "terms": ["product", "management", "development", "causal", "industrial", "prototyping", "product development", "dimensions", "reuse", "engineering", "near-field", "designer", "context", "practice", "following"], "paperIds": ["6b9f020cd024", "2a3139d14895", "cc5e9fe45cc6", "f6ba28a6efeb", "76d309f713b9"], "titles": ["Design knowledge for decision-making process in a DFX product design approach", "What is design knowledge from the viewpoint of CPM/PDD?", "A study of practice based design research models from knowledge integration perspective", "ON the HIERARCHICAL LEVELS of DESIGN KNOWLEDGE", "How industrial design knowledge differs from engineering design knowledge"], "passageIds": ["114973fd100e_p0010", "a883ec94b37a_p0004", "6b9f020cd024_p0007"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design methods", "clusterId": "DM-C01", "paperCount": 17, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "value; users; designers", "terms": ["value", "users", "designers", "practice", "context", "engineering", "concepts", "need", "development", "embodied", "systemic", "interaction", "innovative", "evaluation", "implications"], "paperIds": ["60c69d24c5a3", "40a2d86cd488", "5389fb1cc38b", "f16832406221", "878cf959ac53"], "titles": ["Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework", "Elements of a design method - a basis for describing and evaluating design methods", "Elements of a design method – a basis for describing and evaluating design methods", "A Framework for Systemic Design", "Designerly Research Methods and Researcherly Design Methods"], "passageIds": ["dbf31702e533_p0003", "1416cd2b88de_p0029", "f02904f836be_p0056"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design methods", "clusterId": "DM-C02", "paperCount": 4, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "autobiographical; role-playing; interactive", "terms": ["autobiographical", "role-playing", "interactive", "designers", "techniques", "building", "conventions", "game", "HCI", "improvisation", "group", "performance", "user", "autonomous", "constraints"], "paperIds": ["1c04ffa25528", "714b3f6f8ac7", "5ba50396ff25", "7ebbe03ea0d8"], "titles": ["The implications of improvisational acting and role-playing on design methodologies", "Degrees of Interaction: Towards a Classification", "What is a Convention in Interactive Narrative Design?", "Autobiographical design in HCI research: designing and learning through use-it-yourself"], "passageIds": ["1c04ffa25528_p0054", "714b3f6f8ac7_p0009", "7ebbe03ea0d8_p0003"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design methods", "clusterId": "DM-C03", "paperCount": 6, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "business; theory; complexity", "terms": ["business", "theory", "complexity", "design theory", "components", "variations", "base", "robust", "floorplan", "development", "community", "housing", "parts", "tools", "methodology"], "paperIds": ["ac2f5510db32", "885a1eee70e3", "94347a49c12b", "95c2b3d44aff", "799b06403189"], "titles": ["Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction", "The Design of Business Models: What, How and Why", "Using System Dynamics to Construct Design Theory for Community Information Systems", "Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory", "State of the Art on Robust Design Methods for Additive Manufacturing"], "passageIds": ["94347a49c12b_p0033", "95c2b3d44aff_p0006", "ac2f5510db32_p0013"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design principles", "clusterId": "DPRI-C01", "paperCount": 10, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "data; analysis; user", "terms": ["data", "analysis", "user", "heuristics", "mesh", "data mesh", "literature", "data analysis", "HCI", "frame", "example", "engineering", "obligations", "transparency", "domain"], "paperIds": ["01467836cecf", "93bb03ac03b6", "2ba0daf07e8e", "44848ca19e31", "1445730be68b"], "titles": ["Design principles for human-computer interfaces", "Design principles for data analysis", "Engineering design principles as patterns of relationships in frame creation", "Design Obligations for Software, with Examples from Data Abstraction and Adaptive Systems", "A problem-based approach to the advancement of heuristics for socio-technical evaluation"], "passageIds": ["93bb03ac03b6_p0009", "96dd29c8f345_p0113", "1445730be68b_p0031"], "siblingOverlap": 0.0}, {"keyword": "Design principles", "clusterId": "DPRI-C02", "paperCount": 5, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "learning; identity; games", "terms": ["learning", "identity", "games", "artificial", "learners", "evaluation", "player", "technology", "help", "group", "agents", "personalisation", "education", "designers", "support"], "paperIds": ["fee96194a322", "42c66c187222", "d0a936b480d4", "2280b868ea5f", "0b35e34543e2"], "titles": ["Personalising learning: towards a coherent learning design framework", "Toward an effective approach to collaboration education: A taxonomy for game design", "Acquiring educational access for neurodiverse learners through multisensory design principles", "Form and Function: Toward a Better Understanding of Design-Based Games", "Designing Artificial Identity: The Identity Design Framework and Research Agenda"], "passageIds": ["0b35e34543e2_p0025", "fee96194a322_p0004", "d0a936b480d4_p0017"], "siblingOverlap": 0.0}, {"keyword": "Design rationale", "clusterId": "DRAT-C01", "paperCount": 12, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "designers; capture; communication", "terms": ["designers", "capture", "communication", "representation", "language", "support", "argumentation", "claims", "decisions", "quality", "structure", "advice", "patterns", "reasoning", "context"], "paperIds": ["4c8bdfbd1309", "0050f73e4373", "40034332988c", "7a42dd52852e", "4567075d70b4"], "titles": ["Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication", "Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication", "Redesigning the rationale for design rationale", "What's in design rationale?", "Making Argumentation Serve Design"], "passageIds": ["edde6dc75b19_p0074", "12568f76ff90_p0034", "40034332988c_p0025"], "siblingOverlap": 0.1111111111111111}, {"keyword": "Design rationale", "clusterId": "DRAT-C02", "paperCount": 2, "assignmentStatus": "numeric_rule_failed_requires_review", "status": "provisional", "descriptor": "documentation; software; tools", "terms": ["documentation", "software", "tools", "learning", "level", "decisions", "situation", "activity", "support", "user", "screen", "inheritance", "engineering", "base", "experiences"], "paperIds": ["d5d39efbe945", "4ac74ce3f335"], "titles": ["Method rationale in method engineering", "Towards a framework for documentation design: an abstract model of computer-mediated activity"], "passageIds": ["4ac74ce3f335_p0003", "d5d39efbe945_p0019"], "siblingOverlap": 0.1111111111111111}, {"keyword": "Design theory", "clusterId": "DT-C01", "paperCount": 17, "assignmentStatus": "frozen_prior_pilot", "status": "frozen", "descriptor": "product; cognitive; impact", "terms": ["product", "cognitive", "impact", "load", "cognitive load", "human", "technology", "science", "understanding", "designers", "function", "conceptual", "engineering", "methodology", "theoretical"], "paperIds": ["4025e28730c1", "02f3ae017acb", "ceac90427122", "d250dc6eb9d9", "141f85abba0a"], "titles": ["Conceptual foundations of design problem solving", "Design Theory and Method of Complex Products: A Review", "Design-oriented human-computer interaction", "Systems Thinking and Design Thinking: The Search for Principles in the World We Are Making", "How to Define Design in Industrial Control and Automation Software"], "passageIds": ["363ca9685308_p0007", "232abf4e9e91_p0003", "0e02199ea150_p0040"], "siblingOverlap": 0.05263157894736842}, {"keyword": "Design theory", "clusterId": "DT-C02", "paperCount": 23, "assignmentStatus": "frozen_prior_pilot", "status": "frozen", "descriptor": "theoretical; practice; sonification", "terms": ["theoretical", "practice", "sonification", "type", "value", "kernel", "science", "example", "development", "artifact", "definition", "understanding", "constructs", "space", "structure"], "paperIds": ["c2c57ac5453e", "fd05a25a5e94", "83d1ebe7d6c0", "4db508a9681a", "f56243f52335"], "titles": ["Theory construction in design research. Criteria, approaches, and methods.", "Four Criteria for Design Theories", "Design Theory in Information Systems", "Philosophy of design: A meta-theoretical structure for design theory", "Theory construction in design research Criteria: Approaches, and methods"], "passageIds": ["50c94f5857d8_p0039", "5b3b013c191d_p0004", "1728dd2afe4b_p0035"], "siblingOverlap": 0.17647058823529413}, {"keyword": "Design theory", "clusterId": "DT-C03", "paperCount": 18, "assignmentStatus": "frozen_prior_pilot", "status": "frozen", "descriptor": "management; service; learning", "terms": ["management", "service", "learning", "social", "support", "theoretical", "development", "literature", "evaluation", "practice", "analysis", "gregor", "practitioners", "empirical", "digital"], "paperIds": ["c0372ed4d123", "c9175ef9ebfe", "43fee329f83e", "67d72b35ce6b", "288676f720a1"], "titles": ["Web-based information systems: Developing a design theory", "Management design theories", "Process design theory for digital information services", "A nascent design theory for explainable intelligent systems", "A design theory for digital platforms supporting online communities: a multiple case study"], "passageIds": ["0ecb6c9b7eeb_p0042", "92fd41483399_p0027", "9049c4d2bbec_p0020"], "siblingOverlap": 0.17647058823529413}];
+    const keywordFilter = document.getElementById('keywordFilter');
+    const statusFilter = document.getElementById('statusFilter');
+    const searchInput = document.getElementById('searchInput');
+    const groups = document.getElementById('groups');
+    const resultLine = document.getElementById('resultLine');
+    const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+    })[character]);
+    const keywords = [...new Set(clusters.map(cluster => cluster.keyword))]
+      .sort((left, right) => left.localeCompare(right));
+    keywordFilter.innerHTML = '<option value="all">All keyword groups</option>' +
+      keywords.map(keyword => `<option value="${escapeHtml(keyword)}">${escapeHtml(keyword)}</option>`).join('');
+
+    function card(cluster) {
+      const papers = cluster.titles.map((title, index) =>
+        `<li>${escapeHtml(title)}<div class="paper-id">${escapeHtml(cluster.paperIds[index] || '')}</div></li>`
+      ).join('');
+      const terms = cluster.terms.slice(0, 10)
+        .map(term => `<span class="chip">${escapeHtml(term)}</span>`).join('');
+      const overlap = Math.round(cluster.siblingOverlap * 100);
+      return `<article class="card">
+        <div class="card-top">
+          <div><div class="cluster-id">${escapeHtml(cluster.clusterId)}</div><div class="count">${cluster.paperCount} papers</div></div>
+          <span class="badge ${cluster.status}">${cluster.status}</span>
+        </div>
+        <div class="descriptor">${escapeHtml(cluster.descriptor || 'Descriptor pending')}</div>
+        <div class="descriptor-note">Statistical descriptor · not a final topic label</div>
+        <div class="chips">${terms}</div>
+        <div class="section"><div class="section-label">Representative papers</div><ul class="papers">${papers}</ul></div>
+        <div class="overlap"><div class="overlap-line"><span>Maximum sibling term overlap</span><span>${overlap}%</span></div><div class="bar"><span style="width:${overlap}%"></span></div></div>
+      </article>`;
+    }
+
+    function render() {
+      const keyword = keywordFilter.value;
+      const status = statusFilter.value;
+      const query = searchInput.value.trim().toLocaleLowerCase();
+      const filtered = clusters.filter(cluster => {
+        const matchesKeyword = keyword === 'all' || cluster.keyword === keyword;
+        const matchesStatus = status === 'all' || cluster.status === status;
+        const searchable = [
+          cluster.keyword, cluster.clusterId, cluster.descriptor,
+          ...cluster.terms, ...cluster.titles
+        ].join(' ').toLocaleLowerCase();
+        return matchesKeyword && matchesStatus && (!query || searchable.includes(query));
+      });
+      resultLine.textContent = `${filtered.length} of ${clusters.length} cluster interpretations shown`;
+      if (!filtered.length) {
+        groups.innerHTML = '<div class="empty">No cluster interpretations match these filters.</div>';
+        return;
+      }
+      const grouped = Object.groupBy
+        ? Object.groupBy(filtered, cluster => cluster.keyword)
+        : filtered.reduce((result, cluster) => {
+            (result[cluster.keyword] ||= []).push(cluster);
+            return result;
+          }, {});
+      groups.innerHTML = Object.entries(grouped).map(([keywordName, items]) =>
+        `<section><div class="group-title"><h2>${escapeHtml(keywordName)}</h2><div class="group-meta">${items.reduce((sum, item) => sum + item.paperCount, 0)} papers · ${items.length} interpretations</div></div><div class="cards">${items.map(card).join('')}</div></section>`
+      ).join('');
+    }
+    [keywordFilter, statusFilter].forEach(control => control.addEventListener('change', render));
+    searchInput.addEventListener('input', render);
+    render();
+  </script>
+</body>
+</html>
