@@ -3,14 +3,14 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design theory — Product, cognitive & impact [DT-C01] (17 papers)
+## Design theory — Problem solving and Design process [DT-C01] (17 papers)
 
-Within the predefined Design theory group, DT-C01 is statistically distinguished by product, cognitive, impact. Additional contrastive terms include load, cognitive load, human, technology, science. Representative papers include Conceptual foundations of design problem solving; Design Theory and Method of Complex Products: A Review. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+We argue that the interpretation of design problems lacks a similar rigorous investigation as problem solving received in both design theory and methodology. [E1] After reviewing current approaches to design theory, which are based on the transformative concept of function, we argue that this basis in function limits the scope of design problems and explanatory power of current design theories. [E2]
 
-## Design theory — Theoretical, practice & sonification [DT-C02] (23 papers)
+## Design theory — C-K theory and Design research [DT-C02] (23 papers)
 
-Within the predefined Design theory group, DT-C02 is statistically distinguished by theoretical, practice, sonification. Additional contrastive terms include type, value, kernel, science, example. Representative papers include Theory construction in design research. Criteria, approaches, and methods.; Four Criteria for Design Theories. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+We propose the addition of environments which can organize kernel theories and provide insight regarding interaction and influence of kernel theory in different use contexts. [E2] In this article, we explore the contribution design theory can make to empirically eliciting, and conceptually inferring, the real-time “tacit knowledge” of entrepreneurial practice as a precursor to producing micro-prescriptive knowledge. [E3]
 
-## Design theory — Management, service & learning [DT-C03] (18 papers)
+## Design theory — Information systems and Knowledge management [DT-C03] (18 papers)
 
-Within the predefined Design theory group, DT-C03 is statistically distinguished by management, service, learning. Additional contrastive terms include social, support, theoretical, development, literature. Representative papers include Web-based information systems: Developing a design theory; Management design theories. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+On the basis of these process knowledge types, we derive three theoretically grounded design principles for process guidance systems to support employees’ process execution. [E2] Many have argued that its theoretical basis has been slow to develop and that, in fact, a substantial theory of Software Engineering is still lacking.Objective: We propose a design theory for Software Engineering as a contribution to the debate. [E1]

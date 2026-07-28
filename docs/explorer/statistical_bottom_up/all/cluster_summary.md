@@ -3,110 +3,110 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design frameworks — Learning, activities & co-design [DF-C01] (2 papers)
+## Design frameworks — Learning activities and Learning design [DF-C01] (2 papers)
 
-Within the predefined Design frameworks group, DF-C01 is statistically distinguished by learning, activities, co-design. Additional contrastive terms include learning activities, feedback, online, participants, vulnerability. Representative papers include Commentary: Strength-based co-design that EMPOWERs – Lessons from codesigning with older adults; The E-Design Assessment Tool: an evidence-informed approach towards a consistent terminology for quantifying online distance learning activities. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Purpose This study aims to address the existing gap in co-design frameworks by introducing the EMPOWER framework, a strength-based co-design methodological approach specifically designed to tackle the key empowerment challenges associated with co-designing alongside individuals experiencing vulnerability. [E2] This study addresses these challenges by initially identifying key ODL activities that are associated with higher quality learning designs. [E1]
 
-## Design frameworks — Game, experience & player [DF-C02] (4 papers)
+## Design frameworks — Game design and Systemic design [DF-C02] (4 papers)
 
-Within the predefined Design frameworks group, DF-C02 is statistically distinguished by game, experience, player. Additional contrastive terms include learning, service, dynamics, systemic, elements. Representative papers include The Experience, Dynamics and Artifacts Framework: Towards a Holistic Model for Designing Serious and Entertainment Games; The experience, dynamics and artifacts framework: towards a holistic model for designing serious and entertainment games. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Systemic design has been noted as a promising scaffold to approach the emerging challenges faced by designers in understanding the dynamic and interconnected problems that define contemporary reality. [E1] To overcome this issue, this work proposes a holistic view of games that includes both learning and entertainment elements, making them indistinguishable in creating either an entertainment or serious game. [E2]
 
-## Design Guidelines — User interface, tacit & visualization [DG-C01] (3 papers)
+## Design Guidelines — Tacit knowledge and Graphic design [DG-C01] (3 papers)
 
-Within the predefined Design Guidelines group, DG-C01 is statistically distinguished by user interface, tacit, visualization. Additional contrastive terms include component, instances, constraints, characteristics, support. Representative papers include Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines; Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+By understanding the reasons for the lack of support on these instances based on their characteristics, we propose design guidelines for capturing and applying tacit knowledge in design tools. [E1] We propose modeling visualization design knowledge as a collection of constraints, in conjunction with a method to learn weights for soft constraints from experimental data. [E2]
 
-## Design Guidelines — Rural, user & geo-portals [DG-C02] (4 papers)
+## Design Guidelines — Rural design guidelines and User experience [DG-C02] (4 papers)
 
-Within the predefined Design Guidelines group, DG-C02 is statistically distinguished by rural, user, geo-portals. Additional contrastive terms include development, sidewalks, user experience, planning, rural development. Representative papers include The equitable use concept in sidewalk design; A Comparative Study of Chinese and American Rural Design Guidelines. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper, we try to tackle these shortcomings by analyzing and formalizing the requirements for map-based geo-portals in a user experience based approach. [E1] We developed a new tool, Healthy Eating Design Guidelines for School Architecture, to provide practitioners in architecture and public health with a practical set of spatially organized and theory-based strategies for making school environments more conducive to learning about and practicing healthy eating by optimizing physical resources and learning spaces. [E2]
 
-## Design Guidelines — Experience, visualization & HCI [DG-C03] (6 papers)
+## Design Guidelines — Information visualization and Interaction design [DG-C03] (6 papers)
 
-Within the predefined Design Guidelines group, DG-C03 is statistically distinguished by experience, visualization, HCI. Additional contrastive terms include interaction, users, gratifications, immersive, media. Representative papers include From interaction to trajectories: designing coherent journeys through user experiences; Towards a Model of Information Aesthetics in Information Visualization. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Our framework is intended to sensitize future studies, help distill craft knowledge into design guidelines and patterns, identify technology requirements, and provide a boundary object to connect HCI with Performance Studies. [E1] We argue that U&G is a good approach to researching likeability of media applications. [E2]
 
-## Design Guidelines — Task, language & software [DG-C04] (9 papers)
+## Design Guidelines — Design principles and User interface [DG-C04] (9 papers)
 
-Within the predefined Design Guidelines group, DG-C04 is statistically distinguished by task, language, software. Additional contrastive terms include architecture, domain, specific, tools, user interface. Representative papers include Separation of Modeling Principles and Design Principles in Enterprise Engineering; A Preliminary Proposal Towards Unambiguous Definitions for Modular Interfaces and Interactions. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper we reflect on our combined experience of conducting twenty-one design studies, as well as reading and reviewing many more, and on an extensive literature review of other field work methods and methodologies. [E1] In this paper we investigate guidelines that are useful for designing domain specific languages, largely based on our experience in developing languages as well as relying on existing guidelines on general purpose (GPLs) and modeling languages. [E2]
 
-## Design Heuristics — Product, designers & concepts [DH-C01] (7 papers)
+## Design Heuristics — Idea generation and Product design [DH-C01] (7 papers)
 
-Within the predefined Design Heuristics group, DH-C01 is statistically distinguished by product, designers, concepts. Additional contrastive terms include example, generation, idea, observed, solutions. Representative papers include Design Heuristics in Innovative Products; Evidence-based design heuristics for idea generation. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Based on our results, we argue that the final set of heuristics we present in this paper are useful for supporting designers in identifying and addressing usability issues in web-based tools aimed at communicating severe weather risk information to the public. [E2] In this paper, we demonstrate a content analysis method for discovering heuristics in the designs of innovative products. [E1]
 
-## Design Heuristics — Formats, communication & communication formats [DH-C02] (3 papers)
+## Design Heuristics — Communication formats and Industrial design [DH-C02] (3 papers)
 
-Within the predefined Design Heuristics group, DH-C02 is statistically distinguished by formats, communication, communication formats. Additional contrastive terms include time, people, dialogue, industrial, product. Representative papers include Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception; Dialogue appropriate to assistive technology product design: A taxonomy of communication formats in relation to modes of sensory perception. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+This article reviews the use of dialogue and associated communication formats within the context of participatory or co-design decision-making processes in the development of assistive technologies. [E1] Meta-design theory emphasizes that future use can never be entirely anticipated at design time, as users shape their environments in response to emerging needs; systems should therefore be designed to adapt to future conditions in the hands of end users. [E2]
 
-## Design knowledge — HCI, practice & patterns [DK-C01] (23 papers)
+## Design knowledge — Design principles and HCI design [DK-C01] (23 papers)
 
-Within the predefined Design knowledge group, DK-C01 is statistically distinguished by HCI, practice, patterns. Additional contrastive terms include designers, principles, students, social, context. Representative papers include Design Principles: Literature Review, Analysis, and Future Directions; Utilization of design principles for hybrid learning configurations by interprofessional design teams. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+We contribute prescriptive design knowledge for preserving human-centric decision-making by motivating expert sharing, enabling articulation, establishing fidelity, and ensuring applicability to successors. [E1] We propose a complementary perspective by looking at design projects and traditions where the 'ultimate particulars' can be considered to be activities rather than things. [E2]
 
-## Design knowledge — Data, ontology & development [DK-C02] (37 papers)
+## Design knowledge — Design theory and Design research [DK-C02] (37 papers)
 
-Within the predefined Design knowledge group, DK-C02 is statistically distinguished by data, ontology, development. Additional contrastive terms include digital, types, prescriptive, theory, game. Representative papers include Towards a Method for Design Principle Development in Information Systems; A Typology of Knowledge Creation in Design Science Research Projects. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper, we identify, analyze, and map a collection of 63 existing ethics-focused methods intentionally designed for ethical impact. [E1] We develop an empirically grounded understanding of how design knowledge accumulates over time. [E3]
 
-## Design knowledge — Product, management & development [DK-C03] (8 papers)
+## Design knowledge — Product design and Process knowledge [DK-C03] (8 papers)
 
-Within the predefined Design knowledge group, DK-C03 is statistically distinguished by product, management, development. Additional contrastive terms include causal, industrial, prototyping, product development, dimensions. Representative papers include Design knowledge for decision-making process in a DFX product design approach; What is design knowledge from the viewpoint of CPM/PDD?. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+This paper presents a mathematical comparison of procedural knowledge and causal knowledge, and discusses the potential roles and feasibility of causal knowledge across product development knowledge management. [E1] Through the analysis, we define four typical practice based design research models from the viewpoint of knowledge integration. [E2]
 
-## Design methods — Value, users & designers [DM-C01] (17 papers)
+## Design methods — Design research and Design process [DM-C01] (17 papers)
 
-Within the predefined Design methods group, DM-C01 is statistically distinguished by value, users, designers. Additional contrastive terms include practice, context, engineering, concepts, need. Representative papers include Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework; Elements of a design method - a basis for describing and evaluating design methods. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Our findings identify a broader range than previously described, additional sources and heuristics supporting their development as well some important evaluation criteria. [E1] First, we propose a ‘chain of evidence’, from motivation to claims, operationalising this in a systematic assessment framework. [E2]
 
-## Design methods — Autobiographical, role-playing & interactive [DM-C02] (4 papers)
+## Design methods — Autobiographical design and Design process [DM-C02] (4 papers)
 
-Within the predefined Design methods group, DM-C02 is statistically distinguished by autobiographical, role-playing, interactive. Additional contrastive terms include designers, techniques, building, conventions, game. Representative papers include The implications of improvisational acting and role-playing on design methodologies; Degrees of Interaction: Towards a Classification. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+First we define the type of performance behavior that an interactive building or environment has. [E1] Our goal in this paper is to bring these hidden practices to light and offer guidelines for how HCI researchers can usefully engage in what we term 'autobiographical design'---design research drawing on extensive, genuine usage by those creating or building a system. [E2]
 
-## Design methods — Business, theory & complexity [DM-C03] (6 papers)
+## Design methods — Design theory and Design process [DM-C03] (6 papers)
 
-Within the predefined Design methods group, DM-C03 is statistically distinguished by business, theory, complexity. Additional contrastive terms include design theory, components, variations, base, robust. Representative papers include Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction; The Design of Business Models: What, How and Why. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+This paper presents a survey on complexity theory inclusive of work from the disciplines which range from cybernetics to systems and information theory. [E1] We present a meta-model of IS development which focuses on the role of theory in IS design. [E2]
 
-## Design Patterns — Game, AI & alexander [DPAT-C01] (14 papers)
+## Design Patterns — Game design and Software engineering [DPAT-C01] (14 papers)
 
-Within the predefined Design Patterns group, DPAT-C01 is statistically distinguished by game, AI, alexander. Additional contrastive terms include interaction, achievements, engineering, quality, software. Representative papers include An overview of human-computer interaction patterns in pervasive systems; Thriving Systems Theory: An Emergent Information Systems Design Theory. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+This paper presents the E-AIP (Engineering–AI Pedagogy) Framework, which centers three pillars learning Outcomes, Process Evidence, and Integrity & Ethics Guardrails and links them to design levers (AI function, task authenticity, feedback granularity, locus of agency). [E1] Building on practice-oriented design ethics research in HCI, we define ethical encounters as practitioner-identified situations that expose tensions and value-laden decisions, emerging from the situated realities of day-to-day design work. [E5]
 
-## Design Patterns — Language, context & solutions [DPAT-C02] (15 papers)
+## Design Patterns — Pattern language and Interaction design [DPAT-C02] (15 papers)
 
-Within the predefined Design Patterns group, DPAT-C02 is statistically distinguished by language, context, solutions. Additional contrastive terms include domain, software, interaction, management, creation. Representative papers include A pattern approach to interaction design; Industrial experience with design patterns. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper, we explore how such building blocks might serve as interaction design patterns that enable design exploration and prototyping for human-robot interaction. [E1] This paper presents an approach that uses pattern languages to capture this knowledge in software development, human-computer interaction (HCI) and the application domain. [E2]
 
-## Design Patterns — Software, visualization & architecture [DPAT-C03] (21 papers)
+## Design Patterns — Software design and Computer science [DPAT-C03] (21 papers)
 
-Within the predefined Design Patterns group, DPAT-C03 is statistically distinguished by software, visualization, architecture. Additional contrastive terms include modeling, structural, specific, example, structure. Representative papers include Understanding and using patterns in software development; Catalogue of general-purpose software design patterns. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper we propose a comprehensive architecture pattern organization scheme that extends the Pattern Oriented System Architecture pattern categories to encompass end to end architecture concerns. [E1] Building on this definition, we introduce a layered model of prompt abstraction and a comprehensive taxonomy of meta-prompting practices, including framework based prompting, prompt-generation loops, structured prompt representations, reasoning templates, governance layers, and multi-agent orchestration. [E2]
 
-## Design principles — Data, analysis & user [DPRI-C01] (10 papers)
+## Design principles — Design problem and Engineering design [DPRI-C01] (10 papers)
 
-Within the predefined Design principles group, DPRI-C01 is statistically distinguished by data, analysis, user. Additional contrastive terms include heuristics, mesh, data mesh, literature, data analysis. Representative papers include Design principles for human-computer interfaces; Design principles for data analysis. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+To alleviate these shortcomings in forthcoming research while acknowledging the challenges of human-centered design in healthcare, we introduce the INTRPRT guideline, a systematic design directive for transparent ML systems in medical image analysis. [E3] Through a theoretical synthesis drawing on research in conversational repair, dialogue structure, AI transparency, and empirical studies of user interaction with LLMs, we identify four design principles for dialogic disclaimers: Conversational Continuity, Contextual Adaptation, Layered Communication, and User Agency. [E4]
 
-## Design principles — Learning, identity & games [DPRI-C02] (5 papers)
+## Design principles — Universal design and Special education [DPRI-C02] (5 papers)
 
-Within the predefined Design principles group, DPRI-C02 is statistically distinguished by learning, identity, games. Additional contrastive terms include artificial, learners, evaluation, player, technology. Representative papers include Personalising learning: towards a coherent learning design framework; Toward an effective approach to collaboration education: A taxonomy for game design. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper, we define this genre as “design-based games” and identify evaluating player designs as a major challenge these games face. [E2] To address urgent challenges in artificial identity design, including harmful stereotypes and deceptive practices, we introduce the Identity Design (ID) Framework and an accompanying research agenda. [E3]
 
-## Design Procedures — Restoration, stream & stream restoration [DPROC-C01] (1 papers)
+## Design Procedures — Stream restoration and Restoration design [DPROC-C01] (1 papers)
 
-Within the predefined Design Procedures group, DPROC-C01 is statistically distinguished by restoration, stream, stream restoration. Additional contrastive terms include plan, water, phase, proposed, integrated. Representative papers include Development of Sustainable Integrated Design Framework for Stream Restoration. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+The purpose of this study was to establish a sustainable integrated design framework for stream restoration that supplemented the limited scope of application and the resulting problems. [E1]
 
-## Design rationale — Designers, capture & communication [DRAT-C01] (12 papers)
+## Design rationale — Design process and Design decisions [DRAT-C01] (12 papers)
 
-Within the predefined Design rationale group, DRAT-C01 is statistically distinguished by designers, capture, communication. Additional contrastive terms include representation, language, support, argumentation, claims. Representative papers include Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper we analyze the essential problems that prevent the successful development and use of design rationale systems. [E1] In this article, we develop a framework for evaluating the expressive adequacy of design rationale representations. [E2]
 
-## Design rationale — Documentation, software & tools [DRAT-C02] (2 papers)
+## Design rationale — Method rationale and Method use [DRAT-C02] (2 papers)
 
-Within the predefined Design rationale group, DRAT-C02 is statistically distinguished by documentation, software, tools. Additional contrastive terms include learning, level, decisions, situation, activity. Representative papers include Method rationale in method engineering; Towards a framework for documentation design: an abstract model of computer-mediated activity. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper we discuss the need to integrate formal metamodels with an informal method rationale. [E1] Academic studies related to the design of user documentation for software are sparse, and no underlying reference framework is available within which design rationale could be expressed. [E2]
 
-## Design Rules — User, eudaimonic & mechanical [DRUL-C01] (2 papers)
+## Design Rules — Design principles and Eudaimonic user experience [DRUL-C01] (2 papers)
 
-Within the predefined Design Rules group, DRUL-C01 is statistically distinguished by user, eudaimonic, mechanical. Additional contrastive terms include tissue, stretchable, experience, materials, HCI. Representative papers include Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted; Soft, Flexible, and Stretchable Platforms for Tissue-Interfaced Bioelectronics. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this provocative paper, we present the Eudaimonic User Experience (EUX) and its design rules and artifacts that we have derived based on previous work from HCI and psychology. [E1] Based on this framework, we outline general mechanical design principles—ultrathin structures, stretchable architectures, and bioadhesive interfaces—that enable deformable devices to conform to moving, curved surfaces. [E2]
 
-## Design Rules — Technical, modular & organizational [DRUL-C02] (9 papers)
+## Design Rules — Baldwin clark and Design space [DRUL-C02] (9 papers)
 
-Within the predefined Design Rules group, DRUL-C02 is statistically distinguished by technical, modular, organizational. Additional contrastive terms include development, architecture, baldwin, components, structure. Representative papers include Design Rules, Volume 2: Chapter 6—The Value Structure of Technologies, Part 1: Mapping Functional Components; Studying Software Architecture Through Design Spaces and Rules. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+We propose a specified taxonomy and provide unambiguous mathematical definitions for the most common design rules. [E2] In this paper, we propose a set of rules for developing modular architectures. [E1]
 
-## Design theory — Product, cognitive & impact [DT-C01] (17 papers)
+## Design theory — Problem solving and Design process [DT-C01] (17 papers)
 
-Within the predefined Design theory group, DT-C01 is statistically distinguished by product, cognitive, impact. Additional contrastive terms include load, cognitive load, human, technology, science. Representative papers include Conceptual foundations of design problem solving; Design Theory and Method of Complex Products: A Review. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+We argue that the interpretation of design problems lacks a similar rigorous investigation as problem solving received in both design theory and methodology. [E1] After reviewing current approaches to design theory, which are based on the transformative concept of function, we argue that this basis in function limits the scope of design problems and explanatory power of current design theories. [E2]
 
-## Design theory — Theoretical, practice & sonification [DT-C02] (23 papers)
+## Design theory — C-K theory and Design research [DT-C02] (23 papers)
 
-Within the predefined Design theory group, DT-C02 is statistically distinguished by theoretical, practice, sonification. Additional contrastive terms include type, value, kernel, science, example. Representative papers include Theory construction in design research. Criteria, approaches, and methods.; Four Criteria for Design Theories. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+We propose the addition of environments which can organize kernel theories and provide insight regarding interaction and influence of kernel theory in different use contexts. [E2] In this article, we explore the contribution design theory can make to empirically eliciting, and conceptually inferring, the real-time “tacit knowledge” of entrepreneurial practice as a precursor to producing micro-prescriptive knowledge. [E3]
 
-## Design theory — Management, service & learning [DT-C03] (18 papers)
+## Design theory — Information systems and Knowledge management [DT-C03] (18 papers)
 
-Within the predefined Design theory group, DT-C03 is statistically distinguished by management, service, learning. Additional contrastive terms include social, support, theoretical, development, literature. Representative papers include Web-based information systems: Developing a design theory; Management design theories. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+On the basis of these process knowledge types, we derive three theoretically grounded design principles for process guidance systems to support employees’ process execution. [E2] Many have argued that its theoretical basis has been slow to develop and that, in fact, a substantial theory of Software Engineering is still lacking.Objective: We propose a design theory for Software Engineering as a contribution to the debate. [E1]

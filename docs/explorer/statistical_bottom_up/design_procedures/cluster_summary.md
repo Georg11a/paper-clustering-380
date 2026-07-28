@@ -3,6 +3,6 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design Procedures — Restoration, stream & stream restoration [DPROC-C01] (1 papers)
+## Design Procedures — Stream restoration and Restoration design [DPROC-C01] (1 papers)
 
-Within the predefined Design Procedures group, DPROC-C01 is statistically distinguished by restoration, stream, stream restoration. Additional contrastive terms include plan, water, phase, proposed, integrated. Representative papers include Development of Sustainable Integrated Design Framework for Stream Restoration. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+The purpose of this study was to establish a sustainable integrated design framework for stream restoration that supplemented the limited scope of application and the resulting problems. [E1]

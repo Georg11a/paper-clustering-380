@@ -3,10 +3,10 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design Heuristics — Product, designers & concepts [DH-C01] (7 papers)
+## Design Heuristics — Idea generation and Product design [DH-C01] (7 papers)
 
-Within the predefined Design Heuristics group, DH-C01 is statistically distinguished by product, designers, concepts. Additional contrastive terms include example, generation, idea, observed, solutions. Representative papers include Design Heuristics in Innovative Products; Evidence-based design heuristics for idea generation. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Based on our results, we argue that the final set of heuristics we present in this paper are useful for supporting designers in identifying and addressing usability issues in web-based tools aimed at communicating severe weather risk information to the public. [E2] In this paper, we demonstrate a content analysis method for discovering heuristics in the designs of innovative products. [E1]
 
-## Design Heuristics — Formats, communication & communication formats [DH-C02] (3 papers)
+## Design Heuristics — Communication formats and Industrial design [DH-C02] (3 papers)
 
-Within the predefined Design Heuristics group, DH-C02 is statistically distinguished by formats, communication, communication formats. Additional contrastive terms include time, people, dialogue, industrial, product. Representative papers include Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception; Dialogue appropriate to assistive technology product design: A taxonomy of communication formats in relation to modes of sensory perception. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+This article reviews the use of dialogue and associated communication formats within the context of participatory or co-design decision-making processes in the development of assistive technologies. [E1] Meta-design theory emphasizes that future use can never be entirely anticipated at design time, as users shape their environments in response to emerging needs; systems should therefore be designed to adapt to future conditions in the hands of end users. [E2]

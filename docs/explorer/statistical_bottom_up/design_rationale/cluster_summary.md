@@ -3,10 +3,10 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design rationale — Designers, capture & communication [DRAT-C01] (12 papers)
+## Design rationale — Design process and Design decisions [DRAT-C01] (12 papers)
 
-Within the predefined Design rationale group, DRAT-C01 is statistically distinguished by designers, capture, communication. Additional contrastive terms include representation, language, support, argumentation, claims. Representative papers include Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper we analyze the essential problems that prevent the successful development and use of design rationale systems. [E1] In this article, we develop a framework for evaluating the expressive adequacy of design rationale representations. [E2]
 
-## Design rationale — Documentation, software & tools [DRAT-C02] (2 papers)
+## Design rationale — Method rationale and Method use [DRAT-C02] (2 papers)
 
-Within the predefined Design rationale group, DRAT-C02 is statistically distinguished by documentation, software, tools. Additional contrastive terms include learning, level, decisions, situation, activity. Representative papers include Method rationale in method engineering; Towards a framework for documentation design: an abstract model of computer-mediated activity. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper we discuss the need to integrate formal metamodels with an informal method rationale. [E1] Academic studies related to the design of user documentation for software are sparse, and no underlying reference framework is available within which design rationale could be expressed. [E2]

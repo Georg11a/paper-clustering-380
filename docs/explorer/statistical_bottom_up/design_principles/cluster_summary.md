@@ -3,10 +3,10 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design principles — Data, analysis & user [DPRI-C01] (10 papers)
+## Design principles — Design problem and Engineering design [DPRI-C01] (10 papers)
 
-Within the predefined Design principles group, DPRI-C01 is statistically distinguished by data, analysis, user. Additional contrastive terms include heuristics, mesh, data mesh, literature, data analysis. Representative papers include Design principles for human-computer interfaces; Design principles for data analysis. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+To alleviate these shortcomings in forthcoming research while acknowledging the challenges of human-centered design in healthcare, we introduce the INTRPRT guideline, a systematic design directive for transparent ML systems in medical image analysis. [E3] Through a theoretical synthesis drawing on research in conversational repair, dialogue structure, AI transparency, and empirical studies of user interaction with LLMs, we identify four design principles for dialogic disclaimers: Conversational Continuity, Contextual Adaptation, Layered Communication, and User Agency. [E4]
 
-## Design principles — Learning, identity & games [DPRI-C02] (5 papers)
+## Design principles — Universal design and Special education [DPRI-C02] (5 papers)
 
-Within the predefined Design principles group, DPRI-C02 is statistically distinguished by learning, identity, games. Additional contrastive terms include artificial, learners, evaluation, player, technology. Representative papers include Personalising learning: towards a coherent learning design framework; Toward an effective approach to collaboration education: A taxonomy for game design. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+In this paper, we define this genre as “design-based games” and identify evaluating player designs as a major challenge these games face. [E2] To address urgent challenges in artificial identity design, including harmful stereotypes and deceptive practices, we introduce the Identity Design (ID) Framework and an accompanying research agenda. [E3]

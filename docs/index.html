@@ -203,14 +203,6 @@
 <option value="Design frameworks">Design frameworks (6)</option>
 <option value="Design Procedures">Design procedures (1)</option></select>
       </div>
-      <div class="field">
-        <label for="methodSelect">Clustering Method</label>
-        <select id="methodSelect"><option value="statistical_bottom_up" selected>STATISTICAL BOTTOM-UP</option></select>
-      </div>
-      <div class="field">
-        <label for="viewSelect">Analysis View</label>
-        <select id="viewSelect"><option value="context" selected>Context</option></select>
-      </div>
       <button id="applyBtn" type="button">Apply</button>
       <div class="current" id="currentLabel">282 papers · 27 interpretations</div>
       <div class="cluster-tools">
@@ -275,8 +267,6 @@
     const withCacheBuster = path => `${path}${path.includes('?') ? '&' : '?'}v=${buildId}-${Date.now()}`;
     const frame = document.getElementById('explorerFrame');
     const keywordSelect = document.getElementById('keywordSelect');
-    const methodSelect = document.getElementById('methodSelect');
-    const viewSelect = document.getElementById('viewSelect');
     const applyBtn = document.getElementById('applyBtn');
     const currentLabel = document.getElementById('currentLabel');
     const summaryLink = document.getElementById('summaryLink');
@@ -302,7 +292,11 @@
     }
 
     function findRun() {
-      return path1Runs.find(run => run.keyword === keywordSelect.value && run.method === methodSelect.value && run.text_view === viewSelect.value);
+      return path1Runs.find(run =>
+        run.keyword === keywordSelect.value &&
+        run.method === 'statistical_bottom_up' &&
+        run.text_view === 'context'
+      );
     }
 
     function findSmallGroup() {
@@ -312,8 +306,6 @@
     function refreshAvailability() {
       const run = findRun();
       const smallGroup = findSmallGroup();
-      methodSelect.disabled = Boolean(smallGroup);
-      viewSelect.disabled = Boolean(smallGroup);
       applyBtn.disabled = !(run || smallGroup);
       if (run) {
         currentLabel.textContent = displayLabel(run);
@@ -322,8 +314,8 @@
         currentLabel.textContent = `${keywordSelect.value} · ${smallGroup.papers} papers · paper map`;
         note.textContent = 'This small group is available as a paper map with one singleton display cluster per paper.';
       } else {
-        currentLabel.textContent = `${keywordSelect.value} + ${methodSelect.value.toUpperCase()} + ${viewSelect.value} has not been generated yet`;
-        note.textContent = 'This combination is unavailable. Choose another generated keyword/method/view pair.';
+        currentLabel.textContent = `${keywordSelect.value} has not been generated yet`;
+        note.textContent = 'This keyword group is unavailable.';
       }
     }
 
@@ -401,8 +393,6 @@
     }
 
     keywordSelect.addEventListener('change', refreshAvailability);
-    methodSelect.addEventListener('change', refreshAvailability);
-    viewSelect.addEventListener('change', refreshAvailability);
     applyBtn.addEventListener('click', event => {
       event.preventDefault();
       loadSelected();

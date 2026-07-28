@@ -16,10 +16,13 @@ import numpy as np
 import pandas as pd
 import umap
 from ftfy import fix_encoding
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_distances
 from sklearn.preprocessing import normalize
 
-from cluster_papers import write_dashboard
+from cluster_papers import split_context_paragraphs, write_dashboard
+from evidence_scorer import PaperParagraphs, select_cluster_evidence, split_sentences
+from theory_typology import classify_theory_move
 
 
 def slugify(value: str) -> str:
@@ -32,38 +35,232 @@ def clean_metadata(value: object) -> str:
     )
 
 
-def summary_sentence(row: pd.Series) -> str:
-    terms = [term.strip() for term in str(row["top_terms"]).split("|") if term.strip()]
-    representatives = [
-        title.strip()
-        for title in str(row["representative_titles"]).split("|")
-        if title.strip()
+DISPLAY_ACRONYMS = {
+    "ai": "AI",
+    "hci": "HCI",
+    "ui": "UI",
+    "ux": "UX",
+    "c-k": "C-K",
+}
+
+
+def display_phrase(value: str) -> str:
+    words = []
+    for word in value.split():
+        words.append(DISPLAY_ACRONYMS.get(word.casefold(), word))
+    phrase = " ".join(words)
+    return phrase[:1].upper() + phrase[1:]
+
+
+def normalize_words(value: str) -> str:
+    return " ".join(re.findall(r"[a-z0-9]+", value.casefold()))
+
+
+def phrase_roots(value: str) -> set[str]:
+    roots = set()
+    for word in normalize_words(value).split():
+        if len(word) > 4 and word.endswith("ies"):
+            word = word[:-3] + "y"
+        elif len(word) > 3 and word.endswith("s"):
+            word = word[:-1]
+        roots.add(word)
+    return roots
+
+
+def build_cluster_keyphrases(base: pd.DataFrame) -> dict[str, list[str]]:
+    """Extract contrastive multiword labels within each predefined keyword group."""
+    output: dict[str, list[str]] = {}
+    for keyword, keyword_frame in base.groupby("keyword", sort=True):
+        cluster_ids = sorted(keyword_frame["cluster_id"].unique())
+
+        class_texts = []
+        cluster_papers: dict[str, list[str]] = {}
+        for cluster_id in cluster_ids:
+            subset = keyword_frame[keyword_frame["cluster_id"] == cluster_id]
+            paper_texts = (
+                subset["title"].astype(str)
+                + " "
+                + subset["abstract"].astype(str)
+                + " "
+                + subset["subdocument"].astype(str)
+            ).tolist()
+            cluster_papers[cluster_id] = paper_texts
+            class_texts.append(" ".join(paper_texts))
+
+        vectorizer = CountVectorizer(
+            stop_words="english",
+            ngram_range=(2, 5),
+            token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z-]{2,}\b",
+            max_features=120_000,
+        )
+        counts = vectorizer.fit_transform(class_texts).toarray().astype(float)
+        terms = np.asarray(vectorizer.get_feature_names_out())
+        term_frequency = counts / np.maximum(counts.sum(axis=1, keepdims=True), 1.0)
+        average_class_length = max(float(counts.sum(axis=1).mean()), 1.0)
+        inverse_class_frequency = np.log1p(
+            average_class_length / np.maximum(counts.sum(axis=0), 1.0)
+        )
+        scores = term_frequency * inverse_class_frequency
+
+        keyword_roots = phrase_roots(str(keyword))
+        for cluster_position, cluster_id in enumerate(cluster_ids):
+            papers = cluster_papers[cluster_id]
+            paper_matrix = vectorizer.transform(papers)
+            support = np.asarray((paper_matrix > 0).sum(axis=0)).ravel()
+            adjusted = scores[cluster_position] * np.power(
+                support / max(len(papers), 1), 0.15
+            )
+            adjusted *= np.asarray(
+                [1.0 + 0.05 * min(len(term.split()) - 2, 2) for term in terms]
+            )
+            chosen: list[str] = []
+            chosen_roots: list[set[str]] = []
+            for term_index in np.argsort(adjusted)[::-1]:
+                term = str(terms[term_index]).strip()
+                roots = phrase_roots(term)
+                if adjusted[term_index] <= 0:
+                    break
+                if roots == keyword_roots:
+                    continue
+                if len(papers) >= 5 and support[term_index] < 2:
+                    continue
+                if len(roots) < 2 or len(roots) < len(term.split()):
+                    continue
+                if any(
+                    noisy in term
+                    for noisy in (
+                        "et al",
+                        "figure ",
+                        "table ",
+                        "copyright",
+                        "proceedings",
+                    )
+                ):
+                    continue
+                if any(
+                    roots <= prior or prior <= roots or len(roots & prior) / len(roots | prior) > 0.55
+                    for prior in chosen_roots
+                ):
+                    continue
+                chosen.append(display_phrase(term))
+                chosen_roots.append(roots)
+                if len(chosen) == 2:
+                    break
+            output[cluster_id] = chosen or [display_phrase(str(keyword))]
+    return output
+
+
+def phrase_label(keyword: str, phrases: list[str]) -> str:
+    if len(phrases) == 1:
+        return f"{keyword} — {phrases[0]}"
+    return f"{keyword} — {phrases[0]} and {phrases[1]}"
+
+
+def cluster_evidence(
+    subset: pd.DataFrame, terms: list[str]
+) -> list:
+    papers = [
+        PaperParagraphs(
+            paper_id=str(row["paper_id"]),
+            title=str(row["title"]),
+            paragraphs=(
+                [str(row["abstract"]).strip()]
+                if str(row["abstract"]).strip()
+                else split_context_paragraphs(row["subdocument"])
+            ),
+            is_representative=bool(row.get("is_representative_top3", False)),
+        )
+        for _, row in subset.iterrows()
     ]
-    sentence = (
-        f"Within the predefined {row['keyword']} group, {row.name} is "
-        f"statistically distinguished by {', '.join(terms[:3])}."
+    return select_cluster_evidence(
+        papers,
+        cluster_terms=terms,
+        keyword=str(subset.iloc[0]["keyword"]),
+        top_k=6,
+        max_per_paper=2,
+        min_score=3.0,
     )
-    if len(terms) > 3:
-        sentence += f" Additional contrastive terms include {', '.join(terms[3:8])}."
-    if representatives:
-        sentence += " Representative papers include " + "; ".join(representatives[:2]) + "."
-    sentence += (
-        " This is an analysis-frozen statistical interpretation, not a final "
-        "editorial topic label."
-    )
-    return sentence
 
 
-def human_descriptor(value: object) -> str:
-    parts = [part.strip() for part in str(value).split(";") if part.strip()]
-    if not parts:
-        return "Topic description pending"
-    parts[0] = parts[0][:1].upper() + parts[0][1:]
-    if len(parts) == 1:
-        return parts[0]
-    if len(parts) == 2:
-        return f"{parts[0]} & {parts[1]}"
-    return f"{', '.join(parts[:-1])} & {parts[-1]}"
+def extractive_summary(evidence: list) -> str:
+    if not evidence:
+        return "No sufficiently supported representative sentences were found."
+    selected = []
+    used_papers = set()
+    ranked = sorted(
+        enumerate(evidence, start=1),
+        key=lambda pair: (
+            pair[1].score_breakdown.first_person + pair[1].score_breakdown.action,
+            1 if pair[1].paragraph_index == 0 else 0,
+            pair[1].score,
+        ),
+        reverse=True,
+    )
+    for evidence_index, item in ranked:
+        if item.paper_id in used_papers:
+            continue
+        candidates = []
+        for sentence in split_sentences(item.sentences):
+            sentence = re.sub(r"\s+", " ", sentence).strip()
+            sentence = re.sub(r"\s*©\s*\d{4}.*$", "", sentence).strip()
+            sentence = re.sub(
+                r"(?<=[a-z)])(?=(?:Objective|Purpose|Findings|Method):)",
+                " ",
+                sentence,
+            )
+            word_count = len(sentence.split())
+            low = sentence.casefold()
+            if not 10 <= word_count <= 70:
+                continue
+            if any(
+                cue in low
+                for cue in (
+                    "paper is organized",
+                    "article is organized",
+                    "remainder of this paper",
+                    "in the following section",
+                    "figure ",
+                    "table ",
+                )
+            ):
+                continue
+            action_score = sum(
+                cue in low
+                for cue in (
+                    "we define",
+                    "we propose",
+                    "we present",
+                    "we introduce",
+                    "we develop",
+                    "we identify",
+                    "we examine",
+                    "we analyze",
+                    "we evaluate",
+                    "we test",
+                    "we argue",
+                    "this paper",
+                    "this article",
+                    "this study",
+                    "our framework",
+                    "our findings",
+                )
+            )
+            candidates.append((action_score, word_count, sentence))
+        if not candidates:
+            continue
+        candidates.sort(key=lambda row: (row[0], -abs(row[1] - 34)), reverse=True)
+        selected.append((evidence_index, candidates[0][2]))
+        used_papers.add(item.paper_id)
+        if len(selected) == 2:
+            break
+    if not selected:
+        item = evidence[0]
+        sentence = split_sentences(item.sentences)[0] if item.sentences else ""
+        selected = [(1, sentence)]
+    return " ".join(
+        f"{sentence} [E{evidence_index}]"
+        for evidence_index, sentence in selected
+    )
 
 
 def add_geometry(frame: pd.DataFrame, vectors: np.ndarray, seed: int) -> pd.DataFrame:
@@ -123,6 +320,7 @@ def prepare_scope(
     base: pd.DataFrame,
     vectors: np.ndarray,
     interpretations: pd.DataFrame,
+    keyphrases_by_cluster: dict[str, list[str]],
     keyword: str | None,
     seed: int,
 ) -> tuple[pd.DataFrame, np.ndarray]:
@@ -146,27 +344,29 @@ def prepare_scope(
     )
     frame["cluster_label_candidate"] = frame["cluster_id"].map(
         lambda cluster_id: (
-            f"{interpretation_by_id.loc[cluster_id, 'keyword']} — "
-            f"{human_descriptor(interpretation_by_id.loc[cluster_id, 'statistical_descriptor_not_final_label'])} "
+            f"{phrase_label(str(interpretation_by_id.loc[cluster_id, 'keyword']), keyphrases_by_cluster[cluster_id])} "
             f"[{cluster_id}]"
         )
     )
-    frame["distinguishing_evidence_terms"] = frame["cluster_theme_terms"]
-    frame["cluster_summary_candidate"] = frame["cluster_id"].map(
-        lambda cluster_id: summary_sentence(interpretation_by_id.loc[cluster_id])
+    frame["distinguishing_evidence_terms"] = frame["cluster_id"].map(
+        lambda cluster_id: ", ".join(keyphrases_by_cluster[cluster_id][:6])
     )
-    frame["design_knowledge_form"] = frame["keyword"]
-    frame["contribution_type"] = "Statistical bottom-up interpretation"
+    frame["design_knowledge_form"] = frame["cluster_id"].map(
+        lambda cluster_id: phrase_label(
+            str(interpretation_by_id.loc[cluster_id, "keyword"]),
+            keyphrases_by_cluster[cluster_id],
+        )
+    )
+    frame["contribution_type"] = "Provisional interpretation"
     frame["contribution_type_support"] = frame["cluster_id"].map(
         lambda cluster_id: (
-            "Prior-pilot assignment retained"
+            "Assignment frozen; interpretation requires reviewer confirmation"
             if str(interpretation_by_id.loc[cluster_id, "interpretation_status"]) == "frozen"
-            else "Analysis frozen; confirmation by at least two reviewers pending"
+            else "Assignment frozen; interpretation requires confirmation by at least two reviewers"
         )
     )
     frame["contribution_type_definition"] = (
-        "Contrastive cluster explanation using adapted class-based TF-IDF; "
-        "not a predefined codebook classification."
+        "Contrastive phrase label with source-grounded extractive summary."
     )
     frame["primary_application_domain"] = "Not assigned by Path 1"
     frame["application_domain_support"] = "Not evaluated in this statistical interpretation"
@@ -175,8 +375,11 @@ def prepare_scope(
     frame["facet_stakeholder_or_population"] = "Not assigned"
     frame["facet_method_or_lens"] = "BGE-M3 embedding + Spectral clustering"
     frame["facet_artifact_or_domain"] = "Not assigned"
-    frame["facet_contribution_or_outcome"] = "Adapted class-based TF-IDF interpretation"
+    frame["facet_contribution_or_outcome"] = "Source-grounded cluster interpretation"
     frame["theory_move_key"] = "not_applicable"
+    frame["theory_move"] = ""
+    frame["theory_move_support"] = ""
+    frame["theory_move_patterns"] = ""
     frame["lda_topic"] = -1
     frame["lda_topic_probability"] = 0.0
     frame["lda_topic_words"] = frame["cluster_theme_terms"]
@@ -185,7 +388,40 @@ def prepare_scope(
     frame["discussion_paragraph_count"] = 0
     frame["discussion_summary"] = ""
     frame["discussion_excerpt"] = ""
-    return add_geometry(frame, scope_vectors, seed), scope_vectors
+    frame["keyword_conditioned_context"] = frame.apply(
+        lambda row: (
+            str(row["abstract"]).strip()
+            if str(row["abstract"]).strip()
+            else str(row["subdocument"])
+        ),
+        axis=1,
+    )
+
+    frame = add_geometry(frame, scope_vectors, seed)
+    frame["cluster_summary_candidate"] = ""
+    for cluster_id, subset in frame.groupby("cluster_id", sort=True):
+        terms = keyphrases_by_cluster[cluster_id]
+        evidence = cluster_evidence(subset, terms)
+        frame.loc[
+            frame["cluster_id"] == cluster_id, "cluster_summary_candidate"
+        ] = extractive_summary(evidence)
+
+        if str(subset.iloc[0]["keyword"]).casefold() == "design theory":
+            theory = classify_theory_move(
+                [
+                    {
+                        "title": row["title"],
+                        "abstract": row["abstract"],
+                    }
+                    for _, row in subset.iterrows()
+                ]
+            )
+            mask_for_cluster = frame["cluster_id"] == cluster_id
+            frame.loc[mask_for_cluster, "theory_move_key"] = theory.key
+            frame.loc[mask_for_cluster, "theory_move"] = theory.label
+            frame.loc[mask_for_cluster, "theory_move_support"] = theory.support_text
+            frame.loc[mask_for_cluster, "theory_move_patterns"] = theory.patterns_text
+    return frame, scope_vectors
 
 
 def write_scope_summary(frame: pd.DataFrame, out: Path, label: str) -> None:
@@ -246,15 +482,46 @@ def adapt_dashboard_copy(path: Path) -> None:
     page = page.replace(
         '<span class="pill">LDA topic ${p.lda_topic} '
         '(${Math.round(p.lda_topic_probability * 100)}%)</span>',
-        '<span class="pill">Statistical bottom-up interpretation</span>',
+        '<span class="pill">Path 1 interpretation</span>',
+    )
+    page = page.replace(
+        '<div class="section-title">Cluster Descriptor</div>',
+        '<div class="section-title">Topic Phrase</div>',
+    )
+    page = page.replace(
+        '<div class="section-title">Distinguishing Evidence</div>',
+        '<div class="section-title">Key Phrases</div>',
     )
     page = page.replace(
         '<div class="section-title">Cluster Summary Candidate</div>',
-        '<div class="section-title">Statistical Bottom-Up Cluster Summary</div>',
+        '<div class="section-title">Prose Summary</div>',
     )
     page = page.replace(
         '<div class="section-title">Research Contribution &amp; Domain</div>',
-        '<div class="section-title">Interpretation Method &amp; Status</div>',
+        '<div class="section-title">Fine-Grained Form &amp; Review Status</div>',
+    )
+    page = page.replace(
+        '<span class="pill">Primary: ${escapeHtml(p.contribution_type || \'n/a\')}</span>',
+        '<span class="pill">Status: ${escapeHtml(p.contribution_type || \'n/a\')}</span>',
+    )
+    page = page.replace(
+        '<span class="pill">Primary domain: ${escapeHtml(p.primary_application_domain || p.application_domains || \'n/a\')}</span>',
+        '',
+    )
+    page = page.replace(
+        '<div class="meta" style="margin-top:8px">Contribution support: ${escapeHtml(p.contribution_type_support || \'n/a\')}</div>',
+        '<div class="meta" style="margin-top:8px">Review status: ${escapeHtml(p.contribution_type_support || \'n/a\')}</div>',
+    )
+    for line in (
+        '<div class="meta">Subtype support: ${escapeHtml(p.contribution_subtype_support || \'n/a\')}</div>',
+        '<div class="meta">Contribution patterns: ${escapeHtml(p.contribution_type_patterns || \'n/a\')}</div>',
+        '<div class="meta">Domain support: ${escapeHtml(p.application_domain_support || \'n/a\')}</div>',
+        '<div class="meta">Domain definition: ${escapeHtml(p.application_domain_definitions || \'n/a\')}</div>',
+    ):
+        page = page.replace(line, "")
+    page = page.replace(
+        '<div class="section-title" style="margin-top:14px">Path 1 Theory Move</div>',
+        '<div class="section-title" style="margin-top:14px">Theory Move Candidate</div>',
     )
     page = page.replace(
         '<div class="section-title">Paper-Oriented Facets</div>',
@@ -264,6 +531,7 @@ def adapt_dashboard_copy(path: Path) -> None:
         '<div class="section-title">Secondary Topic-Model Evidence</div>',
         '<div class="section-title">Class-Based TF-IDF Evidence</div>',
     )
+    page = "\n".join(line.rstrip() for line in page.splitlines()) + "\n"
     path.write_text(page, encoding="utf-8")
 
 
@@ -302,12 +570,20 @@ def main() -> None:
     )
     if base["cluster_id"].eq("").any():
         raise ValueError("At least one paper lacks a frozen cluster assignment.")
+    keyphrases_by_cluster = build_cluster_keyphrases(base)
 
     out_root = Path(args.out)
     scopes: list[tuple[str, str | None]] = [("all", None)]
     scopes.extend((slugify(keyword), keyword) for keyword in sorted(base["keyword"].unique()))
     for offset, (slug, keyword) in enumerate(scopes):
-        frame, _ = prepare_scope(base, vectors, interpretations, keyword, args.seed + offset)
+        frame, _ = prepare_scope(
+            base,
+            vectors,
+            interpretations,
+            keyphrases_by_cluster,
+            keyword,
+            args.seed + offset,
+        )
         scope_out = out_root / slug
         scope_out.mkdir(parents=True, exist_ok=True)
         label = keyword or "All keyword groups"

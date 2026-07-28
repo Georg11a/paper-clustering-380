@@ -3,14 +3,14 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design methods — Value, users & designers [DM-C01] (17 papers)
+## Design methods — Design research and Design process [DM-C01] (17 papers)
 
-Within the predefined Design methods group, DM-C01 is statistically distinguished by value, users, designers. Additional contrastive terms include practice, context, engineering, concepts, need. Representative papers include Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework; Elements of a design method - a basis for describing and evaluating design methods. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+Our findings identify a broader range than previously described, additional sources and heuristics supporting their development as well some important evaluation criteria. [E1] First, we propose a ‘chain of evidence’, from motivation to claims, operationalising this in a systematic assessment framework. [E2]
 
-## Design methods — Autobiographical, role-playing & interactive [DM-C02] (4 papers)
+## Design methods — Autobiographical design and Design process [DM-C02] (4 papers)
 
-Within the predefined Design methods group, DM-C02 is statistically distinguished by autobiographical, role-playing, interactive. Additional contrastive terms include designers, techniques, building, conventions, game. Representative papers include The implications of improvisational acting and role-playing on design methodologies; Degrees of Interaction: Towards a Classification. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+First we define the type of performance behavior that an interactive building or environment has. [E1] Our goal in this paper is to bring these hidden practices to light and offer guidelines for how HCI researchers can usefully engage in what we term 'autobiographical design'---design research drawing on extensive, genuine usage by those creating or building a system. [E2]
 
-## Design methods — Business, theory & complexity [DM-C03] (6 papers)
+## Design methods — Design theory and Design process [DM-C03] (6 papers)
 
-Within the predefined Design methods group, DM-C03 is statistically distinguished by business, theory, complexity. Additional contrastive terms include design theory, components, variations, base, robust. Representative papers include Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction; The Design of Business Models: What, How and Why. This is an analysis-frozen statistical interpretation, not a final editorial topic label.
+This paper presents a survey on complexity theory inclusive of work from the disciplines which range from cybernetics to systems and information theory. [E1] We present a meta-model of IS development which focuses on the role of theory in IS design. [E2]
