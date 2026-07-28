@@ -54,6 +54,18 @@ def summary_sentence(row: pd.Series) -> str:
     return sentence
 
 
+def human_descriptor(value: object) -> str:
+    parts = [part.strip() for part in str(value).split(";") if part.strip()]
+    if not parts:
+        return "Topic description pending"
+    parts[0] = parts[0][:1].upper() + parts[0][1:]
+    if len(parts) == 1:
+        return parts[0]
+    if len(parts) == 2:
+        return f"{parts[0]} & {parts[1]}"
+    return f"{', '.join(parts[:-1])} & {parts[-1]}"
+
+
 def add_geometry(frame: pd.DataFrame, vectors: np.ndarray, seed: int) -> pd.DataFrame:
     frame = frame.copy().reset_index(drop=True)
     if len(frame) == 1:
@@ -134,8 +146,9 @@ def prepare_scope(
     )
     frame["cluster_label_candidate"] = frame["cluster_id"].map(
         lambda cluster_id: (
-            f"{cluster_id}: "
-            f"{interpretation_by_id.loc[cluster_id, 'statistical_descriptor_not_final_label']}"
+            f"{interpretation_by_id.loc[cluster_id, 'keyword']} — "
+            f"{human_descriptor(interpretation_by_id.loc[cluster_id, 'statistical_descriptor_not_final_label'])} "
+            f"[{cluster_id}]"
         )
     )
     frame["distinguishing_evidence_terms"] = frame["cluster_theme_terms"]
@@ -201,8 +214,34 @@ def adapt_dashboard_copy(path: Path) -> None:
     page = path.read_text(encoding="utf-8")
     page = page.replace(
         "opt.textContent = `${clusterName(c.cluster)} (${c.count})`;",
-        "const stableId = String(c.label || '').split(':')[0].trim(); "
-        "opt.textContent = `${stableId || clusterName(c.cluster)} (${c.count})`;",
+        "const readableLabel = String(c.label || clusterName(c.cluster)).trim(); "
+        "opt.textContent = `${readableLabel} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`;",
+    )
+    page = page.replace(
+        "const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${c}`;",
+        "const clusterName = c => { "
+        "if (Number(c) === -1) return 'Unclustered papers'; "
+        "const meta = data.clusters.find(item => Number(item.cluster) === Number(c)); "
+        "const match = String(meta?.label || '').match(/\\[([^\\]]+)\\]$/); "
+        "return match ? match[1] : `Cluster ${c}`; };",
+    )
+    page = page.replace(
+        "const clusterLegendLabel = c => {\n"
+        "      const label = String(c.label || c.theme || '').trim();\n"
+        "      if (!label) return clusterName(c.cluster);\n"
+        "      return /^Cluster\\s+-?\\d+:/i.test(label) ? label : `${clusterName(c.cluster)}: ${label}`;\n"
+        "    };",
+        "const readableClusterLabel = c => { "
+        "const label = String(c.label || c.theme || '').trim(); "
+        "const withoutId = label.replace(/\\s*\\[[^\\]]+\\]\\s*$/, '').trim(); "
+        "return `${withoutId || clusterName(c.cluster)} · ${c.count} "
+        "${c.count === 1 ? 'paper' : 'papers'} [${clusterName(c.cluster)}]`; };\n"
+        "    const clusterLegendLabel = c => readableClusterLabel(c);",
+    )
+    page = page.replace(
+        "const readableLabel = String(c.label || clusterName(c.cluster)).trim(); "
+        "opt.textContent = `${readableLabel} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`;",
+        "opt.textContent = readableClusterLabel(c);",
     )
     page = page.replace(
         '<span class="pill">LDA topic ${p.lda_topic} '
