@@ -1,0 +1,35 @@
+{
+  "date_frozen": "2026-07-28",
+  "status": "Prospectively frozen confirmation rule after exploratory diagnostics; not a preregistration.",
+  "paper_count": 58,
+  "embedding_shape": [
+    58,
+    1024
+  ],
+  "embedding_file": "paper-clustering-380/outputs/batch2/experiment_b_design_theory_58/embeddings_bge_m3_chunk_pooling.npy",
+  "input_file": "paper-clustering-380/outputs/batch2/experiment_b_design_theory_58/experiment_b_input.csv",
+  "primary_k": 3,
+  "tested_k_values": [
+    2,
+    3,
+    4
+  ],
+  "numeric_rule": {
+    "coverage_minimum": 0.95,
+    "minimum_cluster_size": 8,
+    "permutation_adjusted_z_rho_strictly_greater_than": 2,
+    "bootstrap_pairwise_subsample_ari_minimum": 0.6,
+    "tie_break": "Choose the smallest k among passing candidates.",
+    "human_review": "Veto only; cannot promote a failing configuration."
+  },
+  "cohesion_permutations": 1000,
+  "bootstrap_repeats": 100,
+  "bootstrap_fraction": 0.8,
+  "intruder_tasks_per_cluster": 5,
+  "random_seed": 20260728,
+  "notes": [
+    "Ward is applied to L2-normalized vectors with Euclidean geometry.",
+    "Cohesion Ratio is treated as a structure test, not a standalone selector of k.",
+    "Raw HDBSCAN is a one-run negative control and is not used for fixed-k comparison."
+  ]
+}

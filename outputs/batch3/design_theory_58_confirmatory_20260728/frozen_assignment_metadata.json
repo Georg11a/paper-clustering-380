@@ -1,0 +1,34 @@
+{
+  "status": "frozen",
+  "frozen_date": "2026-07-28",
+  "configuration": "spectral_knn10_k3",
+  "paper_count": 58,
+  "cluster_count": 3,
+  "cluster_sizes": [
+    {
+      "cluster_id": "DT-C01",
+      "cluster_index": 0,
+      "paper_count": 17
+    },
+    {
+      "cluster_id": "DT-C02",
+      "cluster_index": 1,
+      "paper_count": 23
+    },
+    {
+      "cluster_id": "DT-C03",
+      "cluster_index": 2,
+      "paper_count": 18
+    }
+  ],
+  "decision_note": "Spectral knn15 k=2 passed numeric checks but was vetoed as too coarse for survey organization; spectral knn10 k=3 passed all frozen numeric criteria and the internal blinded intrusion review.",
+  "excluded_paper_ids": [
+    "c1db52f69aae"
+  ],
+  "source_assignments": "paper-clustering-380/outputs/batch3/design_theory_58_confirmatory_20260728/paper_cluster_assignments.csv",
+  "source_assignments_sha256": "5f73d2a5a841e0d98b29765afcd6443c41ae1bcc7cd69f3a426167828fae2a31",
+  "source_input": "paper-clustering-380/outputs/batch2/experiment_b_design_theory_58/experiment_b_input.csv",
+  "source_input_sha256": "a8f899368e0831d235f63ff8b617aa768bc087368c2f61c49df8c6df1e591290",
+  "output": "paper-clustering-380/outputs/batch3/design_theory_58_confirmatory_20260728/design_theory_frozen_assignment.csv",
+  "output_sha256": "7f5c563cf829daa75ce47ca220e8c95b19e3cad9ae35cd7bc3346a5b3b197f72"
+}

@@ -4,6 +4,35 @@ Clean, reproducible clustering pipeline for the final advancing-paper set from t
 
 This repository is the public-facing version of the clustering work: it reads the final screening CSV, clusters papers separately within each design-knowledge keyword, flags small keyword groups, and writes reviewable outputs for downstream citation-graph and reading-prioritization work.
 
+## Current Batch 1–3 pipeline (2026-07-28)
+
+The current confirmatory pipeline supersedes the original TF-IDF/K-means/
+HDBSCAN exploratory defaults described later in this README:
+
+```text
+283 retained publications
+-> group by predefined search keyword
+-> title + abstract + up to 12 keyword-conditioned full-text passages
+-> BGE-M3 embeddings, L2 normalized
+-> computational k estimate within each keyword group
+-> Spectral clustering on a cosine 10-NN graph
+-> numeric diagnostics and human review
+-> freeze paper-cluster membership
+-> cluster interpretation (not yet run)
+```
+
+See:
+
+- [`docs/batch3_keyword_conditioned_clustering.md`](docs/batch3_keyword_conditioned_clustering.md)
+  for the current clustering and validation rules;
+- [`docs/topic_interpretation_plan.md`](docs/topic_interpretation_plan.md) for
+  the post-freeze c-TF-IDF and LLM interpretation plan;
+- `outputs/batch3/all_283_keyword_conditioned_20260728/` for the complete
+  provisional assignment and review materials.
+
+The original pipeline below remains available as a legacy exploratory
+baseline. It must not be mistaken for the current frozen method.
+
 ## What This Pipeline Does
 
 - Loads `data/final_advancing_list.csv`.

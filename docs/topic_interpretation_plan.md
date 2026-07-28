@@ -1,0 +1,65 @@
+# Topic interpretation plan
+
+This stage begins only after the 283-paper keyword-conditioned assignment is
+frozen. It explains fixed clusters; it does not discover or reassign clusters.
+
+## Statistical interpretation
+
+For every fixed cluster:
+
+1. concatenate the cluster's title, abstract, and keyword-conditioned
+   subdocuments into one class document;
+2. normalize whitespace and punctuation while preserving meaningful
+   multi-word expressions;
+3. use unigram and bigram counts;
+4. compute class-based TF-IDF across clusters within the same keyword group;
+5. report the highest-weight contrastive terms and phrases;
+6. identify representative papers and representative passages using the fixed
+   BGE-M3 cluster centroid;
+7. create a short evidence-linked statistical cluster descriptor.
+
+The main output is one row per fixed cluster containing:
+
+- keyword group and cluster ID;
+- paper count;
+- top c-TF-IDF unigrams/bigrams and weights;
+- representative paper IDs and titles;
+- representative passage IDs;
+- overlap and distinctiveness diagnostics;
+- a statistical descriptor assembled from the terms and evidence.
+
+This is an adaptation of BERTopic's c-TF-IDF representation component. It is
+not a complete BERTopic run because embedding and clustering have already been
+fixed as BGE-M3 plus Spectral clustering.
+
+## LLM interpretation
+
+The Path 2 comparison receives the **same fixed cluster memberships** and the
+same evidence budget. An LLM reads representative and boundary evidence,
+proposes a cluster label and summary, cites supporting paper/passage IDs, and
+states uncertainty or internal variation.
+
+The statistical and LLM interpretations are then compared blindly on:
+
+- granularity;
+- coherence;
+- coverage;
+- distinctiveness;
+- faithfulness to source evidence;
+- usefulness for the survey.
+
+## Methodological references
+
+- Grootendorst (2022) introduces BERTopic and its class-based TF-IDF
+  representation.
+- Chagnon et al. (2024), *Benchmarking topic models on scientific articles
+  using BERTeley*, supports scientific-article preprocessing, model comparison,
+  and multi-metric evaluation.
+- Ajinaja et al. (published online 2025; version of record 2026) compares LDA,
+  LDA2Vec, Top2Vec, and BERTopic across short, long, domain-specific, and
+  multilingual corpora and combines quantitative with human-centered
+  evaluation.
+- Nikbakht and Zojaji (2026), *Fuzzy BERTopic*, is relevant to the limitation
+  that hard assignments do not represent every secondary topic of a document.
+  It does not justify changing the primary hard assignment required by the
+  downstream citation graph.

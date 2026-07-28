@@ -1,0 +1,4 @@
+k,passing_configurations,tested_configurations,minimum_bootstrap_ari,minimum_cluster_size,minimum_z_rho,all_configurations_pass
+2.0,1,5,0.3699650530990675,1,3.1335850887827377,False
+3.0,1,5,0.33832527098689447,1,3.454079474080354,False
+4.0,0,5,0.32226315517651355,1,3.869869725340051,False

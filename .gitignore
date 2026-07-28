@@ -24,3 +24,15 @@ outputs/keyword_summary*.csv
 outputs/run_metadata*.json
 outputs/clustering_summary.md
 !outputs/.gitkeep
+
+# Local Batch 1–3 artifacts that are large, copyrighted, or reproducible.
+tmp/
+outputs/**/*.npy
+outputs/**/*.pdf
+outputs/**/*.txt
+outputs/**/.DS_Store
+outputs/**/canonical_pdfs/
+outputs/**/canonical_text*/
+outputs/**/install_logs/
+outputs/**/*private_key.csv
+outputs/**/*private_selection_mapping.csv
