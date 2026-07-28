@@ -82,6 +82,7 @@ def main() -> None:
     parser.add_argument("--bootstrap-repeats", type=int, default=100)
     parser.add_argument("--bootstrap-fraction", type=float, default=0.8)
     parser.add_argument("--seed", type=int, default=20260728)
+    parser.add_argument("--expected-paper-count", type=int)
     args = parser.parse_args()
 
     out = Path(args.out)
@@ -90,8 +91,15 @@ def main() -> None:
     values = normalize(np.load(args.embeddings), norm="l2")
     if len(papers) != len(values):
         raise ValueError("Input and embedding rows do not match.")
-    if len(papers) != 283 or papers["paper_id"].nunique() != 283:
-        raise ValueError("Expected exactly 283 unique papers.")
+    expected_count = args.expected_paper_count or len(papers)
+    if (
+        len(papers) != expected_count
+        or papers["paper_id"].nunique() != expected_count
+    ):
+        raise ValueError(
+            f"Expected exactly {expected_count} unique papers, found "
+            f"{len(papers)} rows and {papers['paper_id'].nunique()} IDs."
+        )
 
     frozen_dt = pd.read_csv(args.design_theory_assignment)
     frozen_dt_map = frozen_dt.set_index("paper_id")["cluster_index"].to_dict()
@@ -240,10 +248,16 @@ def main() -> None:
             )
 
     assignments = pd.DataFrame(assignment_rows)
-    if len(assignments) != 283 or assignments["paper_id"].nunique() != 283:
+    if (
+        len(assignments) != expected_count
+        or assignments["paper_id"].nunique() != expected_count
+    ):
         raise RuntimeError("Complete assignment is not one row per paper.")
+    assignment_name = (
+        f"all_{expected_count}_keyword_conditioned_assignments.csv"
+    )
     assignments.sort_values(["keyword", "cluster_id", "paper_id"]).to_csv(
-        out / "all_283_keyword_conditioned_assignments.csv",
+        out / assignment_name,
         index=False,
         encoding="utf-8-sig",
     )
@@ -259,7 +273,7 @@ def main() -> None:
     (out / "run_metadata.json").write_text(
         json.dumps(
             {
-                "paper_count": 283,
+                "paper_count": expected_count,
                 "representation": (
                     "BGE-M3 Title+Abstract+K12; K12 selected using each "
                     "paper's predefined keyword"
@@ -286,7 +300,10 @@ def main() -> None:
     print(pd.DataFrame(group_rows).sort_values(
         "paper_count", ascending=False
     ).to_string(index=False))
-    print(f"Wrote complete 283-paper assignment to {out}")
+    print(
+        f"Wrote complete {expected_count}-paper assignment to "
+        f"{out / assignment_name}"
+    )
 
 
 if __name__ == "__main__":

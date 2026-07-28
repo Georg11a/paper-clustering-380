@@ -1,0 +1,12 @@
+keyword,papers_compared,old_k,new_k,adjusted_rand_index
+Design knowledge,68,3,3,0.921642
+Design theory,58,3,3,1.000000
+Design Patterns,50,2,3,0.246106
+Design methods,27,3,3,0.286633
+Design Guidelines,22,4,4,0.647005
+Design principles,15,2,2,1.000000
+Design rationale,14,2,2,1.000000
+Design Rules,11,2,2,0.349540
+Design Heuristics,10,2,2,1.000000
+Design frameworks,6,2,2,1.000000
+Design Procedures,1,1,1,1.000000

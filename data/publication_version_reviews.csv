@@ -1,0 +1,7 @@
+family_id,paper_id,publication_year,publication_type,review_status,analytic_decision,related_paper_id,decision_notes
+pattern_approach,b8507dbe97ca,2000,DIS conference,user_confirmed,exclude_superseded_version,242644458c6e,"The 2001 journal article explicitly identifies the DIS 2000 paper as an earlier version. Preserve the source PDF and provenance record, but exclude this conference version from embeddings, clustering, topic interpretation, and citation-graph assignments."
+pattern_approach,242644458c6e,2001,AI & Society journal,user_confirmed,retain_primary_version,b8507dbe97ca,"Retained as the primary analytic record for this publication family."
+theory_construction,c2c57ac5453e,2002,DRS conference,pending_supervisor_review,retain_pending_decision,f56243f52335,"The conference and journal publications are related but differ substantially in length and content; retain both until the analysis unit is confirmed."
+theory_construction,f56243f52335,2003,Design Studies journal,pending_supervisor_review,retain_pending_decision,c2c57ac5453e,"The journal publication is an expanded version; retain both until the analysis unit is confirmed."
+ethics_focused_methods,fd2392ff2aff,2021,arXiv preprint,pending_supervisor_review,retain_pending_decision,0a373ca87142,"Likely an earlier version of the 2024 journal publication. Recommended for exclusion only after supervisor confirmation."
+ethics_focused_methods,0a373ca87142,2024,ACM journal,pending_supervisor_review,retain_pending_decision,fd2392ff2aff,"Recommended primary version, pending supervisor confirmation."

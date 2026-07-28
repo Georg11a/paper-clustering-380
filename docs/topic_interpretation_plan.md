@@ -1,7 +1,9 @@
 # Topic interpretation plan
 
-This stage begins only after the 283-paper keyword-conditioned assignment is
+The final stage begins only after the 282-paper keyword-conditioned assignment is
 frozen. It explains fixed clusters; it does not discover or reassign clusters.
+The current Path 1 run is explicitly provisional for every keyword group
+except the already frozen Design Theory pilot.
 
 ## Statistical interpretation
 
@@ -11,7 +13,7 @@ For every fixed cluster:
    subdocuments into one class document;
 2. normalize whitespace and punctuation while preserving meaningful
    multi-word expressions;
-3. use unigram and bigram counts;
+3. use unigram, bigram, and trigram counts;
 4. compute class-based TF-IDF across clusters within the same keyword group;
 5. report the highest-weight contrastive terms and phrases;
 6. identify representative papers and representative passages using the fixed
@@ -22,7 +24,7 @@ The main output is one row per fixed cluster containing:
 
 - keyword group and cluster ID;
 - paper count;
-- top c-TF-IDF unigrams/bigrams and weights;
+- top c-TF-IDF unigrams, bigrams, trigrams, and weights;
 - representative paper IDs and titles;
 - representative passage IDs;
 - overlap and distinctiveness diagnostics;
@@ -31,6 +33,26 @@ The main output is one row per fixed cluster containing:
 This is an adaptation of BERTopic's c-TF-IDF representation component. It is
 not a complete BERTopic run because embedding and clustering have already been
 fixed as BGE-M3 plus Spectral clustering.
+
+### Term-display normalization
+
+Raw statistical tokens are never presented directly as final topics.
+
+- `DSR` is displayed as `design science research`.
+- `UI` is displayed as `user interface`.
+- `DR` is expanded to `design rationale` only inside that keyword group;
+  otherwise ambiguous bare `DR` is removed.
+- `HCI` and `AI` may remain as abbreviations.
+- citation fragments, years, and generic procedural terms such as `et al`,
+  `use`, `used`, and `project` are removed.
+- meaningful multiword expressions such as `design science research`,
+  `design rationale`, and `design knowledge` are preserved before the generic
+  word `design` is filtered.
+
+The first run on a newly regenerated assignment may be marked provisional.
+Provisional c-TF-IDF output is suitable for inspecting granularity and lexical
+quality, but it must not be reported as a final topic result until the
+underlying cluster membership is frozen.
 
 ## LLM interpretation
 

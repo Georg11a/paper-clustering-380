@@ -7,3 +7,4 @@ networkx
 requests
 pdfplumber
 pypdf
+ftfy

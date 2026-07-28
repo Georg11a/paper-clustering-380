@@ -2,7 +2,7 @@
 
 ## Scope
 
-Batch 3 assigns each of the 283 retained English-language publications to a
+Batch 3 assigns each of the 282 retained English-language publications to a
 cluster **within its predefined search-keyword group**. It does not cluster the
 entire corpus as one undifferentiated collection, and it does not use a
 predefined category codebook.
@@ -41,25 +41,26 @@ candidate eligible for a human granularity veto. A failed check does not prove
 that the cluster structure is meaningless; it means the assignment must not be
 described as automatically validated.
 
-## Current 283-paper candidate
+## Current cleaned 282-paper candidate
 
 | Keyword | n | k | Cluster sizes | Status |
 |---|---:|---:|---:|---|
-| Design knowledge | 68 | 3 | 23/35/10 | Numeric review required |
+| Design knowledge | 68 | 3 | 23/37/8 | Numeric review required |
 | Design theory | 58 | 3 | 17/23/18 | Frozen from the completed pilot |
-| Design Patterns | 51 | 2 | 35/16 | Numeric pass; human veto pending |
-| Design methods | 27 | 3 | 14/9/4 | Numeric review required |
+| Design Patterns | 50 | 3 | 14/15/21 | Numeric review required |
+| Design methods | 27 | 3 | 17/4/6 | Numeric review required |
 | Design Guidelines | 22 | 4 | 3/4/6/9 | Numeric review required |
 | Design principles | 15 | 2 | 10/5 | Stability review required |
 | Design rationale | 14 | 2 | 12/2 | Size and stability review required |
-| Design Rules | 11 | 2 | 4/7 | Stability review required |
+| Design Rules | 11 | 2 | 2/9 | Stability review required |
 | Design Heuristics | 10 | 2 | 7/3 | Numeric pass; human veto pending |
 | Design frameworks | 6 | 2 | 2/4 | Size and stability review required |
 | Design Procedures | 1 | 1 | 1 | Cannot be subdivided |
 
 The complete candidate is
-`outputs/batch3/all_283_keyword_conditioned_20260728/all_283_keyword_conditioned_assignments.csv`.
-It contains 283 rows, 283 unique paper IDs, and no missing cluster IDs.
+`outputs/batch3/all_282_keyword_conditioned_20260728/all_282_keyword_conditioned_assignments.csv`.
+It contains 282 rows, 282 unique paper IDs, and no missing cluster IDs. The
+earlier 283-paper run is retained only as a superseded audit artifact.
 
 ## Human review
 
@@ -70,8 +71,8 @@ Two files make the remaining decision auditable:
   cohesion, and the smallest assignment margin. The terms are diagnostic and
   are **not** final topics.
 - `human_review_clusters.csv` is the required compact review sheet: one row for
-  each of the 22 clusters whose keyword group is not yet frozen.
-- `human_review_shortlist.csv` contains 95 representative or boundary papers
+  each of the 23 clusters whose keyword group is not yet frozen.
+- `human_review_shortlist.csv` contains 100 representative or boundary papers
   from all groups that still need a decision. It is the targeted membership
   check supporting the compact cluster-level decision.
 

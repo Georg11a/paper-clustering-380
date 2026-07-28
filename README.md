@@ -10,7 +10,7 @@ The current confirmatory pipeline supersedes the original TF-IDF/K-means/
 HDBSCAN exploratory defaults described later in this README:
 
 ```text
-283 retained publications
+282 retained publications
 -> group by predefined search keyword
 -> title + abstract + up to 12 keyword-conditioned full-text passages
 -> BGE-M3 embeddings, L2 normalized
@@ -21,14 +21,21 @@ HDBSCAN exploratory defaults described later in this README:
 -> cluster interpretation (not yet run)
 ```
 
+The count changed from 283 to 282 after the 2000 DIS conference version of
+`A Pattern Approach to Interaction Design` was linked to and superseded by its
+2001 AI & Society journal version. The conference PDF is preserved for
+provenance but is not an independent analytic record.
+
 See:
 
 - [`docs/batch3_keyword_conditioned_clustering.md`](docs/batch3_keyword_conditioned_clustering.md)
   for the current clustering and validation rules;
 - [`docs/topic_interpretation_plan.md`](docs/topic_interpretation_plan.md) for
   the post-freeze c-TF-IDF and LLM interpretation plan;
-- `outputs/batch3/all_283_keyword_conditioned_20260728/` for the complete
-  provisional assignment and review materials.
+- `outputs/batch3/all_282_keyword_conditioned_20260728/` for the current
+  cleaned provisional assignment and review materials;
+- `outputs/path1/statistical_topics_282_20260728/` for the provisional
+  statistical cluster interpretation. Only Design Theory is currently frozen.
 
 The original pipeline below remains available as a legacy exploratory
 baseline. It must not be mistaken for the current frozen method.
