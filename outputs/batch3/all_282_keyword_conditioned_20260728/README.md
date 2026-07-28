@@ -42,9 +42,15 @@ This run supersedes the earlier 283-paper candidate run.
 
 ## Important interpretation
 
-The computational assignment is complete, but only Design Theory is frozen.
-The files in this directory are candidate assignments and review materials.
-See `docs/human_cluster_confirmation_guide.md`.
+The computational assignment is complete. On 2026-07-28, all 282-paper
+assignments were frozen for downstream analysis so that topic-interpretation
+methods can be compared against identical memberships. This is an analysis
+freeze, not a claim that every cluster has already been human-validated.
+
+Design Theory retains its previously frozen 58-paper assignment. The other
+keyword groups require confirmation by at least two reviewers before they are
+reported as human-validated results. See
+`docs/human_cluster_confirmation_guide.md`.
 
 The cleanup materially changed several candidate solutions. In particular,
 Design Patterns changed from k=2 to k=3. This is why the old 283-paper review

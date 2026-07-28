@@ -5,6 +5,9 @@
   "cluster_method": "spectral_knn10",
   "k_estimation": "K-means inertia elbow by maximum endpoint-chord distance; candidate must pass frozen numeric validation",
   "small_group_rule": "A group receives k=1 only when it cannot form two clusters satisfying max(absolute minimum 3, ceil(0.15 * n)).",
-  "topic_modeling_started": false,
+  "analysis_freeze_status": "frozen_for_downstream_interpretation_pending_two_reviewer_validation",
+  "human_validation_requirement": "At least two reviewers for non-Design-Theory keyword groups",
+  "topic_modeling_started": true,
+  "topic_interpretation_method": "adapted class-based TF-IDF over fixed cluster assignments",
   "random_seed": 20260728
 }
