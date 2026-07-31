@@ -1,0 +1,8 @@
+config,silhouette_original_cosine,coverage,size_balance_min_over_max,pareto_nondominated
+All papers · KMEANS · Raw BGE-M3,0.092699,1.000000,0.384615,True
+All papers · DBSCAN · Raw BGE-M3,0.213224,0.418440,0.255319,True
+All papers · HDBSCAN · Raw BGE-M3,0.286383,0.191489,0.227273,True
+UMAP before clustering · KMEANS,0.081359,1.000000,0.242291,False
+UMAP before clustering · DBSCAN,0.195822,0.421986,0.250000,True
+UMAP before clustering · HDBSCAN,0.081359,1.000000,0.242291,False
+Zhicheng workflow · UMAP 10D + HDBSCAN,0.081359,1.000000,0.242291,False

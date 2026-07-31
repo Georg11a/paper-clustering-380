@@ -395,6 +395,11 @@ prediction_data: [true]
 ```
 
 - `eom` tends toward fewer, larger clusters; `leaf` may expose finer topics.
+- Treat `min_samples=1` as a degenerate sensitivity baseline, not a preferred
+  meeting configuration. With a one-point core distance, mutual reachability
+  approaches the original distance and the hierarchy approaches single-linkage
+  behavior, increasing the risk of chaining sparse bridges into one large
+  cluster. A zero-noise result under this setting is not strong evidence.
 - Export `noise_fraction`, `cluster_count`, and cluster sizes across
   `min_cluster_size`. This plot is itself a meeting deliverable.
 - If microclusters are excessive, test a documented
@@ -465,6 +470,17 @@ Silhouette remains descriptive. It is not the final selection criterion because
 it changes with cluster count and excludes noise when calculated only on
 assigned points.
 
+Do not replace the current scalar with another scalar. In particular,
+`silhouette + 0.15 × coverage` has no justified exchange rate between the two
+quantities. Export the Pareto frontier over at least:
+
+- original-space silhouette;
+- coverage; and
+- cluster-size balance or the full size distribution.
+
+Use the frontier to expose trade-offs. Apply stability and human review after
+the frontier rather than selecting the maximum of an arbitrary weighted sum.
+
 ### 8.2 Inherit the stronger Batch 3 validation
 
 | Rule | Global adaptation |
@@ -523,6 +539,31 @@ emerge beyond those groups.
 
 Always interpret keyword ARI together with the `R_kw` versus `R_neutral`
 comparison.
+
+### 8.6 Existing-partition diagnostic completed on 2026-07-31
+
+Before running bootstrap, the seven saved exploratory partitions were compared
+without reclustering.
+
+- UMAP 5D K-Means, UMAP 5D HDBSCAN, and UMAP 10D HDBSCAN are **exactly the
+  same 55/227 assignment**, not merely the same cluster sizes. Every pair has
+  full-corpus ARI `1.0`.
+- Among the 55 papers, 42 are from the original Design Patterns group. This is
+  76.4% of the small cluster and 84% of all 50 Design Patterns papers.
+- The split is not explained by missing passages: 52/55 small-cluster papers
+  and 222/227 large-cluster papers have all 12 selected passages. Standardized
+  differences are small for passage count (`-0.141`), subdocument length
+  (`-0.117`), and total input length (`-0.172`).
+- The result therefore looks like a dominant patterns-versus-remainder
+  direction. It may be substantively real, keyword-conditioned leakage, or
+  both. `R_neutral` is required to distinguish these explanations.
+- Raw DBSCAN and raw HDBSCAN also agree perfectly with this binary direction
+  on their assigned cores: shared-nonnoise ARI is `1.0` for 118 and 54 papers,
+  respectively. Their main difference is coverage.
+
+This finding changes the order of work: diagnose representation leakage and
+create `R_neutral` before spending time validating the repeated partition with
+many bootstrap runs.
 
 ### Prior research
 
@@ -712,12 +753,19 @@ silhouette alone.
 
 ### Minimum meeting-safe deliverable
 
-1. [ ] Add Spectral to the comparison matrix.
-2. [ ] Freeze shared 5D UMAP matrices for `n_neighbors ∈ {5,15,30}`.
-3. [ ] Correct HDBSCAN ranges and run `eom` plus `leaf`.
-4. [ ] Apply the inherited `z_rho > 2` and bootstrap ARI `≥ 0.60` rules.
-5. [ ] Run the P3 cross-language input audit and all four sanity probes.
-6. [ ] Generate at least one `R_neutral` title+abstract embedding matrix.
+1. [x] Diagnose the repeated 55/227 partition before any expensive stability
+   work. It is exactly identical across three views and is dominated by Design
+   Patterns (42 of 55 papers), not by missing passages.
+2. [ ] Audit duplicates and related documents using both normalized-title
+   matching and top embedding-neighbor pairs.
+3. [ ] Add Spectral to the comparison matrix.
+4. [ ] Generate at least one `R_neutral` title+abstract embedding matrix.
+5. [ ] Freeze the eligibility rules and Pareto objectives.
+6. [ ] Freeze shared 5D UMAP matrices for `n_neighbors ∈ {5,15,30}`.
+7. [ ] Correct HDBSCAN ranges, run `eom` plus `leaf`, and keep
+   `min_samples=1` diagnostic-only.
+8. [ ] Apply the inherited `z_rho > 2` and bootstrap ARI `≥ 0.60` rules.
+9. [ ] Run the P3 cross-language input audit and all four sanity probes.
 
 ### Full controlled comparison
 

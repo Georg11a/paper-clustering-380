@@ -311,6 +311,7 @@
       <a href="#method-2">页面 2：UMAP 后比较</a>
       <a href="#method-3">页面 3：Zhicheng 流程</a>
       <a href="#results">当前结果总表</a>
+      <a href="#dominant-split">55/227 主导划分诊断</a>
       <a href="#evidence">prior research 支持什么</a>
       <a href="#problems">已知问题</a>
       <a href="#next">下一步怎么做</a>
@@ -561,8 +562,9 @@
 
         <h3>当前最明显的问题</h3>
         <ul>
-          <li><code>min_samples=1</code> 很宽松，几乎不要求一个点拥有高密度邻域，因此 0 noise 并不意外。</li>
-          <li>结果与 Page 2 的 5D HDBSCAN 都是 55 / 227，且 silhouette 完全相同；目前没有证据说明 10D 带来额外价值。</li>
+          <li><code>min_samples=1</code> 不只是“宽松”：mutual-reachability 会接近原始距离，层级行为接近 single linkage，
+            容易通过稀疏桥产生 chaining。它应当被标成 degenerate sensitivity baseline，而不是推荐配置。</li>
+          <li>结果与 Page 2 的 5D HDBSCAN、5D K-Means 不只是尺寸相同；后处理确认三者逐篇 assignment 完全相同。</li>
           <li>两个簇太粗，无法直接回答更细的 design knowledge / theory / method 结构。</li>
           <li>教程要求 manual inspection；当前 explorer 可以检查论文，但还没有形成盲审、记录和一致性指标。</li>
         </ul>
@@ -669,6 +671,109 @@
         </div>
         <p class="small">
           “选中”只是生成器按预设候选分数挑出的当前展示配置，不等于经过研究团队批准的 final model。
+          当前 <code>silhouette + 0.15 × coverage</code> 没有经过论证，不应继续作为 winner rule；后续改用
+          silhouette、coverage 和 cluster-size balance 的 Pareto frontier，再看 stability 与 human review。
+        </p>
+      </section>
+
+      <section id="dominant-split">
+        <p class="eyebrow">Post-hoc diagnostic · no reclustering</p>
+        <h2>第二张表：三个 55/227 是同一个划分</h2>
+        <div class="warning">
+          <strong>这是目前最重要的新发现：</strong>UMAP 5D K-Means、UMAP 5D HDBSCAN 和
+          UMAP 10D HDBSCAN 的 full-corpus ARI 都是 <strong>1.0000</strong>。也就是说，三种 view
+          不是“碰巧都有 55/227”，而是 282 篇论文逐篇完全相同，只是 cluster label 编号可能不同。
+        </div>
+
+        <h3>七个展示配置的 full-corpus pairwise ARI</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>配置</th>
+                <th>Raw KM</th>
+                <th>Raw DB</th>
+                <th>Raw HDB</th>
+                <th>UMAP KM</th>
+                <th>UMAP DB</th>
+                <th>UMAP HDB</th>
+                <th>10D HDB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th>Raw KM</th><td>1.000</td><td>.238</td><td>.047</td><td>.323</td><td>.064</td><td>.323</td><td>.323</td></tr>
+              <tr><th>Raw DB</th><td>.238</td><td>1.000</td><td>.338</td><td>.152</td><td>.162</td><td>.152</td><td>.152</td></tr>
+              <tr><th>Raw HDB</th><td>.047</td><td>.338</td><td>1.000</td><td>.027</td><td>.103</td><td>.027</td><td>.027</td></tr>
+              <tr><th>UMAP KM</th><td>.323</td><td>.152</td><td>.027</td><td>1.000</td><td>.133</td><td class="good">1.000</td><td class="good">1.000</td></tr>
+              <tr><th>UMAP DB</th><td>.064</td><td>.162</td><td>.103</td><td>.133</td><td>1.000</td><td>.133</td><td>.133</td></tr>
+              <tr><th>UMAP HDB</th><td>.323</td><td>.152</td><td>.027</td><td class="good">1.000</td><td>.133</td><td>1.000</td><td class="good">1.000</td></tr>
+              <tr><th>10D HDB</th><td>.323</td><td>.152</td><td>.027</td><td class="good">1.000</td><td>.133</td><td class="good">1.000</td><td>1.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">
+          ARI 对 cluster label 编号置换不敏感。完整数据见
+          <a href="explorer/global_comparison/diagnostics/partition_ari.csv">pairwise CSV</a>。
+          对 density methods 还必须结合 shared-nonnoise ARI 与 coverage；例如 raw DBSCAN 和这个
+          55/227 方向在其 118 篇 assigned papers 上 ARI=1，raw HDBSCAN 在 54 篇上也为 1。
+          它们主要差在多少论文被保留为 noise。
+        </p>
+
+        <h3>这 55 篇到底是什么</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>不是 passage 缺失组</h4>
+            <p>小簇 52/55 篇拿满 12 passages；大簇 222/227 篇拿满 12。selected-count 标准化均值差只有 −0.141。</p>
+          </div>
+          <div class="card">
+            <h4>不是明显的文本长度组</h4>
+            <p>subdocument length 标准化均值差 −0.117；combined input length 为 −0.172。存在差异，但远不足以解释近乎确定的二分。</p>
+          </div>
+          <div class="card">
+            <h4>高度对应 Design Patterns</h4>
+            <p>55 篇中 42 篇属于 Design Patterns：小簇 purity 76.4%，并覆盖该 keyword 的 42/50，即 84%。
+              2×2 enrichment odds ratio=88.44，Fisher p≈2.15×10<sup>−30</sup>。这是强关联，不是 leakage 的因果证明。</p>
+          </div>
+        </div>
+        <p class="plain">
+          <strong>当前最合理、但仍未证实的解释：</strong>embedding 中存在一个强势的
+          “patterns vs remainder”方向。它可能是真实语义结构，也可能被 keyword-conditioned passage selection
+          放大，或者两者同时存在。因为当前只有 <code>R_kw</code>，不能把它直接叫作自然涌现主题；必须用
+          title+abstract-only 的 <code>R_neutral</code> 重做同一诊断。
+        </p>
+
+        <h3>Keyword ARI：现在就能计算的 leakage 上界</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>配置</th><th>Keyword ARI · full</th><th>Keyword ARI · non-noise</th><th>Coverage</th></tr></thead>
+            <tbody>
+              <tr><td>Raw K-Means</td><td>.2103</td><td>.2103</td><td>100%</td></tr>
+              <tr><td>UMAP K-Means</td><td>.0839</td><td>.0839</td><td>100%</td></tr>
+              <tr><td>UMAP HDBSCAN</td><td>.0839</td><td>.0839</td><td>100%</td></tr>
+              <tr><td>10D HDBSCAN</td><td>.0839</td><td>.0839</td><td>100%</td></tr>
+              <tr><td>UMAP DBSCAN</td><td>.0588</td><td>.3946</td><td>42.2%</td></tr>
+              <tr><td>Raw DBSCAN</td><td>.0298</td><td>.1563</td><td>41.8%</td></tr>
+              <tr><td>Raw HDBSCAN</td><td>.0029</td><td>.1716</td><td>19.1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">
+          这些值不是“聚类准确率”，keyword 也不是 ground truth。它们只是 <code>R_kw</code> 下的诊断上界。
+          <code>R_neutral</code> 生成后必须再次计算，差值才可作为 leakage estimate。
+        </p>
+
+        <h3>Embedding 近邻审计也修正了一个预期</h3>
+        <p>
+          Baldwin 两章的 cosine similarity 是 0.8642，在全部 39,621 对中排名第 271，<strong>没有进入 top 30</strong>。
+          它们在 raw K-Means 中甚至被分开，但在三个 55/227 view 和 UMAP DBSCAN 中放在一起。
+          因此“同一本书的两章一定应排在最近邻最前面”不能当作无条件 pass/fail；它更适合作为 related-document
+          sensitivity probe。真正的 top pairs 主要是重复或近重复题名。
+        </p>
+        <p class="small">
+          下载：<a href="explorer/global_comparison/diagnostics/cluster55_members.csv">55 篇成员</a> ·
+          <a href="explorer/global_comparison/diagnostics/keyword_ari.csv">keyword ARI</a> ·
+          <a href="explorer/global_comparison/diagnostics/nearest_pairs.csv">top-30 embedding pairs</a> ·
+          <a href="explorer/global_comparison/diagnostics/selected_view_pareto.csv">selected-view Pareto audit</a>
         </p>
       </section>
 
@@ -816,10 +921,11 @@
       <section id="next">
         <h2>在决定“用哪个方法”之前，建议按这个顺序执行</h2>
         <ol>
-          <li><strong>先清重复：</strong>核对 7 组重复题名，区分真正重复、会议/期刊版本和不同论文。</li>
+          <li><strong>先诊断主导划分：</strong>已完成。三个 55/227 逐篇相同，主要是 Design Patterns vs remainder；passage 数和文本长度不是主因。</li>
+          <li><strong>再清重复：</strong>同时使用 normalized title 和 embedding top-neighbor pairs；核对真正重复、会议/期刊版本、同书章节与派生文档。</li>
           <li><strong>补上 incumbent：</strong>把现行 Spectral clustering 加入同一比较矩阵。</li>
           <li><strong>去除表征泄漏：</strong>冻结 title+abstract-only BGE-M3，和 keyword-conditioned 表示并行运行。</li>
-          <li><strong>冻结候选规则：</strong>把允许的簇数、最小簇、coverage 下限和评价方式在看新结果前写死。</li>
+          <li><strong>冻结候选规则：</strong>输出 Pareto frontier，不再用 silhouette + 0.15 × coverage 选单一赢家。</li>
           <li><strong>多 seed：</strong>每个 UMAP 设置至少运行 20–50 个 seed；比较 pairwise Adjusted Rand Index、cluster Jaccard 和 noise 一致性。</li>
           <li><strong>重采样：</strong>对论文做 80%–90% subsampling 或 bootstrap，至少 50 次；报告每个簇的稳定性，而不是只报告平均分。</li>
           <li><strong>同时报告三项：</strong>silhouette、coverage、cluster-size distribution。任何一个都不能单独决定胜负。</li>
