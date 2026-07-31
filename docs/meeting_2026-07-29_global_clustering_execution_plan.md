@@ -1,119 +1,237 @@
-# Global Clustering Comparison — Executable Plan
+# Global Clustering Comparison — Revised Executable Plan
 
 Date: 2026-07-29
-
+Revised: 2026-07-31
 Corpus: 282 retained papers
-Meeting request: run all papers together, add UMAP before clustering, compare
-K-Means/DBSCAN/HDBSCAN, follow the UMAP + HDBSCAN pipeline shared by Zhicheng,
-and compare traditional and LLM-based topic outputs.
 
-## 1. Recommended change in one sentence
+Meeting request: run all papers together, compare K-Means, DBSCAN, and HDBSCAN,
+add UMAP before clustering, and test the UMAP + HDBSCAN workflow shared by
+Zhicheng.
 
-Do **not** replace the current keyword-conditioned pipeline yet. Add a separate,
-reproducible global comparison experiment using the same frozen 282-paper
-BGE-M3 embeddings:
+This revision adds two controls that are necessary for a valid decision:
+
+1. the incumbent Spectral method must be included; and
+2. the experiment must include a keyword-neutral representation.
+
+## 1. Meeting-critical statement
+
+Do **not** copy the Vizuara article's HDBSCAN parameters.
+
+The article clusters 44,949 papers. This project clusters 282 papers, roughly
+160 times fewer. Its `min_cluster_size=50` would allow at most five clusters in
+this corpus and would probably produce one or two large clusters plus extensive
+noise.
+
+The earlier observation that “HDBSCAN creates too much noise” may therefore be
+a parameter artifact rather than a property of HDBSCAN.
+
+The meeting-safe interpretation is:
+
+> Noise can be useful weak-affinity information, as Leilani suggested, but only
+> after showing that the noise is not mainly caused by an inappropriate
+> `min_cluster_size`, `min_samples`, UMAP neighborhood, or representation.
+
+## 2. Revised experimental question
+
+Do not replace the current keyword-conditioned Spectral assignments yet.
+Treat the global experiment as a parallel **method-selection branch**.
 
 ```text
-Frozen 282 papers + frozen 1024D BGE-M3 embeddings
-                    |
-          +---------+---------+
-          |                   |
-      Raw 1024D          UMAP 5D / 10D
-          |                   |
-    +-----+-----+       +-----+-----+
- K-Means DBSCAN HDBSCAN K-Means DBSCAN HDBSCAN
-          |
- numeric comparison -> blinded human review -> final method selection
-          |
- same shortlisted memberships -> c-TF-IDF vs LLM topic descriptions
+Frozen 282-paper corpus
+        |
+        +-------------------------------+
+        |                               |
+R_kw: keyword-conditioned         R_neutral: keyword-neutral
+title + abstract + passages       title + abstract only
+        |                               |
+        +---------------+---------------+
+                        |
+              L2-normalized BGE-M3
+                        |
+        +---------------+---------------+
+        |                               |
+     Raw 1024D               Shared frozen UMAP 5D / 10D
+        |                               |
+ Spectral / K-Means / DBSCAN / HDBSCAN
+                        |
+ original-space metrics + stability + sanity checks
+                        |
+                 blinded human review
+                        |
+                 final method decision
 ```
 
-This design separates two questions:
+This design separates four questions:
 
-1. Does UMAP improve clusterability?
-2. Given the same representation space, which clustering family is most useful?
+1. Is the current Spectral method better or worse than the three challengers?
+2. Does UMAP improve a method, or only change the geometry?
+3. Does keyword-conditioned passage selection leak the original keyword groups
+   into the “naturally emerging” clusters?
+4. Are the resulting clusters stable and substantively useful?
 
-It also prevents topic-label quality from being confused with paper-assignment
-quality.
+## 3. Structural issues that must be resolved first
 
-## 2. Current repository state
+### 3.1 Include Spectral as the incumbent baseline
 
-- [x] The active cleaned corpus contains 282 papers.
-- [x] Frozen BGE-M3 embeddings already exist.
-- [x] An earlier global comparison exists for 284 papers.
-- [x] Raw DBSCAN and UMAP-HDBSCAN are already implemented in
-  `scripts/run_batch3_alternative_algorithms.py`.
-- [x] K-Means and raw HDBSCAN are already implemented in
-  `scripts/run_batch3_clustering.py`.
-- [ ] The global comparison must be rerun on the final 282-paper corpus.
-- [ ] One runner must evaluate the complete raw/UMAP × algorithm matrix with
-  identical metrics and resampling.
-- [ ] UMAP-K-Means and UMAP-DBSCAN are not currently included in the same
-  controlled comparison.
+The current Batch 3 method is not K-Means, DBSCAN, or HDBSCAN.
 
-The old 284-paper results are useful as an audit trail but should not be
-presented as the final meeting result.
+For each keyword group, K-Means inertia estimates `k`; the final memberships
+come from Spectral clustering on a cosine 10-nearest-neighbor graph. The
+existing 282-paper assignments, Path 1 coding, and Path 2 frozen inputs are
+therefore downstream of Spectral.
 
-## 3. Freeze the experimental inputs
+The comparison must contain:
 
-Use these files and do not regenerate embeddings during algorithm comparison:
+| Role | Method |
+|---|---|
+| Incumbent | Spectral on a cosine kNN graph |
+| Challenger | K-Means |
+| Challenger | DBSCAN |
+| Challenger | HDBSCAN |
+
+Without Spectral, the meeting could select a challenger without any controlled
+evidence about whether it improves on the method already used downstream.
+
+The group-level K-Means elbow rule must not be reused for the global Spectral
+run. Global `k` is selected by stability over a separately defined range.
+
+### 3.2 Add a keyword-neutral representation
+
+The current representation is:
+
+```text
+title + abstract + up to 12 passages selected using the paper's keyword group
+→ BGE-M3 → L2 normalization
+```
+
+This is appropriate for comparison with the frozen Batch 3 work, but not
+sufficient for the meeting's request that clusters “emerge naturally.”
+The passage-selection stage already contains keyword information. Agreement
+between global clusters and keyword groups can therefore reflect representation
+leakage rather than discovered structure.
+
+Treat representation as an experimental factor:
+
+| ID | Construction | Purpose |
+|---|---|---|
+| `R_kw` | Current title + abstract + up to 12 keyword-conditioned passages | Continuity with the frozen pipeline |
+| `R_neutral` | Title + abstract only, embedded with the same BGE-M3 model | Valid test of naturally emerging global structure |
+
+If a future neutral passage selector is added, it must use one global rule that
+does not receive the original keyword label.
+
+For every configuration, report ARI with the original keyword groups under both
+representations. The difference
+`ARI(R_kw, keyword) - ARI(R_neutral, keyword)` is a leakage diagnostic, not a
+formal causal estimate.
+
+The runner must assert that both representations are BGE-M3, 1024-dimensional,
+row-aligned, and L2-normalized before raw-space clustering.
+
+### 3.3 Keep the global experiment separate from the frozen branch
+
+The Batch 3 topic-modeling boundary remains valid for the frozen branch:
+class-based TF-IDF may interpret the fixed memberships but must not recluster
+them.
+
+The global comparison is a separate method-selection experiment. It may run
+UMAP-HDBSCAN and other clustering methods, but its memberships do not overwrite
+Batch 3 or invalidate downstream coding until a documented final decision is
+made.
+
+If a challenger is adopted later, the decision record must list which Path 1
+and Path 2 artifacts require regeneration.
+
+### 3.4 Define document independence consistently
+
+The 283-to-282 deduplication established that a superseded conference version
+is not an independent analytic record. Similar cases remain:
+
+| Paper ID(s) | Relationship | Current handling |
+|---|---|---|
+| `cf2ee8097a06`, `f941f0424e1a` | Chapters 4 and 6 of Baldwin & Clark, *Design Rules Vol. 2* | Two records |
+| `2a22a314dcfb` | Lane report described as a dissertation summary; companion report exists | One observed record |
+
+Before confirmation, freeze a written independence rule for conference/journal
+versions, book chapters, reports, and dissertation derivatives.
+
+Do not silently remove records during the exploratory run. Instead:
+
+- flag related records in metadata;
+- report results with all 282 records;
+- run a sensitivity analysis with non-independent pairs grouped or excluded;
+- prevent a persistent two-document pair from being counted as standalone
+  evidence of cluster stability.
+
+This matters because near-duplicate or same-source documents can create
+artificial local density and inflate bootstrap stability for methods that
+produce small clusters.
+
+## 4. Freeze and audit the experimental inputs
+
+### 4.1 Current keyword-conditioned input
 
 ```text
 Input:
 outputs/batch2/global_282_bge_m3_contextual_final2/global_contextual_input_282.csv
 
-Embeddings:
+R_kw embeddings:
 outputs/batch2/global_282_bge_m3_contextual_final2/embeddings_bge_m3_global_282_k12.npy
 
-Embedding audit:
+Audit metadata:
 outputs/batch2/global_282_bge_m3_contextual_final2/refresh_metadata.json
 ```
 
-### Execute
+### 4.2 Required neutral input
 
-```bash
-cd "/Users/baiyixin/Documents/Survey - design knowledge/paper-clustering-380"
+Create and freeze:
 
-.venv/bin/python - <<'PY'
-import numpy as np
-import pandas as pd
+```text
+outputs/batch2/global_282_bge_m3_neutral_title_abstract_20260731/
+├── global_neutral_input_282.csv
+├── embeddings_bge_m3_global_282_title_abstract.npy
+├── embedding_metadata.json
+└── SHA256SUMS.txt
+```
 
-papers = pd.read_csv(
-    "outputs/batch2/global_282_bge_m3_contextual_final2/"
-    "global_contextual_input_282.csv"
-)
-vectors = np.load(
-    "outputs/batch2/global_282_bge_m3_contextual_final2/"
-    "embeddings_bge_m3_global_282_k12.npy"
-)
+The neutral text must contain title and abstract only. It must not contain the
+original keyword, keyword-conditioned passages, cluster labels, codebook terms,
+or generated summaries.
 
+### 4.3 Input assertions
+
+```python
 assert len(papers) == 282
 assert papers["paper_id"].nunique() == 282
-assert vectors.shape == (282, 1024)
-print("Frozen input validated:", len(papers), vectors.shape)
-PY
+assert kw_vectors.shape == (282, 1024)
+assert neutral_vectors.shape == (282, 1024)
+assert papers["paper_id"].tolist() == neutral_papers["paper_id"].tolist()
+assert np.allclose(np.linalg.norm(kw_vectors, axis=1), 1.0, atol=1e-5)
+assert np.allclose(np.linalg.norm(neutral_vectors, axis=1), 1.0, atol=1e-5)
 ```
 
 ### Completion criteria
 
-- [ ] Exactly 282 rows and 282 unique `paper_id` values.
-- [ ] Embedding shape is exactly `282 × 1024`.
-- [ ] Input and embedding SHA-256 values are copied from
-  `refresh_metadata.json` into the new run metadata.
-- [ ] No paper is added, removed, translated, or deduplicated during this run.
+- [ ] Exactly 282 rows and 282 unique paper IDs.
+- [ ] `R_kw` and `R_neutral` use identical row order.
+- [ ] Both embedding matrices are `282 × 1024` BGE-M3 vectors.
+- [ ] SHA-256 values are saved before clustering.
+- [ ] The exact neutral text construction is recorded.
+- [ ] No record is added, removed, or merged during a run.
 
 ### Prior research
 
-- The comparison must hold representation constant because clustering outcomes
-  depend strongly on the complete representation–reduction–algorithm
-  configuration: [Eklund, Forsman, and Drewes, *An Empirical Configuration
-  Study of a Common Document Clustering Pipeline*
+- BGE-M3 supports multilingual and multi-granularity text representation, but
+  its retrieval performance does not itself validate cluster quality:
+  [Chen et al., *BGE M3-Embedding*
+  (2024)](https://arxiv.org/abs/2402.03216).
+- Document-clustering outcomes depend on the complete representation,
+  reduction, and algorithm configuration:
+  [Eklund, Forsman, and Drewes, *An Empirical Configuration Study of a Common
+  Document Clustering Pipeline*
   (2023)](https://nejlt.ep.liu.se/article/view/4396).
-- Contextual-embedding clustering can be a direct and competitive route to
-  topic discovery: [Zhang et al., *Is Neural Topic Modelling Better than
-  Clustering?* (2022)](https://arxiv.org/abs/2204.09874).
 
-## 4. Implement one controlled global comparison runner
+## 5. Build one controlled comparison runner
 
 Create:
 
@@ -121,464 +239,513 @@ Create:
 scripts/run_global_282_clustering_comparison.py
 ```
 
-Prefer extracting and reusing metric helpers from the two existing Batch 3
-scripts instead of copying their logic.
+Prefer extracting and reusing tested metric helpers from the existing Batch 3
+scripts.
 
 ### Required CLI
 
 ```text
 --input
---embeddings
+--representation name=embedding_path
 --out
---seed
+--seeds
 --umap-components
 --umap-neighbors
 --k-values
 --bootstrap-repeats
 --bootstrap-fraction
---max-noise-fraction
 --min-eligible-cluster-size
+--sanity-check-spec
 ```
 
-### Required configurations
+### Required matrix
 
-Run every algorithm in raw space and UMAP space:
+| Space | Spectral | K-Means | DBSCAN | HDBSCAN |
+|---|---:|---:|---:|---:|
+| Raw normalized 1024D | required | required | required diagnostic | required |
+| Shared UMAP 5D | required | required | required | required |
+| Shared UMAP 10D | optional comparison | optional comparison | optional comparison | required Zhicheng comparison |
 
-| Space | K-Means | DBSCAN | HDBSCAN |
-|---|---|---|---|
-| Raw normalized 1024D | required baseline | required | required |
-| UMAP 5D | required | required | required |
-| UMAP 10D | required | required | required |
+Run the matrix for both `R_kw` and `R_neutral`.
 
-Do not use the 2D visualization coordinates for clustering. Generate separate
-5D/10D UMAP representations for clustering and a separate 2D representation
-only for visualization.
+Raw 1024D DBSCAN is expected to perform poorly because of high-dimensional
+density concentration. Retain the result as evidence about why reduction may
+be needed; do not hide it as a failed run.
 
-### Initial parameter grid
+## 6. UMAP control: fit once, save, hash, and share
 
-Use a bounded grid rather than one hand-picked configuration:
+For a fixed representation, dimension, neighborhood, and seed, fit UMAP once.
+All four methods must read the same saved matrix.
 
-```yaml
-umap:
-  n_components: [5, 10]
-  n_neighbors: [5, 10, 15, 30]
-  min_dist: [0.0]
-  metric: [cosine]
-  seeds: [11, 23, 37, 53, 71]
-
-kmeans:
-  k: [2, 3, 5, 6, 8, 10, 12]
-  n_init: [50]
-
-dbscan:
-  min_samples: [3, 5, 8, 10]
-  eps: derive from each space's cosine/Euclidean k-distance distribution
-
-hdbscan:
-  min_cluster_size: [5, 8, 10, 12, 15, 20]
-  min_samples: [1, 3, 5, 8, 10]
-  cluster_selection_method: [eom]
+```python
+reducer = UMAP(
+    n_components=5,
+    n_neighbors=15,
+    min_dist=0.0,
+    metric="cosine",
+    random_state=42,
+)
+X_umap = reducer.fit_transform(emb_bge_m3_l2)
+np.save("data/umap/R_neutral_umap_5d_nn15_seed42.npy", X_umap)
 ```
 
-`k=2` and `k=3` are diagnostic macro-structure baselines. Do not select them
-only because they are numerically stable if they are too coarse for literature
-synthesis.
+Save each matrix's SHA-256 in `data/umap/SHA256SUMS.txt` and record it in run
+metadata. The comparison runner must load, not independently regenerate, the
+matrix for each algorithm.
 
-For DBSCAN, export the sorted k-distance values used to choose `eps`; do not
-silently auto-select one value.
-
-### Required output files
+The phrase “fit once” applies within each controlled comparison cell:
 
 ```text
-outputs/batch3/global_282_clustering_comparison_20260729/
+representation × n_components × n_neighbors × seed
+```
+
+During bootstrap, UMAP must be refit on each subsample to measure end-to-end
+pipeline stability. It is still fit only once per bootstrap cell and then
+shared by all four algorithms on that subsample. Reusing the full-data UMAP in
+every bootstrap would overstate stability.
+
+Visualization UMAP is separate:
+
+- clustering uses saved 5D or 10D coordinates;
+- visualization uses a separate 2D or 3D UMAP;
+- visualization coordinates never become clustering input;
+- UMAP axes are not interpreted as variables.
+
+### UMAP grid
+
+```yaml
+n_components: [5, 10]
+n_neighbors: [5, 15, 30]
+min_dist: [0.0]
+metric: [cosine]
+exploratory_seeds: [11, 23, 37, 53, 71]
+meeting_reference_seed: [42]
+```
+
+`n_neighbors=15` is 5.3% of this 282-paper corpus, compared with approximately
+0.03% of the Vizuara corpus. It must therefore be tested, not treated as a
+scale-free default. `n_neighbors=30` is intentionally a more global
+sensitivity condition.
+
+### Prior research
+
+- UMAP is stochastic and supports non-visualization output dimensions:
+  [McInnes, Healy, and Melville, *UMAP*
+  (2018)](https://arxiv.org/abs/1802.03426).
+- Standard UMAP does not preserve original local density, which is important
+  when a density-based method follows it:
+  [Narayan, Berger, and Cho, *Assessing Single-Cell Transcriptomic Variability
+  through Density-Preserving Data Visualization*
+  (2021)](https://doi.org/10.1038/s41587-020-00801-7).
+
+## 7. Correct parameter ranges
+
+### 7.1 Spectral — incumbent
+
+```yaml
+affinity: nearest_neighbors
+n_neighbors: [10]
+k: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+random_state: [42]
+```
+
+- Keep cosine kNN graph construction consistent with Batch 3.
+- Do not use the keyword-group elbow rule globally.
+- Select `k` primarily by bootstrap stability, then inspect granularity.
+
+### 7.2 K-Means — complete-assignment baseline
+
+```yaml
+k: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+n_init: [50]
+random_state: [42]
+```
+
+- Raw-space K-Means requires L2-normalized embeddings.
+- K-Means has no noise concept and forces every paper into a cluster.
+- Report the full cluster-size distribution because the method favors compact,
+  approximately spherical clusters of comparable scale.
+- Select `k` by stability over 50 80%-subsample runs, not by maximum
+  silhouette.
+
+### 7.3 DBSCAN — global-density diagnostic
+
+```yaml
+min_samples: [3, 5, 10]
+eps: k-distance knee plus a documented sweep around the knee
+```
+
+- Derive the initial `eps` from the sorted k-distance curve using a documented
+  knee detector.
+- Export the complete `eps × cluster_count × noise_fraction` curve.
+- Do not tune `eps` until a visually preferred result appears.
+- A single global `eps` assumes comparable density across clusters. If DBSCAN
+  is dominated by HDBSCAN on this heterogeneous corpus, report that as a
+  methodological finding rather than a software failure.
+- `min_samples` constrains the smallest detectable dense theme. Report that
+  consequence explicitly.
+
+### 7.4 HDBSCAN — variable-density challenger
+
+```yaml
+min_cluster_size: [2, 3, 5, 8, 12, 15]
+min_samples: [1, 3, 5, 10]
+cluster_selection_method: [eom, leaf]
+prediction_data: [true]
+```
+
+- `eom` tends toward fewer, larger clusters; `leaf` may expose finer topics.
+- Export `noise_fraction`, `cluster_count`, and cluster sizes across
+  `min_cluster_size`. This plot is itself a meeting deliverable.
+- If microclusters are excessive, test a documented
+  `cluster_selection_epsilon` merge as a secondary sensitivity analysis. Do
+  not immediately raise `min_cluster_size` and erase all small themes.
+- Use all-points membership vectors to report, for every noise paper, its
+  nearest cluster and membership strength. Keep the hard label as `-1`.
+
+#### Implementation dependency
+
+The repository currently uses `sklearn.cluster.HDBSCAN`. In the current
+environment, that implementation does not expose `prediction_data` or
+`all_points_membership_vectors()`, and the separate
+`scikit-learn-contrib/hdbscan` package is not installed.
+
+The new runner must therefore do one of the following and record the choice:
+
+1. add and pin the `hdbscan` package, import `hdbscan.HDBSCAN`, set
+   `prediction_data=True`, and use
+   `hdbscan.all_points_membership_vectors(model)`; or
+2. omit the full per-cluster soft-membership claim and report only the hard
+   noise label plus the capabilities actually exposed by the chosen library.
+
+Option 1 is required for the proposed “nearest cluster + membership strength”
+deliverable. Do not silently mix scikit-learn HDBSCAN assignments with soft
+memberships produced by a different fitted implementation.
+
+### HDBSCAN noise policy
+
+Noise is neither automatically a defect nor automatically meaningful.
+
+For every configuration:
+
+- preserve hard noise label `-1`;
+- never reassign noise for primary metrics;
+- report coverage;
+- report the strongest soft membership and its strength;
+- inspect whether noise is caused by weak affinity, missing text, language,
+  representation leakage, duplicate handling, or parameter scale.
+
+### Prior research
+
+- DBSCAN defines density-connected clusters and explicit noise with a single
+  neighborhood scale:
+  [Ester et al. (1996)](https://file.biolab.si/papers/1996-DBSCAN-KDD.pdf).
+- HDBSCAN extracts clusters from a hierarchy of density levels and supports
+  outlier interpretation:
+  [Campello, Moulavi, and Sander
+  (2013)](https://doi.org/10.1007/978-3-642-37456-2_14);
+  [Campello et al.
+  (2015)](https://doi.org/10.1145/2733381).
+- Zhicheng's shared article is a practical implementation guide, not evidence
+  that parameters from 44,949 papers transfer to 282:
+  [Vizuara, *From Text to Insights*
+  (2024)](https://vizuara.substack.com/p/from-text-to-insights-hands-on-text).
+
+## 8. Evaluation protocol
+
+### 8.1 Use one metric reference space
+
+Compute all geometry-based internal metrics in the original normalized 1024D
+BGE-M3 space using cosine distance, regardless of where labels were produced.
+
+Do not compare a raw-space silhouette with a reduced-space silhouette. UMAP
+actively changes separation and density.
+
+Silhouette remains descriptive. It is not the final selection criterion because
+it changes with cluster count and excludes noise when calculated only on
+assigned points.
+
+### 8.2 Inherit the stronger Batch 3 validation
+
+| Rule | Global adaptation |
+|---|---|
+| Group minimum `max(3, ceil(0.15 × group_size))` | Replace with absolute exploratory floor `max(3, ceil(0.01 × 282)) = 3`; always report actual sizes |
+| Permutation-adjusted cohesion | Retain `z_rho > 2` |
+| 80% subsample pairwise bootstrap ARI | Retain mean ARI `≥ 0.60` as the primary automatic stability threshold |
+
+For K-Means and Spectral, select `k` using stability and human granularity, not
+the highest silhouette.
+
+Do not use a fixed maximum-noise gate to declare density methods invalid.
+Coverage is a separate usability dimension. A low-coverage configuration may
+be a useful map of high-confidence cores but cannot serve as a complete
+downstream partition.
+
+### 8.3 Required numeric outputs
+
+| Metric | Interpretation |
+|---|---|
+| Number of non-noise clusters | Coarse/fine structure |
+| Full cluster-size distribution | Tiny or dominant clusters |
+| Noise fraction and coverage | Assigned vs weak-affinity evidence |
+| Original-space cosine silhouette | Descriptive separation |
+| Permutation-adjusted cohesion `z_rho` | Separation beyond a null assignment |
+| Mean 80%-subsample pairwise ARI | Primary stability evidence |
+| Seed-to-seed ARI | UMAP/K-Means stochastic sensitivity |
+| ARI with original keyword | Leakage/discovery diagnostic, not ground truth |
+| Sanity-check results | Known-paper behavior |
+| Representative and boundary papers | Human interpretation |
+
+### 8.4 Compare methods fairly when noise differs
+
+K-Means and Spectral assign all papers. DBSCAN and HDBSCAN may retain noise.
+A single full-corpus ARI between them mixes membership disagreement with
+coverage policy.
+
+Report both:
+
+1. pairwise ARI on the intersection of papers assigned by both methods; and
+2. full-corpus coverage/noise separately.
+
+For a four-method table, also report ARI on the subset assigned by all four
+methods, but include the subset size so a very small intersection cannot look
+misleadingly authoritative.
+
+### 8.5 Interpret keyword agreement in the correct direction
+
+Original keyword labels are not ground truth. The meeting asks whether themes
+emerge beyond those groups.
+
+- high keyword ARI under `R_kw` may indicate representation leakage;
+- low keyword ARI with low stability indicates an unreliable partition;
+- low keyword ARI with high stability and human coherence is evidence of a
+  reproducible structure that differs from the search taxonomy.
+
+Always interpret keyword ARI together with the `R_kw` versus `R_neutral`
+comparison.
+
+### Prior research
+
+- Silhouette measures cohesion and separation but is not a complete model
+  selection criterion:
+  [Rousseeuw (1987)](https://doi.org/10.1016/0377-0427(87)90125-7).
+- Clustering stability under subsampling tests whether structure persists
+  after perturbation:
+  [Ben-Hur, Elisseeff, and Guyon
+  (2002)](https://psb.stanford.edu/psb-online/proceedings/psb02/benhur.pdf).
+
+## 9. Automated sanity checks
+
+Every configuration must write one row per probe to:
+
+```text
+outputs/batch3/global_282_clustering_comparison_20260731/sanity_checks.csv
+```
+
+| Probe | Paper ID(s) | Known property | Expected diagnostic behavior |
+|---|---|---|---|
+| P1 same source | `cf2ee8097a06`, `f941f0424e1a` | Chapters 4 and 6 of the same Baldwin & Clark book | Very small original-space distance; normally same cluster |
+| P2 keyword homonym | `1d033f71eb02` | Tissue-interfaced bioelectronics; “design rules” may be material-science usage | Density method should leave it weak/noise or isolate it; forced inclusion signals greediness |
+| P3 cross-language | `5c096c480387` | Slovenian full text, English abstract; publication year 2008 | Compare `R_kw` and `R_neutral` position and audit actual embedded text |
+| P4 derivative | `2a22a314dcfb` | Dissertation-summary report | Observation item; no hard pass/fail |
+
+These are diagnostic probes, not labels for training or post-hoc tuning.
+
+### Required columns
+
+```text
+representation, space, umap_components, umap_neighbors, seed,
+method, configuration, probe, paper_id, partner_paper_id,
+raw_cosine_distance, cluster, partner_cluster, is_noise,
+strongest_membership_cluster, strongest_membership_strength,
+expected_behavior, observed_behavior, pass_warning
+```
+
+P3 must also export the exact neutral and keyword-conditioned text lengths,
+languages if detected, selected passage IDs, and whether non-English full-text
+content entered `R_kw`. This answers an input question; it must not be inferred
+from the plot.
+
+P1 is also a duplicate-dependence warning. Passing it does not prove a method
+is good, and the pair must not be allowed to create a misleading stability
+advantage.
+
+## 10. Required output structure
+
+```text
+outputs/batch3/global_282_clustering_comparison_20260731/
+├── representation_manifest.csv
 ├── configuration_metrics.csv
 ├── all_cluster_assignments.csv
 ├── eligible_configurations.csv
-├── pairwise_ari_matrix.csv
+├── pairwise_ari_intersection.csv
+├── keyword_ari_by_representation.csv
 ├── dbscan_k_distance_curves.csv
+├── dbscan_eps_sensitivity.csv
+├── hdbscan_parameter_sensitivity.csv
+├── hdbscan_membership_vectors.csv
+├── bootstrap_stability.csv
 ├── umap_seed_stability.csv
+├── sanity_checks.csv
 ├── cluster_profiles.csv
 ├── human_review_shortlist.csv
+├── umap/
+│   ├── *.npy
+│   └── SHA256SUMS.txt
 └── run_metadata.json
 ```
 
-### Implementation checks
+`run_metadata.json` must include:
 
-- [ ] All configurations consume the identical frozen embedding matrix.
-- [ ] All stochastic configurations record the random seed.
-- [ ] UMAP is refit inside each bootstrap subsample; otherwise stability is
-  overstated.
-- [ ] Noise remains label `-1`; it is never silently assigned to the nearest
-  cluster for numeric evaluation.
-- [ ] Each assignment row retains `paper_id`, title, original keyword, method,
-  configuration, cluster, and `is_noise`.
-- [ ] The full command and library versions are saved in `run_metadata.json`.
+- exact CLI command and git commit;
+- Python and package versions;
+- paper and embedding hashes;
+- UMAP matrix hashes;
+- all seeds and parameter grids;
+- distance metrics for every space;
+- noise policy;
+- bootstrap procedure;
+- eligibility rules frozen before result inspection.
 
-### Prior research
+## 11. Blinded human comparison
 
-- Zhicheng's shared practical pipeline reduces high-dimensional text
-  embeddings with UMAP and then applies HDBSCAN; it also explicitly recommends
-  comparing HDBSCAN with K-Means and DBSCAN:
-  [Vizuara, *From Text to Insights: Hands-on Text Clustering and Topic
-  Modeling — Part 1*](https://vizuara.substack.com/p/from-text-to-insights-hands-on-text).
-- UMAP's original formulation supports nonlinear dimensionality reduction and
-  dimensions beyond visualization:
-  [McInnes, Healy, and Melville, *UMAP*](https://arxiv.org/abs/1802.03426).
-- DBSCAN introduces density-connected clusters and explicit noise without a
-  predefined number of clusters:
-  [Ester et al., *A Density-Based Algorithm for Discovering Clusters in Large
-  Spatial Databases with Noise*
-  (1996)](https://file.biolab.si/papers/1996-DBSCAN-KDD.pdf).
-- HDBSCAN generalizes density-based clustering across a hierarchy of density
-  levels:
-  [Campello, Moulavi, and Sander, *Density-Based Clustering Based on
-  Hierarchical Density Estimates*
-  (2013)](https://doi.org/10.1007/978-3-642-37456-2_14).
-- A direct empirical document-clustering comparison of BERT/Doc2Vec,
-  PCA/UMAP, and K-Means/HDBSCAN supports evaluating the complete pipeline
-  rather than declaring one universally best algorithm:
-  [Eklund, Forsman, and Drewes
-  (2023)](https://nejlt.ep.liu.se/article/view/4396).
-
-## 5. Run the global 282-paper experiment
-
-After implementing the runner:
-
-```bash
-.venv/bin/python -m py_compile \
-  scripts/run_global_282_clustering_comparison.py
-
-.venv/bin/python scripts/run_global_282_clustering_comparison.py \
-  --input \
-  outputs/batch2/global_282_bge_m3_contextual_final2/global_contextual_input_282.csv \
-  --embeddings \
-  outputs/batch2/global_282_bge_m3_contextual_final2/embeddings_bge_m3_global_282_k12.npy \
-  --out \
-  outputs/batch3/global_282_clustering_comparison_20260729 \
-  --seed 20260729 \
-  --umap-components 5,10 \
-  --umap-neighbors 5,10,15,30 \
-  --k-values 2,3,5,6,8,10,12 \
-  --bootstrap-repeats 50 \
-  --bootstrap-fraction 0.8 \
-  --max-noise-fraction 0.35 \
-  --min-eligible-cluster-size 5
-```
-
-Run the full 100-repeat confirmation only after the shortlist is frozen:
-
-```bash
-.venv/bin/python scripts/run_global_282_clustering_comparison.py \
-  --input \
-  outputs/batch2/global_282_bge_m3_contextual_final2/global_contextual_input_282.csv \
-  --embeddings \
-  outputs/batch2/global_282_bge_m3_contextual_final2/embeddings_bge_m3_global_282_k12.npy \
-  --out \
-  outputs/batch3/global_282_clustering_confirmation_20260729 \
-  --seed 20260729 \
-  --bootstrap-repeats 100 \
-  --bootstrap-fraction 0.8 \
-  --confirm-shortlist \
-  outputs/batch3/global_282_clustering_comparison_20260729/human_review_shortlist.csv
-```
-
-### Completion criteria
-
-- [ ] Every method has at least one raw-space result.
-- [ ] Every method has results for both UMAP 5D and UMAP 10D.
-- [ ] The run completes without regenerating BGE-M3 embeddings.
-- [ ] Re-running with the same seed reproduces the exported assignments.
-- [ ] A different UMAP seed does not radically change a shortlisted solution.
-
-### Prior research
-
-- The shared Vizuara article uses 10-dimensional UMAP with `min_dist=0`,
-  cosine distance, followed by Euclidean HDBSCAN in reduced space. Its values
-  are a starting point, not evidence that one setting is optimal for 282
-  papers: [Vizuara practical
-  pipeline](https://vizuara.substack.com/p/from-text-to-insights-hands-on-text).
-- Empirical work comparing UMAP as clustering preprocessing reports that the
-  effect depends on the downstream algorithm and dataset:
-  [Allaoui et al., *Considerably Improving Clustering Algorithms Using UMAP
-  Dimensionality Reduction Technique*
-  (2020)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7340901/).
-- Text-embedding experiments find meaningful trade-offs: density-based methods
-  can outperform K-Means while labeling more documents as outliers:
-  [Thakur et al., *Influence of Various Text Embeddings on Clustering
-  Performance in NLP* (2023)](https://arxiv.org/abs/2305.03144).
-
-## 6. Compare configurations with the same evaluation protocol
-
-Compute metrics in the **original normalized 1024D embedding space**, even for
-UMAP-based assignments. Reduced-space metrics may reward distortions created
-by UMAP.
-
-### Required numeric metrics
-
-| Metric | Purpose |
-|---|---|
-| Number of clusters | Detect overly coarse/fine solutions |
-| Cluster sizes | Detect singleton/tiny/dominant clusters |
-| Noise fraction | Treat unassigned papers as information and cost |
-| Coverage (`1 - noise`) | Show how much of the corpus is usable downstream |
-| Cosine silhouette in original space | Measure separation without scoring in the transformed space |
-| Bootstrap pairwise ARI | Measure stability under 80% subsampling |
-| Seed-to-seed ARI | Measure UMAP/K-Means stochastic sensitivity |
-| NMI with original keyword | Diagnostic only; not a target to maximize |
-| Representative-paper titles | Support human interpretation |
-
-### Eligibility gate
-
-A configuration enters human review only when it:
-
-- produces at least 2 non-noise clusters;
-- has smallest non-noise cluster of at least 5 papers;
-- has no more than 35% noise;
-- has valid original-space silhouette and bootstrap stability estimates; and
-- does not place more than 70% of all papers into one cluster.
-
-These are project decision rules, not universal thresholds. Freeze them in
-`run_metadata.json` before inspecting the new 282-paper results.
-
-Do not select the winner by a single combined score. Shortlist up to two
-configurations per family and preserve at least:
-
-1. one complete-assignment K-Means baseline;
-2. one raw-space density result if eligible;
-3. one UMAP-HDBSCAN result;
-4. one UMAP-DBSCAN result if eligible.
-
-### Prior research
-
-- Clustering stability under subsampling provides evidence about whether
-  structure persists after perturbing the dataset:
-  [Ben-Hur, Elisseeff, and Guyon, *A Stability Based Method for Discovering
-  Structure in Clustered Data*
-  (2002)](https://psb.stanford.edu/psb-online/proceedings/psb02/benhur.pdf).
-- HDBSCAN noise should be retained as an outlier result rather than treated
-  automatically as algorithm failure:
-  [Campello et al., *Hierarchical Density Estimates for Data Clustering,
-  Visualization, and Outlier Detection*
-  (2015)](https://doi.org/10.1145/2733381).
-- BERTopic generalizability research documents the practical risk that
-  HDBSCAN can exclude a large share of documents as outliers, motivating
-  explicit coverage reporting and a K-Means comparison:
-  [de Groot, Aliannejadi, and Haas
-  (2022)](https://arxiv.org/abs/2212.08459).
-
-## 7. Conduct blinded human comparison
-
-Numeric metrics screen configurations; they do not establish that clusters are
-useful for the systematic literature review.
-
-### Build the review packet
+Numeric validation screens configurations; it does not establish usefulness for
+the systematic literature review.
 
 For each shortlisted configuration, export:
 
 - a blinded configuration code;
 - cluster size and noise count;
-- five representative papers nearest the original-space cluster centroid;
+- five representative papers nearest the original-space centroid;
 - five random papers;
 - two boundary papers;
 - one likely intruder from the nearest competing cluster;
-- top c-TF-IDF terms;
+- top class-based TF-IDF terms;
 - original keyword distribution;
 - a separate private answer key.
 
-Two reviewers independently rate each cluster from 1–5:
+Two reviewers independently rate:
 
 | Criterion | Question |
 |---|---|
 | Membership coherence | Do the papers belong together? |
-| Distinctiveness | Is this cluster meaningfully different from others? |
+| Distinctiveness | Is the cluster meaningfully different from others? |
 | Granularity | Is it neither too broad nor too narrow? |
-| Labelability | Can reviewers assign a concise, evidence-based topic? |
-| Review usefulness | Would this cluster support reading and synthesis? |
+| Labelability | Can it receive a concise evidence-based description? |
+| Review usefulness | Does it support reading and synthesis? |
 
-Reviewers also mark:
+Reviewers also inspect:
 
-- papers that do not belong;
-- clusters that should merge;
-- clusters that should split;
-- whether each noise paper is meaningfully peripheral;
+- representative noise papers and their soft membership;
+- clusters that should merge or split;
+- P1–P4 sanity probes;
+- whether a solution mainly reconstructs keyword groups;
 - preferred configuration without seeing the algorithm name.
 
-### Completion criteria
-
-- [ ] At least two reviewers complete the same blinded packet.
-- [ ] Agreement and disagreements are recorded.
-- [ ] Algorithm identities are revealed only after ratings are frozen.
-- [ ] The chosen solution passes both numeric eligibility and human review.
-- [ ] A decision record explains why rejected alternatives were not selected.
+Algorithm identities are revealed only after ratings are frozen.
 
 ### Prior research
 
-- Topic-model likelihood and other automated measures do not guarantee human
-  interpretability; direct human tasks reveal qualities missed by model-only
-  metrics: [Chang et al., *Reading Tea Leaves: How Humans Interpret Topic
-  Models* (2009)](https://papers.neurips.cc/paper/2009/hash/f92586a25bb3145facd64ab20fd554ff-Abstract.html).
-- The Vizuara pipeline also validates clusters through representative-document
-  sampling and interactive inspection after UMAP-HDBSCAN:
-  [Vizuara practical
-  pipeline](https://vizuara.substack.com/p/from-text-to-insights-hands-on-text).
-- Stability is useful for identifying reproducible structure, but it should be
-  paired with substantive review:
-  [Ben-Hur et al.
-  (2002)](https://psb.stanford.edu/psb-online/proceedings/psb02/benhur.pdf).
+- Automated topic-model metrics can disagree with human interpretability:
+  [Chang et al., *Reading Tea Leaves*
+  (2009)](https://papers.neurips.cc/paper/2009/hash/f92586a25bb3145facd64ab20fd554ff-Abstract.html).
+- The Vizuara workflow also calls for representative-document sampling after
+  UMAP-HDBSCAN; this is a useful practice but not a substitute for blinded
+  review:
+  [Vizuara practical pipeline](https://vizuara.substack.com/p/from-text-to-insights-hands-on-text).
 
-## 8. Compare statistical and LLM topic descriptions separately
+## 12. Topic descriptions remain a separate experiment
 
-Do not let the LLM change cluster membership during this comparison. Apply both
-topic-description methods to the same shortlisted/final assignments:
+Do not allow either class-based TF-IDF or an LLM to change cluster membership
+during method selection.
 
-### Method A — statistical topic representation
-
-- c-TF-IDF key phrases;
-- representative titles/abstract passages;
-- extractive source-evidence sentences;
-- no generated claims unsupported by a paper passage.
-
-### Method B — LLM topic representation
-
-- same papers and same evidence packet as Method A;
-- descriptive topic phrase;
-- short prose summary;
-- sentence-level citations back to source papers;
-- two-human review with approve/revise/reject.
-
-### Side-by-side evaluation
-
-Reviewers compare:
+Apply both description methods to identical shortlisted assignments and compare:
 
 - faithfulness to source papers;
 - specificity;
-- distinctiveness from other topics;
+- distinctiveness;
 - coverage of cluster membership;
-- usefulness for the literature-review outline;
-- unsupported or invented claims.
+- usefulness for the review outline;
+- unsupported claims.
 
-This comparison answers whether LLMs improve **topic interpretation**, not
-whether they produced a better clustering assignment.
+This evaluates topic interpretation, not clustering.
 
-### Prior research
+BERTopic provides a direct precedent for separating document embeddings,
+clustering, and class-based TF-IDF representation:
+[Grootendorst (2022)](https://arxiv.org/abs/2203.05794).
 
-- BERTopic explicitly separates document embeddings, clustering, and
-  class-based TF-IDF topic representation:
-  [Grootendorst, *BERTopic: Neural Topic Modeling with a Class-Based TF-IDF
-  Procedure* (2022)](https://arxiv.org/abs/2203.05794).
-- Direct clustering of contextual embeddings with an appropriate term
-  selection method can produce coherent and diverse topics, making it a
-  meaningful statistical baseline:
-  [Zhang et al.
-  (2022)](https://arxiv.org/abs/2204.09874).
-- Human interpretability must be evaluated directly:
-  [Chang et al.
-  (2009)](https://papers.neurips.cc/paper/2009/hash/f92586a25bb3145facd64ab20fd554ff-Abstract.html).
+## 13. Meeting-ready deliverables
 
-## 9. Update the explorer for comparison
-
-Add a temporary comparison view; do not replace the current frozen
-keyword-conditioned explorer.
-
-Required controls:
-
-- configuration selector;
-- algorithm/space label shown only after blinded review is complete;
-- one-cluster-at-a-time highlighting;
-- explicit noise toggle;
-- cluster sizes and coverage;
-- representative/boundary paper markers;
-- side-by-side statistical and LLM topic descriptions;
-- download links for assignments and metrics.
-
-Use distinct colors for all visible clusters and a neutral gray for noise.
-Never reuse the same color for two clusters in the same view.
-
-### Prior research
-
-- The shared Vizuara article combines manual document inspection with
-  interactive UMAP visualization:
-  [Vizuara practical
-  pipeline](https://vizuara.substack.com/p/from-text-to-insights-hands-on-text).
-- UMAP was designed as a general-purpose nonlinear reduction technique and is
-  widely used for visualization, but the 2D plot should not be interpreted as
-  a literal measurement space:
-  [McInnes, Healy, and Melville
-  (2018)](https://arxiv.org/abs/1802.03426).
-
-## 10. Meeting-ready deliverables
-
-Prepare exactly these items:
-
-- [ ] One slide: experimental design (`raw/UMAP × three algorithms`).
-- [ ] One table: cluster count, sizes, noise, coverage, silhouette, bootstrap
-  ARI, seed ARI.
-- [ ] One slide: best K-Means, DBSCAN, and HDBSCAN visualizations using a
-  shared legend policy.
-- [ ] One slide: examples of informative HDBSCAN/DBSCAN noise papers.
+- [ ] One slide: why Vizuara parameters cannot be copied from 44,949 to 282.
+- [ ] One slide: revised matrix — two representations × raw/shared UMAP × four methods.
+- [ ] One slide: incumbent Spectral versus three challengers.
+- [ ] One slide: HDBSCAN `min_cluster_size` sensitivity showing cluster count,
+  noise percentage, and cluster sizes; show both `eom` and `leaf`.
+- [ ] One table: stability, `z_rho`, original-space silhouette, sizes, coverage,
+  and sanity checks.
+- [ ] One slide: keyword ARI under `R_kw` versus `R_neutral`.
+- [ ] One slide: P1–P4 sanity-check results.
+- [ ] One slide: examples of informative noise with soft membership strength.
 - [ ] One slide: blinded human-review result.
-- [ ] One slide: c-TF-IDF vs LLM topic-description comparison.
-- [ ] One recommendation with one backup method.
-- [ ] GitHub link, exact run command, environment, seeds, and output paths.
+- [ ] One recommendation, one backup method, and explicit downstream migration
+  cost if Spectral is replaced.
+- [ ] GitHub link, exact commands, hashes, environment, seeds, and output paths.
 
-### Suggested conclusion structure
+### Suggested meeting wording
 
 ```text
-We held the 282-paper corpus and BGE-M3 representation constant.
-We compared K-Means, DBSCAN, and HDBSCAN in raw and UMAP-reduced spaces.
-We evaluated coverage, original-space separation, resampling stability,
-and blinded human usefulness.
-We selected [configuration] because [...], while retaining [configuration]
-as a sensitivity analysis.
-Topic descriptions were compared separately using identical memberships.
+The previous high-noise HDBSCAN result may have been a parameter-scale artifact,
+not a property of HDBSCAN. We therefore rescaled min_cluster_size for 282 papers,
+tested eom and leaf extraction, and retained noise as soft-membership evidence.
+
+We also added the incumbent Spectral method and a keyword-neutral BGE-M3
+representation. This separates real emergent structure from keyword-conditioned
+representation leakage.
+
+All algorithms shared the same saved UMAP matrix within each condition. We
+evaluated labels in the original 1024D cosine space and selected configurations
+primarily by 80%-subsample stability, then blinded human usefulness—not by
+silhouette alone.
 ```
 
-### Prior research
+## 14. Recommended execution order
 
-- No clustering family is universally best; empirical selection must reflect
-  the corpus and research goal:
-  [Murugesan, Cho, and Tortora, *Benchmarking Clustering Algorithms*
-  (2021)](https://doi.org/10.1007/978-3-030-60104-1_20).
-- The complete text-clustering pipeline should be reported, including
-  vectorization, dimensionality reduction, clustering, and evaluation:
-  [Eklund, Forsman, and Drewes
-  (2023)](https://nejlt.ep.liu.se/article/view/4396).
+### Minimum meeting-safe deliverable
 
-## 11. Recommended execution order
+1. [ ] Add Spectral to the comparison matrix.
+2. [ ] Freeze shared 5D UMAP matrices for `n_neighbors ∈ {5,15,30}`.
+3. [ ] Correct HDBSCAN ranges and run `eom` plus `leaf`.
+4. [ ] Apply the inherited `z_rho > 2` and bootstrap ARI `≥ 0.60` rules.
+5. [ ] Run the P3 cross-language input audit and all four sanity probes.
+6. [ ] Generate at least one `R_neutral` title+abstract embedding matrix.
 
-### Day 1 — controlled numeric comparison
+### Full controlled comparison
 
-- [ ] Validate the final 282-paper input and embeddings.
-- [ ] Implement the unified comparison runner.
-- [ ] Run a smoke test with five bootstrap repeats.
-- [ ] Run the full exploratory grid with 50 repeats.
-- [ ] Freeze the human-review shortlist.
+1. [ ] Audit the final 282-paper corpus and related-document cases.
+2. [ ] Freeze `R_kw` and `R_neutral` with SHA-256.
+3. [ ] Generate each UMAP condition once and share it across methods.
+4. [ ] Run the exploratory grid with 50 80%-subsample repeats.
+5. [ ] Freeze a human-review shortlist without a single combined score.
+6. [ ] Complete two-reviewer blinded assessment.
+7. [ ] Run 100-repeat confirmation on the frozen shortlist.
+8. [ ] Build the comparison explorer and meeting slides.
 
-### Day 2 — human and topic review
+## 15. Definition of done
 
-- [ ] Generate blinded review packets.
-- [ ] Complete two-reviewer assessment.
-- [ ] Reveal method identities and record the decision.
-- [ ] Compare c-TF-IDF and LLM topic descriptions on identical memberships.
-
-### Day 3 — reporting
-
-- [ ] Run 100-repeat confirmation on shortlisted configurations.
-- [ ] Build the temporary comparison explorer.
-- [ ] Prepare the meeting table and slides.
-- [ ] Push code, metadata, compact CSV outputs, and documentation to GitHub.
-
-## 12. Definition of done
-
-This task is complete only when:
-
-- [ ] The final 282-paper corpus—not the old 284-paper corpus—has been used.
-- [ ] K-Means, DBSCAN, and HDBSCAN have all been run on all papers combined.
-- [ ] Each family has a raw-space baseline and a UMAP-space result.
-- [ ] Noise is reported and inspected, not treated automatically as failure.
-- [ ] Numeric evaluation is reproducible and performed in original space.
-- [ ] At least two humans conduct a blinded comparison.
-- [ ] Statistical and LLM topic descriptions are compared on identical
-  memberships.
-- [ ] A written method-selection decision and backup configuration exist.
-- [ ] Exact commands, seeds, inputs, outputs, and prior research are recorded.
+- [ ] The final 282-paper corpus—not the old 284-paper corpus—is used.
+- [ ] Spectral, K-Means, DBSCAN, and HDBSCAN are all compared.
+- [ ] Both `R_kw` and `R_neutral` are tested.
+- [ ] Raw and UMAP-space results use L2-normalized BGE-M3 inputs.
+- [ ] Each controlled UMAP matrix is fit once, saved, hashed, and shared.
+- [ ] UMAP is refit once per bootstrap cell for end-to-end stability.
+- [ ] Metrics are computed in the original normalized 1024D cosine space.
+- [ ] Bootstrap ARI `≥ 0.60` and `z_rho > 2` are the primary numeric checks.
+- [ ] Silhouette is descriptive, not the winner-selection score.
+- [ ] Noise remains `-1`, with coverage and soft membership reported.
+- [ ] Keyword ARI is interpreted as a leakage/discovery diagnostic.
+- [ ] P1–P4 sanity checks are exported.
+- [ ] Related-document sensitivity is reported.
+- [ ] At least two humans complete a blinded comparison.
+- [ ] The frozen Batch 3 branch is not overwritten without a decision record.
+- [ ] Exact commands, hashes, versions, inputs, outputs, and prior research are
+  recorded.

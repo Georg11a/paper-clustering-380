@@ -332,6 +332,13 @@
           却都压成了非常不平衡的两个大簇（55 / 227）。这不是“UMAP 已经解决问题”的证据，
           只是说明参数和表示空间改变后，算法给出了另一种切分。
         </div>
+        <div class="warning">
+          <strong>2026-07-31 实验设计修正：</strong>这三个页面是已实现的 exploratory views，不是完整选型实验。
+          完整比较还必须加入现行 <strong>Spectral incumbent</strong>，并增加不含 keyword-conditioned passages 的
+          <strong>title + abstract-only BGE-M3</strong> 表示。否则无法判断新方法是否优于当前方法，也无法排除
+          keyword leakage。参见
+          <a href="meeting_2026-07-29_global_clustering_execution_plan.md">revised execution plan</a>。
+        </div>
         <div class="pill-row">
           <span class="pill">固定语料：282 papers</span>
           <span class="pill">固定表示：BGE-M3 1024D</span>
@@ -770,17 +777,37 @@
           <article class="issue">
             <div class="issue-index">09</div>
             <div>
-              <h3>只测试了一种 embedding 表示</h3>
-              <p>三页固定 BGE-M3 是为了公平比较算法，但最终结论仍可能依赖文本拼接、passage 选择与 embedding model。
-                至少需要对 title+abstract-only、不同 passage budget 或另一个 embedding 做敏感性检查。</p>
+              <h3>keyword-conditioned 表示会造成 leakage</h3>
+              <p>当前 embedding 不只是 title + abstract，还包含按论文原始 keyword 选择的 passages。
+                如果全局簇与 keyword group 吻合，可能只是上游已经编码了 keyword，而不是主题自然涌现。
+                必须增加 title+abstract-only 的同模型 BGE-M3 表示，并比较两者的 keyword ARI。</p>
             </div>
           </article>
           <article class="issue">
             <div class="issue-index">10</div>
             <div>
+              <h3>比较矩阵缺少现行 Spectral baseline</h3>
+              <p>当前 Batch 3 最终成员归属来自 cosine 10-NN graph 上的 Spectral clustering，
+                K-Means 只负责估计 k。三个页面只比较 K-Means / DBSCAN / HDBSCAN，
+                因此还不能回答任何 challenger 是否优于目前实际使用的方法。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">11</div>
+            <div>
               <h3>Page 2 与 Page 3 有方法重叠</h3>
               <p>Page 3 本质上是 Page 2 HDBSCAN 分支的 10D 版本。保留它的价值在于精确回应 Zhicheng 的建议；
                 如果 5D 和 10D 长期给出相同结构，最终界面可以合并为一个参数对照，而不是宣称两种独立方法。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">12</div>
+            <div>
+              <h3>当前 HDBSCAN 库不能输出计划中的完整 soft membership</h3>
+              <p>现有实现使用 scikit-learn HDBSCAN；它没有
+                <code>all_points_membership_vectors()</code>。若要把 Leilani 的 noise reframe
+                落实为“最近簇 + 隶属强度”，新 runner 必须明确增加并固定 contrib
+                <code>hdbscan</code> 依赖，不能假装当前实现已经支持。</p>
             </div>
           </article>
         </div>
@@ -790,6 +817,8 @@
         <h2>在决定“用哪个方法”之前，建议按这个顺序执行</h2>
         <ol>
           <li><strong>先清重复：</strong>核对 7 组重复题名，区分真正重复、会议/期刊版本和不同论文。</li>
+          <li><strong>补上 incumbent：</strong>把现行 Spectral clustering 加入同一比较矩阵。</li>
+          <li><strong>去除表征泄漏：</strong>冻结 title+abstract-only BGE-M3，和 keyword-conditioned 表示并行运行。</li>
           <li><strong>冻结候选规则：</strong>把允许的簇数、最小簇、coverage 下限和评价方式在看新结果前写死。</li>
           <li><strong>多 seed：</strong>每个 UMAP 设置至少运行 20–50 个 seed；比较 pairwise Adjusted Rand Index、cluster Jaccard 和 noise 一致性。</li>
           <li><strong>重采样：</strong>对论文做 80%–90% subsampling 或 bootstrap，至少 50 次；报告每个簇的稳定性，而不是只报告平均分。</li>
