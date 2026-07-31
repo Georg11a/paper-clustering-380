@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="282 篇论文全局聚类的三种实现、研究依据、当前结果与已知问题。" />
+  <title>三种全局聚类方法：实现、研究依据与问题</title>
+  <style>
+    :root {
+      --ink: #1f2a44;
+      --muted: #65758b;
+      --line: #dce6f1;
+      --panel: #ffffff;
+      --soft: #f4f7fb;
+      --blue: #256fbd;
+      --blue-soft: #eaf3fd;
+      --green: #167c5a;
+      --green-soft: #eaf7f2;
+      --orange: #a75512;
+      --orange-soft: #fff3e7;
+      --red: #a43a46;
+      --red-soft: #fff0f2;
+      --shadow: 0 12px 34px rgba(31, 42, 68, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--soft);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(31, 42, 68, 0.07);
+      backdrop-filter: blur(12px);
+    }
+    .brand { min-width: 0; }
+    .brand strong { display: block; font-size: 17px; line-height: 1.25; }
+    .brand span { display: block; color: var(--muted); font-size: 12px; }
+    .top-links { display: flex; gap: 14px; white-space: nowrap; font-size: 14px; font-weight: 650; }
+    .page {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 24px;
+      width: min(1440px, calc(100% - 40px));
+      margin: 26px auto 72px;
+    }
+    nav {
+      position: sticky;
+      top: 92px;
+      align-self: start;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    nav strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    nav a {
+      display: block;
+      padding: 7px 0;
+      color: #38516f;
+      font-size: 13.5px;
+      font-weight: 620;
+    }
+    main { min-width: 0; }
+    section {
+      scroll-margin-top: 92px;
+      margin-bottom: 22px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 36px;
+      background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, h4 { line-height: 1.25; }
+    h1 { margin: 0; font-size: clamp(29px, 4vw, 48px); letter-spacing: -0.035em; }
+    h2 { margin: 0 0 14px; font-size: 26px; letter-spacing: -0.02em; }
+    h3 { margin: 26px 0 10px; font-size: 20px; }
+    h4 { margin: 18px 0 7px; font-size: 16px; }
+    p { margin: 9px 0; }
+    .lede { max-width: 950px; margin-top: 17px; color: #43536a; font-size: 18px; }
+    .verdict {
+      margin-top: 22px;
+      padding: 17px 19px;
+      border-left: 5px solid var(--orange);
+      border-radius: 9px;
+      background: var(--orange-soft);
+      font-size: 16px;
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .pill {
+      padding: 6px 10px;
+      border: 1px solid #cadcf0;
+      border-radius: 999px;
+      background: #f7fbff;
+      color: #31577f;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfdff;
+    }
+    .card h3, .card h4 { margin-top: 0; }
+    .card p:last-child { margin-bottom: 0; }
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 14px;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px;
+      margin: 18px 0;
+    }
+    .flow .step {
+      position: relative;
+      padding: 14px;
+      border: 1px solid #ccdaea;
+      border-radius: 10px;
+      background: #f8fbff;
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+    .flow .step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--blue);
+      font-size: 20px;
+    }
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: #edf2f8;
+      color: #344b68;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      overflow-x: auto;
+      margin: 14px 0;
+      padding: 16px;
+      border-radius: 10px;
+      background: #172338;
+      color: #eef5ff;
+      line-height: 1.55;
+    }
+    pre code { padding: 0; background: transparent; color: inherit; }
+    ul, ol { padding-left: 23px; }
+    li { margin: 7px 0; }
+    .plain {
+      padding: 14px 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue-soft);
+    }
+    .warning {
+      padding: 14px 16px;
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      background: var(--red-soft);
+    }
+    .supported {
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+    .table-wrap { overflow-x: auto; margin-top: 15px; }
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    th, td { padding: 11px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th {
+      background: #f3f7fc;
+      color: #4e6078;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    td.numeric { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .bad { color: var(--red); font-weight: 760; }
+    .caution { color: var(--orange); font-weight: 760; }
+    .good { color: var(--green); font-weight: 760; }
+    .method-tag {
+      display: inline-block;
+      min-width: 82px;
+      padding: 3px 7px;
+      border-radius: 6px;
+      background: #eaf3fd;
+      color: #2e5d8d;
+      font-size: 12px;
+      font-weight: 750;
+      text-align: center;
+    }
+    .issue-list { display: grid; gap: 12px; margin-top: 16px; }
+    .issue {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid #efd5d8;
+      border-radius: 11px;
+      background: #fffafb;
+    }
+    .issue-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-weight: 800;
+    }
+    .issue h3 { margin: 0 0 4px; font-size: 16px; }
+    .issue p { margin: 0; color: #4b5a70; }
+    .ref-list { padding-left: 20px; }
+    .ref-list li { margin-bottom: 12px; }
+    .small { color: var(--muted); font-size: 13px; }
+    footer { margin-top: 20px; color: var(--muted); font-size: 13px; text-align: center; }
+    @media (max-width: 1000px) {
+      .page { grid-template-columns: 1fr; }
+      nav { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px 18px; }
+      nav strong { grid-column: 1 / -1; }
+      .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      header { align-items: flex-start; padding: 11px 15px; }
+      .brand span { display: none; }
+      .top-links { gap: 9px; font-size: 12px; }
+      .page { width: min(100% - 20px, 1440px); margin-top: 12px; }
+      section, .hero { padding: 20px; }
+      nav { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; gap: 10px; }
+      .flow .step:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -23px; transform: translateX(50%); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <strong>Global Clustering Methods</strong>
+      <span>Implementation · Evidence · Limitations</span>
+    </div>
+    <div class="top-links">
+      <a href="index.html">返回 Explorer</a>
+      <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
+    </div>
+  </header>
+
+  <div class="page">
+    <nav aria-label="页面目录">
+      <strong>目录</strong>
+      <a href="#answer">先说结论</a>
+      <a href="#shared">共同输入与公平比较</a>
+      <a href="#method-1">页面 1：原始空间比较</a>
+      <a href="#method-2">页面 2：UMAP 后比较</a>
+      <a href="#method-3">页面 3：Zhicheng 流程</a>
+      <a href="#results">当前结果总表</a>
+      <a href="#evidence">prior research 支持什么</a>
+      <a href="#problems">已知问题</a>
+      <a href="#next">下一步怎么做</a>
+      <a href="#reproduce">复现方式</a>
+      <a href="#references">参考文献</a>
+    </nav>
+
+    <main>
+      <section class="hero" id="answer">
+        <p class="eyebrow">282-paper global comparison · 2026-07-30</p>
+        <h1>这三个页面到底做了什么？</h1>
+        <p class="lede">
+          三个页面都把 <strong>282 篇论文一次性放在一起</strong>，不再按原始 keyword group 分开聚类。
+          它们共享同一批论文和同一组 BGE-M3 向量，只改变“是否先用 UMAP 降维”以及“使用哪种聚类算法”。
+        </p>
+        <div class="verdict">
+          <strong>直白结论：</strong>这些结果现在只能用于比较和提出假设，<strong>还不能宣布哪一个是最终正确的主题结构</strong>。
+          Page 1 的密度方法留下了很多 noise；Page 2 和 Page 3 虽然几乎消除了 HDBSCAN noise，
+          却都压成了非常不平衡的两个大簇（55 / 227）。这不是“UMAP 已经解决问题”的证据，
+          只是说明参数和表示空间改变后，算法给出了另一种切分。
+        </div>
+        <div class="pill-row">
+          <span class="pill">固定语料：282 papers</span>
+          <span class="pill">固定表示：BGE-M3 1024D</span>
+          <span class="pill">比较：K-Means / DBSCAN / HDBSCAN</span>
+          <span class="pill">Noise 保留为 −1</span>
+          <span class="pill">当前状态：exploratory</span>
+        </div>
+      </section>
+
+      <section id="shared">
+        <h2>共同输入：怎样保证三个页面是在比较同一件事</h2>
+        <div class="flow" aria-label="共同数据流程">
+          <div class="step">282 篇清洗后的论文</div>
+          <div class="step">Title + Abstract + 最多 12 个相关 passages</div>
+          <div class="step">BGE-M3 生成 1024D dense embedding</div>
+          <div class="step">L2 normalization 后进入三个页面</div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>固定不变</h3>
+            <p>论文集合、文本输入、BGE-M3 embedding、随机种子 <code>20260730</code>、评价用的原始向量，以及最终的 2D 显示布局。</p>
+          </div>
+          <div class="card">
+            <h3>真正改变</h3>
+            <p>聚类发生在原始 1024D 空间，还是 UMAP 的 5D / 10D 空间；以及聚类器是 K-Means、DBSCAN 还是 HDBSCAN。</p>
+          </div>
+          <div class="card">
+            <h3>显示不等于计算</h3>
+            <p>所有散点图使用单独的 <strong>2D UMAP</strong> 只负责显示。图上的 UMAP 1 / UMAP 2 没有可解释语义，也不一定是实际聚类空间。</p>
+          </div>
+        </div>
+
+        <h3>文本和 embedding</h3>
+        <p>
+          每篇论文的表示来自 title、abstract 和最多 12 个与检索关键词相关的 passage。
+          BGE-M3 输出 1024 维向量；代码随后做 L2 normalization。BGE-M3 的原论文说明该模型面向多语言、
+          多粒度文本与检索任务，但这只支持“它是合理的语义表示候选”，<strong>不保证它会为本语料形成可解释聚类</strong>。
+          参见 <a href="https://arxiv.org/abs/2402.03216">Chen et al. (2024)</a>。
+        </p>
+
+        <h3>共同评价指标</h3>
+        <ul>
+          <li><strong>cluster count：</strong>不含 noise 的簇数。</li>
+          <li><strong>coverage：</strong>被密度方法分到某个簇的论文比例；K-Means 强制分配全部论文，所以永远是 100%。</li>
+          <li><strong>noise：</strong>标签 <code>-1</code>。界面显示为 “Noise / weak affinity”，不会硬塞回最近的簇。</li>
+          <li><strong>original-space cosine silhouette：</strong>回到原始 1024D BGE-M3 空间，用 cosine distance 计算。
+            对 DBSCAN / HDBSCAN，只在非 noise 论文上计算。</li>
+          <li><strong>cluster size：</strong>最小簇与最大簇，用来阻止算法选出大量极小碎片。</li>
+        </ul>
+        <div class="warning">
+          <strong>必须注意：</strong>密度方法的 silhouette 排除了 noise。所以 HDBSCAN 把最难分的 228 篇论文排除后，
+          剩下 54 篇的 silhouette 可以变高。不能只看 0.286，而不同时报告 19.1% coverage。
+        </div>
+      </section>
+
+      <section id="method-1">
+        <h2><span class="number">1</span>所有论文直接在原始 embedding 空间聚类</h2>
+        <p class="plain">
+          <strong>一句话：</strong>不让 UMAP 改写几何结构，直接对 282 × 1024 的 normalized BGE-M3 向量运行三种算法。
+          这是最直接的 baseline。
+        </p>
+        <div class="flow" aria-label="页面一流程">
+          <div class="step">282 × 1024 embedding</div>
+          <div class="step">L2 normalization</div>
+          <div class="step">K-Means / DBSCAN / HDBSCAN</div>
+          <div class="step">原始空间指标 + 2D UMAP 显示</div>
+        </div>
+
+        <h3>K-Means 是怎么实现的</h3>
+        <ol>
+          <li>测试 <code>k ∈ {2, 3, 5, 6, 8, 10, 12}</code>。</li>
+          <li>每个 k 使用 <code>n_init=50</code>，固定 <code>random_state=20260730</code>，减少单次随机初始化碰巧很差的风险。</li>
+          <li>K-Means 最小化点到质心的平方欧氏距离，因此会把每一篇论文都分到某个簇；它没有 noise 概念。</li>
+          <li>当前选择规则挑出 <code>k=3</code>：3 簇、尺寸 50–130、coverage 100%、原始空间 cosine silhouette 0.0927。</li>
+        </ol>
+        <p>
+          <strong>研究依据：</strong>Lloyd 的经典工作给出了迭代式最小平方量化条件，
+          是 K-Means/Lloyd algorithm 的理论来源之一
+          （<a href="https://doi.org/10.1109/TIT.1982.1056489">Lloyd, 1982</a>）。
+          它是必要 baseline，因为简单、可复现，并明确测试“数据是否大致能被球形质心切开”。
+        </p>
+        <p class="warning">
+          <strong>问题：</strong>silhouette 只有 0.0927，说明分离度很弱。K-Means 仍然会强制给所有论文标签，
+          所以“0 noise”不是质量证据。它偏好大小相近、近似球形的簇，而论文主题可能重叠、大小不等。
+        </p>
+
+        <h3>DBSCAN 是怎么实现的</h3>
+        <ol>
+          <li>在 normalized 1024D 向量上使用 <strong>cosine distance</strong>。</li>
+          <li>测试 <code>min_samples ∈ {3, 5, 8, 10}</code>。</li>
+          <li>对每个 min_samples，从 k-nearest-neighbor distance 的 25%–92% 分位数生成 28 个候选 <code>eps</code>。</li>
+          <li>当前选中 <code>eps=0.1432, min_samples=5</code>：2 簇、164 noise、coverage 41.8%、silhouette 0.2132。</li>
+        </ol>
+        <p>
+          <strong>研究依据：</strong>DBSCAN 的原论文强调三个目标：不预先给定簇数、发现任意形状的簇、
+          并把稀疏点视为 noise
+          （<a href="https://file.biolab.si/papers/1996-DBSCAN-KDD.pdf">Ester et al., 1996</a>）。
+          这正好检验“论文之间是否存在密集语义岛，而其余论文只是弱连接”。
+        </p>
+        <p class="warning">
+          <strong>问题：</strong>DBSCAN 用一个全局 eps 描述所有簇的密度。当不同主题密度差异大时，一个 eps 很难同时适合。
+          本结果只覆盖 118 篇，另外 164 篇是 noise。它告诉我们 raw embedding 中没有很强的统一密度结构；
+          它不是 282 篇论文的完整分类。
+        </p>
+
+        <h3>HDBSCAN 是怎么实现的</h3>
+        <ol>
+          <li>在 normalized 1024D 向量上使用 Euclidean distance。对单位向量，
+            squared Euclidean distance 与 cosine distance 单调对应，但数值尺度仍不同。</li>
+          <li>测试 <code>min_cluster_size ∈ {5, 8, 10, 12, 15, 20}</code>。</li>
+          <li>测试 <code>min_samples ∈ {1, 3, 5, 8, 10}</code>，并要求 <code>min_samples ≤ min_cluster_size</code>。</li>
+          <li>当前选中 <code>min_cluster_size=8, min_samples=8</code>：2 簇、228 noise、coverage 19.1%、silhouette 0.2864。</li>
+        </ol>
+        <p>
+          <strong>研究依据：</strong>HDBSCAN 从不同密度尺度建立层级结构，再依据稳定性提取簇；
+          它不要求预先指定 k，也允许样本保持为 noise
+          （<a href="https://doi.org/10.1007/978-3-642-37456-2_14">Campello, Moulavi &amp; Sander, 2013</a>；
+          <a href="https://doi.org/10.1145/2733381">Campello et al., 2015</a>）。
+        </p>
+        <p class="warning">
+          <strong>问题，但不是简单的“缺点”：</strong>80.9% noise 表示大多数论文没有稳定地属于当前参数下的高密度核心。
+          这可能是重要发现：语料更像连续的、交叠的研究空间，而不是清晰主题岛。
+          但如果产品目标是“给每篇论文一个主题”，这个配置就不够用。
+        </p>
+      </section>
+
+      <section id="method-2">
+        <h2><span class="number">2</span>先用 UMAP 降维，再比较三种算法</h2>
+        <p class="plain">
+          <strong>一句话：</strong>先把 1024D embedding 压到 5D，再在这 5D 空间分别运行 K-Means、DBSCAN、HDBSCAN。
+          这直接测试老师提出的“高维空间可能让密度聚类产生过多 noise”。
+        </p>
+        <div class="flow" aria-label="页面二流程">
+          <div class="step">Normalized BGE-M3 1024D</div>
+          <div class="step">UMAP → 5D</div>
+          <div class="step">K-Means / DBSCAN / HDBSCAN</div>
+          <div class="step">回原始 1024D 评价</div>
+        </div>
+
+        <h3>UMAP 的实际参数</h3>
+        <ul>
+          <li><code>n_components=5</code>：聚类使用 5D，不是图上看到的 2D。</li>
+          <li><code>n_neighbors=15</code>：每个点构建局部邻域时参考 15 个近邻。</li>
+          <li><code>min_dist=0.0</code>：允许近邻在低维空间靠得非常紧，便于密度方法形成簇。</li>
+          <li><code>metric="cosine"</code>：原始 embedding 的邻近关系由 cosine distance 构建。</li>
+          <li><code>random_state=20260730</code>、<code>n_jobs=1</code>：让这次生成可复现。</li>
+        </ul>
+        <p>
+          <strong>研究依据：</strong>UMAP 是一种基于邻域图的非线性降维方法，可生成超过 2D 的表示，
+          因此可作为下游机器学习的低维输入
+          （<a href="https://arxiv.org/abs/1802.03426">McInnes, Healy &amp; Melville, 2018</a>）。
+          BERTopic 也公开了“transformer embeddings → UMAP → HDBSCAN → class-based TF-IDF”的文档聚类路线
+          （<a href="https://arxiv.org/abs/2203.05794">Grootendorst, 2022</a>）。
+          这些研究支持<strong>尝试这种 pipeline</strong>，不是证明它一定优于 raw-space clustering。
+        </p>
+
+        <h3>三个输出</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>K-Means · 5D</h4>
+            <p><code>k=2</code>；2 簇，55 / 227；0 noise；silhouette 0.0814。</p>
+            <p><strong>直说：</strong>比 raw K-Means 的 0.0927 更低，而且产生一个很大的主簇。没有改善证据。</p>
+          </div>
+          <div class="card">
+            <h4>DBSCAN · 5D</h4>
+            <p><code>eps=0.2374, min_samples=5</code>；15 簇；163 noise；coverage 42.2%；silhouette 0.1958。</p>
+            <p><strong>直说：</strong>出现更多小簇，但 noise 几乎没减少；最小簇只有 5 篇，可能碎片化。</p>
+          </div>
+          <div class="card">
+            <h4>HDBSCAN · 5D</h4>
+            <p><code>min_cluster_size=15, min_samples=8</code>；2 簇，55 / 227；0 noise；silhouette 0.0814。</p>
+            <p><strong>直说：</strong>noise 从 80.9% 变成 0%，但换来一个非常粗的 55 / 227 二分。</p>
+          </div>
+        </div>
+
+        <div class="warning">
+          <strong>关键风险：</strong>UMAP 会重建局部邻域，也会改变距离和密度。
+          densMAP 论文明确指出普通 UMAP 并不保存原空间的局部密度，这对后续依赖“密度”的 DBSCAN/HDBSCAN 尤其重要
+          （<a href="https://doi.org/10.1038/s41587-020-00801-7">Narayan, Berger &amp; Cho, 2021</a>）。
+          所以“UMAP 后 noise 少”可能来自几何压缩，不等于真实主题更清楚。
+        </div>
+      </section>
+
+      <section id="method-3">
+        <h2><span class="number">3</span>Zhicheng 分享的 UMAP + HDBSCAN 路线</h2>
+        <p class="plain">
+          <strong>一句话：</strong>这是 Page 2 中 UMAP + HDBSCAN 的专门版本，但把 UMAP 输出设为 10D，
+          以更接近 Zhicheng 分享文章中的 practical pipeline。
+        </p>
+        <div class="flow" aria-label="页面三流程">
+          <div class="step">Normalized BGE-M3 1024D</div>
+          <div class="step">UMAP → 10D</div>
+          <div class="step">HDBSCAN</div>
+          <div class="step">抽样检查 + 2D 显示</div>
+        </div>
+
+        <h3>我们实际运行的参数</h3>
+        <ul>
+          <li>UMAP：<code>n_components=10</code>、<code>n_neighbors=15</code>、<code>min_dist=0.0</code>、
+            <code>metric="cosine"</code>、<code>random_state=20260730</code>。</li>
+          <li>HDBSCAN 使用与前面相同的候选网格。</li>
+          <li>当前选中：<code>min_cluster_size=15, min_samples=1</code>。</li>
+          <li>结果：2 簇，55 / 227；0 noise；原始空间 cosine silhouette 0.0814。</li>
+        </ul>
+
+        <h3>它与文章的关系</h3>
+        <p>
+          Zhicheng 分享的
+          <a href="https://vizuara.substack.com/p/from-text-to-insights-hands-on-text">Vizuara 教程</a>
+          推荐“文本 embedding → UMAP 降维 → HDBSCAN → 人工抽样检查 → UMAP 可视化”。
+          教程的 Part 2 也明确展示了从 1024D 到 10D 的 UMAP，然后用 HDBSCAN 聚类。
+          这与 BERTopic 的研究 pipeline 同方向，因此不是凭空组合。
+        </p>
+        <div class="warning">
+          <strong>但这不是对教程的精确复现。</strong>教程使用不同语料、不同样本规模和参数；
+          我们有 282 篇论文，并通过当前候选评分选择 <code>min_cluster_size=15, min_samples=1</code>。
+          Vizuara 是实作教程，不是同行评审论文。它告诉我们“怎么试”，不能替我们验证结果。
+        </div>
+
+        <h3>当前最明显的问题</h3>
+        <ul>
+          <li><code>min_samples=1</code> 很宽松，几乎不要求一个点拥有高密度邻域，因此 0 noise 并不意外。</li>
+          <li>结果与 Page 2 的 5D HDBSCAN 都是 55 / 227，且 silhouette 完全相同；目前没有证据说明 10D 带来额外价值。</li>
+          <li>两个簇太粗，无法直接回答更细的 design knowledge / theory / method 结构。</li>
+          <li>教程要求 manual inspection；当前 explorer 可以检查论文，但还没有形成盲审、记录和一致性指标。</li>
+        </ul>
+      </section>
+
+      <section id="results">
+        <h2>当前七个配置的结果总表</h2>
+        <p>silhouette 都是在原始 1024D normalized BGE-M3 空间以 cosine distance 计算；密度方法只计算非 noise 论文。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>页面 / 空间</th>
+                <th>算法</th>
+                <th>选中参数</th>
+                <th>簇数</th>
+                <th>簇大小</th>
+                <th>Noise</th>
+                <th>Coverage</th>
+                <th>Silhouette</th>
+                <th>直白判断</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 · Raw 1024D</td>
+                <td><span class="method-tag">K-Means</span></td>
+                <td><code>k=3</code></td>
+                <td class="numeric">3</td>
+                <td class="numeric">50–130</td>
+                <td class="numeric">0</td>
+                <td class="numeric">100%</td>
+                <td class="numeric">0.0927</td>
+                <td class="caution">全覆盖，但分离弱</td>
+              </tr>
+              <tr>
+                <td>1 · Raw 1024D</td>
+                <td><span class="method-tag">DBSCAN</span></td>
+                <td><code>eps=.1432, ms=5</code></td>
+                <td class="numeric">2</td>
+                <td class="numeric">24–94</td>
+                <td class="numeric bad">164 / 58.2%</td>
+                <td class="numeric">41.8%</td>
+                <td class="numeric">0.2132</td>
+                <td class="bad">只描述少数密集区域</td>
+              </tr>
+              <tr>
+                <td>1 · Raw 1024D</td>
+                <td><span class="method-tag">HDBSCAN</span></td>
+                <td><code>mcs=8, ms=8</code></td>
+                <td class="numeric">2</td>
+                <td class="numeric">10–44</td>
+                <td class="numeric bad">228 / 80.9%</td>
+                <td class="numeric">19.1%</td>
+                <td class="numeric">0.2864</td>
+                <td class="bad">高分建立在极低覆盖上</td>
+              </tr>
+              <tr>
+                <td>2 · UMAP 5D</td>
+                <td><span class="method-tag">K-Means</span></td>
+                <td><code>k=2</code></td>
+                <td class="numeric">2</td>
+                <td class="numeric">55–227</td>
+                <td class="numeric">0</td>
+                <td class="numeric">100%</td>
+                <td class="numeric">0.0814</td>
+                <td class="bad">非常不平衡且分离更弱</td>
+              </tr>
+              <tr>
+                <td>2 · UMAP 5D</td>
+                <td><span class="method-tag">DBSCAN</span></td>
+                <td><code>eps=.2374, ms=5</code></td>
+                <td class="numeric">15</td>
+                <td class="numeric">5–20</td>
+                <td class="numeric bad">163 / 57.8%</td>
+                <td class="numeric">42.2%</td>
+                <td class="numeric">0.1958</td>
+                <td class="bad">碎片化，noise 未改善</td>
+              </tr>
+              <tr>
+                <td>2 · UMAP 5D</td>
+                <td><span class="method-tag">HDBSCAN</span></td>
+                <td><code>mcs=15, ms=8</code></td>
+                <td class="numeric">2</td>
+                <td class="numeric">55–227</td>
+                <td class="numeric good">0</td>
+                <td class="numeric">100%</td>
+                <td class="numeric">0.0814</td>
+                <td class="caution">noise 消失，但只剩粗二分</td>
+              </tr>
+              <tr>
+                <td>3 · UMAP 10D</td>
+                <td><span class="method-tag">HDBSCAN</span></td>
+                <td><code>mcs=15, ms=1</code></td>
+                <td class="numeric">2</td>
+                <td class="numeric">55–227</td>
+                <td class="numeric good">0</td>
+                <td class="numeric">100%</td>
+                <td class="numeric">0.0814</td>
+                <td class="caution">宽松参数；未优于 5D</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">
+          “选中”只是生成器按预设候选分数挑出的当前展示配置，不等于经过研究团队批准的 final model。
+        </p>
+      </section>
+
+      <section id="evidence">
+        <h2>Prior research 到底支持什么，不支持什么</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>有支持</h3>
+            <ul>
+              <li>使用 dense text embeddings 表示文档。</li>
+              <li>用 K-Means 做强制分配 baseline。</li>
+              <li>用 DBSCAN/HDBSCAN 寻找密度簇并保留 noise。</li>
+              <li>先用 UMAP 降维，再做 HDBSCAN，是已发表且常用的 text-topic pipeline。</li>
+              <li>用 silhouette、coverage、cluster size 和人工判断共同评价。</li>
+              <li>通过重采样或扰动检查聚类稳定性。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>没有支持</h3>
+            <ul>
+              <li>没有论文能证明 UMAP 在这 282 篇上一定比 raw space 好。</li>
+              <li>没有论文能证明低 noise 就代表高质量主题。</li>
+              <li>没有依据把 0.2864 silhouette 直接说成“最佳”，因为它只覆盖 19.1%。</li>
+              <li>没有依据把 2D UMAP 上分开的颜色当作真实语义边界。</li>
+              <li>没有依据把机器生成的 TF-IDF label 当作完成的人类解释。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>为什么仍然值得做</h3>
+            <p>这三个页面把老师提出的替代解释变成了可比较实验：是 raw embedding 没有密度结构，还是高维性让密度算法失效？</p>
+            <p>目前答案是：<strong>UMAP 改变了 HDBSCAN 的 coverage，但没有提高原始空间分离度，也没有给出更细、平衡的主题。</strong></p>
+          </div>
+        </div>
+        <p class="supported">
+          BERTopic 的研究为 embedding → UMAP → HDBSCAN → topic representation 提供了直接先例；
+          Vizuara 教程为 Zhicheng 建议的具体操作顺序提供了可执行示例。
+          但对本项目而言，最重要的后续证据仍然要来自稳定性测试和领域专家检查。
+        </p>
+      </section>
+
+      <section id="problems">
+        <h2>已知问题：现在不能回避的地方</h2>
+        <div class="issue-list">
+          <article class="issue">
+            <div class="issue-index">01</div>
+            <div>
+              <h3>参数是 post-hoc 挑选的</h3>
+              <p>生成器试了多个参数，再按“2–15 簇、最小簇至少 5、silhouette + 0.15 × coverage”挑最大值。
+                这适合探索，但会乐观偏差。需要冻结规则后在重采样数据上复验。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">02</div>
+            <div>
+              <h3>没有做 seed / bootstrap stability</h3>
+              <p>目前只有固定 seed 的一次 UMAP。Ben-Hur et al. 提出的稳定性思路是扰动或子采样数据，再比较聚类是否重复出现。
+                如果换 seed 或去掉 10% 论文就完全改组，主题不能称为稳定。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">03</div>
+            <div>
+              <h3>没有完成领域专家盲审</h3>
+              <p>自动指标衡量几何分离，不衡量“这个主题对 design knowledge 研究是否有意义”。
+                Chang et al. 的研究显示，自动模型指标与人类可解释性可能不一致。必须抽样论文做 topic / document intrusion 或等价的人审任务。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">04</div>
+            <div>
+              <h3>silhouette 与 coverage 不可拆开</h3>
+              <p>raw HDBSCAN 的 0.2864 是只在 54 篇非 noise 论文上算的。它不能和 K-Means 的 282 篇全覆盖 silhouette 做无条件排名。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">05</div>
+            <div>
+              <h3>UMAP 会改变密度</h3>
+              <p>普通 UMAP 优先保留邻域，不保证局部密度和所有全局距离。再用密度算法时，可能把 UMAP 制造的紧密区域误认为原始语义簇。
+                应报告多 seed、一致性，并考虑 PCA、densMAP 或 raw-space 结果作为敏感性分析。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">06</div>
+            <div>
+              <h3>2D 图只是显示，不是证据</h3>
+              <p>三个页面共享一张独立 2D UMAP 布局。颜色分开不代表在实际 5D、10D 或 1024D 聚类空间里同样分开；坐标轴没有主题含义。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">07</div>
+            <div>
+              <h3>语料仍有重复题名</h3>
+              <p>对当前 282 行按小写、移除标点和空白后审计，发现 <strong>7 组重复题名，共 14 行</strong>。
+                它们可能是不同版本或重复记录。重复点会人为增加局部密度，尤其影响 DBSCAN/HDBSCAN，必须逐组核对 DOI、作者和版本。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">08</div>
+            <div>
+              <h3>标签是机械生成，不是验证后的 codebook</h3>
+              <p>当前簇名和关键词来自 cluster-level TF-IDF。它们用于帮助阅读，不是预设 codebook，也不是专家确认的理论类别。
+                “标签看起来合理”不能反向证明聚类正确。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">09</div>
+            <div>
+              <h3>只测试了一种 embedding 表示</h3>
+              <p>三页固定 BGE-M3 是为了公平比较算法，但最终结论仍可能依赖文本拼接、passage 选择与 embedding model。
+                至少需要对 title+abstract-only、不同 passage budget 或另一个 embedding 做敏感性检查。</p>
+            </div>
+          </article>
+          <article class="issue">
+            <div class="issue-index">10</div>
+            <div>
+              <h3>Page 2 与 Page 3 有方法重叠</h3>
+              <p>Page 3 本质上是 Page 2 HDBSCAN 分支的 10D 版本。保留它的价值在于精确回应 Zhicheng 的建议；
+                如果 5D 和 10D 长期给出相同结构，最终界面可以合并为一个参数对照，而不是宣称两种独立方法。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="next">
+        <h2>在决定“用哪个方法”之前，建议按这个顺序执行</h2>
+        <ol>
+          <li><strong>先清重复：</strong>核对 7 组重复题名，区分真正重复、会议/期刊版本和不同论文。</li>
+          <li><strong>冻结候选规则：</strong>把允许的簇数、最小簇、coverage 下限和评价方式在看新结果前写死。</li>
+          <li><strong>多 seed：</strong>每个 UMAP 设置至少运行 20–50 个 seed；比较 pairwise Adjusted Rand Index、cluster Jaccard 和 noise 一致性。</li>
+          <li><strong>重采样：</strong>对论文做 80%–90% subsampling 或 bootstrap，至少 50 次；报告每个簇的稳定性，而不是只报告平均分。</li>
+          <li><strong>同时报告三项：</strong>silhouette、coverage、cluster-size distribution。任何一个都不能单独决定胜负。</li>
+          <li><strong>人类检查：</strong>每簇盲抽代表论文、边界论文和 noise；至少两位 reviewer 独立判断 coherence，再计算一致性。</li>
+          <li><strong>解释 noise：</strong>不要自动回填。单独分析 noise 是否是跨主题论文、方法论文、文本缺失、重复版本或真正的弱亲和论文。</li>
+          <li><strong>形成最终选择：</strong>只有同时满足稳定、可解释、覆盖目标和研究用途，才进入 final pipeline。</li>
+        </ol>
+        <div class="plain">
+          <strong>当前最诚实的汇报方式：</strong>
+          “我们已经实现 raw-space、UMAP-before-clustering 和 Zhicheng UMAP+HDBSCAN 三类对照。
+          初步结果显示 UMAP 能显著改变 HDBSCAN 的 noise/coverage，但没有提高原始空间 silhouette，
+          且形成粗糙的 55/227 二分。下一步是重复数据清理、稳定性分析和盲审，而不是现在宣布赢家。”
+        </div>
+      </section>
+
+      <section id="reproduce">
+        <h2>如何复现当前三个页面</h2>
+        <p>在 repository root、依赖已安装的环境中运行：</p>
+        <pre><code>.venv/bin/python scripts/build_global_comparison_explorers.py \
+  --input outputs/batch2/global_282_bge_m3_contextual_final2/global_contextual_input_282.csv \
+  --embeddings outputs/batch2/global_282_bge_m3_contextual_final2/embeddings_bge_m3_global_282_k12.npy \
+  --out docs/explorer/global_comparison \
+  --expected-paper-count 282</code></pre>
+        <p>关键实现文件与输出：</p>
+        <ul>
+          <li><code>scripts/build_global_comparison_explorers.py</code>：候选参数、选择规则、UMAP 与三种聚类算法。</li>
+          <li><code>docs/explorer/global_comparison/manifest.json</code>：网站当前展示的七个选中结果。</li>
+          <li><code>docs/explorer/global_comparison/configuration_metrics.csv</code>：所有候选配置及指标，不只是赢家。</li>
+          <li><code>docs/index.html</code>：统一界面和三个 analysis view。</li>
+        </ul>
+      </section>
+
+      <section id="references">
+        <h2>Prior research 与直接来源</h2>
+        <ol class="ref-list">
+          <li>
+            Chen, J., Xiao, S., Zhang, P., Luo, K., Lian, D., &amp; Liu, Z. (2024).
+            <a href="https://arxiv.org/abs/2402.03216">BGE M3-Embedding: Multi-Lingual, Multi-Functionality,
+            Multi-Granularity Text Embeddings Through Self-Knowledge Distillation</a>.
+            <span class="small">支持选用 BGE-M3 作为文本表示候选；不验证本项目的聚类。</span>
+          </li>
+          <li>
+            Lloyd, S. P. (1982).
+            <a href="https://doi.org/10.1109/TIT.1982.1056489">Least Squares Quantization in PCM</a>.
+            IEEE Transactions on Information Theory, 28(2), 129–137.
+            <span class="small">K-Means/Lloyd 迭代与平方误差目标的经典来源。</span>
+          </li>
+          <li>
+            Ester, M., Kriegel, H.-P., Sander, J., &amp; Xu, X. (1996).
+            <a href="https://file.biolab.si/papers/1996-DBSCAN-KDD.pdf">A Density-Based Algorithm for Discovering
+            Clusters in Large Spatial Databases with Noise</a>. KDD.
+            <span class="small">DBSCAN 原始研究：任意形状簇、无需预设簇数、显式 noise。</span>
+          </li>
+          <li>
+            Campello, R. J. G. B., Moulavi, D., &amp; Sander, J. (2013).
+            <a href="https://doi.org/10.1007/978-3-642-37456-2_14">Density-Based Clustering Based on Hierarchical
+            Density Estimates</a>.
+            <span class="small">HDBSCAN 的层级密度估计基础。</span>
+          </li>
+          <li>
+            Campello, R. J. G. B., Moulavi, D., Zimek, A., &amp; Sander, J. (2015).
+            <a href="https://doi.org/10.1145/2733381">Hierarchical Density Estimates for Data Clustering,
+            Visualization, and Outlier Detection</a>. ACM TKDD.
+            <span class="small">HDBSCAN 层级、聚类抽取与 outlier 研究。</span>
+          </li>
+          <li>
+            McInnes, L., Healy, J., &amp; Melville, J. (2018).
+            <a href="https://arxiv.org/abs/1802.03426">UMAP: Uniform Manifold Approximation and Projection for
+            Dimension Reduction</a>.
+            <span class="small">UMAP 的理论与通用降维实现。</span>
+          </li>
+          <li>
+            Grootendorst, M. (2022).
+            <a href="https://arxiv.org/abs/2203.05794">BERTopic: Neural Topic Modeling with a Class-Based TF-IDF
+            Procedure</a>.
+            <span class="small">直接支持 embedding → UMAP → clustering → class-based TF-IDF 的文档主题路线。</span>
+          </li>
+          <li>
+            Narayan, A., Berger, B., &amp; Cho, H. (2021).
+            <a href="https://doi.org/10.1038/s41587-020-00801-7">Assessing Single-Cell Transcriptomic Variability
+            through Density-Preserving Data Visualization</a>. Nature Biotechnology.
+            <span class="small">说明普通 UMAP 不保存原始局部密度，并提出 densMAP；这是 UMAP 后做密度聚类时的重要警告。</span>
+          </li>
+          <li>
+            Rousseeuw, P. J. (1987).
+            <a href="https://doi.org/10.1016/0377-0427(87)90125-7">Silhouettes: A Graphical Aid to the Interpretation
+            and Validation of Cluster Analysis</a>.
+            <span class="small">silhouette 的原始定义；仍不能代替 coverage 与人工语义评价。</span>
+          </li>
+          <li>
+            Ben-Hur, A., Elisseeff, A., &amp; Guyon, I. (2002).
+            <a href="https://psb.stanford.edu/psb-online/proceedings/psb02/benhur.pdf">A Stability Based Method for
+            Discovering Structure in Clustered Data</a>.
+            <span class="small">支持通过子采样/扰动后的聚类相似度评估结构稳定性。</span>
+          </li>
+          <li>
+            Chang, J., Gerrish, S., Wang, C., Boyd-Graber, J. L., &amp; Blei, D. M. (2009).
+            <a href="https://papers.neurips.cc/paper/2009/hash/f92586a25bb3145facd64ab20fd554ff-Abstract.html">Reading
+            Tea Leaves: How Humans Interpret Topic Models</a>.
+            <span class="small">说明自动模型质量与人类语义可解释性可能不一致，支持加入人类评价。</span>
+          </li>
+          <li>
+            Rashik, I., &amp; Vizuara AI (2024).
+            <a href="https://vizuara.substack.com/p/from-text-to-insights-hands-on-text">From Text to Insights:
+            Hands-on Text Clustering and Topic Modeling — Part 1</a>.
+            <span class="small">Zhicheng 分享的 practical tutorial；提供执行示例，但不是同行评审证据。</span>
+          </li>
+        </ol>
+        <p class="small">
+          文档中的当前参数与数字来自本 repository 的 generator、manifest 和 configuration metrics；
+          文献只用于说明方法依据和风险，不用于替本数据背书。
+        </p>
+      </section>
+
+      <footer>
+        Final Advancing-Paper Explorer · Global clustering comparison documentation
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
