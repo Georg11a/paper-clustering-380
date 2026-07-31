@@ -181,13 +181,31 @@
 <body>
   <header>
     <div class="title-row">
-      <h1>Final Advancing-Paper Explorer: Per-Keyword Views</h1>
+      <h1>Final Advancing-Paper Explorer</h1>
       <div class="top-links">
         <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
         <button class="secondary" id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
       </div>
     </div>
     <div class="controls">
+      <div class="field">
+        <label for="analysisSelect">Analysis View</label>
+        <select id="analysisSelect">
+          <option value="keyword_topics" selected>Keyword topics</option>
+          <option value="global_raw">1 · All papers together</option>
+          <option value="global_umap">2 · UMAP before clustering</option>
+          <option value="zhicheng_umap_hdbscan">3 · UMAP + HDBSCAN</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="methodSelect">Algorithm</label>
+        <select id="methodSelect" disabled>
+          <option value="statistical_bottom_up" selected>Statistical topics</option>
+          <option value="kmeans">K-Means</option>
+          <option value="dbscan">DBSCAN</option>
+          <option value="hdbscan">HDBSCAN</option>
+        </select>
+      </div>
       <div class="field">
         <label for="keywordSelect">Keyword Group</label>
         <select id="keywordSelect"><option value="All keyword groups" selected>All keyword groups (282)</option>
@@ -234,6 +252,7 @@
           <a class="doc-link" href="pipeline_overview.md">Pipeline overview<span>Input, processing steps, outputs, and human checkpoints.</span></a>
           <a class="doc-link" href="meeting_action_items.md">Meeting action items<span>How this version responds to team feedback.</span></a>
           <a class="doc-link" href="path1.html">Statistical bottom-up results<span>Cleaned 282-paper class-based TF-IDF interpretation with analysis-frozen assignments and explicit review status.</span></a>
+          <a class="doc-link" href="meeting_2026-07-29_global_clustering_execution_plan.md">Global comparison plan<span>All-paper raw clustering, UMAP-before-clustering, and Zhicheng's UMAP + HDBSCAN workflow.</span></a>
         </div>
       </section>
       <section class="drawer-section">
@@ -263,9 +282,20 @@
       { id: "design_frameworks_statistical_bottom_up", keyword: "Design frameworks", method: "statistical_bottom_up", text_view: "context", papers: "6", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_frameworks/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_frameworks/cluster_summary.md" },
       { id: "design_procedures_statistical_bottom_up", keyword: "Design Procedures", method: "statistical_bottom_up", text_view: "context", papers: "1", params: "1 unsplit group", explorer: "explorer/statistical_bottom_up/design_procedures/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_procedures/cluster_summary.md" }
     ];
-    const buildId = "282-bge-m3-spectral-source-grounded-summary-v2";
+    const globalRuns = [
+      { id: "global_raw_kmeans", view: "global_raw", method: "kmeans", label: "All papers · K-Means · Raw BGE-M3", papers: "282", params: "3 clusters · 0 noise", explorer: "explorer/global_comparison/raw/kmeans/paper_explorer.html", summary: "explorer/global_comparison/raw/kmeans/cluster_summary.md" },
+      { id: "global_raw_dbscan", view: "global_raw", method: "dbscan", label: "All papers · DBSCAN · Raw BGE-M3", papers: "282", params: "2 clusters · 164 noise", explorer: "explorer/global_comparison/raw/dbscan/paper_explorer.html", summary: "explorer/global_comparison/raw/dbscan/cluster_summary.md" },
+      { id: "global_raw_hdbscan", view: "global_raw", method: "hdbscan", label: "All papers · HDBSCAN · Raw BGE-M3", papers: "282", params: "2 clusters · 228 noise", explorer: "explorer/global_comparison/raw/hdbscan/paper_explorer.html", summary: "explorer/global_comparison/raw/hdbscan/cluster_summary.md" },
+      { id: "global_umap_kmeans", view: "global_umap", method: "kmeans", label: "UMAP 5D before clustering · K-Means", papers: "282", params: "2 clusters · 0 noise", explorer: "explorer/global_comparison/umap/kmeans/paper_explorer.html", summary: "explorer/global_comparison/umap/kmeans/cluster_summary.md" },
+      { id: "global_umap_dbscan", view: "global_umap", method: "dbscan", label: "UMAP 5D before clustering · DBSCAN", papers: "282", params: "15 clusters · 163 noise", explorer: "explorer/global_comparison/umap/dbscan/paper_explorer.html", summary: "explorer/global_comparison/umap/dbscan/cluster_summary.md" },
+      { id: "global_umap_hdbscan", view: "global_umap", method: "hdbscan", label: "UMAP 5D before clustering · HDBSCAN", papers: "282", params: "2 clusters · 0 noise", explorer: "explorer/global_comparison/umap/hdbscan/paper_explorer.html", summary: "explorer/global_comparison/umap/hdbscan/cluster_summary.md" },
+      { id: "zhicheng_umap_hdbscan", view: "zhicheng_umap_hdbscan", method: "hdbscan", label: "Zhicheng workflow · UMAP 10D + HDBSCAN", papers: "282", params: "2 clusters · 0 noise", explorer: "explorer/global_comparison/zhicheng_umap_hdbscan/paper_explorer.html", summary: "explorer/global_comparison/zhicheng_umap_hdbscan/cluster_summary.md" }
+    ];
+    const buildId = "282-global-clustering-comparison-v1";
     const withCacheBuster = path => `${path}${path.includes('?') ? '&' : '?'}v=${buildId}-${Date.now()}`;
     const frame = document.getElementById('explorerFrame');
+    const analysisSelect = document.getElementById('analysisSelect');
+    const methodSelect = document.getElementById('methodSelect');
     const keywordSelect = document.getElementById('keywordSelect');
     const applyBtn = document.getElementById('applyBtn');
     const currentLabel = document.getElementById('currentLabel');
@@ -285,6 +315,9 @@
 
     function displayLabel(run) {
       const clusterCount = clusterCountOverrides[run.id] || run.params;
+      if (run.view) {
+        return `${run.label} · ${clusterCount}`;
+      }
       if (run.keyword === 'Confirmed PDF set') {
         return `${run.papers} PDFs · ${clusterCount}`;
       }
@@ -292,6 +325,12 @@
     }
 
     function findRun() {
+      if (analysisSelect.value !== 'keyword_topics') {
+        return globalRuns.find(run =>
+          run.view === analysisSelect.value &&
+          run.method === methodSelect.value
+        );
+      }
       return path1Runs.find(run =>
         run.keyword === keywordSelect.value &&
         run.method === 'statistical_bottom_up' &&
@@ -300,16 +339,34 @@
     }
 
     function findSmallGroup() {
+      if (analysisSelect.value !== 'keyword_topics') return null;
       return smallGroups[keywordSelect.value] || null;
     }
 
+    function configureAnalysisControls() {
+      const isKeywordView = analysisSelect.value === 'keyword_topics';
+      const isZhichengView = analysisSelect.value === 'zhicheng_umap_hdbscan';
+      keywordSelect.disabled = !isKeywordView;
+      methodSelect.disabled = isKeywordView || isZhichengView;
+      if (isKeywordView) {
+        methodSelect.value = 'statistical_bottom_up';
+      } else if (isZhichengView) {
+        methodSelect.value = 'hdbscan';
+      } else if (methodSelect.value === 'statistical_bottom_up') {
+        methodSelect.value = 'kmeans';
+      }
+    }
+
     function refreshAvailability() {
+      configureAnalysisControls();
       const run = findRun();
       const smallGroup = findSmallGroup();
       applyBtn.disabled = !(run || smallGroup);
       if (run) {
         currentLabel.textContent = displayLabel(run);
-        note.textContent = 'Ready to load this generated keyword/method/view combination.';
+        note.textContent = run.view
+          ? 'All 282 papers are held constant. Density noise remains visible as weak-affinity evidence.'
+          : 'Ready to load this generated keyword/method/view combination.';
       } else if (smallGroup) {
         currentLabel.textContent = `${keywordSelect.value} · ${smallGroup.papers} papers · paper map`;
         note.textContent = 'This small group is available as a paper map with one singleton display cluster per paper.';
@@ -392,6 +449,8 @@
       clusterFilter.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
+    analysisSelect.addEventListener('change', refreshAvailability);
+    methodSelect.addEventListener('change', refreshAvailability);
     keywordSelect.addEventListener('change', refreshAvailability);
     applyBtn.addEventListener('click', event => {
       event.preventDefault();

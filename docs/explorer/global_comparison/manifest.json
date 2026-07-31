@@ -1,0 +1,100 @@
+{
+  "paper_count": 282,
+  "input": "outputs/batch2/global_282_bge_m3_contextual_final2/global_contextual_input_282.csv",
+  "embeddings": "outputs/batch2/global_282_bge_m3_contextual_final2/embeddings_bge_m3_global_282_k12.npy",
+  "umap_clustering": {
+    "comparison_n_components": 5,
+    "zhicheng_n_components": 10,
+    "n_neighbors": 15,
+    "min_dist": 0.0,
+    "metric": "cosine",
+    "seed": 20260730
+  },
+  "noise_policy": "retain label -1; never nearest-cluster reassignment",
+  "views": [
+    {
+      "title": "All papers \u00b7 KMEANS \u00b7 Raw BGE-M3",
+      "config": "kmeans_k3",
+      "path": "raw/kmeans",
+      "cluster_count": 3,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 50,
+      "largest_cluster": 130,
+      "silhouette_original_cosine": 0.09269934892654419
+    },
+    {
+      "title": "All papers \u00b7 DBSCAN \u00b7 Raw BGE-M3",
+      "config": "dbscan_eps0.1432_ms5",
+      "path": "raw/dbscan",
+      "cluster_count": 2,
+      "noise_count": 164,
+      "noise_fraction": 0.5815602836879432,
+      "coverage": 0.41843971631205673,
+      "smallest_cluster": 24,
+      "largest_cluster": 94,
+      "silhouette_original_cosine": 0.21322359144687653
+    },
+    {
+      "title": "All papers \u00b7 HDBSCAN \u00b7 Raw BGE-M3",
+      "config": "hdbscan_mcs8_ms8",
+      "path": "raw/hdbscan",
+      "cluster_count": 2,
+      "noise_count": 228,
+      "noise_fraction": 0.8085106382978723,
+      "coverage": 0.19148936170212766,
+      "smallest_cluster": 10,
+      "largest_cluster": 44,
+      "silhouette_original_cosine": 0.2863832116127014
+    },
+    {
+      "title": "UMAP before clustering \u00b7 KMEANS",
+      "config": "kmeans_k2",
+      "path": "umap/kmeans",
+      "cluster_count": 2,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 55,
+      "largest_cluster": 227,
+      "silhouette_original_cosine": 0.08135917037725449
+    },
+    {
+      "title": "UMAP before clustering \u00b7 DBSCAN",
+      "config": "dbscan_eps0.2374_ms5",
+      "path": "umap/dbscan",
+      "cluster_count": 15,
+      "noise_count": 163,
+      "noise_fraction": 0.5780141843971631,
+      "coverage": 0.4219858156028369,
+      "smallest_cluster": 5,
+      "largest_cluster": 20,
+      "silhouette_original_cosine": 0.19582191109657288
+    },
+    {
+      "title": "UMAP before clustering \u00b7 HDBSCAN",
+      "config": "hdbscan_mcs15_ms8",
+      "path": "umap/hdbscan",
+      "cluster_count": 2,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 55,
+      "largest_cluster": 227,
+      "silhouette_original_cosine": 0.08135917037725449
+    },
+    {
+      "title": "Zhicheng workflow \u00b7 UMAP 10D + HDBSCAN",
+      "config": "hdbscan_mcs15_ms1",
+      "path": "zhicheng_umap_hdbscan",
+      "cluster_count": 2,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 55,
+      "largest_cluster": 227,
+      "silhouette_original_cosine": 0.08135917037725449
+    }
+  ]
+}
