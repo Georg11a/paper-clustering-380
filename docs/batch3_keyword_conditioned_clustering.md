@@ -97,5 +97,4 @@ This boundary applies to the frozen keyword-conditioned Batch 3 branch. The
 separate 2026-07-29 global method-selection experiment is allowed to compare
 Spectral, K-Means, DBSCAN, and HDBSCAN in raw and shared UMAP spaces, but its
 memberships do not overwrite this branch unless a later decision record
-explicitly adopts a replacement method. See
-[`meeting_2026-07-29_global_clustering_execution_plan.md`](meeting_2026-07-29_global_clustering_execution_plan.md).
+explicitly adopts a replacement method.

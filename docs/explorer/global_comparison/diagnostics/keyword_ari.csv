@@ -1,8 +1,0 @@
-config,ari_vs_keyword_full,ari_vs_keyword_nonnoise,coverage
-All papers · KMEANS · Raw BGE-M3,0.210321,0.210321,1.000000
-UMAP before clustering · KMEANS,0.083947,0.083947,1.000000
-UMAP before clustering · HDBSCAN,0.083947,0.083947,1.000000
-Zhicheng workflow · UMAP 10D + HDBSCAN,0.083947,0.083947,1.000000
-UMAP before clustering · DBSCAN,0.058777,0.394628,0.421986
-All papers · DBSCAN · Raw BGE-M3,0.029838,0.156341,0.418440
-All papers · HDBSCAN · Raw BGE-M3,0.002903,0.171594,0.191489
