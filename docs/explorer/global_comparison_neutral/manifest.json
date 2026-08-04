@@ -1,0 +1,151 @@
+{
+  "paper_count": 282,
+  "input": "outputs/neutral/stage01/neutral_inputs/R_cent_neutral_chunks.csv",
+  "embeddings": "outputs/neutral/stage01/emb/R_cent.npy",
+  "umap_clustering": {
+    "comparison_n_components": [
+      5,
+      10
+    ],
+    "zhicheng_n_components": 10,
+    "n_neighbors": 15,
+    "min_dist": 0.0,
+    "metric": "cosine",
+    "seed": 20260730
+  },
+  "noise_policy": "retain label -1; never nearest-cluster reassignment",
+  "ground_truth_required": false,
+  "selection_note": "Selected configurations are representative views, not ground-truth winners. Comparison uses internal geometry, coverage, noise, and subsample stability.",
+  "views": [
+    {
+      "title": "All papers \u00b7 KMEANS \u00b7 Raw BGE-M3",
+      "config": "kmeans_k3",
+      "path": "raw/kmeans",
+      "cluster_count": 3,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 67,
+      "largest_cluster": 131,
+      "silhouette_original_cosine": 0.08411312103271484,
+      "stability_ari": 0.654469486606541
+    },
+    {
+      "title": "All papers \u00b7 DBSCAN \u00b7 Raw BGE-M3",
+      "config": "dbscan_eps0.160858_ms5",
+      "path": "raw/dbscan",
+      "cluster_count": 3,
+      "noise_count": 165,
+      "noise_fraction": 0.5851063829787234,
+      "coverage": 0.4148936170212766,
+      "smallest_cluster": 6,
+      "largest_cluster": 103,
+      "silhouette_original_cosine": 0.12332230061292648,
+      "stability_ari": 0.7918976575564232
+    },
+    {
+      "title": "All papers \u00b7 HDBSCAN \u00b7 Raw BGE-M3",
+      "config": "hdbscan_mcs5_ms5",
+      "path": "raw/hdbscan",
+      "cluster_count": 4,
+      "noise_count": 210,
+      "noise_fraction": 0.7446808510638298,
+      "coverage": 0.2553191489361702,
+      "smallest_cluster": 5,
+      "largest_cluster": 49,
+      "silhouette_original_cosine": 0.24314400553703308,
+      "stability_ari": 0.5479885270071109
+    },
+    {
+      "title": "UMAP5 before clustering \u00b7 KMEANS",
+      "config": "kmeans_k2",
+      "path": "umap5/kmeans",
+      "cluster_count": 2,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 79,
+      "largest_cluster": 203,
+      "silhouette_original_cosine": 0.08359578996896744,
+      "stability_ari": 0.7943804619682798
+    },
+    {
+      "title": "UMAP5 before clustering \u00b7 DBSCAN",
+      "config": "dbscan_eps0.365066_ms8",
+      "path": "umap5/dbscan",
+      "cluster_count": 9,
+      "noise_count": 148,
+      "noise_fraction": 0.524822695035461,
+      "coverage": 0.475177304964539,
+      "smallest_cluster": 8,
+      "largest_cluster": 35,
+      "silhouette_original_cosine": 0.14645282924175262,
+      "stability_ari": 0.6745206037434243
+    },
+    {
+      "title": "UMAP5 before clustering \u00b7 HDBSCAN",
+      "config": "hdbscan_mcs5_ms5",
+      "path": "umap5/hdbscan",
+      "cluster_count": 15,
+      "noise_count": 39,
+      "noise_fraction": 0.13829787234042554,
+      "coverage": 0.8617021276595744,
+      "smallest_cluster": 5,
+      "largest_cluster": 51,
+      "silhouette_original_cosine": 0.0656697079539299,
+      "stability_ari": 0.6642390952785102
+    },
+    {
+      "title": "UMAP10 before clustering \u00b7 KMEANS",
+      "config": "kmeans_k2",
+      "path": "umap10/kmeans",
+      "cluster_count": 2,
+      "noise_count": 0,
+      "noise_fraction": 0.0,
+      "coverage": 1.0,
+      "smallest_cluster": 99,
+      "largest_cluster": 183,
+      "silhouette_original_cosine": 0.0691918283700943,
+      "stability_ari": 0.8780261270349017
+    },
+    {
+      "title": "UMAP10 before clustering \u00b7 DBSCAN",
+      "config": "dbscan_eps0.275328_ms5",
+      "path": "umap10/dbscan",
+      "cluster_count": 14,
+      "noise_count": 161,
+      "noise_fraction": 0.5709219858156028,
+      "coverage": 0.42907801418439717,
+      "smallest_cluster": 5,
+      "largest_cluster": 24,
+      "silhouette_original_cosine": 0.19482260942459106,
+      "stability_ari": 0.7209612081008024
+    },
+    {
+      "title": "UMAP10 before clustering \u00b7 HDBSCAN",
+      "config": "hdbscan_mcs8_ms1",
+      "path": "umap10/hdbscan",
+      "cluster_count": 15,
+      "noise_count": 35,
+      "noise_fraction": 0.12411347517730496,
+      "coverage": 0.875886524822695,
+      "smallest_cluster": 8,
+      "largest_cluster": 41,
+      "silhouette_original_cosine": 0.07131094485521317,
+      "stability_ari": 0.5682607932294823
+    },
+    {
+      "title": "Zhicheng workflow \u00b7 UMAP 10D + HDBSCAN",
+      "config": "hdbscan_mcs8_ms1",
+      "path": "zhicheng_umap_hdbscan",
+      "cluster_count": 15,
+      "noise_count": 35,
+      "noise_fraction": 0.12411347517730496,
+      "coverage": 0.875886524822695,
+      "smallest_cluster": 8,
+      "largest_cluster": 41,
+      "silhouette_original_cosine": 0.07131094485521317,
+      "stability_ari": 0.5682607932294823
+    }
+  ]
+}

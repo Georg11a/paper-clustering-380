@@ -195,6 +195,7 @@
           <option value="global_raw">1 · All papers together</option>
           <option value="global_umap">2 · UMAP before clustering</option>
           <option value="zhicheng_umap_hdbscan">3 · UMAP + HDBSCAN</option>
+          <option value="dual_view">4 · Neutral paper map</option>
         </select>
       </div>
       <div class="field">
@@ -252,6 +253,7 @@
           <a class="doc-link" href="pipeline_overview.md">Pipeline overview<span>Input, processing steps, outputs, and human checkpoints.</span></a>
           <a class="doc-link" href="meeting_action_items.md">Meeting action items<span>How this version responds to team feedback.</span></a>
           <a class="doc-link" href="path1.html">Statistical bottom-up results<span>Cleaned 282-paper class-based TF-IDF interpretation with analysis-frozen assignments and explicit review status.</span></a>
+          <a class="doc-link" href="dual_view_explorer.html">Neutral paper map<span>Query-free UMAP map with paper details, summaries, and compact classification checks.</span></a>
         </div>
       </section>
       <section class="drawer-section">
@@ -282,15 +284,19 @@
       { id: "design_procedures_statistical_bottom_up", keyword: "Design Procedures", method: "statistical_bottom_up", text_view: "context", papers: "1", params: "1 unsplit group", explorer: "explorer/statistical_bottom_up/design_procedures/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_procedures/cluster_summary.md" }
     ];
     const globalRuns = [
-      { id: "global_raw_kmeans", view: "global_raw", method: "kmeans", label: "All papers · K-Means · Raw BGE-M3", papers: "282", params: "3 clusters · 0 noise", explorer: "explorer/global_comparison/raw/kmeans/paper_explorer.html", summary: "explorer/global_comparison/raw/kmeans/cluster_summary.md" },
-      { id: "global_raw_dbscan", view: "global_raw", method: "dbscan", label: "All papers · DBSCAN · Raw BGE-M3", papers: "282", params: "2 clusters · 164 noise", explorer: "explorer/global_comparison/raw/dbscan/paper_explorer.html", summary: "explorer/global_comparison/raw/dbscan/cluster_summary.md" },
-      { id: "global_raw_hdbscan", view: "global_raw", method: "hdbscan", label: "All papers · HDBSCAN · Raw BGE-M3", papers: "282", params: "2 clusters · 228 noise", explorer: "explorer/global_comparison/raw/hdbscan/paper_explorer.html", summary: "explorer/global_comparison/raw/hdbscan/cluster_summary.md" },
-      { id: "global_umap_kmeans", view: "global_umap", method: "kmeans", label: "UMAP 5D before clustering · K-Means", papers: "282", params: "2 clusters · 0 noise", explorer: "explorer/global_comparison/umap/kmeans/paper_explorer.html", summary: "explorer/global_comparison/umap/kmeans/cluster_summary.md" },
-      { id: "global_umap_dbscan", view: "global_umap", method: "dbscan", label: "UMAP 5D before clustering · DBSCAN", papers: "282", params: "15 clusters · 163 noise", explorer: "explorer/global_comparison/umap/dbscan/paper_explorer.html", summary: "explorer/global_comparison/umap/dbscan/cluster_summary.md" },
-      { id: "global_umap_hdbscan", view: "global_umap", method: "hdbscan", label: "UMAP 5D before clustering · HDBSCAN", papers: "282", params: "2 clusters · 0 noise", explorer: "explorer/global_comparison/umap/hdbscan/paper_explorer.html", summary: "explorer/global_comparison/umap/hdbscan/cluster_summary.md" },
-      { id: "zhicheng_umap_hdbscan", view: "zhicheng_umap_hdbscan", method: "hdbscan", label: "Zhicheng workflow · UMAP 10D + HDBSCAN", papers: "282", params: "2 clusters · 0 noise", explorer: "explorer/global_comparison/zhicheng_umap_hdbscan/paper_explorer.html", summary: "explorer/global_comparison/zhicheng_umap_hdbscan/cluster_summary.md" }
+      { id: "neutral_raw_kmeans", view: "global_raw", method: "kmeans", label: "All papers · K-Means · Neutral raw BGE-M3", papers: "282", params: "3 clusters · 0 noise · stability .654", explorer: "explorer/global_comparison_neutral/raw/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/raw/kmeans/cluster_summary.md" },
+      { id: "neutral_raw_dbscan", view: "global_raw", method: "dbscan", label: "All papers · DBSCAN · Neutral raw BGE-M3", papers: "282", params: "3 clusters · 165 noise · stability .792", explorer: "explorer/global_comparison_neutral/raw/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/raw/dbscan/cluster_summary.md" },
+      { id: "neutral_raw_hdbscan", view: "global_raw", method: "hdbscan", label: "All papers · HDBSCAN · Neutral raw BGE-M3", papers: "282", params: "4 clusters · 210 noise · stability .548", explorer: "explorer/global_comparison_neutral/raw/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/raw/hdbscan/cluster_summary.md" },
+      { id: "neutral_umap5_kmeans", view: "global_umap", space: "umap5", method: "kmeans", label: "Neutral UMAP 5D before clustering · K-Means", papers: "282", params: "2 clusters · 0 noise · stability .794", explorer: "explorer/global_comparison_neutral/umap5/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap5/kmeans/cluster_summary.md" },
+      { id: "neutral_umap5_dbscan", view: "global_umap", space: "umap5", method: "dbscan", label: "Neutral UMAP 5D before clustering · DBSCAN", papers: "282", params: "9 clusters · 148 noise · stability .675", explorer: "explorer/global_comparison_neutral/umap5/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap5/dbscan/cluster_summary.md" },
+      { id: "neutral_umap5_hdbscan", view: "global_umap", space: "umap5", method: "hdbscan", label: "Neutral UMAP 5D before clustering · HDBSCAN", papers: "282", params: "15 clusters · 39 noise · stability .664", explorer: "explorer/global_comparison_neutral/umap5/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap5/hdbscan/cluster_summary.md" },
+      { id: "neutral_umap10_kmeans", view: "global_umap", space: "umap10", method: "kmeans", label: "Neutral UMAP 10D before clustering · K-Means", papers: "282", params: "2 clusters · 0 noise · stability .878", explorer: "explorer/global_comparison_neutral/umap10/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/kmeans/cluster_summary.md" },
+      { id: "neutral_umap10_dbscan", view: "global_umap", space: "umap10", method: "dbscan", label: "Neutral UMAP 10D before clustering · DBSCAN", papers: "282", params: "14 clusters · 161 noise · stability .721", explorer: "explorer/global_comparison_neutral/umap10/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/dbscan/cluster_summary.md" },
+      { id: "neutral_umap10_hdbscan", view: "global_umap", space: "umap10", method: "hdbscan", label: "Neutral UMAP 10D before clustering · HDBSCAN", papers: "282", params: "15 clusters · 35 noise · stability .568", explorer: "explorer/global_comparison_neutral/umap10/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/hdbscan/cluster_summary.md" },
+      { id: "neutral_zhicheng_umap_hdbscan", view: "zhicheng_umap_hdbscan", method: "hdbscan", label: "Zhicheng workflow · Neutral UMAP 10D + HDBSCAN", papers: "282", params: "15 clusters · 35 noise · stability .568", explorer: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/cluster_summary.md" },
+      { id: "dual_view", view: "dual_view", method: "dual_view", label: "Neutral paper map", papers: "282", params: "query-free text · 2 candidate regions", explorer: "dual_view_explorer.html", summary: "dual_view_explorer.html" }
     ];
-    const buildId = "282-global-clustering-comparison-v1";
+    const buildId = "282-neutral-global-clustering-comparison-v2";
     const withCacheBuster = path => `${path}${path.includes('?') ? '&' : '?'}v=${buildId}-${Date.now()}`;
     const frame = document.getElementById('explorerFrame');
     const analysisSelect = document.getElementById('analysisSelect');
@@ -302,6 +308,9 @@
     const openLink = document.getElementById('openLink');
     const note = document.getElementById('note');
     const outerClusterFilter = document.getElementById('outerClusterFilter');
+    const keywordOptionsHtml = keywordSelect.innerHTML;
+    let lastKeywordValue = keywordSelect.value;
+    let keywordSelectorMode = 'keywords';
     let pendingRun = null;
     let pendingSmallGroup = null;
     const smallGroups = {};
@@ -325,9 +334,13 @@
 
     function findRun() {
       if (analysisSelect.value !== 'keyword_topics') {
+        if (analysisSelect.value === 'dual_view') {
+          return globalRuns.find(run => run.view === 'dual_view');
+        }
         return globalRuns.find(run =>
           run.view === analysisSelect.value &&
-          run.method === methodSelect.value
+          run.method === methodSelect.value &&
+          (analysisSelect.value !== 'global_umap' || run.space === keywordSelect.value)
         );
       }
       return path1Runs.find(run =>
@@ -344,13 +357,27 @@
 
     function configureAnalysisControls() {
       const isKeywordView = analysisSelect.value === 'keyword_topics';
+      const isUmapView = analysisSelect.value === 'global_umap';
       const isZhichengView = analysisSelect.value === 'zhicheng_umap_hdbscan';
-      keywordSelect.disabled = !isKeywordView;
-      methodSelect.disabled = isKeywordView || isZhichengView;
+      const isDualView = analysisSelect.value === 'dual_view';
+      if (isUmapView && keywordSelectorMode !== 'umap') {
+        lastKeywordValue = keywordSelect.value;
+        keywordSelect.innerHTML = '<option value="umap5">UMAP 5D</option><option value="umap10">UMAP 10D</option>';
+        keywordSelect.value = 'umap5';
+        keywordSelectorMode = 'umap';
+      } else if (!isUmapView && keywordSelectorMode !== 'keywords') {
+        keywordSelect.innerHTML = keywordOptionsHtml;
+        keywordSelect.value = lastKeywordValue || 'All keyword groups';
+        keywordSelectorMode = 'keywords';
+      }
+      keywordSelect.disabled = !(isKeywordView || isUmapView);
+      methodSelect.disabled = isKeywordView || isZhichengView || isDualView;
       if (isKeywordView) {
         methodSelect.value = 'statistical_bottom_up';
       } else if (isZhichengView) {
         methodSelect.value = 'hdbscan';
+      } else if (isDualView) {
+        methodSelect.value = 'kmeans';
       } else if (methodSelect.value === 'statistical_bottom_up') {
         methodSelect.value = 'kmeans';
       }
@@ -363,7 +390,9 @@
       applyBtn.disabled = !(run || smallGroup);
       if (run) {
         currentLabel.textContent = displayLabel(run);
-        note.textContent = run.view
+        note.textContent = run.view === 'dual_view'
+          ? 'Paper positions use a query-free text representation. Colors are display layers and do not move papers.'
+          : run.view
           ? 'All 282 papers are held constant. Density noise remains visible as weak-affinity evidence.'
           : 'Ready to load this generated keyword/method/view combination.';
       } else if (smallGroup) {
@@ -398,7 +427,9 @@
       pendingRun = run;
       applyBtn.disabled = true;
       applyBtn.textContent = 'Loading...';
-      outerClusterFilter.innerHTML = '<option value="all">All clusters</option>';
+      outerClusterFilter.innerHTML = run.view === 'dual_view'
+        ? '<option value="all">All papers</option>'
+        : '<option value="all">All clusters</option>';
       outerClusterFilter.value = 'all';
       outerClusterFilter.disabled = true;
       frame.src = withCacheBuster(run.explorer);
