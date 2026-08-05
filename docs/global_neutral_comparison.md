@@ -41,6 +41,13 @@ raw 1024D cosine space after excluding noise. Stability is mean adjusted Rand
 index over the overlapping papers in repeated 80% subsamples, in the stated
 clustering space.
 
+The explorer also joins the previously extracted Discussion metadata from
+`data/fulltext_context_confirmed_284_only.csv` after clustering. This provides
+an extractive `Discussion Summary` card for 45 of the current 282 papers. The
+join is display-only: Discussion text is not used to build embeddings, fit
+UMAP, select configurations, or assign clusters. Use `--discussion-metadata ""`
+to build the views without these cards.
+
 The selected configurations are representative views, not ground-truth
 winners. No external gold labels are assumed. Retrieval keywords can be joined
 back after assignment to diagnose whether a result simply reproduces the

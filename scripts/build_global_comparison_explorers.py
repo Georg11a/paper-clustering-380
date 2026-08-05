@@ -75,6 +75,44 @@ def load_neutral_papers(path: Path) -> pd.DataFrame:
     return source
 
 
+def load_discussion_metadata(path: Path | None) -> pd.DataFrame:
+    """Load optional, display-only Discussion fields keyed by paper_id.
+
+    These fields are joined only after clustering, so they cannot affect the
+    embeddings, UMAP coordinates, configuration selection, or assignments.
+    """
+    columns = [
+        "paper_id",
+        "discussion_found",
+        "discussion_paragraph_count",
+        "discussion_summary",
+        "discussion_excerpt",
+    ]
+    if path is None or not path.exists():
+        return pd.DataFrame(columns=columns)
+
+    source = pd.read_csv(path).fillna("")
+    if "paper_id" not in source.columns:
+        raise ValueError(f"Discussion metadata has no paper_id column: {path}")
+    for column in columns[1:]:
+        if column not in source.columns:
+            source[column] = ""
+    source = source[columns].drop_duplicates("paper_id", keep="last").copy()
+    source["discussion_found"] = (
+        source["discussion_found"]
+        .astype(str)
+        .str.strip()
+        .str.lower()
+        .isin({"true", "1", "yes"})
+    )
+    source["discussion_paragraph_count"] = (
+        pd.to_numeric(source["discussion_paragraph_count"], errors="coerce")
+        .fillna(0)
+        .astype(int)
+    )
+    return source
+
+
 def partition_metrics(
     original_vectors: np.ndarray,
     labels: np.ndarray,
@@ -348,6 +386,7 @@ def enrich_for_dashboard(
     labels: np.ndarray,
     coordinates: np.ndarray,
     configuration_label: str,
+    discussion_metadata: pd.DataFrame,
 ) -> pd.DataFrame:
     frame = papers.copy()
     frame["cluster"] = labels.astype(int)
@@ -412,10 +451,28 @@ def enrich_for_dashboard(
 
     frame["umap_x"] = coordinates[:, 0]
     frame["umap_y"] = coordinates[:, 1]
-    frame["discussion_found"] = False
-    frame["discussion_paragraph_count"] = 0
-    frame["discussion_summary"] = ""
-    frame["discussion_excerpt"] = ""
+    if len(discussion_metadata):
+        frame = frame.merge(
+            discussion_metadata,
+            on="paper_id",
+            how="left",
+            validate="one_to_one",
+        )
+    for column, default in [
+        ("discussion_found", False),
+        ("discussion_paragraph_count", 0),
+        ("discussion_summary", ""),
+        ("discussion_excerpt", ""),
+    ]:
+        if column not in frame:
+            frame[column] = default
+        frame[column] = frame[column].fillna(default)
+    frame["discussion_found"] = frame["discussion_found"].astype(bool)
+    frame["discussion_paragraph_count"] = (
+        pd.to_numeric(frame["discussion_paragraph_count"], errors="coerce")
+        .fillna(0)
+        .astype(int)
+    )
     frame["hdbscan_peripheral"] = False
     frame["lda_topic"] = -1
     frame["lda_topic_probability"] = 0.0
@@ -472,17 +529,11 @@ def adapt_global_dashboard(path: Path) -> None:
         "palette[Math.abs(Number(c)) % palette.length];",
     )
     page = page.replace(
-        "      const shapeNote = document.createElement('span');\n"
-        "      shapeNote.className = 'legend-item';\n"
-        "      shapeNote.innerHTML = '<span>◆ Discussion detected</span><span>● No explicit discussion</span>';\n"
-        "      legend.appendChild(shapeNote);\n",
-        "",
-    )
-    page = page.replace(
         "      const discussionStatus = p.discussion_found ?\n"
         "        `<span class=\"pill\">Discussion detected: ${p.discussion_paragraph_count} paragraphs</span>` :\n"
         "        `<span class=\"pill\">No explicit Discussion section detected</span>`;",
-        "      const discussionStatus = '';",
+        "      const discussionStatus = p.discussion_found ?\n"
+        "        `<span class=\"pill\">Discussion detected: ${p.discussion_paragraph_count} paragraphs</span>` : '';",
     )
     page = page.replace(
         "      status.textContent = `${shown.length} of ${papers.length} papers shown; "
@@ -550,11 +601,19 @@ def export_view(
     papers: pd.DataFrame,
     vectors: np.ndarray,
     coordinates: np.ndarray,
+    discussion_metadata: pd.DataFrame,
 ) -> dict[str, object]:
     out = out_root / relative
     out.mkdir(parents=True, exist_ok=True)
     display = f"{title} · {config}"
-    frame = enrich_for_dashboard(papers, vectors, labels, coordinates, display)
+    frame = enrich_for_dashboard(
+        papers,
+        vectors,
+        labels,
+        coordinates,
+        display,
+        discussion_metadata,
+    )
     write_dashboard(frame, out / "paper_explorer.html", display)
     adapt_global_dashboard(out / "paper_explorer.html")
     public_columns = [
@@ -575,6 +634,10 @@ def export_view(
         "is_representative_top3",
         "umap_x",
         "umap_y",
+        "discussion_found",
+        "discussion_paragraph_count",
+        "discussion_summary",
+        "discussion_excerpt",
     ]
     frame[public_columns].to_csv(out / "clustered_papers.csv", index=False)
     write_summary(out / "cluster_summary.md", title, config, metrics, frame)
@@ -678,9 +741,20 @@ def main() -> None:
     parser.add_argument("--embeddings", required=True)
     parser.add_argument("--out", required=True)
     parser.add_argument("--expected-paper-count", type=int, default=282)
+    parser.add_argument(
+        "--discussion-metadata",
+        default="data/fulltext_context_confirmed_284_only.csv",
+        help=(
+            "Optional post-clustering Discussion metadata CSV. Pass an empty "
+            "string to omit Discussion cards."
+        ),
+    )
     args = parser.parse_args()
 
     papers = load_neutral_papers(Path(args.input)).fillna("")
+    discussion_metadata = load_discussion_metadata(
+        Path(args.discussion_metadata) if args.discussion_metadata else None
+    )
     vectors = normalize(np.load(args.embeddings), norm="l2")
     if (
         len(papers) != args.expected_paper_count
@@ -758,6 +832,7 @@ def main() -> None:
                     papers,
                     vectors,
                     layout,
+                    discussion_metadata,
                 )
             )
 
@@ -780,6 +855,7 @@ def main() -> None:
             papers,
             vectors,
             layout,
+            discussion_metadata,
         )
     )
     zhicheng_sweep = zhicheng_hdbscan_sweep(
