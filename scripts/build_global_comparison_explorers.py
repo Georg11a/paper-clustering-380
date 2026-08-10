@@ -529,6 +529,15 @@ def adapt_global_dashboard(path: Path) -> None:
         "palette[Math.abs(Number(c)) % palette.length];",
     )
     page = page.replace(
+        "const readableClusterLabel = c => { const label = clusterTopicLabel(c.label || c.theme); return `${label || clusterName(c.cluster)} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`; };",
+        "const readableClusterLabel = c => {\n"
+        "      const label = clusterTopicLabel(c.label || c.theme);\n"
+        "      const name = clusterName(c.cluster);\n"
+        "      const displayName = Number(c.cluster) === -1 ? (label || name) : `${name} · ${label || 'Untitled'}`;\n"
+        "      return `${displayName} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`;\n"
+        "    };",
+    )
+    page = page.replace(
         "      const discussionStatus = p.discussion_found ?\n"
         "        `<span class=\"pill\">Discussion detected: ${p.discussion_paragraph_count} paragraphs</span>` :\n"
         "        `<span class=\"pill\">No explicit Discussion section detected</span>`;",

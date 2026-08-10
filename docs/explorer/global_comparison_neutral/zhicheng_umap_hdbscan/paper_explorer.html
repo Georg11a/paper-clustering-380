@@ -222,7 +222,12 @@
     const colorFor = c => Number(c) === -1 ? '#9aa6b2' : palette[Math.abs(Number(c)) % palette.length];
     const clusterName = c => Number(c) === -1 ? 'Noise / weak affinity' : `Cluster ${Number(c) + 1}`;
     const clusterTopicLabel = value => String(value || '').replace(/\s*\[[^\]]+\]\s*$/, '').trim();
-    const readableClusterLabel = c => { const label = clusterTopicLabel(c.label || c.theme); return `${label || clusterName(c.cluster)} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`; };
+    const readableClusterLabel = c => {
+      const label = clusterTopicLabel(c.label || c.theme);
+      const name = clusterName(c.cluster);
+      const displayName = Number(c.cluster) === -1 ? (label || name) : `${name} · ${label || 'Untitled'}`;
+      return `${displayName} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`;
+    };
     const clusterLegendLabel = c => readableClusterLabel(c);
     const state = { selected: papers[0]?.paper_id || null };
     const svg = document.getElementById('plot');
