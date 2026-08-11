@@ -1,11 +1,11 @@
-# Global neutral clustering comparison — 282 papers
+# Global neutral clustering comparison — 457 papers
 
 This is the meeting-requested Path 1 comparison. All papers are analyzed
 together. The clustering input contains no retrieval keyword, previous cluster
 assignment, or ground-truth label.
 
 ```text
-R_cent neutral chunks (3,597 chunks / 282 papers)
+R_cent neutral chunks (5,848 chunks / 457 papers)
 → frozen mean-pooled BGE-M3 1024D vectors
 → raw 1024D / UMAP 5D / UMAP 10D
 → K-Means / DBSCAN / HDBSCAN
@@ -17,10 +17,11 @@ Run:
 ```bash
 NUMBA_CACHE_DIR=/tmp/design_knowledge_numba_cache \
 .venv/bin/python scripts/build_global_comparison_explorers.py \
-  --input outputs/neutral/stage01/neutral_inputs/R_cent_neutral_chunks.csv \
-  --embeddings outputs/neutral/stage01/emb/R_cent.npy \
+  --input "/Users/baiyixin/Documents/Survey - design knowledge/expanded_pipeline_459_20260811/neutral_457/R_cent_neutral_chunks.csv" \
+  --embeddings "/Users/baiyixin/Documents/Survey - design knowledge/expanded_pipeline_459_20260811/neutral_457/R_cent.npy" \
+  --metadata data/expanded_analysis_ready_459_20260811.csv \
   --out docs/explorer/global_comparison_neutral \
-  --expected-paper-count 282
+  --expected-paper-count 457
 ```
 
 Open `docs/index.html`. It retains the existing explorer UI and exposes three
@@ -43,7 +44,8 @@ clustering space.
 
 The explorer also joins the previously extracted Discussion metadata from
 `data/fulltext_context_confirmed_284_only.csv` after clustering. This provides
-an extractive `Discussion Summary` card for 45 of the current 282 papers. The
+an extractive `Discussion Summary` card for the subset with previously reviewed
+Discussion text. The
 join is display-only: Discussion text is not used to build embeddings, fit
 UMAP, select configurations, or assign clusters. Use `--discussion-metadata ""`
 to build the views without these cards.

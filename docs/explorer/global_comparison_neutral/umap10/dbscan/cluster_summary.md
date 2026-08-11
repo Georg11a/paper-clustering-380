@@ -1,71 +1,75 @@
 # UMAP10 before clustering · DBSCAN
 
-- Selected configuration: `dbscan_eps0.275328_ms5`
-- Papers: 282
-- Non-noise clusters: 14
-- Noise papers: 161 (57.1%)
-- Coverage: 42.9%
-- Original-space cosine silhouette: 0.1948
-- 80% subsample overlap stability (mean ARI): 0.7210
+- Selected configuration: `dbscan_eps0.273757_ms8`
+- Papers: 457
+- Non-noise clusters: 15
+- Noise papers: 231 (50.5%)
+- Coverage: 49.5%
+- Original-space cosine silhouette: 0.1663
+- 80% subsample overlap stability (mean ARI): 0.6093
 
 Noise is retained as weak-affinity information and is not reassigned.
 
-## Noise / weak affinity (161 papers)
+## Noise / weak affinity (231 papers)
 
-161 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
+231 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
 
-## Rationale · Design Rationale · Dr (11 papers)
+## Rationale · Design Rationale · Rationales (14 papers)
 
-This exploratory cluster contains 11 papers. Frequent terms include rationale, design rationale, dr, argumentation, rationales, design rationales. Representative papers include Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication; What's in design rationale?.
+This exploratory cluster contains 14 papers. Frequent terms include rationale, design rationale, rationales, dr, argumentation, design rationales. Representative papers include Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication; What's in design rationale?.
 
-## Heuristics · Design Heuristics · Heuristic (8 papers)
+## Knowledge · Design Knowledge · Product (26 papers)
 
-This exploratory cluster contains 8 papers. Frequent terms include heuristics, design heuristics, heuristic, product, assistive, products. Representative papers include Design Heuristics in Innovative Products; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization; Formal system for the expression of target-oriented design heuristics.
+This exploratory cluster contains 26 papers. Frequent terms include knowledge, design knowledge, product, tacit, process, model. Representative papers include Toward a Unified Model of Design Knowledge; A typology of design knowledge: A theoretical framework; Investigations into the data basis of design knowledge in industrial design engineering.
 
-## Game · Games · Game Design (7 papers)
+## User · User Interface · Interface (11 papers)
 
-This exploratory cluster contains 7 papers. Frequent terms include game, games, game design, player, mechanics, achievements. Representative papers include The Experience, Dynamics and Artifacts Framework: Towards a Holistic Model for Designing Serious and Entertainment Games; Game Design as an Autonomous Research Subject; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education.
+This exploratory cluster contains 11 papers. Frequent terms include user, user interface, interface, ja, interfaces, margins. Representative papers include Design Space and Design Rules for User Interface Software Architecture; Studying Software Architecture Through Design Spaces and Rules; Design principles for human-computer interfaces.
 
-## Patterns · Pattern · Design Patterns (24 papers)
+## Heuristics · Design Heuristics · Heuristic (11 papers)
 
-This exploratory cluster contains 24 papers. Frequent terms include patterns, pattern, design patterns, pattern language, software, language. Representative papers include A pattern approach to interaction design; Industrial experience with design patterns; Understanding and using patterns in software development.
+This exploratory cluster contains 11 papers. Frequent terms include heuristics, design heuristics, heuristic, dashboard, usability, product. Representative papers include Design Heuristics in Innovative Products; Formal system for the expression of target-oriented design heuristics; Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization.
 
-## Ai · Identity · Ml (6 papers)
+## Design Principles · Principles · Rural (10 papers)
 
-This exploratory cluster contains 6 papers. Frequent terms include ai, identity, ml, ai design, human, framework. Representative papers include Designing for Trust, Progress, and Dignity: A Conceptual Framework for Reliability, Responsiveness, and Relational Quality in AI-Enabled Service Systems; Contestable AI by Design: Towards a Framework; Towards scaling expertise with generative AI: design principles for governing AI-Mediated knowledge capture and transfer.
+This exploratory cluster contains 10 papers. Frequent terms include design principles, principles, rural, principle, boundary, design cases. Representative papers include Towards a Method for Design Principle Development in Information Systems; Design Principles: Literature Review, Analysis, and Future Directions; Design principles: The foundation of design.
 
-## Theory · Design Theory · Theories (12 papers)
+## Dsr · Knowledge · Science Research (14 papers)
 
-This exploratory cluster contains 12 papers. Frequent terms include theory, design theory, theories, theory sep, design theories, theory construction. Representative papers include The anatomy of a design theory; Theory construction in design research. Criteria, approaches, and methods.; Theory construction in design research Criteria: Approaches, and methods.
+This exploratory cluster contains 14 papers. Frequent terms include dsr, knowledge, science research, design knowledge, design science, research. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; Utilizing, Producing, and Contributing Design Knowledge in DSR Projects; Design Science Research: Guidance for Crafting and Reporting Design Knowledge Contributions.
 
-## Design Impact · Eu · Equitable (5 papers)
+## Game · Games · Game Design (16 papers)
 
-This exploratory cluster contains 5 papers. Frequent terms include design impact, eu, equitable, participatory, impact, participatory design. Representative papers include Universal Participatory Design: Achievements and Challenges; Cutting Cubes Out of Fog: The Whole View of Design; Knowing the Unknowable: Understanding and Measuring Design Impact Across Disciplines and Scale.
+This exploratory cluster contains 16 papers. Frequent terms include game, games, game design, player, gamification, mechanics. Representative papers include Game Design as an Autonomous Research Subject; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education; Form and Function: Toward a Better Understanding of Design-Based Games.
 
-## Learning · Learners · Studio (10 papers)
+## Patterns · Pattern · Design Patterns (34 papers)
 
-This exploratory cluster contains 10 papers. Frequent terms include learning, learners, studio, video, synchronous, educational. Representative papers include Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review; Towards a design theory of blended learning curriculum; Personalising learning: towards a coherent learning design framework.
+This exploratory cluster contains 34 papers. Frequent terms include patterns, pattern, design patterns, software, patterns sep, design pattern. Representative papers include Industrial experience with design patterns; Understanding and using patterns in software development; A pattern approach to interaction design.
 
-## Method · Methods · Design Method (6 papers)
+## Learning · Learners · Students (14 papers)
 
-This exploratory cluster contains 6 papers. Frequent terms include method, methods, design method, design methods, methods sep, evaluation. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method – a basis for describing and evaluating design methods; Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework.
+This exploratory cluster contains 14 papers. Frequent terms include learning, learners, students, teaching, video, studio. Representative papers include The Value of Design Patterns in Designing Teaching in Online Settings; Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review; Towards a design theory of blended learning curriculum.
 
-## Knowledge · Design Knowledge · Product (11 papers)
+## Theory · Design Theory · Information Systems (18 papers)
 
-This exploratory cluster contains 11 papers. Frequent terms include knowledge, design knowledge, product, dsr, process, prototyping. Representative papers include Design knowledge for decision-making process in a DFX product design approach; Utilizing, Producing, and Contributing Design Knowledge in DSR Projects; ON the HIERARCHICAL LEVELS of DESIGN KNOWLEDGE.
+This exploratory cluster contains 18 papers. Frequent terms include theory, design theory, information systems, information, systems, eis. Representative papers include Web-based information systems: Developing a design theory; Design Theory in Information Systems; Building an information system design theory for vigilant EIS.
 
-## Visualization · Visual · Visualizations (6 papers)
+## Method · Methods · Design Methods (12 papers)
 
-This exploratory cluster contains 6 papers. Frequent terms include visualization, visual, visualizations, data, soniﬁcation, visualization sep. Representative papers include Towards a Model of Information Aesthetics in Information Visualization; Visualization Atlases: Explaining and Exploring Complex Topics Through Data, Visualization, and Narration; Exploring the design space of composite visualization.
+This exploratory cluster contains 12 papers. Frequent terms include method, methods, design methods, ethical, methods sep, ethics. Representative papers include Elements of a design method - a basis for describing and evaluating design methods; Elements of a design method – a basis for describing and evaluating design methods; Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework.
 
-## Recreation · Immersive · Trajectories (5 papers)
+## Theory · Theories · Design Theory (16 papers)
 
-This exploratory cluster contains 5 papers. Frequent terms include recreation, immersive, trajectories, user, natural, interaction. Representative papers include Toward a Framework for the Design of Interactive Technology for Nature Recreation; From interaction to trajectories: designing coherent journeys through user experiences; Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted.
+This exploratory cluster contains 16 papers. Frequent terms include theory, theories, design theory, research, design research, theory sep. Representative papers include What should we expect from research through design?; Four Criteria for Design Theories; Theory construction in design research. Criteria, approaches, and methods..
 
-## Dsr · Science Research · Design Science (5 papers)
+## Hci · Hci Design · Edps (13 papers)
 
-This exploratory cluster contains 5 papers. Frequent terms include dsr, science research, design science, knowledge, dps, science. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; Incommensurability and multi-paradigm grounding in design science research: Implications for creating knowledge; Toward a Method for Design Science Research Meta-Studies to Improve the Reusability of Design Principles.
+This exploratory cluster contains 13 papers. Frequent terms include hci, hci design, edps, hci edps, design knowledge, knowledge. Representative papers include HCI Design Knowledge; HCI Knowledge; HCI Design Knowledge as Models and Methods.
 
-## Hci · Technology · Hci Research (5 papers)
+## Technology · Empathy · Hci (8 papers)
 
-This exploratory cluster contains 5 papers. Frequent terms include hci, technology, hci research, human, design oriented, research. Representative papers include Design-oriented human-computer interaction; Tracing the tensions surrounding understandings of agency and knowledge in technology design; From human factors to human actors to human crafters.
+This exploratory cluster contains 8 papers. Frequent terms include technology, empathy, hci, post, children, era. Representative papers include Design-oriented human-computer interaction; Tracing the tensions surrounding understandings of agency and knowledge in technology design; From human factors to human actors to human crafters.
+
+## Visualization · Visualizations · Soniﬁcation (9 papers)
+
+This exploratory cluster contains 9 papers. Frequent terms include visualization, visualizations, soniﬁcation, visual, visualization design, data. Representative papers include Revisiting the Design Patterns of Composite Visualizations; Exploring the design space of composite visualization; Structured Visualization Design Knowledge for Grounding Generative Reasoning and Situated Feedback.

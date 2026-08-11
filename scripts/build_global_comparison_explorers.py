@@ -35,6 +35,7 @@ from cluster_papers import write_dashboard
 
 
 SEED = 20260730
+METADATA_PATH = Path("data/final_advancing_list.csv")
 FORBIDDEN_CLUSTER_INPUT_COLUMNS = {
     "cluster", "cluster_id", "cluster_label", "focus_keyword", "keyword",
     "keyword_group", "keyword_query", "label", "query", "search_keyword",
@@ -392,7 +393,7 @@ def enrich_for_dashboard(
     frame["cluster"] = labels.astype(int)
     terms_by_cluster = cluster_terms(frame, labels)
 
-    metadata_path = Path("data/final_advancing_list.csv")
+    metadata_path = METADATA_PATH
     if metadata_path.exists():
         metadata = pd.read_csv(metadata_path).fillna("")
         metadata_columns = [
@@ -751,6 +752,11 @@ def main() -> None:
     parser.add_argument("--out", required=True)
     parser.add_argument("--expected-paper-count", type=int, default=282)
     parser.add_argument(
+        "--metadata",
+        default="data/final_advancing_list.csv",
+        help="Display-only paper metadata joined after clustering by paper_id.",
+    )
+    parser.add_argument(
         "--discussion-metadata",
         default="data/fulltext_context_confirmed_284_only.csv",
         help=(
@@ -759,6 +765,9 @@ def main() -> None:
         ),
     )
     args = parser.parse_args()
+
+    global METADATA_PATH
+    METADATA_PATH = Path(args.metadata)
 
     papers = load_neutral_papers(Path(args.input)).fillna("")
     discussion_metadata = load_discussion_metadata(
@@ -770,7 +779,9 @@ def main() -> None:
         or papers["paper_id"].nunique() != args.expected_paper_count
         or len(vectors) != args.expected_paper_count
     ):
-        raise ValueError("Expected the cleaned 282-paper corpus and aligned embeddings.")
+        raise ValueError(
+            f"Expected {args.expected_paper_count} unique papers and aligned embeddings."
+        )
 
     layout = umap.UMAP(
         n_components=2,
@@ -845,8 +856,16 @@ def main() -> None:
                 )
             )
 
-    zh_config, zh_labels, zh_metrics = selected[("umap10", "hdbscan")]
-    zh_metrics = dict(zh_metrics)
+    # Page 3 is the fixed configuration shared by Zhicheng, not the
+    # automatically selected Page 2 HDBSCAN candidate. These happened to be
+    # identical for the 282-paper run (mcs=8, min_samples=1), which previously
+    # masked the distinction.
+    zh_config = "hdbscan_mcs8_ms1"
+    zh_labels = fit_selected(zh_config, reduced_spaces["umap10"], "euclidean")
+    zh_metrics = partition_metrics(vectors, zh_labels)
+    zh_metrics["stability_ari"] = subsample_stability(
+        zh_config, reduced_spaces["umap10"], "euclidean"
+    )
     zh_candidates = [
         row for row in metric_rows
         if row.get("space") == "umap10" and row.get("algorithm") == "hdbscan"
