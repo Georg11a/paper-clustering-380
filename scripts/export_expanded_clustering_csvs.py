@@ -11,7 +11,8 @@ import pandas as pd
 
 REPO = Path(__file__).resolve().parents[1]
 SOURCE = REPO / "docs/explorer/global_comparison_neutral"
-OUTPUT = REPO / "outputs/expanded_457_20260811"
+OUTPUT = REPO / "outputs/expanded_459_20260811"
+EXPECTED = 459
 
 RUNS = [
     ("page1", "raw", "kmeans", "raw/kmeans"),
@@ -34,7 +35,7 @@ def main() -> None:
     for page, space, algorithm, relative in RUNS:
         path = SOURCE / relative / "clustered_papers.csv"
         frame = pd.read_csv(path).fillna("")
-        if len(frame) != 457 or frame["paper_id"].nunique() != 457:
+        if len(frame) != EXPECTED or frame["paper_id"].nunique() != EXPECTED:
             raise RuntimeError(f"Unexpected assignment size for {relative}: {frame.shape}")
         frame.insert(0, "analysis_page", page)
         frame.insert(1, "clustering_space", space)

@@ -72,7 +72,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True)
     parser.add_argument("--embeddings", required=True)
-    parser.add_argument("--design-theory-assignment", required=True)
+    parser.add_argument("--design-theory-assignment")
+    parser.add_argument("--refit-design-theory", action="store_true")
     parser.add_argument("--out", required=True)
     parser.add_argument("--neighbors", type=int, default=10)
     parser.add_argument("--minimum-cluster-size", type=int, default=3)
@@ -101,8 +102,10 @@ def main() -> None:
             f"{len(papers)} rows and {papers['paper_id'].nunique()} IDs."
         )
 
-    frozen_dt = pd.read_csv(args.design_theory_assignment)
-    frozen_dt_map = frozen_dt.set_index("paper_id")["cluster_index"].to_dict()
+    frozen_dt_map: dict[str, int] = {}
+    if args.design_theory_assignment:
+        frozen_dt = pd.read_csv(args.design_theory_assignment)
+        frozen_dt_map = frozen_dt.set_index("paper_id")["cluster_index"].to_dict()
     assignment_rows: list[dict[str, object]] = []
     metric_rows: list[dict[str, object]] = []
     elbow_rows: list[dict[str, object]] = []
@@ -124,7 +127,9 @@ def main() -> None:
             int(math.ceil(args.minimum_cluster_fraction * n)),
         )
 
-        if normalized_keyword == "design theory":
+        if normalized_keyword == "design theory" and not args.refit_design_theory:
+            if not frozen_dt_map:
+                raise ValueError("Design Theory requires a frozen assignment unless --refit-design-theory is used")
             missing = set(group_frame["paper_id"]) - set(frozen_dt_map)
             if missing:
                 raise ValueError(

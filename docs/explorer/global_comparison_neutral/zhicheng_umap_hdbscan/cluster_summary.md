@@ -1,18 +1,18 @@
 # Zhicheng workflow · UMAP 10D + HDBSCAN
 
 - Selected configuration: `hdbscan_mcs8_ms1`
-- Papers: 457
-- Non-noise clusters: 23
-- Noise papers: 52 (11.4%)
-- Coverage: 88.6%
-- Original-space cosine silhouette: 0.0738
-- 80% subsample overlap stability (mean ARI): 0.6838
+- Papers: 459
+- Non-noise clusters: 20
+- Noise papers: 68 (14.8%)
+- Coverage: 85.2%
+- Original-space cosine silhouette: 0.0905
+- 80% subsample overlap stability (mean ARI): 0.5997
 
 Noise is retained as weak-affinity information and is not reassigned.
 
-## Noise / weak affinity (52 papers)
+## Noise / weak affinity (68 papers)
 
-52 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
+68 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
 
 ## Hci · Hci Design · Edps (13 papers)
 
@@ -34,74 +34,62 @@ This exploratory cluster contains 12 papers. Frequent terms include method, meth
 
 This exploratory cluster contains 20 papers. Frequent terms include game, games, game design, player, gamification, mechanics. Representative papers include Game Design as an Autonomous Research Subject; A Theoretical Model for Game Mechanics: Bridging Design Practice and Education; Form and Function: Toward a Better Understanding of Design-Based Games.
 
-## Design Principles · Principles · Principle (16 papers)
+## Visualization · Sonification · Visualizations (12 papers)
 
-This exploratory cluster contains 16 papers. Frequent terms include design principles, principles, principle, boundary, research, knowledge. Representative papers include Towards a Method for Design Principle Development in Information Systems; Design Principles: Literature Review, Analysis, and Future Directions; Design principles: The foundation of design.
+This exploratory cluster contains 12 papers. Frequent terms include visualization, sonification, visualizations, visualization design, soniﬁcation, visual. Representative papers include Revisiting the Design Patterns of Composite Visualizations; Exploring the design space of composite visualization; Structured Visualization Design Knowledge for Grounding Generative Reasoning and Situated Feedback.
 
-## Visualization · Visual · Sonification (15 papers)
+## Product · Hybrid · Interim (8 papers)
 
-This exploratory cluster contains 15 papers. Frequent terms include visualization, visual, sonification, visualizations, visualization design, soniﬁcation. Representative papers include Revisiting the Design Patterns of Composite Visualizations; Exploring the design space of composite visualization; Structured Visualization Design Knowledge for Grounding Generative Reasoning and Situated Feedback.
+This exploratory cluster contains 8 papers. Frequent terms include product, hybrid, interim, manufacturing, products, recovery. Representative papers include Design Theory and Method of Complex Products: A Review; The Conceptual Design of Mechanical Products; State of the Art on Robust Design Methods for Additive Manufacturing.
 
-## Theory · Design Theory · Preservation (10 papers)
+## Technology · Human · Hci (19 papers)
 
-This exploratory cluster contains 10 papers. Frequent terms include theory, design theory, preservation, creative preservation, topos, mathematical theory. Representative papers include C-K design theory: an advanced formulation; A new approach of innovative design: An introduction to C-K theory; A mathematical theory of design: representation of design artifacts (Part I).
+This exploratory cluster contains 19 papers. Frequent terms include technology, human, hci, user, interaction, empathy. Representative papers include A theoretical framework on embodiment in digital design; Design-oriented human-computer interaction; From human factors to human actors to human crafters.
 
-## Rationale · Design Rationale · Dr (18 papers)
+## Health · Public Health · Public (14 papers)
 
-This exploratory cluster contains 18 papers. Frequent terms include rationale, design rationale, dr, rationales, argumentation, design intent. Representative papers include Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication; Redesigning the rationale for design rationale.
+This exploratory cluster contains 14 papers. Frequent terms include health, public health, public, participatory design, participatory, communication formats. Representative papers include Design epistemology as innovation in public health research; Universal Participatory Design: Achievements and Challenges; Exploring co-design: a systematic review of concepts, processes, models, and frameworks used in public health research.
+
+## Rationale · Design Rationale · Dr (19 papers)
+
+This exploratory cluster contains 19 papers. Frequent terms include rationale, design rationale, dr, rationales, argumentation, design intent. Representative papers include Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication; Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication; Redesigning the rationale for design rationale.
 
 ## Systemic Design · Systemic · Restoration (13 papers)
 
 This exploratory cluster contains 13 papers. Frequent terms include systemic design, systemic, restoration, value, systems, thinking. Representative papers include Conceptual foundations of design problem solving; Systematic Review of Systemic Design Frameworks for Complex Challenges; A Framework for Systemic Design.
 
-## Product · Hybrid · Manufacturing (8 papers)
-
-This exploratory cluster contains 8 papers. Frequent terms include product, hybrid, manufacturing, interim, products, recovery. Representative papers include Design Theory and Method of Complex Products: A Review; The Conceptual Design of Mechanical Products; State of the Art on Robust Design Methods for Additive Manufacturing.
-
-## Health · Public Health · Public (20 papers)
-
-This exploratory cluster contains 20 papers. Frequent terms include health, public health, public, participatory, participatory design, communication formats. Representative papers include Cutting Cubes Out of Fog: The Whole View of Design; New Design Knowledge and the Fifth Order of Design; Design epistemology as innovation in public health research.
-
-## Technology · Human · User (19 papers)
-
-This exploratory cluster contains 19 papers. Frequent terms include technology, human, user, hci, interaction, empathy. Representative papers include A theoretical framework on embodiment in digital design; Design-oriented human-computer interaction; From human factors to human actors to human crafters.
-
 ## User · Interface · User Interface (16 papers)
 
 This exploratory cluster contains 16 papers. Frequent terms include user, interface, user interface, software, ja, abstraction. Representative papers include Studying Software Architecture Through Design Spaces and Rules; Design Space and Design Rules for User Interface Software Architecture; Architecture, design, implementation.
 
-## Theory · Design Theory · Information Systems (19 papers)
+## Robot · Interaction · Patterns (8 papers)
 
-This exploratory cluster contains 19 papers. Frequent terms include theory, design theory, information systems, information, systems, eis. Representative papers include Web-based information systems: Developing a design theory; Design Theory in Information Systems; Building an information system design theory for vigilant EIS.
+This exploratory cluster contains 8 papers. Frequent terms include robot, interaction, patterns, interactions, human, human robot. Representative papers include Design patterns for exploring and prototyping human-robot interactions; Design patterns for sociality in human-robot interaction; Unpacking Human-AI interactions: From Interaction Primitives to a Design Space.
 
-## Theory · Research · Theories (25 papers)
+## Design Principles · Principles · Knowledge (16 papers)
 
-This exploratory cluster contains 25 papers. Frequent terms include theory, research, theories, design research, design theory, rtd. Representative papers include What should we expect from research through design?; Four Criteria for Design Theories; Theory construction in design research. Criteria, approaches, and methods..
+This exploratory cluster contains 16 papers. Frequent terms include design principles, principles, knowledge, principle, visual inquiry, boundary. Representative papers include Towards a Method for Design Principle Development in Information Systems; Design Principles: Literature Review, Analysis, and Future Directions; Design principles: The foundation of design.
 
-## Patterns · Design Patterns · Pattern (17 papers)
+## Dsr · Knowledge · Science Research (22 papers)
 
-This exploratory cluster contains 17 papers. Frequent terms include patterns, design patterns, pattern, ai, agent, systems. Representative papers include Analysis patterns; Layers, decisions, patterns, styles, and architectures; Design patterns for component-oriented software development.
+This exploratory cluster contains 22 papers. Frequent terms include dsr, knowledge, science research, design knowledge, design science, research. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; Utilizing, Producing, and Contributing Design Knowledge in DSR Projects; Design Science Research: Guidance for Crafting and Reporting Design Knowledge Contributions.
 
-## Patterns · Pattern · Design Patterns (53 papers)
+## Knowledge · Design Knowledge · Product (26 papers)
 
-This exploratory cluster contains 53 papers. Frequent terms include patterns, pattern, design patterns, software, design pattern, patterns sep. Representative papers include Industrial experience with design patterns; A pattern approach to interaction design; Understanding and using patterns in software development.
+This exploratory cluster contains 26 papers. Frequent terms include knowledge, design knowledge, product, tacit, process, model. Representative papers include Toward a Unified Model of Design Knowledge; A typology of design knowledge: A theoretical framework; Investigations into the data basis of design knowledge in industrial design engineering.
 
-## Dsr · Knowledge · Science Research (20 papers)
+## Data · Organizational · Principles (31 papers)
 
-This exploratory cluster contains 20 papers. Frequent terms include dsr, knowledge, science research, design science, research, design knowledge. Representative papers include A Typology of Knowledge Creation in Design Science Research Projects; Design Science Research: Guidance for Crafting and Reporting Design Knowledge Contributions; Utilizing, Producing, and Contributing Design Knowledge in DSR Projects.
+This exploratory cluster contains 31 papers. Frequent terms include data, organizational, principles, modularity, business, quality. Representative papers include A conceptual framework for design science research; Towards normal design for safety-critical systems; Management design theories.
 
-## Organizational · Data · Business (23 papers)
+## Patterns · Pattern · Design Patterns (70 papers)
 
-This exploratory cluster contains 23 papers. Frequent terms include organizational, data, business, modularity, process, principles. Representative papers include A conceptual framework for design science research; Management design theories; Process design theory for digital information services.
+This exploratory cluster contains 70 papers. Frequent terms include patterns, pattern, design patterns, software, language, patterns sep. Representative papers include Industrial experience with design patterns; Understanding and using patterns in software development; Analysis patterns.
 
-## Software · Instructional · Model (15 papers)
+## Theory · Design Theory · Information (22 papers)
 
-This exploratory cluster contains 15 papers. Frequent terms include software, instructional, model, commissioning, hybrid, framework. Representative papers include Towards normal design for safety-critical systems; Steps toward a cognitive engineering: Design rules based on analyses of human error; Towards a framework for documentation design: an abstract model of computer-mediated activity.
+This exploratory cluster contains 22 papers. Frequent terms include theory, design theory, information, information systems, systems, privacy. Representative papers include Web-based information systems: Developing a design theory; Design Theory in Information Systems; Process design theory for digital information services.
 
-## Knowledge · Design Knowledge · Tacit (19 papers)
+## Theory · Research · Theories (24 papers)
 
-This exploratory cluster contains 19 papers. Frequent terms include knowledge, design knowledge, tacit, intermediate, tacit knowledge, research. Representative papers include Toward a Unified Model of Design Knowledge; A typology of design knowledge: A theoretical framework; Conceptualizing Design Knowledge in IS Research - A Review and Taxonomy of Design Knowledge Properties.
-
-## Knowledge · Product · Design Knowledge (8 papers)
-
-This exploratory cluster contains 8 papers. Frequent terms include knowledge, product, design knowledge, industrial design, rock, engineering. Representative papers include Investigations into the data basis of design knowledge in industrial design engineering; How industrial design knowledge differs from engineering design knowledge; Design knowledge for decision-making process in a DFX product design approach.
+This exploratory cluster contains 24 papers. Frequent terms include theory, research, theories, design theory, design research, rtd. Representative papers include What should we expect from research through design?; Four Criteria for Design Theories; Theory construction in design research. Criteria, approaches, and methods..

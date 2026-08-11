@@ -1,0 +1,19 @@
+{
+  "paper_count": 459,
+  "reused_papers": 282,
+  "new_papers_embedded": 177,
+  "new_chunks_embedded": 2278,
+  "representation": "BGE-M3 Title+Abstract+K12",
+  "embedding_runtime": {
+    "model": "bge-m3",
+    "provider": "Ollama local /api/embed",
+    "host": "http://127.0.0.1:11434",
+    "dimensions": 1024,
+    "batch_size": 16,
+    "truncate": "False by default; True only for isolated over-context inputs",
+    "truncated_input_count": 0,
+    "wall_seconds": 245.41864308301592,
+    "ollama_total_duration_seconds": 244.39420738,
+    "ollama_load_duration_seconds": 18.950642962
+  }
+}

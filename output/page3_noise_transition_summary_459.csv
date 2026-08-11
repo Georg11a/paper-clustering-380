@@ -1,0 +1,7 @@
+transition,paper_count
+clustered -> clustered,216
+clustered -> noise,31
+new_paper -> clustered,147
+new_paper -> noise,30
+noise -> clustered,28
+noise -> noise,7

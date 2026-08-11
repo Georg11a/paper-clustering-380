@@ -3,14 +3,14 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design knowledge — Design principles and HCI design [DK-C01] (23 papers)
+## Design knowledge — Design principles and Design science (58 papers)
 
-We contribute prescriptive design knowledge for preserving human-centric decision-making by motivating expert sharing, enabling articulation, establishing fidelity, and ensuring applicability to successors. [E1] We propose a complementary perspective by looking at design projects and traditions where the 'ultimate particulars' can be considered to be activities rather than things. [E2]
+Further, whereas the current conceptualization of design in IS views IS design knowledge as split across two paradigms, namely DS and behavioral science, in this paper we argue for a broader and more integrated view of design: one that emphasizes both the construction-centered and human-centered aspects of design in IS. [E4] We discuss the applicability of our findings using a case of formulation and application of design principles for data spaces in a transdisciplinary research consortium. [E1]
 
-## Design knowledge — Design theory and Design research [DK-C02] (37 papers)
+## Design knowledge — Design process and Design research (54 papers)
 
-In this paper, we identify, analyze, and map a collection of 63 existing ethics-focused methods intentionally designed for ethical impact. [E1] We develop an empirically grounded understanding of how design knowledge accumulates over time. [E3]
+We introduce the knowledge construction process through a case study in the context of creative cultural design. [E2] We believe that the work presented in this paper contributes to a better understanding of design knowledge and its transfer mechanisms, and it may serve as a basis for design educators to improve their teaching programs. [E3]
 
-## Design knowledge — Product design and Process knowledge [DK-C03] (8 papers)
+## Design knowledge — HCI design and Design practice (9 papers)
 
-This paper presents a mathematical comparison of procedural knowledge and causal knowledge, and discusses the potential roles and feasibility of causal knowledge across product development knowledge management. [E1] Through the analysis, we define four typical practice based design research models from the viewpoint of knowledge integration. [E2]
+The introduction, as one type of HCI design knowledge, is preceded in the previous chapter on craft artefacts and design practice experience and followed in the subsequent chapter by principles, rules and heuristics, as other types of HCI design knowledge. [E1] Together, both types of knowledge constitute HCI design knowledge, acquired by HCI research to support HCI design practice in solving the HCI general problem of design. [E2]

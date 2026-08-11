@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design expertise · Statistical bottom-up interpretation</title>
+  <style>
+    :root {
+      --ink: #1f2a44;
+      --muted: #6b7a90;
+      --soft: #8b9bb0;
+      --line: #dde6f0;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --panel-soft: #f8fafd;
+      --accent: #256fbd;
+      --accent-soft: #eaf3ff;
+      --shadow: 0 18px 45px rgba(31, 42, 68, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    header {
+      padding: 16px 20px 12px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    h1 { margin: 0; font-size: 18px; letter-spacing: 0; min-width: 0; font-weight: 750; }
+    .controls {
+      display: grid;
+      grid-template-columns: 180px 210px;
+      gap: 10px;
+      align-items: center;
+    }
+    input, select, button {
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 10px;
+      background: white;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    button { background: var(--accent); color: white; border-color: var(--accent); cursor: pointer; }
+    label.toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    label.toggle input { width: 16px; height: 16px; }
+    main {
+      display: grid;
+      grid-template-columns: minmax(600px, 1fr) minmax(420px, 470px);
+      gap: 12px;
+      padding: 12px;
+      min-height: calc(100vh - 92px);
+      align-items: stretch;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .plot-panel { display: grid; grid-template-rows: auto 1fr auto; height: calc(100vh - 116px); min-height: 690px; }
+    .status {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      background: var(--panel-soft);
+    }
+    svg { width: 100%; height: 100%; min-height: 560px; background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%); }
+    .axis { stroke: #e7edf5; stroke-width: 1; }
+    .point { stroke: white; stroke-width: 1.8; cursor: pointer; opacity: 0.86; transition: opacity 120ms ease; }
+    .point:hover { opacity: 1; stroke: #1f2a44; stroke-width: 2.6; }
+    .point.dim { opacity: 0.14; }
+    .point.selected { stroke: #111827; stroke-width: 3; opacity: 1; }
+    .legend, .cluster-list { padding: 10px 12px; border-top: 1px solid var(--line); }
+    .legend { max-height: 150px; overflow-y: auto; background: #ffffff; }
+    .legend-items { display: flex; flex-wrap: wrap; gap: 7px 10px; }
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border: 1px solid #e7edf5;
+      border-radius: 999px;
+      background: var(--panel-soft);
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 100%;
+    }
+    .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .details { padding: 0; overflow: auto; height: calc(100vh - 116px); min-height: 690px; align-self: stretch; }
+    .details-inner { padding: 18px 18px 22px; }
+    .paper-heading {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      padding: 18px 18px 14px;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .paper-heading h2 { font-size: 19px; margin: 0 0 8px; line-height: 1.22; font-weight: 760; }
+    .details h2 { font-size: 18px; margin: 0 0 8px; line-height: 1.25; }
+    .meta { color: var(--muted); font-size: 13px; line-height: 1.45; margin-bottom: 10px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #31577f;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .abstract { line-height: 1.55; font-size: 14px; color: #2f3b52; }
+    .insight-card {
+      margin-top: 12px;
+      padding: 13px 14px;
+      border: 1px solid #e4ebf4;
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+    .insight-card.primary {
+      background: #ffffff;
+      border-left: 4px solid var(--accent);
+    }
+    details.discussion-full,
+    details.lexical-evidence {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 11px;
+      background: #fbfcfe;
+    }
+    details.discussion-full summary,
+    details.lexical-evidence summary {
+      cursor: pointer;
+      color: #31577f;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .evidence-block { margin-top: 8px; }
+    .source-evidence-item {
+      border-top: 1px solid var(--line);
+      padding: 10px 0;
+    }
+    .source-evidence-item:first-child { border-top: 0; padding-top: 0; }
+    .source-evidence-quote {
+      line-height: 1.45;
+      font-size: 13px;
+      color: #2f3b52;
+      margin: 6px 0;
+    }
+    .source-evidence-reasons {
+      margin: 6px 0 0;
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .discussion-list {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      line-height: 1.45;
+      font-size: 14px;
+      color: #2f3b52;
+    }
+    .discussion-list li { margin: 0 0 7px; }
+    .section-title { margin: 0 0 7px; font-weight: 760; font-size: 12px; text-transform: uppercase; color: var(--soft); letter-spacing: 0.02em; }
+    .paper-link { display: block; color: var(--accent); text-decoration: none; margin: 7px 0; font-size: 13px; line-height: 1.35; }
+    .cluster-card { border-top: 1px solid var(--line); padding: 10px 12px; }
+    .cluster-card button { height: 28px; padding: 0 8px; margin-top: 6px; font-size: 12px; }
+    @media (max-width: 980px) {
+      header { display: block; }
+      h1 { margin-bottom: 12px; }
+      .controls, main { grid-template-columns: 1fr; }
+      .plot-panel { min-height: 560px; }
+    }
+  </style>
+</head>
+<body>
+  <div style="display:none" aria-hidden="true">
+      <select id="clusterFilter"><option value="all">All clusters</option></select>
+  </div>
+  <main>
+    <section class="panel plot-panel">
+      <div class="status" id="status"></div>
+      <svg id="plot" role="img" aria-label="UMAP scatter plot"></svg>
+      <div class="legend"><div class="legend-items" id="legend"></div></div>
+    </section>
+    <aside class="panel details" id="details">
+      <div class="details-inner">
+        <h2>Select a paper</h2>
+        <p class="meta">Click a point to inspect metadata, cluster interpretation, evidence terms, representative rank, and nearest papers.</p>
+        <div id="clusterCards"></div>
+      </div>
+    </aside>
+  </main>
+  <script id="payload" type="application/json">{"title": "Design expertise · Statistical bottom-up interpretation", "papers": [{"paper_id": "5a25cbf385d6", "title": "Everyday Design Knowledge: A Knowledge-in-Pieces Perspective on HCI Learning", "authors": "Lotsos, Alexandros and Banerjee, Amartya and Wang, Yizhu and Horn, Michael", "abstract": "Learning sciences research shows that intuitive physics knowledge productively supports disciplinary learning through the Knowledge in Pieces (KiP) framework, which treats learners’ everyday intuitions as productive resources. We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. Students live in a world saturated with professionally designed artifacts and routinely engage in “everyday design”, cultivating tacit knowledge about interfaces long before formal HCI instruction. This mirrors how intuitive physics knowledge develops through daily physical experience. To support this argument, we analyze first-week assignment submissions from an introductory HCI course in which students critiqued interactive systems. Our findings show that students enter HCI instruction with rich, nuanced intuitions about interface evaluation. We therefore suggest that (1) students’ prior intuitive knowledge is a valuable pedagogical resource for HCI educators, and (2) operationalizing a KiP approach can advance future HCI education research.", "discussion_summary": "", "discussion_excerpt": "", "discussion_found": false, "discussion_paragraph_count": 0, "year": "2026", "venue": "Proceedings of the 2026 Designing Interactive Systems Conference", "doi": "10.1145/3800645.3813036", "url": "https://doi.org/10.1145/3800645.3813036", "keyword": "Design expertise", "cluster": 0, "cluster_theme_terms": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "cluster_label_candidate": "Design expertise — Instructional design and Design knowledge", "distinguishing_evidence_terms": "Instructional design, Design knowledge", "cluster_summary_candidate": "We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. [E1] We propose viewing theory building as an act of design might address these challenges. [E2]", "design_knowledge_form": "Design expertise — Instructional design and Design knowledge", "design_knowledge_action": "", "design_knowledge_role": "", "design_knowledge_contribution": "", "contribution_type_key": "", "contribution_type": "Provisional interpretation", "contribution_type_secondary": "", "contribution_type_patterns": "", "contribution_type_support": "Assignment frozen; interpretation requires confirmation by at least two reviewers", "contribution_subtype_key": "", "contribution_subtype": "", "contribution_subtype_patterns": "", "contribution_subtype_support": "", "contribution_type_definition": "Contrastive phrase label with source-grounded extractive summary.", "contribution_summary_fields": "", "contribution_summary_template": "", "application_domains": "", "primary_application_domain": "Not assigned by Path 1", "additional_application_domains": "", "application_domain_patterns": "", "application_domain_support": "Not evaluated in this statistical interpretation", "application_domain_definitions": "Not applicable", "theory_move_key": "not_applicable", "theory_move": "", "theory_move_patterns": "", "theory_move_support": "", "facet_population_or_context": "", "facet_stakeholder_or_population": "", "facet_method_or_lens": "", "facet_artifact_or_domain": "", "facet_contribution_or_outcome": "", "umap_x": -0.3546164929866791, "umap_y": -0.16253045201301575, "distance_to_centroid": 0.08413088321685791, "representative_rank": 4, "is_representative_top3": false, "medoid_rank": 4, "lda_topic": -1, "lda_topic_probability": 0.0, "lda_topic_words": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "nearest_papers": [{"paper_id": "93c5c97a0a92", "title": "Investigating Instructional Design Expertise: A 25-Year Review of Literature", "cluster": 0, "distance": 0.20818501710891724}, {"paper_id": "d41009f91ba1", "title": "Designing theory", "cluster": 0, "distance": 0.2088271975517273}, {"paper_id": "96ed07ad56c0", "title": "Schemata, gambits and precedent: some factors in design expertise", "cluster": 0, "distance": 0.2133709192276001}], "hdbscan_peripheral": false}, {"paper_id": "93c5c97a0a92", "title": "Investigating Instructional Design Expertise: A 25-Year Review of Literature", "authors": "Chartier, K.J. (1)", "abstract": "Defining instructional design expertise has been a concern among scholars for many years. Understanding expertise and expert performance is complex due to the nature of ill-structured problems and the variety of contexts in which instructional designers work. If the field seeks to effectively prepare designers and enhance performance in existing professionals, a unified understanding and definition of expertise is needed. This 25-year review evaluated existing definitions in well-established literature. Findings revealed a lack of a clear, consistently used definition. Scholars predominately used expert characteristics to conceptualize expertise. A synthesis of these characteristics illuminated three traits of expert instructional designers: knowledge, skills, and dispositions. These traits informed the creation of a new definition. Innovations in research, theory, and practice are discussed which would provide new avenues for understanding, developing, and evaluating expertise over the next 25 years. © 2021 International Society for Performance Improvement.", "discussion_summary": "", "discussion_excerpt": "", "discussion_found": false, "discussion_paragraph_count": 0, "year": "", "venue": "Performance Improvement Quarterly", "doi": "10.1002/piq.21345", "url": "", "keyword": "Design expertise", "cluster": 0, "cluster_theme_terms": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "cluster_label_candidate": "Design expertise — Instructional design and Design knowledge", "distinguishing_evidence_terms": "Instructional design, Design knowledge", "cluster_summary_candidate": "We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. [E1] We propose viewing theory building as an act of design might address these challenges. [E2]", "design_knowledge_form": "Design expertise — Instructional design and Design knowledge", "design_knowledge_action": "", "design_knowledge_role": "", "design_knowledge_contribution": "", "contribution_type_key": "", "contribution_type": "Provisional interpretation", "contribution_type_secondary": "", "contribution_type_patterns": "", "contribution_type_support": "Assignment frozen; interpretation requires confirmation by at least two reviewers", "contribution_subtype_key": "", "contribution_subtype": "", "contribution_subtype_patterns": "", "contribution_subtype_support": "", "contribution_type_definition": "Contrastive phrase label with source-grounded extractive summary.", "contribution_summary_fields": "", "contribution_summary_template": "", "application_domains": "", "primary_application_domain": "Not assigned by Path 1", "additional_application_domains": "", "application_domain_patterns": "", "application_domain_support": "Not evaluated in this statistical interpretation", "application_domain_definitions": "Not applicable", "theory_move_key": "not_applicable", "theory_move": "", "theory_move_patterns": "", "theory_move_support": "", "facet_population_or_context": "", "facet_stakeholder_or_population": "", "facet_method_or_lens": "", "facet_artifact_or_domain": "", "facet_contribution_or_outcome": "", "umap_x": -0.06448163837194443, "umap_y": 0.3468570113182068, "distance_to_centroid": 0.080741286277771, "representative_rank": 3, "is_representative_top3": true, "medoid_rank": 3, "lda_topic": -1, "lda_topic_probability": 0.0, "lda_topic_words": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "nearest_papers": [{"paper_id": "96ed07ad56c0", "title": "Schemata, gambits and precedent: some factors in design expertise", "cluster": 0, "distance": 0.19673192501068115}, {"paper_id": "5a25cbf385d6", "title": "Everyday Design Knowledge: A Knowledge-in-Pieces Perspective on HCI Learning", "cluster": 0, "distance": 0.20818501710891724}, {"paper_id": "d41009f91ba1", "title": "Designing theory", "cluster": 0, "distance": 0.2129955291748047}], "hdbscan_peripheral": false}, {"paper_id": "96ed07ad56c0", "title": "Schemata, gambits and precedent: some factors in design expertise", "authors": "Lawson, B. (1)", "abstract": "The paper begins by outlining some methodological problems, concluding that to understand design expertise we need to recognise that such practice includes the roles of teams, communication and shared experiences and understandings. It explores the significance of experience in expertise focussing on the way precedent stored in the form of episodic schemata is used by experts to recognise design situations for which gambits are available. The paper combines evidence from new empirical data on the perception of drawings with interviews with expert designers and research on expertise from other cognitive fields. The paper concludes that design expertise cannot be understood by studying actions alone but that our research needs to concentrate on perception and recognition and that we have to examine conversations and memories as much as drawings.", "discussion_summary": "", "discussion_excerpt": "", "discussion_found": false, "discussion_paragraph_count": 0, "year": "", "venue": "Design Studies", "doi": "10.1016/j.destud.2004.05.001", "url": "", "keyword": "Design expertise", "cluster": 0, "cluster_theme_terms": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "cluster_label_candidate": "Design expertise — Instructional design and Design knowledge", "distinguishing_evidence_terms": "Instructional design, Design knowledge", "cluster_summary_candidate": "We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. [E1] We propose viewing theory building as an act of design might address these challenges. [E2]", "design_knowledge_form": "Design expertise — Instructional design and Design knowledge", "design_knowledge_action": "", "design_knowledge_role": "", "design_knowledge_contribution": "", "contribution_type_key": "", "contribution_type": "Provisional interpretation", "contribution_type_secondary": "", "contribution_type_patterns": "", "contribution_type_support": "Assignment frozen; interpretation requires confirmation by at least two reviewers", "contribution_subtype_key": "", "contribution_subtype": "", "contribution_subtype_patterns": "", "contribution_subtype_support": "", "contribution_type_definition": "Contrastive phrase label with source-grounded extractive summary.", "contribution_summary_fields": "", "contribution_summary_template": "", "application_domains": "", "primary_application_domain": "Not assigned by Path 1", "additional_application_domains": "", "application_domain_patterns": "", "application_domain_support": "Not evaluated in this statistical interpretation", "application_domain_definitions": "Not applicable", "theory_move_key": "not_applicable", "theory_move": "", "theory_move_patterns": "", "theory_move_support": "", "facet_population_or_context": "", "facet_stakeholder_or_population": "", "facet_method_or_lens": "", "facet_artifact_or_domain": "", "facet_contribution_or_outcome": "", "umap_x": 0.22031335532665253, "umap_y": 0.06369102746248245, "distance_to_centroid": 0.07639741897583008, "representative_rank": 1, "is_representative_top3": true, "medoid_rank": 1, "lda_topic": -1, "lda_topic_probability": 0.0, "lda_topic_words": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "nearest_papers": [{"paper_id": "d41009f91ba1", "title": "Designing theory", "cluster": 0, "distance": 0.1918284296989441}, {"paper_id": "93c5c97a0a92", "title": "Investigating Instructional Design Expertise: A 25-Year Review of Literature", "cluster": 0, "distance": 0.19673192501068115}, {"paper_id": "5a25cbf385d6", "title": "Everyday Design Knowledge: A Knowledge-in-Pieces Perspective on HCI Learning", "cluster": 0, "distance": 0.2133709192276001}], "hdbscan_peripheral": false}, {"paper_id": "d41009f91ba1", "title": "Designing theory", "authors": "Warr, M. (1); Mishra, P. (1); Scragg, B. (1)", "abstract": "Theoretical work is essential to the progress of any discipline. Theories, models, and frameworks are underdetermined representations of a phenomenon that help us understand and take action in a domain. However, the field of learning design and technology (LDT) has traditionally struggled with developing a solid theoretical foundation that is useful for both research and practice. We propose viewing theory building as an act of design might address these challenges. After defining key constructs and describing two approaches to theory development, we describe three design perspectives that might be useful for theory development: Lawson and Dorst’s (Design expertise, Elsevier, Amsterdam, 2009) view of design as a combination of analytical (problem-based) and creative (solution-based) moves, Schön’s (The reflective practitioner: how professionals think in action, Basic Books, New York, 1983) reflection-in-action, and design as dialogic interpretation (Snodgrass and Coyne in Des Issues 9(1):56–74, https://doi.org/10.2307/1511599, 1992). We use a case study to illustrate each perspective. We conclude with implications of a design approach to theory creation, including how design perspectives enable scholars to design possible futures.", "discussion_summary": "", "discussion_excerpt": "", "discussion_found": false, "discussion_paragraph_count": 0, "year": "", "venue": "Educational Technology Research and Development", "doi": "10.1007/s11423-020-09746-9", "url": "", "keyword": "Design expertise", "cluster": 0, "cluster_theme_terms": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "cluster_label_candidate": "Design expertise — Instructional design and Design knowledge", "distinguishing_evidence_terms": "Instructional design, Design knowledge", "cluster_summary_candidate": "We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. [E1] We propose viewing theory building as an act of design might address these challenges. [E2]", "design_knowledge_form": "Design expertise — Instructional design and Design knowledge", "design_knowledge_action": "", "design_knowledge_role": "", "design_knowledge_contribution": "", "contribution_type_key": "", "contribution_type": "Provisional interpretation", "contribution_type_secondary": "", "contribution_type_patterns": "", "contribution_type_support": "Assignment frozen; interpretation requires confirmation by at least two reviewers", "contribution_subtype_key": "", "contribution_subtype": "", "contribution_subtype_patterns": "", "contribution_subtype_support": "", "contribution_type_definition": "Contrastive phrase label with source-grounded extractive summary.", "contribution_summary_fields": "", "contribution_summary_template": "", "application_domains": "", "primary_application_domain": "Not assigned by Path 1", "additional_application_domains": "", "application_domain_patterns": "", "application_domain_support": "Not evaluated in this statistical interpretation", "application_domain_definitions": "Not applicable", "theory_move_key": "not_applicable", "theory_move": "", "theory_move_patterns": "", "theory_move_support": "", "facet_population_or_context": "", "facet_stakeholder_or_population": "", "facet_method_or_lens": "", "facet_artifact_or_domain": "", "facet_contribution_or_outcome": "", "umap_x": 0.1987847238779068, "umap_y": -0.24801741540431976, "distance_to_centroid": 0.07958316802978516, "representative_rank": 2, "is_representative_top3": true, "medoid_rank": 2, "lda_topic": -1, "lda_topic_probability": 0.0, "lda_topic_words": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "nearest_papers": [{"paper_id": "96ed07ad56c0", "title": "Schemata, gambits and precedent: some factors in design expertise", "cluster": 0, "distance": 0.1918284296989441}, {"paper_id": "5a25cbf385d6", "title": "Everyday Design Knowledge: A Knowledge-in-Pieces Perspective on HCI Learning", "cluster": 0, "distance": 0.2088271975517273}, {"paper_id": "93c5c97a0a92", "title": "Investigating Instructional Design Expertise: A 25-Year Review of Literature", "cluster": 0, "distance": 0.2129955291748047}], "hdbscan_peripheral": false}], "clusters": [{"cluster": 0, "count": 4, "theme": "design | knowledge | expertise | students | theory | hci | expert | ertmer | designers | education | instructional | et | et al | al | id", "label": "Design expertise — Instructional design and Design knowledge", "summary": "We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. [E1] We propose viewing theory building as an act of design might address these challenges. [E2]", "contribution_type": "Provisional interpretation", "contribution_type_secondary": "", "contribution_type_patterns": "", "contribution_type_support": "Assignment frozen; interpretation requires confirmation by at least two reviewers", "contribution_subtype": "", "contribution_subtype_patterns": "", "contribution_subtype_support": "", "contribution_type_definition": "Contrastive phrase label with source-grounded extractive summary.", "contribution_summary_fields": "", "contribution_summary_template": "", "application_domains": "", "primary_application_domain": "Not assigned by Path 1", "additional_application_domains": "", "application_domain_patterns": "", "application_domain_support": "Not evaluated in this statistical interpretation", "application_domain_definitions": "Not applicable", "theory_move": "", "theory_move_patterns": "", "theory_move_support": "", "source_evidence": [{"id": "E1", "paper_id": "5a25cbf385d6", "paper_title": "Everyday Design Knowledge: A Knowledge-in-Pieces Perspective on HCI Learning", "sentences": "We argue that similar parallels exist in HCI education, where students’ intuitive design knowledge can ground the development of interaction design expertise. Our findings show that students enter HCI instruction with rich, nuanced intuitions about interface evaluation.", "paragraph_index": 0, "sentence_hash": "d4230959c689", "score": 21.0, "score_breakdown": {"total": 21.0, "term_overlap": 11.0, "first_person": 8.0, "action": 0.0, "keyword": 2.0, "citation_penalty": -0.0, "representative_bonus": 0.0, "reasons": ["phrase match: \"design knowledge\"", "phrase match: \"design expertise\"", "own-claim marker: \"we argue\"", "own-claim marker: \"our findings\""]}}, {"id": "E2", "paper_id": "d41009f91ba1", "paper_title": "Designing theory", "sentences": "We propose viewing theory building as an act of design might address these challenges. After defining key constructs and describing two approaches to theory development, we describe three design perspectives that might be useful for theory development: Lawson and Dorst’s (Design expertise, Elsevier, Amsterdam, 2009) view of design as a combination of analytical (problem-based) and creative (solution-based) moves, Schön’s (The reflective practitioner: how professionals think in action, Basic Books, New York, 1983) reflection-in-action, and design as dialogic interpretation (Snodgrass and Coyne in Des Issues 9(1):56–74, https://doi.org/10.2307/1511599, 1992).", "paragraph_index": 0, "sentence_hash": "3ccdea1ef077", "score": 16.5, "score_breakdown": {"total": 16.5, "term_overlap": 5.0, "first_person": 8.0, "action": 0.0, "keyword": 2.0, "citation_penalty": -0.0, "representative_bonus": 1.5, "reasons": ["phrase match: \"design expertise\"", "own-claim marker: \"we propose\"", "own-claim marker: \"we describe\""]}}, {"id": "E3", "paper_id": "93c5c97a0a92", "paper_title": "Investigating Instructional Design Expertise: A 25-Year Review of Literature", "sentences": "Understanding expertise and expert performance is complex due to the nature of ill-structured problems and the variety of contexts in which instructional designers work. A synthesis of these characteristics illuminated three traits of expert instructional designers: knowledge, skills, and dispositions.", "paragraph_index": 0, "sentence_hash": "5023fc69c1f1", "score": 16.5, "score_breakdown": {"total": 16.5, "term_overlap": 13.0, "first_person": 0.0, "action": 0.0, "keyword": 2.0, "citation_penalty": -0.0, "representative_bonus": 1.5, "reasons": ["phrase match: \"instructional design\"", "phrase match: \"design expertise\""]}}, {"id": "E4", "paper_id": "96ed07ad56c0", "paper_title": "Schemata, gambits and precedent: some factors in design expertise", "sentences": "It explores the significance of experience in expertise focussing on the way precedent stored in the form of episodic schemata is used by experts to recognise design situations for which gambits are available. The paper combines evidence from new empirical data on the perception of drawings with interviews with expert designers and research on expertise from other cognitive fields.", "paragraph_index": 0, "sentence_hash": "c8df12d59279", "score": 9.5, "score_breakdown": {"total": 9.5, "term_overlap": 6.0, "first_person": 0.0, "action": 0.0, "keyword": 2.0, "citation_penalty": -0.0, "representative_bonus": 1.5, "reasons": ["phrase match: \"design expertise\""]}}], "source_faithfulness_score": 1.0, "representatives": [{"title": "Schemata, gambits and precedent: some factors in design expertise", "year": "", "paper_id": "96ed07ad56c0"}, {"title": "Designing theory", "year": "", "paper_id": "d41009f91ba1"}, {"title": "Investigating Instructional Design Expertise: A 25-Year Review of Literature", "year": "", "paper_id": "93c5c97a0a92"}]}], "keywords": ["Design expertise"]}</script>
+  <script>
+    const data = JSON.parse(document.getElementById('payload').textContent);
+    const papers = data.papers;
+    const palette = ['#f05a71','#4c78a8','#f58518','#54a24b','#b279a2','#72b7b2','#eeca3b','#ff9da6','#9d755d','#59a14f','#edc948','#76b7b2'];
+    const colorFor = c => palette[Math.abs(Number(c)) % palette.length];
+    const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${Number(c) + 1}`;
+    const clusterTopicLabel = value => String(value || '').replace(/\s*\[[^\]]+\]\s*$/, '').trim();
+    const readableClusterLabel = c => { const label = clusterTopicLabel(c.label || c.theme); return `${label || clusterName(c.cluster)} · ${c.count} ${c.count === 1 ? 'paper' : 'papers'}`; };
+    const clusterLegendLabel = c => readableClusterLabel(c);
+    const state = { selected: papers[0]?.paper_id || null };
+    const svg = document.getElementById('plot');
+    const details = document.getElementById('details');
+    const status = document.getElementById('status');
+
+    function initControls() {
+      const clusterFilter = document.getElementById('clusterFilter');
+      data.clusters.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.cluster;
+        opt.textContent = readableClusterLabel(c);
+        clusterFilter.appendChild(opt);
+      });
+      ['clusterFilter'].forEach(id => {
+        document.getElementById(id).addEventListener('input', render);
+        document.getElementById(id).addEventListener('change', render);
+      });
+      renderLegend();
+    }
+
+    function filteredPapers() {
+      const cluster = document.getElementById('clusterFilter').value;
+      return papers.filter(p => {
+        return (cluster === 'all' || String(p.cluster) === cluster);
+      });
+    }
+
+    function renderLegend() {
+      const legend = document.getElementById('legend');
+      legend.innerHTML = '';
+      data.clusters.forEach(c => {
+        const item = document.createElement('span');
+        item.className = 'legend-item';
+        item.innerHTML = `<span class="swatch" style="background:${colorFor(c.cluster)}"></span> ${escapeHtml(clusterLegendLabel(c))}`;
+        legend.appendChild(item);
+      });
+      const shapeNote = document.createElement('span');
+      shapeNote.className = 'legend-item';
+      shapeNote.innerHTML = '<span>◆ Discussion detected</span><span>● No explicit discussion</span>';
+      legend.appendChild(shapeNote);
+    }
+
+    function render() {
+      const shown = filteredPapers();
+      status.textContent = `${shown.length} of ${papers.length} papers shown; ${data.clusters.length} clusters in this view. Axes are UMAP 1 and UMAP 2 coordinates, not interpretable variables.`;
+      drawPlot(shown);
+      renderDetails(papers.find(p => p.paper_id === state.selected) || shown[0] || papers[0]);
+    }
+
+    function drawPlot(shown) {
+      const width = svg.clientWidth || 900;
+      const height = svg.clientHeight || 560;
+      const pad = 44;
+      const xs = papers.map(p => p.umap_x), ys = papers.map(p => p.umap_y);
+      let minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+      const xRange = Math.max(0.0001, maxX - minX);
+      const yRange = Math.max(0.0001, maxY - minY);
+      minX -= xRange * 0.08;
+      maxX += xRange * 0.08;
+      minY -= yRange * 0.08;
+      maxY += yRange * 0.08;
+      const sx = x => pad + ((x - minX) / Math.max(0.0001, maxX - minX)) * (width - pad * 2);
+      const sy = y => height - pad - ((y - minY) / Math.max(0.0001, maxY - minY)) * (height - pad * 2);
+      const shownIds = new Set(shown.map(p => p.paper_id));
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      svg.innerHTML = '';
+      for (let i = 0; i < 6; i++) {
+        const x = pad + i * (width - pad * 2) / 5;
+        const y = pad + i * (height - pad * 2) / 5;
+        svg.insertAdjacentHTML('beforeend', `<line class="axis" x1="${x}" y1="${pad}" x2="${x}" y2="${height-pad}"></line>`);
+        svg.insertAdjacentHTML('beforeend', `<line class="axis" x1="${pad}" y1="${y}" x2="${width-pad}" y2="${y}"></line>`);
+      }
+      svg.insertAdjacentHTML('beforeend', `<text x="${width / 2}" y="${height - 8}" text-anchor="middle" fill="#65758b" font-size="12">UMAP 1</text>`);
+      svg.insertAdjacentHTML('beforeend', `<text x="16" y="${height / 2}" text-anchor="middle" fill="#65758b" font-size="12" transform="rotate(-90 16 ${height / 2})">UMAP 2</text>`);
+      papers.forEach(p => {
+        const visible = shownIds.has(p.paper_id);
+        const selected = p.paper_id === state.selected;
+        const x = sx(p.umap_x), y = sy(p.umap_y);
+        const size = selected ? 7.5 : 6.5;
+        const cls = `point ${visible ? '' : 'dim'} ${selected ? 'selected' : ''}`;
+        const fill = colorFor(p.cluster);
+        const node = document.createElementNS('http://www.w3.org/2000/svg', p.discussion_found ? 'path' : 'circle');
+        node.setAttribute('class', cls);
+        node.setAttribute('fill', fill);
+        if (p.discussion_found) {
+          const d = `M ${x} ${y - size} L ${x + size} ${y} L ${x} ${y + size} L ${x - size} ${y} Z`;
+          node.setAttribute('d', d);
+        } else {
+          node.setAttribute('cx', x);
+          node.setAttribute('cy', y);
+          node.setAttribute('r', size);
+        }
+        node.addEventListener('click', () => {
+          state.selected = p.paper_id;
+          render();
+        });
+        node.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'title')).textContent = p.title;
+        svg.appendChild(node);
+      });
+    }
+
+    function clusterRecord(clusterId) {
+      return data.clusters.find(c => String(c.cluster) === String(clusterId));
+    }
+
+    function renderSourceEvidence(clusterId) {
+      const cluster = clusterRecord(clusterId);
+      const evidence = cluster?.source_evidence || [];
+      const score = cluster?.source_faithfulness_score;
+      const scorePill = Number.isFinite(Number(score)) ?
+        `<span class="pill">${Math.round(Number(score) * 100)}% summary support</span>` : '';
+      if (!evidence.length) {
+        return `
+          <div class="insight-card">
+            <div class="section-title">Source Evidence ${scorePill}</div>
+            <div class="meta">No direct source evidence selected from extracted full text for this cluster.</div>
+          </div>
+        `;
+      }
+      const items = evidence.map(item => {
+        const reasons = item.score_breakdown?.reasons || [];
+        const reasonList = reasons.slice(0, 4).map(reason => `<li>${escapeHtml(reason)}</li>`).join('');
+        return `
+          <div class="source-evidence-item">
+            <div class="pill-row">
+              <span class="pill">${escapeHtml(item.id)}</span>
+              <span class="pill">score ${Number(item.score).toFixed(1)}</span>
+              <span class="pill">para ${Number(item.paragraph_index) + 1}</span>
+              <span class="pill">hash ${escapeHtml(item.sentence_hash)}</span>
+            </div>
+            <div class="source-evidence-quote">${escapeHtml(item.sentences)}</div>
+            <a class="paper-link" href="#" data-paper="${escapeAttr(item.paper_id)}">${escapeHtml(item.paper_title)}</a>
+            ${reasonList ? `<ul class="source-evidence-reasons">${reasonList}</ul>` : ''}
+          </div>
+        `;
+      }).join('');
+      return `
+        <div class="insight-card">
+          <div class="section-title">Source Evidence ${scorePill}</div>
+          <div class="evidence-block">${items}</div>
+        </div>
+      `;
+    }
+
+    function renderDetails(p) {
+      if (!p) return;
+      const doi = p.doi ? `<a class="paper-link" href="https://doi.org/${escapeHtml(p.doi)}" target="_blank">DOI: ${escapeHtml(p.doi)}</a>` : '';
+      const url = p.url ? `<a class="paper-link" href="${escapeAttr(p.url)}" target="_blank">Open paper URL</a>` : '';
+      const nearest = (p.nearest_papers || []).map(n =>
+        `<a class="paper-link" href="#" data-paper="${escapeAttr(n.paper_id)}">${clusterName(n.cluster)}, distance ${Number(n.distance).toFixed(3)}: ${escapeHtml(n.title)}</a>`
+      ).join('');
+      const discussionSummary = p.discussion_summary ?
+        `<div class="insight-card"><div class="section-title">Discussion Summary</div>${renderDiscussionSummary(p.discussion_summary)}</div>` : '';
+      const discussionExcerpt = '';
+      const discussionStatus = p.discussion_found ?
+        `<span class="pill">Discussion detected: ${p.discussion_paragraph_count} paragraphs</span>` :
+        `<span class="pill">No explicit Discussion section detected</span>`;
+      const peripheralStatus = p.hdbscan_peripheral ?
+        `<span class="pill">Peripheral: soft-assigned to nearest cluster (HDBSCAN noise)</span>` : '';
+      const sourceEvidence = renderSourceEvidence(p.cluster);
+      details.innerHTML = `
+        <div class="paper-heading">
+          <h2>${escapeHtml(p.title)}</h2>
+          <div class="meta">${escapeHtml(p.authors)}<br>${escapeHtml(p.year)} · ${escapeHtml(p.venue)}</div>
+          <div class="pill-row">
+            <span class="pill">${clusterName(p.cluster)}</span>
+            <span class="pill">${escapeHtml(p.keyword)}</span>
+            <span class="pill">Rep rank ${p.representative_rank}</span>
+            <span class="pill">Medoid rank ${p.medoid_rank}</span>
+            <span class="pill">Path 1 interpretation</span>
+            ${discussionStatus}${peripheralStatus}
+          </div>
+        </div>
+        <div class="details-inner">
+        <div class="insight-card primary">
+          <div class="section-title">Topic Phrase</div>
+          <div class="abstract">${escapeHtml(clusterTopicLabel(p.cluster_label_candidate))}</div>
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Key Phrases</div>
+          <div class="abstract">${escapeHtml(p.distinguishing_evidence_terms || p.cluster_theme_terms || 'n/a')}</div>
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Prose Summary</div>
+          <div class="abstract">${escapeHtml(p.cluster_summary_candidate)}</div>
+        </div>
+        ${sourceEvidence}
+        <div class="insight-card">
+          <div class="section-title">Fine-Grained Form &amp; Review Status</div>
+          <div class="pill-row">
+            <span class="pill">Form: ${escapeHtml(p.design_knowledge_form || 'n/a')}</span>
+            <span class="pill">Status: ${escapeHtml(p.contribution_type || 'n/a')}</span>
+            ${p.contribution_subtype ? `<span class="pill">Subtype: ${escapeHtml(p.contribution_subtype)}</span>` : ''}
+            ${p.contribution_type_secondary ? `<span class="pill">Secondary: ${escapeHtml(p.contribution_type_secondary)}</span>` : ''}
+
+            ${p.additional_application_domains ? `<span class="pill">Additional domains: ${escapeHtml(p.additional_application_domains)}</span>` : ''}
+          </div>
+          <div class="meta" style="margin-top:8px">Review status: ${escapeHtml(p.contribution_type_support || 'n/a')}</div>
+          <div class="meta">Contribution definition: ${escapeHtml(p.contribution_type_definition || 'n/a')}</div>
+
+
+
+
+          ${p.theory_move_key !== 'not_applicable' && p.theory_move_key !== 'n/a' ? `
+          <div class="section-title" style="margin-top:14px">Theory Move Candidate</div>
+          <div class="pill-row">
+            <span class="pill">Theory move: ${escapeHtml(p.theory_move || 'n/a')}</span>
+            <span class="pill">Support: ${escapeHtml(p.theory_move_support || 'n/a')}</span>
+          </div>
+          <div class="meta" style="margin-top:8px">Matched patterns: ${escapeHtml(p.theory_move_patterns || 'n/a')}</div>` : ''}
+        </div>
+        <details class="lexical-evidence">
+          <summary>Show lexical evidence</summary>
+          <div class="evidence-block">
+            <div class="section-title">Cluster Theme Evidence</div>
+            <div class="abstract">${escapeHtml(p.cluster_theme_terms)}</div>
+            <div class="section-title">Class-Based TF-IDF Evidence</div>
+            <div class="abstract">${escapeHtml(p.lda_topic_words)}</div>
+          </div>
+        </details>
+        <div class="insight-card">
+          <div class="section-title">Abstract</div>
+          <div class="abstract">${escapeHtml(p.abstract)}</div>
+        </div>
+        ${discussionSummary}
+        ${discussionExcerpt}
+        <div class="insight-card">
+          <div class="section-title">Links</div>
+          ${doi}${url}
+        </div>
+        <div class="insight-card">
+          <div class="section-title">Nearest Papers by Cosine Distance</div>
+          ${nearest || '<div class="meta">No nearest-paper data available.</div>'}
+        </div>
+        </div>
+      `;
+      details.querySelectorAll('[data-paper]').forEach(a => {
+        a.addEventListener('click', evt => {
+          evt.preventDefault();
+          state.selected = a.getAttribute('data-paper');
+          render();
+        });
+      });
+      details.scrollTop = 0;
+    }
+
+    function renderDiscussionSummary(value) {
+      const items = String(value || '').split('\n').map(line => line.replace(/^[-•]\s*/, '').trim()).filter(Boolean);
+      if (!items.length) return '<div class="meta">No discussion summary available.</div>';
+      return `<ul class="discussion-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+    function escapeAttr(value) { return escapeHtml(value).replace(/`/g, '&#96;'); }
+
+    initControls();
+    render();
+    window.addEventListener('resize', render);
+  </script>
+</body>
+</html>

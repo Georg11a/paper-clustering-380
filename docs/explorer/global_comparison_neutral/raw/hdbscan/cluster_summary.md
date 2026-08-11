@@ -1,18 +1,18 @@
 # All papers · HDBSCAN · Raw BGE-M3
 
 - Selected configuration: `hdbscan_mcs8_ms8`
-- Papers: 457
+- Papers: 459
 - Non-noise clusters: 2
-- Noise papers: 389 (85.1%)
-- Coverage: 14.9%
+- Noise papers: 391 (85.2%)
+- Coverage: 14.8%
 - Original-space cosine silhouette: 0.2914
-- 80% subsample overlap stability (mean ARI): 0.6057
+- 80% subsample overlap stability (mean ARI): 0.7942
 
 Noise is retained as weak-affinity information and is not reassigned.
 
-## Noise / weak affinity (389 papers)
+## Noise / weak affinity (391 papers)
 
-389 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
+391 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
 
 ## Patterns · Theory · Knowledge (58 papers)
 

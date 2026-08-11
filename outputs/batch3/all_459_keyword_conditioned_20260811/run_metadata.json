@@ -1,0 +1,10 @@
+{
+  "paper_count": 459,
+  "representation": "BGE-M3 Title+Abstract+K12; K12 selected using each paper's predefined keyword",
+  "clustering_scope": "within predefined keyword group only",
+  "cluster_method": "spectral_knn10",
+  "k_estimation": "K-means inertia elbow by maximum endpoint-chord distance; candidate must pass frozen numeric validation",
+  "small_group_rule": "A group receives k=1 only when it cannot form two clusters satisfying max(absolute minimum 3, ceil(0.15 * n)).",
+  "topic_modeling_started": false,
+  "random_seed": 20260728
+}

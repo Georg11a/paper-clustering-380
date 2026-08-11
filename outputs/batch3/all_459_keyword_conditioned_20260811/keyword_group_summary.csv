@@ -1,0 +1,13 @@
+keyword,paper_count,minimum_cluster_size,elbow_estimated_k,selected_k,assignment_method,assignment_status,cluster_sizes
+Design knowledge,121,19,3.0,3,spectral_knn10,numeric_rule_failed_requires_review,58/54/9
+Design Patterns,102,16,3.0,3,spectral_knn10,numeric_rule_failed_requires_review,38/53/11
+Design theory,85,13,3.0,3,spectral_knn10,numeric_rule_failed_requires_review,30/38/17
+Design methods,38,6,3.0,3,spectral_knn10,numeric_rule_failed_requires_review,19/10/9
+Design Guidelines,29,5,2.0,2,spectral_knn10,numeric_rule_failed_requires_review,14/15
+Design rationale,24,4,2.0,2,spectral_knn10,numeric_rule_failed_requires_review,14/10
+Design principles,21,4,2.0,2,spectral_knn10,numerically_selected_pending_human_veto,13/8
+Design Heuristics,14,3,2.0,2,spectral_knn10,numeric_rule_failed_requires_review,11/3
+Design Rules,12,3,2.0,2,spectral_knn10,numeric_rule_failed_requires_review,3/9
+Design frameworks,7,3,2.0,2,spectral_knn10,numerically_selected_pending_human_veto,3/4
+Design expertise,4,3,,1,no_subclustering,single_group_below_clustering_threshold,4
+Design Procedures,2,3,,1,no_subclustering,single_group_below_clustering_threshold,2

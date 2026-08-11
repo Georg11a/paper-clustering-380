@@ -1,18 +1,18 @@
 # All papers · DBSCAN · Raw BGE-M3
 
-- Selected configuration: `dbscan_eps0.193456_ms3`
-- Papers: 457
+- Selected configuration: `dbscan_eps0.193210_ms3`
+- Papers: 459
 - Non-noise clusters: 2
-- Noise papers: 112 (24.5%)
-- Coverage: 75.5%
-- Original-space cosine silhouette: 0.1554
-- 80% subsample overlap stability (mean ARI): 0.8447
+- Noise papers: 114 (24.8%)
+- Coverage: 75.2%
+- Original-space cosine silhouette: 0.1561
+- 80% subsample overlap stability (mean ARI): 0.8478
 
 Noise is retained as weak-affinity information and is not reassigned.
 
-## Noise / weak affinity (112 papers)
+## Noise / weak affinity (114 papers)
 
-112 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
+114 papers were left unassigned by the density model. They are retained as evidence of weak affinity rather than treated as an algorithm failure.
 
 ## Knowledge · Patterns · Theory (340 papers)
 

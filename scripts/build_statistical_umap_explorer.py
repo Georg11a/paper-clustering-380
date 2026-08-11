@@ -17,6 +17,7 @@ import pandas as pd
 import umap
 from ftfy import fix_encoding
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.decomposition import PCA
 from sklearn.metrics.pairwise import cosine_distances
 from sklearn.preprocessing import normalize
 
@@ -267,6 +268,11 @@ def add_geometry(frame: pd.DataFrame, vectors: np.ndarray, seed: int) -> pd.Data
     frame = frame.copy().reset_index(drop=True)
     if len(frame) == 1:
         coordinates = np.zeros((1, 2), dtype=float)
+    elif len(frame) < 5:
+        component_count = min(2, len(frame), vectors.shape[1])
+        coordinates = PCA(n_components=component_count).fit_transform(vectors)
+        if component_count == 1:
+            coordinates = np.column_stack([coordinates[:, 0], np.zeros(len(frame))])
     else:
         neighbors = min(15, len(frame) - 1)
         reducer = umap.UMAP(

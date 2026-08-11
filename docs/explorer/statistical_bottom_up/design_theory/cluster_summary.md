@@ -3,14 +3,14 @@
 Assignments: BGE-M3 + within-keyword Spectral clustering.
 Interpretation: adapted class-based TF-IDF over analysis-frozen memberships.
 
-## Design theory — Problem solving and Design process [DT-C01] (17 papers)
+## Design theory — Design process and Design science (30 papers)
 
-We argue that the interpretation of design problems lacks a similar rigorous investigation as problem solving received in both design theory and methodology. [E1] After reviewing current approaches to design theory, which are based on the transformative concept of function, we argue that this basis in function limits the scope of design problems and explanatory power of current design theories. [E2]
+The advantage of the AD approach is that it systemizes the way to decouple design parameters and makes designers to think rationally between what we want to achieve and how we propose to satisfy the functional requirements of porous concrete. [E1] On the basis of these process knowledge types, we derive three theoretically grounded design principles for process guidance systems to support employees’ process execution. [E2]
 
-## Design theory — C-K theory and Design research [DT-C02] (23 papers)
+## Design theory — C-K theory and Design research (38 papers)
 
-We propose the addition of environments which can organize kernel theories and provide insight regarding interaction and influence of kernel theory in different use contexts. [E2] In this article, we explore the contribution design theory can make to empirically eliciting, and conceptually inferring, the real-time “tacit knowledge” of entrepreneurial practice as a precursor to producing micro-prescriptive knowledge. [E3]
+In this paper we introduce the main notions and first applications of a unified design theory. [E1] We develop a general method for constructing a design theory nexus and illustrate its utility using two field studies. [E2]
 
-## Design theory — Information systems and Knowledge management [DT-C03] (18 papers)
+## Design theory — Information systems and Design principles (17 papers)
 
-On the basis of these process knowledge types, we derive three theoretically grounded design principles for process guidance systems to support employees’ process execution. [E2] Many have argued that its theoretical basis has been slow to develop and that, in fact, a substantial theory of Software Engineering is still lacking.Objective: We propose a design theory for Software Engineering as a contribution to the debate. [E1]
+We further validate the propositions by analyzing three widely used digital platforms, including Twitter, Wikipedia, and Liquidfeedback, and we derive additional propositions and insights that can guide DPsOC design. [E4] We propose a theory of tailorable technology design and identify principles necessary for the initial design. [E1]

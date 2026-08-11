@@ -1,0 +1,460 @@
+﻿paper_id,title,keyword,cluster_id,cluster_index,group_k,assignment_method,assignment_status
+00d7fbafe65f,"Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines",Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+07efc8033023,Scaffolding Complex Learning: The Mechanisms of Structuring and Problematizing Student Work,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+0842498049c7,The Extended Likeability Framework: A Theoretical Framework for and a Practical Case of Designing Likeable Media Applications for Preschoolers,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+615169de6f0e,From interaction to trajectories: designing coherent journeys through user experiences,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+65c31c577170,The Rough Mile: Testing a Framework of Immersive Practice,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+662ae9cea17d,1C3-2 A Literature Survey on UX Design Properties and Principles Of Smart Device Design for the Disabled::From the Perspective of the Value/Quality of Human Life,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+75f43821c56f,Towards a Model of Information Aesthetics in Information Visualization,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+b14f85b19a87,Design Study Methodology: Reflections from the Trenches and the Stacks,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+b357bc5a3d3b,Towards Canonical Task Types for User Interface Design,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+ca185d91b684,Embracing Non-Natural Design in Human-Computer Interaction,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+d0a17557440f,Avoiding virtual dystopia: A design theory for emancipatory participatory immersive platforms,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+e59a343ad585,The kaleidoscope of effective gamification: deconstructing gamification in business applications,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+ee0a5b26f6dc,Formalizing Visualization Design Knowledge as Constraints: Actionable and Extensible Models in Draco,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+f0b2517a04a4,Don't Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines,Design Guidelines,DG-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+0176348439b8,A Comparative Study of Chinese and American Rural Design Guidelines,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+0ef759265f23,The equitable use concept in sidewalk design,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+139a1e71d8dc,Separation of Modeling Principles and Design Principles in Enterprise Engineering,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+14dcaf15aa66,Terminologia kohtaa käytettävyyden. Terminologisen käytettävyyden ydintä rakentamassa,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+2cceb8eaa8c9,Design Guidelines and Strategies for Interim Innovation,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+48af90d5dfe7,Design Guidelines for Domain Specific Languages,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+5e43d7253569,Bridging HRI Theory and Practice: Design Guidelines for Robot Communication in Dairy Farming,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+69bb5b15bdd3,Heuristics for Supporting Cooperative Dashboard Design,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+85ba95ab4fa0,"Six Guidelines for Trustworthy, Ethical and Responsible Automation Design",Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+866322a64dc5,Healthy Eating Design Guidelines for School Architecture,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+9020aa145571,A Process Framework for Designing Software Reference Architectures for Providing Tools as a Service,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+b077c606da41,Classification approach for hybrid components in mechanical engineering with a focus on additive manufacturing,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+c216cc01fe23,A Preliminary Proposal Towards Unambiguous Definitions for Modular Interfaces and Interactions,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+cb7daae2b94f,User Experience Design in Professional Map-Based Geo-Portals,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+e936b4f274a1,The four components of a procedure,Design Guidelines,DG-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+022ee7cf2e4e,Introduction of a standardized Notation of Design Heuristics for Knowledge Formalization,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+0512599e76df,What is the content of 'design thinking'? Design Heuristics as conceptual repertoire,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+17ad371dac5e,Rethinking User Interface and Experience Design: Heuristic Insights from Makeup and Stage Performance,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+2085391360fa,"Elephants, patterns, and heuristics",Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+2b32e2beaead,Are software patterns simply a handy way to package design heuristics?,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+7cb073ebacac,Formal system for the expression of target-oriented design heuristics,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+9eecf23c4ce7,Design Heuristics for Web-Based Severe Weather Risk Communication,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+9f4dbd790fe7,Design Heuristics in Innovative Products,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+bd23ac0241ec,Joint Activity Design Heuristics for Enhancing Human-Machine Collaboration,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+cd211147691a,Design heuristics set for X: A design aid for assistive product concept generation,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+cdd6de21b74b,Evidence-based design heuristics for idea generation,Design Heuristics,DH-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+0cbc36913472,Dialogue Appropriate to Assistive Technology Product Design: A Taxonomy of Communication Formats in Relation to Modes of Sensory Perception,Design Heuristics,DH-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+994d28d55eb8,From human factors to human actors to human crafters,Design Heuristics,DH-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+c6955d14d66c,Dialogue appropriate to assistive technology product design: A taxonomy of communication formats in relation to modes of sensory perception,Design Heuristics,DH-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+013a50a2a9b4,Towards a Pattern Language for Creative Affordances,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+0783409933b4,A Two-Dimensional Framework for AI Agent Design Patterns: Cognitive Function and Execution Topology,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+098637c0f9ae,Pattern design in the context space: paco - a methodological framework for designing auditory display with patterns,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+09e4195a775c,BIOPHILIC DESIGN PATTERNS: Emerging Nature-Based Parameters for Health and Well-Being in the Built Environment,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1151f6830f77,Design patterns in intelligent systems,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1fec06501110,System Interaction Patterns,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+242644458c6e,A pattern approach to interaction design,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+27e1a41acfbb,Task Decomposition and RAG as Design Patterns for LLM-Based Systems,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+2c1d03d1ba75,Legal Design Patterns: New Tools for Analysis and Translations Between Law and Technology,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+2efb92894924,Particles of a Whole: Design Patterns for Transparent and Auditable AI-Systems,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+3269f651fd9c,"Designing AI-Enabled Engineering Courses: E-AIP Framework for Learning Outcomes, Process Evidence, and Integrity",Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+3401d577c79c,Backfiring and favouring: how design processes in HCI lead to anti-patterns and repentant designers,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+35874d939f8d,"Patterns, anticipation and participatory futures",Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+388e4cf73d9e,Team Design Patterns,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+421030e9786e,Unpacking Human-AI interactions: From Interaction Primitives to a Design Space,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+470d09e18259,Modular Design Patterns for Systems that Learn and Reason,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+4a32a22b0b9c,Modifiers: Increasing richness and nuance of design pattern languages,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+4d5285913fd8,Defining and Identifying Attention Capture Deceptive Designs in Digital Interfaces,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5a05967135ba,Cross-cultural adaptation of educational design patterns at scale,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5f6661254e39,Ethical Encounters in Design Practice: A Framework Grounded in Practitioner Experience,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+6f73a944b8d6,Video collaboratories for research and education: An analysis of collaboration design patterns,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+77ba97562fe7,Teachers’ Collaborative Pattern Language Design,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+79abc1449981,Thriving Systems Theory: An Emergent Information Systems Design Theory,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+7afe82160b59,Antipatterns in the creation of intelligent systems,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+7d99b05f405e,Design Patterns for AI-based Systems: A Multivocal Literature Review and Pattern Repository,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+8393d36cff90,An overview of human-computer interaction patterns in pervasive systems,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+877ae1e561a7,SoK: Agentic Skills - Beyond Tool Use in LLM Agents,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+8e0dfec2492d,Drama and Software Patterns,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a0d1057f0acb,Pattern approach to interaction design,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a779c321ee06,Blockchain Interoperability Patterns,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+b42559e0a5d5,ICT Systems Security and Privacy Protection,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+be51adc4b7cc,Development and evaluation of emerging design patterns for ubiquitous computing,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+d1e78ef0032e,Dark Patterns: Towards a Socio-technical Approach,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+d7afefaf53ef,The Value of Design Patterns in Designing Teaching in Online Settings,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ddcb3ba05227,Design patterns for sociality in human-robot interaction,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e4c9f86a6933,Design patterns for exploring and prototyping human-robot interactions,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e9826a1c57b0,In Search of Living Law: How Should We Design for (Digital) Legal Interaction?,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+f13149d3303f,Information Exchange Design Patterns for Robot Swarm Foraging and Their Application in Robot Control Algorithms,Design Patterns,DPAT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+021b68e369b1,Live Coding Patterns and a Toolkit for Pure Data,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+02c538fcc8a0,Design patterns for wildlife‐related camera trap image analysis,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+07395d6487e7,Design Patterns for the Development of Electronic Health Record-Driven Phenotype Extraction Algorithms,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+098c9db1090d,A semantic representation for domain-specific patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+0b002633de00,A security design pattern taxonomy based on attack patterns: Findings of a systematic literature review,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+1a3361a5f828,What are Security Patterns? A Formal Model for Security and Design of Software,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+1fda49b32463,A Pattern-Oriented Approach to a Methodical Evaluation of Modeling Methods,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+287b2d823523,Architecture pattern organization,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+3524dd73bb30,Design Patterns of Biological Cells,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+368e4036648e,From Directional Stimuli to Prompt Architectures: Documenting the Practice of Meta-Prompting,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4000c6073b5d,Design Principles for Internal Domain-Specific Languages: A Pattern Catalog Illustrated by Ruby,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+42ca56313883,"Architecture, design, implementation",Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+498a6aa649eb,Service engineering design patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+49d75437fd07,A Framework for Design Patterns in TROPOS,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4a9c96b6c482,Meta patternsma means for capturing the essentials of reusable object-oriented design,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4fb2c242dfee,Coupling of design patterns: common practices and their benefits,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+51099fe3fdce,Making Sense of Design Patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+5a57c73154f6,Object oriented design pattern decay: a taxonomy,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+631c79d1cbc5,Abstraction classes in software design,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+63e3bdac7fab,What Do We Know about the Effectiveness of Software Design Patterns?,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+66f985f8b386,The Concept of Reference Architectures,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+677c4dc89d1d,Elemental design patterns: A formal semantics for composition of OO software architecture,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+6c928237afcf,Micro patterns in Java code,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+6d9eecf54c53,Control patterns in a health-care network,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+774e05395765,Understanding and using patterns in software development,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+7d6de5f94a84,(Re)Defining Restorative and Regenerative Urban Design and Their Relation to UNSDGs—A Systematic Review,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+87b61e77d082,Analysis patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+87c5da85b30a,The Evolution of Software Design Patterns: An In-Depth Review,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+9308054f3e8a,Design Patterns in Mixed Methods Research: Embedding Mixed Methods Matched Comparisons Sampling in Previous Design Decisions,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+9ddabd46988b,Towards project communication management patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a223dfc7b9a8,Patterns as signs,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a3bc8ece9d73,Use of design patterns in analogy-based design,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a74bec243b7f,Universal Structural-Semantic Model of Design Patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a9303960f19a,Abstraction in computer science,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+ade4419d3095,Hybrid modeling design patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+aea175ec1e11,Typed Design Patterns for the Functional Era,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b967c3a334ff,Industrial experience with design patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b97dadb53877,A pattern language for parallel application programs,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b9f64070ed9a,“Modeling-by-Patterns” of Web applications,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+bb08fe1a5d09,Taxonomy of architectural style usage,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+bc6d0afdec8f,Design patterns for component-oriented software development,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+bf1ef2949b3c,Design patterns: Abstraction and reuse of object-oriented design,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+c6e7060b0fa0,LabelPatterns.org: A comprehensive pattern library for consumer-decision labels,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+c7afdd089fdd,Toward patterns for collaborative knowledge creation,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+ca4fa896aabc,A design pattern approach to bitemporal data modeling,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+cd42a6611470,"Principles, patterns, and techniques for designing and implementing practical fluent interfaces in Java",Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+ce6761927633,Definition and use of software requirement patterns in requirements engineering,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+d012dd1ac1d7,Semantic analysis patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+da5dd15cd345,A functional theory of design patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+e763873f823a,Formalising design patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+e9618999ee23,"Layers, decisions, patterns, styles, and architectures",Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+f1a4dde3d156,Catalogue of general-purpose software design patterns,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+f8c905d3c779,Structures to effectively share architectural knowledge,Design Patterns,DPAT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+09055cc69e8c,A Theoretical Model for Game Mechanics: Bridging Design Practice and Education,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+3a87795ac48c,Framework for Designing and Evaluating Game Achievements,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+462782b1c89b,A taxonomy of 3D occlusion management techniques,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+4e4a50e133cc,Weapon design patterns in shooter games,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+4e727e38805c,"Visualization Atlases: Explaining and Exploring Complex Topics Through Data, Visualization, and Narration",Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+506a676cb17b,"Toward Visualization for Games: Theory, Design Space, and Patterns",Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+c7ed46400a28,Exploring the design space of composite visualization,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+d14d96f15e60,Revisiting the Design Patterns of Composite Visualizations,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+ded38f6c2ce8,Design Patterns for Situated Visualization in Augmented Reality,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+f7a213ef52da,Dark patterns in the design of games,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+fd29fa6c3eca,The Conceptual Relationship Model: Understanding Patterns and Mechanics in Game Design,Design Patterns,DPAT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+6ea89aad84f6,Development of Sustainable Integrated Design Framework for Stream Restoration,Design Procedures,DPROC-C01,0,1,no_subclustering,single_group_below_clustering_threshold
+97b32465f821,Systematic design procedures,Design Procedures,DPROC-C01,0,1,no_subclustering,single_group_below_clustering_threshold
+1d033f71eb02,"Soft, Flexible, and Stretchable Platforms for Tissue-Interfaced Bioelectronics",Design Rules,DRUL-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+43856ed76df1,Hybrid Prototyping: Pure Theory or a Practical Solution to Accelerating Prototyping Tasks?,Design Rules,DRUL-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+dbc171dde63a,Perfect Eudaimonic User Experience Design That Aristotle Would Have Wanted,Design Rules,DRUL-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+2a22a314dcfb,Studying Software Architecture Through Design Spaces and Rules,Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+561f08f67362,"Design Rules, Volume 2: How Technology Shapes Organizations: Chapter 13 Platform Systems vs. Step Processes - The Value of Options and the Power of Modularity",Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+5c096c480387,User interfaces of information retrieval systems and user friendliness,Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+6f114a6d29d1,Toward a Conceptualization of Organizational Modularity,Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+892ad7622adf,"Modularity Design Rules for Architecture Development: Theory, Implementation, and Evidence from the Development of the Renault–Nissan Alliance “Common Module Family” Architecture",Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+8aeb26c1e21d,Steps toward a cognitive engineering: Design rules based on analyses of human error,Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+ba03a17bc120,"The Good, the Bad, and the Ugly: A Theoretical Framework for the Assessment of Continuous Colormaps",Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+cf2ee8097a06,"Design Rules, Volume 2: Chapter 4—The Mirroring Hypothesis: Linkages Inside and Across Transaction Free Zones",Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+f941f0424e1a,"Design Rules, Volume 2: Chapter 6—The Value Structure of Technologies, Part 1: Mapping Functional Components",Design Rules,DRUL-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+5a25cbf385d6,Everyday Design Knowledge: A Knowledge-in-Pieces Perspective on HCI Learning,Design expertise,DE-C01,0,1,no_subclustering,single_group_below_clustering_threshold
+93c5c97a0a92,Investigating Instructional Design Expertise: A 25-Year Review of Literature,Design expertise,DE-C01,0,1,no_subclustering,single_group_below_clustering_threshold
+96ed07ad56c0,"Schemata, gambits and precedent: some factors in design expertise",Design expertise,DE-C01,0,1,no_subclustering,single_group_below_clustering_threshold
+d41009f91ba1,Designing theory,Design expertise,DE-C01,0,1,no_subclustering,single_group_below_clustering_threshold
+1e7ab64c6cf9,Commentary: Strength-based co-design that EMPOWERs – Lessons from codesigning with older adults,Design frameworks,DF-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+560be0c20de7,"Designing for Trust, Progress, and Dignity: A Conceptual Framework for Reliability, Responsiveness, and Relational Quality in AI-Enabled Service Systems",Design frameworks,DF-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+660ca24145b2,The E-Design Assessment Tool: an evidence-informed approach towards a consistent terminology for quantifying online distance learning activities,Design frameworks,DF-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+268903a30da5,Systematic Review of Systemic Design Frameworks for Complex Challenges,Design frameworks,DF-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+7afa6519f6fc,"The experience, dynamics and artifacts framework: towards a holistic model for designing serious and entertainment games",Design frameworks,DF-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+ce5d2c17f94f,"Like PEAS in PoDS: the player, environment, agents, system framework for the personalization of digital systems",Design frameworks,DF-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+e09769771b82,"The Experience, Dynamics and Artifacts Framework: Towards a Holistic Model for Designing Serious and Entertainment Games",Design frameworks,DF-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+00e42ae113b8,Utilization of design principles for hybrid learning configurations by interprofessional design teams,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+02381ea80183,A design theory for data quality tools in data ecosystems: Findings from three industry cases,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+0334252e4adb,A post-positivism view of function behaviour structure,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+03adadfa0ad4,"Design Principles: Literature Review, Analysis, and Future Directions",Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+080c04a1507a,Caution - Principle Under Construction' a Visual Inquiry Tool for Developing Design Principles,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+102689fab8b6,A Design Theory for Transparency of Information Privacy Practices,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+19dd6ec0253e,A principle-based philosophical framework for fashion design praxis and education in new design landscapes,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1c7fa3f7d73a,A theoretical framework for the studio as a learning environment,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1d529e097d58,Design Space and Design Rules for User Interface Software Architecture,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+29a8891f4c02,The Need for Design Cases: Disseminating Design Knowledge,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+3058799f63c1,Using Schema to Inform Method Design Practices,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+36ba740d002b,"Developing Learning Analytics Design Knowledge in the ""Middle Space"": The Student Tuning Model and Align Design Framework for Learning Analytics Use",Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+38f057747444,Reusable design: A proposed approach to Public Health Informatics system design,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+3dbca777664c,Design Principles for Boundary Spanning in Transdisciplinary Design Science Research,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+465d28bc8d09,Structured Visualization Design Knowledge for Grounding Generative Reasoning and Situated Feedback,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+4a7432e5a317,Advancing entrepreneurship as a design science: developing additional design principles for effectuation,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5a716d80ac6b,Towards a Method for Design Principle Development in Information Systems,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5a8306f435ea,Design principles: The foundation of design,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+6264e280f9b8,Exploring the Abstraction Levels of Design Principles: The Case of Chatbots,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+6aeae7ccf85b,Toward a Framework for the Design of Interactive Technology for Nature Recreation,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+6e7959c82d5f,The anatomy of HCI design patterns,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+6fdd15b8daea,Communicating nascent design theories on innovative information systems through multi-grounded design principles,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+705b504131f6,A conceptual framework to construct an artefact for meta-abstract design knowledge in design science research,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+73537bfbe719,A taxonomy and ontology for digital platforms,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+7b15d81000db,The anatomy of a design theory,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+7c4d2eb91f51,Using a Visual Abstract as a Lens for Communicating and Promoting Design Science Research in Software Engineering,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+7f7baeb83bac,A theoretical framework on embodiment in digital design,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+82f49b5a1905,SOLUTION REPERTOIRE,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+8a4fa21e354d,"Intention, Material, and Design Knowledge: Analysis of the Triple Relationship Theory of Artifacts",Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+8f065cfd18a4,Pattern language: A framework for learning,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+9378a46b93c6,Socio-technical IS design science research: developing design theory for IS integration management,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+9d158233f041,Guidelines supporting the formulation of design principles,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a1ccc16dab98,ANALYSIS OF DESIGN COMPETENCE OF FUTURE ENGINEER-TEACHERS,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a200b553056c,The design construct in information systems design science,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a7e06450729f,Game Design as an Autonomous Research Subject,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a8b318749f73,A conceptual framework for design science research,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ade78c466271,Revised set of usability heuristics for the evaluation of interactive systems,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+af4a4237d98a,Utilization of design principles for hybrid learning configurations by interprofessional design teams,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+b227e604cd40,"The Dark Patterns Knowledge Stack: Exploring New Ways to Negotiate Context, Law, and Design",Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+b3d7c30694e8,Software pre-patterns as architectural knowledge,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+b5e00197bf29,Forms of discovery for design knowledge,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+bdf1addf5a10,Contestable AI by Design: Towards a Framework,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+c0efa7750b45,Forms of reasoning in the design science research process,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+c5d4c66275a8,Towards a Theory Driven Foundational Model for Design: Rethinking Requirement Elicitation for Special Needs,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ccc616a68c38,Towards Creating a Body of Evidence-based Interactive Digital Narrative Design Knowledge: Approaches and Challenges,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+cda6c6785f0a,The design of social drones: a review of studies on autonomous flyers in inhabited environments,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+d4ef8c48ded5,"Toward an Inventory of Plans and Patterns, and Their Use to Foster Strategic Knowledge in Programming Novices",Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ddf4ea43a777,Adaptation of Toulmin’s Model of Argumentation for Establishing Rigour and Relevance in Design Research,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+df4ffdba87ae,Reconciling theories with design choices in design science research,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e0e99d72e1b0,The typological learning framework: the application of structured precedent design knowledge in the architectural design studio,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e8a17b6120e4,Designing as reflective conversation with the materials of a design situation,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e8f4a7417bf7,Toward a Method for Design Science Research Meta-Studies to Improve the Reusability of Design Principles,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e958310acab5,"Prescriptive knowledge in IS research: Conceptualizing design principles in terms of materiality, action, and boundary conditions",Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ef3a9300a2f3,Developing a competency taxonomy for teacher design knowledge in technology-enhanced learning environments: a literature review,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+f50a79b2d7e1,Towards scaling expertise with generative AI: design principles for governing AI-Mediated knowledge capture and transfer,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+f59da9db088b,Value sensitive design as a formative framework,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+fd2392ff2aff,Surveying a Landscape of Ethics-Focused Design Methods,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+fda0636dbea5,Design Research: Aesthetic Epistemology and Explanatory Knowledge,Design knowledge,DK-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+07eb3166d706,A Typology of Knowledge Creation in Design Science Research Projects,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+0b7e6111aa14,Synthesizing a Solution Space for Prescriptive Design Knowledge Codification,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+0c63b5d36c1b,A User-Oriented Design Knowledge Reuse Model,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+114973fd100e,Identification and management of the near-field knowledge of industrial design for innovative product shapes,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+1826e718712a,Analyzing Design Knowledge Representation in Design Science Research and Deriving Recommendations to Support Design Knowledge Codification,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+18d57211cb40,Object oriented design knowledge: ontology and measurement of impact,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+1d3cca16fcd2,Legitimating design: a sociology of knowledge account of the field,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+2042efa7e455,The DSR grid: six core dimensions for effectively planning and communicating design science research projects,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+22988d4cc335,Strong concepts: Intermediate-level knowledge in interaction design research,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+275ac93d8820,Investigations into the data basis of design knowledge in industrial design engineering,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+2a3139d14895,What is design knowledge from the viewpoint of CPM/PDD?,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+33444d31c6dc,A design theory for visual inquiry tools,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+364b7d9127ec,Toward a Unified Model of Design Knowledge,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+39fee30eb03c,Cutting Cubes Out of Fog: The Whole View of Design,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+3c0bd4608ae9,Reflections on Architecture Design Education: The Integrated Design Paradigm,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+3c8744e515fd,Advancing Design Knowledge Reuse: A Framework for Circular Design Principles,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+3e4851eff856,Knowledge transfer in design education: A framework of criteria for design exercises,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+40668e23fbab,Dimensions of knowledge in prototyping: A review and characterisation of prototyping methods and their contributions to design knowledge,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4988843b7543,Design Science Research: Guidance for Crafting and Reporting Design Knowledge Contributions,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+49da21b385d7,A Review of Domain Knowledge Representation for Robot Task Planning,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4b599d3e2eb0,Immodest Proposals: Research Through Design and Knowledge,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+5000c5049cbd,Learning design knowledge as generalization,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+53adec5acee6,Mapping design knowledge: 36 years of Design Studies,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+5f810f61b926,A typology of design knowledge: A theoretical framework,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+6b9f020cd024,Design knowledge for decision-making process in a DFX product design approach,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+6d926f3c4a97,A domain reference ontology for design science research knowledge bases,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+76d309f713b9,How industrial design knowledge differs from engineering design knowledge,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+77b350f029e7,A taxonomy and ontology for digital platforms,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+7baa1d9ec242,New Design Knowledge and the Fifth Order of Design,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+81c74e1bcf00,Evaluation of the relationship between studies of design research and design process in the field of architecture: a systematic review,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+86f2cddcc51d,A granular view of knowledge development in design science research,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+94bc88b88ae6,Design knowledge in the artistic–aesthetic development and transformation of the world,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+95eee570b8f1,Accumulating design knowledge: A mechanisms-based approach,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a4ef5e43da80,A Design Archival Approach to Knowledge Production in Design Research and Practice,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a707fd62833a,Tracing the tensions surrounding understandings of agency and knowledge in technology design,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a883ec94b37a,Causal design knowledge: Alternative representation method for product development knowledge management,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b0fe7e080516,Design knowledge representation: An ontological perspective,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b256aafa902e,A Multi-Grounded Design Research Process,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b73f2343e274,Let's Get Divorced: Constructing Knowledge Outcomes for Critical Design and Constructive Design Research,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b7ba414dae37,Learning Experience Design in the Light of Design Knowledge and Philosophy,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+be4112c3c6af,Sharing Design Knowledge Through Codification in Interdisciplinary DSR Collaborations,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+c90163fa7f57,A new model to express and capture the design rationale in the documents,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+ca1427a57062,The retrieval of structured design rationale for the re-use of design knowledge with an integrated representation,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+cc5e9fe45cc6,A study of practice based design research models from knowledge integration perspective,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+d24e6cf8ae6a,Physical Design Cognition: A Non-‐symbolic Formalization for Performing Design Knowledge,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+d590c1f63670,Design Knowledge Interaction Model: A Proposal from a Cognitive Perspective,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+d6b2bf339ae4,"Co-producing, curating, and defining design knowledge in an online practitioner community",Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+e105857da02d,Designerly Ways of Knowing in HRI: Broadening the Scope of Design-oriented HRI Through the Concept of Intermediate-level Knowledge,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+e7091fbecdfa,"Utilizing, Producing, and Contributing Design Knowledge in DSR Projects",Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+f6ba28a6efeb,ON the HIERARCHICAL LEVELS of DESIGN KNOWLEDGE,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+f7668dd5c63f,Construction of Intermediate Knowledge in Design: A Case Study of Cultural and Creative Product Design,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+fbf6d34a07e9,Conceptualizing Design Knowledge in IS Research - A Review and Taxonomy of Design Knowledge Properties,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+fc4c2b9d38d7,A framework for supporting architecture knowledge and rationale management,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+fffe50e033fa,Activity as the ultimate particular of interaction design,Design knowledge,DK-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+166efc8ac468,HCI Design Knowledge,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+28e9bfcf6713,Validating effective design knowledge for re-use: HCI engineering design principles,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+2f7b1528d74d,"HCI Design Knowledge as Principles, Rules, and Heuristics",Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+4effa8e553a8,Toward Engineering Design Principles for HCI,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+9eda131748eb,Engineering Design Principles for HCI as a Way Forward for HCI Design Knowledge,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+a14565cde772,HCI Engineering Design Principles as a Way Forward for HCI Design Knowledge,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+b6f644351152,HCI Design Knowledge as Craft Artefacts and Design Practice Experience,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+ede2a92151d5,HCI Design Knowledge as Models and Methods,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+f9a132245837,HCI Knowledge,Design knowledge,DK-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+0a373ca87142,Surveying a Landscape of Ethics-Focused Design Methods,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1416cd2b88de,Cross-disciplinary system value overview towards value-oriented design,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+38b608e72e2d,"A BOUNDARY OBJECT FOR MAPPING, COMPARING, AND INTEGRATING PRODUCT DESIGN METHODS",Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+40a2d86cd488,Elements of a design method - a basis for describing and evaluating design methods,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+43b79273fd70,The Landscape of Envisioning and Speculative Design Methods for Sustainable Mobility Futures,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5389fb1cc38b,Elements of a design method – a basis for describing and evaluating design methods,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5661de15ea0f,A Typology of Design Ideas,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+60c69d24c5a3,Evaluating the efficacy and effectiveness of design methods: A systematic review and assessment framework,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+76669ffc8981,A Framework for Effective Virtual Commissioning: Guiding Principles for Seamless System Integration,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+799b06403189,State of the Art on Robust Design Methods for Additive Manufacturing,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+858cd2d5608b,How to gamify? A method for designing gamification,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+87713959435f,"Know-about, Know-that, Know-how: A Model for Moving Between Theory and Design Practice",Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+878cf959ac53,Designerly Research Methods and Researcherly Design Methods,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+885a1eee70e3,"The Design of Business Models: What, How and Why",Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+b5d968168f35,A Framework of Design Method Corroboration,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+bee7b59885fa,Adapting the FBS Model of Designing for Usage-Driven Innovation Processes,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+d330bde18c87,Languaging design methods,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+f16832406221,A Framework for Systemic Design,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+f6588fca84f9,The Design Activity Framework: Investigating the Data Visualization Design Process,Design methods,DM-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1c04ffa25528,The implications of improvisational acting and role-playing on design methodologies,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+234ec11212b7,Under the umbrella: components of empathy in psychology and design,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+5ba50396ff25,What is a Convention in Interactive Narrative Design?,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+7e095752d24c,Think-4-EmCoDe framework: Highlighting key qualities in embodied co-design techniques for children,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+7ebbe03ea0d8,Autobiographical design in HCI research: designing and learning through use-it-yourself,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b2234ef79a5a,Tracing situated effects of innovative design methods: inexperienced designers' practices,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b8c02b0994bd,The Designer's Body as Resource in Design: Exploring Combinations of Point-of-view and Tense,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+c1149e306456,DEFINING HUMAN-CENTERED AI: A COMPREHENSIVE REVIEW OF HCAI LITERATURE,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+dbf31702e533,Patterns for living lab practice: describing key know-how to promote service co-creation with users,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+f47226c43979,The Human-Centredness Metric: Early Assessment of the Quality of Human-Centred Design Activities,Design methods,DM-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+215d4603e3c7,A case study of the extension of floorplan flexibility using sector margins,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+5611cdb5c33a,Generating implications for design through design research,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+6e06768bb26b,Design as Research in Landscape Architecture,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+714b3f6f8ac7,Degrees of Interaction: Towards a Classification,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+94347a49c12b,Using System Dynamics to Construct Design Theory for Community Information Systems,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+95c2b3d44aff,Multiple forms of applications and impacts of a design theory -ten years of industrial applications of C-K theory,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+ac2f5510db32,Beyond geometric complexity: a critical review of complexity theory and how it relates to architecture engineering and construction,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+d54cc84186ed,Examining Rock Engineering Knowledge through a Philosophical Lens,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+f02904f836be,Universal Participatory Design: Achievements and Challenges,Design methods,DM-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+01467836cecf,Design principles for human-computer interfaces,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+1445730be68b,A problem-based approach to the advancement of heuristics for socio-technical evaluation,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+1499477f6cda,Design Principles for Industrie 4.0 Scenarios,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+2ba0daf07e8e,Engineering design principles as patterns of relationships in frame creation,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+31bdafb1fc73,Explainable Medical Imaging AI Needs Human-Centered Design: Guidelines and Evidence from a Systematic Review,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+3382d6461f40,The Principles of the Flix Programming Language,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+44848ca19e31,"Design Obligations for Software, with Examples from Data Abstraction and Adaptive Systems",Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+90b3e6bb765d,Towards Phenomenon-driven Design Science Research,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+93bb03ac03b6,Design principles for data analysis,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+96dd29c8f345,Data Mesh: A Systematic Gray Literature Review,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+b77e7d67555e,USSF: A Unified Framework for Screen Standardization in Software Systems,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+c6c22fc10c10,Ecological interface design: theoretical foundations,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+d893185b7873,Introduction to Initial HCI Engineering Design Principles for Domestic Energy Planning and Control,Design principles,DPRI-C01,0,2,spectral_knn10,numerically_selected_pending_human_veto
+0b35e34543e2,Designing Artificial Identity: The Identity Design Framework and Research Agenda,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+2280b868ea5f,Form and Function: Toward a Better Understanding of Design-Based Games,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+2a64adab5143,Educating Educators about Virtual Reality in Virtual Reality: Effective Learning Principles Operationalized in a VR Solution,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+42c66c187222,Toward an effective approach to collaboration education: A taxonomy for game design,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+4d05e05aa876,Theoretical Constructs for Design Lenses for Developing Cyberbullying Countering Games for Adolescences,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+8eb8539b9712,Designing Dialogic Disclaimers: Principles for Ethical Conversational Design in LLM Interfaces,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+d0a936b480d4,Acquiring educational access for neurodiverse learners through multisensory design principles,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+fee96194a322,Personalising learning: towards a coherent learning design framework,Design principles,DPRI-C02,1,2,spectral_knn10,numerically_selected_pending_human_veto
+0050f73e4373,Integrating different perspective on design rationale: Supporting the emergence of design rationale from design communication,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+296e021afe91,A generic model for reflective design,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+4567075d70b4,Making Argumentation Serve Design,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+4ac74ce3f335,Towards a framework for documentation design: an abstract model of computer-mediated activity,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+4c8bdfbd1309,Integrating different perspectives on design rationale: supporting the emergence of design rationale from design communication,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+71f9925563a6,"Questions, Options, and Criteria: elements of Design Space Analysis",Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+781628bf9a48,Making use: scenarios and scenario-based design,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+866d8935b9e0,"Issues critical to the development of design history, design rationale and design intent systems",Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+c12e86da6f5e,Revisiting the design intent concept in the context of mechanical CAD education,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+c6dce869a98c,Towards normal design for safety-critical systems,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+d30aca57f472,Design Rationale as Theory,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+d5d39efbe945,Method rationale in method engineering,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+edde6dc75b19,The language of design: Theory and computation,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+f053c79dde3d,Integrating theory development with design evaluation,Design rationale,DRAT-C01,0,2,spectral_knn10,numeric_rule_failed_requires_review
+12568f76ff90,Patterns or claims: do they help in communicating design advice?,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+12cb05e5e8ec,"The ""physics"" of notations: a scientific approach to designing visual notations in software engineering",Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+16b7f7939f93,Characterizing Design Rationales Using Computational Linguistics and Human Evaluations,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+1aecb7940a63,A compositional approach to modelling design rationale,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+40034332988c,Redesigning the rationale for design rationale,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+75731fe2e6d1,"Feature, specification and evidence framework for communicating design rationale",Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+7a42dd52852e,What's in design rationale?,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+96f09212f1ba,Quality-driven validation: a link between four research traditions,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+ab97fa9e6ec7,"""Argumentative Design Rationale and the Object-Oriented Development Process: better analysis, better design""",Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+bfff60a9512a,EVALUATING DESIGN RATIONALE,Design rationale,DRAT-C02,1,2,spectral_knn10,numeric_rule_failed_requires_review
+00781ed0e844,Cognitive Point of View in Recursive Design,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+02f3ae017acb,Design Theory and Method of Complex Products: A Review,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+0e02199ea150,The Inspiration of Design Affairology to Hcd in Post Humanism Era,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+0ecb6c9b7eeb,Pluralism in Knowledge Management: a Review,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+141f85abba0a,How to Define Design in Industrial Control and Automation Software,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+15f17a542ff6,Epistemological aspects of participatory design studies conducted in the field of health science,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+1e8f1494fc78,Collaboration Engineering Methodology: Horizontal Extension to Accommodate Project and Program Concerns,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+232abf4e9e91,The Conceptual Design of Mechanical Products,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+2faef10b819d,A design theory for software engineering,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+363ca9685308,Cognitive Architecture and Instructional Design: 20 Years Later,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+4025e28730c1,Conceptual foundations of design problem solving,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+5b52ec143fa6,The ECC Methodology for Architecture Design Theory and Practices Research,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+68bf6cd63875,Design epistemology as innovation in public health research,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+7624ada60ef5,A systematic approach for the development of porous concrete based on axiomatic design theory,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+804431d6f285,Concepts and definitions for product recovery: Analysis and clarification of the terminology used in academia and industry,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+85c3a6761bcc,Designing Process Guidance Systems,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+8bb42e8202f8,A mathematical theory of design: modeling the design process (Part II),Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+91ac41f73380,Knowing the Unknowable: Understanding and Measuring Design Impact Across Disciplines and Scale,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+9f9f7295ec8c,Affordance based design: a relational theory for design,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+a47956c54fb0,Limits of intelligence in design,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+af66a447ca7c,Digital Panopticon: How Remote Work Monitoring Shapes Employee Behavior and Motivation,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+c3005cf4cf75,Design as interactions of problem framing and problem solving,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+c403cb52fbf7,"Exploring co-design: a systematic review of concepts, processes, models, and frameworks used in public health research",Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+c9175ef9ebfe,Management design theories,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ca409db2dd49,A design theory for managing software process improvement,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+ceac90427122,Design-oriented human-computer interaction,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+d250dc6eb9d9,Systems Thinking and Design Thinking: The Search for Principles in the World We Are Making,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+d785c8a9964a,A Framework for Concept and its Testing on Patents,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+dc61c8a1dcd6,Multiscale Design Strategies in a Landscape Architecture Classroom,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+e47202a23273,Toward a design theory of strategic enterprise management business intelligence (SEMBI) capability maturity model,Design theory,DT-C01,0,3,spectral_knn10,numeric_rule_failed_requires_review
+03fd54829f02,Digisprudence: the design of legitimate code,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+056ae4e01610,Beyond the old game design: a new design paradigm in Game Studies through C-K Theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+06e8b19b5894,Game design values,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+0bca44c18d6c,"Tinkering, tailoring, and bricolage: Implications for theories of Design",Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+0c3ae5c60e89,Logic for accumulation of design science research theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+103eb1a8586b,Incommensurability and multi-paradigm grounding in design science research: Implications for creating knowledge,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+12a0faff1d0d,A new approach of innovative design: An introduction to C-K theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+1728dd2afe4b,Design theory in practice – Making design science research more transparent,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+20f56bbbd10c,2. Interstitial Design Processes: How Design Thinking and Social Design Processes Bridge Theory and Practice in TPC Pedagogy,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+2c8a6e74557f,"The tacit knowledge of entrepreneurial design: Interrelating theory, practice and prescription in entrepreneurship research",Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+3f7b5dc9fc40,Concerning the Epistemology of Design: The Role of the Eco-Cognitive Model of Abduction in Pragmatism,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4691ac0735c4,Transition Designing as Ontological Redirection: Key Principles for Transition-Oriented Futuring,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+4db508a9681a,Philosophy of design: A meta-theoretical structure for design theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+50c94f5857d8,Eight Components of a Design Theory of Sonification,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+5b3b013c191d,Towards a unified terminology for sonification and visualization,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+5ffd963397c9,THEORY OF TECHNICAL SYSTEMS - PREREQUISITE TO DESIGN THEORY.,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+6194ef223969,A typology of Urban Design theories and its application to the shared body of knowledge,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+64230bcb1202,Chimera heuristics: Generative rational heuristics for the unknown from design theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+66a74be75bef,An analysis and critique of Research through Design: towards a formalization of a research approach,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+66d4b9b36f31,"SHEAFIFICATION AS A DESIGN TECHNIQUE FOR CREATIVE PRESERVATION – PRINCIPLES, ILLUSTRATIONS, AND FIRST APPLICATIONS",Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+79d31b954d2a,THE LOGICS OF DOUBLE PROOF IN PROOF OF CONCEPT: A DESIGN THEORY-BASED MODEL OF EXPERIMENTATION IN THE UNKNOWN,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+7d5d566e7d9b,What should we expect from research through design?,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+8391308bc194,"Design creativity for transitions: C-K/Topos, an advanced design theory for creative preservation",Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+83d1ebe7d6c0,Design Theory in Information Systems,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+86405f99f015,The design theory nexus,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+8969406d81c9,It’s about Time: Adopting Theoretical Constructs from Visualization for Sonification,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a1a2a51ae22e,Incommensurability in design science: Which comes first-Theory or artefact?,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+a21900f84443,Undesigning technology: considering the negation of design by design,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+b21a9b4cc5ef,C-K design theory: an advanced formulation,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+bacdc4f76eea,Work system principles: towards a justified design theory on the grounds of socio-instrumental pragmatism,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+beaf258777e6,What is the value of design theory?,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+c1b4dc1ba8ba,A mathematical theory of design: representation of design artifacts (Part I),Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+c2c57ac5453e,"Theory construction in design research. Criteria, approaches, and methods.",Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+d19f5f66d2ba,A Survey of Definition and its Role in Strengthening Design Theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+dbc7c9876d1a,The Creativity Passdown Effect: Sharing Design Thinking Processes with Design Theory,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+ec380d04cf61,GENERAL DESIGN THEORY.,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+f56243f52335,"Theory construction in design research Criteria: Approaches, and methods",Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+fd05a25a5e94,Four Criteria for Design Theories,Design theory,DT-C02,1,3,spectral_knn10,numeric_rule_failed_requires_review
+288676f720a1,A design theory for digital platforms supporting online communities: a multiple case study,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+306d52b89600,A theory of tailorable technology design,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+41443180c5b4,"Service Ecosystem Design: Propositions, Process Model, and Future Research Agenda",Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+43fee329f83e,Process design theory for digital information services,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+5a973fb8ae6f,ICT-Enabled Self-Management of Chronic Diseases: Literature Review and Analysis Using Value-Sensitive Design,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+67d72b35ce6b,A nascent design theory for explainable intelligent systems,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+8107b8d7a099,Analyzing Initial Design Theory Components for Developing Information Security Laboratories,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+84cf9697f69d,Building an information system design theory for vigilant EIS,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+9049c4d2bbec,Towards a design theory of blended learning curriculum,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+92fd41483399,Design exemplars for synchronous e-learning: A design theory approach,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+9381fc58f61b,Design theory for dynamic complexity in information infrastructures: the case of building internet,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+97b253588409,An information systems design theory for web-based education,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+9e71c6e0b826,Towards design theory for community collaboration support system during crises: from conceptualisation to validation,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+be45dd819505,Population targeted requirements acquisition,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+bf31dda38b9e,Instructional transaction theory: instructional design based on knowledge objects,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+c0372ed4d123,Web-based information systems: Developing a design theory,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
+d2fba2826d90,Design Principles for Platform-Enabled Knowledge Commons with an Expository Instantiation,Design theory,DT-C03,2,3,spectral_knn10,numeric_rule_failed_requires_review
