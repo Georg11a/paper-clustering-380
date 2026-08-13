@@ -2666,7 +2666,15 @@ def write_dashboard(df: pd.DataFrame, out: Path, title: str) -> None:
   <script>
     const data = JSON.parse(document.getElementById('payload').textContent);
     const papers = data.papers;
-    const palette = ['#f05a71','#4c78a8','#f58518','#54a24b','#b279a2','#72b7b2','#eeca3b','#ff9da6','#9d755d','#59a14f','#edc948','#76b7b2'];
+    // Stable 28-color categorical palette for Page 3. Keeping one color per
+    // cluster avoids visually merging distinct HDBSCAN groups; noise is
+    // overridden to neutral gray by the Page 3 adapter.
+    const palette = [
+      '#d64b55','#3169a8','#e57c18','#3f8f44','#8755a5','#258f9a','#c89b00',
+      '#c94f91','#8a6047','#58758f','#6c8c24','#9f4b38','#4865c7','#008568',
+      '#ff8290','#71a4dc','#f5aa55','#78b86e','#ad82c5','#63bdc3','#e8c94d',
+      '#e984bb','#b58b70','#8ca9bd','#a6bd58','#d47c67','#8597e0','#55b99d'
+    ];
     const colorFor = c => palette[Math.abs(Number(c)) % palette.length];
     const clusterName = c => Number(c) === -1 ? 'Unclustered papers' : `Cluster ${{c}}`;
     const clusterLegendLabel = c => {{
