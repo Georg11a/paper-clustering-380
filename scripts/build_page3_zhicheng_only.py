@@ -12,6 +12,12 @@ import umap
 from sklearn.preprocessing import normalize
 
 import build_global_comparison_explorers as global_views
+from refine_page3_cluster_summaries import (
+    PAYLOAD_RE,
+    refine_payload,
+    update_csv,
+    write_markdown,
+)
 
 
 def main() -> None:
@@ -73,6 +79,21 @@ def main() -> None:
         display_coordinates,
         discussion,
     )
+    explorer_dir = out / "zhicheng_umap_hdbscan"
+    explorer_path = explorer_dir / "paper_explorer.html"
+    page = explorer_path.read_text(encoding="utf-8")
+    payload_match = PAYLOAD_RE.search(page)
+    if not payload_match:
+        raise ValueError(f"No explorer payload found in {explorer_path}")
+    payload = refine_payload(json.loads(payload_match.group(2)))
+    explorer_path.write_text(
+        page[: payload_match.start(2)]
+        + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+        + page[payload_match.end(2) :],
+        encoding="utf-8",
+    )
+    update_csv(explorer_dir / "clustered_papers.csv", payload)
+    write_markdown(explorer_dir / "cluster_summary.md", payload)
     manifest = {
         "scope": "Page 3 only; Page 1 and Page 2 remain frozen at 459 papers",
         "paper_count": len(papers),
