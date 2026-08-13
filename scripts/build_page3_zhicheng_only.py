@@ -26,7 +26,7 @@ DRIVE_FOLDER_URL = (
 )
 
 
-def simplify_page3_details(page: str) -> str:
+def simplify_page3_details(page: str, drive_file_ids: dict[str, str]) -> str:
     """Keep paper details focused on clustering results and usable links."""
     page = re.sub(
         r"\n    function renderSourceEvidence\(clusterId\) \{.*?"
@@ -55,9 +55,15 @@ def simplify_page3_details(page: str) -> str:
         "target=\"_blank\">Open paper URL</a>` : '';"
     )
     new_links = old_links + (
-        "\n      const drive = !p.doi && !p.url ? `<a class=\"paper-link\" "
-        f"href=\"{DRIVE_FOLDER_URL}\" target=\"_blank\">Find "
-        "${escapeHtml(p.paper_id)}.pdf in shared Google Drive</a>` : '';"
+        "\n      const driveFileIds = "
+        + json.dumps(drive_file_ids, separators=(",", ":"))
+        + ";\n"
+        "      const driveFileId = driveFileIds[p.paper_id];\n"
+        "      const drive = !p.doi && !p.url ? `<a class=\"paper-link\" "
+        "href=\"${driveFileId ? `https://drive.google.com/file/d/${escapeAttr(driveFileId)}/view` : "
+        f"`{DRIVE_FOLDER_URL}`}}\" target=\"_blank\">${{driveFileId ? "
+        "`Open ${escapeHtml(p.paper_id)}.pdf in Google Drive` : "
+        "`Open shared Google Drive folder`}}</a>` : '';"
     )
     if old_links not in page:
         raise ValueError("Page 3 link renderer was not found")
@@ -74,6 +80,10 @@ def main() -> None:
     parser.add_argument("--out", required=True)
     parser.add_argument("--expected-paper-count", type=int, required=True)
     parser.add_argument("--discussion-metadata", default="")
+    parser.add_argument(
+        "--drive-file-ids",
+        default=str(Path(__file__).parents[1] / "data" / "page3_drive_file_ids.json"),
+    )
     args = parser.parse_args()
 
     global_views.METADATA_PATH = Path(args.metadata)
@@ -132,6 +142,7 @@ def main() -> None:
     if not payload_match:
         raise ValueError(f"No explorer payload found in {explorer_path}")
     payload = refine_payload(json.loads(payload_match.group(2)))
+    drive_file_ids = json.loads(Path(args.drive_file_ids).read_text(encoding="utf-8"))
     explorer_path.write_text(
         simplify_page3_details(
             (
@@ -154,7 +165,8 @@ def main() -> None:
             .replace(
                 '<span class="pill">Form: ${escapeHtml(p.design_knowledge_form || \'n/a\')}</span>',
                 '<span class="pill">Method: UMAP 10D + HDBSCAN</span>',
-            )
+            ),
+            drive_file_ids,
         ),
         encoding="utf-8",
     )
