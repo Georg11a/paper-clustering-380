@@ -17,7 +17,7 @@
       top: 0;
       z-index: 10;
       display: grid;
-      grid-template-columns: minmax(235px, 1fr) auto minmax(250px, 360px) auto;
+      grid-template-columns: max-content auto minmax(280px, 360px) 1fr auto;
       gap: 14px;
       align-items: center;
       padding: 10px 16px;
@@ -35,6 +35,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+    .toolbar-spacer { min-width: 0; }
     .top-links { display: flex; align-items: center; gap: 10px; }
     .method-badge {
       min-height: 38px;
@@ -159,6 +160,7 @@
     .drawer-note { color: #65758b; font-size: 13px; line-height: 1.45; }
     @media (max-width: 1180px) {
       header { grid-template-columns: minmax(235px, 1fr) auto; }
+      .toolbar-spacer { display: none; }
       .controls { grid-template-columns: 1fr; }
       iframe { height: calc(100vh - 112px); }
     }
@@ -182,6 +184,7 @@
         <option value="all">All clusters</option>
       </select>
     </div>
+    <div class="toolbar-spacer" aria-hidden="true"></div>
     <div class="top-links">
       <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
       <button id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
