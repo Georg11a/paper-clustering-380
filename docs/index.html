@@ -293,7 +293,7 @@
       { id: "neutral_umap10_kmeans", view: "global_umap", space: "umap10", method: "kmeans", label: "UMAP10 before clustering · KMEANS", papers: "459", params: "3 clusters · 0 noise · stability .865", explorer: "explorer/global_comparison_neutral/umap10/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/kmeans/cluster_summary.md" },
       { id: "neutral_umap10_dbscan", view: "global_umap", space: "umap10", method: "dbscan", label: "UMAP10 before clustering · DBSCAN", papers: "459", params: "14 clusters · 267 noise · stability .665", explorer: "explorer/global_comparison_neutral/umap10/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/dbscan/cluster_summary.md" },
       { id: "neutral_umap10_hdbscan", view: "global_umap", space: "umap10", method: "hdbscan", label: "UMAP10 before clustering · HDBSCAN", papers: "459", params: "15 clusters · 127 noise · stability .263", explorer: "explorer/global_comparison_neutral/umap10/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/hdbscan/cluster_summary.md" },
-      { id: "neutral_zhicheng_umap_hdbscan", view: "zhicheng_umap_hdbscan", method: "hdbscan", label: "Zhicheng workflow · UMAP 10D + HDBSCAN", papers: "459", params: "20 clusters · 68 noise · stability .600", explorer: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/cluster_summary.md" }
+      { id: "neutral_zhicheng_umap_hdbscan", view: "zhicheng_umap_hdbscan", method: "hdbscan", label: "Zhicheng workflow · UMAP 10D + HDBSCAN", papers: "508", params: "24 clusters · 88 noise · stability .572", explorer: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/cluster_summary.md" }
     ];
     const buildId = "459-full-rebuild-20260811";
     const withCacheBuster = path => `${path}${path.includes('?') ? '&' : '?'}v=${buildId}-${Date.now()}`;
@@ -384,7 +384,7 @@
       if (run) {
         currentLabel.textContent = displayLabel(run);
         note.textContent = run.view
-          ? 'All 459 papers are held constant. Density noise remains visible as weak-affinity evidence.'
+          ? `${run.papers} papers are included in this view. Density noise remains visible as weak-affinity evidence.`
           : 'Ready to load this generated keyword/method/view combination.';
       } else if (smallGroup) {
         currentLabel.textContent = `${keywordSelect.value} · ${smallGroup.papers} papers · paper map`;

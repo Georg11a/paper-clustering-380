@@ -482,7 +482,7 @@ def enrich_for_dashboard(
         "Candidate assignment; preserve density noise for review."
     )
     frame["contribution_type_definition"] = (
-        "All 282 papers clustered together using frozen BGE-M3 embeddings."
+        f"All {len(frame)} papers clustered together using frozen BGE-M3 embeddings."
     )
     frame["design_knowledge_form"] = configuration_label
     frame["theory_move_key"] = "not_applicable"

@@ -1,0 +1,31 @@
+{
+  "scope": "Page 3 only; Page 1 and Page 2 remain frozen at 459 papers",
+  "paper_count": 508,
+  "input": "Drive-synced R_cent neutral chunks, assembled as 459 frozen + 49 new",
+  "embeddings": "BGE-M3 1024D paper vectors, assembled as 459 frozen + 49 new",
+  "metadata": "508-paper Page 3 metadata join; display-only fields added after clustering",
+  "configuration": {
+    "representation": "R_cent; 13 chunks per paper; BGE-M3 mean pooling",
+    "umap_n_components": 10,
+    "umap_n_neighbors": 15,
+    "umap_min_dist": 0.0,
+    "umap_metric": "cosine",
+    "hdbscan_min_cluster_size": 8,
+    "hdbscan_min_samples": 1,
+    "seed": 20260730,
+    "noise_policy": "retain label -1; never reassign"
+  },
+  "view": {
+    "title": "Zhicheng workflow \u00b7 UMAP 10D + HDBSCAN",
+    "config": "hdbscan_mcs8_ms1",
+    "path": "zhicheng_umap_hdbscan",
+    "cluster_count": 24,
+    "noise_count": 88,
+    "noise_fraction": 0.1732283464566929,
+    "coverage": 0.8267716535433071,
+    "smallest_cluster": 8,
+    "largest_cluster": 33,
+    "silhouette_original_cosine": 0.07079659402370453,
+    "stability_ari": 0.5715277453268756
+  }
+}
