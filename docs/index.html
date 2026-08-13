@@ -17,7 +17,7 @@
       top: 0;
       z-index: 10;
       display: grid;
-      grid-template-columns: minmax(400px, 0.95fr) minmax(540px, 1.45fr);
+      grid-template-columns: minmax(235px, 1fr) auto minmax(250px, 360px) auto;
       gap: 14px;
       align-items: center;
       padding: 10px 16px;
@@ -25,13 +25,6 @@
       border-bottom: 1px solid #dde6f0;
       box-shadow: 0 10px 28px rgba(31, 42, 68, 0.08);
       backdrop-filter: blur(12px);
-    }
-    .title-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      min-width: 0;
     }
     h1 {
       margin: 0;
@@ -43,12 +36,32 @@
       white-space: nowrap;
     }
     .top-links { display: flex; align-items: center; gap: 10px; }
+    .method-badge {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid #d8e3f0;
+      border-radius: 9px;
+      background: #f6f9fd;
+      color: #304562;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .method-badge span {
+      color: #73839a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
     .controls {
       display: grid;
-      grid-template-columns: minmax(250px, 360px);
+      grid-template-columns: 1fr;
       gap: 10px;
       align-items: center;
-      justify-content: end;
       min-width: 0;
     }
     select, button {
@@ -145,11 +158,12 @@
     }
     .drawer-note { color: #65758b; font-size: 13px; line-height: 1.45; }
     @media (max-width: 1180px) {
-      header { grid-template-columns: 1fr; }
+      header { grid-template-columns: minmax(235px, 1fr) auto; }
       .controls { grid-template-columns: 1fr; }
       iframe { height: calc(100vh - 112px); }
     }
     @media (max-width: 720px) {
+      header { grid-template-columns: 1fr; }
       h1 { white-space: normal; }
       .controls { grid-template-columns: 1fr; }
       iframe { height: calc(100vh - 240px); }
@@ -158,17 +172,19 @@
 </head>
 <body>
   <header>
-    <div class="title-row">
-      <h1>Paper Cluster Explorer</h1>
-      <div class="top-links">
-        <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
-        <button id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
-      </div>
+    <h1>Paper Cluster Explorer</h1>
+    <div class="method-badge" aria-label="Clustering method">
+      <span>Method</span>
+      UMAP + HDBSCAN
     </div>
     <div class="controls">
       <select id="outerClusterFilter" aria-label="Cluster filter" disabled>
         <option value="all">All clusters</option>
       </select>
+    </div>
+    <div class="top-links">
+      <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
+      <button id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
     </div>
   </header>
 
