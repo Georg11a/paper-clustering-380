@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Final Advancing-Paper Explorer: Per-Keyword Views</title>
+  <title>Final Advancing-Paper Explorer · Page 3</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -17,7 +17,7 @@
       top: 0;
       z-index: 10;
       display: grid;
-      grid-template-columns: minmax(300px, 0.82fr) minmax(780px, 2.18fr);
+      grid-template-columns: minmax(300px, 0.82fr) minmax(650px, 2.18fr);
       gap: 14px;
       align-items: center;
       padding: 10px 16px;
@@ -35,29 +35,20 @@
     }
     h1 {
       margin: 0;
-      font-size: 19px;
-      letter-spacing: 0;
-      line-height: 1.2;
-      white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 19px;
       font-weight: 760;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .top-links { display: flex; align-items: center; gap: 10px; }
     .controls {
       display: grid;
-      grid-template-columns: minmax(170px, 0.85fr) minmax(135px, 0.65fr) minmax(150px, 0.75fr) auto minmax(230px, 0.95fr) minmax(230px, 0.9fr);
+      grid-template-columns: minmax(190px, 0.8fr) minmax(120px, 0.45fr) minmax(250px, 1fr) minmax(210px, 0.8fr);
       gap: 10px;
       align-items: center;
       min-width: 0;
-    }
-    .field { display: grid; gap: 5px; }
-    .field label { display: none; }
-    label {
-      color: #65758b;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0;
     }
     select, button {
       height: 38px;
@@ -68,74 +59,31 @@
     }
     select {
       width: 100%;
-      background: #ffffff;
       padding: 0 34px 0 10px;
+      background: #ffffff;
     }
     button {
-      background: #256fbd;
-      border-color: #256fbd;
-      color: white;
-      font-weight: 700;
       padding: 0 16px;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(37, 111, 189, 0.2);
-    }
-    button.secondary {
+      border-color: #ccd9e8;
       background: #ffffff;
       color: #256fbd;
-      border-color: #ccd9e8;
-      box-shadow: none;
+      cursor: pointer;
+      font-weight: 700;
     }
-    button:disabled { cursor: not-allowed; opacity: 0.45; }
     .current {
-      align-self: center;
       min-height: 38px;
       display: flex;
       align-items: center;
-      color: #3d4f69;
-      font-size: 12.5px;
-      line-height: 1.35;
       padding: 6px 10px;
       border: 1px solid #e3ebf5;
       border-radius: 9px;
       background: #f8fafd;
-    }
-    .cluster-tools {
-      display: grid;
-      grid-template-columns: minmax(140px, 1fr) auto;
-      gap: 10px;
-      align-items: center;
-      min-width: 0;
-    }
-    .compact-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: #6b7a90;
-      font-size: 13px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .compact-toggle input {
-      width: 16px;
-      height: 16px;
-      margin: 0;
-    }
-    .links {
-      display: none;
-      gap: 12px;
-      font-size: 13px;
-      align-self: center;
-      white-space: nowrap;
+      color: #3d4f69;
+      font-size: 12.5px;
+      line-height: 1.35;
     }
     a { color: #256fbd; text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
-    .note {
-      display: none;
-      color: #65758b;
-      font-size: 13px;
-      margin-top: 8px;
-    }
     iframe {
       display: block;
       width: 100%;
@@ -143,38 +91,79 @@
       border: 0;
       background: white;
     }
-    .drawer-overlay { position: fixed; inset: 0; z-index: 20; display: none; background: rgba(15, 23, 42, 0.38); }
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      background: rgba(15, 23, 42, 0.38);
+    }
     .drawer-overlay.open { display: block; }
     .drawer {
-      position: fixed; top: 0; right: 0; z-index: 30;
-      width: min(420px, 100%); height: 100vh;
-      transform: translateX(100%); transition: transform 180ms ease;
-      border-left: 1px solid #dde6f0; background: #ffffff;
-      box-shadow: -20px 0 44px rgba(15, 23, 42, 0.16); overflow-y: auto;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 30;
+      width: min(420px, 100%);
+      height: 100vh;
+      overflow-y: auto;
+      border-left: 1px solid #dde6f0;
+      background: #ffffff;
+      box-shadow: -20px 0 44px rgba(15, 23, 42, 0.16);
+      transform: translateX(100%);
+      transition: transform 180ms ease;
     }
     .drawer.open { transform: translateX(0); }
-    .drawer-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 22px 22px 16px; border-bottom: 1px solid #dde6f0; }
+    .drawer-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid #dde6f0;
+    }
     .drawer-header h2 { margin: 0; font-size: 22px; }
     .drawer-header p { margin: 6px 0 0; color: #65758b; font-size: 14px; }
-    .close-button { width: 34px; height: 34px; border: 1px solid #c9d6e6; border-radius: 6px; background: #fbfcfe; color: #253858; cursor: pointer; font-size: 20px; line-height: 1; padding: 0; }
+    .close-button {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid #c9d6e6;
+      border-radius: 6px;
+      background: #fbfcfe;
+      color: #253858;
+      font-size: 20px;
+      line-height: 1;
+    }
     .drawer-body { padding: 18px 22px 24px; }
     .drawer-section { padding: 14px 0; border-bottom: 1px solid #dde6f0; }
     .drawer-section:last-child { border-bottom: 0; }
     .drawer-section h3 { margin: 0 0 10px; font-size: 16px; }
     .doc-list { display: grid; gap: 9px; }
-    .doc-link { display: block; padding: 11px 12px; border: 1px solid #dde6f0; border-radius: 8px; background: #f8fafd; color: #256fbd; }
-    .doc-link span { display: block; margin-top: 2px; color: #65758b; font-size: 13px; font-weight: 400; }
+    .doc-link {
+      display: block;
+      padding: 11px 12px;
+      border: 1px solid #dde6f0;
+      border-radius: 8px;
+      background: #f8fafd;
+    }
+    .doc-link span {
+      display: block;
+      margin-top: 2px;
+      color: #65758b;
+      font-size: 13px;
+      font-weight: 400;
+    }
     .drawer-note { color: #65758b; font-size: 13px; line-height: 1.45; }
     @media (max-width: 1180px) {
       header { grid-template-columns: 1fr; }
-      .controls { grid-template-columns: repeat(3, minmax(150px, 1fr)) auto; }
-      .current, .cluster-tools { grid-column: 1 / -1; min-height: 24px; }
+      .controls { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
       iframe { height: calc(100vh - 112px); }
     }
     @media (max-width: 720px) {
       h1 { white-space: normal; }
       .controls { grid-template-columns: 1fr; }
-      iframe { height: calc(100vh - 260px); }
+      iframe { height: calc(100vh - 240px); }
     }
   </style>
 </head>
@@ -184,64 +173,35 @@
       <h1>Final Advancing-Paper Explorer</h1>
       <div class="top-links">
         <a href="https://github.com/Georg11a/paper-clustering-380">GitHub</a>
-        <button class="secondary" id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
+        <button id="openDocs" type="button" aria-controls="docsDrawer" aria-expanded="false">Settings / Docs</button>
       </div>
     </div>
     <div class="controls">
-      <div class="field">
-        <label for="analysisSelect">Analysis View</label>
-        <select id="analysisSelect">
-          <option value="keyword_topics" selected>Keyword topics</option>
-          <option value="global_raw">1 · All papers together</option>
-          <option value="global_umap">2 · UMAP before clustering</option>
-          <option value="zhicheng_umap_hdbscan">3 · UMAP + HDBSCAN</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="methodSelect">Algorithm</label>
-        <select id="methodSelect" disabled>
-          <option value="statistical_bottom_up" selected>Statistical topics</option>
-          <option value="kmeans">K-Means</option>
-          <option value="dbscan">DBSCAN</option>
-          <option value="hdbscan">HDBSCAN</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="keywordSelect">Keyword Group</label>
-        <select id="keywordSelect"><option value="All keyword groups" selected>All keyword groups (459)</option>
-<option value="Design knowledge">Design knowledge (121)</option>
-<option value="Design Patterns">Design Patterns (102)</option>
-<option value="Design theory">Design theory (85)</option>
-<option value="Design methods">Design methods (38)</option>
-<option value="Design Guidelines">Design Guidelines (29)</option>
-<option value="Design rationale">Design rationale (24)</option>
-<option value="Design principles">Design principles (21)</option>
-<option value="Design Heuristics">Design Heuristics (14)</option>
-<option value="Design Rules">Design Rules (12)</option>
-<option value="Design frameworks">Design frameworks (7)</option>
-<option value="Design expertise">Design expertise (4)</option>
-<option value="Design Procedures">Design Procedures (2)</option></select>
-      </div>
-      <button id="applyBtn" type="button">Apply</button>
-      <div class="current" id="currentLabel">459 papers · 26 interpretations</div>
-      <div class="cluster-tools">
-        <select id="outerClusterFilter" aria-label="Cluster filter"><option value="all">All clusters</option></select>
-      </div>
-      <div class="links">
-        <a id="summaryLink" href="path1.html" target="_blank">Summary</a>
-        <a id="openLink" href="path1.html" target="_blank">Open View in New Tab</a>
-      </div>
+      <select aria-label="Analysis View" disabled>
+        <option selected>Page 3 · UMAP + HDBSCAN</option>
+      </select>
+      <select aria-label="Algorithm" disabled>
+        <option selected>HDBSCAN</option>
+      </select>
+      <div class="current">508 paper records · 24 clusters · 88 noise · stability .572</div>
+      <select id="outerClusterFilter" aria-label="Cluster filter" disabled>
+        <option value="all">All clusters</option>
+      </select>
     </div>
-    <div class="note" id="note">Batch 1–3 are reflected here: 459 retained English publications, keyword-conditioned Title + Abstract + K12 inputs, BGE-M3 embeddings, and within-keyword Spectral assignments. Assignments are frozen for analysis; non-Design-Theory groups still require confirmation by at least two reviewers.</div>
   </header>
-  <iframe id="explorerFrame" src="explorer/statistical_bottom_up/all/paper_explorer.html?v=459-full-rebuild-20260811"></iframe>
+
+  <iframe
+    id="explorerFrame"
+    title="Page 3 paper cluster explorer"
+    src="explorer/global_comparison_neutral/zhicheng_umap_hdbscan/paper_explorer.html?v=page3-only-20260813"
+  ></iframe>
 
   <div class="drawer-overlay" id="drawerOverlay" hidden></div>
   <aside class="drawer" id="docsDrawer" aria-hidden="true" aria-label="Settings and documentation">
     <div class="drawer-header">
       <div>
         <h2>Settings / Docs</h2>
-        <p>Documentation is kept here so the main page stays focused on the explorer.</p>
+        <p>The public interface is limited to Page 3.</p>
       </div>
       <button class="close-button" id="closeDocs" type="button" aria-label="Close documentation panel">×</button>
     </div>
@@ -252,205 +212,41 @@
           <a class="doc-link" href="https://github.com/Georg11a/paper-clustering-380/blob/main/README.md">README<span>Setup, commands, outputs, and repository structure.</span></a>
           <a class="doc-link" href="pipeline_overview.md">Pipeline overview<span>Input, processing steps, outputs, and human checkpoints.</span></a>
           <a class="doc-link" href="meeting_action_items.md">Meeting action items<span>How this version responds to team feedback.</span></a>
-          <a class="doc-link" href="path1.html">Statistical bottom-up results<span>Cleaned 459-paper class-based TF-IDF interpretation with analysis-frozen assignments and explicit review status.</span></a>
+          <a class="doc-link" href="explorer/global_comparison_neutral/zhicheng_umap_hdbscan/cluster_summary.md">Page 3 cluster summary<span>Global UMAP 10D and HDBSCAN results with density noise preserved for review.</span></a>
         </div>
       </section>
       <section class="drawer-section">
-        <h3>Batch 1–3 Status</h3>
-        <p class="drawer-note"><strong>Batch 1:</strong> 459 retained English publications and canonical texts. <strong>Batch 2:</strong> BGE-M3 embeddings from Title + Abstract + up to 12 keyword-conditioned passages. <strong>Batch 3:</strong> within-keyword Spectral assignments frozen for analysis. Formal validation of non-Design-Theory groups remains a two-reviewer task.</p>
+        <h3>Page 3 Status</h3>
+        <p class="drawer-note">Page 1, Page 2, and keyword-topic views remain research artifacts but are not exposed by this frontend.</p>
       </section>
       <section class="drawer-section">
-        <h3>Interpretation Method</h3>
-        <p class="drawer-note">Statistical bottom-up interpretation aggregates the already assigned papers within each cluster and applies adapted class-based TF-IDF to extract contrastive terms. It explains fixed assignments; it does not recluster papers or impose a predefined codebook.</p>
+        <h3>Clustering Method</h3>
+        <p class="drawer-note">HDBSCAN operates on a 10-dimensional UMAP representation. A separate two-dimensional UMAP is used only to draw the map, so papers in one cluster can appear separated in the display.</p>
       </section>
     </div>
   </aside>
 
   <script>
-    const runs = [{"id": "confirmed_pdf_set_overall_kmeans", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "kmeans", "text_view": "overall", "label": "Confirmed PDF set · KMEANS (tfidf-svd, 284 papers, 8 clusters)", "embedding": "tfidf-svd", "papers": "284", "params": "8 clusters", "explorer": "explorer/final/confirmed_pdf_set/overall/kmeans/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/overall/kmeans/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/overall/kmeans/clustered_papers.csv"}, {"id": "confirmed_pdf_set_overall_hdbscan", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "hdbscan", "text_view": "overall", "label": "Confirmed PDF set · HDBSCAN (tfidf-svd, 284 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "284", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/confirmed_pdf_set/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/overall/hdbscan/clustered_papers.csv"}, {"id": "confirmed_pdf_set_context_kmeans", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "kmeans", "text_view": "context", "label": "Confirmed PDF set · KMEANS (context, tfidf-svd, 284 papers, 8 clusters)", "embedding": "tfidf-svd", "papers": "284", "params": "8 clusters", "explorer": "explorer/final/confirmed_pdf_set/context/kmeans/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/context/kmeans/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/context/kmeans/clustered_papers.csv"}, {"id": "confirmed_pdf_set_context_hdbscan", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "hdbscan", "text_view": "context", "label": "Confirmed PDF set · HDBSCAN (context, tfidf-svd, 284 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "284", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/confirmed_pdf_set/context/hdbscan/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/context/hdbscan/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/context/hdbscan/clustered_papers.csv"}, {"id": "confirmed_pdf_set_knowledge-type_kmeans", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "kmeans", "text_view": "knowledge-type", "label": "Confirmed PDF set · KMEANS (knowledge-type, tfidf-svd, 284 papers, 8 clusters)", "embedding": "tfidf-svd", "papers": "284", "params": "8 clusters", "explorer": "explorer/final/confirmed_pdf_set/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "confirmed_pdf_set_knowledge-type_hdbscan", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "hdbscan", "text_view": "knowledge-type", "label": "Confirmed PDF set · HDBSCAN (knowledge-type, tfidf-svd, 284 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "284", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/confirmed_pdf_set/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "confirmed_pdf_set_method_kmeans", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "kmeans", "text_view": "method", "label": "Confirmed PDF set · KMEANS (method, tfidf-svd, 284 papers, 8 clusters)", "embedding": "tfidf-svd", "papers": "284", "params": "8 clusters", "explorer": "explorer/final/confirmed_pdf_set/method/kmeans/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/method/kmeans/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/method/kmeans/clustered_papers.csv"}, {"id": "confirmed_pdf_set_method_hdbscan", "keyword": "Confirmed PDF set", "keyword_slug": "confirmed_pdf_set", "method": "hdbscan", "text_view": "method", "label": "Confirmed PDF set · HDBSCAN (method, tfidf-svd, 284 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "284", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/confirmed_pdf_set/method/hdbscan/paper_explorer.html", "summary": "explorer/final/confirmed_pdf_set/method/hdbscan/cluster_summary.md", "csv": "explorer/final/confirmed_pdf_set/method/hdbscan/clustered_papers.csv"}, {"id": "design_knowledge_overall_kmeans", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "kmeans", "text_view": "overall", "label": "Design knowledge · KMEANS (tfidf-svd, 87 papers, 6 clusters)", "embedding": "tfidf-svd", "papers": "87", "params": "6 clusters", "explorer": "explorer/final/design_knowledge/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_knowledge/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_knowledge/overall/kmeans/clustered_papers.csv"}, {"id": "design_knowledge_overall_hdbscan", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "hdbscan", "text_view": "overall", "label": "Design knowledge · HDBSCAN (tfidf-svd, 87 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "87", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_knowledge/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_knowledge/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_knowledge/overall/hdbscan/clustered_papers.csv"}, {"id": "design_knowledge_context_kmeans", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "kmeans", "text_view": "context", "label": "Design knowledge · KMEANS (context, tfidf-svd, 87 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "87", "params": "5 clusters", "explorer": "explorer/final/design_knowledge/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_knowledge/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_knowledge/context/kmeans/clustered_papers.csv"}, {"id": "design_knowledge_context_hdbscan", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "hdbscan", "text_view": "context", "label": "Design knowledge · HDBSCAN (context, tfidf-svd, 87 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "87", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_knowledge/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_knowledge/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_knowledge/context/hdbscan/clustered_papers.csv"}, {"id": "design_knowledge_knowledge-type_kmeans", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "kmeans", "text_view": "knowledge-type", "label": "Design knowledge · KMEANS (knowledge-type, tfidf-svd, 87 papers, 6 clusters)", "embedding": "tfidf-svd", "papers": "87", "params": "6 clusters", "explorer": "explorer/final/design_knowledge/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_knowledge/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_knowledge/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_knowledge_knowledge-type_hdbscan", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design knowledge · HDBSCAN (knowledge-type, tfidf-svd, 87 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "87", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_knowledge/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_knowledge/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_knowledge/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_knowledge_method_kmeans", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "kmeans", "text_view": "method", "label": "Design knowledge · KMEANS (method, tfidf-svd, 87 papers, 6 clusters)", "embedding": "tfidf-svd", "papers": "87", "params": "6 clusters", "explorer": "explorer/final/design_knowledge/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_knowledge/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_knowledge/method/kmeans/clustered_papers.csv"}, {"id": "design_knowledge_method_hdbscan", "keyword": "Design knowledge", "keyword_slug": "design_knowledge", "method": "hdbscan", "text_view": "method", "label": "Design knowledge · HDBSCAN (method, tfidf-svd, 87 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "87", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_knowledge/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_knowledge/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_knowledge/method/hdbscan/clustered_papers.csv"}, {"id": "design_theory_overall_kmeans", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "kmeans", "text_view": "overall", "label": "Design theory · KMEANS (tfidf-svd, 75 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "75", "params": "5 clusters", "explorer": "explorer/final/design_theory/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_theory/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_theory/overall/kmeans/clustered_papers.csv"}, {"id": "design_theory_overall_hdbscan", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "hdbscan", "text_view": "overall", "label": "Design theory · HDBSCAN (tfidf-svd, 75 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "75", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_theory/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_theory/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_theory/overall/hdbscan/clustered_papers.csv"}, {"id": "design_theory_context_kmeans", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "kmeans", "text_view": "context", "label": "Design theory · KMEANS (context, tfidf-svd, 75 papers, 4 clusters)", "embedding": "tfidf-svd", "papers": "75", "params": "4 clusters", "explorer": "explorer/final/design_theory/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_theory/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_theory/context/kmeans/clustered_papers.csv"}, {"id": "design_theory_context_hdbscan", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "hdbscan", "text_view": "context", "label": "Design theory · HDBSCAN (context, tfidf-svd, 75 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "75", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_theory/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_theory/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_theory/context/hdbscan/clustered_papers.csv"}, {"id": "design_theory_knowledge-type_kmeans", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "kmeans", "text_view": "knowledge-type", "label": "Design theory · KMEANS (knowledge-type, tfidf-svd, 75 papers, 6 clusters)", "embedding": "tfidf-svd", "papers": "75", "params": "6 clusters", "explorer": "explorer/final/design_theory/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_theory/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_theory/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_theory_knowledge-type_hdbscan", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design theory · HDBSCAN (knowledge-type, tfidf-svd, 75 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "75", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_theory/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_theory/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_theory/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_theory_method_kmeans", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "kmeans", "text_view": "method", "label": "Design theory · KMEANS (method, tfidf-svd, 75 papers, 6 clusters)", "embedding": "tfidf-svd", "papers": "75", "params": "6 clusters", "explorer": "explorer/final/design_theory/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_theory/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_theory/method/kmeans/clustered_papers.csv"}, {"id": "design_theory_method_hdbscan", "keyword": "Design theory", "keyword_slug": "design_theory", "method": "hdbscan", "text_view": "method", "label": "Design theory · HDBSCAN (method, tfidf-svd, 75 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "75", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_theory/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_theory/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_theory/method/hdbscan/clustered_papers.csv"}, {"id": "design_patterns_overall_kmeans", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "kmeans", "text_view": "overall", "label": "Design patterns · KMEANS (tfidf-svd, 67 papers, 6 clusters)", "embedding": "tfidf-svd", "papers": "67", "params": "6 clusters", "explorer": "explorer/final/design_patterns/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_patterns/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_patterns/overall/kmeans/clustered_papers.csv"}, {"id": "design_patterns_overall_hdbscan", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "hdbscan", "text_view": "overall", "label": "Design patterns · HDBSCAN (tfidf-svd, 67 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "67", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_patterns/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_patterns/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_patterns/overall/hdbscan/clustered_papers.csv"}, {"id": "design_patterns_context_kmeans", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "kmeans", "text_view": "context", "label": "Design patterns · KMEANS (context, tfidf-svd, 67 papers, 2 clusters)", "embedding": "tfidf-svd", "papers": "67", "params": "2 clusters", "explorer": "explorer/final/design_patterns/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_patterns/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_patterns/context/kmeans/clustered_papers.csv"}, {"id": "design_patterns_context_hdbscan", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "hdbscan", "text_view": "context", "label": "Design patterns · HDBSCAN (context, tfidf-svd, 67 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "67", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_patterns/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_patterns/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_patterns/context/hdbscan/clustered_papers.csv"}, {"id": "design_patterns_knowledge-type_kmeans", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "kmeans", "text_view": "knowledge-type", "label": "Design patterns · KMEANS (knowledge-type, tfidf-svd, 67 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "67", "params": "5 clusters", "explorer": "explorer/final/design_patterns/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_patterns/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_patterns/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_patterns_knowledge-type_hdbscan", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design patterns · HDBSCAN (knowledge-type, tfidf-svd, 67 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "67", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_patterns/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_patterns/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_patterns/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_patterns_method_kmeans", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "kmeans", "text_view": "method", "label": "Design patterns · KMEANS (method, tfidf-svd, 67 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "67", "params": "5 clusters", "explorer": "explorer/final/design_patterns/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_patterns/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_patterns/method/kmeans/clustered_papers.csv"}, {"id": "design_patterns_method_hdbscan", "keyword": "Design patterns", "keyword_slug": "design_patterns", "method": "hdbscan", "text_view": "method", "label": "Design patterns · HDBSCAN (method, tfidf-svd, 67 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "67", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_patterns/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_patterns/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_patterns/method/hdbscan/clustered_papers.csv"}, {"id": "design_methods_overall_kmeans", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "kmeans", "text_view": "overall", "label": "Design methods · KMEANS (tfidf-svd, 42 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "42", "params": "5 clusters", "explorer": "explorer/final/design_methods/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_methods/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_methods/overall/kmeans/clustered_papers.csv"}, {"id": "design_methods_overall_hdbscan", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "hdbscan", "text_view": "overall", "label": "Design methods · HDBSCAN (tfidf-svd, 42 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "42", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_methods/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_methods/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_methods/overall/hdbscan/clustered_papers.csv"}, {"id": "design_methods_context_kmeans", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "kmeans", "text_view": "context", "label": "Design methods · KMEANS (context, tfidf-svd, 42 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "42", "params": "5 clusters", "explorer": "explorer/final/design_methods/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_methods/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_methods/context/kmeans/clustered_papers.csv"}, {"id": "design_methods_context_hdbscan", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "hdbscan", "text_view": "context", "label": "Design methods · HDBSCAN (context, tfidf-svd, 42 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "42", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_methods/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_methods/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_methods/context/hdbscan/clustered_papers.csv"}, {"id": "design_methods_knowledge-type_kmeans", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "kmeans", "text_view": "knowledge-type", "label": "Design methods · KMEANS (knowledge-type, tfidf-svd, 42 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "42", "params": "5 clusters", "explorer": "explorer/final/design_methods/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_methods/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_methods/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_methods_knowledge-type_hdbscan", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design methods · HDBSCAN (knowledge-type, tfidf-svd, 42 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "42", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_methods/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_methods/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_methods/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_methods_method_kmeans", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "kmeans", "text_view": "method", "label": "Design methods · KMEANS (method, tfidf-svd, 42 papers, 5 clusters)", "embedding": "tfidf-svd", "papers": "42", "params": "5 clusters", "explorer": "explorer/final/design_methods/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_methods/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_methods/method/kmeans/clustered_papers.csv"}, {"id": "design_methods_method_hdbscan", "keyword": "Design methods", "keyword_slug": "design_methods", "method": "hdbscan", "text_view": "method", "label": "Design methods · HDBSCAN (method, tfidf-svd, 42 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "42", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_methods/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_methods/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_methods/method/hdbscan/clustered_papers.csv"}, {"id": "design_guidelines_overall_kmeans", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "kmeans", "text_view": "overall", "label": "Design guidelines · KMEANS (tfidf-svd, 25 papers, 2 clusters)", "embedding": "tfidf-svd", "papers": "25", "params": "2 clusters", "explorer": "explorer/final/design_guidelines/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_guidelines/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_guidelines/overall/kmeans/clustered_papers.csv"}, {"id": "design_guidelines_overall_hdbscan", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "hdbscan", "text_view": "overall", "label": "Design guidelines · HDBSCAN (tfidf-svd, 25 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "25", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_guidelines/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_guidelines/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_guidelines/overall/hdbscan/clustered_papers.csv"}, {"id": "design_guidelines_context_kmeans", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "kmeans", "text_view": "context", "label": "Design guidelines · KMEANS (context, tfidf-svd, 25 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "25", "params": "3 clusters", "explorer": "explorer/final/design_guidelines/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_guidelines/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_guidelines/context/kmeans/clustered_papers.csv"}, {"id": "design_guidelines_context_hdbscan", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "hdbscan", "text_view": "context", "label": "Design guidelines · HDBSCAN (context, tfidf-svd, 25 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "25", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_guidelines/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_guidelines/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_guidelines/context/hdbscan/clustered_papers.csv"}, {"id": "design_guidelines_knowledge-type_kmeans", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "kmeans", "text_view": "knowledge-type", "label": "Design guidelines · KMEANS (knowledge-type, tfidf-svd, 25 papers, 4 clusters)", "embedding": "tfidf-svd", "papers": "25", "params": "4 clusters", "explorer": "explorer/final/design_guidelines/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_guidelines/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_guidelines/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_guidelines_knowledge-type_hdbscan", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design guidelines · HDBSCAN (knowledge-type, tfidf-svd, 25 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "25", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_guidelines/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_guidelines/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_guidelines/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_guidelines_method_kmeans", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "kmeans", "text_view": "method", "label": "Design guidelines · KMEANS (method, tfidf-svd, 25 papers, 4 clusters)", "embedding": "tfidf-svd", "papers": "25", "params": "4 clusters", "explorer": "explorer/final/design_guidelines/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_guidelines/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_guidelines/method/kmeans/clustered_papers.csv"}, {"id": "design_guidelines_method_hdbscan", "keyword": "Design guidelines", "keyword_slug": "design_guidelines", "method": "hdbscan", "text_view": "method", "label": "Design guidelines · HDBSCAN (method, tfidf-svd, 25 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "25", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_guidelines/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_guidelines/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_guidelines/method/hdbscan/clustered_papers.csv"}, {"id": "design_rationale_overall_kmeans", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "kmeans", "text_view": "overall", "label": "Design rationale · KMEANS (tfidf-svd, 20 papers, 4 clusters)", "embedding": "tfidf-svd", "papers": "20", "params": "4 clusters", "explorer": "explorer/final/design_rationale/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_rationale/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_rationale/overall/kmeans/clustered_papers.csv"}, {"id": "design_rationale_overall_hdbscan", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "hdbscan", "text_view": "overall", "label": "Design rationale · HDBSCAN (tfidf-svd, 20 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "20", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rationale/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rationale/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rationale/overall/hdbscan/clustered_papers.csv"}, {"id": "design_rationale_context_kmeans", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "kmeans", "text_view": "context", "label": "Design rationale · KMEANS (context, tfidf-svd, 20 papers, 1 cluster)", "embedding": "tfidf-svd", "papers": "20", "params": "1 cluster", "explorer": "explorer/final/design_rationale/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_rationale/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_rationale/context/kmeans/clustered_papers.csv"}, {"id": "design_rationale_context_hdbscan", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "hdbscan", "text_view": "context", "label": "Design rationale · HDBSCAN (context, tfidf-svd, 20 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "20", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rationale/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rationale/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rationale/context/hdbscan/clustered_papers.csv"}, {"id": "design_rationale_knowledge-type_kmeans", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "kmeans", "text_view": "knowledge-type", "label": "Design rationale · KMEANS (knowledge-type, tfidf-svd, 20 papers, 4 clusters)", "embedding": "tfidf-svd", "papers": "20", "params": "4 clusters", "explorer": "explorer/final/design_rationale/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_rationale/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_rationale/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_rationale_knowledge-type_hdbscan", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design rationale · HDBSCAN (knowledge-type, tfidf-svd, 20 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "20", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rationale/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rationale/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rationale/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_rationale_method_kmeans", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "kmeans", "text_view": "method", "label": "Design rationale · KMEANS (method, tfidf-svd, 20 papers, 4 clusters)", "embedding": "tfidf-svd", "papers": "20", "params": "4 clusters", "explorer": "explorer/final/design_rationale/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_rationale/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_rationale/method/kmeans/clustered_papers.csv"}, {"id": "design_rationale_method_hdbscan", "keyword": "Design rationale", "keyword_slug": "design_rationale", "method": "hdbscan", "text_view": "method", "label": "Design rationale · HDBSCAN (method, tfidf-svd, 20 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "20", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rationale/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rationale/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rationale/method/hdbscan/clustered_papers.csv"}, {"id": "design_principles_overall_kmeans", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "kmeans", "text_view": "overall", "label": "Design principles · KMEANS (tfidf-svd, 17 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "17", "params": "3 clusters", "explorer": "explorer/final/design_principles/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_principles/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_principles/overall/kmeans/clustered_papers.csv"}, {"id": "design_principles_overall_hdbscan", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "hdbscan", "text_view": "overall", "label": "Design principles · HDBSCAN (tfidf-svd, 17 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "17", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_principles/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_principles/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_principles/overall/hdbscan/clustered_papers.csv"}, {"id": "design_principles_context_kmeans", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "kmeans", "text_view": "context", "label": "Design principles · KMEANS (context, tfidf-svd, 17 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "17", "params": "3 clusters", "explorer": "explorer/final/design_principles/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_principles/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_principles/context/kmeans/clustered_papers.csv"}, {"id": "design_principles_context_hdbscan", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "hdbscan", "text_view": "context", "label": "Design principles · HDBSCAN (context, tfidf-svd, 17 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "17", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_principles/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_principles/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_principles/context/hdbscan/clustered_papers.csv"}, {"id": "design_principles_knowledge-type_kmeans", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "kmeans", "text_view": "knowledge-type", "label": "Design principles · KMEANS (knowledge-type, tfidf-svd, 17 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "17", "params": "3 clusters", "explorer": "explorer/final/design_principles/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_principles/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_principles/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_principles_knowledge-type_hdbscan", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design principles · HDBSCAN (knowledge-type, tfidf-svd, 17 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "17", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_principles/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_principles/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_principles/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_principles_method_kmeans", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "kmeans", "text_view": "method", "label": "Design principles · KMEANS (method, tfidf-svd, 17 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "17", "params": "3 clusters", "explorer": "explorer/final/design_principles/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_principles/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_principles/method/kmeans/clustered_papers.csv"}, {"id": "design_principles_method_hdbscan", "keyword": "Design principles", "keyword_slug": "design_principles", "method": "hdbscan", "text_view": "method", "label": "Design principles · HDBSCAN (method, tfidf-svd, 17 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "17", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_principles/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_principles/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_principles/method/hdbscan/clustered_papers.csv"}, {"id": "design_heuristics_overall_kmeans", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "kmeans", "text_view": "overall", "label": "Design heuristics · KMEANS (tfidf-svd, 14 papers, 2 clusters)", "embedding": "tfidf-svd", "papers": "14", "params": "2 clusters", "explorer": "explorer/final/design_heuristics/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_heuristics/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_heuristics/overall/kmeans/clustered_papers.csv"}, {"id": "design_heuristics_overall_hdbscan", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "hdbscan", "text_view": "overall", "label": "Design heuristics · HDBSCAN (tfidf-svd, 14 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "14", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_heuristics/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_heuristics/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_heuristics/overall/hdbscan/clustered_papers.csv"}, {"id": "design_heuristics_context_kmeans", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "kmeans", "text_view": "context", "label": "Design heuristics · KMEANS (context, tfidf-svd, 14 papers, 2 clusters)", "embedding": "tfidf-svd", "papers": "14", "params": "2 clusters", "explorer": "explorer/final/design_heuristics/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_heuristics/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_heuristics/context/kmeans/clustered_papers.csv"}, {"id": "design_heuristics_context_hdbscan", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "hdbscan", "text_view": "context", "label": "Design heuristics · HDBSCAN (context, tfidf-svd, 14 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "14", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_heuristics/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_heuristics/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_heuristics/context/hdbscan/clustered_papers.csv"}, {"id": "design_heuristics_knowledge-type_kmeans", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "kmeans", "text_view": "knowledge-type", "label": "Design heuristics · KMEANS (knowledge-type, tfidf-svd, 14 papers, 2 clusters)", "embedding": "tfidf-svd", "papers": "14", "params": "2 clusters", "explorer": "explorer/final/design_heuristics/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_heuristics/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_heuristics/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_heuristics_knowledge-type_hdbscan", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design heuristics · HDBSCAN (knowledge-type, tfidf-svd, 14 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "14", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_heuristics/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_heuristics/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_heuristics/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_heuristics_method_kmeans", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "kmeans", "text_view": "method", "label": "Design heuristics · KMEANS (method, tfidf-svd, 14 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "14", "params": "3 clusters", "explorer": "explorer/final/design_heuristics/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_heuristics/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_heuristics/method/kmeans/clustered_papers.csv"}, {"id": "design_heuristics_method_hdbscan", "keyword": "Design heuristics", "keyword_slug": "design_heuristics", "method": "hdbscan", "text_view": "method", "label": "Design heuristics · HDBSCAN (method, tfidf-svd, 14 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "14", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_heuristics/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_heuristics/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_heuristics/method/hdbscan/clustered_papers.csv"}, {"id": "design_rules_overall_kmeans", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "kmeans", "text_view": "overall", "label": "Design rules · KMEANS (tfidf-svd, 11 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "11", "params": "3 clusters", "explorer": "explorer/final/design_rules/overall/kmeans/paper_explorer.html", "summary": "explorer/final/design_rules/overall/kmeans/cluster_summary.md", "csv": "explorer/final/design_rules/overall/kmeans/clustered_papers.csv"}, {"id": "design_rules_overall_hdbscan", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "hdbscan", "text_view": "overall", "label": "Design rules · HDBSCAN (tfidf-svd, 11 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "11", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rules/overall/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rules/overall/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rules/overall/hdbscan/clustered_papers.csv"}, {"id": "design_rules_context_kmeans", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "kmeans", "text_view": "context", "label": "Design rules · KMEANS (context, tfidf-svd, 11 papers, 1 cluster)", "embedding": "tfidf-svd", "papers": "11", "params": "1 cluster", "explorer": "explorer/final/design_rules/context/kmeans/paper_explorer.html", "summary": "explorer/final/design_rules/context/kmeans/cluster_summary.md", "csv": "explorer/final/design_rules/context/kmeans/clustered_papers.csv"}, {"id": "design_rules_context_hdbscan", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "hdbscan", "text_view": "context", "label": "Design rules · HDBSCAN (context, tfidf-svd, 11 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "11", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rules/context/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rules/context/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rules/context/hdbscan/clustered_papers.csv"}, {"id": "design_rules_knowledge-type_kmeans", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "kmeans", "text_view": "knowledge-type", "label": "Design rules · KMEANS (knowledge-type, tfidf-svd, 11 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "11", "params": "3 clusters", "explorer": "explorer/final/design_rules/knowledge-type/kmeans/paper_explorer.html", "summary": "explorer/final/design_rules/knowledge-type/kmeans/cluster_summary.md", "csv": "explorer/final/design_rules/knowledge-type/kmeans/clustered_papers.csv"}, {"id": "design_rules_knowledge-type_hdbscan", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "hdbscan", "text_view": "knowledge-type", "label": "Design rules · HDBSCAN (knowledge-type, tfidf-svd, 11 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "11", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rules/knowledge-type/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rules/knowledge-type/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rules/knowledge-type/hdbscan/clustered_papers.csv"}, {"id": "design_rules_method_kmeans", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "kmeans", "text_view": "method", "label": "Design rules · KMEANS (method, tfidf-svd, 11 papers, 3 clusters)", "embedding": "tfidf-svd", "papers": "11", "params": "3 clusters", "explorer": "explorer/final/design_rules/method/kmeans/paper_explorer.html", "summary": "explorer/final/design_rules/method/kmeans/cluster_summary.md", "csv": "explorer/final/design_rules/method/kmeans/clustered_papers.csv"}, {"id": "design_rules_method_hdbscan", "keyword": "Design rules", "keyword_slug": "design_rules", "method": "hdbscan", "text_view": "method", "label": "Design rules · HDBSCAN (method, tfidf-svd, 11 papers, min_cluster_size=5, min_samples=4)", "embedding": "tfidf-svd", "papers": "11", "params": "min_cluster_size=5, min_samples=4", "explorer": "explorer/final/design_rules/method/hdbscan/paper_explorer.html", "summary": "explorer/final/design_rules/method/hdbscan/cluster_summary.md", "csv": "explorer/final/design_rules/method/hdbscan/clustered_papers.csv"}];
-    const path1Runs = [
-      { id: "all_statistical_bottom_up", keyword: "All keyword groups", method: "statistical_bottom_up", text_view: "context", papers: "459", params: "26 clusters", explorer: "explorer/statistical_bottom_up/all/paper_explorer.html", summary: "explorer/statistical_bottom_up/all/cluster_summary.md" },
-      { id: "design_knowledge_statistical_bottom_up", keyword: "Design knowledge", method: "statistical_bottom_up", text_view: "context", papers: "121", params: "3 clusters", explorer: "explorer/statistical_bottom_up/design_knowledge/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_knowledge/cluster_summary.md" },
-      { id: "design_patterns_statistical_bottom_up", keyword: "Design Patterns", method: "statistical_bottom_up", text_view: "context", papers: "102", params: "3 clusters", explorer: "explorer/statistical_bottom_up/design_patterns/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_patterns/cluster_summary.md" },
-      { id: "design_theory_statistical_bottom_up", keyword: "Design theory", method: "statistical_bottom_up", text_view: "context", papers: "85", params: "3 clusters", explorer: "explorer/statistical_bottom_up/design_theory/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_theory/cluster_summary.md" },
-      { id: "design_methods_statistical_bottom_up", keyword: "Design methods", method: "statistical_bottom_up", text_view: "context", papers: "38", params: "3 clusters", explorer: "explorer/statistical_bottom_up/design_methods/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_methods/cluster_summary.md" },
-      { id: "design_guidelines_statistical_bottom_up", keyword: "Design Guidelines", method: "statistical_bottom_up", text_view: "context", papers: "29", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_guidelines/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_guidelines/cluster_summary.md" },
-      { id: "design_rationale_statistical_bottom_up", keyword: "Design rationale", method: "statistical_bottom_up", text_view: "context", papers: "24", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_rationale/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_rationale/cluster_summary.md" },
-      { id: "design_principles_statistical_bottom_up", keyword: "Design principles", method: "statistical_bottom_up", text_view: "context", papers: "21", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_principles/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_principles/cluster_summary.md" },
-      { id: "design_heuristics_statistical_bottom_up", keyword: "Design Heuristics", method: "statistical_bottom_up", text_view: "context", papers: "14", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_heuristics/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_heuristics/cluster_summary.md" },
-      { id: "design_rules_statistical_bottom_up", keyword: "Design Rules", method: "statistical_bottom_up", text_view: "context", papers: "12", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_rules/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_rules/cluster_summary.md" },
-      { id: "design_frameworks_statistical_bottom_up", keyword: "Design frameworks", method: "statistical_bottom_up", text_view: "context", papers: "7", params: "2 clusters", explorer: "explorer/statistical_bottom_up/design_frameworks/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_frameworks/cluster_summary.md" },
-      { id: "design_expertise_statistical_bottom_up", keyword: "Design expertise", method: "statistical_bottom_up", text_view: "context", papers: "4", params: "1 clusters", explorer: "explorer/statistical_bottom_up/design_expertise/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_expertise/cluster_summary.md" },
-      { id: "design_procedures_statistical_bottom_up", keyword: "Design Procedures", method: "statistical_bottom_up", text_view: "context", papers: "2", params: "1 clusters", explorer: "explorer/statistical_bottom_up/design_procedures/paper_explorer.html", summary: "explorer/statistical_bottom_up/design_procedures/cluster_summary.md" }
-    ];
-    const globalRuns = [
-      { id: "neutral_raw_kmeans", view: "global_raw", method: "kmeans", label: "All papers · KMEANS · Raw BGE-M3", papers: "459", params: "2 clusters · 0 noise · stability .886", explorer: "explorer/global_comparison_neutral/raw/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/raw/kmeans/cluster_summary.md" },
-      { id: "neutral_raw_dbscan", view: "global_raw", method: "dbscan", label: "All papers · DBSCAN · Raw BGE-M3", papers: "459", params: "2 clusters · 114 noise · stability .848", explorer: "explorer/global_comparison_neutral/raw/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/raw/dbscan/cluster_summary.md" },
-      { id: "neutral_raw_hdbscan", view: "global_raw", method: "hdbscan", label: "All papers · HDBSCAN · Raw BGE-M3", papers: "459", params: "2 clusters · 391 noise · stability .794", explorer: "explorer/global_comparison_neutral/raw/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/raw/hdbscan/cluster_summary.md" },
-      { id: "neutral_umap5_kmeans", view: "global_umap", space: "umap5", method: "kmeans", label: "UMAP5 before clustering · KMEANS", papers: "459", params: "2 clusters · 0 noise · stability .982", explorer: "explorer/global_comparison_neutral/umap5/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap5/kmeans/cluster_summary.md" },
-      { id: "neutral_umap5_dbscan", view: "global_umap", space: "umap5", method: "dbscan", label: "UMAP5 before clustering · DBSCAN", papers: "459", params: "13 clusters · 274 noise · stability .749", explorer: "explorer/global_comparison_neutral/umap5/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap5/dbscan/cluster_summary.md" },
-      { id: "neutral_umap5_hdbscan", view: "global_umap", space: "umap5", method: "hdbscan", label: "UMAP5 before clustering · HDBSCAN", papers: "459", params: "2 clusters · 24 noise · stability .594", explorer: "explorer/global_comparison_neutral/umap5/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap5/hdbscan/cluster_summary.md" },
-      { id: "neutral_umap10_kmeans", view: "global_umap", space: "umap10", method: "kmeans", label: "UMAP10 before clustering · KMEANS", papers: "459", params: "3 clusters · 0 noise · stability .865", explorer: "explorer/global_comparison_neutral/umap10/kmeans/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/kmeans/cluster_summary.md" },
-      { id: "neutral_umap10_dbscan", view: "global_umap", space: "umap10", method: "dbscan", label: "UMAP10 before clustering · DBSCAN", papers: "459", params: "14 clusters · 267 noise · stability .665", explorer: "explorer/global_comparison_neutral/umap10/dbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/dbscan/cluster_summary.md" },
-      { id: "neutral_umap10_hdbscan", view: "global_umap", space: "umap10", method: "hdbscan", label: "UMAP10 before clustering · HDBSCAN", papers: "459", params: "15 clusters · 127 noise · stability .263", explorer: "explorer/global_comparison_neutral/umap10/hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/umap10/hdbscan/cluster_summary.md" },
-      { id: "neutral_zhicheng_umap_hdbscan", view: "zhicheng_umap_hdbscan", method: "hdbscan", label: "Zhicheng workflow · UMAP 10D + HDBSCAN", papers: "508", params: "24 clusters · 88 noise · stability .572", explorer: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/paper_explorer.html", summary: "explorer/global_comparison_neutral/zhicheng_umap_hdbscan/cluster_summary.md" }
-    ];
-    const buildId = "459-full-rebuild-20260811";
-    const withCacheBuster = path => `${path}${path.includes('?') ? '&' : '?'}v=${buildId}-${Date.now()}`;
     const frame = document.getElementById('explorerFrame');
-    const analysisSelect = document.getElementById('analysisSelect');
-    const methodSelect = document.getElementById('methodSelect');
-    const keywordSelect = document.getElementById('keywordSelect');
-    const applyBtn = document.getElementById('applyBtn');
-    const currentLabel = document.getElementById('currentLabel');
-    const summaryLink = document.getElementById('summaryLink');
-    const openLink = document.getElementById('openLink');
-    const note = document.getElementById('note');
     const outerClusterFilter = document.getElementById('outerClusterFilter');
-    const keywordOptionsHtml = keywordSelect.innerHTML;
-    let lastKeywordValue = keywordSelect.value;
-    let keywordSelectorMode = 'keywords';
-    let pendingRun = null;
-    let pendingSmallGroup = null;
-    const smallGroups = {};
-    const clusterCountOverrides = {
-      'confirmed_pdf_set_overall_kmeans': '8 clusters',
-      'confirmed_pdf_set_context_kmeans': '8 clusters',
-      'confirmed_pdf_set_knowledge-type_kmeans': '8 clusters',
-      'confirmed_pdf_set_method_kmeans': '8 clusters'
-    };
 
-    function displayLabel(run) {
-      const clusterCount = clusterCountOverrides[run.id] || run.params;
-      if (run.view) {
-        return `${run.label} · ${clusterCount}`;
-      }
-      if (run.keyword === 'Confirmed PDF set') {
-        return `${run.papers} PDFs · ${clusterCount}`;
-      }
-      return `${run.keyword} · ${clusterCount}`;
-    }
-
-    function findRun() {
-      if (analysisSelect.value !== 'keyword_topics') {
-        return globalRuns.find(run =>
-          run.view === analysisSelect.value &&
-          run.method === methodSelect.value &&
-          (analysisSelect.value !== 'global_umap' || run.space === keywordSelect.value)
-        );
-      }
-      return path1Runs.find(run =>
-        run.keyword === keywordSelect.value &&
-        run.method === 'statistical_bottom_up' &&
-        run.text_view === 'context'
-      );
-    }
-
-    function findSmallGroup() {
-      if (analysisSelect.value !== 'keyword_topics') return null;
-      return smallGroups[keywordSelect.value] || null;
-    }
-
-    function configureAnalysisControls() {
-      const isKeywordView = analysisSelect.value === 'keyword_topics';
-      const isUmapView = analysisSelect.value === 'global_umap';
-      const isZhichengView = analysisSelect.value === 'zhicheng_umap_hdbscan';
-      if (isUmapView && keywordSelectorMode !== 'umap') {
-        lastKeywordValue = keywordSelect.value;
-        keywordSelect.innerHTML = '<option value="umap5">UMAP 5D</option><option value="umap10">UMAP 10D</option>';
-        keywordSelect.value = 'umap5';
-        keywordSelectorMode = 'umap';
-      } else if (!isUmapView && keywordSelectorMode !== 'keywords') {
-        keywordSelect.innerHTML = keywordOptionsHtml;
-        keywordSelect.value = lastKeywordValue || 'All keyword groups';
-        keywordSelectorMode = 'keywords';
-      }
-      keywordSelect.disabled = !(isKeywordView || isUmapView);
-      methodSelect.disabled = isKeywordView || isZhichengView;
-      if (isKeywordView) {
-        methodSelect.value = 'statistical_bottom_up';
-      } else if (isZhichengView) {
-        methodSelect.value = 'hdbscan';
-      } else if (methodSelect.value === 'statistical_bottom_up') {
-        methodSelect.value = 'kmeans';
-      }
-    }
-
-    function refreshAvailability() {
-      configureAnalysisControls();
-      const run = findRun();
-      const smallGroup = findSmallGroup();
-      applyBtn.disabled = !(run || smallGroup);
-      if (run) {
-        currentLabel.textContent = displayLabel(run);
-        note.textContent = run.view
-          ? `${run.papers} papers are included in this view. Density noise remains visible as weak-affinity evidence.`
-          : 'Ready to load this generated keyword/method/view combination.';
-      } else if (smallGroup) {
-        currentLabel.textContent = `${keywordSelect.value} · ${smallGroup.papers} papers · paper map`;
-        note.textContent = 'This small group is available as a paper map with one singleton display cluster per paper.';
-      } else {
-        currentLabel.textContent = `${keywordSelect.value} has not been generated yet`;
-        note.textContent = 'This keyword group is unavailable.';
-      }
-    }
-
-    function loadSelected() {
-      const run = findRun();
-      const smallGroup = findSmallGroup();
-      if (!run && !smallGroup) return;
-      if (smallGroup) {
-        pendingRun = null;
-        pendingSmallGroup = { keyword: keywordSelect.value, ...smallGroup };
-        applyBtn.disabled = true;
-        applyBtn.textContent = 'Loading...';
-        outerClusterFilter.innerHTML = '<option value="all">All papers</option>';
-        outerClusterFilter.value = 'all';
-        outerClusterFilter.disabled = true;
-        frame.src = withCacheBuster(smallGroup.explorer);
-        summaryLink.removeAttribute('href');
-        openLink.href = withCacheBuster(smallGroup.explorer);
-        currentLabel.textContent = `Loading ${keywordSelect.value} · ${smallGroup.papers} papers...`;
-        note.textContent = 'Loading the complete singleton-cluster paper map for this small keyword group.';
-        return;
-      }
-      pendingSmallGroup = null;
-      pendingRun = run;
-      applyBtn.disabled = true;
-      applyBtn.textContent = 'Loading...';
-      outerClusterFilter.innerHTML = '<option value="all">All clusters</option>';
-      outerClusterFilter.value = 'all';
-      outerClusterFilter.disabled = true;
-      frame.src = withCacheBuster(run.explorer);
-      summaryLink.href = run.summary;
-      openLink.href = withCacheBuster(run.summary || run.explorer);
-      currentLabel.textContent = `Loading ${displayLabel(run)}...`;
-      note.textContent = 'Loading the selected generated view.';
-    }
-
-    function innerExplorerControls() {
-      const doc = frame.contentDocument;
-      if (!doc) return {};
-      let compactStyle = doc.getElementById('parentCompactStyle');
+    function innerClusterFilter() {
+      const innerDocument = frame.contentDocument;
+      if (!innerDocument) return null;
+      let compactStyle = innerDocument.getElementById('parentCompactStyle');
       if (!compactStyle) {
-        compactStyle = doc.createElement('style');
+        compactStyle = innerDocument.createElement('style');
         compactStyle.id = 'parentCompactStyle';
         compactStyle.textContent = 'main{min-height:100vh!important}.plot-panel,.details{height:calc(100vh - 28px)!important}';
-        doc.head.appendChild(compactStyle);
+        innerDocument.head.appendChild(compactStyle);
       }
-      return {
-        clusterFilter: doc.getElementById('clusterFilter')
-      };
+      return innerDocument.getElementById('clusterFilter');
     }
 
-    function syncOuterExplorerControls(attempt = 0) {
-      const { clusterFilter } = innerExplorerControls();
-      if (!clusterFilter) {
-        if (attempt < 20) window.setTimeout(() => syncOuterExplorerControls(attempt + 1), 100);
-        return;
-      }
-      if (clusterFilter.options.length <= 1 && attempt < 20) {
-        window.setTimeout(() => syncOuterExplorerControls(attempt + 1), 100);
+    function syncClusterFilter(attempt = 0) {
+      const clusterFilter = innerClusterFilter();
+      if (!clusterFilter || clusterFilter.options.length <= 1) {
+        if (attempt < 20) window.setTimeout(() => syncClusterFilter(attempt + 1), 100);
         return;
       }
       outerClusterFilter.innerHTML = '';
@@ -461,44 +257,20 @@
       outerClusterFilter.disabled = false;
     }
 
-    function applyOuterExplorerControls() {
-      const { clusterFilter } = innerExplorerControls();
+    outerClusterFilter.addEventListener('change', () => {
+      const clusterFilter = innerClusterFilter();
       if (!clusterFilter) return;
       clusterFilter.value = outerClusterFilter.value;
       clusterFilter.dispatchEvent(new Event('change', { bubbles: true }));
-    }
-
-    analysisSelect.addEventListener('change', refreshAvailability);
-    methodSelect.addEventListener('change', refreshAvailability);
-    keywordSelect.addEventListener('change', refreshAvailability);
-    applyBtn.addEventListener('click', event => {
-      event.preventDefault();
-      loadSelected();
     });
-    outerClusterFilter.addEventListener('change', applyOuterExplorerControls);
-    frame.addEventListener('load', () => {
-      syncOuterExplorerControls();
-      if (pendingRun) {
-        currentLabel.textContent = displayLabel(pendingRun);
-        note.textContent = `Showing ${displayLabel(pendingRun)}.`;
-        pendingRun = null;
-      } else if (pendingSmallGroup) {
-        currentLabel.textContent = `${pendingSmallGroup.keyword} · ${pendingSmallGroup.papers} papers · paper map`;
-        note.textContent = `Showing all ${pendingSmallGroup.papers} papers as singleton display clusters; no small-sample clustering is claimed.`;
-        pendingSmallGroup = null;
-      }
-      applyBtn.disabled = !(findRun() || findSmallGroup());
-      applyBtn.textContent = 'Apply';
-    });
-    if (frame.contentDocument && frame.contentDocument.readyState !== 'loading') {
-      syncOuterExplorerControls();
-    }
-    refreshAvailability();
+    frame.addEventListener('load', () => syncClusterFilter());
+    if (frame.contentDocument && frame.contentDocument.readyState !== 'loading') syncClusterFilter();
 
     const openDocs = document.getElementById('openDocs');
     const closeDocs = document.getElementById('closeDocs');
     const drawer = document.getElementById('docsDrawer');
     const overlay = document.getElementById('drawerOverlay');
+
     function setDrawerOpen(isOpen) {
       drawer.classList.toggle('open', isOpen);
       overlay.classList.toggle('open', isOpen);
@@ -507,6 +279,7 @@
       openDocs.setAttribute('aria-expanded', String(isOpen));
       if (isOpen) closeDocs.focus();
     }
+
     openDocs.addEventListener('click', () => setDrawerOpen(true));
     closeDocs.addEventListener('click', () => setDrawerOpen(false));
     overlay.addEventListener('click', () => setDrawerOpen(false));
