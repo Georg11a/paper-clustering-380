@@ -175,9 +175,9 @@ def main() -> None:
     manifest = {
         "scope": "Page 3 only; Page 1 and Page 2 remain frozen at 459 papers",
         "paper_count": len(papers),
-        "input": "Drive-synced R_cent neutral chunks, assembled as 459 frozen + 49 new",
-        "embeddings": "BGE-M3 1024D paper vectors, assembled as 459 frozen + 49 new",
-        "metadata": "508-paper Page 3 metadata join; display-only fields added after clustering",
+        "input": "Drive-synced R_cent neutral chunks from the frozen corpus and verified increments",
+        "embeddings": "BGE-M3 1024D paper vectors from the frozen corpus and verified increments",
+        "metadata": f"{len(papers)}-paper Page 3 metadata join; display-only fields added after clustering",
         "configuration": {
             "representation": "R_cent; 13 chunks per paper; BGE-M3 mean pooling",
             "umap_n_components": 10,

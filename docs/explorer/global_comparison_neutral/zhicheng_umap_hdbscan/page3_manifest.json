@@ -1,9 +1,9 @@
 {
   "scope": "Page 3 only; Page 1 and Page 2 remain frozen at 459 papers",
-  "paper_count": 508,
-  "input": "Drive-synced R_cent neutral chunks, assembled as 459 frozen + 49 new",
-  "embeddings": "BGE-M3 1024D paper vectors, assembled as 459 frozen + 49 new",
-  "metadata": "508-paper Page 3 metadata join; display-only fields added after clustering",
+  "paper_count": 523,
+  "input": "Drive-synced R_cent neutral chunks from the frozen corpus and verified increments",
+  "embeddings": "BGE-M3 1024D paper vectors from the frozen corpus and verified increments",
+  "metadata": "523-paper Page 3 metadata join; display-only fields added after clustering",
   "configuration": {
     "representation": "R_cent; 13 chunks per paper; BGE-M3 mean pooling",
     "umap_n_components": 10,
@@ -19,13 +19,13 @@
     "title": "UMAP 10D + HDBSCAN",
     "config": "hdbscan_mcs8_ms1",
     "path": "zhicheng_umap_hdbscan",
-    "cluster_count": 24,
-    "noise_count": 88,
-    "noise_fraction": 0.1732283464566929,
-    "coverage": 0.8267716535433071,
+    "cluster_count": 28,
+    "noise_count": 83,
+    "noise_fraction": 0.1586998087954111,
+    "coverage": 0.8413001912045889,
     "smallest_cluster": 8,
-    "largest_cluster": 33,
-    "silhouette_original_cosine": 0.07079659402370453,
-    "stability_ari": 0.5715277453268756
+    "largest_cluster": 65,
+    "silhouette_original_cosine": 0.0704708993434906,
+    "stability_ari": 0.6710334508639649
   }
 }

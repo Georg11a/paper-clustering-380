@@ -57,9 +57,9 @@ CUSTOM_STOP_WORDS = {
 STOP_WORDS = set(ENGLISH_STOP_WORDS) | CUSTOM_STOP_WORDS
 
 
-# Human-readable profiles for the frozen 508-paper partition. The statistical
-# phrase rankings remain visible as evidence; these profiles prevent raw
-# frequency lists from being mistaken for meaningful prose topic labels.
+# Human-readable profiles for previously reviewed topic families. The current
+# partition can split or merge these families when the corpus expands, so the
+# profiles are matched by lexical evidence rather than by cluster number.
 REVIEWED_PROFILES = {
     0: {
         "label": "Design Heuristics · Extraction, Formalization, and Evaluation",
@@ -287,6 +287,75 @@ def select_nonredundant(
     return selected
 
 
+def profile_match_score(
+    profile: dict[str, object],
+    statistical_phrases: list[str],
+    member_titles: list[str],
+) -> float:
+    """Score a reviewed profile against current statistical and title evidence."""
+    phrase_tokens = set()
+    for phrase in statistical_phrases:
+        phrase_tokens.update(canonical_tokens(phrase))
+    title_tokens = set(canonical_tokens(" ".join(member_titles)))
+    evidence_phrases = [str(value) for value in profile["evidence"]]
+    evidence_tokens = set()
+    exact_phrase_hits = 0
+    normalized_titles = [normalize_text(title) for title in member_titles]
+    for phrase in evidence_phrases:
+        tokens = set(canonical_tokens(normalize_text(phrase)))
+        evidence_tokens.update(tokens)
+        normalized_phrase = normalize_text(phrase)
+        if any(normalized_phrase in title for title in normalized_titles):
+            exact_phrase_hits += 1
+    statistical_overlap = len(evidence_tokens & phrase_tokens) / max(
+        len(evidence_tokens), 1
+    )
+    title_overlap = len(evidence_tokens & title_tokens) / max(len(evidence_tokens), 1)
+    return 3.0 * exact_phrase_hits + 2.0 * statistical_overlap + title_overlap
+
+
+def choose_profile(
+    ranking: dict[str, list[str]], members: list[dict[str, object]]
+) -> dict[str, object] | None:
+    statistical_phrases = ranking["core"] + ranking["distinctive"]
+    titles = [str(member.get("title", "")) for member in members]
+    scored = sorted(
+        [
+        (profile_match_score(profile, statistical_phrases, titles), profile)
+        for profile in REVIEWED_PROFILES.values()
+        ],
+        key=lambda item: item[0],
+        reverse=True,
+    )
+    best_score, profile = scored[0]
+    second_score = scored[1][0] if len(scored) > 1 else 0.0
+    return profile if best_score >= 3.0 and best_score - second_score >= 0.75 else None
+
+
+def statistical_profile(
+    ranking: dict[str, list[str]], members: list[dict[str, object]]
+) -> dict[str, object]:
+    """Create a deterministic fallback when no reviewed profile fits."""
+    phrases = select_nonredundant(
+        ranking["core"] + ranking["distinctive"], 5
+    )
+    if not phrases:
+        phrases = ["mixed design research"]
+    label_terms = [display_phrase(value, title_case=True) for value in phrases[:3]]
+    label = " · ".join(label_terms)
+    evidence_text = ", ".join(display_phrase(value) for value in phrases)
+    return {
+        "label": label,
+        "focus": f"a shared lexical emphasis on {evidence_text}",
+        "distinction": (
+            "This is a deterministic statistical label generated from current "
+            "title coverage and cross-cluster exclusivity; it remains a candidate "
+            "for human review."
+        ),
+        "evidence": phrases,
+    }
+
+
 def extract_rankings(papers: list[dict[str, object]]) -> dict[int, dict[str, list[str]]]:
     frame = pd.DataFrame(papers)
     clustered = frame[frame["cluster"].astype(int).ge(0)].copy()
@@ -362,7 +431,9 @@ def refine_payload(payload: dict[str, object]) -> dict[str, object]:
     for cluster_id, ranking in rankings.items():
         members = [paper for paper in papers if int(paper["cluster"]) == cluster_id]
         members.sort(key=lambda paper: int(paper.get("representative_rank", 999999)))
-        profile = REVIEWED_PROFILES[cluster_id]
+        profile = choose_profile(ranking, members) or statistical_profile(
+            ranking, members
+        )
         statistical_phrases = select_nonredundant(
             ranking["core"] + ranking["distinctive"], 4, blocked=profile["evidence"]
         )
