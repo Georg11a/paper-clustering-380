@@ -45,9 +45,10 @@
     .top-links { display: flex; align-items: center; gap: 10px; }
     .controls {
       display: grid;
-      grid-template-columns: minmax(250px, 0.8fr) minmax(320px, 1.2fr);
+      grid-template-columns: minmax(250px, 360px);
       gap: 10px;
       align-items: center;
+      justify-content: end;
       min-width: 0;
     }
     select, button {
@@ -69,18 +70,6 @@
       color: #256fbd;
       cursor: pointer;
       font-weight: 700;
-    }
-    .current {
-      min-height: 38px;
-      display: flex;
-      align-items: center;
-      padding: 6px 10px;
-      border: 1px solid #e3ebf5;
-      border-radius: 9px;
-      background: #f8fafd;
-      color: #3d4f69;
-      font-size: 12.5px;
-      line-height: 1.35;
     }
     a { color: #256fbd; text-decoration: none; font-weight: 600; }
     a:hover { text-decoration: underline; }
@@ -157,7 +146,7 @@
     .drawer-note { color: #65758b; font-size: 13px; line-height: 1.45; }
     @media (max-width: 1180px) {
       header { grid-template-columns: 1fr; }
-      .controls { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
+      .controls { grid-template-columns: 1fr; }
       iframe { height: calc(100vh - 112px); }
     }
     @media (max-width: 720px) {
@@ -180,7 +169,6 @@
       <select id="outerClusterFilter" aria-label="Cluster filter" disabled>
         <option value="all">All clusters</option>
       </select>
-      <div class="current">508 paper records · 24 clusters · 88 noise · stability .572</div>
     </div>
   </header>
 
