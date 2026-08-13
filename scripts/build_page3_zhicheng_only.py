@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 import numpy as np
@@ -18,6 +19,51 @@ from refine_page3_cluster_summaries import (
     update_csv,
     write_markdown,
 )
+
+
+DRIVE_FOLDER_URL = (
+    "https://drive.google.com/drive/folders/1KyP7NCwToMY-mGPLCWa4PnKM5e2ZIAfw"
+)
+
+
+def simplify_page3_details(page: str) -> str:
+    """Keep paper details focused on clustering results and usable links."""
+    page = re.sub(
+        r"\n    function renderSourceEvidence\(clusterId\) \{.*?"
+        r"(?=\n    function renderDetails\(p\) \{)",
+        "",
+        page,
+        flags=re.DOTALL,
+    )
+    page = page.replace(
+        "      const sourceEvidence = renderSourceEvidence(p.cluster);\n", ""
+    ).replace("        ${sourceEvidence}\n", "")
+    page = re.sub(
+        r'\n        <div class="insight-card">\n'
+        r'          <div class="section-title">Configuration &amp; Review Status</div>.*?'
+        r'\n        </div>\n(?=        <details class="lexical-evidence">)',
+        "\n",
+        page,
+        count=1,
+        flags=re.DOTALL,
+    )
+    old_links = (
+        "      const doi = p.doi ? `<a class=\"paper-link\" "
+        "href=\"https://doi.org/${escapeHtml(p.doi)}\" target=\"_blank\">DOI: "
+        "${escapeHtml(p.doi)}</a>` : '';\n"
+        "      const url = p.url ? `<a class=\"paper-link\" href=\"${escapeAttr(p.url)}\" "
+        "target=\"_blank\">Open paper URL</a>` : '';"
+    )
+    new_links = old_links + (
+        "\n      const drive = !p.doi && !p.url ? `<a class=\"paper-link\" "
+        f"href=\"{DRIVE_FOLDER_URL}\" target=\"_blank\">Find "
+        "${escapeHtml(p.paper_id)}.pdf in shared Google Drive</a>` : '';"
+    )
+    if old_links not in page:
+        raise ValueError("Page 3 link renderer was not found")
+    return page.replace(old_links, new_links, 1).replace(
+        "          ${doi}${url}\n", "          ${doi || url || drive}\n", 1
+    )
 
 
 def main() -> None:
@@ -87,26 +133,28 @@ def main() -> None:
         raise ValueError(f"No explorer payload found in {explorer_path}")
     payload = refine_payload(json.loads(payload_match.group(2)))
     explorer_path.write_text(
-        (
+        simplify_page3_details(
+            (
             page[: payload_match.start(2)]
             + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
             + page[payload_match.end(2) :]
-        )
-        .replace(
-            "Zhicheng workflow · UMAP 10D + HDBSCAN · hdbscan_mcs8_ms1",
-            "UMAP 10D + HDBSCAN",
-        )
-        .replace(
-            '            <span class="pill">Rep rank ${p.representative_rank}</span>\n',
-            "",
-        )
-        .replace(
-            '            <span class="pill">Medoid rank ${p.medoid_rank}</span>\n',
-            "",
-        )
-        .replace(
-            '<span class="pill">Form: ${escapeHtml(p.design_knowledge_form || \'n/a\')}</span>',
-            '<span class="pill">Method: UMAP 10D + HDBSCAN</span>',
+            )
+            .replace(
+                "Zhicheng workflow · UMAP 10D + HDBSCAN · hdbscan_mcs8_ms1",
+                "UMAP 10D + HDBSCAN",
+            )
+            .replace(
+                '            <span class="pill">Rep rank ${p.representative_rank}</span>\n',
+                "",
+            )
+            .replace(
+                '            <span class="pill">Medoid rank ${p.medoid_rank}</span>\n',
+                "",
+            )
+            .replace(
+                '<span class="pill">Form: ${escapeHtml(p.design_knowledge_form || \'n/a\')}</span>',
+                '<span class="pill">Method: UMAP 10D + HDBSCAN</span>',
+            )
         ),
         encoding="utf-8",
     )
