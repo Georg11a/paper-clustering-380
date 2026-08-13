@@ -16,7 +16,7 @@
     "noise_policy": "retain label -1; never reassign"
   },
   "view": {
-    "title": "Zhicheng workflow \u00b7 UMAP 10D + HDBSCAN",
+    "title": "UMAP 10D + HDBSCAN",
     "config": "hdbscan_mcs8_ms1",
     "path": "zhicheng_umap_hdbscan",
     "cluster_count": 24,

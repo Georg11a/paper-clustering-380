@@ -557,8 +557,20 @@ def adapt_global_dashboard(path: Path) -> None:
     )
     page = page.replace("Path 1 interpretation", "Global comparison")
     page = page.replace(
+        '            <span class="pill">Rep rank ${p.representative_rank}</span>\n',
+        "",
+    )
+    page = page.replace(
+        '            <span class="pill">Medoid rank ${p.medoid_rank}</span>\n',
+        "",
+    )
+    page = page.replace(
         "Fine-Grained Form &amp; Review Status",
         "Configuration &amp; Review Status",
+    )
+    page = page.replace(
+        '<span class="pill">Form: ${escapeHtml(p.design_knowledge_form || \'n/a\')}</span>',
+        '<span class="pill">Method: UMAP 10D + HDBSCAN</span>',
     )
     page = page.replace(
         "Assignments: BGE-M3 + within-keyword Spectral clustering.",
@@ -876,7 +888,7 @@ def main() -> None:
         export_view(
             out_root,
             "zhicheng_umap_hdbscan",
-            "Zhicheng workflow · UMAP 10D + HDBSCAN",
+            "UMAP 10D + HDBSCAN",
             zh_config,
             zh_metrics,
             zh_labels,

@@ -352,6 +352,8 @@ def extract_rankings(papers: list[dict[str, object]]) -> dict[int, dict[str, lis
 
 def refine_payload(payload: dict[str, object]) -> dict[str, object]:
     papers = payload["papers"]
+    for paper in papers:
+        paper["design_knowledge_form"] = "UMAP 10D + HDBSCAN"
     rankings = extract_rankings(papers)
     cluster_records = {
         int(record["cluster"]): record for record in payload["clusters"]
@@ -366,11 +368,9 @@ def refine_payload(payload: dict[str, object]) -> dict[str, object]:
         )
         evidence = profile["evidence"] + statistical_phrases
         label = profile["label"]
-        representatives = [str(paper["title"]) for paper in members[:3]]
         summary = (
             f"This {len(members)}-paper cluster focuses on {profile['focus']}. "
-            f"{profile['distinction']} "
-            f"Representative papers include {'; '.join(representatives)}."
+            f"{profile['distinction']}"
         )
 
         for paper in members:
@@ -384,6 +384,12 @@ def refine_payload(payload: dict[str, object]) -> dict[str, object]:
         cluster["theme"] = " | ".join(evidence)
         cluster["label"] = label
         cluster["summary"] = summary
+        cluster.pop("representatives", None)
+
+    for cluster in payload["clusters"]:
+        cluster.pop("representatives", None)
+
+    payload["title"] = "UMAP 10D + HDBSCAN · hdbscan_mcs8_ms1"
 
     return payload
 
@@ -405,7 +411,7 @@ def update_csv(path: Path, payload: dict[str, object]) -> None:
 
 def write_markdown(path: Path, payload: dict[str, object]) -> None:
     lines = [
-        "# Zhicheng workflow · UMAP 10D + HDBSCAN",
+        "# UMAP 10D + HDBSCAN",
         "",
         "Cluster membership is unchanged. Labels use deterministic phrase extraction, frequency–exclusivity reranking, abbreviation expansion, and lexical deduplication; no LLM is used.",
         "",
@@ -447,6 +453,20 @@ def main() -> None:
     updated_page = page[: match.start(2)] + json.dumps(
         payload, ensure_ascii=False, separators=(",", ":")
     ) + page[match.end(2) :]
+    updated_page = updated_page.replace(
+        "Zhicheng workflow · UMAP 10D + HDBSCAN · hdbscan_mcs8_ms1",
+        "UMAP 10D + HDBSCAN",
+    )
+    updated_page = updated_page.replace(
+        '            <span class="pill">Rep rank ${p.representative_rank}</span>\n', ""
+    )
+    updated_page = updated_page.replace(
+        '            <span class="pill">Medoid rank ${p.medoid_rank}</span>\n', ""
+    )
+    updated_page = updated_page.replace(
+        '<span class="pill">Form: ${escapeHtml(p.design_knowledge_form || \'n/a\')}</span>',
+        '<span class="pill">Method: UMAP 10D + HDBSCAN</span>',
+    )
     explorer_path.write_text(updated_page, encoding="utf-8")
     update_csv(Path(args.csv), payload)
     write_markdown(Path(args.summary), payload)

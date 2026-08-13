@@ -70,7 +70,7 @@ def main() -> None:
     view = global_views.export_view(
         out,
         "zhicheng_umap_hdbscan",
-        "Zhicheng workflow · UMAP 10D + HDBSCAN",
+        "UMAP 10D + HDBSCAN",
         config,
         metrics,
         labels,
@@ -87,9 +87,27 @@ def main() -> None:
         raise ValueError(f"No explorer payload found in {explorer_path}")
     payload = refine_payload(json.loads(payload_match.group(2)))
     explorer_path.write_text(
-        page[: payload_match.start(2)]
-        + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
-        + page[payload_match.end(2) :],
+        (
+            page[: payload_match.start(2)]
+            + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+            + page[payload_match.end(2) :]
+        )
+        .replace(
+            "Zhicheng workflow · UMAP 10D + HDBSCAN · hdbscan_mcs8_ms1",
+            "UMAP 10D + HDBSCAN",
+        )
+        .replace(
+            '            <span class="pill">Rep rank ${p.representative_rank}</span>\n',
+            "",
+        )
+        .replace(
+            '            <span class="pill">Medoid rank ${p.medoid_rank}</span>\n',
+            "",
+        )
+        .replace(
+            '<span class="pill">Form: ${escapeHtml(p.design_knowledge_form || \'n/a\')}</span>',
+            '<span class="pill">Method: UMAP 10D + HDBSCAN</span>',
+        ),
         encoding="utf-8",
     )
     update_csv(explorer_dir / "clustered_papers.csv", payload)
