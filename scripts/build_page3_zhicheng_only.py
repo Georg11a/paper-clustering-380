@@ -54,16 +54,23 @@ def simplify_page3_details(page: str, drive_file_ids: dict[str, str]) -> str:
         "      const url = p.url ? `<a class=\"paper-link\" href=\"${escapeAttr(p.url)}\" "
         "target=\"_blank\">Open paper URL</a>` : '';"
     )
-    new_links = old_links + (
-        "\n      const driveFileIds = "
+    new_links = (
+        "      const doi = p.doi ? `<a class=\"paper-link\" "
+        "href=\"https://doi.org/${escapeAttr(p.doi)}\" target=\"_blank\" "
+        "rel=\"noopener noreferrer\">DOI: ${escapeHtml(p.doi)}</a>` : '';\n"
+        "      const url = p.url ? `<a class=\"paper-link\" href=\"${escapeAttr(p.url)}\" "
+        "target=\"_blank\" rel=\"noopener noreferrer\">Open paper URL</a>` : '';\n"
+        "      const driveFileIds = "
         + json.dumps(drive_file_ids, separators=(",", ":"))
         + ";\n"
         "      const driveFileId = driveFileIds[p.paper_id];\n"
         "      const drive = !p.doi && !p.url ? `<a class=\"paper-link\" "
         "href=\"${driveFileId ? `https://drive.google.com/file/d/${escapeAttr(driveFileId)}/view` : "
-        f"`{DRIVE_FOLDER_URL}`}}\" target=\"_blank\">${{driveFileId ? "
+        "`"
+        + DRIVE_FOLDER_URL
+        + "`}\" target=\"_blank\" rel=\"noopener noreferrer\">${driveFileId ? "
         "`Open ${escapeHtml(p.paper_id)}.pdf in Google Drive` : "
-        "`Open shared Google Drive folder`}}</a>` : '';"
+        "`Open shared Google Drive folder`}</a>` : '';"
     )
     if old_links not in page:
         raise ValueError("Page 3 link renderer was not found")

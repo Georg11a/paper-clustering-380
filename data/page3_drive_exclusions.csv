@@ -1,0 +1,7 @@
+paper_id,title,decision,reason
+12029fe2805e,Considerações sobre o pattern,excluded_non_english,The full text is in Portuguese; retain the PDF in Drive for audit but exclude it from the English clustering corpus.
+7fb79f6d2f73,"PEDAGOGICAL DESIGN: CONCEPT, PRINCIPLES, MODELS",excluded_non_english,The downloaded full text is not in English; retain the PDF in Drive for audit only.
+ad8d60b9d2e6,WAR GAMES CLASSIFICATION SYSTEMS,excluded_non_english,The downloaded full text is not in English; retain the PDF in Drive for audit only.
+b8507dbe97ca,A pattern approach to interaction design,excluded_superseded_version,The 2000 conference paper is superseded by the retained 2001 journal version 242644458c6e.
+c1db52f69aae,Editorial: A Critical Look at Theories in Design Science Research,excluded_scope_editorial,Editorials are outside the retained publication types; preserve the PDF for audit only.
+c3b41755b43d,Extended General Design Theory. Revised,excluded_non_english,The full text is Japanese with only an English title and abstract; retain the PDF in Drive for audit only.
