@@ -4,6 +4,18 @@
   "input": "Drive-synced R_cent neutral chunks from the frozen corpus and verified increments",
   "embeddings": "BGE-M3 1024D paper vectors from the frozen corpus and verified increments",
   "metadata": "523-paper Page 3 metadata join; display-only fields added after clustering",
+  "input_corrections": {
+    "paper_ids": [
+      "166efc8ac468",
+      "2f7b1528d74d",
+      "b6f644351152",
+      "ede2a92151d5",
+      "f9a132245837",
+      "9eda131748eb",
+      "a14565cde772"
+    ],
+    "description": "Chapter-level PDFs replaced duplicated whole-book inputs before text extraction and embedding regeneration."
+  },
   "configuration": {
     "representation": "R_cent; 13 chunks per paper; BGE-M3 mean pooling",
     "umap_n_components": 10,
@@ -19,13 +31,13 @@
     "title": "UMAP 10D + HDBSCAN",
     "config": "hdbscan_mcs8_ms1",
     "path": "zhicheng_umap_hdbscan",
-    "cluster_count": 28,
-    "noise_count": 83,
-    "noise_fraction": 0.1586998087954111,
-    "coverage": 0.8413001912045889,
-    "smallest_cluster": 8,
-    "largest_cluster": 65,
-    "silhouette_original_cosine": 0.0704708993434906,
-    "stability_ari": 0.6710334508639649
+    "cluster_count": 23,
+    "noise_count": 65,
+    "noise_fraction": 0.124282982791587,
+    "coverage": 0.875717017208413,
+    "smallest_cluster": 9,
+    "largest_cluster": 84,
+    "silhouette_original_cosine": 0.07704804837703705,
+    "stability_ari": 0.734581219054379
   }
 }

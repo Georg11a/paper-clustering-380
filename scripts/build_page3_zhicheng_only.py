@@ -87,6 +87,7 @@ def main() -> None:
     parser.add_argument("--out", required=True)
     parser.add_argument("--expected-paper-count", type=int, required=True)
     parser.add_argument("--discussion-metadata", default="")
+    parser.add_argument("--corrected-paper-ids", nargs="*", default=[])
     parser.add_argument(
         "--drive-file-ids",
         default=str(Path(__file__).parents[1] / "data" / "page3_drive_file_ids.json"),
@@ -185,6 +186,15 @@ def main() -> None:
         "input": "Drive-synced R_cent neutral chunks from the frozen corpus and verified increments",
         "embeddings": "BGE-M3 1024D paper vectors from the frozen corpus and verified increments",
         "metadata": f"{len(papers)}-paper Page 3 metadata join; display-only fields added after clustering",
+        "input_corrections": {
+            "paper_ids": args.corrected_paper_ids,
+            "description": (
+                "Chapter-level PDFs replaced duplicated whole-book inputs before "
+                "text extraction and embedding regeneration."
+                if args.corrected_paper_ids
+                else ""
+            ),
+        },
         "configuration": {
             "representation": "R_cent; 13 chunks per paper; BGE-M3 mean pooling",
             "umap_n_components": 10,
