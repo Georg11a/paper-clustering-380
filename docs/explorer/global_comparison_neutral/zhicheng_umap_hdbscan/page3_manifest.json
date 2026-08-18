@@ -6,13 +6,7 @@
   "metadata": "523-paper Page 3 metadata join; display-only fields added after clustering",
   "input_corrections": {
     "paper_ids": [
-      "166efc8ac468",
-      "2f7b1528d74d",
-      "b6f644351152",
-      "ede2a92151d5",
-      "f9a132245837",
-      "9eda131748eb",
-      "a14565cde772"
+      "d24e6cf8ae6a"
     ],
     "description": "Chapter-level PDFs replaced duplicated whole-book inputs before text extraction and embedding regeneration."
   },
@@ -32,12 +26,12 @@
     "config": "hdbscan_mcs8_ms1",
     "path": "zhicheng_umap_hdbscan",
     "cluster_count": 23,
-    "noise_count": 65,
-    "noise_fraction": 0.124282982791587,
-    "coverage": 0.875717017208413,
-    "smallest_cluster": 9,
-    "largest_cluster": 84,
-    "silhouette_original_cosine": 0.07704804837703705,
-    "stability_ari": 0.734581219054379
+    "noise_count": 67,
+    "noise_fraction": 0.12810707456978968,
+    "coverage": 0.8718929254302104,
+    "smallest_cluster": 8,
+    "largest_cluster": 81,
+    "silhouette_original_cosine": 0.07769226282835007,
+    "stability_ari": 0.6540785285593087
   }
 }
